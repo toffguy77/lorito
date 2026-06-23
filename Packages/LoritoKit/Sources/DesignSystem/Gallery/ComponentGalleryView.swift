@@ -58,6 +58,22 @@ public struct ComponentGalleryView: View {
                     GradeButtons { _ in }
                 }
 
+                section("Тело карточки (Markdown)") {
+                    CardBodyView(
+                        """
+                        > **Суть**
+                        > *Ser* выражает идентичность и неизменные свойства.
+
+                        ## Спряжение (presente)
+                        | Лицо | Форма |
+                        |------|-------|
+                        | yo | soy |
+                        | tú | eres |
+                        | él/ella | es |
+                        """
+                    )
+                }
+
                 section("Карточка") {
                     StudyCardContainer {
                         LevelChip(level: "A1", theme: "Verbos")

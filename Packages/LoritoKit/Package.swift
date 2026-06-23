@@ -13,18 +13,28 @@ let package = Package(
         .library(name: "DesignSystem", targets: ["DesignSystem"]),
         .library(name: "Features", targets: ["Features"]),
     ],
+    dependencies: [
+        .package(url: "https://github.com/gonzalezreal/swift-markdown-ui", from: "2.4.0"),
+    ],
     targets: [
         // Pure Swift. MUST NOT import SwiftUI, SwiftData, or CloudKit.
         .target(name: "Domain"),
 
         // Loads the compiled content bundle and exposes it via Domain model types.
-        .target(name: "Content", dependencies: ["Domain"]),
+        .target(
+            name: "Content",
+            dependencies: ["Domain"],
+            resources: [.process("Resources")]
+        ),
 
         // SwiftData + CloudKit user-data store.
         .target(name: "Persistence", dependencies: ["Domain"]),
 
         // "Modern Calm" design tokens and reusable SwiftUI components.
-        .target(name: "DesignSystem"),
+        .target(
+            name: "DesignSystem",
+            dependencies: [.product(name: "MarkdownUI", package: "swift-markdown-ui")]
+        ),
 
         // SwiftUI screens. Depends inward on every other layer.
         .target(
@@ -34,6 +44,7 @@ let package = Package(
 
         // Tests
         .testTarget(name: "DomainTests", dependencies: ["Domain"]),
+        .testTarget(name: "ContentTests", dependencies: ["Content"]),
         .testTarget(name: "FeaturesTests", dependencies: ["Features"]),
     ]
 )

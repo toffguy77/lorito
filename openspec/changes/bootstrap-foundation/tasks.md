@@ -20,28 +20,28 @@
 
 ## 3. Content Model & Schema
 
-- [ ] 3.1 Write `content/schema.md` (frontmatter fields, id pattern, level/theme taxonomy, body callout conventions)
-- [ ] 3.2 Define the per-level theme registry file (themes per level, contiguous by `order`)
-- [ ] 3.3 Define Swift content types (Level, Theme, Card) in the `Content`/`Domain` layer matching the schema
+- [x] 3.1 Write `content/schema.md` (frontmatter fields, id pattern, level/theme taxonomy, body callout conventions)
+- [x] 3.2 Define the per-level theme registry file (themes per level, contiguous by `order`)
+- [x] 3.3 Define Swift content types (Level, Theme, Card) in the `Content`/`Domain` layer matching the schema
 
 ## 4. Content Pipeline (tools/)
 
-- [ ] 4.1 Choose pipeline language (Node or Python); record the decision in `CLAUDE.md`
-- [ ] 4.2 Implement seed migration: read vault notes, strip Obsidian syntax (Dataview, `up:`, backlink blocks), emit `content/<LEVEL>/<id>.md` with valid frontmatter
-- [ ] 4.3 Normalize ids to the `A1-07` two-digit pattern during migration
-- [ ] 4.4 Implement theme assignment writing `theme` per card and maintaining the registry (contiguous by order)
-- [ ] 4.5 Implement the enrichment step (consistent template; preserves id/level/order; output reviewable)
-- [ ] 4.6 Implement integrity validation (duplicate ids, duplicate order-in-level, unknown level/theme, unresolved `related`, missing required fields); non-zero exit on failure
-- [ ] 4.7 Implement bundle compilation (runs validation first; writes the bundled content artifact to app resources; fails if validation fails)
-- [ ] 4.8 Run migration on the 165 vault cards, then validate; review output and commit the migrated content
-- [ ] 4.9 Add pipeline tests: validation catches duplicates/dangling refs; clean content passes; compile produces a bundle
+- [x] 4.1 Choose pipeline language (Node or Python); record the decision in `CLAUDE.md`
+- [x] 4.2 Implement seed migration: read vault notes, strip Obsidian syntax (Dataview, `up:`, backlink blocks), emit `content/<LEVEL>/<id>.md` with valid frontmatter
+- [x] 4.3 Normalize ids to the `A1-07` two-digit pattern during migration
+- [x] 4.4 Implement theme assignment writing `theme` per card and maintaining the registry (contiguous by order)
+- [x] 4.5 Implement the enrichment step (consistent template; preserves id/level/order; output reviewable)
+- [x] 4.6 Implement integrity validation (duplicate ids, duplicate order-in-level, unknown level/theme, unresolved `related`, missing required fields); non-zero exit on failure
+- [x] 4.7 Implement bundle compilation (runs validation first; writes the bundled content artifact to app resources; fails if validation fails)
+- [x] 4.8 Run migration on the 165 vault cards, then validate; review output and commit the migrated content
+- [x] 4.9 Add pipeline tests: validation catches duplicates/dangling refs; clean content passes; compile produces a bundle
 
 ## 5. Content Loading (app)
 
-- [ ] 5.1 Embed the compiled content bundle in app resources
-- [ ] 5.2 Implement content loading at startup; expose levels/themes/cards queryable in memory
-- [ ] 5.3 Add a test that all bundled cards load and `related`/theme references resolve in-app
-- [ ] 5.4 Choose and integrate a SwiftUI Markdown renderer (tables + callouts); render a sample card body in the gallery; record the choice in `CLAUDE.md`
+- [x] 5.1 Embed the compiled content bundle in app resources
+- [x] 5.2 Implement content loading at startup; expose levels/themes/cards queryable in memory
+- [x] 5.3 Add a test that all bundled cards load and `related`/theme references resolve in-app
+- [x] 5.4 Choose and integrate a SwiftUI Markdown renderer (tables + callouts); render a sample card body in the gallery; record the choice in `CLAUDE.md`
 
 ## 6. Persistence & iCloud Sync Foundation
 

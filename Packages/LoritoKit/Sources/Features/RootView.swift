@@ -1,13 +1,18 @@
 // Features — SwiftUI screens. Depends inward on Domain, Content, Persistence, DesignSystem.
 //
-// During the foundation phase RootView surfaces the design-system gallery so the
-// components can be verified on device/simulator. Real screens (Today, study,
-// catalog, onboarding) replace this in later changes.
+// During the foundation phase RootView loads the bundled content at startup and
+// surfaces the design-system gallery. Real screens (Today, study, catalog,
+// onboarding) replace this in later changes.
 
 import SwiftUI
+import Domain
+import Content
 import DesignSystem
 
 public struct RootView: View {
+    @State private var catalog: ContentCatalog?
+    @State private var loadError: Bool = false
+
     public init() {}
 
     public var body: some View {
@@ -19,11 +24,18 @@ public struct RootView: View {
                 Text("Español")
                     .font(LoritoFont.heading)
                     .foregroundStyle(LoritoColor.textSecondary)
-                Text("Foundation scaffold — экраны появятся в следующих изменениях.")
-                    .font(LoritoFont.caption)
-                    .foregroundStyle(LoritoColor.textTertiary)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal, LoritoSpacing.xl)
+
+                if let catalog {
+                    Text("\(catalog.cards.count) карточек · \(catalog.themes.count) тем · \(catalog.levels.count) уровней")
+                        .font(LoritoFont.caption)
+                        .foregroundStyle(LoritoColor.textTertiary)
+                } else if loadError {
+                    Text("Не удалось загрузить контент")
+                        .font(LoritoFont.caption)
+                        .foregroundStyle(LoritoColor.danger)
+                } else {
+                    ProgressView()
+                }
 
                 NavigationLink("Дизайн-система") {
                     ComponentGalleryView()
@@ -37,6 +49,13 @@ public struct RootView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(LoritoColor.surface.ignoresSafeArea())
+            .task {
+                do {
+                    catalog = try ContentLoader.loadCatalog()
+                } catch {
+                    loadError = true
+                }
+            }
         }
     }
 }
