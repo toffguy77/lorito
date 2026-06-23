@@ -45,14 +45,14 @@
 
 ## 6. Persistence & iCloud Sync Foundation
 
-- [ ] 6.1 Define SwiftData user-data models: UserSettings (target level, selected themes, reminder config, daily new-card count), CardReview (easeFactor, interval, repetitions, dueDate, lastGrade, status), StudyLog
-- [ ] 6.2 Set up the SwiftData ModelContainer (local-first), behind a thin persistence protocol to keep Domain/Features decoupled
-- [ ] 6.3 Add CloudKit sync via ModelConfiguration behind a configuration flag; add the CloudKit entitlement with container `iCloud.com.toffguy.lorito` and document setup in `CLAUDE.md`
-- [ ] 6.4 Add tests: write/read round-trip across a simulated relaunch; settings and review state persist
-- [ ] 6.5 Confirm the Domain layer imports no SwiftUI/SwiftData/CloudKit (lint/check or test)
+- [x] 6.1 Define SwiftData user-data models: UserSettings (target level, selected themes, reminder config, daily new-card count), CardReview (easeFactor, interval, repetitions, dueDate, lastGrade, status), StudyLog
+- [x] 6.2 Set up the SwiftData ModelContainer (local-first), behind a thin persistence protocol to keep Domain/Features decoupled
+- [x] 6.3 Add CloudKit sync via ModelConfiguration behind a configuration flag; add the CloudKit entitlement with container `iCloud.com.toffguy.lorito` and document setup in `CLAUDE.md`
+- [x] 6.4 Add tests: write/read round-trip across a simulated relaunch; settings and review state persist
+- [x] 6.5 Confirm the Domain layer imports no SwiftUI/SwiftData/CloudKit (lint/check or test)
 
 ## 7. Documentation & Wrap-up
 
-- [ ] 7.1 Write `CLAUDE.md` (build/run/test commands, pipeline commands, architecture layers, Markdown-renderer and pipeline-language decisions, CloudKit setup notes)
-- [ ] 7.2 Run `openspec validate bootstrap-foundation --strict` and fix any issues
-- [ ] 7.3 Verify acceptance: app builds and launches, gallery renders both themes, pipeline validates+bundles, persistence round-trips
+- [x] 7.1 Write `CLAUDE.md` (build/run/test commands, pipeline commands, architecture layers, Markdown-renderer and pipeline-language decisions, CloudKit setup notes)
+- [x] 7.2 Run `openspec validate bootstrap-foundation --strict` and fix any issues
+- [x] 7.3 Verify acceptance: app builds and launches, gallery renders both themes, pipeline validates+bundles, persistence round-trips
