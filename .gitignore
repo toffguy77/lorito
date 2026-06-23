@@ -13,7 +13,8 @@ xcuserdata/
 *.xcscmblueprint
 *.moved-aside
 .swiftpm/
-Packages/
+.build/
+Packages/*/.build/
 
 # Content pipeline output (compiled bundle is generated)
 tools/node_modules/

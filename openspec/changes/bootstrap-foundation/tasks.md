@@ -1,9 +1,9 @@
 ## 1. Repo & Project Scaffold
 
-- [ ] 1.1 Initialize git, add `.gitignore` (Xcode, Swift, `.superpowers/`, build artifacts, content bundle output)
-- [ ] 1.2 Create the Xcode iOS app project `Lorito` targeting iOS 17+ (Swift 6) with bundle id `com.toffguy.lorito` and App Store name "Lorito Español"; app launches to a placeholder root screen
-- [ ] 1.3 Create layer folders/groups: `Domain`, `Content`, `Persistence`, `DesignSystem`, `Features`; document the dependency direction
-- [ ] 1.4 Add a unit test target and a smoke test that the app module imports
+- [x] 1.1 Initialize git, add `.gitignore` (Xcode, Swift, `.superpowers/`, build artifacts, content bundle output)
+- [x] 1.2 Create the Xcode iOS app project `Lorito` targeting iOS 17+ (Swift 6) with bundle id `com.toffguy.lorito` and App Store name "Lorito Español"; app launches to a placeholder root screen
+- [x] 1.3 Create layer folders/groups: `Domain`, `Content`, `Persistence`, `DesignSystem`, `Features`; document the dependency direction
+- [x] 1.4 Add a unit test target and a smoke test that the app module imports
 
 ## 2. Design System (no data dependency)
 

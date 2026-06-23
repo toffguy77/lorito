@@ -1,0 +1,33 @@
+name: Lorito
+options:
+  bundleIdPrefix: com.toffguy
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+
+packages:
+  LoritoKit:
+    path: Packages/LoritoKit
+
+targets:
+  Lorito:
+    type: application
+    platform: iOS
+    sources:
+      - path: Lorito/Sources
+    dependencies:
+      - package: LoritoKit
+        product: Features
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.toffguy.lorito
+        MARKETING_VERSION: "0.1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        SWIFT_VERSION: "6.0"
+        TARGETED_DEVICE_FAMILY: "1,2"
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: "Lorito Español"
+        INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations: "UIInterfaceOrientationPortrait"
+        CODE_SIGNING_ALLOWED: NO
