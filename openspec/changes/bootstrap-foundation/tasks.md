@@ -7,16 +7,16 @@
 
 ## 2. Design System (no data dependency)
 
-- [ ] 2.1 Define semantic color tokens (accent/indigo, surface, surfaceSecondary, textPrimary, textSecondary, success, warning, danger) with light + dark values
-- [ ] 2.2 Define typography scale (title/heading/body/caption/label with weight + tracking) on SF Pro, with Dynamic Type support
-- [ ] 2.3 Define spacing, corner-radius, and elevation tokens
-- [ ] 2.4 Build component: level/theme chip
-- [ ] 2.5 Build component: segmented day-progress indicator
-- [ ] 2.6 Build component: callout blocks (Суть / Ключевые моменты / Ошибки / Полезно) with variants
-- [ ] 2.7 Build component: SM-2 grade buttons (Опять / Трудно / Хорошо / Легко)
-- [ ] 2.8 Build component: study-card container
-- [ ] 2.9 Build the component gallery screen rendering all components in light + dark; verify visually
-- [ ] 2.10 Verify no raw color literals at component call sites (tokens only)
+- [x] 2.1 Define semantic color tokens (accent/indigo, surface, surfaceSecondary, textPrimary, textSecondary, success, warning, danger) with light + dark values
+- [x] 2.2 Define typography scale (title/heading/body/caption/label with weight + tracking) on SF Pro, with Dynamic Type support
+- [x] 2.3 Define spacing, corner-radius, and elevation tokens
+- [x] 2.4 Build component: level/theme chip
+- [x] 2.5 Build component: segmented day-progress indicator
+- [x] 2.6 Build component: callout blocks (Суть / Ключевые моменты / Ошибки / Полезно) with variants
+- [x] 2.7 Build component: SM-2 grade buttons (Опять / Трудно / Хорошо / Легко)
+- [x] 2.8 Build component: study-card container
+- [x] 2.9 Build the component gallery screen rendering all components in light + dark; verify visually
+- [x] 2.10 Verify no raw color literals at component call sites (tokens only)
 
 ## 3. Content Model & Schema
 
