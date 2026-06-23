@@ -1,0 +1,26 @@
+# Brainstorming / visual companion (local only)
+.superpowers/
+
+# macOS
+.DS_Store
+
+# Xcode / Swift
+build/
+DerivedData/
+*.xcuserstate
+*.xcuserdatad/
+xcuserdata/
+*.xcscmblueprint
+*.moved-aside
+.swiftpm/
+Packages/
+
+# Content pipeline output (compiled bundle is generated)
+tools/node_modules/
+tools/__pycache__/
+*.pyc
+
+# Misc
+*.log
+.env
+.env.*
