@@ -8,14 +8,32 @@ import DesignSystem
 /// non-empty-scope guard blocks persisting an unstudyable selection.
 public struct SettingsView: View {
     @State private var model: ScopeSelectionModel
+    private let reminders: ReminderService?
 
-    public init(model: ScopeSelectionModel) {
+    public init(model: ScopeSelectionModel, reminders: ReminderService? = nil) {
         _model = State(initialValue: model)
+        self.reminders = reminders
     }
 
     public var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: LoritoSpacing.lg) {
+                if let reminders {
+                    NavigationLink {
+                        RemindersView(service: reminders)
+                    } label: {
+                        HStack {
+                            Text("Напоминания")
+                                .font(LoritoFont.heading)
+                                .foregroundStyle(LoritoColor.textPrimary)
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                                .foregroundStyle(LoritoColor.textTertiary)
+                        }
+                    }
+                    .buttonStyle(.plain)
+                }
+
                 section("Уровень") {
                     LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: LoritoSpacing.sm) {
                         ForEach(model.allLevels) { level in

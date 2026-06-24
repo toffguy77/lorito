@@ -9,10 +9,16 @@ public struct TodayView: View {
     @State private var session: StudySessionModel?
     private let catalog: ContentCatalog
     private let store: UserDataStore
+    private let onSessionComplete: () -> Void
 
-    public init(store: UserDataStore, catalog: ContentCatalog) {
+    public init(
+        store: UserDataStore,
+        catalog: ContentCatalog,
+        onSessionComplete: @escaping () -> Void = {}
+    ) {
         self.store = store
         self.catalog = catalog
+        self.onSessionComplete = onSessionComplete
         _model = State(initialValue: TodayModel(store: store, catalog: catalog))
     }
 
@@ -37,7 +43,10 @@ public struct TodayView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(LoritoColor.surface.ignoresSafeArea())
         .onAppear { model.refresh() }
-        .sheet(item: $session, onDismiss: { model.refresh() }) { session in
+        .sheet(item: $session, onDismiss: {
+            model.refresh()
+            onSessionComplete()
+        }) { session in
             StudySessionView(model: session) { self.session = nil }
         }
     }
