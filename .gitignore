@@ -18,3 +18,8 @@ fastlane/screenshots/screenshots.html
 
 # macOS
 .DS_Store
+
+# SwiftPM build artifacts
+.build/
+Packages/*/.build/
+*.xcodeproj
