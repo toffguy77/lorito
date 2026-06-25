@@ -1,13 +1,23 @@
 default_platform(:ios)
 
-# App Store Connect API key from env (base64-encoded .p8 content).
+# App Store Connect API key. Prefer the on-disk .p8 (ASC_KEY_PATH) — it avoids a
+# transporter base64-decoding bug in some fastlane builds; fall back to the
+# base64 env var for local use.
 def asc_api_key
-  app_store_connect_api_key(
-    key_id: ENV["APP_STORE_CONNECT_KEY_ID"],
-    issuer_id: ENV["APP_STORE_CONNECT_ISSUER_ID"],
-    key_content: ENV["APP_STORE_CONNECT_API_KEY"],
-    is_key_content_base64: true,
-  )
+  if ENV["ASC_KEY_PATH"] && File.exist?(ENV["ASC_KEY_PATH"])
+    app_store_connect_api_key(
+      key_id: ENV["APP_STORE_CONNECT_KEY_ID"],
+      issuer_id: ENV["APP_STORE_CONNECT_ISSUER_ID"],
+      key_filepath: ENV["ASC_KEY_PATH"],
+    )
+  else
+    app_store_connect_api_key(
+      key_id: ENV["APP_STORE_CONNECT_KEY_ID"],
+      issuer_id: ENV["APP_STORE_CONNECT_ISSUER_ID"],
+      key_content: ENV["APP_STORE_CONNECT_API_KEY"],
+      is_key_content_base64: true,
+    )
+  end
 end
 
 # xcodebuild auth args so -allowProvisioningUpdates can manage signing via the key.
