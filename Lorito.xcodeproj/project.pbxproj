@@ -8,14 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		2388064A590C701231939C27 /* LoritoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB7A78119CE11C80562D860 /* LoritoApp.swift */; };
+		430A9AEB24C809871297FC75 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78372215973504DA2A40278 /* SnapshotHelper.swift */; };
+		534B5D6160D623445F6F1D2A /* ScreenshotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C225FB8BD31FDFD266F6827E /* ScreenshotUITests.swift */; };
 		6576280698353B98FBA98459 /* Features in Frameworks */ = {isa = PBXBuildFile; productRef = FEDD976A8081DBF1D3B25E5C /* Features */; };
 		8209D979C2BFFEE316F2EB8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE2BA15F599EE1E54712565E /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		A1B5A90BA8C74A5BCF18AA36 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9EDA45D29B062ADDA1BB778 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 684FF0B98A8A63DAEDDB83DE;
+			remoteInfo = Lorito;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		5DB7A78119CE11C80562D860 /* LoritoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoritoApp.swift; sourceTree = "<group>"; };
+		6AEAF0A426D46413D8EAD129 /* LoritoUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = LoritoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FE00357D1B781548532B636 /* Lorito.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Lorito.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C225FB8BD31FDFD266F6827E /* ScreenshotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotUITests.swift; sourceTree = "<group>"; };
 		CFB23746047EB5ED4339983A /* LoritoKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = LoritoKit; path = Packages/LoritoKit; sourceTree = SOURCE_ROOT; };
+		D78372215973504DA2A40278 /* SnapshotHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		EE2BA15F599EE1E54712565E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -39,6 +54,15 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
+		29A2FC8F1B511B1F18F61694 /* LoritoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C225FB8BD31FDFD266F6827E /* ScreenshotUITests.swift */,
+				D78372215973504DA2A40278 /* SnapshotHelper.swift */,
+			);
+			path = LoritoUITests;
+			sourceTree = "<group>";
+		};
 		960C2C4EE73E7F1BA294B645 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				E89B62B53314643201CAF493 /* Lorito */,
+				29A2FC8F1B511B1F18F61694 /* LoritoUITests */,
 				960C2C4EE73E7F1BA294B645 /* Packages */,
 				F5FD0D58841A638282042397 /* Products */,
 			);
@@ -69,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				8FE00357D1B781548532B636 /* Lorito.app */,
+				6AEAF0A426D46413D8EAD129 /* LoritoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,6 +122,24 @@
 			productReference = 8FE00357D1B781548532B636 /* Lorito.app */;
 			productType = "com.apple.product-type.application";
 		};
+		DB427B0CCF048604DC38D2C0 /* LoritoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9DFE9E0C48D7A0B0E0E56755 /* Build configuration list for PBXNativeTarget "LoritoUITests" */;
+			buildPhases = (
+				C4C56EB1857E32F2DDAAE892 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B14C337070C3352913F84F11 /* PBXTargetDependency */,
+			);
+			name = LoritoUITests;
+			packageProductDependencies = (
+			);
+			productName = LoritoUITests;
+			productReference = 6AEAF0A426D46413D8EAD129 /* LoritoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -108,6 +152,11 @@
 					684FF0B98A8A63DAEDDB83DE = {
 						DevelopmentTeam = 3GWRDGA8B7;
 						ProvisioningStyle = Automatic;
+					};
+					DB427B0CCF048604DC38D2C0 = {
+						DevelopmentTeam = 3GWRDGA8B7;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 684FF0B98A8A63DAEDDB83DE;
 					};
 				};
 			};
@@ -129,6 +178,7 @@
 			projectRoot = "";
 			targets = (
 				684FF0B98A8A63DAEDDB83DE /* Lorito */,
+				DB427B0CCF048604DC38D2C0 /* LoritoUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -153,7 +203,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C4C56EB1857E32F2DDAAE892 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				534B5D6160D623445F6F1D2A /* ScreenshotUITests.swift in Sources */,
+				430A9AEB24C809871297FC75 /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B14C337070C3352913F84F11 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 684FF0B98A8A63DAEDDB83DE /* Lorito */;
+			targetProxy = A1B5A90BA8C74A5BCF18AA36 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		2DABBA84163D112D0935247F /* Release */ = {
@@ -178,7 +245,45 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.toffguy.lorito;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		349E90040A4738D862F45344 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3GWRDGA8B7;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.toffguy.lorito.uitests;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Lorito;
+			};
+			name = Debug;
+		};
+		3BE430661D279FBF7E77DDAE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3GWRDGA8B7;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.toffguy.lorito.uitests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Lorito;
 			};
 			name = Release;
 		};
@@ -323,7 +428,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.toffguy.lorito;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 6.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -344,6 +449,15 @@
 			buildConfigurations = (
 				E09B80C05FEBD664E52EBCBC /* Debug */,
 				2DABBA84163D112D0935247F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9DFE9E0C48D7A0B0E0E56755 /* Build configuration list for PBXNativeTarget "LoritoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				349E90040A4738D862F45344 /* Debug */,
+				3BE430661D279FBF7E77DDAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

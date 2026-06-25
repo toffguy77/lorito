@@ -1,0 +1,40 @@
+{
+  "": {
+    "swift-dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/FeaturesTests.build/master.swiftdeps"
+  },
+  "/Users/thatguy/src/lorito/Packages/LoritoKit/Tests/FeaturesTests/CardBodyCorpusTests.swift": {
+    "dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/FeaturesTests.build/CardBodyCorpusTests.d",
+    "object": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/FeaturesTests.build/CardBodyCorpusTests.swift.o",
+    "swiftmodule": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/FeaturesTests.build/CardBodyCorpusTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/FeaturesTests.build/CardBodyCorpusTests.swiftdeps",
+    "diagnostics": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/FeaturesTests.build/CardBodyCorpusTests.dia"
+  },
+  "/Users/thatguy/src/lorito/Packages/LoritoKit/Tests/FeaturesTests/FeaturesTests.swift": {
+    "dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/FeaturesTests.build/FeaturesTests.d",
+    "object": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/FeaturesTests.build/FeaturesTests.swift.o",
+    "swiftmodule": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/FeaturesTests.build/FeaturesTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/FeaturesTests.build/FeaturesTests.swiftdeps",
+    "diagnostics": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/FeaturesTests.build/FeaturesTests.dia"
+  },
+  "/Users/thatguy/src/lorito/Packages/LoritoKit/Tests/FeaturesTests/ReminderServiceTests.swift": {
+    "dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/FeaturesTests.build/ReminderServiceTests.d",
+    "object": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/FeaturesTests.build/ReminderServiceTests.swift.o",
+    "swiftmodule": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/FeaturesTests.build/ReminderServiceTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/FeaturesTests.build/ReminderServiceTests.swiftdeps",
+    "diagnostics": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/FeaturesTests.build/ReminderServiceTests.dia"
+  },
+  "/Users/thatguy/src/lorito/Packages/LoritoKit/Tests/FeaturesTests/ScopeSelectionModelTests.swift": {
+    "dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/FeaturesTests.build/ScopeSelectionModelTests.d",
+    "object": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/FeaturesTests.build/ScopeSelectionModelTests.swift.o",
+    "swiftmodule": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/FeaturesTests.build/ScopeSelectionModelTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/FeaturesTests.build/ScopeSelectionModelTests.swiftdeps",
+    "diagnostics": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/FeaturesTests.build/ScopeSelectionModelTests.dia"
+  },
+  "/Users/thatguy/src/lorito/Packages/LoritoKit/Tests/FeaturesTests/StudyFlowTests.swift": {
+    "dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/FeaturesTests.build/StudyFlowTests.d",
+    "object": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/FeaturesTests.build/StudyFlowTests.swift.o",
+    "swiftmodule": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/FeaturesTests.build/StudyFlowTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/FeaturesTests.build/StudyFlowTests.swiftdeps",
+    "diagnostics": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/FeaturesTests.build/StudyFlowTests.dia"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "": {
+    "swift-dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/DesignSystemTests.build/master.swiftdeps"
+  },
+  "/Users/thatguy/src/lorito/Packages/LoritoKit/Tests/DesignSystemTests/CardBodyParserTests.swift": {
+    "dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/DesignSystemTests.build/CardBodyParserTests.d",
+    "object": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/DesignSystemTests.build/CardBodyParserTests.swift.o",
+    "swiftmodule": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/DesignSystemTests.build/CardBodyParserTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/DesignSystemTests.build/CardBodyParserTests.swiftdeps",
+    "diagnostics": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/DesignSystemTests.build/CardBodyParserTests.dia"
+  }
+}

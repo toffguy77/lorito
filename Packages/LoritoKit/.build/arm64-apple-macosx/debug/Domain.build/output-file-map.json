@@ -1,0 +1,131 @@
+{
+  "": {
+    "swift-dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/master.swiftdeps"
+  },
+  "/Users/thatguy/src/lorito/Packages/LoritoKit/Sources/Domain/DailyPlan/DailyPlanner.swift": {
+    "dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/DailyPlanner.d",
+    "object": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/DailyPlanner.swift.o",
+    "swiftmodule": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/DailyPlanner~partial.swiftmodule",
+    "swift-dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/DailyPlanner.swiftdeps",
+    "diagnostics": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/DailyPlanner.dia"
+  },
+  "/Users/thatguy/src/lorito/Packages/LoritoKit/Sources/Domain/Domain.swift": {
+    "dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/Domain.d",
+    "object": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/Domain.swift.o",
+    "swiftmodule": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/Domain~partial.swiftmodule",
+    "swift-dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/Domain.swiftdeps",
+    "diagnostics": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/Domain.dia"
+  },
+  "/Users/thatguy/src/lorito/Packages/LoritoKit/Sources/Domain/Model/CEFRLevel.swift": {
+    "dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/CEFRLevel.d",
+    "object": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/CEFRLevel.swift.o",
+    "swiftmodule": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/CEFRLevel~partial.swiftmodule",
+    "swift-dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/CEFRLevel.swiftdeps",
+    "diagnostics": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/CEFRLevel.dia"
+  },
+  "/Users/thatguy/src/lorito/Packages/LoritoKit/Sources/Domain/Model/Card.swift": {
+    "dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/Card.d",
+    "object": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/Card.swift.o",
+    "swiftmodule": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/Card~partial.swiftmodule",
+    "swift-dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/Card.swiftdeps",
+    "diagnostics": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/Card.dia"
+  },
+  "/Users/thatguy/src/lorito/Packages/LoritoKit/Sources/Domain/Model/ContentCatalog.swift": {
+    "dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/ContentCatalog.d",
+    "object": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/ContentCatalog.swift.o",
+    "swiftmodule": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/ContentCatalog~partial.swiftmodule",
+    "swift-dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/ContentCatalog.swiftdeps",
+    "diagnostics": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/ContentCatalog.dia"
+  },
+  "/Users/thatguy/src/lorito/Packages/LoritoKit/Sources/Domain/Model/Theme.swift": {
+    "dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/Theme.d",
+    "object": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/Theme.swift.o",
+    "swiftmodule": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/Theme~partial.swiftmodule",
+    "swift-dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/Theme.swiftdeps",
+    "diagnostics": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/Theme.dia"
+  },
+  "/Users/thatguy/src/lorito/Packages/LoritoKit/Sources/Domain/Reminders/ReminderConfig.swift": {
+    "dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/ReminderConfig.d",
+    "object": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/ReminderConfig.swift.o",
+    "swiftmodule": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/ReminderConfig~partial.swiftmodule",
+    "swift-dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/ReminderConfig.swiftdeps",
+    "diagnostics": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/ReminderConfig.dia"
+  },
+  "/Users/thatguy/src/lorito/Packages/LoritoKit/Sources/Domain/Reminders/ReminderPlanner.swift": {
+    "dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/ReminderPlanner.d",
+    "object": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/ReminderPlanner.swift.o",
+    "swiftmodule": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/ReminderPlanner~partial.swiftmodule",
+    "swift-dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/ReminderPlanner.swiftdeps",
+    "diagnostics": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/ReminderPlanner.dia"
+  },
+  "/Users/thatguy/src/lorito/Packages/LoritoKit/Sources/Domain/SRS/DueSelection.swift": {
+    "dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/DueSelection.d",
+    "object": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/DueSelection.swift.o",
+    "swiftmodule": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/DueSelection~partial.swiftmodule",
+    "swift-dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/DueSelection.swiftdeps",
+    "diagnostics": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/DueSelection.dia"
+  },
+  "/Users/thatguy/src/lorito/Packages/LoritoKit/Sources/Domain/SRS/Grade.swift": {
+    "dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/Grade.d",
+    "object": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/Grade.swift.o",
+    "swiftmodule": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/Grade~partial.swiftmodule",
+    "swift-dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/Grade.swiftdeps",
+    "diagnostics": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/Grade.dia"
+  },
+  "/Users/thatguy/src/lorito/Packages/LoritoKit/Sources/Domain/SRS/GradingService.swift": {
+    "dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/GradingService.d",
+    "object": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/GradingService.swift.o",
+    "swiftmodule": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/GradingService~partial.swiftmodule",
+    "swift-dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/GradingService.swiftdeps",
+    "diagnostics": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/GradingService.dia"
+  },
+  "/Users/thatguy/src/lorito/Packages/LoritoKit/Sources/Domain/SRS/SchedulerConstants.swift": {
+    "dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/SchedulerConstants.d",
+    "object": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/SchedulerConstants.swift.o",
+    "swiftmodule": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/SchedulerConstants~partial.swiftmodule",
+    "swift-dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/SchedulerConstants.swiftdeps",
+    "diagnostics": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/SchedulerConstants.dia"
+  },
+  "/Users/thatguy/src/lorito/Packages/LoritoKit/Sources/Domain/SRS/SpacedRepetitionScheduler.swift": {
+    "dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/SpacedRepetitionScheduler.d",
+    "object": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/SpacedRepetitionScheduler.swift.o",
+    "swiftmodule": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/SpacedRepetitionScheduler~partial.swiftmodule",
+    "swift-dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/SpacedRepetitionScheduler.swiftdeps",
+    "diagnostics": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/SpacedRepetitionScheduler.dia"
+  },
+  "/Users/thatguy/src/lorito/Packages/LoritoKit/Sources/Domain/Selection/SelectionScope.swift": {
+    "dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/SelectionScope.d",
+    "object": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/SelectionScope.swift.o",
+    "swiftmodule": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/SelectionScope~partial.swiftmodule",
+    "swift-dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/SelectionScope.swiftdeps",
+    "diagnostics": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/SelectionScope.dia"
+  },
+  "/Users/thatguy/src/lorito/Packages/LoritoKit/Sources/Domain/UserData/ReviewState.swift": {
+    "dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/ReviewState.d",
+    "object": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/ReviewState.swift.o",
+    "swiftmodule": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/ReviewState~partial.swiftmodule",
+    "swift-dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/ReviewState.swiftdeps",
+    "diagnostics": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/ReviewState.dia"
+  },
+  "/Users/thatguy/src/lorito/Packages/LoritoKit/Sources/Domain/UserData/StudyEvent.swift": {
+    "dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/StudyEvent.d",
+    "object": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/StudyEvent.swift.o",
+    "swiftmodule": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/StudyEvent~partial.swiftmodule",
+    "swift-dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/StudyEvent.swiftdeps",
+    "diagnostics": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/StudyEvent.dia"
+  },
+  "/Users/thatguy/src/lorito/Packages/LoritoKit/Sources/Domain/UserData/UserDataStore.swift": {
+    "dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/UserDataStore.d",
+    "object": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/UserDataStore.swift.o",
+    "swiftmodule": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/UserDataStore~partial.swiftmodule",
+    "swift-dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/UserDataStore.swiftdeps",
+    "diagnostics": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/UserDataStore.dia"
+  },
+  "/Users/thatguy/src/lorito/Packages/LoritoKit/Sources/Domain/UserData/UserSettings.swift": {
+    "dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/UserSettings.d",
+    "object": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/UserSettings.swift.o",
+    "swiftmodule": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/UserSettings~partial.swiftmodule",
+    "swift-dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/UserSettings.swiftdeps",
+    "diagnostics": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Domain.build/UserSettings.dia"
+  }
+}

@@ -1,27 +1,20 @@
-# Brainstorming / visual companion (local only)
-.superpowers/
+# Build artifacts
+build/
+DerivedData/
+*.ipa
+*.xcarchive
+
+# Secrets — never commit signing keys/certs
+*.p8
+*.p12
+*.mobileprovision
+.secrets/
+
+# fastlane transient output
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/test_output/
+fastlane/screenshots/screenshots.html
 
 # macOS
 .DS_Store
-
-# Xcode / Swift
-build/
-DerivedData/
-*.xcuserstate
-*.xcuserdatad/
-xcuserdata/
-*.xcscmblueprint
-*.moved-aside
-.swiftpm/
-.build/
-Packages/*/.build/
-
-# Content pipeline output (compiled bundle is generated)
-tools/node_modules/
-tools/__pycache__/
-*.pyc
-
-# Misc
-*.log
-.env
-.env.*

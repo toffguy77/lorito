@@ -1,0 +1,135 @@
+<h2>Визуальное направление дизайн-системы</h2>
+<p class="subtitle">Одна и та же учебная карточка в трёх стилях. Какой ближе? Кликни вариант.</p>
+
+<style>
+  .dd-row { display:flex; gap:22px; flex-wrap:wrap; justify-content:center; align-items:stretch; }
+  .phone { width:300px; border-radius:34px; padding:14px; box-sizing:border-box; box-shadow:0 18px 50px rgba(0,0,0,.18); position:relative; }
+  .screen { border-radius:24px; overflow:hidden; height:560px; display:flex; flex-direction:column; }
+  .topbar { display:flex; align-items:center; justify-content:space-between; padding:16px 18px 8px; font-size:13px; }
+  .body { padding:6px 18px 18px; flex:1; overflow:hidden; display:flex; flex-direction:column; }
+  .chip { display:inline-block; font-size:11px; font-weight:700; letter-spacing:.04em; padding:4px 10px; border-radius:999px; text-transform:uppercase; }
+  .ring { width:30px; height:30px; border-radius:50%; display:grid; place-items:center; font-size:11px; font-weight:700; }
+  .h-title { margin:14px 0 4px; line-height:1.15; }
+  .es { font-style:italic; opacity:.8; font-size:14px; margin-bottom:14px; }
+  .callout { border-radius:14px; padding:12px 14px; font-size:13.5px; line-height:1.45; margin-bottom:12px; }
+  .ex { font-size:13.5px; line-height:1.5; }
+  .ex b { font-weight:700; }
+  .grades { display:flex; gap:8px; margin-top:auto; padding-top:14px; }
+  .g { flex:1; text-align:center; font-size:12px; font-weight:700; padding:11px 0; border-radius:13px; }
+  .name { margin-top:14px; }
+  .swatches { display:flex; gap:6px; margin-top:8px; justify-content:center; }
+  .sw { width:20px; height:20px; border-radius:6px; box-shadow:inset 0 0 0 1px rgba(0,0,0,.06); }
+  .meta { text-align:center; }
+  .option.card-pick { cursor:pointer; border-radius:40px; padding:6px; transition:transform .12s ease, box-shadow .12s; }
+  .option.card-pick:hover { transform:translateY(-4px); }
+  .option.card-pick.selected { box-shadow:0 0 0 3px #4f46e5; }
+</style>
+
+<div class="dd-row">
+
+  <!-- A: Warm Iberian -->
+  <div class="option card-pick" data-choice="iberian" onclick="toggleSelect(this)">
+  <div class="phone" style="background:#f3e6d8;">
+    <div class="screen" style="background:#fbf5ec;">
+      <div class="topbar" style="color:#7c4a2d;">
+        <span class="chip" style="background:#e9c46a;color:#6b3b12;">A1 · Verbos</span>
+        <span class="ring" style="background:#e76f51;color:#fff;">3/8</span>
+      </div>
+      <div class="body">
+        <h2 class="h-title" style="font-family:Georgia,'Times New Roman',serif;color:#9c2a1c;font-size:26px;">El verbo <span style="font-style:italic;">ser</span></h2>
+        <div class="es" style="color:#8a5a3b;">быть — постоянное, сущность</div>
+        <div class="callout" style="background:#fbe9d0;border-left:4px solid #e76f51;color:#6b3b12;">
+          <b>Суть.</b> <i>Ser</i> описывает идентичность, происхождение, время и неизменные свойства.
+        </div>
+        <div class="ex" style="color:#5c4636;">
+          <b style="color:#9c2a1c;">Soy</b> de España.<br>
+          <b style="color:#9c2a1c;">Es</b> profesor.<br>
+          <b style="color:#9c2a1c;">Somos</b> amigos.
+        </div>
+        <div class="grades">
+          <div class="g" style="background:#f1d6cf;color:#9c2a1c;">Опять</div>
+          <div class="g" style="background:#f4e3c4;color:#8a5a12;">Трудно</div>
+          <div class="g" style="background:#cfe3cf;color:#2f5d33;">Хорошо</div>
+          <div class="g" style="background:#e76f51;color:#fff;">Легко</div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="meta">
+      <h3 class="name" style="color:inherit;">A · Warm Iberian</h3>
+      <p class="subtitle" style="margin:2px 0 0;">Тёплая «испанская» палитра, редакторский serif. Уютно, с характером.</p>
+      <div class="swatches"><span class="sw" style="background:#e76f51;"></span><span class="sw" style="background:#e9c46a;"></span><span class="sw" style="background:#9c2a1c;"></span><span class="sw" style="background:#fbf5ec;"></span></div>
+    </div>
+  </div>
+
+  <!-- B: Modern Calm -->
+  <div class="option card-pick" data-choice="calm" onclick="toggleSelect(this)">
+  <div class="phone" style="background:#e8eaf0;">
+    <div class="screen" style="background:#ffffff;">
+      <div class="topbar" style="color:#6b7280;">
+        <span class="chip" style="background:#eef2ff;color:#4f46e5;">A1 · Verbos</span>
+        <span class="ring" style="background:#f3f4f6;color:#4f46e5;">3/8</span>
+      </div>
+      <div class="body">
+        <h2 class="h-title" style="font-family:-apple-system,sans-serif;color:#111827;font-size:25px;font-weight:800;letter-spacing:-.02em;">El verbo ser</h2>
+        <div class="es" style="color:#9ca3af;">быть — постоянное, сущность</div>
+        <div class="callout" style="background:#f6f7fb;color:#374151;">
+          <span style="color:#4f46e5;font-weight:700;">Суть · </span><i>Ser</i> описывает идентичность, происхождение, время и неизменные свойства.
+        </div>
+        <div class="ex" style="color:#4b5563;">
+          <b style="color:#4f46e5;">Soy</b> de España.<br>
+          <b style="color:#4f46e5;">Es</b> profesor.<br>
+          <b style="color:#4f46e5;">Somos</b> amigos.
+        </div>
+        <div class="grades">
+          <div class="g" style="background:#fef2f2;color:#dc2626;">Опять</div>
+          <div class="g" style="background:#fffbeb;color:#d97706;">Трудно</div>
+          <div class="g" style="background:#f0fdf4;color:#16a34a;">Хорошо</div>
+          <div class="g" style="background:#4f46e5;color:#fff;">Легко</div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="meta">
+      <h3 class="name" style="color:inherit;">B · Modern Calm</h3>
+      <p class="subtitle" style="margin:2px 0 0;">Чистый минимализм, воздух, мягкие тона. Премиально и спокойно.</p>
+      <div class="swatches"><span class="sw" style="background:#4f46e5;"></span><span class="sw" style="background:#eef2ff;"></span><span class="sw" style="background:#111827;"></span><span class="sw" style="background:#ffffff;"></span></div>
+    </div>
+  </div>
+
+  <!-- C: Bold Playful -->
+  <div class="option card-pick" data-choice="playful" onclick="toggleSelect(this)">
+  <div class="phone" style="background:#fff0d6;">
+    <div class="screen" style="background:#fffdf7;">
+      <div class="topbar" style="color:#a3520b;">
+        <span class="chip" style="background:#ffcf33;color:#7a3d00;">A1 · Verbos</span>
+        <span class="ring" style="background:#ff5d8f;color:#fff;">3/8</span>
+      </div>
+      <div class="body">
+        <h2 class="h-title" style="font-family:-apple-system,sans-serif;color:#3b1f5e;font-size:27px;font-weight:900;letter-spacing:-.01em;">El verbo ser 🔥</h2>
+        <div class="es" style="color:#8b5cf6;font-weight:600;">быть — постоянное, сущность</div>
+        <div class="callout" style="background:#efe7ff;border:2px solid #c4b5fd;color:#4c2a85;border-radius:18px;">
+          <b style="color:#7c3aed;">Суть!</b> <i>Ser</i> описывает идентичность, происхождение, время и неизменные свойства.
+        </div>
+        <div class="ex" style="color:#4b3b66;">
+          <b style="color:#e11d74;">Soy</b> de España.<br>
+          <b style="color:#e11d74;">Es</b> profesor.<br>
+          <b style="color:#e11d74;">Somos</b> amigos.
+        </div>
+        <div class="grades">
+          <div class="g" style="background:#ffe1e1;color:#e11d48;border-radius:16px;">Опять</div>
+          <div class="g" style="background:#fff0cc;color:#d97706;border-radius:16px;">Трудно</div>
+          <div class="g" style="background:#d8f7df;color:#15803d;border-radius:16px;">Хорошо</div>
+          <div class="g" style="background:#22c55e;color:#fff;border-radius:16px;box-shadow:0 4px 0 #15803d;">Легко</div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="meta">
+      <h3 class="name" style="color:inherit;">C · Bold Playful</h3>
+      <p class="subtitle" style="margin:2px 0 0;">Яркий, геймифицированный, энергичный (вайб Duolingo). Мотивирует.</p>
+      <div class="swatches"><span class="sw" style="background:#7c3aed;"></span><span class="sw" style="background:#ffcf33;"></span><span class="sw" style="background:#ff5d8f;"></span><span class="sw" style="background:#22c55e;"></span></div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,33 @@
+{
+  "": {
+    "swift-dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Persistence.build/master.swiftdeps"
+  },
+  "/Users/thatguy/src/lorito/Packages/LoritoKit/Sources/Persistence/Models/Records.swift": {
+    "dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Persistence.build/Records.d",
+    "object": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Persistence.build/Records.swift.o",
+    "swiftmodule": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Persistence.build/Records~partial.swiftmodule",
+    "swift-dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Persistence.build/Records.swiftdeps",
+    "diagnostics": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Persistence.build/Records.dia"
+  },
+  "/Users/thatguy/src/lorito/Packages/LoritoKit/Sources/Persistence/Persistence.swift": {
+    "dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Persistence.build/Persistence.d",
+    "object": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Persistence.build/Persistence.swift.o",
+    "swiftmodule": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Persistence.build/Persistence~partial.swiftmodule",
+    "swift-dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Persistence.build/Persistence.swiftdeps",
+    "diagnostics": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Persistence.build/Persistence.dia"
+  },
+  "/Users/thatguy/src/lorito/Packages/LoritoKit/Sources/Persistence/PersistenceController.swift": {
+    "dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Persistence.build/PersistenceController.d",
+    "object": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Persistence.build/PersistenceController.swift.o",
+    "swiftmodule": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Persistence.build/PersistenceController~partial.swiftmodule",
+    "swift-dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Persistence.build/PersistenceController.swiftdeps",
+    "diagnostics": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Persistence.build/PersistenceController.dia"
+  },
+  "/Users/thatguy/src/lorito/Packages/LoritoKit/Sources/Persistence/SwiftDataUserDataStore.swift": {
+    "dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Persistence.build/SwiftDataUserDataStore.d",
+    "object": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Persistence.build/SwiftDataUserDataStore.swift.o",
+    "swiftmodule": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Persistence.build/SwiftDataUserDataStore~partial.swiftmodule",
+    "swift-dependencies": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Persistence.build/SwiftDataUserDataStore.swiftdeps",
+    "diagnostics": "/Users/thatguy/src/lorito/Packages/LoritoKit/.build/arm64-apple-macosx/debug/Persistence.build/SwiftDataUserDataStore.dia"
+  }
+}
