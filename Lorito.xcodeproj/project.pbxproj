@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		2388064A590C701231939C27 /* LoritoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB7A78119CE11C80562D860 /* LoritoApp.swift */; };
 		6576280698353B98FBA98459 /* Features in Frameworks */ = {isa = PBXBuildFile; productRef = FEDD976A8081DBF1D3B25E5C /* Features */; };
+		8209D979C2BFFEE316F2EB8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE2BA15F599EE1E54712565E /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5DB7A78119CE11C80562D860 /* LoritoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoritoApp.swift; sourceTree = "<group>"; };
 		8FE00357D1B781548532B636 /* Lorito.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Lorito.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFB23746047EB5ED4339983A /* LoritoKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = LoritoKit; path = Packages/LoritoKit; sourceTree = SOURCE_ROOT; };
+		EE2BA15F599EE1E54712565E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +50,7 @@
 		E89B62B53314643201CAF493 /* Lorito */ = {
 			isa = PBXGroup;
 			children = (
+				EE2BA15F599EE1E54712565E /* Assets.xcassets */,
 				0861D20A2471189299457D23 /* Sources */,
 			);
 			path = Lorito;
@@ -78,6 +81,7 @@
 			buildConfigurationList = 74A2175A8E350CEC38541733 /* Build configuration list for PBXNativeTarget "Lorito" */;
 			buildPhases = (
 				573A0F214DBF2F4E50691BB6 /* Sources */,
+				1E565CA70607C3F578F4F13C /* Resources */,
 				492EF544D36B96CDEB674E7C /* Frameworks */,
 			);
 			buildRules = (
@@ -101,6 +105,10 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					684FF0B98A8A63DAEDDB83DE = {
+						DevelopmentTeam = 3GWRDGA8B7;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 4B376F3A91DD033E038CE66D /* Build configuration list for PBXProject "Lorito" */;
@@ -125,6 +133,17 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		1E565CA70607C3F578F4F13C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8209D979C2BFFEE316F2EB8D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		573A0F214DBF2F4E50691BB6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -141,11 +160,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3GWRDGA8B7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Lorito Español";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -153,7 +174,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.toffguy.lorito;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 6.0;
@@ -284,11 +305,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3GWRDGA8B7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Lorito Español";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -296,7 +319,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.toffguy.lorito;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 6.0;
