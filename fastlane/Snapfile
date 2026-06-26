@@ -1,4 +1,4 @@
-devices(["iPhone 17 Pro Max"])
+devices(["Lorito iPhone", "Lorito iPad"])
 languages(["ru"])
 scheme("Lorito")
 output_directory("./fastlane/screenshots")

@@ -76,6 +76,8 @@ platform :ios do
       keychain_name: "fastlane_tmp_keychain",
       keychain_password: "",
     )
+    # Fresh iPhone + iPad screenshots on the runner's reliable simulators.
+    capture_screenshots
     build  # archives (automatic) + downloads the App Store profile + manual export
     upload_to_testflight(
       api_key: asc_api_key,
