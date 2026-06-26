@@ -23,3 +23,6 @@ fastlane/screenshots/screenshots.html
 .build/
 Packages/*/.build/
 *.xcodeproj
+
+# Local credentials (NEVER commit — public repo)
+secrets/
