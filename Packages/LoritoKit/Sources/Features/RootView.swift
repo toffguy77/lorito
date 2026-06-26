@@ -44,7 +44,9 @@ public struct RootView: View {
         guard model == nil else { return }
         do {
             let catalog = try ContentLoader.loadCatalog()
-            let container = try PersistenceController.makeContainer()
+            // Syncs through the user's private CloudKit DB when an iCloud account
+            // is available; falls back to a local store otherwise.
+            let container = PersistenceController.makeUserContainer()
             let store = SwiftDataUserDataStore(container: container)
             // Respect a completion flag already recorded in persisted settings.
             if let settings = try? store.loadSettings(), settings.didCompleteOnboarding {

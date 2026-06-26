@@ -10,6 +10,13 @@ public enum LoritoSpacing {
     public static let xl: CGFloat = 32
 }
 
+/// Layout constraints.
+public enum LoritoLayout {
+    /// Maximum comfortable width for reading / primary content columns. Caps
+    /// content on large screens (iPad); narrower devices fill the width.
+    public static let readingWidth: CGFloat = 640
+}
+
 /// Corner-radius scale.
 public enum LoritoRadius {
     public static let sm: CGFloat = 10

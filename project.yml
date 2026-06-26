@@ -22,8 +22,8 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.toffguy.lorito
-        MARKETING_VERSION: "1.0.1"
-        CURRENT_PROJECT_VERSION: "2"
+        MARKETING_VERSION: "1.1.0"
+        CURRENT_PROJECT_VERSION: "3"
         SWIFT_VERSION: "6.0"
         TARGETED_DEVICE_FAMILY: "1"
         GENERATE_INFOPLIST_FILE: YES
@@ -35,6 +35,10 @@ targets:
         INFOPLIST_KEY_ITSAppUsesNonExemptEncryption: NO
         DEVELOPMENT_TEAM: "3GWRDGA8B7"
         CODE_SIGN_STYLE: Automatic
+        # CloudKit entitlement intentionally NOT wired yet — activating sync needs
+        # the iCloud capability/container on the App ID, a production CloudKit
+        # schema deploy, and on-device verification (cloudkit-sync change, a
+        # dedicated release). makeUserContainer() stays local-first until then.
 
   LoritoUITests:
     type: bundle.ui-testing

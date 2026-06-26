@@ -50,4 +50,22 @@ public enum PersistenceController {
         }
         return try ModelContainer(for: schema, configurations: [modelConfig])
     }
+
+    /// The container the app should use at runtime. Enables private-database
+    /// CloudKit sync when an iCloud account is available (and the entitlement is
+    /// present, which makes the token non-nil); otherwise — or if the CloudKit
+    /// container can't be opened — it falls back to a local store so the app is
+    /// always usable. SwiftData mirrors the local store to CloudKit and converges
+    /// once an account becomes available, so this is safe and lossless.
+    public static func makeUserContainer() -> ModelContainer {
+        let iCloudAvailable = FileManager.default.ubiquityIdentityToken != nil
+        if iCloudAvailable {
+            if let synced = try? makeContainer(config: PersistenceConfig(cloudKitEnabled: true)) {
+                return synced
+            }
+        }
+        // Local-first fallback (no account / no entitlement / CloudKit unavailable).
+        // Force-try: a local container failing is unrecoverable and should crash loudly.
+        return try! makeContainer(config: PersistenceConfig(cloudKitEnabled: false))
+    }
 }

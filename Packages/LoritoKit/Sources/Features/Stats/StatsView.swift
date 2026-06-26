@@ -38,7 +38,7 @@ public struct StatsView: View {
                 Spacer()
             }
             .padding(LoritoSpacing.lg)
-            .frame(maxWidth: 640)
+            .frame(maxWidth: LoritoLayout.readingWidth)
             .frame(maxWidth: .infinity)
         }
         .background(LoritoColor.surface.ignoresSafeArea())

@@ -44,8 +44,11 @@ struct StudySessionView: View {
                     CardContentView(card.body)
                 }
                 .padding(LoritoSpacing.md)
+                .frame(maxWidth: LoritoLayout.readingWidth)
+                .frame(maxWidth: .infinity)
             }
             GradeButtons { grade in model.grade(grade) }
+                .frame(maxWidth: LoritoLayout.readingWidth)
                 .padding(.horizontal, LoritoSpacing.md)
                 .padding(.bottom, LoritoSpacing.md)
         }

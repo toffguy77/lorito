@@ -73,6 +73,8 @@ public struct SettingsView: View {
                 }
             }
             .padding(LoritoSpacing.lg)
+            .frame(maxWidth: LoritoLayout.readingWidth)
+            .frame(maxWidth: .infinity)
         }
         .background(LoritoColor.surface.ignoresSafeArea())
         .navigationTitle("Настройки")

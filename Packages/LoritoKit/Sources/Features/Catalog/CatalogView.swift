@@ -108,6 +108,8 @@ private struct CardReaderView: View {
                 .padding(.top, LoritoSpacing.sm)
             }
             .padding(LoritoSpacing.md)
+            .frame(maxWidth: LoritoLayout.readingWidth)
+            .frame(maxWidth: .infinity)
         }
         .background(LoritoColor.surfaceSecondary.ignoresSafeArea())
         .navigationTitle(card.id)

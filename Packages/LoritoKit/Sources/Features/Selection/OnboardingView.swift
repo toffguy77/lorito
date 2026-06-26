@@ -24,6 +24,8 @@ public struct OnboardingView: View {
             case .themes: themeStep
             }
         }
+        .frame(maxWidth: LoritoLayout.readingWidth)
+        .frame(maxWidth: .infinity)
         .background(LoritoColor.surface.ignoresSafeArea())
     }
 

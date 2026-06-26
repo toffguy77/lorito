@@ -40,6 +40,7 @@ public struct TodayView: View {
             Spacer()
         }
         .padding(LoritoSpacing.lg)
+        .frame(maxWidth: LoritoLayout.readingWidth)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(LoritoColor.surface.ignoresSafeArea())
         .onAppear { model.refresh() }
