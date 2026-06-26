@@ -36,10 +36,11 @@ targets:
         INFOPLIST_KEY_ITSAppUsesNonExemptEncryption: NO
         DEVELOPMENT_TEAM: "3GWRDGA8B7"
         CODE_SIGN_STYLE: Automatic
-        # CloudKit entitlement intentionally NOT wired yet — activating sync needs
-        # the iCloud capability/container on the App ID, a production CloudKit
-        # schema deploy, and on-device verification (cloudkit-sync change, a
-        # dedicated release). makeUserContainer() stays local-first until then.
+        # CloudKit: activates private-DB sync. Requires the iCloud capability +
+        # container on the App ID and a production CloudKit schema deploy before
+        # release (see openspec cloudkit-sync). makeUserContainer() still falls
+        # back to local when no iCloud account is available.
+        CODE_SIGN_ENTITLEMENTS: Lorito/Lorito.entitlements
 
   LoritoUITests:
     type: bundle.ui-testing
