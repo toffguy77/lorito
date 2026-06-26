@@ -36,11 +36,15 @@ public struct MainTabView: View {
                 .tabItem { Label("Каталог", systemImage: "books.vertical") }
                 .tag(1)
 
+            StatsView(store: store)
+                .tabItem { Label("Прогресс", systemImage: "flame") }
+                .tag(2)
+
             NavigationStack {
                 SettingsView(model: scopeModel, reminders: reminders)
             }
             .tabItem { Label("Настройки", systemImage: "gearshape") }
-            .tag(2)
+            .tag(3)
         }
         .tint(LoritoColor.accent)
         .task {
