@@ -51,20 +51,16 @@ public enum PersistenceController {
         return try ModelContainer(for: schema, configurations: [modelConfig])
     }
 
-    /// The container the app should use at runtime. CloudKit sync is enabled per
-    /// build via the `LoritoCloudKitEnabled` Info.plist flag — set only in builds
-    /// that also carry the iCloud entitlement. When on, SwiftData mirrors to the
+    /// The container the app should use at runtime. `cloudKitEnabled` is decided
+    /// by the app target (via a compile condition set only in builds that carry
+    /// the iCloud entitlement) and passed in. When on, SwiftData mirrors to the
     /// private CloudKit DB and syncs whenever an iCloud account is available; it
     /// still works locally without one. We deliberately do NOT gate on
     /// `ubiquityIdentityToken`: that reflects iCloud *Drive*, not CloudKit, and is
     /// frequently nil on the Simulator even when signed into iCloud, which would
     /// wrongly drop the app to a local store and never create the CloudKit schema.
-    public static func makeUserContainer() -> ModelContainer {
-        let flag = Bundle.main.object(forInfoDictionaryKey: "LoritoCloudKitEnabled")
-        let wantsCloudKit = (flag as? Bool)
-            ?? ((flag as? String).map { ["YES", "1", "true"].contains($0) } ?? false)
-
-        if wantsCloudKit {
+    public static func makeUserContainer(cloudKitEnabled: Bool) -> ModelContainer {
+        if cloudKitEnabled {
             if let synced = try? makeContainer(config: PersistenceConfig(cloudKitEnabled: true)) {
                 print("[Lorito] CloudKit sync ENABLED (private DB iCloud.com.toffguy.lorito)")
                 return synced
