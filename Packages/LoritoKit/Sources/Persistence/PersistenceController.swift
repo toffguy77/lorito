@@ -51,21 +51,26 @@ public enum PersistenceController {
         return try ModelContainer(for: schema, configurations: [modelConfig])
     }
 
-    /// The container the app should use at runtime. Enables private-database
-    /// CloudKit sync when an iCloud account is available (and the entitlement is
-    /// present, which makes the token non-nil); otherwise — or if the CloudKit
-    /// container can't be opened — it falls back to a local store so the app is
-    /// always usable. SwiftData mirrors the local store to CloudKit and converges
-    /// once an account becomes available, so this is safe and lossless.
-    public static func makeUserContainer() -> ModelContainer {
-        let iCloudAvailable = FileManager.default.ubiquityIdentityToken != nil
-        if iCloudAvailable {
+    /// The container the app should use at runtime. `cloudKitEnabled` is decided
+    /// by the app target (via a compile condition set only in builds that carry
+    /// the iCloud entitlement) and passed in. When on, SwiftData mirrors to the
+    /// private CloudKit DB and syncs whenever an iCloud account is available; it
+    /// still works locally without one. We deliberately do NOT gate on
+    /// `ubiquityIdentityToken`: that reflects iCloud *Drive*, not CloudKit, and is
+    /// frequently nil on the Simulator even when signed into iCloud, which would
+    /// wrongly drop the app to a local store and never create the CloudKit schema.
+    public static func makeUserContainer(cloudKitEnabled: Bool) -> ModelContainer {
+        if cloudKitEnabled {
             if let synced = try? makeContainer(config: PersistenceConfig(cloudKitEnabled: true)) {
+                print("[Lorito] CloudKit sync ENABLED (private DB iCloud.com.toffguy.lorito)")
                 return synced
             }
+            print("[Lorito] CloudKit requested but container init failed — using local store")
+        } else {
+            print("[Lorito] CloudKit not enabled in this build — local store")
         }
-        // Local-first fallback (no account / no entitlement / CloudKit unavailable).
-        // Force-try: a local container failing is unrecoverable and should crash loudly.
+        // Local-first fallback. Force-try: a local container failing is
+        // unrecoverable and should crash loudly.
         return try! makeContainer(config: PersistenceConfig(cloudKitEnabled: false))
     }
 }

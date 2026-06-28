@@ -17,8 +17,11 @@ public struct RootView: View {
     @State private var store: (any UserDataStore)?
     @State private var catalog: ContentCatalog?
     @State private var loadError = false
+    private let cloudKitEnabled: Bool
 
-    public init() {}
+    public init(cloudKitEnabled: Bool = false) {
+        self.cloudKitEnabled = cloudKitEnabled
+    }
 
     public var body: some View {
         Group {
@@ -44,9 +47,9 @@ public struct RootView: View {
         guard model == nil else { return }
         do {
             let catalog = try ContentLoader.loadCatalog()
-            // Syncs through the user's private CloudKit DB when an iCloud account
-            // is available; falls back to a local store otherwise.
-            let container = PersistenceController.makeUserContainer()
+            // Syncs through the user's private CloudKit DB when enabled (and an
+            // iCloud account is available); falls back to a local store otherwise.
+            let container = PersistenceController.makeUserContainer(cloudKitEnabled: cloudKitEnabled)
             let store = SwiftDataUserDataStore(container: container)
             // Respect a completion flag already recorded in persisted settings.
             if let settings = try? store.loadSettings(), settings.didCompleteOnboarding {
