@@ -26,3 +26,7 @@ Packages/*/.build/
 
 # Local credentials (NEVER commit — public repo)
 secrets/
+
+# Xcode per-user state
+.swiftpm/xcode/xcuserdata/
+**/xcuserdata/
