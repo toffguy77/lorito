@@ -41,6 +41,7 @@ targets:
         # release (see openspec cloudkit-sync). makeUserContainer() still falls
         # back to local when no iCloud account is available.
         CODE_SIGN_ENTITLEMENTS: Lorito/Lorito.entitlements
+        INFOPLIST_KEY_LoritoCloudKitEnabled: "YES"
 
   LoritoUITests:
     type: bundle.ui-testing
