@@ -1,17 +1,19 @@
 import Foundation
 import SwiftData
 
-// SwiftData @Model records. Kept CloudKit-friendly: every stored property has a
-// default value and there are no unique constraints (CloudKit sync forbids them).
+// SwiftData @Model records. CloudKit-friendly: every stored property is either
+// optional or has an INLINE default value (CloudKit checks the attribute itself,
+// not the initializer's parameter defaults), and there are no unique constraints
+// (CloudKit sync forbids them).
 
 @Model
 public final class SettingsRecord {
     public var targetLevelRaw: String?
-    public var selectedThemeIDs: [String]
-    public var dailyNewCardCount: Int
-    public var remindersEnabled: Bool
-    public var reminderMinutes: [Int]
-    public var didCompleteOnboarding: Bool
+    public var selectedThemeIDs: [String] = []
+    public var dailyNewCardCount: Int = 1
+    public var remindersEnabled: Bool = false
+    public var reminderMinutes: [Int] = []
+    public var didCompleteOnboarding: Bool = false
 
     public init(
         targetLevelRaw: String? = nil,
@@ -32,13 +34,13 @@ public final class SettingsRecord {
 
 @Model
 public final class ReviewRecord {
-    public var cardID: String
-    public var easeFactor: Double
-    public var interval: Int
-    public var repetitions: Int
-    public var dueDate: Date
+    public var cardID: String = ""
+    public var easeFactor: Double = 2.5
+    public var interval: Int = 0
+    public var repetitions: Int = 0
+    public var dueDate: Date = Date.distantPast
     public var lastGrade: String?
-    public var statusRaw: String
+    public var statusRaw: String = "new"
 
     public init(
         cardID: String = "",
@@ -61,9 +63,9 @@ public final class ReviewRecord {
 
 @Model
 public final class EventRecord {
-    public var eventID: UUID
-    public var cardID: String
-    public var date: Date
+    public var eventID: UUID = UUID()
+    public var cardID: String = ""
+    public var date: Date = Date.distantPast
     public var grade: String?
 
     public init(eventID: UUID = UUID(), cardID: String = "", date: Date = .distantPast, grade: String? = nil) {
