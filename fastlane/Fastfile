@@ -67,6 +67,24 @@ platform :ios do
     )
   end
 
+  desc "CI: import signing assets, build, upload to TestFlight (no review submission)"
+  lane :ci_beta do
+    setup_ci
+    import_certificate(
+      certificate_path: "fastlane/certificate.p12",
+      certificate_password: ENV["DISTRIBUTION_CERTIFICATE_PASSWORD"],
+      keychain_name: "fastlane_tmp_keychain",
+      keychain_password: "",
+    )
+    build
+    upload_to_testflight(
+      api_key: asc_api_key,
+      ipa: "build/ipa/Lorito.ipa",
+      skip_waiting_for_build_processing: true,
+      distribute_external: false,
+    )
+  end
+
   desc "CI: import signing assets, build, upload to TestFlight, submit for review"
   lane :ci_release do
     setup_ci
