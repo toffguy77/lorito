@@ -23,7 +23,7 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.toffguy.lorito
         MARKETING_VERSION: "1.3.0"
-        CURRENT_PROJECT_VERSION: "5"
+        CURRENT_PROJECT_VERSION: "6"
         SWIFT_VERSION: "6.0"
         TARGETED_DEVICE_FAMILY: "1,2"
         GENERATE_INFOPLIST_FILE: YES
