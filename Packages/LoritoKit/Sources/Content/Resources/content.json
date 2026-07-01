@@ -5280,6 +5280,559 @@
       "answer": "Me llamo"
     },
     {
+      "id": "A1-EX-F01",
+      "level": "A1",
+      "themeID": "a1-1",
+      "card": "A1-05",
+      "type": "free-response",
+      "prompt": "Переведите на испанский: «Я говорю по-испански».",
+      "explanation": "Язык пишется со **строчной** буквы: *Hablo español* (не *Español*).",
+      "answer": "Hablo español.",
+      "accept": [
+        "Yo hablo español",
+        "Hablo español"
+      ]
+    },
+    {
+      "id": "A1-EX-F02",
+      "level": "A1",
+      "themeID": "a1-1",
+      "card": "A1-02",
+      "type": "free-response",
+      "prompt": "Ответьте по-испански: как произносится буква **h** в слове *hola*? (Подсказка: скажите, что она немая.)",
+      "explanation": "Буква **h** всегда немая: *hola* читается [ола]. *La hache es muda.*",
+      "answer": "La hache es muda.",
+      "accept": [
+        "La h es muda",
+        "La hache no se pronuncia"
+      ]
+    },
+    {
+      "id": "A1-EX-F03",
+      "level": "A1",
+      "themeID": "a1-2",
+      "card": "A1-10",
+      "type": "free-response",
+      "prompt": "Переведите на испанский: «Я иду в кино».",
+      "explanation": "Обязательное слияние *a + el = al*: *Voy **al** cine* (не *a el cine*).",
+      "answer": "Voy al cine.",
+      "accept": [
+        "Voy al cine"
+      ]
+    },
+    {
+      "id": "A1-EX-F04",
+      "level": "A1",
+      "themeID": "a1-2",
+      "card": "A1-12",
+      "type": "free-response",
+      "prompt": "Переведите на испанский: «Мой дом большой».",
+      "explanation": "Притяжательное *mi* не меняется по роду и заменяет артикль: *Mi casa es grande*.",
+      "answer": "Mi casa es grande.",
+      "accept": [
+        "Mi casa es grande"
+      ]
+    },
+    {
+      "id": "A1-EX-F05",
+      "level": "A1",
+      "themeID": "a1-3",
+      "card": "A1-18",
+      "type": "free-response",
+      "prompt": "Переведите на испанский: «Мне тридцать лет».",
+      "explanation": "Возраст — через глагол *tener*: *Tengo treinta años* (буквально «имею 30 лет»).",
+      "answer": "Tengo treinta años.",
+      "accept": [
+        "Tengo 30 años"
+      ]
+    },
+    {
+      "id": "A1-EX-F06",
+      "level": "A1",
+      "themeID": "a1-3",
+      "card": "A1-21",
+      "type": "free-response",
+      "prompt": "Переведите на испанский: «Меня зовут Ана».",
+      "explanation": "Возвратный глагол *llamarse*: *Me llamo Ana* (местоимение *me* перед глаголом).",
+      "answer": "Me llamo Ana.",
+      "accept": [
+        "Me llamo Ana"
+      ]
+    },
+    {
+      "id": "A1-EX-F07",
+      "level": "A1",
+      "themeID": "a1-4",
+      "card": "A1-26",
+      "type": "free-response",
+      "prompt": "Переведите на испанский: «Я очень голоден».",
+      "explanation": "*hambre* — существительное, поэтому усиление через *mucha* (не *muy*): *Tengo mucha hambre*.",
+      "answer": "Tengo mucha hambre.",
+      "accept": [
+        "Tengo mucha hambre"
+      ]
+    },
+    {
+      "id": "A1-EX-F08",
+      "level": "A1",
+      "themeID": "a1-4",
+      "card": "A1-25",
+      "type": "free-response",
+      "prompt": "Переведите на испанский: «Я вижу Марию».",
+      "explanation": "Перед прямым дополнением-человеком ставится «личное» *a*: *Veo **a** María*.",
+      "answer": "Veo a María.",
+      "accept": [
+        "Veo a María"
+      ]
+    },
+    {
+      "id": "A1-EX-F09",
+      "level": "A1",
+      "themeID": "a1-5",
+      "card": "A1-30",
+      "type": "free-response",
+      "prompt": "Переведите на испанский: «Я студент».",
+      "explanation": "Профессия/статус — **без** артикля: *Soy estudiante* (не *soy un estudiante*).",
+      "answer": "Soy estudiante.",
+      "accept": [
+        "Soy estudiante"
+      ]
+    },
+    {
+      "id": "A1-EX-F10",
+      "level": "A1",
+      "themeID": "a1-5",
+      "card": "A1-28",
+      "type": "free-response",
+      "prompt": "Переведите на испанский: «Сейчас час (дня)».",
+      "explanation": "Для 1 часа — *es la* (ед. число): *Es la una*.",
+      "answer": "Es la una.",
+      "accept": [
+        "Es la una"
+      ]
+    },
+    {
+      "id": "A1-EX-M01",
+      "level": "A1",
+      "themeID": "a1-1",
+      "card": "A1-01",
+      "type": "matching",
+      "prompt": "Соедините букву с её испанским названием.",
+      "explanation": "Названия букв: Ñ — *eñe*, H — *hache* (немая), J — *jota*, V — *uve*.",
+      "pairs": [
+        {
+          "left": "Ñ",
+          "right": "eñe"
+        },
+        {
+          "left": "H",
+          "right": "hache"
+        },
+        {
+          "left": "J",
+          "right": "jota"
+        },
+        {
+          "left": "V",
+          "right": "uve"
+        }
+      ]
+    },
+    {
+      "id": "A1-EX-M02",
+      "level": "A1",
+      "themeID": "a1-1",
+      "card": "A1-04",
+      "type": "matching",
+      "prompt": "Соедините слово с его значением (различительная tilde).",
+      "explanation": "Tilde различает пары: *él* (он) ↔ *el* (артикль), *tú* (ты) ↔ *tu* (твой).",
+      "pairs": [
+        {
+          "left": "él",
+          "right": "он"
+        },
+        {
+          "left": "el",
+          "right": "артикль"
+        },
+        {
+          "left": "tú",
+          "right": "ты"
+        },
+        {
+          "left": "tu",
+          "right": "твой"
+        }
+      ]
+    },
+    {
+      "id": "A1-EX-M03",
+      "level": "A1",
+      "themeID": "a1-2",
+      "card": "A1-09",
+      "type": "matching",
+      "prompt": "Соедините определённый артикль с его родом и числом.",
+      "explanation": "Определённый артикль: *el* (муж. ед.), *la* (жен. ед.), *los* (муж. мн.), *las* (жен. мн.).",
+      "pairs": [
+        {
+          "left": "el",
+          "right": "муж. ед."
+        },
+        {
+          "left": "la",
+          "right": "жен. ед."
+        },
+        {
+          "left": "los",
+          "right": "муж. мн."
+        },
+        {
+          "left": "las",
+          "right": "жен. мн."
+        }
+      ]
+    },
+    {
+      "id": "A1-EX-M04",
+      "level": "A1",
+      "themeID": "a1-2",
+      "card": "A1-08",
+      "type": "matching",
+      "prompt": "Соедините слово с формой множественного числа.",
+      "explanation": "Гласная + *-s*: *casa → casas*. Согласная + *-es*: *color → colores*. *-z → -ces*: *lápiz → lápices*.",
+      "pairs": [
+        {
+          "left": "casa",
+          "right": "casas"
+        },
+        {
+          "left": "color",
+          "right": "colores"
+        },
+        {
+          "left": "lápiz",
+          "right": "lápices"
+        }
+      ]
+    },
+    {
+      "id": "A1-EX-M05",
+      "level": "A1",
+      "themeID": "a1-3",
+      "card": "A1-15",
+      "type": "matching",
+      "prompt": "Соедините местоимение с формой глагола **ser**.",
+      "explanation": "Спряжение ser: yo soy, tú eres, él es, nosotros somos.",
+      "pairs": [
+        {
+          "left": "yo",
+          "right": "soy"
+        },
+        {
+          "left": "tú",
+          "right": "eres"
+        },
+        {
+          "left": "él",
+          "right": "es"
+        },
+        {
+          "left": "nosotros",
+          "right": "somos"
+        }
+      ]
+    },
+    {
+      "id": "A1-EX-M06",
+      "level": "A1",
+      "themeID": "a1-3",
+      "card": "A1-16",
+      "type": "matching",
+      "prompt": "Соедините местоимение с формой глагола **estar**.",
+      "explanation": "Спряжение estar: yo estoy, tú estás, él está, ellos están.",
+      "pairs": [
+        {
+          "left": "yo",
+          "right": "estoy"
+        },
+        {
+          "left": "tú",
+          "right": "estás"
+        },
+        {
+          "left": "él",
+          "right": "está"
+        },
+        {
+          "left": "ellos",
+          "right": "están"
+        }
+      ]
+    },
+    {
+      "id": "A1-EX-M07",
+      "level": "A1",
+      "themeID": "a1-4",
+      "card": "A1-24",
+      "type": "matching",
+      "prompt": "Соедините вопросительное слово с его значением.",
+      "explanation": "*¿Qué?* — что, *¿Dónde?* — где, *¿Cuándo?* — когда, *¿Por qué?* — почему.",
+      "pairs": [
+        {
+          "left": "¿Qué?",
+          "right": "что"
+        },
+        {
+          "left": "¿Dónde?",
+          "right": "где"
+        },
+        {
+          "left": "¿Cuándo?",
+          "right": "когда"
+        },
+        {
+          "left": "¿Por qué?",
+          "right": "почему"
+        }
+      ]
+    },
+    {
+      "id": "A1-EX-M08",
+      "level": "A1",
+      "themeID": "a1-4",
+      "card": "A1-25",
+      "type": "matching",
+      "prompt": "Соедините предлог с его значением.",
+      "explanation": "*con* — с, *sin* — без, *en* — в/на (место), *de* — из/от (происхождение).",
+      "pairs": [
+        {
+          "left": "con",
+          "right": "с"
+        },
+        {
+          "left": "sin",
+          "right": "без"
+        },
+        {
+          "left": "en",
+          "right": "в/на"
+        },
+        {
+          "left": "de",
+          "right": "из/от"
+        }
+      ]
+    },
+    {
+      "id": "A1-EX-M09",
+      "level": "A1",
+      "themeID": "a1-5",
+      "card": "A1-27",
+      "type": "matching",
+      "prompt": "Соедините число с его написанием по-испански.",
+      "explanation": "5 — *cinco*, 12 — *doce*, 20 — *veinte*, 100 — *cien*.",
+      "pairs": [
+        {
+          "left": "5",
+          "right": "cinco"
+        },
+        {
+          "left": "12",
+          "right": "doce"
+        },
+        {
+          "left": "20",
+          "right": "veinte"
+        },
+        {
+          "left": "100",
+          "right": "cien"
+        }
+      ]
+    },
+    {
+      "id": "A1-EX-M10",
+      "level": "A1",
+      "themeID": "a1-5",
+      "card": "A1-29",
+      "type": "matching",
+      "prompt": "Соедините испанское слово с русским переводом.",
+      "explanation": "*lunes* — понедельник, *domingo* — воскресенье, *enero* — январь, *mayo* — май. Пишутся со строчной буквы.",
+      "pairs": [
+        {
+          "left": "lunes",
+          "right": "понедельник"
+        },
+        {
+          "left": "enero",
+          "right": "январь"
+        },
+        {
+          "left": "domingo",
+          "right": "воскресенье"
+        },
+        {
+          "left": "mayo",
+          "right": "май"
+        }
+      ]
+    },
+    {
+      "id": "A1-EX-W01",
+      "level": "A1",
+      "themeID": "a1-1",
+      "card": "A1-06",
+      "type": "word-order",
+      "prompt": "Составьте вопрос из слов (не забудьте оба знака).",
+      "explanation": "Вопрос обрамляется двумя знаками: *¿Cómo te llamas?*",
+      "tokens": [
+        "¿",
+        "Cómo",
+        "te",
+        "llamas",
+        "?"
+      ],
+      "answer": "¿ Cómo te llamas ?"
+    },
+    {
+      "id": "A1-EX-W02",
+      "level": "A1",
+      "themeID": "a1-1",
+      "card": "A1-06",
+      "type": "word-order",
+      "prompt": "Составьте восклицание из слов.",
+      "explanation": "Восклицание оформляется парой знаков: *¡Feliz cumpleaños!*",
+      "tokens": [
+        "¡",
+        "Feliz",
+        "cumpleaños",
+        "!"
+      ],
+      "answer": "¡ Feliz cumpleaños !"
+    },
+    {
+      "id": "A1-EX-W03",
+      "level": "A1",
+      "themeID": "a1-2",
+      "card": "A1-11",
+      "type": "word-order",
+      "prompt": "Составьте словосочетание из слов.",
+      "explanation": "Прилагательное-цвет стоит **после** существительного и согласуется: *un coche rojo*.",
+      "tokens": [
+        "un",
+        "coche",
+        "rojo"
+      ],
+      "answer": "un coche rojo"
+    },
+    {
+      "id": "A1-EX-W04",
+      "level": "A1",
+      "themeID": "a1-2",
+      "card": "A1-13",
+      "type": "word-order",
+      "prompt": "Составьте предложение из слов.",
+      "explanation": "Указательное *este* согласуется с *libro* (муж. ед.) и стоит перед ним: *Quiero este libro*.",
+      "tokens": [
+        "Quiero",
+        "este",
+        "libro"
+      ],
+      "answer": "Quiero este libro"
+    },
+    {
+      "id": "A1-EX-W05",
+      "level": "A1",
+      "themeID": "a1-3",
+      "card": "A1-19",
+      "type": "word-order",
+      "prompt": "Составьте предложение из слов.",
+      "explanation": "Порядок: подлежащее + глагол + дополнение. *Yo hablo español*.",
+      "tokens": [
+        "Yo",
+        "hablo",
+        "español"
+      ],
+      "answer": "Yo hablo español"
+    },
+    {
+      "id": "A1-EX-W06",
+      "level": "A1",
+      "themeID": "a1-3",
+      "card": "A1-22",
+      "type": "word-order",
+      "prompt": "Составьте предложение из слов.",
+      "explanation": "Конструкция *gustar*: *Me gusta el café*. Форма *gusta* — потому что нравится один предмет.",
+      "tokens": [
+        "Me",
+        "gusta",
+        "el",
+        "café"
+      ],
+      "answer": "Me gusta el café"
+    },
+    {
+      "id": "A1-EX-W07",
+      "level": "A1",
+      "themeID": "a1-4",
+      "card": "A1-23",
+      "type": "word-order",
+      "prompt": "Составьте предложение из слов.",
+      "explanation": "Двойное отрицание: *no* перед глаголом + *nada* после. *No tengo nada* — «У меня ничего нет».",
+      "tokens": [
+        "No",
+        "tengo",
+        "nada"
+      ],
+      "answer": "No tengo nada"
+    },
+    {
+      "id": "A1-EX-W08",
+      "level": "A1",
+      "themeID": "a1-4",
+      "card": "A1-25",
+      "type": "word-order",
+      "prompt": "Составьте словосочетание из слов.",
+      "explanation": "Предлог *con* («с»): *Café con leche* — кофе с молоком.",
+      "tokens": [
+        "Café",
+        "con",
+        "leche"
+      ],
+      "answer": "Café con leche"
+    },
+    {
+      "id": "A1-EX-W09",
+      "level": "A1",
+      "themeID": "a1-5",
+      "card": "A1-28",
+      "type": "word-order",
+      "prompt": "Составьте предложение из слов (который час).",
+      "explanation": "Для 2 часов и больше — *son las*: *Son las dos* (2:00).",
+      "tokens": [
+        "Son",
+        "las",
+        "dos"
+      ],
+      "answer": "Son las dos"
+    },
+    {
+      "id": "A1-EX-W10",
+      "level": "A1",
+      "themeID": "a1-5",
+      "card": "A1-29",
+      "type": "word-order",
+      "prompt": "Составьте дату из слов (5 мая).",
+      "explanation": "Дата: число + *de* + месяц. *el cinco de mayo* — количественное число, месяц со строчной.",
+      "tokens": [
+        "el",
+        "cinco",
+        "de",
+        "mayo"
+      ],
+      "answer": "el cinco de mayo"
+    },
+    {
       "id": "A2-EX-101",
       "level": "A2",
       "themeID": "a2-1",
@@ -6999,6 +7552,564 @@
       ]
     },
     {
+      "id": "A2-EX-F01",
+      "level": "A2",
+      "themeID": "a2-1",
+      "card": "A2-01",
+      "type": "free-response",
+      "prompt": "Переведите на испанский (pretérito perfecto): «Ты когда-нибудь был в Испании?»",
+      "explanation": "Опыт «когда-либо» выражается через perfecto: *¿Has estado en España alguna vez?* Порядок *alguna vez* может стоять и в середине.",
+      "answer": "¿Has estado en España alguna vez?",
+      "accept": [
+        "¿Has estado alguna vez en España?"
+      ]
+    },
+    {
+      "id": "A2-EX-F02",
+      "level": "A2",
+      "themeID": "a2-1",
+      "card": "A2-04",
+      "type": "free-response",
+      "prompt": "Переведите на испанский (imperfecto): «В детстве я каждый день играл в футбол.»",
+      "explanation": "Привычка в прошлом → imperfecto: *De niño jugaba al fútbol todos los días*. Маркер *todos los días* и «в детстве» указывают на регулярность.",
+      "answer": "De niño jugaba al fútbol todos los días.",
+      "accept": [
+        "De pequeño jugaba al fútbol todos los días."
+      ]
+    },
+    {
+      "id": "A2-EX-F03",
+      "level": "A2",
+      "themeID": "a2-2",
+      "card": "A2-10",
+      "type": "free-response",
+      "prompt": "Переведите на испанский (estar + gerundio): «Что ты (сейчас) делаешь?»",
+      "explanation": "Действие в процессе сейчас → *estar + gerundio*: *¿Qué estás haciendo?* Герундий от *hacer* — неправильный: *haciendo*.",
+      "answer": "¿Qué estás haciendo?"
+    },
+    {
+      "id": "A2-EX-F04",
+      "level": "A2",
+      "themeID": "a2-2",
+      "card": "A2-11",
+      "type": "free-response",
+      "prompt": "Переведите на испанский (перифраза acabar de): «Я только что поел.»",
+      "explanation": "*acabar de + инфинитив* = «только что сделал»: *Acabo de comer*. Связку *de* опускать нельзя, после неё — инфинитив.",
+      "answer": "Acabo de comer."
+    },
+    {
+      "id": "A2-EX-F05",
+      "level": "A2",
+      "themeID": "a2-3",
+      "card": "A2-14",
+      "type": "free-response",
+      "prompt": "Переведите на испанский, используя два местоимения: «Я даю ей это.»",
+      "explanation": "Перед прямым *lo* косвенное *le* обязательно становится *se*: *Se lo doy*. Кого именно, уточняем через *a ella*: *Se lo doy a ella*.",
+      "answer": "Se lo doy a ella.",
+      "accept": [
+        "Se lo doy."
+      ]
+    },
+    {
+      "id": "A2-EX-F06",
+      "level": "A2",
+      "themeID": "a2-3",
+      "card": "A2-15",
+      "type": "free-response",
+      "prompt": "Переведите на испанский (утвердительный императив tú с местоимением): «Купи это!»",
+      "explanation": "С утвердительным императивом местоимение присоединяется к глаголу слитно и появляется tilde: *compra + lo → ¡Cómpralo!*",
+      "answer": "¡Cómpralo!"
+    },
+    {
+      "id": "A2-EX-F07",
+      "level": "A2",
+      "themeID": "a2-4",
+      "card": "A2-21",
+      "type": "free-response",
+      "prompt": "Переведите на испанский: «Дома никого нет.»",
+      "explanation": "Отрицательное *nadie* после глагола требует *no* перед ним (двойное отрицание — норма): *No hay nadie en casa*.",
+      "answer": "No hay nadie en casa."
+    },
+    {
+      "id": "A2-EX-F08",
+      "level": "A2",
+      "themeID": "a2-4",
+      "card": "A2-23",
+      "type": "free-response",
+      "prompt": "Переведите на испанский (относительное que): «У меня есть друг, который говорит на пяти языках.»",
+      "explanation": "Относительное *que* соединяет предложения и не опускается: *Tengo un amigo que habla cinco idiomas*. Как подлежащее для людей — всегда *que*, не *quien*.",
+      "answer": "Tengo un amigo que habla cinco idiomas."
+    },
+    {
+      "id": "A2-EX-F09",
+      "level": "A2",
+      "themeID": "a2-5",
+      "card": "A2-26",
+      "type": "free-response",
+      "prompt": "Переведите на испанский (глагол типа gustar): «У меня болит голова.»",
+      "explanation": "*doler* работает как *gustar*: человек — в косвенном местоимении, а то, что болит, — подлежащее (с артиклем): *Me duele la cabeza*. Множественное — *Me duelen los pies*.",
+      "answer": "Me duele la cabeza."
+    },
+    {
+      "id": "A2-EX-F10",
+      "level": "A2",
+      "themeID": "a2-5",
+      "card": "A2-29",
+      "type": "free-response",
+      "prompt": "Переведите на испанский: «Какая сегодня погода?»",
+      "explanation": "Устойчивая формула о погоде — с глаголом *hacer*: *¿Qué tiempo hace (hoy)?* Ответ тоже с *hacer*: *Hace sol / calor / frío*.",
+      "answer": "¿Qué tiempo hace hoy?",
+      "accept": [
+        "¿Qué tiempo hace?"
+      ]
+    },
+    {
+      "id": "A2-EX-M01",
+      "level": "A2",
+      "themeID": "a2-1",
+      "card": "A2-01",
+      "type": "matching",
+      "prompt": "Соедините глагол с его неправильным причастием (participio).",
+      "explanation": "Неправильные причастия нужно запомнить: *hacer → hecho*, *ver → visto*, *escribir → escrito*, *volver → vuelto*. Они используются в pretérito perfecto: *he hecho, he visto…*.",
+      "pairs": [
+        {
+          "left": "hacer",
+          "right": "hecho"
+        },
+        {
+          "left": "ver",
+          "right": "visto"
+        },
+        {
+          "left": "escribir",
+          "right": "escrito"
+        },
+        {
+          "left": "volver",
+          "right": "vuelto"
+        }
+      ]
+    },
+    {
+      "id": "A2-EX-M02",
+      "level": "A2",
+      "themeID": "a2-1",
+      "card": "A2-03",
+      "type": "matching",
+      "prompt": "Соедините глагол с его формой в indefinido (yo).",
+      "explanation": "Это сильные глаголы (pretéritos fuertes) с особым корнем и безударными окончаниями: *tener → tuve*, *hacer → hice*, *venir → vine*, *decir → dije*. Ударение падает на корень, поэтому tilde нет.",
+      "pairs": [
+        {
+          "left": "tener",
+          "right": "tuve"
+        },
+        {
+          "left": "hacer",
+          "right": "hice"
+        },
+        {
+          "left": "venir",
+          "right": "vine"
+        },
+        {
+          "left": "decir",
+          "right": "dije"
+        }
+      ]
+    },
+    {
+      "id": "A2-EX-M03",
+      "level": "A2",
+      "themeID": "a2-2",
+      "card": "A2-07",
+      "type": "matching",
+      "prompt": "Соедините глагол с его формой в futuro simple (yo).",
+      "explanation": "У этих глаголов в будущем меняется только корень: *tener → tendré* (гласная → d), *hacer → haré* (особый), *poder → podré* (выпадает гласная), *decir → diré* (особый). Окончания стандартные.",
+      "pairs": [
+        {
+          "left": "tener",
+          "right": "tendré"
+        },
+        {
+          "left": "hacer",
+          "right": "haré"
+        },
+        {
+          "left": "poder",
+          "right": "podré"
+        },
+        {
+          "left": "decir",
+          "right": "diré"
+        }
+      ]
+    },
+    {
+      "id": "A2-EX-M04",
+      "level": "A2",
+      "themeID": "a2-2",
+      "card": "A2-11",
+      "type": "matching",
+      "prompt": "Соедините перифразу с её значением.",
+      "explanation": "*acabar de* — «только что сделал»; *volver a* — «сделать снова»; *soler* — «обычно делать»; *dejar de* — «перестать». Главный смысл несёт неизменяемый инфинитив, а оттенок — вспомогательный глагол.",
+      "pairs": [
+        {
+          "left": "acabar de",
+          "right": "только что сделал"
+        },
+        {
+          "left": "volver a",
+          "right": "сделать снова"
+        },
+        {
+          "left": "soler",
+          "right": "обычно делать"
+        },
+        {
+          "left": "dejar de",
+          "right": "перестать"
+        }
+      ]
+    },
+    {
+      "id": "A2-EX-M05",
+      "level": "A2",
+      "themeID": "a2-3",
+      "card": "A2-12",
+      "type": "matching",
+      "prompt": "Соедините существительное с местоимением прямого дополнения (OD).",
+      "explanation": "Местоимение OD согласуется по роду и числу: *el coche → lo*, *la casa → la*, *los libros → los*, *las flores → las*. Например: *¿El coche? Lo lavo*.",
+      "pairs": [
+        {
+          "left": "el coche",
+          "right": "lo"
+        },
+        {
+          "left": "la casa",
+          "right": "la"
+        },
+        {
+          "left": "los libros",
+          "right": "los"
+        },
+        {
+          "left": "las flores",
+          "right": "las"
+        }
+      ]
+    },
+    {
+      "id": "A2-EX-M06",
+      "level": "A2",
+      "themeID": "a2-3",
+      "card": "A2-15",
+      "type": "matching",
+      "prompt": "Соедините глагол с неправильной формой утвердительного императива (tú).",
+      "explanation": "Восемь неправильных форм императива *tú* нужно запомнить: *decir → di*, *hacer → haz*, *poner → pon*, *venir → ven* (также *ir → ve*, *salir → sal*, *ser → sé*, *tener → ten*).",
+      "pairs": [
+        {
+          "left": "decir (tú)",
+          "right": "di"
+        },
+        {
+          "left": "hacer (tú)",
+          "right": "haz"
+        },
+        {
+          "left": "poner (tú)",
+          "right": "pon"
+        },
+        {
+          "left": "venir (tú)",
+          "right": "ven"
+        }
+      ]
+    },
+    {
+      "id": "A2-EX-M07",
+      "level": "A2",
+      "themeID": "a2-4",
+      "card": "A2-19",
+      "type": "matching",
+      "prompt": "Соедините прилагательное с его неправильной сравнительной формой.",
+      "explanation": "Четыре прилагательных образуют сравнение без *más*: *bueno → mejor*, *malo → peor*, *grande → mayor*, *pequeño → menor*. Форма уже содержит «более».",
+      "pairs": [
+        {
+          "left": "bueno",
+          "right": "mejor"
+        },
+        {
+          "left": "malo",
+          "right": "peor"
+        },
+        {
+          "left": "grande",
+          "right": "mayor"
+        },
+        {
+          "left": "pequeño",
+          "right": "menor"
+        }
+      ]
+    },
+    {
+      "id": "A2-EX-M08",
+      "level": "A2",
+      "themeID": "a2-4",
+      "card": "A2-22",
+      "type": "matching",
+      "prompt": "Соедините коннектор с его значением.",
+      "explanation": "*porque* — причина («потому что»); *pero* — противопоставление («но»); *aunque* — уступка («хотя»); *por eso* — следствие («поэтому»).",
+      "pairs": [
+        {
+          "left": "porque",
+          "right": "потому что"
+        },
+        {
+          "left": "pero",
+          "right": "но"
+        },
+        {
+          "left": "aunque",
+          "right": "хотя"
+        },
+        {
+          "left": "por eso",
+          "right": "поэтому"
+        }
+      ]
+    },
+    {
+      "id": "A2-EX-M09",
+      "level": "A2",
+      "themeID": "a2-5",
+      "card": "A2-27",
+      "type": "matching",
+      "prompt": "Соедините фразу с нужным предлогом (por / para).",
+      "explanation": "*para* — цель и адресат: *para aprobar*, *para ti*. *por* — причина и обмен/цена: *Gracias por todo*, *por 20 euros*.",
+      "pairs": [
+        {
+          "left": "Estudio ___ aprobar (цель)",
+          "right": "para"
+        },
+        {
+          "left": "Gracias ___ todo (причина)",
+          "right": "por"
+        },
+        {
+          "left": "Este regalo es ___ ti (адресат)",
+          "right": "para"
+        },
+        {
+          "left": "Lo compré ___ 20 euros (цена)",
+          "right": "por"
+        }
+      ]
+    },
+    {
+      "id": "A2-EX-M10",
+      "level": "A2",
+      "themeID": "a2-5",
+      "card": "A2-28",
+      "type": "matching",
+      "prompt": "Соедините сочетание с его значением (ser / estar меняют смысл).",
+      "explanation": "С одними прилагательными глагол меняет смысл: *ser listo* (умный) / *estar listo* (готов); *ser rico* (богатый) / *estar rico* (вкусный). *ser* — сущность, *estar* — состояние.",
+      "pairs": [
+        {
+          "left": "ser listo",
+          "right": "умный"
+        },
+        {
+          "left": "estar listo",
+          "right": "готов"
+        },
+        {
+          "left": "ser rico",
+          "right": "богатый"
+        },
+        {
+          "left": "estar rico",
+          "right": "вкусный"
+        }
+      ]
+    },
+    {
+      "id": "A2-EX-W01",
+      "level": "A2",
+      "themeID": "a2-1",
+      "card": "A2-02",
+      "type": "word-order",
+      "prompt": "Составьте предложение (indefinido).",
+      "explanation": "*Ayer comí en un restaurante* — indefinido о завершённом действии в закрытом прошлом. Маркер *ayer* требует indefinido, не perfecto.",
+      "tokens": [
+        "Ayer",
+        "comí",
+        "en",
+        "un",
+        "restaurante"
+      ],
+      "answer": "Ayer comí en un restaurante"
+    },
+    {
+      "id": "A2-EX-W02",
+      "level": "A2",
+      "themeID": "a2-1",
+      "card": "A2-05",
+      "type": "word-order",
+      "prompt": "Составьте предложение (imperfecto + indefinido).",
+      "explanation": "*Comía* (imperfecto) — фон/длящийся процесс; *sonó* (indefinido) — событие, которое его прерывает: *Comía cuando sonó el teléfono*.",
+      "tokens": [
+        "Comía",
+        "cuando",
+        "sonó",
+        "el",
+        "teléfono"
+      ],
+      "answer": "Comía cuando sonó el teléfono"
+    },
+    {
+      "id": "A2-EX-W03",
+      "level": "A2",
+      "themeID": "a2-2",
+      "card": "A2-08",
+      "type": "word-order",
+      "prompt": "Составьте предложение (ir a + infinitivo).",
+      "explanation": "*Voy a descansar* — перифраза ближайшего будущего: спрягается только *ir* (*voy*), частица *a* обязательна, смысловой глагол — в инфинитиве.",
+      "tokens": [
+        "Este",
+        "fin",
+        "de",
+        "semana",
+        "voy",
+        "a",
+        "descansar"
+      ],
+      "answer": "Este fin de semana voy a descansar"
+    },
+    {
+      "id": "A2-EX-W04",
+      "level": "A2",
+      "themeID": "a2-2",
+      "card": "A2-09",
+      "type": "word-order",
+      "prompt": "Составьте вежливый вопрос (condicional simple).",
+      "explanation": "Condicional *podrías* используется для вежливой просьбы: *¿Podrías ayudarme?* — «Не мог бы ты мне помочь?». Местоимение *me* присоединяется к инфинитиву слитно.",
+      "tokens": [
+        "¿",
+        "Podrías",
+        "ayudarme",
+        "?"
+      ],
+      "answer": "¿ Podrías ayudarme ?"
+    },
+    {
+      "id": "A2-EX-W05",
+      "level": "A2",
+      "themeID": "a2-3",
+      "card": "A2-13",
+      "type": "word-order",
+      "prompt": "Составьте предложение (косвенное дополнение с дублированием).",
+      "explanation": "Косвенное дополнение в испанском дублируется: местоимение *le* стоит, даже когда есть *a María*: *Le doy el libro a María*. Пропуск *le* звучит неестественно.",
+      "tokens": [
+        "Le",
+        "doy",
+        "el",
+        "libro",
+        "a",
+        "María"
+      ],
+      "answer": "Le doy el libro a María"
+    },
+    {
+      "id": "A2-EX-W06",
+      "level": "A2",
+      "themeID": "a2-3",
+      "card": "A2-16",
+      "type": "word-order",
+      "prompt": "Составьте отрицательный императив с двумя местоимениями.",
+      "explanation": "В отрицательном императиве местоимения стоят **перед** глаголом, порядок косвенное → прямое: *¡No me lo digas!* Глагол — форма subjuntivo (*digas*), не утвердительная.",
+      "tokens": [
+        "¡",
+        "No",
+        "me",
+        "lo",
+        "digas",
+        "!"
+      ],
+      "answer": "¡ No me lo digas !"
+    },
+    {
+      "id": "A2-EX-W07",
+      "level": "A2",
+      "themeID": "a2-4",
+      "card": "A2-17",
+      "type": "word-order",
+      "prompt": "Составьте предложение сравнения (больше).",
+      "explanation": "Модель «больше»: *más* + прилагательное + *que*: *Madrid es más grande que Sevilla*. Связку нельзя смешивать (*más … como* — ошибка).",
+      "tokens": [
+        "Madrid",
+        "es",
+        "más",
+        "grande",
+        "que",
+        "Sevilla"
+      ],
+      "answer": "Madrid es más grande que Sevilla"
+    },
+    {
+      "id": "A2-EX-W08",
+      "level": "A2",
+      "themeID": "a2-4",
+      "card": "A2-18",
+      "type": "word-order",
+      "prompt": "Составьте относительный суперлатив («самый … из»).",
+      "explanation": "Относительный суперлатив: артикль + сущ. + *más* + прил. + *de* (группа): *Es el chico más alto de la clase*. Группа вводится предлогом *de*, не *en*.",
+      "tokens": [
+        "Es",
+        "el",
+        "chico",
+        "más",
+        "alto",
+        "de",
+        "la",
+        "clase"
+      ],
+      "answer": "Es el chico más alto de la clase"
+    },
+    {
+      "id": "A2-EX-W09",
+      "level": "A2",
+      "themeID": "a2-5",
+      "card": "A2-24",
+      "type": "word-order",
+      "prompt": "Составьте предложение (личная обязанность).",
+      "explanation": "*tener que + инфинитив* — личная обязанность конкретного человека: *Mañana tengo que trabajar*. После *que* всегда инфинитив.",
+      "tokens": [
+        "Mañana",
+        "tengo",
+        "que",
+        "trabajar"
+      ],
+      "answer": "Mañana tengo que trabajar"
+    },
+    {
+      "id": "A2-EX-W10",
+      "level": "A2",
+      "themeID": "a2-5",
+      "card": "A2-25",
+      "type": "word-order",
+      "prompt": "Составьте предложение (длительность: llevar + gerundio).",
+      "explanation": "*llevar* + время + герундий = «уже … делаю»: *Llevo dos años estudiando español*. После периода нужен герундий, а не инфинитив.",
+      "tokens": [
+        "Llevo",
+        "dos",
+        "años",
+        "estudiando",
+        "español"
+      ],
+      "answer": "Llevo dos años estudiando español"
+    },
+    {
       "id": "B1-EX-101",
       "level": "B1",
       "themeID": "b1-1",
@@ -8484,6 +9595,591 @@
         "el currículo de la"
       ],
       "answer": "el currículum"
+    },
+    {
+      "id": "B1-EX-F01",
+      "level": "B1",
+      "themeID": "b1-1",
+      "card": "B1-03",
+      "type": "free-response",
+      "prompt": "Переведите на испанский: «Я рад, что ты здесь».",
+      "explanation": "Выражение эмоции *alegrarse de que* + subjuntivo: *estés*. Не забывайте предлог *de* перед *que*.",
+      "answer": "Me alegro de que estés aquí.",
+      "accept": [
+        "Me alegro de que estes aqui"
+      ]
+    },
+    {
+      "id": "B1-EX-F02",
+      "level": "B1",
+      "themeID": "b1-1",
+      "card": "B1-01",
+      "type": "free-response",
+      "prompt": "Проспрягайте глагол **tener** в presente de subjuntivo (все шесть лиц).",
+      "explanation": "Основа берётся от формы *yo* индикатива: *tengo → teng-*. Окончания на *-a*: *tenga, tengas, tenga, tengamos, tengáis, tengan*.",
+      "answer": "tenga, tengas, tenga, tengamos, tengáis, tengan",
+      "accept": [
+        "tenga tengas tenga tengamos tengáis tengan",
+        "tenga, tengas, tenga, tengamos, tengais, tengan"
+      ]
+    },
+    {
+      "id": "B1-EX-F03",
+      "level": "B1",
+      "themeID": "b1-2",
+      "card": "B1-07",
+      "type": "free-response",
+      "prompt": "Переведите на испанский: «Даже если пойдёт дождь, я выйду».",
+      "explanation": "«Даже если» (гипотеза) → *aunque + subjuntivo*: *aunque llueva*. Главная часть — futuro *saldré*. С indicativo (*aunque llueve*) смысл был бы «хотя дождь идёт».",
+      "answer": "Aunque llueva, saldré.",
+      "accept": [
+        "Aunque llueva saldré",
+        "Aunque llueva, saldre"
+      ]
+    },
+    {
+      "id": "B1-EX-F04",
+      "level": "B1",
+      "themeID": "b1-2",
+      "card": "B1-10",
+      "type": "free-response",
+      "prompt": "Проспрягайте глагол **hablar** в pretérito imperfecto de subjuntivo (любая из форм — на *-ra* или *-se*).",
+      "explanation": "От *ellos* индефинидо: *hablaron → habla-*. Окончания *-ra*: *hablara, hablaras, hablara, habláramos, hablarais, hablaran* (или равноправные *-se*). В *nosotros* — тильда: *habláramos*.",
+      "answer": "hablara/hablase, hablaras/hablases, hablara/hablase, habláramos/hablásemos, hablarais/hablaseis, hablaran/hablasen",
+      "accept": [
+        "hablara hablaras hablara habláramos hablarais hablaran",
+        "hablase hablases hablase hablásemos hablaseis hablasen"
+      ]
+    },
+    {
+      "id": "B1-EX-F05",
+      "level": "B1",
+      "themeID": "b1-3",
+      "card": "B1-14",
+      "type": "free-response",
+      "prompt": "Переведите на испанский догадку о настоящем: «Наверное, сейчас три часа».",
+      "explanation": "Futuro de probabilidad выражает догадку о настоящем самой формой глагола: *Serán las tres* = «наверное, сейчас три». Отдельное «наверное» не нужно.",
+      "answer": "Serán las tres.",
+      "accept": [
+        "Seran las tres"
+      ]
+    },
+    {
+      "id": "B1-EX-F06",
+      "level": "B1",
+      "themeID": "b1-3",
+      "card": "B1-13",
+      "type": "free-response",
+      "prompt": "Составьте мини-рассказ по-испански, используя imperfecto для фона и indefinido для события: опишите, что была ночь, шёл дождь, и кто-то постучал в дверь.",
+      "explanation": "Фон и обстановка → imperfecto (*Era de noche, llovía*); точечное событие, прерывающее фон → indefinido (*llamó*). Пример модели: *Era de noche y llovía cuando alguien llamó a la puerta.*",
+      "answer": "Era de noche y llovía cuando alguien llamó a la puerta.",
+      "accept": [
+        "Era de noche y llovia cuando alguien llamó a la puerta"
+      ]
+    },
+    {
+      "id": "B1-EX-F07",
+      "level": "B1",
+      "themeID": "b1-4",
+      "card": "B1-16",
+      "type": "free-response",
+      "prompt": "Переведите условие типа 2: «Если бы у меня были деньги, я бы путешествовал по миру».",
+      "explanation": "Тип 2: *si + imperfecto de subjuntivo → condicional*: *Si tuviera… viajaría*. После *si* нельзя condicional (*tendría*) — только imperfecto de subjuntivo.",
+      "answer": "Si tuviera dinero, viajaría por el mundo.",
+      "accept": [
+        "Si tuviera dinero viajaría por el mundo",
+        "Si tuviera dinero, viajaria por el mundo"
+      ]
+    },
+    {
+      "id": "B1-EX-F08",
+      "level": "B1",
+      "themeID": "b1-4",
+      "card": "B1-17",
+      "type": "free-response",
+      "prompt": "Переведите в косвенную речь фразу «Estoy cansado», вводя её через *Dijo que…*.",
+      "explanation": "После вводящего глагола в прошедшем (*dijo*) presente сдвигается в imperfecto: *estoy → estaba*. Результат: *Dijo que estaba cansado.*",
+      "answer": "Dijo que estaba cansado.",
+      "accept": [
+        "Dijo que estaba cansado"
+      ]
+    },
+    {
+      "id": "B1-EX-F09",
+      "level": "B1",
+      "themeID": "b1-5",
+      "card": "B1-24",
+      "type": "free-response",
+      "prompt": "Переведите на испанский: «Я не думаю, что это хорошая идея».",
+      "explanation": "Отрицание мнения снимает уверенность → subjuntivo: *no creo que + sea*. Сравните: *Creo que es buena idea* (утверждение → indicativo).",
+      "answer": "No creo que sea buena idea.",
+      "accept": [
+        "No creo que sea buena idea"
+      ]
+    },
+    {
+      "id": "B1-EX-F10",
+      "level": "B1",
+      "themeID": "b1-5",
+      "card": "B1-25",
+      "type": "free-response",
+      "prompt": "Переведите на испанский: «Я скучаю по своей семье».",
+      "explanation": "Устойчивое выражение *echar de menos* = «скучать по». Перед человеком нужен предлог *a*: *Echo de menos a mi familia.*",
+      "answer": "Echo de menos a mi familia.",
+      "accept": [
+        "Echo de menos a mi familia"
+      ]
+    },
+    {
+      "id": "B1-EX-M01",
+      "level": "B1",
+      "themeID": "b1-1",
+      "card": "B1-02",
+      "type": "matching",
+      "prompt": "Соедините глагол желания или влияния с придаточным в subjuntivo.",
+      "explanation": "После глаголов желания и влияния (*querer, pedir, esperar, aconsejar*) при разных субъектах идёт *que + subjuntivo*: *vengas, me ayudes, estés, descanses*.",
+      "pairs": [
+        {
+          "left": "Quiero que",
+          "right": "vengas"
+        },
+        {
+          "left": "Te pido que",
+          "right": "me ayudes"
+        },
+        {
+          "left": "Espero que",
+          "right": "estés bien"
+        },
+        {
+          "left": "Te aconsejo que",
+          "right": "descanses"
+        }
+      ]
+    },
+    {
+      "id": "B1-EX-M02",
+      "level": "B1",
+      "themeID": "b1-1",
+      "card": "B1-04",
+      "type": "matching",
+      "prompt": "Соедините выражение мнения с правильной формой глагола (indicativo или subjuntivo).",
+      "explanation": "Утверждение мнения и очевидность → indicativo (*es, llueve*); отрицание мнения и сомнение → subjuntivo (*sea, venga*). Отрицание переключает наклонение.",
+      "pairs": [
+        {
+          "left": "Creo que",
+          "right": "es verdad"
+        },
+        {
+          "left": "No creo que",
+          "right": "sea verdad"
+        },
+        {
+          "left": "Es evidente que",
+          "right": "llueve"
+        },
+        {
+          "left": "Dudo que",
+          "right": "venga"
+        }
+      ]
+    },
+    {
+      "id": "B1-EX-M03",
+      "level": "B1",
+      "themeID": "b1-2",
+      "card": "B1-07",
+      "type": "matching",
+      "prompt": "Соедините условный союз с его значением.",
+      "explanation": "Условные союзы (кроме *si*) вводят ещё-не-реализованное условие и тянут subjuntivo: *a menos que venga, con tal de que me lo pidas, en caso de que haga frío, sin que nadie lo viera*.",
+      "pairs": [
+        {
+          "left": "a menos que",
+          "right": "если только не"
+        },
+        {
+          "left": "con tal de que",
+          "right": "при условии что"
+        },
+        {
+          "left": "en caso de que",
+          "right": "в случае если"
+        },
+        {
+          "left": "sin que",
+          "right": "без того чтобы"
+        }
+      ]
+    },
+    {
+      "id": "B1-EX-M04",
+      "level": "B1",
+      "themeID": "b1-2",
+      "card": "B1-08",
+      "type": "matching",
+      "prompt": "Соедините начало относительного придаточного с правильной формой (indicativo или subjuntivo).",
+      "explanation": "Конкретный, существующий референт → indicativo (*funciona, habla*); неизвестный, искомый или отрицаемый → subjuntivo (*funcione, hable*).",
+      "pairs": [
+        {
+          "left": "Tengo un coche que",
+          "right": "funciona"
+        },
+        {
+          "left": "Busco un coche que",
+          "right": "funcione"
+        },
+        {
+          "left": "Conozco a alguien que",
+          "right": "habla ruso"
+        },
+        {
+          "left": "No hay nadie que",
+          "right": "hable ruso"
+        }
+      ]
+    },
+    {
+      "id": "B1-EX-M05",
+      "level": "B1",
+      "themeID": "b1-3",
+      "card": "B1-13",
+      "type": "matching",
+      "prompt": "Соедините прошедшее время с его ролью в рассказе.",
+      "explanation": "В нарративе indefinido двигает сюжет (*llamó*), imperfecto рисует фон (*llovía*), pluscuamperfecto уводит в предысторию (*había cenado*), perfecto связывает с «сейчас» (*he tenido*).",
+      "pairs": [
+        {
+          "left": "indefinido",
+          "right": "события, двигающие сюжет"
+        },
+        {
+          "left": "imperfecto",
+          "right": "фон и описание"
+        },
+        {
+          "left": "pluscuamperfecto",
+          "right": "предыстория (раньше событий)"
+        },
+        {
+          "left": "perfecto",
+          "right": "связь с настоящим"
+        }
+      ]
+    },
+    {
+      "id": "B1-EX-M06",
+      "level": "B1",
+      "themeID": "b1-3",
+      "card": "B1-14",
+      "type": "matching",
+      "prompt": "Соедините наречие вероятности с наклонением, которое оно обычно требует.",
+      "explanation": "*A lo mejor* и *seguramente* → indicativo (*a lo mejor viene*); *quizás* и *tal vez* → чаще subjuntivo (*quizás venga*). Это главная ловушка: несмотря на смысл «может быть», *a lo mejor* идёт с indicativo.",
+      "pairs": [
+        {
+          "left": "a lo mejor",
+          "right": "indicativo"
+        },
+        {
+          "left": "quizás",
+          "right": "subjuntivo"
+        },
+        {
+          "left": "seguramente",
+          "right": "indicativo"
+        },
+        {
+          "left": "tal vez",
+          "right": "subjuntivo"
+        }
+      ]
+    },
+    {
+      "id": "B1-EX-M07",
+      "level": "B1",
+      "themeID": "b1-4",
+      "card": "B1-16",
+      "type": "matching",
+      "prompt": "Соедините придаточное условие типа 2 с главной частью в condicional.",
+      "explanation": "Условные тип 2: *si + imperfecto de subjuntivo → condicional*. Sослагательное слева от запятой (*tuviera, fuera, pudiera, supiera*), condicional справа (*viajaría, compraría, sería, diría*).",
+      "pairs": [
+        {
+          "left": "Si tuviera dinero,",
+          "right": "viajaría"
+        },
+        {
+          "left": "Si fuera rico,",
+          "right": "compraría una casa"
+        },
+        {
+          "left": "Si pudiera elegir,",
+          "right": "sería feliz"
+        },
+        {
+          "left": "Si supiera la respuesta,",
+          "right": "te la diría"
+        }
+      ]
+    },
+    {
+      "id": "B1-EX-M08",
+      "level": "B1",
+      "themeID": "b1-4",
+      "card": "B1-17",
+      "type": "matching",
+      "prompt": "Соедините время прямой речи с тем, во что оно переходит в косвенной речи после *dijo que…*.",
+      "explanation": "После вводящего глагола в прошедшем времена «сдвигаются назад»: presente → imperfecto, futuro → condicional, indefinido → pluscuamperfecto, императив → imperfecto de subjuntivo.",
+      "pairs": [
+        {
+          "left": "presente (como)",
+          "right": "imperfecto (comía)"
+        },
+        {
+          "left": "futuro (comeré)",
+          "right": "condicional (comería)"
+        },
+        {
+          "left": "indefinido (comí)",
+          "right": "pluscuamperfecto (había comido)"
+        },
+        {
+          "left": "imperativo (ven)",
+          "right": "imperfecto de subjuntivo (viniera)"
+        }
+      ]
+    },
+    {
+      "id": "B1-EX-M09",
+      "level": "B1",
+      "themeID": "b1-5",
+      "card": "B1-20",
+      "type": "matching",
+      "prompt": "Соедините глагол изменения состояния с типом перемены, который он выражает.",
+      "explanation": "*Ponerse* — временная эмоция/состояние; *hacerse* — профессия/статус через усилие; *volverse* — стойкая перемена характера; *convertirse en* — полное превращение в нечто иное.",
+      "pairs": [
+        {
+          "left": "ponerse",
+          "right": "temporal emoción o estado (se puso triste)"
+        },
+        {
+          "left": "hacerse",
+          "right": "profesión con esfuerzo (se hizo médico)"
+        },
+        {
+          "left": "volverse",
+          "right": "cambio de carácter (se volvió serio)"
+        },
+        {
+          "left": "convertirse en",
+          "right": "transformación total (se convirtió en estrella)"
+        }
+      ]
+    },
+    {
+      "id": "B1-EX-M10",
+      "level": "B1",
+      "themeID": "b1-5",
+      "card": "B1-23",
+      "type": "matching",
+      "prompt": "Соедините дискурсивный коннектор с его функцией.",
+      "explanation": "*Sin embargo* — противопоставление («однако»); *por lo tanto* — следствие («поэтому»); *debido a* — причина («из-за»); *además* — добавление («кроме того»).",
+      "pairs": [
+        {
+          "left": "sin embargo",
+          "right": "противопоставление"
+        },
+        {
+          "left": "por lo tanto",
+          "right": "следствие"
+        },
+        {
+          "left": "debido a",
+          "right": "причина"
+        },
+        {
+          "left": "además",
+          "right": "добавление"
+        }
+      ]
+    },
+    {
+      "id": "B1-EX-W01",
+      "level": "B1",
+      "themeID": "b1-1",
+      "card": "B1-02",
+      "type": "word-order",
+      "prompt": "Составьте предложение «Хочу, чтобы ты больше учился».",
+      "explanation": "Желание при разных субъектах: *querer que + subjuntivo*. Форма *estudies* (2 л. ед. ч. subjuntivo от *estudiar*).",
+      "tokens": [
+        "Quiero",
+        "que",
+        "estudies",
+        "más"
+      ],
+      "answer": "Quiero que estudies más"
+    },
+    {
+      "id": "B1-EX-W02",
+      "level": "B1",
+      "themeID": "b1-1",
+      "card": "B1-05",
+      "type": "word-order",
+      "prompt": "Составьте предложение «Важно, чтобы ты пришёл сегодня».",
+      "explanation": "Безличная оценка *es importante que* + subjuntivo: *vengas* (от *venir*, основа *veng-*).",
+      "tokens": [
+        "Es",
+        "importante",
+        "que",
+        "vengas",
+        "hoy"
+      ],
+      "answer": "Es importante que vengas hoy"
+    },
+    {
+      "id": "B1-EX-W03",
+      "level": "B1",
+      "themeID": "b1-2",
+      "card": "B1-06",
+      "type": "word-order",
+      "prompt": "Составьте предложение «Когда придёшь, позвони мне».",
+      "explanation": "Союз времени о будущем действии → subjuntivo: *cuando llegues* (не *llegas* и не *llegarás*). Главная часть — императив *llámame*.",
+      "tokens": [
+        "Cuando",
+        "llegues",
+        "llámame"
+      ],
+      "answer": "Cuando llegues llámame",
+      "accept": [
+        "Cuando llegues, llámame"
+      ]
+    },
+    {
+      "id": "B1-EX-W04",
+      "level": "B1",
+      "themeID": "b1-2",
+      "card": "B1-06",
+      "type": "word-order",
+      "prompt": "Составьте предложение «Я тебе это объясняю, чтобы ты это понял».",
+      "explanation": "Союз цели *para que* при разных субъектах всегда требует subjuntivo: *entiendas*.",
+      "tokens": [
+        "Te",
+        "lo",
+        "explico",
+        "para",
+        "que",
+        "lo",
+        "entiendas"
+      ],
+      "answer": "Te lo explico para que lo entiendas"
+    },
+    {
+      "id": "B1-EX-W05",
+      "level": "B1",
+      "themeID": "b1-3",
+      "card": "B1-11",
+      "type": "word-order",
+      "prompt": "Составьте предложение «Когда я пришёл, фильм уже начался».",
+      "explanation": "Pluscuamperfecto для действия, случившегося раньше другого прошлого: *había empezado* + маркер *ya*. Между *había* и причастием ничего не вставляется.",
+      "tokens": [
+        "Cuando",
+        "llegué",
+        "la",
+        "película",
+        "ya",
+        "había",
+        "empezado"
+      ],
+      "answer": "Cuando llegué la película ya había empezado",
+      "accept": [
+        "Cuando llegué, la película ya había empezado"
+      ]
+    },
+    {
+      "id": "B1-EX-W06",
+      "level": "B1",
+      "themeID": "b1-3",
+      "card": "B1-12",
+      "type": "word-order",
+      "prompt": "Составьте предложение «К завтрашнему дню я уже закончу отчёт».",
+      "explanation": "Futuro perfecto (*habré + participio*) выражает завершение к моменту в будущем: *habré terminado*. Указатель *para mañana* подтверждает значение «завершится к…».",
+      "tokens": [
+        "Para",
+        "mañana",
+        "ya",
+        "habré",
+        "terminado",
+        "el",
+        "informe"
+      ],
+      "answer": "Para mañana ya habré terminado el informe"
+    },
+    {
+      "id": "B1-EX-W07",
+      "level": "B1",
+      "themeID": "b1-4",
+      "card": "B1-15",
+      "type": "word-order",
+      "prompt": "Составьте реальное условие (тип 1): «Если у тебя есть время, позвони мне».",
+      "explanation": "В типах 0 и 1 после *si* — presente de indicativo (*tienes*), НИКОГДА не futuro и не subjuntivo. Главная часть — императив *llámame*.",
+      "tokens": [
+        "Si",
+        "tienes",
+        "tiempo",
+        "llámame"
+      ],
+      "answer": "Si tienes tiempo llámame",
+      "accept": [
+        "Si tienes tiempo, llámame"
+      ]
+    },
+    {
+      "id": "B1-EX-W08",
+      "level": "B1",
+      "themeID": "b1-4",
+      "card": "B1-18",
+      "type": "word-order",
+      "prompt": "Составьте предложение в страдательном залоге: «Дом был построен в 1990».",
+      "explanation": "Пассив *ser + participio*: *fue construida*. Причастие согласуется с подлежащим в роде и числе: *casa* (ж. ед.) → *construida*.",
+      "tokens": [
+        "La",
+        "casa",
+        "fue",
+        "construida",
+        "en",
+        "1990"
+      ],
+      "answer": "La casa fue construida en 1990"
+    },
+    {
+      "id": "B1-EX-W09",
+      "level": "B1",
+      "themeID": "b1-5",
+      "card": "B1-21",
+      "type": "word-order",
+      "prompt": "Составьте предложение «Я учусь уже два часа».",
+      "explanation": "Перифраза длительности *llevar + время + gerundio*: *Llevo dos horas estudiando* (герундий, не инфинитив). Заменяет *estudio desde hace dos horas*.",
+      "tokens": [
+        "Llevo",
+        "dos",
+        "horas",
+        "estudiando"
+      ],
+      "answer": "Llevo dos horas estudiando"
+    },
+    {
+      "id": "B1-EX-W10",
+      "level": "B1",
+      "themeID": "b1-5",
+      "card": "B1-22",
+      "type": "word-order",
+      "prompt": "Составьте предложение «Я не понимаю, что ты говоришь».",
+      "explanation": "Нейтральное относительное *lo que* («то, что») отсылает к идее, а не к конкретному существительному: *lo que dices*.",
+      "tokens": [
+        "No",
+        "entiendo",
+        "lo",
+        "que",
+        "dices"
+      ],
+      "answer": "No entiendo lo que dices"
     },
     {
       "id": "B2-EX-101",
@@ -10019,6 +11715,622 @@
       "answer": "la crisis"
     },
     {
+      "id": "B2-EX-F01",
+      "level": "B2",
+      "themeID": "b2-1",
+      "card": "B2-04",
+      "type": "free-response",
+      "prompt": "Переведите: «То, что идёт дождь, меня не беспокоит».",
+      "explanation": "Оборот *el hecho de que* лишь вводит тему, не утверждая её → subjuntivo: *llueva*.",
+      "answer": "El hecho de que llueva no me preocupa.",
+      "accept": [
+        "El hecho de que llueva no me preocupa",
+        "Que llueva no me preocupa"
+      ]
+    },
+    {
+      "id": "B2-EX-F02",
+      "level": "B2",
+      "themeID": "b2-1",
+      "card": "B2-03",
+      "type": "free-response",
+      "prompt": "Переведите: «Я хотел, чтобы ты пришёл на праздник».",
+      "explanation": "Прошедшее в главном (*quería*) → imperfecto de subjuntivo в придаточном: *vinieras/vinieses*.",
+      "answer": "Quería que vinieras a la fiesta.",
+      "accept": [
+        "Quería que vinieras a la fiesta",
+        "Quería que vinieses a la fiesta"
+      ]
+    },
+    {
+      "id": "B2-EX-F03",
+      "level": "B2",
+      "themeID": "b2-2",
+      "card": "B2-06",
+      "type": "free-response",
+      "prompt": "Переведите: «Если бы я учился, я бы сдал экзамен».",
+      "explanation": "Тип 3: *si* + pluscuamperfecto de subjuntivo → condicional perfecto.",
+      "answer": "Si hubiera estudiado, habría aprobado.",
+      "accept": [
+        "Si hubiese estudiado, habría aprobado",
+        "Si hubiera estudiado habría aprobado"
+      ]
+    },
+    {
+      "id": "B2-EX-F04",
+      "level": "B2",
+      "themeID": "b2-2",
+      "card": "B2-09",
+      "type": "free-response",
+      "prompt": "Переведите (упрёк): «Тебе следовало прийти раньше».",
+      "explanation": "Нереализованное долженствование: *deber* в condicional + *haber* + participio (*deberías haber llegado*).",
+      "answer": "Deberías haber llegado antes.",
+      "accept": [
+        "Deberías haber llegado antes",
+        "Tendrías que haber llegado antes"
+      ]
+    },
+    {
+      "id": "B2-EX-F05",
+      "level": "B2",
+      "themeID": "b2-3",
+      "card": "B2-13",
+      "type": "free-response",
+      "prompt": "Переведите в косвенную речь: «Он сказал мне: „Приду завтра“».",
+      "explanation": "Ввод в прошедшем (*dijo*): futuro → condicional (*vendría*), *mañana* → *al día siguiente* (backshift).",
+      "answer": "Me dijo que vendría al día siguiente.",
+      "accept": [
+        "Me dijo que vendría al día siguiente",
+        "Dijo que vendría al día siguiente"
+      ]
+    },
+    {
+      "id": "B2-EX-F06",
+      "level": "B2",
+      "themeID": "b2-3",
+      "card": "B2-11",
+      "type": "free-response",
+      "prompt": "Переведите: «Как я ни стараюсь, у меня не получается».",
+      "explanation": "*Por más que* об реальном факте допускает indicativo (*intento*); о гипотезе — subjuntivo (*intente*).",
+      "answer": "Por más que lo intento, no lo consigo.",
+      "accept": [
+        "Por más que lo intento, no lo consigo",
+        "Por más que lo intente, no lo consigo"
+      ]
+    },
+    {
+      "id": "B2-EX-F07",
+      "level": "B2",
+      "themeID": "b2-4",
+      "card": "B2-16",
+      "type": "free-response",
+      "prompt": "Переведите: «Я мечтаю поехать в Японию».",
+      "explanation": "«Мечтать о» = *soñar con* (не *de/sobre*): *Sueño con viajar…*",
+      "answer": "Sueño con viajar a Japón.",
+      "accept": [
+        "Sueño con viajar a Japón",
+        "Sueño con ir a Japón"
+      ]
+    },
+    {
+      "id": "B2-EX-F08",
+      "level": "B2",
+      "themeID": "b2-4",
+      "card": "B2-18",
+      "type": "free-response",
+      "prompt": "Переведите (результат действия): «Письмо уже написано».",
+      "explanation": "*estar + participio* описывает состояние как результат; причастие согласуется в роде/числе: *está escrita*.",
+      "answer": "La carta ya está escrita.",
+      "accept": [
+        "La carta ya está escrita",
+        "La carta está escrita"
+      ]
+    },
+    {
+      "id": "B2-EX-F09",
+      "level": "B2",
+      "themeID": "b2-5",
+      "card": "B2-23",
+      "type": "free-response",
+      "prompt": "Напишите в формальном регистре начало делового письма: «Уважаемый господин директор, пишу Вам, чтобы запросить информацию».",
+      "explanation": "Формальный регистр: обращение *Estimado Sr.*, форма *usted* (*le escribo*), нейтральная лексика (*solicitar*).",
+      "answer": "Estimado Sr. director, le escribo para solicitar información.",
+      "accept": [
+        "Estimado Sr. director, le escribo para solicitar información",
+        "Estimado señor director, le escribo para solicitar información"
+      ]
+    },
+    {
+      "id": "B2-EX-F10",
+      "level": "B2",
+      "themeID": "b2-5",
+      "card": "B2-25",
+      "type": "free-response",
+      "prompt": "Переведите: «Общество сталкивается с серьёзной проблемой неравенства».",
+      "explanation": "Функциональная лексика B2 (общество): *enfrentarse a*, *la desigualdad*.",
+      "answer": "La sociedad se enfrenta a un grave problema de desigualdad.",
+      "accept": [
+        "La sociedad se enfrenta a un grave problema de desigualdad",
+        "La sociedad se enfrenta a un problema de desigualdad"
+      ]
+    },
+    {
+      "id": "B2-EX-M01",
+      "level": "B2",
+      "themeID": "b2-1",
+      "card": "B2-03",
+      "type": "matching",
+      "prompt": "Сопоставьте главный глагол с формой subjuntivo в придаточном (согласование времён).",
+      "explanation": "Настоящее/будущее в главном → presente/perfecto de subj.; прошедшее/условное в главном → imperfecto/pluscuamperfecto de subj. (correlación de tiempos).",
+      "pairs": [
+        {
+          "left": "Quiero que…",
+          "right": "vengas (presente de subj.)"
+        },
+        {
+          "left": "Espero que ya…",
+          "right": "hayas comido (perfecto de subj.)"
+        },
+        {
+          "left": "Quería que…",
+          "right": "vinieras (imperfecto de subj.)"
+        },
+        {
+          "left": "Me habría gustado que…",
+          "right": "hubieras venido (pluscuamperfecto de subj.)"
+        }
+      ]
+    },
+    {
+      "id": "B2-EX-M02",
+      "level": "B2",
+      "themeID": "b2-1",
+      "card": "B2-05",
+      "type": "matching",
+      "prompt": "Сопоставьте эмфатическую конструкцию с subjuntivo с её значением.",
+      "explanation": "Редупликация «V-subj + relativo + V-subj» означает «что бы ни / как бы ни»: глагол повторяется в том же лице и времени subjuntivo.",
+      "pairs": [
+        {
+          "left": "Pase lo que pase",
+          "right": "Что бы ни случилось"
+        },
+        {
+          "left": "Sea como sea",
+          "right": "Как бы то ни было"
+        },
+        {
+          "left": "Digan lo que digan",
+          "right": "Что бы ни говорили"
+        },
+        {
+          "left": "Cueste lo que cueste",
+          "right": "Чего бы это ни стоило"
+        }
+      ]
+    },
+    {
+      "id": "B2-EX-M03",
+      "level": "B2",
+      "themeID": "b2-2",
+      "card": "B2-08",
+      "type": "matching",
+      "prompt": "Сопоставьте альтернативную условную конструкцию с её эквивалентом.",
+      "explanation": "*de + infinitivo* — книжная замена *si*; *haber + participio* соответствует условию типа 3 (нереальное прошлое).",
+      "pairs": [
+        {
+          "left": "De haberlo sabido…",
+          "right": "Si lo hubiera sabido"
+        },
+        {
+          "left": "De seguir así…",
+          "right": "Si seguimos así"
+        },
+        {
+          "left": "De no llover…",
+          "right": "Si no llueve"
+        },
+        {
+          "left": "En caso de que…",
+          "right": "Если вдруг (+ subjuntivo)"
+        }
+      ]
+    },
+    {
+      "id": "B2-EX-M04",
+      "level": "B2",
+      "themeID": "b2-2",
+      "card": "B2-09",
+      "type": "matching",
+      "prompt": "Сопоставьте модель сожаления/упрёка с её переводом.",
+      "explanation": "Нереализованное долженствование: *deber/poder (condicional) + haber + participio*; сожаление: *ojalá + pluscuamperfecto de subj.*",
+      "pairs": [
+        {
+          "left": "Deberías haber estudiado más.",
+          "right": "Тебе следовало больше учиться."
+        },
+        {
+          "left": "Podrías haberme avisado.",
+          "right": "Ты мог бы меня предупредить."
+        },
+        {
+          "left": "Ojalá hubiera venido.",
+          "right": "Жаль, что он не пришёл."
+        },
+        {
+          "left": "No debería haber dicho eso.",
+          "right": "Мне не стоило этого говорить."
+        }
+      ]
+    },
+    {
+      "id": "B2-EX-M05",
+      "level": "B2",
+      "themeID": "b2-3",
+      "card": "B2-11",
+      "type": "matching",
+      "prompt": "Сопоставьте уступительный союз с его значением.",
+      "explanation": "Уступка = «несмотря на то что / хотя»; наклонение зависит от того, факт это (indicativo) или гипотеза (subjuntivo).",
+      "pairs": [
+        {
+          "left": "aunque",
+          "right": "хотя / несмотря на то что"
+        },
+        {
+          "left": "a pesar de que",
+          "right": "несмотря на то что"
+        },
+        {
+          "left": "por más que",
+          "right": "как бы ни / сколько бы ни"
+        },
+        {
+          "left": "si bien",
+          "right": "хотя (книжное)"
+        }
+      ]
+    },
+    {
+      "id": "B2-EX-M06",
+      "level": "B2",
+      "themeID": "b2-3",
+      "card": "B2-10",
+      "type": "matching",
+      "prompt": "Сопоставьте причинно-следственный союз с его функцией/наклонением.",
+      "explanation": "Причина и следствие обычно с indicativo, но *de ahí que* требует subjuntivo (*de ahí que suspendiera*).",
+      "pairs": [
+        {
+          "left": "porque",
+          "right": "нейтральная причина (indicativo)"
+        },
+        {
+          "left": "de ahí que",
+          "right": "следствие (+ subjuntivo)"
+        },
+        {
+          "left": "ya que",
+          "right": "поскольку (известная причина)"
+        },
+        {
+          "left": "así que",
+          "right": "так что / и поэтому"
+        }
+      ]
+    },
+    {
+      "id": "B2-EX-M07",
+      "level": "B2",
+      "themeID": "b2-4",
+      "card": "B2-14",
+      "type": "matching",
+      "prompt": "Сопоставьте предложение с функцией *se*.",
+      "explanation": "*se* имеет шесть значений; здесь: reflexivo, recíproco, pasiva refleja (согласуется с подлежащим) и impersonal (всегда 3 л. ед.).",
+      "pairs": [
+        {
+          "left": "Se lava.",
+          "right": "Возвратное (действие на себя)"
+        },
+        {
+          "left": "Se quieren.",
+          "right": "Взаимное (друг друга)"
+        },
+        {
+          "left": "Se venden pisos.",
+          "right": "Pasiva refleja (продаются квартиры)"
+        },
+        {
+          "left": "Se vive bien aquí.",
+          "right": "Безличное (без деятеля)"
+        }
+      ]
+    },
+    {
+      "id": "B2-EX-M08",
+      "level": "B2",
+      "themeID": "b2-4",
+      "card": "B2-16",
+      "type": "matching",
+      "prompt": "Сопоставьте глагол с нужным предлогом управления.",
+      "explanation": "Управление предлогами заучивается вместе с глаголом: *soñar con, acordarse de, pensar en, negarse a, preocuparse por*.",
+      "pairs": [
+        {
+          "left": "soñar ___ viajar",
+          "right": "con"
+        },
+        {
+          "left": "acordarse ___ su nombre",
+          "right": "de"
+        },
+        {
+          "left": "pensar ___ ti",
+          "right": "en"
+        },
+        {
+          "left": "negarse ___ aceptarlo",
+          "right": "a"
+        },
+        {
+          "left": "preocuparse ___ todo",
+          "right": "por"
+        }
+      ]
+    },
+    {
+      "id": "B2-EX-M09",
+      "level": "B2",
+      "themeID": "b2-5",
+      "card": "B2-22",
+      "type": "matching",
+      "prompt": "Сопоставьте идиому с её значением.",
+      "explanation": "Идиомы фиксированы, их нельзя переводить дословно и менять слова внутри нельзя.",
+      "pairs": [
+        {
+          "left": "meter la pata",
+          "right": "сесть в лужу, оплошать"
+        },
+        {
+          "left": "dar en el clavo",
+          "right": "попасть в точку"
+        },
+        {
+          "left": "estar en las nubes",
+          "right": "витать в облаках"
+        },
+        {
+          "left": "tirar la toalla",
+          "right": "сдаться"
+        },
+        {
+          "left": "echar una mano",
+          "right": "помочь"
+        }
+      ]
+    },
+    {
+      "id": "B2-EX-M10",
+      "level": "B2",
+      "themeID": "b2-5",
+      "card": "B2-21",
+      "type": "matching",
+      "prompt": "Сопоставьте дискурсивный маркер с его функцией.",
+      "explanation": "Маркеры связывают целые высказывания: пояснение, противопоставление, следствие, итог, смена темы.",
+      "pairs": [
+        {
+          "left": "es decir",
+          "right": "переформулировка (то есть)"
+        },
+        {
+          "left": "no obstante",
+          "right": "противопоставление (однако)"
+        },
+        {
+          "left": "por lo tanto",
+          "right": "следствие (поэтому)"
+        },
+        {
+          "left": "en definitiva",
+          "right": "обобщение/итог (в итоге)"
+        },
+        {
+          "left": "por cierto",
+          "right": "изменение темы (кстати)"
+        }
+      ]
+    },
+    {
+      "id": "B2-EX-W01",
+      "level": "B2",
+      "themeID": "b2-1",
+      "card": "B2-01",
+      "type": "word-order",
+      "prompt": "Соберите предложение: «Надеюсь, ты сдал экзамен».",
+      "explanation": "Presente en главном (*espero*) + завершённость → pretérito perfecto de subjuntivo: *hayas aprobado*.",
+      "tokens": [
+        "Espero",
+        "que",
+        "hayas",
+        "aprobado",
+        "el",
+        "examen"
+      ],
+      "answer": "Espero que hayas aprobado el examen"
+    },
+    {
+      "id": "B2-EX-W02",
+      "level": "B2",
+      "themeID": "b2-1",
+      "card": "B2-02",
+      "type": "word-order",
+      "prompt": "Соберите предложение: «Если бы я только знал правду раньше».",
+      "explanation": "*Ojalá* + pluscuamperfecto de subjuntivo выражает сожаление о прошлом: *hubiera/hubiese sabido*.",
+      "tokens": [
+        "Ojalá",
+        "hubiera",
+        "sabido",
+        "la",
+        "verdad",
+        "antes"
+      ],
+      "answer": "Ojalá hubiera sabido la verdad antes",
+      "accept": [
+        "Ojalá hubiese sabido la verdad antes"
+      ]
+    },
+    {
+      "id": "B2-EX-W03",
+      "level": "B2",
+      "themeID": "b2-2",
+      "card": "B2-06",
+      "type": "word-order",
+      "prompt": "Соберите условное тип 3: «Если бы у меня было время, я бы тебе помог».",
+      "explanation": "Тип 3: *si* + pluscuamperfecto de subjuntivo → condicional perfecto (*hubiera tenido → habría ayudado*).",
+      "tokens": [
+        "Si",
+        "hubiera",
+        "tenido",
+        "tiempo",
+        "te",
+        "habría",
+        "ayudado"
+      ],
+      "answer": "Si hubiera tenido tiempo te habría ayudado",
+      "accept": [
+        "Si hubiese tenido tiempo te habría ayudado"
+      ]
+    },
+    {
+      "id": "B2-EX-W04",
+      "level": "B2",
+      "themeID": "b2-2",
+      "card": "B2-07",
+      "type": "word-order",
+      "prompt": "Соберите смешанное условное: «Если бы я выучился на врача, сейчас был бы врачом».",
+      "explanation": "Mixta (тип A): прошлое условие *si + pluscuamperfecto de subj.* → настоящее следствие *condicional simple* (*sería*).",
+      "tokens": [
+        "Si",
+        "hubiera",
+        "estudiado",
+        "medicina",
+        "ahora",
+        "sería",
+        "médico"
+      ],
+      "answer": "Si hubiera estudiado medicina ahora sería médico",
+      "accept": [
+        "Si hubiese estudiado medicina ahora sería médico"
+      ]
+    },
+    {
+      "id": "B2-EX-W05",
+      "level": "B2",
+      "themeID": "b2-3",
+      "card": "B2-12",
+      "type": "word-order",
+      "prompt": "Соберите целевое предложение: «Я тебе это объясняю, чтобы ты понял».",
+      "explanation": "Целевые придаточные (*para que*) всегда требуют subjuntivo: *entiendas*.",
+      "tokens": [
+        "Te",
+        "lo",
+        "explico",
+        "para",
+        "que",
+        "lo",
+        "entiendas"
+      ],
+      "answer": "Te lo explico para que lo entiendas"
+    },
+    {
+      "id": "B2-EX-W06",
+      "level": "B2",
+      "themeID": "b2-3",
+      "card": "B2-12",
+      "type": "word-order",
+      "prompt": "Соберите временное предложение: «Как только приду, я тебе позвоню».",
+      "explanation": "Временной союз о будущем (*en cuanto*) → subjuntivo: *llegue* (действие ещё не наступило).",
+      "tokens": [
+        "En",
+        "cuanto",
+        "llegue",
+        "te",
+        "llamaré"
+      ],
+      "answer": "En cuanto llegue te llamaré"
+    },
+    {
+      "id": "B2-EX-W07",
+      "level": "B2",
+      "themeID": "b2-4",
+      "card": "B2-14",
+      "type": "word-order",
+      "prompt": "Соберите безличное предложение: «В этом офисе много работают».",
+      "explanation": "Безличное *se*: деятеля нет, глагол всегда в 3 л. ед. ч. (*se trabaja*).",
+      "tokens": [
+        "En",
+        "esta",
+        "oficina",
+        "se",
+        "trabaja",
+        "mucho"
+      ],
+      "answer": "En esta oficina se trabaja mucho"
+    },
+    {
+      "id": "B2-EX-W08",
+      "level": "B2",
+      "themeID": "b2-4",
+      "card": "B2-15",
+      "type": "word-order",
+      "prompt": "Соберите пассив (pasiva propia): «Книга была опубликована в 2020 году».",
+      "explanation": "Pasiva propia: *ser + participio*, причастие согласуется с подлежащим (*fue publicado*). Формальный, письменный регистр.",
+      "tokens": [
+        "El",
+        "libro",
+        "fue",
+        "publicado",
+        "en",
+        "2020"
+      ],
+      "answer": "El libro fue publicado en 2020"
+    },
+    {
+      "id": "B2-EX-W09",
+      "level": "B2",
+      "themeID": "b2-5",
+      "card": "B2-19",
+      "type": "word-order",
+      "prompt": "Соберите предложение: «Хорошо то, что у нас есть время».",
+      "explanation": "Номинализация *lo + прилагательное* (муж. род ед. ч.): *lo bueno* = «то, что хорошо».",
+      "tokens": [
+        "Lo",
+        "bueno",
+        "es",
+        "que",
+        "tenemos",
+        "tiempo"
+      ],
+      "answer": "Lo bueno es que tenemos tiempo"
+    },
+    {
+      "id": "B2-EX-W10",
+      "level": "B2",
+      "themeID": "b2-5",
+      "card": "B2-24",
+      "type": "word-order",
+      "prompt": "Соберите тезис для дебатов: «С моей точки зрения, проблема серьёзная».",
+      "explanation": "Оборот для выдвижения тезиса: *Desde mi punto de vista…* (аргументация B2).",
+      "tokens": [
+        "Desde",
+        "mi",
+        "punto",
+        "de",
+        "vista",
+        "el",
+        "problema",
+        "es",
+        "grave"
+      ],
+      "answer": "Desde mi punto de vista el problema es grave"
+    },
+    {
       "id": "C1-EX-101",
       "level": "C1",
       "themeID": "c1-1",
@@ -11342,6 +13654,546 @@
         "reformulación"
       ],
       "answer": "resumen"
+    },
+    {
+      "id": "C1-EX-F01",
+      "level": "C1",
+      "themeID": "c1-1",
+      "card": "C1-01",
+      "type": "free-response",
+      "prompt": "Переведите вежливо (устная просьба в справочной): «Здравствуйте, я хотел бы получить информацию о курсе».",
+      "explanation": "В живой устной просьбе испанец смягчает желание через imperfecto de cortesía: *quería información…* Форма *querría/quisiera* тоже учтива, но *quería* — самый естественный разговорный вариант. *Quiero* прозвучало бы резко.",
+      "answer": "Buenos días, quería información sobre el curso.",
+      "accept": [
+        "Buenos días, querría información sobre el curso.",
+        "Buenos días, quería pedir información sobre el curso."
+      ]
+    },
+    {
+      "id": "C1-EX-F02",
+      "level": "C1",
+      "themeID": "c1-1",
+      "card": "C1-01",
+      "type": "free-response",
+      "prompt": "Объясните по-русски, что означает *El ministro habría dimitido según fuentes* и почему это НЕ «министр подал бы в отставку».",
+      "explanation": "*Habría dimitido* здесь — condicional de rumor (журналистский): «предположительно / по слухам подал в отставку». Это сигнал неподтверждённости, а не гипотетическое «бы» условного придаточного.",
+      "answer": "«Habría dimitido» значит «якобы / по непроверённым данным подал в отставку», а не «подал бы в отставку». Это condicional de rumor: журналист снимает с себя ответственность за неподтверждённый факт."
+    },
+    {
+      "id": "C1-EX-F03",
+      "level": "C1",
+      "themeID": "c1-1",
+      "card": "C1-04",
+      "type": "free-response",
+      "prompt": "Переведите максимально учтиво, используя смягчающую форму на *-ra*: «Я хотел бы попросить вас об одолжении».",
+      "explanation": "Формы на *-ra* от *querer/deber/poder* работают как вежливо-литературный эквивалент condicional: *quisiera pedirle un favor* (= *querría*, но учтивее). В этой смягчающей функции работает только *-ra*, не *-se* (обычно не *quisiese*).",
+      "answer": "Quisiera pedirle un favor.",
+      "accept": [
+        "Quisiera pedirle un favor",
+        "Querría pedirle un favor.",
+        "Desearía pedirle un favor."
+      ]
+    },
+    {
+      "id": "C1-EX-F04",
+      "level": "C1",
+      "themeID": "c1-2",
+      "card": "C1-09",
+      "type": "free-response",
+      "prompt": "Переведите, соблюдая управление глагола: «Я понял (осознал), что ошибся».",
+      "explanation": "*Darse cuenta* требует предлога *de*: *me di cuenta de que…* Пропуск *de* (❌ *me di cuenta que*) — самый частотный случай queísmo.",
+      "answer": "Me di cuenta de que me había equivocado.",
+      "accept": [
+        "Me di cuenta de que me equivoqué.",
+        "Me di cuenta de que estaba equivocado."
+      ]
+    },
+    {
+      "id": "C1-EX-F05",
+      "level": "C1",
+      "themeID": "c1-2",
+      "card": "C1-07",
+      "type": "free-response",
+      "prompt": "Исправьте и объясните ошибку: *una caja conteniendo libros*.",
+      "explanation": "По-испански герундий не может определять существительное (в отличие от русского причастия). Для значения «коробка, содержащая книги» нужно *que + verbo*: *una caja que contiene libros*.",
+      "answer": "Герундий-определение недопустим: ❌ una caja conteniendo libros. Нужно относительное придаточное: una caja que contiene libros."
+    },
+    {
+      "id": "C1-EX-F06",
+      "level": "C1",
+      "themeID": "c1-3",
+      "card": "C1-14",
+      "type": "free-response",
+      "prompt": "Объясните ошибку в фразе *Tuve éxito a la calle* (говорящий хотел сказать «я вышел на улицу»). Дайте верный вариант.",
+      "explanation": "*Éxito* — ложный друг: значит «успех», а не «выход». «Выход» — *salida*, «выйти» — *salir*: *Salí a la calle*.",
+      "answer": "Éxito значит «успех», а не «выход». «Выход на улицу» — salir a la calle / la salida. Правильно: Salí a la calle."
+    },
+    {
+      "id": "C1-EX-F07",
+      "level": "C1",
+      "themeID": "c1-3",
+      "card": "C1-15",
+      "type": "free-response",
+      "prompt": "Объясните, метафора это или метонимия: *Leí a Cervantes*. Обоснуйте.",
+      "explanation": "Это метонимия — перенос по смежности/связи (автор вместо его произведений), а не по сходству. Метафора была бы переносом по сходству (напр. *la boca del metro*).",
+      "answer": "Leí a Cervantes — это метонимия (перенос по смежности: автор ↔ его произведения), а не метафора. Смысл: «я прочитал произведения Сервантеса»."
+    },
+    {
+      "id": "C1-EX-F08",
+      "level": "C1",
+      "themeID": "c1-4",
+      "card": "C1-18",
+      "type": "free-response",
+      "prompt": "Объясните, почему фраза *coger el autobús* уместна в Испании, но её избегают во многих странах Латинской Америки. Чем её заменяют?",
+      "explanation": "*Coger* нейтрально в Испании, но вульгарно в Аргентине, Мексике и др. Там используют *tomar* или *agarrar el autobús*. Это самая известная «диалектная ловушка».",
+      "answer": "Глагол coger нейтрален в Испании (coger el autobús — сесть на автобус), но в Аргентине, Мексике и ряде стран табуирован (вульгарен), поэтому там говорят tomar el autobús или agarrar."
+    },
+    {
+      "id": "C1-EX-F09",
+      "level": "C1",
+      "themeID": "c1-4",
+      "card": "C1-19",
+      "type": "free-response",
+      "prompt": "Объясните, что не так с фразой *No obstante, el plan mola un montón*, и предложите два варианта в едином регистре.",
+      "explanation": "Ошибка регистра: *no obstante* (culto) рядом с *mola/un montón* (coloquial) звучит нелепо. Нужно держать один регистр: формальный (*No obstante… sumamente atractivo*) или разговорный (*Pero… mola un montón*). Ошибка регистра заметнее грамматической.",
+      "answer": "Фраза смешивает несовместимые регистры: no obstante — культурно-формальный коннектор, а mola / un montón — разговорные. В одном высказывании их держать нельзя. Формально: No obstante, el plan resulta sumamente atractivo. Разговорно: Pero el plan mola un montón."
+    },
+    {
+      "id": "C1-EX-F10",
+      "level": "C1",
+      "themeID": "c1-5",
+      "card": "C1-23",
+      "type": "free-response",
+      "prompt": "Переформулируйте прямой приказ *Cierra la puerta* как максимально вежливую (косвенную) просьбу.",
+      "explanation": "Косвенный речевой акт смягчает просьбу: *¿Te importaría cerrar la puerta, por favor?* Прямой императив *Cierra la puerta* малознакомому звучит резко.",
+      "answer": "¿Te importaría cerrar la puerta, por favor?",
+      "accept": [
+        "¿Le importaría cerrar la puerta, por favor?",
+        "¿Te importaría cerrar la ventana, por favor?",
+        "¿Podrías cerrar la puerta, por favor?"
+      ]
+    },
+    {
+      "id": "C1-EX-F11",
+      "level": "C1",
+      "themeID": "c1-5",
+      "card": "C1-23",
+      "type": "free-response",
+      "prompt": "Переведите, используя конструкцию *No es que… (subj.), es que… (ind.)*: «Дело не в том, что мне не нравится, — просто у меня нет времени».",
+      "explanation": "Конструкция *No es que… es que…* отрицает мнимую причину (subjuntivo: *guste*) и вводит настоящую (indicativo: *tengo*). ❌ *No es que no me gusta* — забытый субхунтив в первой части.",
+      "answer": "No es que no me guste, es que no tengo tiempo.",
+      "accept": [
+        "No es que no me guste; es que no tengo tiempo."
+      ]
+    },
+    {
+      "id": "C1-EX-F12",
+      "level": "C1",
+      "themeID": "c1-5",
+      "card": "C1-24",
+      "type": "free-response",
+      "prompt": "Объясните, что означает заголовок *El ministro habría mentido* и почему это НЕ «министр солгал бы».",
+      "explanation": "В публицистике *habría + participio* — condicional de rumor: «предположительно солгал» (неподтверждённая информация со ссылкой на источник), а не гипотетическое «бы». Это ключевой маркер осторожной журналистской атрибуции.",
+      "answer": "Это condicional de rumor публицистического стиля: «по непроверённым данным / предположительно солгал», а не «солгал бы». Журналист снимает с себя ответственность за неподтверждённый факт."
+    },
+    {
+      "id": "C1-EX-M01",
+      "level": "C1",
+      "themeID": "c1-1",
+      "card": "C1-01",
+      "type": "matching",
+      "prompt": "Соедините стилистическое употребление времени с его названием и функцией.",
+      "explanation": "На C1 форма времени часто меняет тон, а не указывает на время: *quería* — imperfecto de cortesía; *habría dimitido* — condicional de rumor (по слухам); *estará* — futuro de conjetura (наверное, сейчас дома); *llega* о прошлом — presente histórico.",
+      "pairs": [
+        {
+          "left": "Quería pedirte un favor",
+          "right": "imperfecto de cortesía (вежливая просьба)"
+        },
+        {
+          "left": "El ministro habría dimitido",
+          "right": "condicional de rumor (непроверённая новость)"
+        },
+        {
+          "left": "Estará en casa",
+          "right": "futuro de conjetura (догадка о настоящем)"
+        },
+        {
+          "left": "En 1492, Colón llega a América",
+          "right": "presente histórico (оживление рассказа)"
+        }
+      ]
+    },
+    {
+      "id": "C1-EX-M02",
+      "level": "C1",
+      "themeID": "c1-1",
+      "card": "C1-02",
+      "type": "matching",
+      "prompt": "Соедините независимое употребление subjuntivo с его значением.",
+      "explanation": "Самостоятельный subjuntivo: *ojalá + imp. subj.* — маловероятное желание; *ni que* — всегда нереальное сравнение; *como si* вводит контрфактическую ситуацию (никогда presente); *que yo sepa* — эмфатическая оговорка.",
+      "pairs": [
+        {
+          "left": "¡Ojalá fuera verdad!",
+          "right": "нереальное/маловероятное пожелание"
+        },
+        {
+          "left": "¡Ni que fueras millonario!",
+          "right": "возмущённое нереальное сравнение"
+        },
+        {
+          "left": "Habla como si lo supiera todo",
+          "right": "сравнение с контрфактической ситуацией"
+        },
+        {
+          "left": "Que yo sepa, no ha llegado",
+          "right": "оговорка «насколько мне известно»"
+        }
+      ]
+    },
+    {
+      "id": "C1-EX-M03",
+      "level": "C1",
+      "themeID": "c1-2",
+      "card": "C1-09",
+      "type": "matching",
+      "prompt": "Соедините глагол/оборот с правильным управлением (*que* или *de que*), избегая queísmo и dequeísmo.",
+      "explanation": "Глаголы мысли/речи идут без *de*: *pensar que, creer que*. Обороты с régimen на *de* сохраняют предлог: *darse cuenta de que, estar seguro de que, acordarse de que*. Проверка: подставьте *(de) eso* — появляется ли предлог.",
+      "pairs": [
+        {
+          "left": "pensar",
+          "right": "que (без de)"
+        },
+        {
+          "left": "creer",
+          "right": "que (без de)"
+        },
+        {
+          "left": "darse cuenta",
+          "right": "de que"
+        },
+        {
+          "left": "estar seguro",
+          "right": "de que"
+        },
+        {
+          "left": "acordarse",
+          "right": "de que"
+        }
+      ]
+    },
+    {
+      "id": "C1-EX-M04",
+      "level": "C1",
+      "themeID": "c1-2",
+      "card": "C1-07",
+      "type": "matching",
+      "prompt": "Соедините инфинитивный оборот с предлогом и значением придаточного, которое он сворачивает.",
+      "explanation": "Инфинитив с предлогом сжимает придаточное: *al + inf* — временно́е, *por + inf* — причинное, *de + inf* — условное, *con + inf* — уступительное.",
+      "pairs": [
+        {
+          "left": "al entrar",
+          "right": "временно́е (когда вошёл)"
+        },
+        {
+          "left": "por mentir",
+          "right": "причинное (потому что солгал)"
+        },
+        {
+          "left": "de seguir así",
+          "right": "условное (если так продолжим)"
+        },
+        {
+          "left": "con ser tan listo",
+          "right": "уступительное (хотя он умён)"
+        }
+      ]
+    },
+    {
+      "id": "C1-EX-M05",
+      "level": "C1",
+      "themeID": "c1-3",
+      "card": "C1-11",
+      "type": "matching",
+      "prompt": "Соедините глагол с существительным (устойчивые коллокации).",
+      "explanation": "Правильные коллокации: *tomar una decisión* (не *hacer*), *prestar atención* (не *pagar*), *correr un riesgo* (не *tomar*), *batir un récord* (не *romper*), *cometer un error* (не *hacer*). Калька с русского/английского выдаёт иностранца.",
+      "pairs": [
+        {
+          "left": "tomar",
+          "right": "una decisión"
+        },
+        {
+          "left": "prestar",
+          "right": "atención"
+        },
+        {
+          "left": "correr",
+          "right": "un riesgo"
+        },
+        {
+          "left": "batir",
+          "right": "un récord"
+        },
+        {
+          "left": "cometer",
+          "right": "un error"
+        }
+      ]
+    },
+    {
+      "id": "C1-EX-M06",
+      "level": "C1",
+      "themeID": "c1-3",
+      "card": "C1-13",
+      "type": "matching",
+      "prompt": "Соедините народное слово (patrimonial) с его учёным дублетом (culto) от того же латинского корня.",
+      "explanation": "Дублеты «народное/учёное»: leche → lácteo (LACTE), ojo → ocular (OCULU), noche → nocturno (NOCTE), estrella → estelar (STELLA), llave → clave (CLAVE). Учёная форма живёт в терминологии и прилагательных.",
+      "pairs": [
+        {
+          "left": "leche",
+          "right": "lácteo"
+        },
+        {
+          "left": "ojo",
+          "right": "ocular"
+        },
+        {
+          "left": "noche",
+          "right": "nocturno"
+        },
+        {
+          "left": "estrella",
+          "right": "estelar"
+        },
+        {
+          "left": "llave",
+          "right": "clave"
+        }
+      ]
+    },
+    {
+      "id": "C1-EX-M07",
+      "level": "C1",
+      "themeID": "c1-4",
+      "card": "C1-16",
+      "type": "matching",
+      "prompt": "Соедините идиому (locución) с её значением.",
+      "explanation": "Устойчивые единицы со значением: *meter la pata* (оплошать), *tomar el pelo* (разыгрывать), *costar un ojo de la cara* (стоить дорого), *no dar el brazo a torcer* (не уступать), *quedarse de piedra* (остолбенеть). Форма застывшая — слова менять нельзя.",
+      "pairs": [
+        {
+          "left": "meter la pata",
+          "right": "сесть в лужу, оплошать"
+        },
+        {
+          "left": "tomar el pelo",
+          "right": "разыгрывать, дурачить"
+        },
+        {
+          "left": "costar un ojo de la cara",
+          "right": "стоить целое состояние"
+        },
+        {
+          "left": "no dar el brazo a torcer",
+          "right": "не уступать, стоять на своём"
+        },
+        {
+          "left": "quedarse de piedra",
+          "right": "остолбенеть от удивления"
+        }
+      ]
+    },
+    {
+      "id": "C1-EX-M08",
+      "level": "C1",
+      "themeID": "c1-4",
+      "card": "C1-18",
+      "type": "matching",
+      "prompt": "Соедините слово из испанского варианта (España) с его латиноамериканским эквивалентом.",
+      "explanation": "Лексические различия вариантов: coche↔carro/auto, ordenador↔computadora, móvil↔celular, zumo↔jugo, conducir↔manejar. Испанский плюрицентричен — оба варианта равноправны; важно не смешивать их в одном тексте.",
+      "pairs": [
+        {
+          "left": "coche (España)",
+          "right": "carro / auto (América)"
+        },
+        {
+          "left": "ordenador (España)",
+          "right": "computadora (América)"
+        },
+        {
+          "left": "móvil (España)",
+          "right": "celular (América)"
+        },
+        {
+          "left": "zumo (España)",
+          "right": "jugo (América)"
+        },
+        {
+          "left": "conducir (España)",
+          "right": "manejar (América)"
+        }
+      ]
+    },
+    {
+      "id": "C1-EX-M09",
+      "level": "C1",
+      "themeID": "c1-5",
+      "card": "C1-21",
+      "type": "matching",
+      "prompt": "Соедините формальный коннектор с его логической функцией.",
+      "explanation": "Функции связок: *dado que* — причина, *por consiguiente* — следствие, *no obstante* — противопоставление, *a pesar de que* — уступка, *en cuanto a* — введение темы/аспекта. Путать причину и следствие — типичная ошибка.",
+      "pairs": [
+        {
+          "left": "dado que",
+          "right": "причина"
+        },
+        {
+          "left": "por consiguiente",
+          "right": "следствие"
+        },
+        {
+          "left": "no obstante",
+          "right": "противопоставление"
+        },
+        {
+          "left": "a pesar de que",
+          "right": "уступка"
+        },
+        {
+          "left": "en cuanto a",
+          "right": "тема/аспект"
+        }
+      ]
+    },
+    {
+      "id": "C1-EX-M10",
+      "level": "C1",
+      "themeID": "c1-5",
+      "card": "C1-25",
+      "type": "matching",
+      "prompt": "Соедините навык переработки текста (или маркер) с его целью.",
+      "explanation": "*Resumen* сокращает; *paráfrasis* переписывает в том же объёме и другой структурой; *reformulación* уточняет/меняет регистр (маркеры *es decir, o sea*); *mejor dicho* — самоисправление, а не пояснение.",
+      "pairs": [
+        {
+          "left": "resumen",
+          "right": "сокращает текст (1/4–1/3 объёма)"
+        },
+        {
+          "left": "paráfrasis",
+          "right": "переписывает своими словами в том же объёме"
+        },
+        {
+          "left": "reformulación",
+          "right": "уточняет/меняет регистр (es decir, o sea)"
+        },
+        {
+          "left": "mejor dicho",
+          "right": "самокоррекция"
+        }
+      ]
+    },
+    {
+      "id": "C1-EX-W01",
+      "level": "C1",
+      "themeID": "c1-1",
+      "card": "C1-05",
+      "type": "word-order",
+      "prompt": "Составьте компактное условие о прошлом (эквивалент *Si lo hubiera sabido, no habría venido*).",
+      "explanation": "Оборот *de + infinitivo compuesto* заменяет придаточное *si + pluscuamperfecto de subjuntivo*: *De haberlo sabido, no habría venido* = *Si lo hubiera sabido, no habría venido*.",
+      "tokens": [
+        "De",
+        "haberlo",
+        "sabido,",
+        "no",
+        "habría",
+        "venido"
+      ],
+      "answer": "De haberlo sabido, no habría venido"
+    },
+    {
+      "id": "C1-EX-W02",
+      "level": "C1",
+      "themeID": "c1-2",
+      "card": "C1-06",
+      "type": "word-order",
+      "prompt": "Составьте предложение с левой дислокацией темы «машина» (тема — впереди, обязательная клитика-дубль).",
+      "explanation": "При выносе прямого дополнения влево появляется обязательная клитика-дубль: *El coche lo compró Juan*. Без *lo* (❌ *El coche compró Juan*) — калька русского порядка.",
+      "tokens": [
+        "El",
+        "coche",
+        "lo",
+        "compró",
+        "Juan"
+      ],
+      "answer": "El coche lo compró Juan"
+    },
+    {
+      "id": "C1-EX-W03",
+      "level": "C1",
+      "themeID": "c1-2",
+      "card": "C1-08",
+      "type": "word-order",
+      "prompt": "Составьте абсолютный причастный оборот (= *Cuando terminó la reunión, todos salieron*).",
+      "explanation": "Схема participio absoluto: согласованное причастие + субъект оборота. *Terminada* согласуется с *la reunión* (ж. ед.). ❌ *Terminando* означало бы момент окончания; ❌ *Terminado* — рассогласование.",
+      "tokens": [
+        "Terminada",
+        "la",
+        "reunión,",
+        "todos",
+        "salieron"
+      ],
+      "answer": "Terminada la reunión, todos salieron"
+    },
+    {
+      "id": "C1-EX-W04",
+      "level": "C1",
+      "themeID": "c1-3",
+      "card": "C1-15",
+      "type": "word-order",
+      "prompt": "Составьте застывшую метафору из концептуального поля «идеи = свет» (= «пролить свет на вопрос»).",
+      "explanation": "Концептуальная метафора «идеи = свет» даёт устойчивое *arrojar luz sobre un asunto* (пролить свет на дело). Форма фиксирована; менять предлог или глагол нельзя.",
+      "tokens": [
+        "arrojar",
+        "luz",
+        "sobre",
+        "un",
+        "asunto"
+      ],
+      "answer": "arrojar luz sobre un asunto"
+    },
+    {
+      "id": "C1-EX-W05",
+      "level": "C1",
+      "themeID": "c1-4",
+      "card": "C1-16",
+      "type": "word-order",
+      "prompt": "Составьте идиому «я забыл, что хотел сказать» (местоименная идиома *írsele a alguien el santo al cielo*, 1-е лицо).",
+      "explanation": "Местоименная идиома требует *se* и согласования местоимения с тем, кто забыл: *se me fue el santo al cielo* (я забыл). ❌ *Me fue el santo al cielo* — теряется *se*.",
+      "tokens": [
+        "Se",
+        "me",
+        "fue",
+        "el",
+        "santo",
+        "al",
+        "cielo"
+      ],
+      "answer": "Se me fue el santo al cielo"
+    },
+    {
+      "id": "C1-EX-W06",
+      "level": "C1",
+      "themeID": "c1-5",
+      "card": "C1-21",
+      "type": "word-order",
+      "prompt": "Составьте следственный оборот с обязательным субхунтивом (данные противоречивы, «поэтому стоит их перепроверить»).",
+      "explanation": "Коннектор следствия *de ahí que* управляет subjuntivo: *de ahí que convenga revisarlos*. ❌ *de ahí que conviene* — забытый субхунтив, типичная экзаменационная ошибка.",
+      "tokens": [
+        "de",
+        "ahí",
+        "que",
+        "convenga",
+        "revisarlos"
+      ],
+      "answer": "de ahí que convenga revisarlos"
     },
     {
       "id": "C2-EX-101",
@@ -12770,6 +15622,575 @@
         "préstamo"
       ],
       "answer": "mediación"
+    },
+    {
+      "id": "C2-EX-F01",
+      "level": "C2",
+      "themeID": "c2-1",
+      "card": "C2-02",
+      "type": "free-response",
+      "prompt": "Переведите, передавая уступку-гипотезу («пусть даже»): «Пусть даже это дорого, я это куплю».",
+      "explanation": "«Пусть даже / даже если» (уступка-гипотеза) → *aunque* + subjuntivo: *Aunque **sea** caro…*. Сравните с фактом: *Aunque **es** caro* = «хотя это дорого». Русское «хотя» не различает эти два смысла — выбирайте наклонение по смыслу.",
+      "answer": "Aunque sea caro, lo compraré.",
+      "accept": [
+        "Aunque sea caro, lo compro.",
+        "Aunque sea caro, no importa."
+      ]
+    },
+    {
+      "id": "C2-EX-F02",
+      "level": "C2",
+      "themeID": "c2-1",
+      "card": "C2-03",
+      "type": "free-response",
+      "prompt": "Перефразируйте нейтральным языком литературную форму на -ra: «La novela que **publicara** en 1967…».",
+      "explanation": "В литературном и газетном стиле форма на **-ra** может равняться *había + participio* (это индикатив, а не subjuntivo): *que publicara* = *que había publicado* (или, проще, *que publicó*). Речь идёт о прошлом факте, а не о желании или гипотезе.",
+      "answer": "La novela que había publicado en 1967.",
+      "accept": [
+        "La novela que publicó en 1967."
+      ]
+    },
+    {
+      "id": "C2-EX-F03",
+      "level": "C2",
+      "themeID": "c2-2",
+      "card": "C2-06",
+      "type": "free-response",
+      "prompt": "Перефразируйте, убрав «relleno» и лишние слова: «En el día de hoy hizo una cosa importante».",
+      "explanation": "Убираем наполнители и приблизительность: *en el día de hoy* → *hoy*; *hizo una cosa importante* → *logró un avance decisivo*. Слова-пустышки (*cosa, hacer*) заменяются конкретикой ради плотности текста.",
+      "answer": "Hoy logró un avance decisivo.",
+      "accept": [
+        "Hoy consiguió un avance decisivo.",
+        "Logró un avance decisivo."
+      ]
+    },
+    {
+      "id": "C2-EX-F04",
+      "level": "C2",
+      "themeID": "c2-2",
+      "card": "C2-07",
+      "type": "free-response",
+      "prompt": "Исправьте смешение регистров, приведя фразу к единому регистру: «El finado palmó ayer».",
+      "explanation": "*finado/finar* (culto) рядом с *palmar* (разговорное) режет слух — нужен единый регистр. Нейтрально: *El difunto murió ayer*; книжно-формально: *El finado falleció ayer*. Держите один регистр в пределах фразы.",
+      "answer": "El difunto falleció ayer.",
+      "accept": [
+        "El difunto murió ayer.",
+        "El fallecido murió ayer."
+      ]
+    },
+    {
+      "id": "C2-EX-F05",
+      "level": "C2",
+      "themeID": "c2-2",
+      "card": "C2-10",
+      "type": "free-response",
+      "prompt": "Ответьте по-испански: почему испанское *éxito* — «ложный друг» для русскоговорящего, и что оно значит?",
+      "explanation": "*éxito* — классический *falso cognado / falso amigo*: по форме напоминает «выход/exit», но значит «успех». «Выход» — это *salida*. Опирайтесь на актуальное значение по DRAE, а не угадывайте по сходству корня.",
+      "answer": "Es un falso cognado: éxito significa «успех», no «выход»; la salida es «выход».",
+      "accept": [
+        "Éxito significa «успех», no «выход».",
+        "Es un falso amigo: éxito es «успех»."
+      ]
+    },
+    {
+      "id": "C2-EX-F06",
+      "level": "C2",
+      "themeID": "c2-3",
+      "card": "C2-12",
+      "type": "free-response",
+      "prompt": "Ответьте: какой пословицей носитель заканчивает усечённое «A quien madruga…» и что она значит?",
+      "explanation": "Полная форма: *A quien madruga, Dios le ayuda* — «кто рано встаёт, тому Бог помогает». Носитель часто обрывает пословицу, подразумевая мораль; без знания концовки намёк теряется.",
+      "answer": "A quien madruga, Dios le ayuda.",
+      "accept": [
+        "…Dios le ayuda.",
+        "Dios le ayuda."
+      ]
+    },
+    {
+      "id": "C2-EX-F07",
+      "level": "C2",
+      "themeID": "c2-3",
+      "card": "C2-13",
+      "type": "free-response",
+      "prompt": "Ответьте по-испански: чем символ (*símbolo*) отличается от метафоры (*metáfora*)?",
+      "explanation": "Символ — «застывшая» метафора, закреплённая культурой и узнаваемая **вне контекста** (*la paloma* = мир); метафора отождествляет два термина в **конкретном тексте** (*el mar de sus ojos*). Аллегория же — развёрнутый сюжет на втором уровне. Это не синонимы.",
+      "answer": "El símbolo es una imagen concreta y culturalmente fijada (la paloma = la paz), reconocible fuera de contexto; la metáfora identifica dos términos dentro de un texto concreto (el mar de sus ojos).",
+      "accept": [
+        "El símbolo se reconoce fuera de contexto y está fijado por la cultura; la metáfora funciona solo dentro de un texto.",
+        "El símbolo es punto y cultural; la metáfora es una identificación textual."
+      ]
+    },
+    {
+      "id": "C2-EX-F08",
+      "level": "C2",
+      "themeID": "c2-3",
+      "card": "C2-15",
+      "type": "free-response",
+      "prompt": "Переведите, соблюдая управление предлогом: «Мне стыдно за мою ошибку».",
+      "explanation": "Глагол управляет предлогом *de*: *avergonzarse **de** algo* (не *por*). *Me avergüenzo de mi error*. Русское управление калькируется и даёт ошибки — заучивайте глагол вместе с предлогом (*enorgullecerse de*, *arrepentirse de*, *recelar de*).",
+      "answer": "Me avergüenzo de mi error.",
+      "accept": [
+        "Me avergüenzo de haberme equivocado.",
+        "Me avergüenzo de lo que hice."
+      ]
+    },
+    {
+      "id": "C2-EX-F09",
+      "level": "C2",
+      "themeID": "c2-4",
+      "card": "C2-16",
+      "type": "free-response",
+      "prompt": "Ответьте по-испански: чем *símil* отличается от *metáfora*? Приведите пример.",
+      "explanation": "*símil* сохраняет *como/cual* и сравнивает (*ojos como el mar*, *fuerte como un roble*); *metáfora* отождествляет напрямую, без *como* (*el mar de sus ojos*, *sus cabellos de oro*). Наличие или отсутствие *como* — главный признак различения.",
+      "answer": "En el símil hay «como/cual» y una comparación (ojos como el mar); la metáfora identifica directamente sin «como» (el mar de sus ojos).",
+      "accept": [
+        "El símil usa «como»; la metáfora identifica sin «como».",
+        "Símil: fuerte como un roble. Metáfora: sus cabellos de oro."
+      ]
+    },
+    {
+      "id": "C2-EX-F10",
+      "level": "C2",
+      "themeID": "c2-4",
+      "card": "C2-17",
+      "type": "free-response",
+      "prompt": "Ответьте по-испански: чем *comentario de texto* отличается от *resumen*?",
+      "explanation": "*resumen* — краткий пересказ содержания («о чём»); *comentario de texto* — анализ («**как** сделан текст и зачем»), связывающий приём с эффектом (*el hipérbaton ralentiza el ritmo y subraya…*). Главная ошибка на DELE — пересказывать вместо анализа.",
+      "answer": "El resumen es un recuento breve del contenido; el comentario de texto analiza cómo está hecho el texto y para qué (relaciona recurso y efecto), no solo de qué trata.",
+      "accept": [
+        "El resumen dice de qué trata; el comentario analiza cómo y por qué.",
+        "Resumen = recuento breve; comentario = análisis de forma y sentido."
+      ]
+    },
+    {
+      "id": "C2-EX-F11",
+      "level": "C2",
+      "themeID": "c2-5",
+      "card": "C2-25",
+      "type": "free-response",
+      "prompt": "Переведите на испанский идиоматично (не дословно): «Я совершенно вымотан / без сил».",
+      "explanation": "Функциональный аналог — *Estoy hecho polvo* (разговорное «я вымотан»). Дословный перевод русской фразы был бы буквализмом; и наоборот, *estoy hecho polvo* нельзя переводить как «я сделан пылью». Передаём смысл и регистр, а не слова.",
+      "answer": "Estoy hecho polvo.",
+      "accept": [
+        "Estoy hecho polvo",
+        "Estoy agotado.",
+        "Estoy reventado."
+      ]
+    },
+    {
+      "id": "C2-EX-F12",
+      "level": "C2",
+      "themeID": "c2-5",
+      "card": "C2-23",
+      "type": "free-response",
+      "prompt": "Ответьте по-испански: какую пресуппозицию «протаскивает» вопрос *¿Por qué siempre llegas tarde?* и как на неё реагировать?",
+      "explanation": "Вопрос уже предполагает как данность «ты всегда опаздываешь» — это манипулятивная пресуппозиция, которая проектируется независимо от ответа. Правильная реакция — не принимать предпосылку автоматически, а при необходимости оспорить её, а не отвечать «по существу».",
+      "answer": "La pregunta presupone que siempre llegas tarde; conviene no aceptar esa presuposición y responder cuestionándola, no dando por buena la premisa.",
+      "accept": [
+        "Presupone que siempre llego tarde; hay que rechazar esa presuposición.",
+        "Da por sentado que llegas siempre tarde; no aceptes la premisa."
+      ]
+    },
+    {
+      "id": "C2-EX-F13",
+      "level": "C2",
+      "themeID": "c2-5",
+      "card": "C2-24",
+      "type": "free-response",
+      "prompt": "Ответьте по-испански: что значит выражение *ser un quijote* и на что оно ссылается?",
+      "explanation": "*ser un quijote* — «быть наивным идеалистом», борющимся за несбыточное; отсылка к *Don Quijote* (ср. *luchar contra molinos de viento*). Аллюзию нельзя переводить дословно как «быть Дон Кихотом» — нужно передать функцию, опираясь на испанский культурный «общий фонд».",
+      "answer": "«Ser un quijote» significa ser un idealista ingenuo que lucha por causas imposibles; alude a Don Quijote.",
+      "accept": [
+        "Significa ser un idealista ingenuo (alusión a Don Quijote).",
+        "Es un idealista que lucha contra molinos de viento."
+      ]
+    },
+    {
+      "id": "C2-EX-M01",
+      "level": "C2",
+      "themeID": "c2-1",
+      "card": "C2-01",
+      "type": "matching",
+      "prompt": "Соедините синтаксический приём с его определением.",
+      "explanation": "hipérbaton — намеренное нарушение обычного порядка слов ради стиля; inversión — глагол перед подлежащим (в испанском часто нейтральна); elipsis — пропуск легко восстановимого элемента (*otros, café*); topicalización — тема выносится вперёд и дублируется клитикой (*El libro, ya lo he leído*).",
+      "pairs": [
+        {
+          "left": "hipérbaton",
+          "right": "нарушение обычного порядка слов ради стиля"
+        },
+        {
+          "left": "inversión",
+          "right": "глагол перед подлежащим"
+        },
+        {
+          "left": "elipsis",
+          "right": "пропуск восстановимого из контекста"
+        },
+        {
+          "left": "topicalización",
+          "right": "вынесение темы вперёд с дублирующей клитикой"
+        }
+      ]
+    },
+    {
+      "id": "C2-EX-M02",
+      "level": "C2",
+      "themeID": "c2-1",
+      "card": "C2-02",
+      "type": "matching",
+      "prompt": "Соедините фразу с её смыслом (различие indicativo / subjuntivo).",
+      "explanation": "Наклонение меняет смысл: indicativo (*venía*, *tiene*) даёт информацию о реальном/конкретном; subjuntivo (*viniera*, *tenga*) — побуждение или неопределённость. Выбор формы — это выбор перспективы, а не «верно/неверно».",
+      "pairs": [
+        {
+          "left": "Le dije que venía",
+          "right": "сообщение: сказал, что приезжаю"
+        },
+        {
+          "left": "Le dije que viniera",
+          "right": "просьба: велел, чтобы пришёл"
+        },
+        {
+          "left": "Busco un piso que tiene balcón",
+          "right": "конкретный, уже знаю какой"
+        },
+        {
+          "left": "Busco un piso que tenga balcón",
+          "right": "любой с таким признаком"
+        }
+      ]
+    },
+    {
+      "id": "C2-EX-M03",
+      "level": "C2",
+      "themeID": "c2-2",
+      "card": "C2-06",
+      "type": "matching",
+      "prompt": "Соедините описательный оборот с точным словом (*mot juste*).",
+      "explanation": "На C2 ценится точное слово вместо перифраза: *el conductor*, *inevitable / ineludible*, *efímero / fugaz*, *póstumo*. Один меткий термин делает текст плотнее без потери ясности.",
+      "pairs": [
+        {
+          "left": "la persona que conduce el autobús",
+          "right": "el conductor"
+        },
+        {
+          "left": "que no se puede evitar",
+          "right": "inevitable"
+        },
+        {
+          "left": "que dura muy poco",
+          "right": "efímero"
+        },
+        {
+          "left": "que sucede después de la muerte",
+          "right": "póstumo"
+        }
+      ]
+    },
+    {
+      "id": "C2-EX-M04",
+      "level": "C2",
+      "themeID": "c2-2",
+      "card": "C2-08",
+      "type": "matching",
+      "prompt": "Соедините глагол с его точным значением (near-synonyms).",
+      "explanation": "«Синонимы» различаются микро-нюансами: *oír* (слышать пассивно) vs *escuchar* (слушать активно); *saber* (знать факт: *sé la respuesta*) vs *conocer* (быть знакомым: *conozco a María*). Русское «знать» покрывает и *saber*, и *conocer* — различайте по типу объекта.",
+      "pairs": [
+        {
+          "left": "oír",
+          "right": "слышать пассивно"
+        },
+        {
+          "left": "escuchar",
+          "right": "слушать активно, со вниманием"
+        },
+        {
+          "left": "saber",
+          "right": "знать факт, уметь"
+        },
+        {
+          "left": "conocer",
+          "right": "быть знакомым с человеком или местом"
+        }
+      ]
+    },
+    {
+      "id": "C2-EX-M05",
+      "level": "C2",
+      "themeID": "c2-3",
+      "card": "C2-11",
+      "type": "matching",
+      "prompt": "Соедините книжную locución culta с её значением.",
+      "explanation": "Формально-книжные устойчивые обороты: *en aras de* (ради), *a la postre* (в итоге), *habida cuenta de* (принимая во внимание), *so pena de* (под угрозой). Форма застывшая; уместны в эссе, докладе, прессе, но не в бытовом разговоре.",
+      "pairs": [
+        {
+          "left": "en aras de",
+          "right": "ради, во имя"
+        },
+        {
+          "left": "a la postre",
+          "right": "в конце концов, в итоге"
+        },
+        {
+          "left": "habida cuenta de",
+          "right": "принимая во внимание"
+        },
+        {
+          "left": "so pena de",
+          "right": "под страхом, под угрозой"
+        }
+      ]
+    },
+    {
+      "id": "C2-EX-M06",
+      "level": "C2",
+      "themeID": "c2-3",
+      "card": "C2-11",
+      "type": "matching",
+      "prompt": "Соедините культурно-мифологическую идиому с её смыслом.",
+      "explanation": "Аллюзии «общего фонда»: *el talón de Aquiles* (уязвимое место), *la espada de Damocles* (нависшая угроза), *un trabajo de Sísifo* (бесконечный бессмысленный труд), *cruzar el Rubicón* (необратимый шаг), *abrir la caja de Pandora* (череда бед). Понимаются без объяснения.",
+      "pairs": [
+        {
+          "left": "el talón de Aquiles",
+          "right": "уязвимое место"
+        },
+        {
+          "left": "la espada de Damocles",
+          "right": "нависшая угроза"
+        },
+        {
+          "left": "un trabajo de Sísifo",
+          "right": "бессмысленный бесконечный труд"
+        },
+        {
+          "left": "cruzar el Rubicón",
+          "right": "сделать необратимый шаг"
+        },
+        {
+          "left": "abrir la caja de Pandora",
+          "right": "выпустить череду бед"
+        }
+      ]
+    },
+    {
+      "id": "C2-EX-M07",
+      "level": "C2",
+      "themeID": "c2-4",
+      "card": "C2-16",
+      "type": "matching",
+      "prompt": "Соедините риторическую фигуру с её определением.",
+      "explanation": "*anáfora* — повтор в начале (*Verde que te quiero verde*); *epífora* — повтор в конце; *quiasmo* — перекрёст AB–BA (*¿Se vive para comer o se come para vivir?*); *asíndeton* — отсутствие союзов (*Llegué, vi, vencí*); *hipérbole* — преувеличение. Смотрите на позицию и механизм.",
+      "pairs": [
+        {
+          "left": "anáfora",
+          "right": "повтор в начале соседних фраз"
+        },
+        {
+          "left": "epífora",
+          "right": "повтор в конце фраз"
+        },
+        {
+          "left": "quiasmo",
+          "right": "перекрёстный повтор AB–BA"
+        },
+        {
+          "left": "asíndeton",
+          "right": "намеренное отсутствие союзов"
+        },
+        {
+          "left": "hipérbole",
+          "right": "намеренное преувеличение"
+        }
+      ]
+    },
+    {
+      "id": "C2-EX-M08",
+      "level": "C2",
+      "themeID": "c2-4",
+      "card": "C2-19",
+      "type": "matching",
+      "prompt": "Соедините три опоры убеждения Аристотеля с их сутью.",
+      "explanation": "*ethos* — про говорящего (авторитет); *pathos* — про аудиторию (эмоции); *logos* — про довод (логика, данные). Сильная речь сочетает все три; перекос в *pathos* воспринимается как манипуляция, в *logos* — как сухость.",
+      "pairs": [
+        {
+          "left": "ethos",
+          "right": "авторитет и достоверность говорящего"
+        },
+        {
+          "left": "pathos",
+          "right": "обращение к эмоциям аудитории"
+        },
+        {
+          "left": "logos",
+          "right": "логика и доводы"
+        }
+      ]
+    },
+    {
+      "id": "C2-EX-M09",
+      "level": "C2",
+      "themeID": "c2-5",
+      "card": "C2-21",
+      "type": "matching",
+      "prompt": "Соедините диалектное явление с его описанием.",
+      "explanation": "*seseo* — *c/z/s* = [s] (Америка, Канары); *distinción* — *c/z* = [θ] vs *s* = [s] (центр-север Испании); *yeísmo* — совпадение *ll/y*; *voseo* — местоимение *vos* с формами *hablás, tenés, sos*. Seseo (про согласные c/z/s) и yeísmo (про ll/y) — независимые явления.",
+      "pairs": [
+        {
+          "left": "seseo",
+          "right": "c/z и s звучат одинаково как [s]"
+        },
+        {
+          "left": "distinción",
+          "right": "c/z = [θ], s = [s]"
+        },
+        {
+          "left": "yeísmo",
+          "right": "ll и y совпадают"
+        },
+        {
+          "left": "voseo",
+          "right": "местоимение vos с формами tenés, sos"
+        }
+      ]
+    },
+    {
+      "id": "C2-EX-M10",
+      "level": "C2",
+      "themeID": "c2-5",
+      "card": "C2-23",
+      "type": "matching",
+      "prompt": "Соедините прагматическое понятие с его определением.",
+      "explanation": "*implicatura* — подразумеваемое из контекста, **отменяемо** (*Algunos, de hecho todos…*); *presuposición* — фон, который **проектируется** под отрицанием (*No dejó de fumar* → раньше курил); косвенный речевой акт — форма (вопрос) выполняет иную функцию (просьбу). Ключевой тест — выживает ли смысл под отрицанием.",
+      "pairs": [
+        {
+          "left": "implicatura",
+          "right": "смысл, выводимый из контекста; отменяем"
+        },
+        {
+          "left": "presuposición",
+          "right": "фон высказывания; сохраняется при отрицании"
+        },
+        {
+          "left": "acto de habla indirecto",
+          "right": "форма ≠ функция (вопрос как просьба)"
+        }
+      ]
+    },
+    {
+      "id": "C2-EX-W01",
+      "level": "C2",
+      "themeID": "c2-1",
+      "card": "C2-01",
+      "type": "word-order",
+      "prompt": "Составьте фразу с эллипсисом глагола и обязательной coma elíptica.",
+      "explanation": "При эллипсисе глагола запятая (*coma elíptica*) обязательна и отмечает пропуск: *Unos prefieren té; otros, café* (∅ = *prefieren*).",
+      "tokens": [
+        "Unos",
+        "prefieren",
+        "té;",
+        "otros,",
+        "café"
+      ],
+      "answer": "Unos prefieren té; otros, café"
+    },
+    {
+      "id": "C2-EX-W02",
+      "level": "C2",
+      "themeID": "c2-1",
+      "card": "C2-05",
+      "type": "word-order",
+      "prompt": "Составьте предложение с противопоставлением *sino* (не *si no*).",
+      "explanation": "*sino* — противительный союз («а», «но»): *No fue ayer, sino hoy*. Не путать с *si no* (= «если не»): *Avísame si no puedes*. Запятая ставится перед *sino*.",
+      "tokens": [
+        "No",
+        "fue",
+        "ayer,",
+        "sino",
+        "hoy"
+      ],
+      "answer": "No fue ayer, sino hoy"
+    },
+    {
+      "id": "C2-EX-W03",
+      "level": "C2",
+      "themeID": "c2-2",
+      "card": "C2-09",
+      "type": "word-order",
+      "prompt": "Составьте фразу с латинизмом «по собственной инициативе» в нормативной форме.",
+      "explanation": "Нормативная латинская формула — *motu proprio* (не *motu propio* и не *de motu proprio*): *Lo decidió motu proprio* = «решил по собственной инициативе». Латинизм самодостаточен и не требует предлога *de*.",
+      "tokens": [
+        "Lo",
+        "decidió",
+        "motu",
+        "proprio"
+      ],
+      "answer": "Lo decidió motu proprio"
+    },
+    {
+      "id": "C2-EX-W04",
+      "level": "C2",
+      "themeID": "c2-3",
+      "card": "C2-11",
+      "type": "word-order",
+      "prompt": "Составьте фразу «Он проигнорировал критику» с фиксированным предлогом.",
+      "explanation": "Устойчивая единица требует предлога *de*: *hacer caso omiso **de** algo* — «игнорировать что-либо». *Hizo caso omiso de las críticas*. Русское «игнорировать что-то» провоцирует пропуск предлога — это частая ошибка.",
+      "tokens": [
+        "Hizo",
+        "caso",
+        "omiso",
+        "de",
+        "las",
+        "críticas"
+      ],
+      "answer": "Hizo caso omiso de las críticas"
+    },
+    {
+      "id": "C2-EX-W05",
+      "level": "C2",
+      "themeID": "c2-4",
+      "card": "C2-20",
+      "type": "word-order",
+      "prompt": "Составьте девиз стилистической правки.",
+      "explanation": "*Escribir es reescribir* — «писать значит переписывать»: первый черновик пишется для идей, правка делается для читателя. Правка (*corrección de estilo*) — отдельный навык, не сводимый к проверке орфографии.",
+      "tokens": [
+        "Escribir",
+        "es",
+        "reescribir"
+      ],
+      "answer": "Escribir es reescribir"
+    },
+    {
+      "id": "C2-EX-W06",
+      "level": "C2",
+      "themeID": "c2-4",
+      "card": "C2-17",
+      "type": "word-order",
+      "prompt": "Переведите прямую речь *«No iré»* в косвенную (estilo indirecto): «Он сказал, что не пойдёт».",
+      "explanation": "*Estilo directo* → *estilo indirecto*: *Dijo: «No iré»* → *Dijo que no iría*. При главном глаголе в прошлом будущее сдвигается в условное (*iré → iría*) по правилу согласования времён.",
+      "tokens": [
+        "Dijo",
+        "que",
+        "no",
+        "iría"
+      ],
+      "answer": "Dijo que no iría"
+    },
+    {
+      "id": "C2-EX-W07",
+      "level": "C2",
+      "themeID": "c2-5",
+      "card": "C2-25",
+      "type": "word-order",
+      "prompt": "Составьте испанскую идиому, функционально равную русскому «он рубит правду-матку».",
+      "explanation": "*No tiene pelos en la lengua* — «он говорит прямо, режет правду-матку». Идиому передают **функциональным аналогом**, а не покомпонентно: дословное «у него нет волос на языке» теряет смысл. Цель медиации — эквивалентный эффект.",
+      "tokens": [
+        "No",
+        "tiene",
+        "pelos",
+        "en",
+        "la",
+        "lengua"
+      ],
+      "answer": "No tiene pelos en la lengua"
     }
   ]
 }
