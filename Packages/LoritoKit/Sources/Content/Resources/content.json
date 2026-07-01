@@ -3335,6 +3335,33 @@
   ],
   "exercises": [
     {
+      "id": "A1-EX-P04",
+      "level": "A1",
+      "themeID": "a1-5",
+      "card": "A1-30",
+      "type": "picture-matching",
+      "prompt": "Соедините слово с картинкой (животные).",
+      "explanation": "*el perro* — собака, *el gato* — кот, *el pájaro* — птица, *el caballo* — лошадь.",
+      "options": [
+        {
+          "image": "perro.png",
+          "label": "perro"
+        },
+        {
+          "image": "gato.png",
+          "label": "gato"
+        },
+        {
+          "image": "pajaro.png",
+          "label": "pájaro"
+        },
+        {
+          "image": "caballo.png",
+          "label": "caballo"
+        }
+      ]
+    },
+    {
       "id": "A1-EX-01",
       "level": "A1",
       "themeID": "a1-2",
@@ -5674,6 +5701,195 @@
         {
           "left": "mayo",
           "right": "май"
+        }
+      ]
+    },
+    {
+      "id": "A1-EX-P01",
+      "level": "A1",
+      "themeID": "a1-5",
+      "card": "A1-30",
+      "type": "picture-matching",
+      "prompt": "Соедините слово с картинкой (еда и напитки).",
+      "explanation": "*el pan* — хлеб, *el agua* — вода, *la leche* — молоко, *el café* — кофе.",
+      "options": [
+        {
+          "image": "pan.png",
+          "label": "pan"
+        },
+        {
+          "image": "agua.png",
+          "label": "agua"
+        },
+        {
+          "image": "leche.png",
+          "label": "leche"
+        },
+        {
+          "image": "cafe.png",
+          "label": "café"
+        }
+      ]
+    },
+    {
+      "id": "A1-EX-P02",
+      "level": "A1",
+      "themeID": "a1-5",
+      "card": "A1-30",
+      "type": "picture-matching",
+      "prompt": "Соедините слово с картинкой (продукты).",
+      "explanation": "*la manzana* — яблоко, *el queso* — сыр, *la carne* — мясо, *el pescado* — рыба (как еда).",
+      "options": [
+        {
+          "image": "manzana.png",
+          "label": "manzana"
+        },
+        {
+          "image": "queso.png",
+          "label": "queso"
+        },
+        {
+          "image": "carne.png",
+          "label": "carne"
+        },
+        {
+          "image": "pescado.png",
+          "label": "pescado"
+        }
+      ]
+    },
+    {
+      "id": "A1-EX-P03",
+      "level": "A1",
+      "themeID": "a1-5",
+      "card": "A1-30",
+      "type": "picture-matching",
+      "prompt": "Соедините слово с картинкой (одежда).",
+      "explanation": "*la camiseta* — футболка, *el pantalón* — брюки, *el vestido* — платье, *los zapatos* — туфли/обувь.",
+      "options": [
+        {
+          "image": "camiseta.png",
+          "label": "camiseta"
+        },
+        {
+          "image": "pantalon.png",
+          "label": "pantalón"
+        },
+        {
+          "image": "vestido.png",
+          "label": "vestido"
+        },
+        {
+          "image": "zapatos.png",
+          "label": "zapatos"
+        }
+      ]
+    },
+    {
+      "id": "A1-EX-P05",
+      "level": "A1",
+      "themeID": "a1-5",
+      "card": "A1-30",
+      "type": "picture-matching",
+      "prompt": "Соедините слово с картинкой (предметы).",
+      "explanation": "*la casa* — дом, *el coche* — машина, *el libro* — книга, *la llave* — ключ.",
+      "options": [
+        {
+          "image": "casa.png",
+          "label": "casa"
+        },
+        {
+          "image": "coche.png",
+          "label": "coche"
+        },
+        {
+          "image": "libro.png",
+          "label": "libro"
+        },
+        {
+          "image": "llave.png",
+          "label": "llave"
+        }
+      ]
+    },
+    {
+      "id": "A1-EX-P06",
+      "level": "A1",
+      "themeID": "a1-5",
+      "card": "A1-30",
+      "type": "picture-matching",
+      "prompt": "Соедините слово с картинкой (природа).",
+      "explanation": "*el sol* — солнце, *la luna* — луна, *el árbol* — дерево, *la flor* — цветок.",
+      "options": [
+        {
+          "image": "sol.png",
+          "label": "sol"
+        },
+        {
+          "image": "luna.png",
+          "label": "luna"
+        },
+        {
+          "image": "arbol.png",
+          "label": "árbol"
+        },
+        {
+          "image": "flor.png",
+          "label": "flor"
+        }
+      ]
+    },
+    {
+      "id": "A1-EX-P07",
+      "level": "A1",
+      "themeID": "a1-5",
+      "card": "A1-30",
+      "type": "picture-matching",
+      "prompt": "Соедините слово с картинкой (дом).",
+      "explanation": "*el teléfono* — телефон, *el reloj* — часы, *la silla* — стул, *la cama* — кровать.",
+      "options": [
+        {
+          "image": "telefono.png",
+          "label": "teléfono"
+        },
+        {
+          "image": "reloj.png",
+          "label": "reloj"
+        },
+        {
+          "image": "silla.png",
+          "label": "silla"
+        },
+        {
+          "image": "cama.png",
+          "label": "cama"
+        }
+      ]
+    },
+    {
+      "id": "A1-EX-P08",
+      "level": "A1",
+      "themeID": "a1-5",
+      "card": "A1-30",
+      "type": "picture-matching",
+      "prompt": "Соедините слово с картинкой (разное).",
+      "explanation": "*el arroz* — рис, *el té* — чай, *el abrigo* — пальто, *la vaca* — корова.",
+      "options": [
+        {
+          "image": "arroz.png",
+          "label": "arroz"
+        },
+        {
+          "image": "te.png",
+          "label": "té"
+        },
+        {
+          "image": "abrigo.png",
+          "label": "abrigo"
+        },
+        {
+          "image": "vaca.png",
+          "label": "vaca"
         }
       ]
     },

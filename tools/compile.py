@@ -74,10 +74,13 @@ def main() -> int:
     # Bundle image assets referenced by picture-matching exercises.
     referenced = {img for ex in (lib.parse_exercise_file(p) for p in lib.iter_exercise_files())
                   for img in lib.exercise_image_names(ex)}
+    # Always keep the dir present so the SwiftPM `.copy` resource rule resolves,
+    # even when no picture-matching exercise references an asset.
     assets_out = out.parent / "exercise-assets"
+    assets_out.mkdir(parents=True, exist_ok=True)
+    (assets_out / ".gitkeep").touch()
     n_assets = 0
     if referenced:
-        assets_out.mkdir(parents=True, exist_ok=True)
         for img in sorted(referenced):
             src, dst = lib.exercise_assets_dir() / img, assets_out / img
             if src.resolve() != dst.resolve():

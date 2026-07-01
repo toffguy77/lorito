@@ -123,4 +123,40 @@ final class PracticeFlowUITests: XCTestCase {
             || app.staticTexts["Готово!"].waitForExistence(timeout: 5)
         XCTAssertTrue(advanced, "did not advance to next exercise or completion")
     }
+
+    /// Drives to the picture-matching smoke-test exercise (first exercise of card
+    /// A1-30) and confirms its labels + images render from the bundle.
+    func testPictureMatchingRenders() throws {
+        let app = XCUIApplication()
+        app.launch()
+        dismissSystemAlertIfPresent()
+        if app.buttons["A1"].waitForExistence(timeout: 8) {
+            app.buttons["A1"].tap()
+            app.buttons["Далее"].tap()
+            if app.buttons["Начать"].waitForExistence(timeout: 10) { app.buttons["Начать"].tap() }
+        }
+        dismissSystemAlertIfPresent()
+
+        XCTAssertTrue(app.tabBars.buttons["Каталог"].waitForExistence(timeout: 15))
+        app.tabBars.buttons["Каталог"].tap()
+
+        let theme = app.staticTexts["Числа, время и быт"]
+        XCTAssertTrue(theme.waitForExistence(timeout: 15), "a1-5 theme row not found")
+        theme.tap()
+
+        let card = app.staticTexts["Бытовая лексика A1"]
+        XCTAssertTrue(card.waitForExistence(timeout: 15), "A1-30 card row not found")
+        card.tap()
+
+        let practice = app.buttons.containing(NSPredicate(format: "label BEGINSWITH 'Практика'")).firstMatch
+        XCTAssertTrue(practice.waitForExistence(timeout: 15), "Практика button not found")
+        practice.tap()
+
+        // First exercise is the picture-matching one (animals): its labels render.
+        XCTAssertTrue(app.staticTexts["perro"].waitForExistence(timeout: 15), "picture-matching label 'perro' not shown")
+        XCTAssertTrue(app.staticTexts["gato"].exists, "picture-matching label 'gato' not shown")
+        // Images render (AsyncImage → bundled asset); at least one image element present.
+        XCTAssertTrue(app.images.firstMatch.waitForExistence(timeout: 5), "no image rendered on the picture-matching screen")
+        sleep(6)   // window for an external screenshot
+    }
 }

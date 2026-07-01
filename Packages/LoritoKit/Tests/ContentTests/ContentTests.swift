@@ -1,4 +1,5 @@
 import Testing
+import Foundation
 import Domain
 @testable import Content
 
@@ -43,5 +44,19 @@ struct ContentTests {
         // The pilot drills the noun cards.
         #expect(!catalog.exercises(forCard: "A1-07").isEmpty)
         #expect(!catalog.exercises(forCard: "A1-08").isEmpty)
+    }
+
+    @Test("Picture-matching image assets are bundled and resolve via Bundle.module")
+    func pictureAssetsResolve() throws {
+        let catalog = try ContentLoader.loadCatalog()
+        // Every image referenced by a picture-matching exercise must resolve to a bundled file.
+        for ex in catalog.exercises {
+            guard case let .pictureMatching(options) = ex.kind else { continue }
+            for opt in options {
+                let url = ContentLoader.exerciseAssetURL(opt.image)
+                #expect(url != nil, "asset \(opt.image) (exercise \(ex.id)) did not resolve in the bundle")
+                if let url { #expect((try? Data(contentsOf: url))?.isEmpty == false) }
+            }
+        }
     }
 }
