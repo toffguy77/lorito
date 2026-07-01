@@ -24,7 +24,12 @@ let package = Package(
         .target(
             name: "Content",
             dependencies: ["Domain"],
-            resources: [.process("Resources")]
+            // .process flattens resources; .copy preserves the exercise-assets/
+            // directory so picture-matching images resolve via subdirectory:.
+            resources: [
+                .process("Resources/content.json"),
+                .copy("Resources/exercise-assets"),
+            ]
         ),
 
         // SwiftData + CloudKit user-data store.

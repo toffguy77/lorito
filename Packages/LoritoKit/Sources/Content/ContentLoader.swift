@@ -15,4 +15,15 @@ public enum ContentLoader {
         let data = try Data(contentsOf: url)
         return try JSONDecoder().decode(ContentCatalog.self, from: data)
     }
+
+    /// The URL of a bundled picture-matching image asset (nil if not present).
+    public static func exerciseAssetURL(_ name: String) -> URL? {
+        let stem = (name as NSString).deletingPathExtension
+        let ext = (name as NSString).pathExtension
+        return Bundle.module.url(
+            forResource: stem,
+            withExtension: ext.isEmpty ? nil : ext,
+            subdirectory: "exercise-assets"
+        )
+    }
 }

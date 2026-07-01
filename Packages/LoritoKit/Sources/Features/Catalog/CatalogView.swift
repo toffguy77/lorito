@@ -81,6 +81,9 @@ private struct StatusBadge: View {
 private struct CardReaderView: View {
     let model: CatalogModel
     let card: Card
+    @State private var practiceSession: ExerciseSessionModel?
+
+    private var exerciseCount: Int { model.exercises(forCard: card.id).count }
 
     var body: some View {
         ScrollView {
@@ -90,6 +93,21 @@ private struct CardReaderView: View {
                     .font(LoritoFont.title)
                     .foregroundStyle(LoritoColor.textPrimary)
                 CardContentView(card.body)
+
+                if exerciseCount > 0 {
+                    Button {
+                        practiceSession = model.makeExerciseSession(forCard: card.id)
+                    } label: {
+                        Text("Практика · \(exerciseCount)")
+                            .font(LoritoFont.body.weight(.semibold))
+                            .foregroundStyle(LoritoColor.onAccent)
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, LoritoSpacing.sm)
+                            .background(LoritoColor.accent, in: RoundedRectangle(cornerRadius: LoritoRadius.md))
+                    }
+                    .buttonStyle(.plain)
+                    .padding(.top, LoritoSpacing.sm)
+                }
 
                 Button {
                     model.toggleSuspended(card.id)
@@ -113,5 +131,11 @@ private struct CardReaderView: View {
         }
         .background(LoritoColor.surfaceSecondary.ignoresSafeArea())
         .navigationTitle(card.id)
+        .sheet(item: $practiceSession) { session in
+            ExerciseSessionView(model: session) {
+                practiceSession = nil
+                model.refresh()
+            }
+        }
     }
 }

@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import json
 import os
+import shutil
 import sys
 from pathlib import Path
 
@@ -48,13 +49,48 @@ def main() -> int:
             "body": c.body,
         })
 
-    catalog = {"themes": themes, "cards": cards_out}
+    exercises_out = []
+    for p in lib.iter_exercise_files():
+        ex = lib.parse_exercise_file(p)
+        entry = {
+            "id": ex.id,
+            "level": ex.level,
+            "themeID": ex.theme,
+            "card": ex.card,
+            "type": ex.type,
+            "prompt": ex.prompt,
+            "explanation": ex.explanation,
+        }
+        entry.update(ex.data)  # type-specific fields (options, answer, pairs, …)
+        exercises_out.append(entry)
+
+    catalog = {"themes": themes, "cards": cards_out, "exercises": exercises_out}
     out = bundle_path()
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(
         json.dumps(catalog, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
-    print(f"compiled bundle: {len(cards_out)} cards, {len(themes)} themes -> {out}")
+
+    # Bundle image assets referenced by picture-matching exercises.
+    referenced = {img for ex in (lib.parse_exercise_file(p) for p in lib.iter_exercise_files())
+                  for img in lib.exercise_image_names(ex)}
+    # Always keep the dir present so the SwiftPM `.copy` resource rule resolves,
+    # even when no picture-matching exercise references an asset.
+    assets_out = out.parent / "exercise-assets"
+    assets_out.mkdir(parents=True, exist_ok=True)
+    (assets_out / ".gitkeep").touch()
+    n_assets = 0
+    if referenced:
+        for img in sorted(referenced):
+            src, dst = lib.exercise_assets_dir() / img, assets_out / img
+            if src.resolve() != dst.resolve():
+                shutil.copyfile(src, dst)
+            n_assets += 1
+
+    print(
+        f"compiled bundle: {len(cards_out)} cards, {len(exercises_out)} exercises, "
+        f"{len(themes)} themes, {n_assets} assets -> {out}"
+    )
     return 0
 
 

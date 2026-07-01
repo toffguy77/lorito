@@ -24,6 +24,89 @@ def load_themes() -> dict[str, dict]:
     return {t["id"]: t for t in data.get("themes", [])}
 
 
+def validate_exercises(themes: dict[str, dict], card_level: dict[str, str]) -> list[str]:
+    """Validate practice exercises against the content-model. `card_level` maps
+    every card id to its level (for resolving each exercise's `card` reference)."""
+    errors: list[str] = []
+    seen: set[str] = set()
+    for p in lib.iter_exercise_files():
+        try:
+            ex = lib.parse_exercise_file(p)
+        except Exception as e:  # noqa: BLE001
+            errors.append(f"{p}: failed to parse exercise ({e})")
+            continue
+        eid = ex.id or p.name
+        if not ex.id:
+            errors.append(f"{p.name}: exercise missing id")
+        if ex.id in seen:
+            errors.append(f"duplicate exercise id: {ex.id}")
+        seen.add(ex.id)
+        if ex.level not in lib.LEVELS:
+            errors.append(f"{eid}: unknown level '{ex.level}'")
+        if p.parent.parent.name != ex.level:
+            errors.append(f"{eid}: file under {p.parent.parent.name}/exercises but level is {ex.level}")
+        if ex.theme not in themes:
+            errors.append(f"{eid}: unknown theme '{ex.theme}'")
+        elif themes[ex.theme]["level"] != ex.level:
+            errors.append(f"{eid}: theme '{ex.theme}' belongs to {themes[ex.theme]['level']}, not {ex.level}")
+        if not ex.card:
+            errors.append(f"{eid}: missing card reference")
+        elif ex.card not in card_level:
+            errors.append(f"{eid}: unresolved card '{ex.card}'")
+        elif card_level[ex.card] != ex.level:
+            errors.append(f"{eid}: card '{ex.card}' is {card_level[ex.card]}, not {ex.level}")
+        if ex.type not in lib.EXERCISE_TYPES:
+            errors.append(f"{eid}: unknown type '{ex.type}'")
+            continue
+        errors.extend(f"{eid}: {e}" for e in _validate_exercise_type(ex))
+        # picture-matching: every referenced image asset must exist in the sources.
+        for img in lib.exercise_image_names(ex):
+            if not (lib.exercise_assets_dir() / img).exists():
+                errors.append(f"{eid}: missing image asset '{img}'")
+    return errors
+
+
+def _missing(data: dict, *keys: str) -> list[str]:
+    return [f"missing field '{k}' for type" for k in keys if k not in data or data[k] in (None, "", [])]
+
+
+def _validate_exercise_type(ex: lib.Exercise) -> list[str]:
+    d, errs = ex.data, []
+    if ex.type == "multiple-choice":
+        errs += _missing(d, "options", "answer")
+        opts = d.get("options")
+        if isinstance(opts, list) and len(opts) < 2:
+            errs.append("'options' needs at least 2 entries")
+        if isinstance(opts, list) and "answer" in d and d["answer"] not in opts:
+            errs.append(f"answer '{d.get('answer')}' is not among options")
+    elif ex.type == "fill-in-the-blank":
+        errs += _missing(d, "answer")
+    elif ex.type == "matching":
+        pairs = d.get("pairs")
+        if not isinstance(pairs, list) or len(pairs) < 2:
+            errs.append("'pairs' needs at least 2 {left,right} entries")
+        elif any(not isinstance(pr, dict) or "left" not in pr or "right" not in pr for pr in pairs):
+            errs.append("each pair needs 'left' and 'right'")
+    elif ex.type == "word-order":
+        errs += _missing(d, "tokens", "answer")
+        toks, ans = d.get("tokens"), d.get("answer")
+        if isinstance(toks, list) and isinstance(ans, str):
+            tok_norm = sorted(lib.normalize_answer(t) for t in toks)
+            ans_norm = sorted(lib.normalize_answer(w) for w in ans.split())
+            if tok_norm != ans_norm:
+                errs.append("tokens cannot be arranged into answer")
+    elif ex.type == "picture-matching":
+        opts = d.get("options")
+        if not isinstance(opts, list) or len(opts) < 2:
+            errs.append("'options' needs at least 2 {image,label} entries")
+        elif any(not isinstance(o, dict) or "image" not in o or "label" not in o for o in opts):
+            errs.append("each option needs 'image' and 'label'")
+        # Asset-file existence is checked in validate_exercises (needs the filesystem).
+    elif ex.type == "free-response":
+        errs += _missing(d, "answer")
+    return errs
+
+
 def validate() -> list[str]:
     errors: list[str] = []
     themes = load_themes()
@@ -81,10 +164,54 @@ def validate() -> list[str]:
                     errors.append(f"{level}: theme '{c.theme}' is not contiguous (interleaved)")
                 seen_themes.append(c.theme)
 
+    # Practice exercises (content/<LEVEL>/exercises/<id>.md).
+    card_level = {c.id: c.level for _, c in cards}
+    errors.extend(validate_exercises(themes, card_level))
+
     return errors
 
 
-def main() -> int:
+def coverage(level: str | None = None) -> dict:
+    """Informational exercise-coverage report. Returns, per card, whether it has
+    any practice exercise. Does NOT validate or fail — purely a progress signal.
+
+    `level` optionally restricts the report to a single CEFR level."""
+    cards = [lib.parse_card_file(p) for p in lib.iter_card_files()]
+    if level:
+        cards = [c for c in cards if c.level == level]
+    covered_ids = {ex.card for ex in (lib.parse_exercise_file(p) for p in lib.iter_exercise_files())}
+    uncovered = [c.id for c in cards if c.id not in covered_ids]
+    by_theme: dict[str, list[str]] = {}
+    for c in cards:
+        if c.id not in covered_ids:
+            by_theme.setdefault(c.theme, []).append(c.id)
+    return {
+        "total": len(cards),
+        "covered": len(cards) - len(uncovered),
+        "uncovered": uncovered,
+        "uncovered_by_theme": by_theme,
+    }
+
+
+def print_coverage(level: str | None = None) -> int:
+    rep = coverage(level)
+    scope = level or "all levels"
+    print(f"exercise coverage ({scope}): {rep['covered']}/{rep['total']} cards have exercises")
+    for theme in sorted(rep["uncovered_by_theme"]):
+        ids = ", ".join(rep["uncovered_by_theme"][theme])
+        print(f"  {theme}: missing {ids}")
+    if not rep["uncovered"]:
+        print("  all cards covered ✓")
+    return 0  # informational — never fails
+
+
+def main(argv: list[str] | None = None) -> int:
+    args = argv if argv is not None else sys.argv[1:]
+    if "--coverage" in args:
+        rest = [a for a in args if a != "--coverage"]
+        level = rest[0] if rest else None
+        return print_coverage(level)
+
     errors = validate()
     if errors:
         print(f"VALIDATION FAILED ({len(errors)} error(s)):", file=sys.stderr)

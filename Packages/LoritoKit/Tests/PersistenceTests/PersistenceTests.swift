@@ -59,4 +59,23 @@ struct PersistenceTests {
         try store.appendEvent(StudyEvent(cardID: "A1-02", date: .now, grade: "again"))
         #expect(try store.allEvents().count == 2)
     }
+
+    @Test("Exercise attempts append and survive a relaunch")
+    func attemptsPersist() throws {
+        let url = FileManager.default.temporaryDirectory
+            .appendingPathComponent("lorito-attempts-\(UUID().uuidString).store")
+        defer { try? FileManager.default.removeItem(at: url) }
+
+        do {
+            let store = SwiftDataUserDataStore(container: try PersistenceController.makeContainer(config: .init(url: url)))
+            try store.appendAttempt(ExerciseAttempt(exerciseID: "A1-EX-01", cardID: "A1-07", date: .now, correct: true, grade: "good"))
+            try store.appendAttempt(ExerciseAttempt(exerciseID: "A1-EX-06", cardID: "A1-08", date: .now, correct: false, grade: "again"))
+        }
+
+        let store2 = SwiftDataUserDataStore(container: try PersistenceController.makeContainer(config: .init(url: url)))
+        let attempts = try store2.allAttempts()
+        #expect(attempts.count == 2)
+        #expect(attempts.contains { $0.exerciseID == "A1-EX-01" && $0.correct })
+        #expect(attempts.contains { $0.exerciseID == "A1-EX-06" && !$0.correct })
+    }
 }

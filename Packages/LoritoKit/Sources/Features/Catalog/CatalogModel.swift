@@ -49,6 +49,20 @@ public final class CatalogModel {
     public func cards(in theme: Theme) -> [Card] { catalog.cards(themeID: theme.id) }
     public func theme(id: String) -> Theme? { catalog.theme(id: id) }
 
+    // MARK: Practice
+
+    /// Exercises drilling a given card.
+    public func exercises(forCard cardID: String) -> [Exercise] {
+        catalog.exercises(forCard: cardID)
+    }
+
+    /// A fresh practice session for a card's exercises (nil when it has none).
+    public func makeExerciseSession(forCard cardID: String) -> ExerciseSessionModel? {
+        let exercises = catalog.exercises(forCard: cardID)
+        guard !exercises.isEmpty else { return nil }
+        return ExerciseSessionModel(store: store, exercises: exercises)
+    }
+
     // MARK: Status
 
     public func status(for cardID: String) -> CatalogCardStatus {

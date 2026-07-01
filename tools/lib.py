@@ -5,12 +5,25 @@ repo's own content/<LEVEL>/<id>.md card files. Pure standard library.
 """
 from __future__ import annotations
 
+import json
 import os
 import re
+import unicodedata
 from dataclasses import dataclass, field
 from pathlib import Path
 
 LEVELS = ["A1", "A2", "B1", "B2", "C1", "C2"]
+EXERCISE_TYPES = [
+    "multiple-choice",
+    "fill-in-the-blank",
+    "matching",
+    "word-order",
+    "picture-matching",
+    "free-response",
+]
+EXPLANATION_MARKER_RE = re.compile(
+    r"^(>\s*\*\*Объяснение\*\*|#{1,6}\s*Объяснение)\s*$", re.MULTILINE
+)
 ID_RE = re.compile(r"\b([A-C][12]-\d{2})\b")
 ID_AT_START_RE = re.compile(r"^([A-C][12]-\d{2})\b")
 CATEGORY_TAGS = ["gramática", "vocabulario", "ortografía", "fonética"]
@@ -197,4 +210,127 @@ def content_dir() -> Path:
 
 def iter_card_files() -> list[Path]:
     base = content_dir()
-    return sorted(base.glob("*/*.md"), key=lambda p: (p.parent.name, p.name))
+    # Cards live at content/<LEVEL>/<id>.md — exclude the exercises/ subfolder.
+    return sorted(
+        (p for p in base.glob("*/*.md") if p.parent.name in LEVELS),
+        key=lambda p: (p.parent.name, p.name),
+    )
+
+
+# ---- practice exercises (content/<LEVEL>/exercises/<id>.md) ----
+
+@dataclass
+class Exercise:
+    id: str
+    level: str
+    theme: str
+    card: str
+    type: str
+    prompt: str = ""
+    explanation: str = ""
+    data: dict = field(default_factory=dict)  # type-specific fields (options, answer, …)
+
+
+def normalize_answer(text: str) -> str:
+    """Case-, diacritic-, and whitespace-insensitive form for answer matching.
+
+    Mirrors the Swift normalizer: lowercase, strip combining marks, collapse
+    inner whitespace, trim. Keeps ñ→n folding via NFKD decomposition.
+    """
+    decomposed = unicodedata.normalize("NFKD", text)
+    stripped = "".join(c for c in decomposed if not unicodedata.combining(c))
+    return re.sub(r"\s+", " ", stripped).strip().casefold()
+
+
+def parse_exercise_fm(fm: str) -> dict:
+    """Parse exercise frontmatter. JSON-looking values are decoded as JSON;
+    everything else is a (optionally quoted) scalar string."""
+    out: dict = {}
+    for line in fm.splitlines():
+        line = line.rstrip()
+        if not line or line.lstrip().startswith("#") or ":" not in line:
+            continue
+        key, rest = line.split(":", 1)
+        key, rest = key.strip(), rest.strip()
+        if not key:
+            continue
+        if rest and rest[0] in "[{":
+            try:
+                out[key] = json.loads(rest)
+                continue
+            except json.JSONDecodeError:
+                pass
+        out[key] = rest.strip().strip('"')
+    return out
+
+
+def split_prompt_explanation(body: str) -> tuple[str, str]:
+    """Split an exercise body into (prompt, explanation). The explanation begins
+    at a `> **Объяснение**` callout or `## Объяснение` heading; text before it is
+    the prompt. Leading callout `> ` markers are stripped from the explanation."""
+    m = EXPLANATION_MARKER_RE.search(body)
+    if not m:
+        return body.strip(), ""
+    prompt = body[: m.start()].strip()
+    rest = body[m.end():].strip("\n")
+    expl_lines = [re.sub(r"^>\s?", "", ln) for ln in rest.splitlines()]
+    return prompt, "\n".join(expl_lines).strip()
+
+
+# Common (non-type-specific) frontmatter keys.
+_EXERCISE_COMMON_KEYS = {"id", "level", "theme", "card", "type"}
+
+
+def parse_exercise_file(path: Path) -> Exercise:
+    text = path.read_text(encoding="utf-8")
+    fm_text, body = split_frontmatter(text)
+    fm = parse_exercise_fm(fm_text)
+    prompt, explanation = split_prompt_explanation(body)
+    data = {k: v for k, v in fm.items() if k not in _EXERCISE_COMMON_KEYS}
+    return Exercise(
+        id=str(fm.get("id", "")),
+        level=str(fm.get("level", "")),
+        theme=str(fm.get("theme", "")),
+        card=str(fm.get("card", "")),
+        type=str(fm.get("type", "")),
+        prompt=prompt,
+        explanation=explanation,
+        data=data,
+    )
+
+
+def render_exercise_file(ex: Exercise) -> str:
+    """Serialize an Exercise back to a content file (used by tests/fixtures)."""
+    fm = ["---", f"id: {ex.id}", f"level: {ex.level}", f"theme: {ex.theme}",
+          f"card: {ex.card}", f"type: {ex.type}"]
+    for k, v in ex.data.items():
+        fm.append(f"{k}: {json.dumps(v, ensure_ascii=False)}" if isinstance(v, (list, dict))
+                  else f'{k}: "{v}"')
+    fm.append("---")
+    fm.append("")
+    body = ex.prompt.rstrip() + "\n"
+    if ex.explanation:
+        body += "\n> **Объяснение**\n" + "\n".join(
+            f"> {ln}" if ln else ">" for ln in ex.explanation.splitlines()
+        ) + "\n"
+    return "\n".join(fm) + body
+
+
+def iter_exercise_files() -> list[Path]:
+    base = content_dir()
+    return sorted(base.glob("*/exercises/*.md"), key=lambda p: (p.parent.parent.name, p.name))
+
+
+def exercise_assets_dir() -> Path:
+    """Directory holding image assets referenced by picture-matching exercises."""
+    return content_dir() / "exercise-assets"
+
+
+def exercise_image_names(ex: Exercise) -> list[str]:
+    """The image filenames a picture-matching exercise references (empty otherwise)."""
+    if ex.type != "picture-matching":
+        return []
+    opts = ex.data.get("options")
+    if not isinstance(opts, list):
+        return []
+    return [o["image"] for o in opts if isinstance(o, dict) and "image" in o]

@@ -85,5 +85,170 @@ class PipelineTests(unittest.TestCase):
         self.assertFalse(out.exists())
 
 
+def exercise(eid: str, etype: str, card_id: str = "A1-01", theme: str = "a1-1",
+             level: str = "A1", **data) -> lib.Exercise:
+    return lib.Exercise(
+        id=eid, level=level, theme=theme, card=card_id, type=etype,
+        prompt="Prompt?", explanation="Because.", data=data,
+    )
+
+
+def write_exercise(root: Path, ex: lib.Exercise) -> None:
+    d = root / ex.level / "exercises"
+    d.mkdir(parents=True, exist_ok=True)
+    (d / f"{ex.id}.md").write_text(lib.render_exercise_file(ex), encoding="utf-8")
+
+
+class ExerciseTests(unittest.TestCase):
+    def setUp(self) -> None:
+        self.tmp = tempfile.TemporaryDirectory()
+        os.environ["LORITO_CONTENT_DIR"] = self.tmp.name
+        self.root = Path(self.tmp.name)
+        # One real card the exercises can reference.
+        write_content(self.root, [card("A1-01", 1)], THEME)
+
+    def tearDown(self) -> None:
+        os.environ.pop("LORITO_CONTENT_DIR", None)
+        os.environ.pop("LORITO_BUNDLE_PATH", None)
+        self.tmp.cleanup()
+
+    def test_clean_exercises_pass(self):
+        write_exercise(self.root, exercise("A1-EX-01", "multiple-choice",
+                                           options=["el", "la"], answer="la"))
+        write_exercise(self.root, exercise("A1-EX-02", "fill-in-the-blank",
+                                           answer="la", accept=["LA"]))
+        self.assertEqual(validate.validate(), [])
+
+    def test_roundtrip_parse(self):
+        write_exercise(self.root, exercise("A1-EX-01", "multiple-choice",
+                                           options=["el", "la"], answer="la"))
+        ex = lib.parse_exercise_file(self.root / "A1" / "exercises" / "A1-EX-01.md")
+        self.assertEqual(ex.type, "multiple-choice")
+        self.assertEqual(ex.data["options"], ["el", "la"])
+        self.assertEqual(ex.data["answer"], "la")
+        self.assertEqual(ex.explanation, "Because.")
+
+    def test_missing_type_field_caught(self):
+        write_exercise(self.root, exercise("A1-EX-01", "multiple-choice", options=["el", "la"]))
+        errs = validate.validate()
+        self.assertTrue(any("missing field 'answer'" in e for e in errs), errs)
+
+    def test_unresolved_card_caught(self):
+        write_exercise(self.root, exercise("A1-EX-01", "fill-in-the-blank",
+                                           card_id="A1-99", answer="x"))
+        errs = validate.validate()
+        self.assertTrue(any("unresolved card 'A1-99'" in e for e in errs), errs)
+
+    def test_card_level_mismatch_caught(self):
+        ex = exercise("B1-EX-01", "fill-in-the-blank", card_id="A1-01",
+                      theme="a1-1", level="B1", answer="x")
+        write_exercise(self.root, ex)
+        errs = validate.validate()
+        self.assertTrue(any("is A1, not B1" in e for e in errs), errs)
+
+    def test_unknown_type_caught(self):
+        write_exercise(self.root, exercise("A1-EX-01", "crossword", answer="x"))
+        errs = validate.validate()
+        self.assertTrue(any("unknown type 'crossword'" in e for e in errs), errs)
+
+    def test_mc_answer_not_in_options_caught(self):
+        write_exercise(self.root, exercise("A1-EX-01", "multiple-choice",
+                                           options=["el", "la"], answer="los"))
+        errs = validate.validate()
+        self.assertTrue(any("not among options" in e for e in errs), errs)
+
+    def test_word_order_tokens_cannot_form_answer(self):
+        write_exercise(self.root, exercise("A1-EX-01", "word-order",
+                                           tokens=["yo", "como"], answer="yo no como"))
+        errs = validate.validate()
+        self.assertTrue(any("tokens cannot be arranged" in e for e in errs), errs)
+
+    def test_word_order_valid(self):
+        write_exercise(self.root, exercise("A1-EX-01", "word-order",
+                                           tokens=["yo", "como", "pan"], answer="Yo como pan"))
+        self.assertEqual(validate.validate(), [])
+
+    def test_normalize_answer_folds_case_and_diacritics(self):
+        self.assertEqual(lib.normalize_answer("  Está  "), lib.normalize_answer("esta"))
+        self.assertEqual(lib.normalize_answer("Niño"), lib.normalize_answer("nino"))
+
+    def test_duplicate_exercise_id_caught(self):
+        write_exercise(self.root, exercise("A1-EX-01", "fill-in-the-blank", answer="a"))
+        d = self.root / "A1" / "exercises"
+        (d / "dup.md").write_text(
+            lib.render_exercise_file(exercise("A1-EX-01", "fill-in-the-blank", answer="b")),
+            encoding="utf-8",
+        )
+        errs = validate.validate()
+        self.assertTrue(any("duplicate exercise id" in e for e in errs), errs)
+
+    def test_compile_includes_exercises(self):
+        write_exercise(self.root, exercise("A1-EX-01", "multiple-choice",
+                                           options=["el", "la"], answer="la"))
+        out = self.root / "content.json"
+        os.environ["LORITO_BUNDLE_PATH"] = str(out)
+        self.assertEqual(compile_mod.main(), 0)
+        data = json.loads(out.read_text(encoding="utf-8"))
+        self.assertEqual(len(data["exercises"]), 1)
+        ex = data["exercises"][0]
+        self.assertEqual(ex["type"], "multiple-choice")
+        self.assertEqual(ex["card"], "A1-01")
+        self.assertEqual(ex["options"], ["el", "la"])
+        self.assertEqual(ex["prompt"], "Prompt?")
+        self.assertEqual(ex["explanation"], "Because.")
+
+    def test_compile_blocked_by_invalid_exercise(self):
+        write_exercise(self.root, exercise("A1-EX-01", "multiple-choice",
+                                           options=["el", "la"], answer="los"))
+        out = self.root / "content.json"
+        os.environ["LORITO_BUNDLE_PATH"] = str(out)
+        self.assertEqual(compile_mod.main(), 1)
+        self.assertFalse(out.exists())
+
+    def test_coverage_lists_uncovered_cards_and_counts(self):
+        # Two cards, one with an exercise, one without.
+        write_content(self.root, [card("A1-01", 1), card("A1-02", 2)], THEME)
+        write_exercise(self.root, exercise("A1-EX-01", "fill-in-the-blank",
+                                           card_id="A1-01", answer="x"))
+        rep = validate.coverage()
+        self.assertEqual(rep["total"], 2)
+        self.assertEqual(rep["covered"], 1)
+        self.assertEqual(rep["uncovered"], ["A1-02"])
+        self.assertIn("a1-1", rep["uncovered_by_theme"])
+
+    def test_coverage_is_non_failing(self):
+        # Cards exist with no exercises at all — coverage still exits zero.
+        write_content(self.root, [card("A1-01", 1)], THEME)
+        self.assertEqual(validate.print_coverage(), 0)
+        self.assertEqual(validate.main(["--coverage"]), 0)
+        # And it does not affect validation pass/fail.
+        self.assertEqual(validate.validate(), [])
+
+    def test_picture_matching_missing_asset_caught(self):
+        ex = exercise("A1-EX-01", "picture-matching",
+                      options=[{"image": "casa.png", "label": "casa"},
+                               {"image": "perro.png", "label": "perro"}])
+        write_exercise(self.root, ex)
+        errs = validate.validate()
+        self.assertTrue(any("missing image asset 'casa.png'" in e for e in errs), errs)
+
+    def test_picture_matching_with_assets_passes_and_compiles(self):
+        assets = self.root / "exercise-assets"
+        assets.mkdir(parents=True, exist_ok=True)
+        (assets / "casa.png").write_bytes(b"\x89PNG\r\n")   # fixture bytes
+        (assets / "perro.png").write_bytes(b"\x89PNG\r\n")
+        ex = exercise("A1-EX-01", "picture-matching",
+                      options=[{"image": "casa.png", "label": "casa"},
+                               {"image": "perro.png", "label": "perro"}])
+        write_exercise(self.root, ex)
+        self.assertEqual(validate.validate(), [])
+        out = self.root / "content.json"
+        os.environ["LORITO_BUNDLE_PATH"] = str(out)
+        self.assertEqual(compile_mod.main(), 0)
+        # Assets copied next to the bundle.
+        self.assertTrue((out.parent / "exercise-assets" / "casa.png").exists())
+        self.assertTrue((out.parent / "exercise-assets" / "perro.png").exists())
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
