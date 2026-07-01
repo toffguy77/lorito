@@ -1,6 +1,8 @@
 devices(["Lorito iPhone", "Lorito iPad"])
 languages(["ru"])
 scheme("Lorito")
+# Only the screenshot test — not the functional PracticeFlowUITests in the same target.
+only_testing(["LoritoUITests/ScreenshotUITests"])
 output_directory("./fastlane/screenshots")
 clear_previous_screenshots(true)
 reinstall_app(true)
