@@ -159,4 +159,28 @@ final class PracticeFlowUITests: XCTestCase {
         XCTAssertTrue(app.images.firstMatch.waitForExistence(timeout: 5), "no image rendered on the picture-matching screen")
         sleep(6)   // window for an external screenshot
     }
+
+    /// Opens Settings → «О приложении» and confirms the OpenMoji attribution shows.
+    func testAboutScreen() throws {
+        let app = XCUIApplication()
+        app.launch()
+        dismissSystemAlertIfPresent()
+        if app.buttons["A1"].waitForExistence(timeout: 8) {
+            app.buttons["A1"].tap()
+            app.buttons["Далее"].tap()
+            if app.buttons["Начать"].waitForExistence(timeout: 10) { app.buttons["Начать"].tap() }
+        }
+        dismissSystemAlertIfPresent()
+
+        XCTAssertTrue(app.tabBars.buttons["Настройки"].waitForExistence(timeout: 15))
+        app.tabBars.buttons["Настройки"].tap()
+
+        let about = app.staticTexts["О приложении"]
+        XCTAssertTrue(about.waitForExistence(timeout: 15), "«О приложении» entry not found")
+        about.tap()
+
+        XCTAssertTrue(app.staticTexts["OpenMoji"].waitForExistence(timeout: 10), "OpenMoji credit not shown")
+        XCTAssertTrue(app.staticTexts["CC BY-SA 4.0"].exists, "OpenMoji license not shown")
+        sleep(6)   // window for an external screenshot
+    }
 }

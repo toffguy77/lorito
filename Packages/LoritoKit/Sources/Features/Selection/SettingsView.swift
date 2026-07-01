@@ -34,6 +34,20 @@ public struct SettingsView: View {
                     .buttonStyle(.plain)
                 }
 
+                NavigationLink {
+                    AboutView()
+                } label: {
+                    HStack {
+                        Text("О приложении")
+                            .font(LoritoFont.heading)
+                            .foregroundStyle(LoritoColor.textPrimary)
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                            .foregroundStyle(LoritoColor.textTertiary)
+                    }
+                }
+                .buttonStyle(.plain)
+
                 section("Уровень") {
                     LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: LoritoSpacing.sm) {
                         ForEach(model.allLevels) { level in
