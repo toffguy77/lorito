@@ -75,3 +75,29 @@ public final class EventRecord {
         self.grade = grade
     }
 }
+
+@Model
+public final class AttemptRecord {
+    public var attemptID: UUID = UUID()
+    public var exerciseID: String = ""
+    public var cardID: String = ""
+    public var date: Date = Date.distantPast
+    public var correct: Bool = false
+    public var grade: String?
+
+    public init(
+        attemptID: UUID = UUID(),
+        exerciseID: String = "",
+        cardID: String = "",
+        date: Date = .distantPast,
+        correct: Bool = false,
+        grade: String? = nil
+    ) {
+        self.attemptID = attemptID
+        self.exerciseID = exerciseID
+        self.cardID = cardID
+        self.date = date
+        self.correct = correct
+        self.grade = grade
+    }
+}

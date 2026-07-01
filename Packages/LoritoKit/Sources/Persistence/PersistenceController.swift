@@ -31,6 +31,7 @@ public enum PersistenceController {
         SettingsRecord.self,
         ReviewRecord.self,
         EventRecord.self,
+        AttemptRecord.self,
     ])
 
     public static func makeContainer(config: PersistenceConfig = .default) throws -> ModelContainer {

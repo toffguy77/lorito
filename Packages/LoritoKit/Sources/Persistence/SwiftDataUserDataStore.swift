@@ -84,6 +84,29 @@ public final class SwiftDataUserDataStore: UserDataStore {
         }
     }
 
+    // MARK: Exercise attempts
+
+    public func appendAttempt(_ attempt: ExerciseAttempt) throws {
+        context.insert(AttemptRecord(
+            attemptID: attempt.id,
+            exerciseID: attempt.exerciseID,
+            cardID: attempt.cardID,
+            date: attempt.date,
+            correct: attempt.correct,
+            grade: attempt.grade
+        ))
+        try context.save()
+    }
+
+    public func allAttempts() throws -> [ExerciseAttempt] {
+        try context.fetch(FetchDescriptor<AttemptRecord>()).map {
+            ExerciseAttempt(
+                id: $0.attemptID, exerciseID: $0.exerciseID, cardID: $0.cardID,
+                date: $0.date, correct: $0.correct, grade: $0.grade
+            )
+        }
+    }
+
     // MARK: Helpers
 
     private func fetchRecord(cardID: String) throws -> ReviewRecord? {

@@ -77,6 +77,80 @@ rendered specially by the app:
 Tables (GFM) are supported. The card `title` is stored in frontmatter, so the
 body SHOULD NOT repeat it as a top-level `#` heading.
 
+## Practice exercises
+
+Practical exercises live alongside cards, one file per exercise:
+
+```
+content/
+  A1/ A2/ B1/ B2/ C1/ C2/
+    exercises/
+      <id>.md            # one exercise per file, e.g. A1-EX-01.md
+```
+
+An exercise file is YAML-ish frontmatter followed by a Markdown body. The body
+is the **prompt**; an optional `> **Объяснение**` callout (and everything after
+it) is the **explanation** shown once the answer is checked or revealed.
+
+### Common frontmatter fields
+
+| Field | Required | Type | Rules |
+|-------|----------|------|-------|
+| `id` | yes | string | Unique across all exercises. Convention `<LEVEL>-EX-NN` (e.g. `A1-EX-01`). |
+| `level` | yes | string | One of `A1 A2 B1 B2 C1 C2`. Must match the file's `<LEVEL>/` directory. |
+| `theme` | yes | string | A theme id in `themes.json` whose level equals this exercise's level. |
+| `card` | yes | string | An existing card id of the **same level** the exercise drills. |
+| `type` | yes | string | One of the six types below. |
+
+Type-specific value fields are JSON (a value beginning with `[` or `{` is parsed
+as JSON; otherwise it is a quoted/plain scalar string):
+
+| `type` | mode | fields |
+|--------|------|--------|
+| `multiple-choice` | auto | `options` (JSON array, ≥2 strings) + `answer` (the correct option, must be in `options`) |
+| `fill-in-the-blank` | auto | `answer` (string) + optional `accept` (JSON array of accepted strings) |
+| `matching` | auto | `pairs` (JSON array of `{"left":…,"right":…}`, ≥2) |
+| `word-order` | auto | `tokens` (JSON array) + `answer` (target sentence) + optional `accept` (JSON array) |
+| `picture-matching` | auto | `options` (JSON array of `{"image":…,"label":…}`, ≥2) — `image` names a bundled asset |
+| `free-response` | self-assessed | `answer` (reference string) + optional `accept` (JSON array) |
+
+**Answer matching (auto types).** `fill-in-the-blank` and `word-order` compare
+the user's input to the expected answer(s) under a **normalized** match:
+case-folded, diacritics stripped (`á`→`a`, `ñ`→`n`), surrounding whitespace
+trimmed, inner whitespace collapsed. `multiple-choice`/`matching`/`picture-matching`
+compare selected identity. `free-response` is **self-assessed**: the reference is
+revealed and the user grades themselves with the four SM-2 buttons.
+
+### Example (multiple-choice)
+
+```markdown
+---
+id: A1-EX-01
+level: A1
+theme: a1-2
+card: A1-07
+type: multiple-choice
+options: ["el", "la"]
+answer: "la"
+---
+Какой артикль у слова **casa**?
+
+> **Объяснение**
+> Слова на **-a** обычно женского рода: *la casa*.
+```
+
+### Compiled shape
+
+`compile.py` adds an `exercises` array to `content.json` next to `cards`. Each
+entry carries the common fields plus the type-specific fields present, with the
+body split into `prompt` and `explanation`:
+
+```json
+{ "id": "A1-EX-01", "level": "A1", "themeID": "a1-2", "card": "A1-07",
+  "type": "multiple-choice", "prompt": "…markdown…", "explanation": "…markdown…",
+  "options": ["el", "la"], "answer": "la" }
+```
+
 ## Pipeline
 
 See `tools/`:

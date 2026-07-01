@@ -48,13 +48,31 @@ def main() -> int:
             "body": c.body,
         })
 
-    catalog = {"themes": themes, "cards": cards_out}
+    exercises_out = []
+    for p in lib.iter_exercise_files():
+        ex = lib.parse_exercise_file(p)
+        entry = {
+            "id": ex.id,
+            "level": ex.level,
+            "themeID": ex.theme,
+            "card": ex.card,
+            "type": ex.type,
+            "prompt": ex.prompt,
+            "explanation": ex.explanation,
+        }
+        entry.update(ex.data)  # type-specific fields (options, answer, pairs, …)
+        exercises_out.append(entry)
+
+    catalog = {"themes": themes, "cards": cards_out, "exercises": exercises_out}
     out = bundle_path()
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(
         json.dumps(catalog, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
-    print(f"compiled bundle: {len(cards_out)} cards, {len(themes)} themes -> {out}")
+    print(
+        f"compiled bundle: {len(cards_out)} cards, {len(exercises_out)} exercises, "
+        f"{len(themes)} themes -> {out}"
+    )
     return 0
 
 

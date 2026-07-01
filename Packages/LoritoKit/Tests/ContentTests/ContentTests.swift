@@ -30,4 +30,18 @@ struct ContentTests {
         #expect(catalog.levels == catalog.levels.sorted())
         #expect(catalog.levels.first == .a1)
     }
+
+    @Test("Pilot exercises load and resolve to same-level cards")
+    func exercisesResolve() throws {
+        let catalog = try ContentLoader.loadCatalog()
+        #expect(!catalog.exercises.isEmpty)
+        for ex in catalog.exercises {
+            let card = catalog.card(id: ex.card)
+            #expect(card != nil, "exercise \(ex.id) -> unresolved card \(ex.card)")
+            #expect(card?.level == ex.level)
+        }
+        // The pilot drills the noun cards.
+        #expect(!catalog.exercises(forCard: "A1-07").isEmpty)
+        #expect(!catalog.exercises(forCard: "A1-08").isEmpty)
+    }
 }

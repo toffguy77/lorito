@@ -13,4 +13,14 @@ public protocol UserDataStore: AnyObject {
 
     func appendEvent(_ event: StudyEvent) throws
     func allEvents() throws -> [StudyEvent]
+
+    // Practice-exercise attempts. Default implementations keep existing
+    // conformers source-compatible; the SwiftData store overrides them.
+    func appendAttempt(_ attempt: ExerciseAttempt) throws
+    func allAttempts() throws -> [ExerciseAttempt]
+}
+
+public extension UserDataStore {
+    func appendAttempt(_ attempt: ExerciseAttempt) throws {}
+    func allAttempts() throws -> [ExerciseAttempt] { [] }
 }
