@@ -1,12 +1,15 @@
 import Foundation
 
-/// A user's submitted answer to an exercise. Phase 1 carries the two
-/// auto-checkable inputs; later types extend this.
+/// A user's submitted answer to an exercise, one case per input modality.
 public enum ExerciseAnswer: Sendable, Equatable {
     /// A chosen option (multiple-choice).
     case option(String)
-    /// Free text the user typed (fill-in-the-blank).
+    /// Free text the user typed (fill-in-the-blank / free-response).
     case text(String)
+    /// Tokens arranged into an order (word-order), left-to-right.
+    case ordering([String])
+    /// A mapping of left→right (matching) or label→image (picture-matching).
+    case matches([String: String])
 }
 
 /// The outcome of checking an auto-checkable answer.
@@ -65,13 +68,32 @@ public enum ExerciseChecker {
             let ok = matches(typed, expected: expected, accept: accept)
             return ExerciseCheck(isCorrect: ok, grade: ok ? passingGrade : .again, correctAnswer: expected)
 
-        case .matching, .wordOrder, .pictureMatching:
-            // Specified; implemented in a later phase.
-            throw CheckError.notAutoCheckable
+        case let .matching(pairs):
+            guard case let .matches(chosen) = answer else { throw CheckError.answerMismatch }
+            let authored = Dictionary(pairs.map { ($0.left, $0.right) }, uniquingKeysWith: { a, _ in a })
+            let ok = chosen == authored
+            return ExerciseCheck(isCorrect: ok, grade: ok ? passingGrade : .again,
+                                 correctAnswer: displayPairs(pairs.map { ($0.left, $0.right) }))
+
+        case let .wordOrder(_, expected, accept):
+            guard case let .ordering(tokens) = answer else { throw CheckError.answerMismatch }
+            let ok = matches(tokens.joined(separator: " "), expected: expected, accept: accept)
+            return ExerciseCheck(isCorrect: ok, grade: ok ? passingGrade : .again, correctAnswer: expected)
+
+        case let .pictureMatching(options):
+            guard case let .matches(chosen) = answer else { throw CheckError.answerMismatch }
+            let authored = Dictionary(options.map { ($0.label, $0.image) }, uniquingKeysWith: { a, _ in a })
+            let ok = chosen == authored
+            return ExerciseCheck(isCorrect: ok, grade: ok ? passingGrade : .again,
+                                 correctAnswer: displayPairs(options.map { ($0.label, $0.image) }))
 
         case .freeResponse:
-            // Self-assessed: correctness comes from the user's own grade.
+            // Self-assessed: correctness comes from the user's own grade, not this method.
             throw CheckError.notAutoCheckable
         }
+    }
+
+    private static func displayPairs(_ pairs: [(String, String)]) -> String {
+        pairs.map { "\($0.0) → \($0.1)" }.joined(separator: "; ")
     }
 }

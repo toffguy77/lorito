@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import json
 import os
+import shutil
 import sys
 from pathlib import Path
 
@@ -69,9 +70,23 @@ def main() -> int:
     out.write_text(
         json.dumps(catalog, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
+
+    # Bundle image assets referenced by picture-matching exercises.
+    referenced = {img for ex in (lib.parse_exercise_file(p) for p in lib.iter_exercise_files())
+                  for img in lib.exercise_image_names(ex)}
+    assets_out = out.parent / "exercise-assets"
+    n_assets = 0
+    if referenced:
+        assets_out.mkdir(parents=True, exist_ok=True)
+        for img in sorted(referenced):
+            src, dst = lib.exercise_assets_dir() / img, assets_out / img
+            if src.resolve() != dst.resolve():
+                shutil.copyfile(src, dst)
+            n_assets += 1
+
     print(
         f"compiled bundle: {len(cards_out)} cards, {len(exercises_out)} exercises, "
-        f"{len(themes)} themes -> {out}"
+        f"{len(themes)} themes, {n_assets} assets -> {out}"
     )
     return 0
 

@@ -17,7 +17,7 @@ Phase 2 tasks are specified now and built in later deliveries. Tasks tagged
 - [x] 2.3 Write failing tests: `multiple-choice` `answer` not in `options` fails; `word-order` `tokens` that cannot form `answer` fails; `picture-matching` referencing a missing image asset fails
 - [x] 2.4 Extend `tools/validate.py` to load and validate `content/<LEVEL>/exercises/*.md` for all six types until tests pass
 - [x] 2.5 Extend `tools/compile.py` to include valid exercises in `content.json` (validation runs first; failure produces no bundle), and add tests asserting exercises appear in the compiled output and that invalid exercises block the bundle
-- [ ] 2.6 [Phase 2] Extend `tools/compile.py` to bundle image assets referenced by `picture-matching` exercises and validate their presence
+- [x] 2.6 [Phase 2] Extend `tools/compile.py` to bundle image assets referenced by `picture-matching` exercises and validate their presence
 
 ## 3. Pilot content authoring
 
@@ -37,9 +37,9 @@ Phase 2 tasks are specified now and built in later deliveries. Tasks tagged
 - [x] 5.2 Write failing tests: `fill-in-the-blank` — exact match correct; case/diacritic/surrounding-whitespace differences still correct; an `accept` alternative is correct; a non-matching answer is incorrect
 - [x] 5.3 Write failing tests: outcome→grade mapping — correct maps to the passing grade (Хорошо), incorrect maps to Опять; the mapping is a pure function (no I/O)
 - [x] 5.4 Implement the checking service for `multiple-choice` + `fill-in-the-blank` and the pure normalization helper until tests pass
-- [ ] 5.5 [Phase 2] Write failing tests + implement checking for `matching` (all pairs correct), `word-order` (normalized order match incl. `accept`)
-- [ ] 5.6 [Phase 2] Define `free-response` handling (self-assessed: no auto-correctness; the user-chosen grade is the outcome) with tests
-- [ ] 5.7 [Phase 2] Write failing tests + implement checking for `picture-matching` (all labels matched)
+- [x] 5.5 [Phase 2] Write failing tests + implement checking for `matching` (all pairs correct), `word-order` (normalized order match incl. `accept`)
+- [x] 5.6 [Phase 2] Define `free-response` handling (self-assessed: no auto-correctness; the user-chosen grade is the outcome) with tests
+- [x] 5.7 [Phase 2] Write failing tests + implement checking for `picture-matching` (all labels matched)
 
 ## 6. SRS & persistence integration
 
@@ -54,7 +54,7 @@ Phase 2 tasks are specified now and built in later deliveries. Tasks tagged
 - [x] 7.1 Build the exercise screen for `multiple-choice` (option selection) and `fill-in-the-blank` (text entry) reusing DesignSystem tokens/components; submit is unavailable until an answer is provided
 - [x] 7.2 On submit, show correct/incorrect feedback with the correct answer and the explanation; provide a continue action that advances or reaches a completion state
 - [x] 7.3 Wire a practice entry point into the study surface and load exercises for the relevant theme/cards from the catalog
-- [ ] 7.4 [Phase 2] Add input affordances + feedback for `matching`, `word-order`, `free-response` (reveal reference + four grade buttons), and `picture-matching`
+- [x] 7.4 [Phase 2] Add input affordances + feedback for `matching`, `word-order`, `free-response` (reveal reference + four grade buttons), and `picture-matching`
 
 ## 8. Validation & wrap-up
 

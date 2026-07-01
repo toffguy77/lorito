@@ -59,6 +59,10 @@ def validate_exercises(themes: dict[str, dict], card_level: dict[str, str]) -> l
             errors.append(f"{eid}: unknown type '{ex.type}'")
             continue
         errors.extend(f"{eid}: {e}" for e in _validate_exercise_type(ex))
+        # picture-matching: every referenced image asset must exist in the sources.
+        for img in lib.exercise_image_names(ex):
+            if not (lib.exercise_assets_dir() / img).exists():
+                errors.append(f"{eid}: missing image asset '{img}'")
     return errors
 
 
@@ -97,7 +101,7 @@ def _validate_exercise_type(ex: lib.Exercise) -> list[str]:
             errs.append("'options' needs at least 2 {image,label} entries")
         elif any(not isinstance(o, dict) or "image" not in o or "label" not in o for o in opts):
             errs.append("each option needs 'image' and 'label'")
-        # NOTE: asset-existence in the bundle is validated in a later phase (task 2.6).
+        # Asset-file existence is checked in validate_exercises (needs the filesystem).
     elif ex.type == "free-response":
         errs += _missing(d, "answer")
     return errs

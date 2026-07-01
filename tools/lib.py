@@ -319,3 +319,18 @@ def render_exercise_file(ex: Exercise) -> str:
 def iter_exercise_files() -> list[Path]:
     base = content_dir()
     return sorted(base.glob("*/exercises/*.md"), key=lambda p: (p.parent.parent.name, p.name))
+
+
+def exercise_assets_dir() -> Path:
+    """Directory holding image assets referenced by picture-matching exercises."""
+    return content_dir() / "exercise-assets"
+
+
+def exercise_image_names(ex: Exercise) -> list[str]:
+    """The image filenames a picture-matching exercise references (empty otherwise)."""
+    if ex.type != "picture-matching":
+        return []
+    opts = ex.data.get("options")
+    if not isinstance(opts, list):
+        return []
+    return [o["image"] for o in opts if isinstance(o, dict) and "image" in o]

@@ -224,6 +224,31 @@ class ExerciseTests(unittest.TestCase):
         # And it does not affect validation pass/fail.
         self.assertEqual(validate.validate(), [])
 
+    def test_picture_matching_missing_asset_caught(self):
+        ex = exercise("A1-EX-01", "picture-matching",
+                      options=[{"image": "casa.png", "label": "casa"},
+                               {"image": "perro.png", "label": "perro"}])
+        write_exercise(self.root, ex)
+        errs = validate.validate()
+        self.assertTrue(any("missing image asset 'casa.png'" in e for e in errs), errs)
+
+    def test_picture_matching_with_assets_passes_and_compiles(self):
+        assets = self.root / "exercise-assets"
+        assets.mkdir(parents=True, exist_ok=True)
+        (assets / "casa.png").write_bytes(b"\x89PNG\r\n")   # fixture bytes
+        (assets / "perro.png").write_bytes(b"\x89PNG\r\n")
+        ex = exercise("A1-EX-01", "picture-matching",
+                      options=[{"image": "casa.png", "label": "casa"},
+                               {"image": "perro.png", "label": "perro"}])
+        write_exercise(self.root, ex)
+        self.assertEqual(validate.validate(), [])
+        out = self.root / "content.json"
+        os.environ["LORITO_BUNDLE_PATH"] = str(out)
+        self.assertEqual(compile_mod.main(), 0)
+        # Assets copied next to the bundle.
+        self.assertTrue((out.parent / "exercise-assets" / "casa.png").exists())
+        self.assertTrue((out.parent / "exercise-assets" / "perro.png").exists())
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

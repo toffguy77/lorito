@@ -44,7 +44,7 @@ struct ExerciseSessionModelTests {
         session.selectedOption = "la"
         #expect(session.canSubmit)
         session.submit()
-        #expect(session.isChecked)
+        #expect(session.isResolved)
         #expect(session.lastCheck?.isCorrect == true)
         #expect(store.reviews["A1-07"] != nil)       // grade applied to the card
         #expect(store.attempts.count == 1)
@@ -67,13 +67,69 @@ struct ExerciseSessionModelTests {
         #expect(store.attempts.count == 2)
     }
 
-    @Test("Only auto-checkable Phase-1 types enter the queue")
-    func filtersUnsupportedTypes() {
-        let free = Exercise(id: "X", level: .a1, themeID: "a1-2", card: "A1-07",
-                            prompt: "P", explanation: "E",
-                            kind: .freeResponse(answer: "hola", accept: []))
-        let session = ExerciseSessionModel(store: PracticeStore(), exercises: [free, mc])
-        #expect(session.current?.id == "A1-EX-01")   // free-response skipped
-        #expect(session.positionText == "1 / 1")
+    @Test("Word-order: placing tokens then submitting checks and grades")
+    func wordOrderFlow() {
+        let store = PracticeStore()
+        let wo = Exercise(id: "WO", level: .a1, themeID: "a1-2", card: "A1-07", prompt: "P", explanation: "E",
+                          kind: .wordOrder(tokens: ["yo", "como", "pan"], answer: "Yo como pan", accept: []))
+        let session = ExerciseSessionModel(store: store, exercises: [wo])
+        #expect(!session.canSubmit)
+        for t in ["yo", "como", "pan"] { session.placeToken(t) }
+        #expect(session.canSubmit)
+        session.submit()
+        #expect(session.lastCheck?.isCorrect == true)
+        #expect(store.reviews["A1-07"] != nil)
+        #expect(store.attempts.count == 1)
+    }
+
+    @Test("Matching: choosing a right for each left, submit checks all pairs")
+    func matchingFlow() {
+        let store = PracticeStore()
+        let m = Exercise(id: "M", level: .a1, themeID: "a1-2", card: "A1-07", prompt: "P", explanation: "E",
+                         kind: .matching(pairs: [MatchPair(left: "uno", right: "1"), MatchPair(left: "dos", right: "2")]))
+        let session = ExerciseSessionModel(store: store, exercises: [m])
+        session.matches["uno"] = "1"
+        #expect(!session.canSubmit)              // not all lefts chosen yet
+        session.matches["dos"] = "2"
+        #expect(session.canSubmit)
+        session.submit()
+        #expect(session.lastCheck?.isCorrect == true)
+        #expect(store.attempts.first?.correct == true)
+    }
+
+    @Test("Free-response: submit reveals reference, self-grade applies and advances")
+    func freeResponseFlow() {
+        let store = PracticeStore()
+        let fr = Exercise(id: "FR", level: .a1, themeID: "a1-2", card: "A1-07", prompt: "P", explanation: "E",
+                          kind: .freeResponse(answer: "hola", accept: []))
+        let session = ExerciseSessionModel(store: store, exercises: [fr])
+        session.typedText = "ola"
+        #expect(session.canSubmit)
+        session.submit()
+        #expect(session.isRevealed)              // reference shown, not auto-checked
+        #expect(session.lastCheck == nil)
+        #expect(session.referenceAnswer == "hola")
+        session.selfGrade(.good)                 // user grades themselves
+        #expect(session.isComplete)              // advanced past the only exercise
+        #expect(store.reviews["A1-07"]?.lastGrade == Grade.good.rawValue)
+        #expect(store.attempts.first?.correct == true)
+    }
+
+    @Test("All six types enter the queue")
+    func allTypesQueued() {
+        let types: [ExerciseKind] = [
+            .multipleChoice(options: ["a", "b"], answer: "a"),
+            .fillInTheBlank(answer: "x", accept: []),
+            .matching(pairs: [MatchPair(left: "l", right: "r"), MatchPair(left: "l2", right: "r2")]),
+            .wordOrder(tokens: ["a"], answer: "a", accept: []),
+            .pictureMatching(options: [PictureOption(image: "a.png", label: "a"), PictureOption(image: "b.png", label: "b")]),
+            .freeResponse(answer: "y", accept: []),
+        ]
+        let exercises = types.enumerated().map {
+            Exercise(id: "E\($0.offset)", level: .a1, themeID: "a1-2", card: "A1-07",
+                     prompt: "P", explanation: "E", kind: $0.element)
+        }
+        let session = ExerciseSessionModel(store: PracticeStore(), exercises: exercises)
+        #expect(session.count == 6)
     }
 }
