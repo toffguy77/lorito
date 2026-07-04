@@ -16,6 +16,7 @@ public struct RootView: View {
     @State private var model: ScopeSelectionModel?
     @State private var store: (any UserDataStore)?
     @State private var catalog: ContentCatalog?
+    @State private var reminders: ReminderService?
     @State private var loadError = false
     private let cloudKitEnabled: Bool
 
@@ -29,7 +30,7 @@ public struct RootView: View {
                 if didCompleteOnboarding {
                     MainTabView(store: store, catalog: catalog, scopeModel: model)
                 } else {
-                    OnboardingView(model: model) { didCompleteOnboarding = true }
+                    OnboardingView(model: model, reminders: reminders) { didCompleteOnboarding = true }
                 }
             } else if loadError {
                 errorView
@@ -58,6 +59,9 @@ public struct RootView: View {
             self.catalog = catalog
             self.store = store
             self.model = ScopeSelectionModel(store: store, catalog: catalog)
+            self.reminders = ReminderService(
+                scheduler: SystemNotificationScheduler(), store: store, catalog: catalog
+            )
         } catch {
             loadError = true
         }

@@ -29,12 +29,19 @@ private final class FakeScheduler: NotificationScheduling {
     }
 }
 
+private struct SaveError: Error {}
+
 private final class MemStore: UserDataStore {
     var settings = UserSettings(targetLevel: .a1, selectedThemeIDs: ["a1-1"], dailyNewCardCount: 3)
     var reviews: [String: ReviewState] = [:]
     var events: [StudyEvent] = []
+    /// When true, `saveSettings` throws so persistence-failure handling is testable.
+    var failSave = false
     func loadSettings() throws -> UserSettings { settings }
-    func saveSettings(_ s: UserSettings) throws { settings = s }
+    func saveSettings(_ s: UserSettings) throws {
+        if failSave { throw SaveError() }
+        settings = s
+    }
     func allReviews() throws -> [ReviewState] { Array(reviews.values) }
     func review(for cardID: String) throws -> ReviewState? { reviews[cardID] }
     func upsertReview(_ review: ReviewState) throws { reviews[review.cardID] = review }
@@ -127,6 +134,72 @@ struct ReminderServiceTests {
         await svc.disable()
         #expect(fake.pending.isEmpty)
         #expect(!store.settings.remindersEnabled)
+    }
+
+    // MARK: - Reactivity & persistence (bug fixes)
+
+    @Test("Added times are observable on the service config")
+    func addTimeObservable() async {
+        let fake = FakeScheduler(status: .authorized)
+        let svc = service(fake, MemStore())
+        _ = await svc.enable(times: [ReminderTime(hour: 9, minute: 0)], now: now)
+        await svc.addTime(ReminderTime(hour: 20, minute: 0))
+        #expect(svc.config.times.contains(ReminderTime(hour: 20, minute: 0)))
+        #expect(svc.config.times.count == 2)
+    }
+
+    @Test("Enabled state is reflected in the observed config")
+    func enabledObservable() async {
+        let fake = FakeScheduler(status: .authorized)
+        let svc = service(fake, MemStore())
+        #expect(!svc.config.enabled)
+        _ = await svc.enable(times: [ReminderTime(hour: 9, minute: 0)], now: now)
+        #expect(svc.config.enabled)
+    }
+
+    @Test("A failed save is surfaced, not swallowed; in-memory config stays authoritative")
+    func saveFailureSurfaced() async {
+        let fake = FakeScheduler(status: .authorized)
+        let store = MemStore()
+        store.failSave = true
+        let svc = service(fake, store)
+        await svc.addTime(ReminderTime(hour: 9, minute: 0))
+        #expect(svc.persistenceFailed)
+        #expect(svc.config.times.contains(ReminderTime(hour: 9, minute: 0)))
+    }
+
+    // MARK: - Streak-aware scheduling
+
+    /// Enabled config, no due/new cards (dailyNewCardCount 0), streak at risk.
+    private func atRiskStore() -> MemStore {
+        let store = MemStore()
+        store.settings.dailyNewCardCount = 0
+        store.settings.reminderConfig = ReminderConfig(enabled: true, times: [ReminderTime(hour: 9, minute: 0)])
+        // Studied yesterday only → current streak 1, not studied today.
+        let yesterday = utc().date(from: DateComponents(year: 2026, month: 6, day: 23, hour: 12))!
+        store.events = [StudyEvent(cardID: "A1-01", date: yesterday, grade: "good")]
+        return store
+    }
+
+    @Test("Empty day with streak at risk schedules a save-streak nudge")
+    func atRiskNudgeScheduled() async {
+        let fake = FakeScheduler(status: .authorized)
+        let svc = service(fake, atRiskStore())
+        await svc.reschedule(now: now)
+        #expect(!fake.pending.isEmpty)
+        #expect(fake.pending.values.allSatisfy { !$0.body.contains("на повторение") })
+        #expect(fake.pending.values.contains { $0.body.contains("🔥") })
+    }
+
+    @Test("Once studied today, the empty-day nudge is suppressed")
+    func studiedTodaySuppresses() async {
+        let fake = FakeScheduler(status: .authorized)
+        let store = atRiskStore()
+        // Add a grade event for today → studiedToday true, streak no longer at risk.
+        store.events.append(StudyEvent(cardID: "A1-02", date: now, grade: "good"))
+        let svc = service(fake, store)
+        await svc.reschedule(now: now)
+        #expect(fake.pending.isEmpty)
     }
 }
 

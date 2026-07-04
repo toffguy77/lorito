@@ -116,3 +116,111 @@ struct ReminderPlannerTests {
         #expect(reqs.allSatisfy { $0.route == ReminderRoute.today })
     }
 }
+
+@Suite("Reminder planner — streak awareness")
+struct ReminderPlannerStreakTests {
+    let cal = utcCalendar()
+    let now = dateTime(2026, 6, 24, 6, 0)  // 06:00, before all test times
+    let times = [ReminderTime(hour: 9, minute: 0), ReminderTime(hour: 20, minute: 0)]
+
+    private func uniform(_ due: Int, _ new: Int) -> (Date) -> DayCounts {
+        { _ in DayCounts(due: due, new: new) }
+    }
+
+    private func uniformStreak(_ streak: Int, _ studiedToday: Bool) -> (Date) -> DayStreak {
+        { _ in DayStreak(currentStreak: streak, studiedToday: studiedToday) }
+    }
+
+    // MARK: - Body composition
+
+    @Test("Active streak weaves a Russian streak line into the counts body")
+    func streakLineWoven() {
+        let body = ReminderPlanner.body(due: 3, new: 0, streak: 5)
+        #expect(body.contains("5"))
+        #expect(body.contains("3 на повторение"))
+        #expect(body.contains("🔥"))
+    }
+
+    @Test("Zero streak leaves the counts body unchanged")
+    func noStreakLine() {
+        #expect(ReminderPlanner.body(due: 5, new: 1, streak: 0) == "5 на повторение + 1 новых")
+        #expect(ReminderPlanner.body(due: 5, new: 0) == "5 на повторение")
+    }
+
+    @Test("Empty counts with a streak produce a save-streak nudge body")
+    func saveStreakBody() {
+        let body = ReminderPlanner.body(due: 0, new: 0, streak: 4)
+        #expect(body.contains("4"))
+        #expect(body.contains("🔥"))
+        // Не заявляет о карточках на повторение.
+        #expect(!body.contains("на повторение"))
+    }
+
+    @Test("Russian day word agrees with the streak count")
+    func dayWordAgreement() {
+        #expect(ReminderPlanner.body(due: 1, new: 0, streak: 1).contains("1 день"))
+        #expect(ReminderPlanner.body(due: 1, new: 0, streak: 3).contains("3 дня"))
+        #expect(ReminderPlanner.body(due: 1, new: 0, streak: 5).contains("5 дней"))
+    }
+
+    // MARK: - Narrowed skip rule
+
+    @Test("Empty day with streak at risk fires a save-streak nudge today")
+    func atRiskFiresNudge() {
+        let reqs = ReminderPlanner.requests(
+            times: times, now: now, calendar: cal,
+            counts: uniform(0, 0), streak: uniformStreak(5, false)
+        )
+        let day0 = reqs.filter { cal.isDate($0.fireDate, inSameDayAs: dateTime(2026, 6, 24)) }
+        #expect(!day0.isEmpty)
+        #expect(day0.allSatisfy { !$0.body.contains("на повторение") })
+        #expect(day0.allSatisfy { $0.body.contains("🔥") })
+    }
+
+    @Test("Empty day, streak not at risk (already studied today) yields no request")
+    func studiedTodaySkips() {
+        let reqs = ReminderPlanner.requests(
+            times: times, now: now, calendar: cal,
+            counts: uniform(0, 0), streak: uniformStreak(5, true)
+        )
+        #expect(reqs.isEmpty)
+    }
+
+    @Test("Empty day, zero streak yields no request (unchanged skip)")
+    func zeroStreakSkips() {
+        let reqs = ReminderPlanner.requests(
+            times: times, now: now, calendar: cal,
+            counts: uniform(0, 0), streak: uniformStreak(0, false)
+        )
+        #expect(reqs.isEmpty)
+    }
+
+    @Test("Save-streak nudge is limited to today, not future empty days")
+    func nudgeOnlyToday() {
+        // Streak at risk on every day, but only today should nudge on empty days.
+        let reqs = ReminderPlanner.requests(
+            times: times, now: now, calendar: cal,
+            counts: uniform(0, 0), streak: uniformStreak(5, false)
+        )
+        let future = reqs.filter { !cal.isDate($0.fireDate, inSameDayAs: dateTime(2026, 6, 24)) }
+        #expect(future.isEmpty)
+    }
+
+    // MARK: - Determinism with the new input
+
+    @Test("Identical inputs incl. streak produce identical requests")
+    func deterministicWithStreak() {
+        let a = ReminderPlanner.requests(times: times, now: now, calendar: cal, counts: uniform(3, 1), streak: uniformStreak(2, false))
+        let b = ReminderPlanner.requests(times: times, now: now, calendar: cal, counts: uniform(3, 1), streak: uniformStreak(2, false))
+        #expect(a == b)
+    }
+
+    @Test("Non-empty future days still schedule and may show the streak line")
+    func futureDaysUnaffected() {
+        let reqs = ReminderPlanner.requests(
+            times: times, now: now, calendar: cal,
+            counts: uniform(2, 0), streak: uniformStreak(6, false)
+        )
+        #expect(reqs.contains { cal.isDate($0.fireDate, inSameDayAs: dateTime(2026, 6, 26)) })
+    }
+}

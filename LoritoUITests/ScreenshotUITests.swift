@@ -1,5 +1,43 @@
 import XCTest
 
+// MARK: - Shared UI helpers
+
+/// Dismiss any system alert (notification permission, etc.) that may block the UI.
+@MainActor
+func dismissSystemAlerts(_ app: XCUIApplication) {
+    let springboard = XCUIApplication(bundleIdentifier: "com.apple.springboard")
+    for label in ["Allow", "Разрешить", "Not Now", "Позже", "Cancel", "Don't Allow", "Не разрешать"] {
+        let b = springboard.buttons[label]
+        if b.waitForExistence(timeout: 2) { b.tap() }
+    }
+}
+
+/// Complete first-run onboarding (level → themes → skip reminders) when present.
+/// Mirrors the current three-step flow so downstream tests reach the main app.
+@MainActor
+func completeOnboardingIfPresent(_ app: XCUIApplication, level: String = "A1") {
+    guard app.buttons[level].waitForExistence(timeout: 8) else { return }
+    app.buttons[level].tap()
+    app.buttons["Далее"].tap()                                   // level → themes
+    if app.staticTexts["Что изучать"].waitForExistence(timeout: 10) {
+        app.buttons["Далее"].tap()                               // themes → reminders
+    }
+    if app.buttons["Пропустить"].waitForExistence(timeout: 10) {
+        app.buttons["Пропустить"].tap()                          // skip the reminder step
+    }
+}
+
+/// Poll a query until it reports at least `n` matches (or timeout).
+@MainActor
+func waitForCount(_ query: XCUIElementQuery, atLeast n: Int, timeout: TimeInterval) -> Bool {
+    let deadline = Date().addingTimeInterval(timeout)
+    while Date() < deadline {
+        if query.count >= n { return true }
+        usleep(200_000)
+    }
+    return query.count >= n
+}
+
 /// Drives the app through its main surfaces and captures App Store screenshots
 /// via fastlane snapshot. Runs against a freshly reinstalled app (first-run
 /// onboarding visible).
@@ -20,29 +58,34 @@ final class ScreenshotUITests: XCTestCase {
         snapshot("01Onboarding")
 
         app.buttons["A2"].tap()
-        app.buttons["Далее"].tap()
+        app.buttons["Далее"].tap()                              // level → themes
 
         // 2 — Onboarding: theme selection (all selected by default).
-        XCTAssertTrue(app.buttons["Начать"].waitForExistence(timeout: 15))
+        XCTAssertTrue(app.staticTexts["Что изучать"].waitForExistence(timeout: 15))
         snapshot("02Themes")
-        app.buttons["Начать"].tap()
+        app.buttons["Далее"].tap()                              // themes → reminders
 
-        // 3 — Today screen.
+        // 3 — Onboarding: reminder-time step (skippable).
+        XCTAssertTrue(app.staticTexts["Напоминания"].waitForExistence(timeout: 15))
+        snapshot("03Reminders")
+        app.buttons["Пропустить"].tap()
+
+        // 4 — Today screen.
         let start = app.buttons["Начать"]
         XCTAssertTrue(start.waitForExistence(timeout: 15))
-        snapshot("03Today")
+        snapshot("04Today")
 
-        // 4 — Study session card.
+        // 5 — Study session card.
         start.tap()
         XCTAssertTrue(app.buttons["Хорошо"].waitForExistence(timeout: 15))
-        snapshot("04Study")
+        snapshot("05Study")
         if app.buttons["Закрыть"].exists { app.buttons["Закрыть"].tap() }
 
-        // 5 — Catalog.
+        // 6 — Catalog.
         if app.tabBars.buttons["Каталог"].waitForExistence(timeout: 10) {
             app.tabBars.buttons["Каталог"].tap()
             _ = app.navigationBars.firstMatch.waitForExistence(timeout: 10)
-            snapshot("05Catalog")
+            snapshot("06Catalog")
         }
     }
 }
@@ -57,11 +100,7 @@ final class PracticeFlowUITests: XCTestCase {
     }
 
     private func dismissSystemAlertIfPresent() {
-        let springboard = XCUIApplication(bundleIdentifier: "com.apple.springboard")
-        for label in ["Not Now", "Cancel", "Позже"] {
-            let b = springboard.buttons[label]
-            if b.waitForExistence(timeout: 2) { b.tap() }
-        }
+        dismissSystemAlerts(XCUIApplication())
     }
 
     func testPracticeFlow() throws {
@@ -70,11 +109,7 @@ final class PracticeFlowUITests: XCTestCase {
         dismissSystemAlertIfPresent()
 
         // Complete onboarding if this is a fresh install.
-        if app.buttons["A1"].waitForExistence(timeout: 8) {
-            app.buttons["A1"].tap()
-            app.buttons["Далее"].tap()
-            if app.buttons["Начать"].waitForExistence(timeout: 10) { app.buttons["Начать"].tap() }
-        }
+        completeOnboardingIfPresent(app)
         dismissSystemAlertIfPresent()
 
         // Go to the Catalog.
@@ -130,11 +165,7 @@ final class PracticeFlowUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
         dismissSystemAlertIfPresent()
-        if app.buttons["A1"].waitForExistence(timeout: 8) {
-            app.buttons["A1"].tap()
-            app.buttons["Далее"].tap()
-            if app.buttons["Начать"].waitForExistence(timeout: 10) { app.buttons["Начать"].tap() }
-        }
+        completeOnboardingIfPresent(app)
         dismissSystemAlertIfPresent()
 
         XCTAssertTrue(app.tabBars.buttons["Каталог"].waitForExistence(timeout: 15))
@@ -165,11 +196,7 @@ final class PracticeFlowUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
         dismissSystemAlertIfPresent()
-        if app.buttons["A1"].waitForExistence(timeout: 8) {
-            app.buttons["A1"].tap()
-            app.buttons["Далее"].tap()
-            if app.buttons["Начать"].waitForExistence(timeout: 10) { app.buttons["Начать"].tap() }
-        }
+        completeOnboardingIfPresent(app)
         dismissSystemAlertIfPresent()
 
         XCTAssertTrue(app.tabBars.buttons["Настройки"].waitForExistence(timeout: 15))
@@ -182,5 +209,59 @@ final class PracticeFlowUITests: XCTestCase {
         XCTAssertTrue(app.staticTexts["OpenMoji"].waitForExistence(timeout: 10), "OpenMoji credit not shown")
         XCTAssertTrue(app.staticTexts["CC BY-SA 4.0"].exists, "OpenMoji license not shown")
         sleep(6)   // window for an external screenshot
+    }
+}
+
+/// Drives the Settings → Напоминания flow on the simulator, covering the two
+/// reported bugs: (1) a second reminder time is added and shown in the list, and
+/// (2) the enabled state and times persist when leaving and re-entering the screen.
+@MainActor
+final class RemindersSettingsUITests: XCTestCase {
+    override func setUpWithError() throws {
+        continueAfterFailure = false
+    }
+
+    func testEnableAddTimeAndPersistAcrossReentry() throws {
+        let app = XCUIApplication()
+        app.launch()
+        dismissSystemAlerts(app)
+        completeOnboardingIfPresent(app)   // skip reminders in onboarding; configure here
+        dismissSystemAlerts(app)
+
+        // Settings → Напоминания.
+        XCTAssertTrue(app.tabBars.buttons["Настройки"].waitForExistence(timeout: 15))
+        app.tabBars.buttons["Настройки"].tap()
+        let entry = app.staticTexts["Напоминания"]
+        XCTAssertTrue(entry.waitForExistence(timeout: 15), "Reminders entry not found in Settings")
+        entry.tap()
+
+        // Enable — seeds the default 20:00 time. The list rendering from the
+        // observed config proves the reactivity fix (bug #1's root).
+        let toggle = app.switches["remindersEnabledToggle"]
+        XCTAssertTrue(toggle.waitForExistence(timeout: 10), "reminders toggle not found")
+        if (toggle.value as? String) != "1" { toggle.tap() }
+        dismissSystemAlerts(app)   // notification permission prompt (choice irrelevant to persistence)
+
+        let rows = app.staticTexts.matching(identifier: "reminderTimeRow")
+        XCTAssertTrue(waitForCount(rows, atLeast: 1, timeout: 10),
+                      "seeded reminder time did not appear after enabling")
+
+        // Add a second time. The add-picker defaults to the current time (≠ 20:00),
+        // so this yields a distinct second row — directly exercising bug #1.
+        XCTAssertTrue(app.buttons["Добавить"].waitForExistence(timeout: 10))
+        app.buttons["Добавить"].tap()
+        XCTAssertTrue(waitForCount(rows, atLeast: 2, timeout: 10),
+                      "second reminder time was not added/shown (bug #1)")
+
+        // Leave and re-enter to confirm nothing resets (bug #2).
+        app.navigationBars.buttons.element(boundBy: 0).tap()   // back to Settings
+        XCTAssertTrue(entry.waitForExistence(timeout: 10))
+        entry.tap()
+
+        XCTAssertTrue(toggle.waitForExistence(timeout: 10))
+        XCTAssertEqual(toggle.value as? String, "1",
+                       "reminders reset to off on re-entry (bug #2)")
+        XCTAssertTrue(waitForCount(rows, atLeast: 2, timeout: 10),
+                      "reminder times did not persist across re-entry (bug #2)")
     }
 }

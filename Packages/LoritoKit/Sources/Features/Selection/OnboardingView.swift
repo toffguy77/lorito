@@ -8,13 +8,26 @@ import DesignSystem
 public struct OnboardingView: View {
     @State private var model: ScopeSelectionModel
     @State private var step: Step = .level
+    @State private var reminderTime: Date
     private let onComplete: () -> Void
+    private let reminders: ReminderService?
 
-    private enum Step { case level, themes }
+    private enum Step { case level, themes, reminders }
 
-    public init(model: ScopeSelectionModel, onComplete: @escaping () -> Void) {
+    public init(
+        model: ScopeSelectionModel,
+        reminders: ReminderService? = nil,
+        onComplete: @escaping () -> Void
+    ) {
         _model = State(initialValue: model)
+        self.reminders = reminders
         self.onComplete = onComplete
+        // Default reminder time: 20:00 local.
+        let base = Calendar.current.date(
+            bySettingHour: ReminderConfig.defaultTime.hour,
+            minute: ReminderConfig.defaultTime.minute, second: 0, of: Date()
+        ) ?? Date()
+        _reminderTime = State(initialValue: base)
     }
 
     public var body: some View {
@@ -22,6 +35,7 @@ public struct OnboardingView: View {
             switch step {
             case .level: levelStep
             case .themes: themeStep
+            case .reminders: reminderStep
             }
         }
         .frame(maxWidth: LoritoLayout.readingWidth)
@@ -106,15 +120,73 @@ public struct OnboardingView: View {
                     .padding(.vertical, LoritoSpacing.sm)
                     .padding(.horizontal, LoritoSpacing.lg)
 
-                primaryButton(title: "Начать", enabled: model.isStudyable) {
-                    if model.persist(completingOnboarding: true) {
-                        onComplete()
-                    }
+                primaryButton(title: "Далее", enabled: model.isStudyable) {
+                    step = .reminders
                 }
             }
             .padding(.horizontal, LoritoSpacing.lg)
         }
         .padding(.vertical, LoritoSpacing.lg)
+    }
+
+    // MARK: - Reminder step
+
+    private var reminderStep: some View {
+        VStack(alignment: .leading, spacing: LoritoSpacing.lg) {
+            header(
+                title: "Напоминания",
+                subtitle: "Выберите время ежедневного напоминания, чтобы не терять серию. Можно изменить позже в Настройках."
+            )
+
+            reminderTimePicker
+                .padding(.horizontal, LoritoSpacing.lg)
+
+            Spacer()
+
+            HStack(spacing: LoritoSpacing.sm) {
+                Button("Пропустить") { finish(enableReminderAt: nil) }
+                    .font(LoritoFont.body.weight(.semibold))
+                    .foregroundStyle(LoritoColor.textSecondary)
+                    .padding(.vertical, LoritoSpacing.sm)
+                    .padding(.horizontal, LoritoSpacing.lg)
+
+                primaryButton(title: "Готово", enabled: true) {
+                    finish(enableReminderAt: reminderTime)
+                }
+            }
+            .padding(.horizontal, LoritoSpacing.lg)
+        }
+        .padding(.vertical, LoritoSpacing.lg)
+    }
+
+    /// Complete onboarding, optionally enabling a first reminder at the chosen
+    /// time. Reminder-enable runs first (writes `reminderConfig`), then scope +
+    /// completion are persisted; each loads settings fresh so neither clobbers
+    /// the other. Onboarding completes regardless of the authorization outcome.
+    private func finish(enableReminderAt time: Date?) {
+        Task {
+            if let time, let reminders {
+                let comps = Calendar.current.dateComponents([.hour, .minute], from: time)
+                _ = await reminders.enable(
+                    times: [ReminderTime(hour: comps.hour ?? ReminderConfig.defaultTime.hour,
+                                         minute: comps.minute ?? ReminderConfig.defaultTime.minute)]
+                )
+            }
+            if model.persist(completingOnboarding: true) {
+                onComplete()
+            }
+        }
+    }
+
+    @ViewBuilder
+    private var reminderTimePicker: some View {
+        let picker = DatePicker("Время", selection: $reminderTime, displayedComponents: .hourAndMinute)
+            .labelsHidden()
+        #if os(iOS)
+        picker.datePickerStyle(.wheel)
+        #else
+        picker
+        #endif
     }
 
     // MARK: - Shared pieces

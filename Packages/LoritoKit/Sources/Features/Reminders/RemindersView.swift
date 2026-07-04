@@ -9,34 +9,45 @@ import UIKit
 /// authorization is denied. Russian UI.
 public struct RemindersView: View {
     @State private var service: ReminderService
-    @State private var enabled: Bool
     @State private var newTime = Date()
 
     public init(service: ReminderService) {
         _service = State(initialValue: service)
-        _enabled = State(initialValue: service.config.enabled)
+    }
+
+    /// Bind the toggle straight to the observed config so state stays in sync
+    /// with persistence (no local mirror that can desync on re-entry).
+    private var enabledBinding: Binding<Bool> {
+        Binding(
+            get: { service.config.enabled },
+            set: { on in
+                Task {
+                    if on { await service.enable(times: []) } else { await service.disable() }
+                }
+            }
+        )
     }
 
     public var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: LoritoSpacing.lg) {
-                Toggle(isOn: $enabled) {
+                Toggle(isOn: enabledBinding) {
                     Text("Ежедневные напоминания")
                         .font(LoritoFont.heading)
                         .foregroundStyle(LoritoColor.textPrimary)
                 }
                 .tint(LoritoColor.accent)
-                .onChange(of: enabled) { _, on in
-                    Task {
-                        if on { await service.enable(times: []) } else { await service.disable() }
-                    }
-                }
+                .accessibilityIdentifier("remindersEnabledToggle")
 
                 if service.authorization == .denied {
                     deniedGuidance
                 }
 
-                if enabled {
+                if service.persistenceFailed {
+                    saveFailedGuidance
+                }
+
+                if service.config.enabled {
                     timesSection
                 }
 
@@ -47,6 +58,19 @@ public struct RemindersView: View {
         .background(LoritoColor.surface.ignoresSafeArea())
         .navigationTitle("Напоминания")
         .task { await service.refreshAuthorization() }
+    }
+
+    /// Inline wheel picker on iOS (directly accessible to UI tests and quicker to
+    /// pick a time); plain picker elsewhere.
+    @ViewBuilder
+    private var addTimePicker: some View {
+        let picker = DatePicker("", selection: $newTime, displayedComponents: .hourAndMinute)
+            .labelsHidden()
+        #if os(iOS)
+        picker.datePickerStyle(.wheel)
+        #else
+        picker
+        #endif
     }
 
     private var timesSection: some View {
@@ -60,6 +84,7 @@ public struct RemindersView: View {
                     Text(String(format: "%02d:%02d", time.hour, time.minute))
                         .font(LoritoFont.body)
                         .foregroundStyle(LoritoColor.textPrimary)
+                        .accessibilityIdentifier("reminderTimeRow")
                     Spacer()
                     Button {
                         Task { await service.removeTime(time) }
@@ -72,21 +97,31 @@ public struct RemindersView: View {
                 .padding(.vertical, LoritoSpacing.xxs)
             }
 
-            HStack(spacing: LoritoSpacing.sm) {
-                DatePicker("", selection: $newTime, displayedComponents: .hourAndMinute)
-                    .labelsHidden()
+            // Wheel picker above a full-width button: the inline wheel is greedy,
+            // so keeping the button on its own row preserves its hit area.
+            VStack(spacing: LoritoSpacing.sm) {
+                addTimePicker
                 Button("Добавить") {
                     let comps = Calendar.current.dateComponents([.hour, .minute], from: newTime)
                     Task { await service.addTime(ReminderTime(hour: comps.hour ?? 20, minute: comps.minute ?? 0)) }
                 }
                 .font(LoritoFont.body.weight(.semibold))
                 .foregroundStyle(LoritoColor.onAccent)
-                .padding(.horizontal, LoritoSpacing.md)
+                .frame(maxWidth: .infinity)
                 .padding(.vertical, LoritoSpacing.xs)
                 .background(LoritoColor.accent, in: Capsule())
                 .buttonStyle(.plain)
             }
         }
+    }
+
+    private var saveFailedGuidance: some View {
+        Text("Не удалось сохранить настройки напоминаний. Проверьте место на устройстве и попробуйте снова.")
+            .font(LoritoFont.caption)
+            .foregroundStyle(LoritoColor.danger)
+            .padding(LoritoSpacing.sm)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(LoritoColor.dangerSoft, in: RoundedRectangle(cornerRadius: LoritoRadius.md))
     }
 
     private var deniedGuidance: some View {
