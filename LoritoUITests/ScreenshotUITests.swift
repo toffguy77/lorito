@@ -27,6 +27,15 @@ func completeOnboardingIfPresent(_ app: XCUIApplication, level: String = "A1") {
     }
 }
 
+/// Resolve a tab by label across layouts. iPhone renders `TabView` as a bottom
+/// `tabBars`; iPad (regular width) renders it as a top bar whose tabs are plain
+/// `Button`s (nested duplicates) not under `tabBars`. In both cases the tab is an
+/// `app.buttons` match by label, so `.firstMatch` disambiguates the iPad nesting.
+@MainActor
+func tabButton(_ app: XCUIApplication, _ label: String) -> XCUIElement {
+    app.buttons[label].firstMatch
+}
+
 /// Poll a query until it reports at least `n` matches (or timeout).
 @MainActor
 func waitForCount(_ query: XCUIElementQuery, atLeast n: Int, timeout: TimeInterval) -> Bool {
@@ -81,10 +90,13 @@ final class ScreenshotUITests: XCTestCase {
         snapshot("05Study")
         if app.buttons["Закрыть"].exists { app.buttons["Закрыть"].tap() }
 
-        // 6 — Catalog.
-        if app.tabBars.buttons["Каталог"].waitForExistence(timeout: 10) {
-            app.tabBars.buttons["Каталог"].tap()
-            _ = app.navigationBars.firstMatch.waitForExistence(timeout: 10)
+        // 6 — Catalog. Resolve the tab across iPhone (bottom bar) and iPad (top bar).
+        let catalog = tabButton(app, "Каталог")
+        if catalog.waitForExistence(timeout: 10) {
+            catalog.tap()
+            // Wait for catalog content (level header) rather than a navigation bar,
+            // which differs between iPhone and iPad.
+            _ = app.staticTexts["A1"].waitForExistence(timeout: 10)
             snapshot("06Catalog")
         }
     }
