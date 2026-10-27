@@ -83,9 +83,13 @@ final class ScreenshotUITests: XCTestCase {
         XCTAssertTrue(start.waitForExistence(timeout: 15))
         snapshot("04Today")
 
-        // 5 — Study session card.
+        // 5 — Study session: recall front, then the revealed card.
         start.tap()
-        XCTAssertTrue(app.buttons["Хорошо"].waitForExistence(timeout: 15))
+        let reveal = app.buttons["Показать ответ"]
+        XCTAssertTrue(reveal.waitForExistence(timeout: 15))
+        snapshot("05Recall")
+        reveal.tap()
+        XCTAssertTrue(app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'Хорошо'")).firstMatch.waitForExistence(timeout: 15))
         snapshot("05Study")
         if app.buttons["Закрыть"].exists { app.buttons["Закрыть"].tap() }
 

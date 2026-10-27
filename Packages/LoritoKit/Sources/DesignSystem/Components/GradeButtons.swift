@@ -56,10 +56,12 @@ public struct GradeButtonItem: Equatable, Sendable {
     public let grade: StudyGrade
     public let title: String
     public let caption: String?
+    /// What VoiceOver reads for the caption (defaults to the caption).
+    public let spokenCaption: String?
 
-    /// VoiceOver label: "Хорошо, 3 дня" with a caption, the title alone without.
+    /// VoiceOver label: "Хорошо, через 3 дня" with a caption, the title alone without.
     public var accessibilityLabel: String {
-        caption.map { "\(title), \($0)" } ?? title
+        (spokenCaption ?? caption).map { "\(title), \($0)" } ?? title
     }
 }
 
@@ -70,16 +72,24 @@ public struct GradeButtons: View {
     private let onGrade: (StudyGrade) -> Void
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
-    public init(captions: [StudyGrade: String] = [:], onGrade: @escaping (StudyGrade) -> Void) {
-        self.items = Self.items(captions: captions)
+    public init(
+        captions: [StudyGrade: String] = [:],
+        spokenCaptions: [StudyGrade: String] = [:],
+        onGrade: @escaping (StudyGrade) -> Void
+    ) {
+        self.items = Self.items(captions: captions, spokenCaptions: spokenCaptions)
         self.onGrade = onGrade
     }
 
     /// Pure layout model: four items in grade order; empty captions are dropped.
-    nonisolated public static func items(captions: [StudyGrade: String]) -> [GradeButtonItem] {
+    nonisolated public static func items(
+        captions: [StudyGrade: String],
+        spokenCaptions: [StudyGrade: String] = [:]
+    ) -> [GradeButtonItem] {
         StudyGrade.allCases.map { grade in
             let caption = captions[grade].flatMap { $0.isEmpty ? nil : $0 }
-            return GradeButtonItem(grade: grade, title: grade.title, caption: caption)
+            let spoken = caption == nil ? nil : spokenCaptions[grade].flatMap { $0.isEmpty ? nil : $0 }
+            return GradeButtonItem(grade: grade, title: grade.title, caption: caption, spokenCaption: spoken)
         }
     }
 
@@ -112,8 +122,7 @@ public struct GradeButtons: View {
                     .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
-                .accessibilityLabel(item.title)
-                .accessibilityValue(item.caption ?? "")
+                .accessibilityLabel(item.accessibilityLabel)
             }
         }
     }

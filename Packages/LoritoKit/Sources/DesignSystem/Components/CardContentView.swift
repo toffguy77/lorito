@@ -74,6 +74,25 @@ public enum CardBodyParser {
         return blocks
     }
 
+    /// The first item of the "Частые ошибки" section (first bullet, or first
+    /// line when it is a paragraph), as Markdown; nil when there is none.
+    public static func firstMistake(in body: String) -> String? {
+        for block in parse(body) {
+            guard case .callout(.mistakes, let content) = block else { continue }
+            for line in content.components(separatedBy: "\n") {
+                var s = line.trimmingCharacters(in: .whitespaces)
+                if s.isEmpty || s.hasPrefix("|") { continue }
+                for marker in ["- ", "* ", "+ "] where s.hasPrefix(marker) {
+                    s.removeFirst(marker.count)
+                    break
+                }
+                let item = s.trimmingCharacters(in: .whitespaces)
+                if !item.isEmpty { return item }
+            }
+        }
+        return nil
+    }
+
     // MARK: - Helpers
 
     private static func isBlockquote(_ line: String) -> Bool {

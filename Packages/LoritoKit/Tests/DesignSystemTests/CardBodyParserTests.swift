@@ -73,3 +73,36 @@ struct CardBodyParserTests {
         #expect(CardBodyParser.parse(body) == [.markdown("Просто параграф без секций.")])
     }
 }
+
+@Suite("First mistake")
+struct FirstMistakeTests {
+    @Test("First bullet of the mistakes section, heading or blockquote form")
+    func firstBullet() {
+        let heading = "> **Суть**\n> X\n\n## ⚠️ Частые ошибки\n- **Один**: *el*.\n- Два.\n"
+        #expect(CardBodyParser.firstMistake(in: heading) == "**Один**: *el*.")
+        let quote = "> **Частые ошибки**\n> * Первый\n> * Второй\n"
+        #expect(CardBodyParser.firstMistake(in: quote) == "Первый")
+    }
+
+    @Test("Paragraph mistakes use the first line; none → nil")
+    func paragraphAndNone() {
+        #expect(CardBodyParser.firstMistake(in: "## Частые ошибки\nНе путать.\nЕщё.") == "Не путать.")
+        #expect(CardBodyParser.firstMistake(in: "> **Суть**\n> X") == nil)
+    }
+}
+
+@Suite("Recall prompt runs")
+struct RecallPromptRunsTests {
+    @Test("Bold is the question, emphasis is Spanish, the rest plain")
+    func runs() {
+        let runs = RecallPromptView.runs("**¿el или la?** *problema, mano*")
+        #expect(runs.map(\.voice) == [.question, .plain, .spanish])
+        #expect(runs.last?.text == "problema, mano")
+    }
+
+    @Test("Plain prompt stays one plain run")
+    func plain() {
+        let runs = RecallPromptView.runs("Вспомните главное: «Род»")
+        #expect(runs.count == 1 && runs[0].voice == .plain)
+    }
+}

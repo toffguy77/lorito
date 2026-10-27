@@ -83,12 +83,14 @@ struct StudySessionModelTests {
         let session = StudySessionModel(store: store, catalog: catalog, queue: ["A1-01", "A1-02"])
         #expect(session.currentCard?.id == "A1-01")
 
+        session.reveal()
         session.grade(.again)
         #expect(session.currentCard?.id == "A1-02")
         #expect(store.reviews["A1-01"] != nil)            // srs-engine applied
         #expect(store.events.last?.cardID == "A1-01")     // study-log written
         #expect(store.events.last?.grade == "again")      // specific grade recorded
 
+        session.reveal()
         session.grade(.easy)
         #expect(session.isComplete)
         #expect(session.currentCard == nil)

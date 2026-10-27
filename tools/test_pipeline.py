@@ -11,6 +11,7 @@ from pathlib import Path
 import lib
 import validate
 import compile as compile_mod
+import enrich
 
 
 def write_content(root: Path, cards: list[lib.Card], themes: list[dict]) -> None:
@@ -248,6 +249,104 @@ class ExerciseTests(unittest.TestCase):
         # Assets copied next to the bundle.
         self.assertTrue((out.parent / "exercise-assets" / "casa.png").exists())
         self.assertTrue((out.parent / "exercise-assets" / "perro.png").exists())
+
+
+class RecallTests(unittest.TestCase):
+    """Optional `recall` front-matter field (recall-first-study)."""
+
+    def setUp(self) -> None:
+        self.tmp = tempfile.TemporaryDirectory()
+        os.environ["LORITO_CONTENT_DIR"] = self.tmp.name
+        self.root = Path(self.tmp.name)
+
+    def tearDown(self) -> None:
+        os.environ.pop("LORITO_CONTENT_DIR", None)
+        os.environ.pop("LORITO_BUNDLE_PATH", None)
+        self.tmp.cleanup()
+
+    def write_raw_recall(self, raw_line: str) -> None:
+        """Write A1-01 with a hand-written `recall` front-matter line."""
+        write_content(self.root, [card("A1-01", 1)], THEME)
+        path = self.root / "A1" / "A1-01.md"
+        text = path.read_text(encoding="utf-8")
+        path.write_text(text.replace("tags:", raw_line + "\ntags:", 1), encoding="utf-8")
+
+    def compile_cards(self) -> list[dict]:
+        out = self.root / "content.json"
+        os.environ["LORITO_BUNDLE_PATH"] = str(out)
+        self.assertEqual(compile_mod.main(), 0)
+        return json.loads(out.read_text(encoding="utf-8"))["cards"]
+
+    def test_valid_recall_passes_and_compiles(self):
+        c = card("A1-01", 1)
+        c.recall = "**¿el или la?** *problema, mano, canción, agua*"
+        write_content(self.root, [c, card("A1-02", 2)], THEME)
+        self.assertEqual(validate.validate(), [])
+        cards = {x["id"]: x for x in self.compile_cards()}
+        self.assertEqual(cards["A1-01"]["recall"], c.recall)
+        self.assertNotIn("recall", cards["A1-02"])
+
+    def test_recall_with_quotes_round_trips(self):
+        c = card("A1-01", 1)
+        c.recall = 'Что значит "ser"?'
+        write_content(self.root, [c], THEME)
+        self.assertEqual(lib.parse_card_file(self.root / "A1" / "A1-01.md").recall, c.recall)
+        self.assertEqual(validate.validate(), [])
+
+    def test_missing_recall_is_fine(self):
+        write_content(self.root, [card("A1-01", 1)], THEME)
+        self.assertEqual(validate.validate(), [])
+        self.assertTrue(all("recall" not in x for x in self.compile_cards()))
+
+    def test_empty_recall_fails(self):
+        self.write_raw_recall('recall: "   "')
+        errs = validate.validate()
+        self.assertTrue(any("A1-01" in e and "recall" in e and "empty" in e for e in errs), errs)
+
+    def test_multiline_recall_fails(self):
+        self.write_raw_recall('recall: |')
+        errs = validate.validate()
+        self.assertTrue(any("A1-01" in e and "recall" in e for e in errs), errs)
+
+    def test_unterminated_recall_fails(self):
+        self.write_raw_recall('recall: "first line')
+        errs = validate.validate()
+        self.assertTrue(any("A1-01" in e and "recall" in e for e in errs), errs)
+
+    def test_overlong_recall_fails(self):
+        c = card("A1-01", 1)
+        c.recall = "x" * 201
+        write_content(self.root, [c], THEME)
+        errs = validate.validate()
+        self.assertTrue(any("A1-01" in e and "200" in e for e in errs), errs)
+
+    def test_non_string_recall_fails(self):
+        for raw in ['recall: ["a", "b"]', "recall: 42", "recall: true"]:
+            self.write_raw_recall(raw)
+            errs = validate.validate()
+            self.assertTrue(any("A1-01" in e and "recall" in e and "string" in e for e in errs), (raw, errs))
+
+
+    def test_set_recall_writes_valid_prompt(self):
+        write_content(self.root, [card("A1-01", 1)], THEME)
+        self.assertEqual(enrich.set_recall("A1-01", "  **¿Какой род?** *mano*  "), 0)
+        c = lib.parse_card_file(self.root / "A1" / "A1-01.md")
+        self.assertEqual(c.recall, "**¿Какой род?** *mano*")
+        self.assertEqual(c.body, "Body\n")
+        self.assertEqual(validate.validate(), [])
+
+    def test_set_recall_rejects_overlong(self):
+        write_content(self.root, [card("A1-01", 1)], THEME)
+        self.assertEqual(enrich.set_recall("A1-01", "x" * 201), 1)
+        self.assertIsNone(lib.parse_card_file(self.root / "A1" / "A1-01.md").recall)
+
+    def test_recall_context_uses_essence_and_key_points(self):
+        c = card("A1-01", 1)
+        c.body = "> **Суть**\n> Два рода.\n\n## 🔑 Ключевые моменты\n- el / la\n\n## ⚠️ Частые ошибки\n- нет\n"
+        ctx = enrich.recall_context(c)
+        self.assertIn("Два рода.", ctx)
+        self.assertIn("el / la", ctx)
+        self.assertNotIn("нет", ctx)
 
 
 if __name__ == "__main__":

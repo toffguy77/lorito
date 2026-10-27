@@ -30,7 +30,13 @@ final class DynamicTypeUITests: XCTestCase {
             XCTAssertTrue(start.isHittable, "Начать is not reachable at AX5")
             start.tap()
 
-            let good = app.buttons["Хорошо"]
+            let reveal = app.buttons["Показать ответ"]
+            XCTAssertTrue(reveal.waitForExistence(timeout: 15))
+            attachScreenshot("Recall-AX5")
+            XCTAssertTrue(reveal.isHittable, "Показать ответ is not reachable at AX5")
+            reveal.tap()
+
+            let good = app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'Хорошо'")).firstMatch
             XCTAssertTrue(good.waitForExistence(timeout: 15))
             attachScreenshot("Session-AX5")
             XCTAssertTrue(good.isHittable, "grade buttons are not reachable at AX5")

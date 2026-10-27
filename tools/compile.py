@@ -37,7 +37,7 @@ def main() -> int:
 
     cards_out = []
     for _, c in ((p, lib.parse_card_file(p)) for p in lib.iter_card_files()):
-        cards_out.append({
+        entry = {
             "id": c.id,
             "level": c.level,
             "themeID": c.theme,
@@ -47,7 +47,10 @@ def main() -> int:
             "related": c.related,
             "tags": c.tags,
             "body": c.body,
-        })
+        }
+        if c.recall is not None:  # only for cards that declare it
+            entry["recall"] = c.recall.strip()
+        cards_out.append(entry)
 
     exercises_out = []
     for p in lib.iter_exercise_files():

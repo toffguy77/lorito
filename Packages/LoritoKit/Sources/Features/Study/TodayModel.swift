@@ -1,6 +1,7 @@
 import Foundation
 import Observation
 import Domain
+import DesignSystem
 
 /// Drives the Today screen. Reads the day's queue and counts from `daily-plan`
 /// (it does not compute the queue itself), subtracts cards already graded today
@@ -18,6 +19,8 @@ public final class TodayModel {
     public private(set) var newRemaining = 0
     /// Cards graded so far today (drives the progress indicator).
     public private(set) var studiedCount = 0
+    /// "Ловушка дня": one mistakes item from an in-scope card, stable per day.
+    public private(set) var trap: TrapCandidate?
 
     public init(store: UserDataStore, catalog: ContentCatalog) {
         self.store = store
@@ -60,5 +63,20 @@ public final class TodayModel {
         dueRemaining = remaining.filter { $0.kind == .due }.count
         newRemaining = remaining.filter { $0.kind == .new }.count
         studiedCount = gradedToday.count
+        trap = Self.pickTrap(settings: settings, reviews: reviews, catalog: catalog, today: today)
+    }
+
+    /// Candidates are in-scope cards with a "Частые ошибки" section.
+    private static func pickTrap(
+        settings: UserSettings, reviews: [ReviewState], catalog: ContentCatalog, today: Date
+    ) -> TrapCandidate? {
+        guard let level = settings.targetLevel else { return nil }
+        let candidates = SelectionScope
+            .inScopeCards(targetLevel: level, selectedThemeIDs: Set(settings.selectedThemeIDs), in: catalog)
+            .compactMap { card in
+                CardBodyParser.firstMistake(in: card.body).map { TrapCandidate(cardID: card.id, text: $0) }
+            }
+        let studied = Set(reviews.filter { $0.status != .new }.map(\.cardID))
+        return DailyTrap.pick(candidates: candidates, studiedIDs: studied, day: today)
     }
 }

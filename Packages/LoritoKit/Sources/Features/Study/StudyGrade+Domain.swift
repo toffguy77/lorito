@@ -7,6 +7,10 @@ extension StudyGrade {
     var domain: Grade { Grade(rawValue: rawValue) ?? .good }
 }
 
+extension Grade {
+    var studyGrade: StudyGrade { StudyGrade(rawValue: rawValue) ?? .good }
+}
+
 /// A UTC day calendar matching the one the planner and `DueSelection` use, so
 /// "graded today" and due comparisons agree across the app.
 enum StudyDay {

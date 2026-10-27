@@ -7,6 +7,7 @@ import DesignSystem
 public struct TodayView: View {
     @State private var model: TodayModel
     @State private var session: StudySessionModel?
+    @State private var trapCard: Card?
     private let catalog: ContentCatalog
     private let store: UserDataStore
     private let onSessionComplete: () -> Void
@@ -36,6 +37,10 @@ public struct TodayView: View {
                     message(mark: "¿", markColor: LoritoColor.textSecondary,
                             title: "Пока нечего изучать", subtitle: "Загляните позже — карточки появятся, когда придёт срок.")
                 }
+
+                if let trap = model.trap, let card = catalog.card(id: trap.cardID) {
+                    trapCard(trap, card: card)
+                }
             }
             .padding(.horizontal, LoritoSpacing.screenGutter)
             .padding(.top, LoritoSpacing.lg)
@@ -51,6 +56,51 @@ public struct TodayView: View {
         }) { session in
             StudySessionView(model: session) { self.session = nil }
         }
+        .sheet(item: $trapCard, onDismiss: { model.refresh() }) { card in
+            NavigationStack {
+                CardReaderView(model: CatalogModel(store: store, catalog: catalog), card: card)
+                    .toolbar {
+                        ToolbarItem(placement: .confirmationAction) {
+                            Button("Готово") { trapCard = nil }
+                        }
+                    }
+            }
+        }
+    }
+
+    /// "Ловушка дня": one common mistake from a card in scope; opens the card.
+    private func trapCard(_ trap: TrapCandidate, card: Card) -> some View {
+        Button { trapCard = card } label: {
+            VStack(alignment: .leading, spacing: LoritoSpacing.xs) {
+                HStack {
+                    Text("Ловушка дня")
+                        .loritoStyle(.label)
+                        .foregroundStyle(LoritoColor.dangerText)
+                    Spacer()
+                    Text("из \(trap.cardID)")
+                        .font(LoritoFont.caption)
+                        .foregroundStyle(LoritoColor.textSecondary)
+                }
+                CardBodyView(trap.text)
+                    .lineLimit(4)
+                    .allowsHitTesting(false)
+                HStack(spacing: LoritoSpacing.xxs) {
+                    Text("Открыть карточку")
+                    Image(systemName: "chevron.right").accessibilityHidden(true)
+                }
+                .font(LoritoFont.bodyStrong)
+                .foregroundStyle(LoritoColor.accent)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.horizontal, LoritoSpacing.screenGutter)
+            .padding(.vertical, LoritoSpacing.md + 2)
+            .background(LoritoColor.surfaceRaised, in: RoundedRectangle(cornerRadius: LoritoRadius.lg, style: .continuous))
+            .overlay(RoundedRectangle(cornerRadius: LoritoRadius.lg, style: .continuous).strokeBorder(LoritoColor.separator))
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+        .accessibilityElement(children: .combine)
+        .accessibilityHint("Открывает карточку \(card.title)")
     }
 
     private var header: some View {

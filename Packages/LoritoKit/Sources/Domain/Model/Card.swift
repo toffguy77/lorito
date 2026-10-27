@@ -10,6 +10,8 @@ public struct Card: Codable, Sendable, Identifiable, Hashable {
     public let related: [String]     // other card ids
     public let tags: [String]
     public let body: String          // Markdown
+    /// Optional one-line Markdown recall prompt for the card's front side.
+    public let recall: String?
 
     public init(
         id: String,
@@ -20,7 +22,8 @@ public struct Card: Codable, Sendable, Identifiable, Hashable {
         aliases: [String] = [],
         related: [String] = [],
         tags: [String] = [],
-        body: String
+        body: String,
+        recall: String? = nil
     ) {
         self.id = id
         self.level = level
@@ -31,5 +34,6 @@ public struct Card: Codable, Sendable, Identifiable, Hashable {
         self.related = related
         self.tags = tags
         self.body = body
+        self.recall = recall
     }
 }

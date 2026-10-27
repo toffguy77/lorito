@@ -45,6 +45,7 @@ tags: ["gramática"]
 | `aliases` | no | string[] | Alternative names (Spanish term, Russian name). |
 | `related` | no | string[] | Card ids; each MUST resolve to an existing card. |
 | `tags` | no | string[] | Category tags: `gramática`, `vocabulario`, `ortografía`, `fonética`. |
+| `recall` | no | string | Recall prompt shown on the card's front before the answer. One line, double-quoted, ≤ 200 chars, Markdown; Spanish in `*…*` (e.g. `recall: "**¿el или la?** *problema, mano, canción, agua*"`). Without it the app shows a generic prompt built from the title. |
 
 ## Levels
 
@@ -156,7 +157,9 @@ body split into `prompt` and `explanation`:
 See `tools/`:
 
 - `migrate.py` — seed from the Obsidian vault into this format + generate `themes.json`
-- `enrich.py` — expand a card body (identity-preserving; LLM integration point)
+- `enrich.py` — expand a card body (identity-preserving; LLM integration point);
+  `--recall <ID|LEVEL>` drafts recall prompts for review, `--set-recall <ID> "<text>"`
+  writes one into the card's front matter
 - `validate.py` — enforce every rule above (non-zero exit on failure)
 - `compile.py` — validate, then compile to the app bundle (`content.json`)
 - `test_pipeline.py` — pipeline unit tests

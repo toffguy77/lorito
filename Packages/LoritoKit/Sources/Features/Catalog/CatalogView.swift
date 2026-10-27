@@ -200,7 +200,7 @@ private struct StatusBadge: View {
 }
 
 /// The card reader: chip, title, shared Markdown rendering, and a suspend toggle.
-private struct CardReaderView: View {
+struct CardReaderView: View {
     let model: CatalogModel
     let card: Card
     @State private var practiceSession: ExerciseSessionModel?

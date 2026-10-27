@@ -107,6 +107,25 @@ def _validate_exercise_type(ex: lib.Exercise) -> list[str]:
     return errs
 
 
+def validate_recall(c: lib.Card) -> list[str]:
+    """Optional `recall`: a one-line double-quoted string, 1–200 chars."""
+    raw = c.recall_raw
+    if raw is None:
+        return []
+    if raw in ("|", ">", "|-", ">-", "|+", ">+") or (raw.startswith('"') and lib.unquote_scalar(raw) is None):
+        return [f"{c.id}: recall must be a single line (one double-quoted string)"]
+    if c.recall is None:
+        return [f"{c.id}: recall must be a string in double quotes, got {raw}"]
+    text = c.recall.strip()
+    if not text:
+        return [f"{c.id}: recall is empty"]
+    if "\n" in c.recall:
+        return [f"{c.id}: recall must be a single line"]
+    if len(text) > lib.RECALL_MAX_LEN:
+        return [f"{c.id}: recall is {len(text)} chars, max {lib.RECALL_MAX_LEN}"]
+    return []
+
+
 def validate() -> list[str]:
     errors: list[str] = []
     themes = load_themes()
@@ -145,6 +164,7 @@ def validate() -> list[str]:
         for r in c.related:
             if r not in id_set:
                 errors.append(f"{c.id}: unresolved related '{r}'")
+        errors.extend(validate_recall(c))
 
     # per-level: unique order + theme contiguity
     by_level: dict[str, list[lib.Card]] = {}

@@ -43,6 +43,35 @@ class Card:
     related: list[str] = field(default_factory=list)
     tags: list[str] = field(default_factory=list)
     body: str = ""
+    # Optional one-line Markdown recall prompt (front side of the study card).
+    recall: str | None = None
+    # The raw front-matter value of `recall` as written (None when absent);
+    # kept so validation can reject non-string / multiline values.
+    recall_raw: str | None = None
+
+
+RECALL_MAX_LEN = 200
+
+
+def quote_scalar(text: str) -> str:
+    """Double-quote a front-matter string, escaping backslashes and quotes."""
+    return '"' + text.replace("\\", "\\\\").replace('"', '\\"') + '"'
+
+
+def unquote_scalar(raw: str) -> str | None:
+    """Content of a double-quoted scalar, or None if `raw` is not one."""
+    if len(raw) < 2 or not (raw.startswith('"') and raw.endswith('"')):
+        return None
+    inner = raw[1:-1]
+    out, i = [], 0
+    while i < len(inner):
+        ch = inner[i]
+        if ch == "\\" and i + 1 < len(inner):
+            out.append(inner[i + 1]); i += 2; continue
+        if ch == '"':
+            return None  # unescaped quote inside: not a single scalar
+        out.append(ch); i += 1
+    return "".join(out)
 
 
 def split_frontmatter(text: str) -> tuple[str, str]:
@@ -170,6 +199,10 @@ def render_card_file(card: Card) -> str:
         f"aliases: {yaml_list(card.aliases)}",
         f"related: {yaml_list(card.related)}",
         f"tags: {yaml_list(card.tags)}",
+    ]
+    if card.recall is not None:
+        fm.append(f"recall: {quote_scalar(card.recall)}")
+    fm += [
         "---",
         "",
     ]
@@ -196,6 +229,8 @@ def parse_card_file(path: Path) -> Card:
         related=ID_RE.findall(_fm_line(fm, "related") or ""),
         tags=re.findall(r'"([^"]+)"', _fm_line(fm, "tags") or ""),
         body=body,
+        recall=unquote_scalar(_fm_line(fm, "recall") or ""),
+        recall_raw=_fm_line(fm, "recall"),
     )
 
 
