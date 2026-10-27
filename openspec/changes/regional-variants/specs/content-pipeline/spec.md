@@ -1,10 +1,10 @@
 ## ADDED Requirements
 
 ### Requirement: Variant markup validation
-The validation command SHALL fail with a non-zero exit when a card has an unclosed or nested variant block, a block or inline alternative names an unknown variant, an inline alternative has fewer than two variants, or an exercise's `variants`/`only` fields use unknown variants or overrides that violate the exercise type's schema.
+The validation command SHALL fail with a non-zero exit when a card has an unclosed or nested variant block, a block or inline alternative uses an unknown code, an inline alternative has fewer than two codes or repeats a code, or an exercise's `variants`/`only` fields use unknown codes or overrides that violate the exercise type's schema.
 
 #### Scenario: Unclosed block
-- **WHEN** a card opens `:::variant spain` without a closing `:::`
+- **WHEN** a card opens `:::variant es` without a closing `:::`
 - **THEN** validation exits non-zero and names the card
 
 #### Scenario: Clean markup passes

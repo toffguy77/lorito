@@ -54,7 +54,7 @@ A `dictation` exercise SHALL play its `audio` text and accept a typed answer. Bo
 - **THEN** the answer is reported as almost correct and graded Трудно
 
 ### Requirement: Speak exercise type
-A `speak` exercise SHALL record the user saying the target `answer` and, in auto mode, SHALL compare the recognised transcript and its alternatives with `answer` and `accept` using the dictation normalisation with diacritics ignored. A match SHALL grade Хорошо. After two non-matching attempts the user SHALL be able to accept Опять or play the reference audio and self-grade.
+A `speak` exercise SHALL record the user saying the target `answer` and, in auto mode, SHALL compare the recognised transcript and its alternatives with `answer` and `accept` using the dictation normalisation with diacritics ignored. A match SHALL grade Хорошо. After two non-matching attempts the user SHALL be able to continue or play the reference audio and self-grade.
 
 #### Scenario: Recognised correctly
 - **WHEN** the transcript of the user's speech equals the target after normalisation
@@ -62,7 +62,36 @@ A `speak` exercise SHALL record the user saying the target `answer` and, in auto
 
 #### Scenario: Two failed attempts
 - **WHEN** two attempts do not match
-- **THEN** the user can accept Опять or hear the reference and self-grade
+- **THEN** the user can continue or hear the reference and self-grade
+
+### Requirement: Speaking never lapses a card
+A `speak` exercise SHALL NOT apply the Опять grade to its card: non-matching attempts and a self-assessed Опять SHALL be recorded as exercise attempts only, without updating the card's review state. Self-assessed grades of Трудно or better SHALL be applied as for other exercises.
+
+#### Scenario: Failed recognition keeps the card
+- **WHEN** both attempts of a `speak` exercise do not match and the user continues
+- **THEN** an attempt is recorded and the card's review state is unchanged
+
+#### Scenario: Self-assessed Опять is not applied
+- **WHEN** in self-assessed mode the user picks Опять
+- **THEN** an attempt is recorded and the card's review state is unchanged
+
+### Requirement: Listening requires an installed voice
+When no Spanish speech-synthesis voice is installed on the device, `listen-choose` and `dictation` exercises SHALL be excluded from practice sessions without being graded, and Settings SHALL explain how to download a Spanish voice.
+
+#### Scenario: No Spanish voice
+- **WHEN** the device has no Spanish voice and a session is composed
+- **THEN** it contains no `listen-choose` or `dictation` exercises and none is graded
+
+### Requirement: Audio sessions for listening and speaking
+Listening and dictation playback SHALL use the `spanish-audio` listening policy, which plays regardless of the Ring/Silent switch. Recording for a `speak` exercise SHALL use a play-and-record audio session only while recording and SHALL restore the previous session afterwards.
+
+#### Scenario: Silent switch on
+- **WHEN** the Silent switch is on and a `dictation` exercise plays its audio
+- **THEN** the audio is audible
+
+#### Scenario: Session restored
+- **WHEN** a `speak` recording ends
+- **THEN** the audio session returns to the configuration in use before recording
 
 ### Requirement: On-device speech recognition only
 Speech recognition SHALL run only with on-device recognition required and supported for Spanish, and only after the user granted microphone and speech-recognition permission. Audio SHALL never be sent for server recognition. When any of these conditions is not met, `speak` exercises SHALL run in self-assessed mode.

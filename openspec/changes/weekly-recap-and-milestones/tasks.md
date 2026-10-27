@@ -1,27 +1,35 @@
 ## 0. Dependencies
 
-- [ ] 0.1 `progress-insights` applied (long-term memory by level, daily activity series)
-- [ ] 0.2 Optional: `personal-traps` applied (top trap source); otherwise use the Опять fallback
+- [ ] 0.1 `learning-platform-foundation` applied (local learning day, `ItemKind`)
+- [ ] 0.2 `progress-insights` applied (long-term memory by level); `cloudkit-schema-release` applied
+- [ ] 0.3 Optional: `personal-traps` applied (top trap source); otherwise use the Опять fallback
 
-## 1. Domain (TDD)
+## 1. Monday weeks (TDD)
 
-- [ ] 1.1 Write failing tests for `WeeklyRecap.make`: week ending on the latest Sunday; days studied; new rules (first study event in week); current long-term count; top trap and fallback; empty week; determinism with injected today
-- [ ] 1.2 Write failing tests for `LevelMilestones.newlyClosed`: closed when all non-suspended cards are long-term; only included levels; excludes celebrated levels
-- [ ] 1.3 Implement both, reusing the stats calculator's week boundary and the long-term rule
+- [ ] 1.1 Write failing tests: "studied this week" uses Monday–Sunday (Sunday belongs to the ending week; Monday starts at 0)
+- [ ] 1.2 Set `firstWeekday = 2` on the stats calculator's calendar; existing stats tests updated where they assumed Sunday weeks
 
-## 2. Persistence
+## 2. Domain (TDD)
 
-- [ ] 2.1 `UserSettings.lastRecapWeek: String?` and `celebratedLevels: [CEFRLevel]` with defaults; decode old payloads; store round-trip test
+- [ ] 2.1 Write failing tests for `WeeklyRecap.make`: latest completed Monday–Sunday week; days studied; new rules counting only `.card` items; current long-term count; top trap and fallback; empty week; determinism
+- [ ] 2.2 Write failing tests for `LevelMilestones.newlyClosed`: all non-suspended `.card` items long-term; included levels only; excludes celebrated
+- [ ] 2.3 Write failing tests for celebrated-levels union encode/decode/merge (commutative, idempotent)
+- [ ] 2.4 Implement
 
-## 3. Features
+## 3. Persistence
 
-- [ ] 3.1 Today recap card: once per week from Sunday, dismiss records the week; encouraging empty state
-- [ ] 3.2 Milestone celebration sheet "A1 закрыт" with share action; records the level as celebrated
-- [ ] 3.3 Share images (9:16, `ImageRenderer`, `ShareLink`): recap and certificate; content limited to brand mark, numbers/level, month and year; copy "уровень пройден в Lorito"
-- [ ] 3.4 Tests: share image view model contains no user name or identifiers
+- [ ] 3.1 Optional scalars `lastRecapWeek` and `celebratedLevels` (sorted codes) on the settings record, mapped both ways; union applied on write and on incoming sync in `SwiftDataUserDataStore`
+- [ ] 3.2 Store round-trip test and two-device union test; export dev schema per `cloudkit-schema-release`
 
-## 4. Validation
+## 4. Features
 
-- [ ] 4.1 `swift test` green
-- [ ] 4.2 `xcodebuild` build; UI test with seeded data: recap appears on Sunday once; milestone celebration appears once for a closed level
-- [ ] 4.3 `openspec validate weekly-recap-and-milestones --strict`
+- [ ] 4.1 Today recap card from Monday for the completed week, once; encouraging empty state
+- [ ] 4.2 Milestone celebration "A1 закрыт" with share; adds the level to the celebrated set
+- [ ] 4.3 Share images (9:16, `ImageRenderer`, `ShareLink`) limited to brand mark, numbers/level, month and year; view-model test for no personal data
+
+## 5. Validation
+
+- [ ] 5.1 `swift test` green
+- [ ] 5.2 `xcodebuild` build; UI test with seeded data: recap on Monday once; milestone once
+- [ ] 5.3 Release note: "this week" counts now run Monday–Sunday
+- [ ] 5.4 `openspec validate weekly-recap-and-milestones --strict`

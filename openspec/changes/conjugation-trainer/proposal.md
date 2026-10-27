@@ -23,8 +23,14 @@ product audit found against dedicated conjugation apps.
   (unit = verb × tense) within the unlocked scope; a pure
   `ConjugationChecker` grades typed forms with an accent-aware rule.
 - **SRS:** conjugation items reuse the `srs-engine` scheduling operation and
-  the existing review store under namespaced ids (`conj:<verb>:<tense>`); no
-  new persisted record type, no CloudKit schema change.
+  the existing review store under namespaced ids (`conj:<verb>:<tense>`) as
+  defined by `learning-platform-foundation`; no new persisted record type. One
+  synced settings field is added (`dailyConjugationCount`), released per
+  `cloudkit-schema-release`.
+- **Opt-in and capped:** new conjugation items are off (quota 0) until the
+  learner enables them (then 3/day by default, within the combined daily
+  new-introduction budget); due conjugation reviews are capped at 20/day.
+- **Free for all learners.**
 - **Unlocking:** a tense becomes drillable once its grammar card has been
   studied at least once and its level is included in the learner's scope.
 - **UI:** a «Спряжения» entry on Today (own daily quota) and in the catalog
@@ -42,8 +48,6 @@ product audit found against dedicated conjugation apps.
   verb files) and their schema.
 - `content-pipeline`: adds paradigm generation, conjugation validation and
   compilation of paradigms into the bundle.
-- `daily-plan`: the card plan ignores review items that are not cards
-  (conjugation and, later, vocabulary items share the review store).
 
 ## Impact
 
@@ -56,10 +60,13 @@ product audit found against dedicated conjugation apps.
   `ConjugationChecker`; `Card` unchanged.
 - **Content (Swift)**: `ContentLoader` decodes paradigms into the catalog.
 - **Features**: Today entry, drill screen, catalog entry point.
-- **Persistence**: none new — namespaced ids in the existing review store
-  (see design.md for the compatibility check).
-- **Dependencies**: archived `plumaje-design-system`, `recall-first-study`
-  (focus mode, interval captions). Coordinates with sibling `fsrs-scheduler`
+- **Persistence**: no new record type; one optional, defaulted settings field
+  mapped in `SwiftDataUserDataStore` and deployed per `cloudkit-schema-release`.
+- **Dependencies**: `learning-platform-foundation` (item kinds, card-only
+  counting, combined new-item budget, learning day, first-review-per-day rule),
+  `cloudkit-schema-release` (settings field), archived `plumaje-design-system`,
+  `recall-first-study` (focus mode, interval captions). The person set per
+  variant comes from `regional-variants`. Coordinates with sibling `fsrs-scheduler`
   (uses whatever scheduling operation `srs-engine` exposes), `spanish-audio`
   (optional: speak the correct form), `regional-variants` (voseo forms),
   `product-analytics` (drill events).

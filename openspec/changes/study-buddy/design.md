@@ -1,64 +1,75 @@
 ## Context
 
 `cloudkit-sync` stores `CardReview`, `UserSettings` and `StudyLog` in the user's
-private database via SwiftData, local-first, with no custom backend, and is enabled
-only in builds with the iCloud entitlement (`LORITO_CLOUDKIT`). This change does not rely on
+private database via SwiftData, local-first, no custom backend, enabled only in
+builds with the iCloud entitlement (`LORITO_CLOUDKIT`). This change does not rely on
 SwiftData for sharing; it uses CloudKit directly. Apple's model for sharing between
-iCloud users is `CKShare`: created either for a root record or for a whole custom
-record zone in the owner's private database (`init(recordZoneID:)`), distributed by
-URL (e.g. via `UICloudSharingController`), requiring `CKSharingSupported` in
-Info.plist; a participant who deletes the share is removed from it
+iCloud users is `CKShare`: created for a root record or for a whole custom record
+zone in the owner's private database (`init(recordZoneID:)`), distributed by URL
+(e.g. via `UICloudSharingController`), requiring `CKSharingSupported` in Info.plist;
+participants with write permission can modify records in the share; a participant
+who deletes the share is removed from it
 ([CKShare](https://developer.apple.com/documentation/cloudkit/ckshare)).
+
+Contract from `learning-platform-foundation`: the learning day is the LOCAL calendar
+day. New record types follow `cloudkit-schema-release`.
 
 ## Goals / Non-Goals
 
-**Goals:** one partner, daily aggregates only, a shared streak, a throttled nudge, no
-server, leaving is instant and complete.
+**Goals:** one partner, daily aggregates only, a shared streak, a throttled nudge with
+a visible notification, no server, instant and complete leaving.
 
 **Non-Goals:** groups larger than two, leaderboards, chat, sharing grades or
 mistakes, Android or web partners, push infrastructure of our own.
 
 ## Decisions
 
-**Zone-wide share of aggregates.** Each user who enables Study Buddy creates a
-`BuddyZone` in their private database containing only `BuddyDay` records
-(`day: String yyyy-MM-dd`, `studied: Bool`, `gradedCount: Int`, `currentStreak: Int`,
-`displayName: String`) and at most one `BuddyNudge` record per day. A zone-wide
-`CKShare` is sent to the partner; both partners share their own zones with each
-other, so each reads the other's zone from the shared database. This keeps the
-private SwiftData store untouched.
+**One owner zone, read-write for the participant.** The inviter creates `BuddyZone`
+in their private database and a zone-wide `CKShare` with participant permission
+read-write. The partner accepts once; both write their own records into that single
+zone (the partner through their shared database). No second invite.
 
-**Publishing.** After each completed session and on day rollover, `BuddyService`
-upserts today's `BuddyDay` from the existing stats calculator. Only the last 14 days
-are kept; older records are deleted.
+**Records.** `BuddyDay` — record name `<userRecordName>:<day>`, fields `owner`
+(participant user record name), `day` (`yyyy-MM-dd` of the writer's local learning
+day), `studied`, `gradedCount`, `currentStreak`, `displayName`. `BuddyNudge` — record
+name `<senderRecordName>:<day>` (one per sender per day by construction), fields
+`from`, `day`. Each user prunes their own `BuddyDay` records older than 14 days.
+Record types follow `cloudkit-schema-release`.
 
-**Shared streak is pure.** `SharedStreakCalculator.streak(mine:theirs:today:)`
-counts consecutive days ending today (or yesterday if today is not yet complete for
-both) where both `studied` are true. Freezes from `streak-protection` do not count
-as studied here, so the shared streak always reflects real study.
+**Publishing.** After each completed session and on learning-day rollover,
+`BuddyService` upserts the user's `BuddyDay` for today's local learning day from the
+existing stats calculator.
 
-**Nudge.** «Напомнить» writes a `BuddyNudge` in the sender's zone; the partner's app
-creates a local notification when it fetches a new nudge (on foreground, background
-refresh, or a CloudKit zone subscription's silent push). Pure rule: at most one nudge
-per sender per partner day, and never after the partner has studied that day.
+**Shared streak is pure.** `SharedStreakCalculator.streak(mine:theirs:today:)` counts
+consecutive local learning days ending today (or yesterday if today is not yet
+complete for both) on which both `studied` are true. Each partner's days are compared
+by their own local day keys; freezes from `streak-protection` do not count as studied.
 
-**Availability.** Feature visible only when the iCloud account is available and sync
-is enabled; otherwise an explanatory empty state. Display name defaults to the
-iCloud participant name and can be edited.
+**Nudge delivery without a server.** Each device registers a `CKDatabaseSubscription`
+— the owner on its private database (zone changes), the participant on its shared
+database — with `CKSubscription.NotificationInfo` carrying an alert body, so iOS shows
+a visible notification when a `BuddyNudge` record is created. The app filters nudges
+it sent itself on fetch. This needs the Push Notifications capability
+(`aps-environment`) and the `remote-notification` background mode (already present for
+sync). Throttle (pure): at most one nudge per sender per partner learning day, none
+after the partner studied that day.
 
-**Leaving.** Either partner can «Перестать учиться вместе»: the owner deletes the
-share and their `BuddyZone`; the participant removes themselves from the partner's
-share. Partner data disappears on next fetch.
+**Availability.** Visible only when the iCloud account is available and sync is
+enabled; otherwise an explanatory state.
+
+**Leaving.** The owner deletes the share and `BuddyZone`; the participant deletes
+the share from their shared database, which removes them. Partner data disappears on
+next fetch.
 
 ## Risks / Trade-offs
 
-- [CloudKit sharing complexity and edge cases (account changes, revoked shares)] →
-  P2 scope, one partner only, defensive refetch; feature flagged until stable.
-- [Silent pushes are not guaranteed] → nudges also delivered on next foreground.
-- [Privacy expectations] → the invite screen states exactly what is shared.
+- [CloudKit sharing edge cases (account change, revoked share)] → P2, one partner,
+  defensive refetch, feature flag until stable.
+- [Subscription notifications are best effort] → nudges also shown on next foreground.
+- [Different time zones] → each partner's day key is their own local day; the shared
+  streak compares "today" per partner, documented in UI copy.
 
 ## Migration Plan
 
-Additive. Deploy the new record types to the production CloudKit schema before
-release (owner task). Rollback: hide the feature; existing zones can be deleted on
-next launch by a cleanup task.
+Additive. Record types deployed to production per `cloudkit-schema-release` before
+release. Rollback: hide the feature; zones deleted by a cleanup task on next launch.

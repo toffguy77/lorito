@@ -8,37 +8,46 @@ server, no recordings and no licensing.
 
 ## What Changes
 
-- **Tap to hear:** every Spanish fragment rendered in the Spanish voice
-  (`SpanishText`, Markdown emphasis in card bodies, exercise options and
-  tokens, recall prompts) can be tapped to be spoken.
+- **Tap to hear:** every Spanish span (`SpanishText`, emphasized Spanish in
+  card bodies and recall prompts, exercise options and tokens) speaks on tap,
+  through the tap / long-press contract of `spanish-text-interactions`
+  (long-press menu item «Произнести»).
+- **Speakable-span rule:** only spans that contain at least one Latin letter
+  are spoken; numbers, quotes and other italic non-Spanish text are not.
 - **Speaker buttons:** on the card front (recall prompt), on the revealed card
-  (title example / first Spanish example) and on exercises whose prompt
-  contains Spanish.
-- **Offline synthesis:** `AVSpeechSynthesizer` with an es-ES or es-MX voice;
-  best available quality installed on the device, fallback to any `es-*`.
-- **Settings:** voice variant (Испания / Мексика), speed (медленно / обычно),
-  and "Звук в беззвучном режиме" (off by default — audio respects the
-  Ring/Silent switch).
-- **Accessibility:** speaking does not interrupt VoiceOver; Spanish text keeps
-  `es-ES` speech language for VoiceOver; buttons have labels.
+  and on exercises whose prompt contains Spanish.
+- **Offline synthesis:** `AVSpeechSynthesizer`, best installed voice for the
+  variant, fallback to any `es-*`.
+- **Spanish variant setting (owner of the setting):** `spanishVariant` —
+  «Испания» (es-ES) or «Латинская Америка» (es-MX) — drives the voice;
+  `regional-variants` later extends the same setting.
+- **Audio-session policy (owner):** content playback uses `.ambient` and
+  respects the Ring/Silent switch unless «Звук в беззвучном режиме» is on;
+  listening exercises use `.playback`. A one-time hint explains silence.
+- **Speed:** «Обычно» / «Медленно».
 
 ## Capabilities
 
 ### New Capabilities
-- `spanish-audio`: on-device text-to-speech for Spanish content, playback
-  controls, audio settings.
+- `spanish-audio`: on-device text-to-speech for Spanish spans, speakable-span
+  rule, Spanish variant setting, audio-session policy, speed.
 
 ### Modified Capabilities
-<!-- None: existing rendering is unchanged; audio is an added affordance. -->
+<!-- None: rendering is unchanged; interactions come from
+spanish-text-interactions. -->
 
 ## Impact
 
-- **Domain**: `SpeechVariant` enum, pure `SpeakableText` extraction (strip
-  Markdown, keep Spanish punctuation ¿ ¡), `UserSettings` gains
-  `speechVariant`, `speechRate`, `playAudioWhenSilent` (additive defaults).
-- **Features**: `SpeechService` (wraps `AVSpeechSynthesizer`, audio session
-  category), injected into study, exercise and catalog views; Settings rows.
-- **DesignSystem**: `SpeakButton` component; tappable affordance on
-  `SpanishText` and in the MarkdownUI theme (emphasis runs).
-- No network, no bundled audio files, no binary size change beyond code.
-- Prepares the voice setting later reused by `regional-variants`.
+- **Domain**: `SpanishVariant` (`spain`, `latinAmerica`; extensible),
+  `SpeechRate`, pure `SpeakableText` (extract + Latin-letter rule),
+  `AudioSessionPolicy` (pure mapping context → category).
+- **Features**: `SpeechService` (`AVSpeechSynthesizer`, session category per
+  policy), registered as the «Произнести» action of
+  `spanish-text-interactions`; speaker buttons; Settings section «Звук».
+- **DesignSystem**: `SpeakButton`.
+- **Persistence**: settings `spanishVariant`, `speechRate`,
+  `playAudioWhenSilent` as optional/defaulted `SettingsRecord` properties per
+  `cloudkit-schema-release`.
+- **Depends on:** `learning-platform-foundation` (spanish-text-interactions),
+  `cloudkit-schema-release`. Used by `regional-variants` and
+  `listening-and-pronunciation`.

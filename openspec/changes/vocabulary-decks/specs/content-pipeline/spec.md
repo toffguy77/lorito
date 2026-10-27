@@ -1,7 +1,7 @@
 ## ADDED Requirements
 
 ### Requirement: Vocabulary integrity validation
-The validation command SHALL fail with a non-zero exit when a deck id is duplicated or unknown, a deck file has no registry entry, a word id is duplicated, a required word field is missing or empty, a noun lacks `article` or `gender`, an `article` or `gender` value is not allowed, or a `rank` is not a positive integer.
+The validation command SHALL fail with a non-zero exit when a deck id is duplicated or unknown, a deck file has no registry entry, a word id is duplicated, a required word field is missing or empty, a noun lacks `article` or `gender`, an `article` or `gender` value is not allowed, a `rank` is not a positive integer, or `content/vocabulary/LICENSE` is missing.
 
 #### Scenario: Unknown gender value
 - **WHEN** a noun declares `gender: n`

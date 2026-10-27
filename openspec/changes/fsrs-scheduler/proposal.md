@@ -17,15 +17,19 @@ scheduler visible, so its quality now matters to every session.
   desired retention; ease factor, ease floor and the hard/easy multiplier rules
   are removed.
 - **Pure and deterministic** as before: no fuzz, injected "today", whole-day
-  intervals, same-day relearn (interval 0 → «сегодня»).
+  intervals on the local learning day; Опять → due today and re-shown at the
+  end of the session, and only the first grade per learning day updates
+  memory (both defined by `learning-platform-foundation`).
 - **Desired retention setting:** «Целевая запоминаемость», 80–95%, default
   90%, applied to future intervals only.
 - **Migration:** existing SM-2 states are converted to FSRS memory state by a
   pure, tested function on first use; no data loss; old fields kept for
   rollback.
-- **Interval ordering guaranteed:** for any state, Опять ≤ Трудно ≤ Хорошо <
-  Легко, so the captions from `recall-first-study` stay meaningful.
-- Maximum interval constant (default 365 days).
+- **Interval ordering guaranteed:** Опять ≤ Трудно ≤ Хорошо < Легко below the
+  365-day maximum; at the cap Хорошо and Легко may coincide (captions too).
+- **Elapsed time and version safety:** `lastReviewDate`, `schedulerVersion`
+  and the FSRS-computed due date are stored; states written by an older SM-2
+  build on another device are detected and re-migrated.
 
 ## Capabilities
 
@@ -42,10 +46,11 @@ scheduler visible, so its quality now matters to every session.
 - **Domain**: new `FSRSScheduler` (pure) replacing
   `SpacedRepetitionScheduler.schedule` behind the same call shape;
   `FSRSParameters` (21 defaults); `ReviewState` gains optional `stability`,
-  `difficulty`; `SM2Migration`; `IntervalPreview` keeps working unchanged
-  (it calls the scheduler).
-- **Persistence**: SwiftData record gains two optional `Double` fields —
-  additive, CloudKit-compatible; schema deployed to CloudKit production.
+  `difficulty`, `lastReviewDate`, `schedulerVersion`, `fsrsDueDate`;
+  `SM2Migration` + consistency check; `IntervalPreview` keeps working.
+- **Persistence**: optional record fields per `cloudkit-schema-release`
+  (dependency), production schema deploy gate.
+- **Depends on:** `learning-platform-foundation`, `cloudkit-schema-release`.
 - **Features**: Settings row for desired retention.
 - `UserSettings` gains `desiredRetention: Double = 0.9`.
 - Tests: scheduler, migration, preview captions, daily-plan due selection

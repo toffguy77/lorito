@@ -5,7 +5,7 @@ The scheduler SHALL be a pure function in the `Domain` layer that, given the cur
 
 #### Scenario: Same inputs produce same output
 - **WHEN** the scheduler is called twice with the same review state, grade, "today" and desired retention
-- **THEN** both calls return identical next review state (stability, difficulty, interval, repetitions, dueDate, status)
+- **THEN** both calls return identical next review state (stability, difficulty, lastReviewDate, interval, repetitions, dueDate, status)
 
 #### Scenario: No hidden clock
 - **WHEN** the scheduler computes a next `dueDate`
@@ -73,15 +73,22 @@ Cards with status `suspended` SHALL be excluded from scheduling. The scheduler S
 ## ADDED Requirements
 
 ### Requirement: Again lapses and relearns
-A grade of `again` SHALL reset `repetitions` to 0, set `status` to `learning`, and set the interval to 0 so the card is due again "today". Stability SHALL be reduced by the FSRS post-lapse rule and difficulty SHALL increase, never above 10. A card in `review` graded `again` is treated as lapsed and follows this rule.
+A grade of `again` SHALL reset `repetitions` to 0, set `status` to `learning`, and set the interval to 0 so the card is due "today"; re-showing it within the session follows `learning-platform-foundation`. Stability SHALL be reduced by the FSRS post-lapse rule and difficulty SHALL increase, never above 10.
 
 #### Scenario: Again resets repetitions and moves to learning
 - **WHEN** a card in `review` with `repetitions` of 4 is graded `again`
 - **THEN** `repetitions` becomes 0, `status` becomes `learning`, and `dueDate` is "today"
 
 #### Scenario: Again lowers stability and raises difficulty
-- **WHEN** a `review` card is graded `again`
+- **WHEN** a `review` card is graded `again` as its first grade of the learning day
 - **THEN** its stability is lower and its difficulty higher than before, with difficulty at most 10
+
+### Requirement: Hard on a learning card
+A `learning` card graded `hard` SHALL stay in `learning`, never return to `new`, keep its `repetitions`, update its memory state by the FSRS rule, and get an interval of at least 1 day. A `learning` card graded `good` or `easy` SHALL graduate to `review` as required by "Graduating from learning to review".
+
+#### Scenario: Hard keeps learning
+- **WHEN** a `learning` card is graded `hard`
+- **THEN** its status is `learning`, its `repetitions` is unchanged, and its `dueDate` is at least 1 day after "today"
 
 ### Requirement: Retention-based review interval
 For a card in `review` graded with a passing grade, the scheduler SHALL update stability by the FSRS rule and set the next `interval` to the whole number of days at which predicted retrievability falls to the desired retention, clamped between 1 day and the maximum interval. `dueDate` SHALL be "today" plus that interval and `repetitions` SHALL be incremented.
@@ -99,40 +106,65 @@ For a card in `review` graded with a passing grade, the scheduler SHALL update s
 - **THEN** `repetitions` is incremented by 1
 
 ### Requirement: FSRS memory state
-Each reviewed card SHALL carry an FSRS memory state — stability in days and difficulty on a 1–10 scale — stored as optional fields of the review state, using FSRS-6 with its default parameters pinned in `Domain`. Cards never reviewed SHALL have no memory state.
+Each reviewed card SHALL carry an FSRS memory state — stability in days, difficulty on a 1–10 scale, and the date of the last memory-updating review — stored as optional fields of the review state, using FSRS-6 with its default parameters pinned in `Domain`. Cards never reviewed SHALL have no memory state.
 
 #### Scenario: Never reviewed card
 - **WHEN** a card has status `new`
-- **THEN** its stability and difficulty are absent
+- **THEN** its stability, difficulty and last review date are absent
 
 #### Scenario: Pinned defaults
 - **WHEN** the scheduler parameters are inspected in tests
 - **THEN** they equal the 21 FSRS-6 default parameters
 
-### Requirement: Interval ordering across grades
-For any review state and "today", the intervals produced by the four grades SHALL satisfy again ≤ hard ≤ good < easy, so the grade-button captions are always ordered.
+### Requirement: Elapsed time from last review
+The scheduler SHALL compute elapsed time as whole learning days between the stored last review date and "today", and SHALL set the last review date to "today" whenever a grade updates the memory state. Grades that `learning-platform-foundation` logs without updating memory SHALL NOT change it.
 
-#### Scenario: Ordered captions
-- **WHEN** the interval preview is computed for any `review` card
-- **THEN** the Опять interval is not longer than Трудно, Трудно not longer than Хорошо, and Легко is longer than Хорошо
+#### Scenario: Elapsed days
+- **WHEN** a card last reviewed 10 learning days ago is graded today
+- **THEN** the scheduler uses 10 days of elapsed time and stores today as the last review date
+
+### Requirement: Interval ordering across grades
+For any review state and "today", the intervals of the four grades SHALL satisfy again ≤ hard ≤ good ≤ easy, and easy SHALL be strictly longer than good whenever good is below the maximum interval. At the maximum interval, good and easy MAY be equal.
+
+#### Scenario: Ordered below the cap
+- **WHEN** the interval preview is computed for a `review` card whose good interval is below the maximum
+- **THEN** Опять ≤ Трудно ≤ Хорошо and Легко is longer than Хорошо
+
+#### Scenario: At the cap
+- **WHEN** both good and easy would exceed the maximum interval
+- **THEN** both are the maximum interval
+
+### Requirement: Captions at the maximum interval
+When two grades produce the same interval because of the maximum-interval cap, their grade-button captions SHALL be allowed to show the same text; captions SHALL otherwise reflect the distinct intervals.
+
+#### Scenario: Equal captions at the cap
+- **WHEN** good and easy both yield 365 days
+- **THEN** both captions show the same interval text
 
 ### Requirement: Desired retention setting
-The user SHALL be able to set a desired retention between 80% and 95% in Settings («Целевая запоминаемость»), defaulting to 90%. The value SHALL be passed to the scheduler and SHALL affect only intervals computed after the change.
+The user SHALL be able to set a desired retention between 80% and 95% in Settings («Целевая запоминаемость»), defaulting to 90%, persisted as a synced user setting. The value SHALL be passed to the scheduler and SHALL affect only intervals computed after the change.
 
 #### Scenario: Change does not rewrite due dates
 - **WHEN** the user changes desired retention from 90% to 95%
 - **THEN** existing due dates are unchanged and the next grade uses 95%
 
 ### Requirement: Lossless migration from SM-2 state
-A review state without memory state but with status `review` or `learning` SHALL be converted, the first time it is scheduled, by a pure migration function that derives stability from its current interval and difficulty from its ease factor, clamped to valid ranges. Migration SHALL NOT change `dueDate` of cards that are not being graded and SHALL keep the original ease factor.
+A review state with status `review` or `learning` and no valid FSRS memory state SHALL be converted, the first time it is scheduled, by a pure function: stability from its interval, difficulty from its ease factor (both clamped), last review date = due date minus interval when absent. Migration SHALL keep the ease factor and SHALL NOT change due dates of cards that are not being graded.
 
 #### Scenario: Migrated review card
-- **WHEN** a `review` card with interval 20 days and ease 2.5 and no memory state is graded
-- **THEN** the scheduler first derives a memory state with stability 20 days and a mid-range difficulty, then applies the grade
+- **WHEN** a `review` card with interval 20 days, ease 2.5, due in 5 days and no memory state is graded today
+- **THEN** the scheduler first derives stability 20 days, a mid-range difficulty and a last review date 15 days ago, then applies the grade
 
 #### Scenario: Ungraded cards keep due dates
 - **WHEN** the app updates to the FSRS build
 - **THEN** no card's `dueDate` changes until that card is graded
+
+### Requirement: Scheduler version consistency
+Each FSRS-updated review state SHALL record a scheduler version and the due date the FSRS scheduler computed. If a state's version is not FSRS or its stored due date differs from its `dueDate` (e.g. written by an older app on another device), the memory state SHALL be treated as invalid and re-migrated from the current fields.
+
+#### Scenario: Older app edited the card
+- **WHEN** a card with an FSRS memory state is graded by an older SM-2 build on another device, changing its `dueDate`, and then synced
+- **THEN** the FSRS build re-migrates that card's memory state before the next grade
 
 ### Requirement: Maximum interval
 No interval SHALL exceed a maximum constant of 365 days defined in `Domain`.

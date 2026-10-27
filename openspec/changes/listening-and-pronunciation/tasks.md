@@ -1,6 +1,6 @@
 ## 0. Dependencies
 
-- [ ] 0.1 `spanish-audio` applied (speech synthesis service with play / slow replay)
+- [ ] 0.1 `spanish-audio` applied (speech synthesis, play / slow replay, voice availability, audio-session policy) and `learning-platform-foundation` applied
 
 ## 1. Content model & pipeline (TDD)
 
@@ -21,7 +21,9 @@
 - [ ] 3.2 Permission flow: explanation screen, microphone + speech prompts on first `speak`, remembered denial; `NSMicrophoneUsageDescription` and `NSSpeechRecognitionUsageDescription` in `project.yml`
 - [ ] 3.3 Exercise screen affordances: play / replay / slow replay; mic button with level meter and transcript; reveal of audio text after submission; self-assessed fallback with reference playback and grade buttons
 - [ ] 3.4 «Не могу слушать сейчас» / «Не могу говорить сейчас» (15-minute session skip, ungraded); settings toggles; exercise selection respects both
-- [ ] 3.5 Unit tests with fake recognizer: match, two failed attempts, unsupported device → self-assessed, denied permission → self-assessed, no request made when unsupported
+- [ ] 3.5 Unit tests with fake recognizer: match → Хорошо applied; two failed attempts → attempt recorded, review unchanged; self-assessed Опять → attempt only; unsupported device → self-assessed; denied permission → self-assessed; no request made when unsupported
+- [ ] 3.6 Exercise selector excludes `listen-choose`/`dictation` when `spanish-audio` reports no Spanish voice; Settings hint to download a voice; unit test with a fake voice provider
+- [ ] 3.7 Audio sessions: listening playback through the `spanish-audio` listening policy; play-and-record during `speak` recording, previous session restored; manual check with the Silent switch on
 
 ## 4. Content
 

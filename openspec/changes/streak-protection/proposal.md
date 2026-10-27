@@ -3,9 +3,7 @@
 The streak is Lorito's main retention hook, and it is brittle: one missed day
 (a flight, a sick day) drops a 40-day streak to zero, and a user who loses a long
 streak often stops altogether. Habit apps soften this with streak freezes and a
-way back. Duolingo's June 2026 "Streak Revival" — earn back a lost streak by
-completing three lessons — re-engaged more than 15 million lapsed learners
-(BigGo, Q2 2026 earnings coverage). Lorito can do both without a server: the
+way back for a lost streak. Lorito can do both without a server: the
 rules can be computed purely from the study log we already store.
 
 ## What Changes
@@ -19,8 +17,11 @@ rules can be computed purely from the study log we already store.
 - **Visibility:** Today shows "серия спасена заморозкой" after a freeze was used
   and a revival banner with the days still needed; the progress screen shows
   freezes in stock.
-- **Reminder copy:** the first reminder after a freeze was used says so.
-- All rules are part of the pure stats calculation over the study log — no new
+- **Reminder copy:** the first reminder after a freeze was used says so;
+  reminders are also rescheduled when the app returns to the foreground so
+  streak copy is current (best-effort, since reminders are planned 7 days ahead).
+- All rules are part of the pure stats calculation over the study log, on the
+  local learning day defined by `learning-platform-foundation` — no new
   persisted state.
 
 ## Capabilities
@@ -43,5 +44,7 @@ rules can be computed purely from the study log we already store.
   element, without changing the pending `progress-insights` layout rules);
   reminder body line via the existing planner inputs.
 - **Persistence**: none — everything is derived from `StudyLog` + injected today.
+- Depends on `learning-platform-foundation` (local learning day) and pending
+  `streak-reminders`.
 - **Widgets** (`home-screen-widgets`, pending): the snapshot's current streak
   already comes from the calculator and picks up the new rules for free.

@@ -8,7 +8,7 @@ The content SHALL include `content/vocabulary/decks.json` listing each deck with
 - **THEN** validation fails and names both decks
 
 ### Requirement: Word files
-Each deck SHALL have `content/vocabulary/<deck-id>.json`, a list of words with: `id` (slug unique across all decks), `es`, `pos`, `ru`, `example_es`, `example_ru`, positive `rank`, optional `plural` and `forms`; nouns SHALL also declare `article` (`el`, `la`, `los`, `las`) and `gender` (`m`, `f`, `mf`).
+Each deck SHALL have `content/vocabulary/<deck-id>.json`, a list of words with: `id` (lemma slug unique across all decks), `es`, `pos`, `ru`, `example_es`, `example_ru`, positive `rank`, optional `plural` and `forms`; nouns SHALL also declare `article` (`el`, `la`, `los`, `las`) and `gender` (`m`, `f`, `mf`).
 
 #### Scenario: Noun without article rejected
 - **WHEN** a word with `pos: noun` omits `article`
@@ -18,8 +18,15 @@ Each deck SHALL have `content/vocabulary/<deck-id>.json`, a list of words with: 
 - **WHEN** two decks contain a word with the same `id`
 - **THEN** validation fails and names both decks
 
+### Requirement: Vocabulary dataset licence
+`content/vocabulary/` SHALL contain a `LICENSE` file stating that the vocabulary dataset is licensed under CC BY-SA 4.0 and derived from FrequencyWords; the dataset SHALL be kept in that directory, separate from cards and exercises.
+
+#### Scenario: Licence file present
+- **WHEN** the vocabulary folder is inspected
+- **THEN** it contains a CC BY-SA 4.0 `LICENSE` naming FrequencyWords as the source
+
 ### Requirement: Documented vocabulary schema
-`content/schema.md` SHALL document the vocabulary layout, deck and word fields, allowed values and the lookup role of `forms`.
+`content/schema.md` SHALL document the vocabulary layout, deck and word fields, allowed values, the lookup role of `forms`, and the dataset licence.
 
 #### Scenario: Schema covers vocabulary
 - **WHEN** a contributor opens `content/schema.md`

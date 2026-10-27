@@ -1,59 +1,64 @@
 ## Context
 
-`CardBodyParser` lifts «Частые ошибки» into a typed `.mistakes` callout. Study
-grades are recorded as study events (`StudyLog`); exercise attempts are persisted
-with `correct` and the applied grade (`practice-exercises`). The trap of the day
-(`study-flow`, from archived `recall-first-study`) picks deterministically per
-day from scope cards with a mistakes section, preferring studied cards.
+`CardBodyParser` lifts «Частые ошибки» into a typed `.mistakes` callout;
+`learning-platform-foundation` (dependency) moves it into Domain, defines the
+local learning day, item kinds, and the rule that only the first graded review of
+an item per learning day updates memory. Answering an exercise writes both an
+attempt record and a graded `StudyEvent` through `GradingService`. The trap of
+the day (`study-flow`, from archived `recall-first-study`) picks deterministically
+per day from in-scope cards with a mistakes section, preferring studied cards.
 
 ## Goals / Non-Goals
 
 **Goals:** a personal, self-cleaning list of the user's own traps built from data
 we already record; a short session that targets them; a better trap of the day.
 
-**Non-Goals:** per-item (bullet-level) tracking inside a mistakes section; new
-content authoring; changing SRS scheduling; ML ranking.
+**Non-Goals:** per-bullet tracking inside a mistakes section; new content; SRS
+changes; ML ranking; traps for non-card items (conjugations, words).
 
 ## Decisions
 
-**Derived, not stored.** The trap list is a pure function of study events,
-exercise attempts, trap-practice events, the catalog and injected today. Only
-the traps-session outcomes need a new record (`TrapPracticeEvent`), because they
-are deliberately outside SRS. Derivation keeps multi-device sync trivial.
+**Single evidence source.** Only `StudyEvent`s of `.card` items count. Attempt
+records are ignored for traps because each attempt already produced a graded
+study event — counting both would double every exercise failure. Per item and
+learning day only the first graded event counts (mirrors foundation rule 5).
 
-**Failure signal.** A failure is a study event with grade Опять, or an exercise
-attempt with `correct == false`, for a card that has a mistakes section. Трудно
-is not a failure (the user did recall).
+**Failure / pass.** Failure = first-of-day Опять. Pass = first-of-day Хорошо or
+Легко, or «Ясно» in the traps session. Трудно is neutral. Two passes after the
+last failure resolve the trap (`TrapConstants.resolveAfterPasses = 2`); a new
+failure reopens it.
 
-**Ranking.** Sort by last failure date descending, then failure count descending,
-then card order for determinism.
+**Derived, not stored.** The list is a pure function of study events,
+trap-practice events, the catalog, the scope and injected today. Only traps-session
+outcomes are stored (`TrapPracticeEvent`: id, cardID, date, outcome) because they
+are deliberately outside SRS.
 
-**Resolution.** Count passing outcomes after the card's last failure: study
-grades Хорошо/Легко, exercise attempts with `correct == true`, and "Понял" in the
-traps session. Two passing outcomes resolve the trap; a new failure reopens it.
-`TrapConstants.resolveAfterPasses = 2`.
+**Scope filter.** Traps outside the current included scope are hidden, not
+deleted; they reappear when the scope includes them. This matches the trap of the
+day, whose candidates are in-scope cards.
 
-**Traps session is not SRS.** Front: the first «Частые ошибки» item; back: the
-whole mistakes section plus the card title and a link to the card. Outcomes write
-`TrapPracticeEvent` only. Rationale: an out-of-schedule SM-2 review would
-distort intervals; the session is targeted rehearsal, the SRS stays the source
-of truth for scheduling. Session size: up to `TrapConstants.sessionSize = 10`.
+**Ranking.** Last failure learning day desc, failure count desc, card order.
 
-**Trap of the day.** The existing picker gains an input: the personal trap card
-ids. When non-empty, it chooses among them with the same per-day stable hash;
-otherwise behavior is unchanged.
+**Traps session is not SRS.** Front: first «Частые ошибки» item; back: the whole
+section, card title, link to the card. Actions «Ещё путаю» / «Ясно» (gender-neutral).
+Up to `TrapConstants.sessionSize = 10` traps.
+
+**Trap of the day.** The picker gains an input: in-scope personal trap ids. When
+non-empty it chooses among them with the same per-day stable hash.
+
+**Copy.** «Мои ловушки · N» keeps the noun before the number; the accessibility
+label uses `RussianPlural` («1 ловушка / 2 ловушки / 5 ловушек»).
 
 ## Risks / Trade-offs
 
-- [A trap stays forever for a card the user skips] → also resolved implicitly
-  only by passes; users can open the card or run the session. Acceptable.
-- [Long list overwhelms] → Today shows the count; the list shows top 20 with
-  "показать все".
-- [Self-assessment in traps session is optimistic] → study grades also count;
-  a later Опять reopens the trap.
+- [A trap lingers for a card the user never revisits] → it stays visible with its
+  date; the traps session resolves it quickly.
+- [Long list] → Today shows the count; the list shows the top 20 with
+  «показать все».
+- [Optimistic «Ясно»] → study grades also count; a later Опять reopens the trap.
 
 ## Migration Plan
 
-Additive. Existing histories immediately produce a trap list from past Опять
-grades and failed attempts. Rollback: hide the UI; the new record type is
-ignored.
+Additive. Existing histories produce traps from past first-of-day Опять grades.
+`TrapPracticeEvent` follows `cloudkit-schema-release` (optional fields, mapping,
+dev schema export, production deploy). Rollback: hide the UI.

@@ -8,21 +8,21 @@ Study Buddy SHALL be available only when an iCloud account is available and prog
 - **THEN** an explanation is shown and no invite can be created
 
 ### Requirement: Invite and accept one partner
-A user SHALL be able to invite exactly one partner through a system share link, and the partner SHALL become connected after accepting it; while connected, a second invitation SHALL NOT be offered.
+A user SHALL be able to invite exactly one partner through a system share link to a single shared space that the partner can read and write; the partner SHALL become connected after accepting once, and while connected no further invitation SHALL be offered.
 
 #### Scenario: Partner accepts
 - **WHEN** the partner opens the invite link and accepts
 - **THEN** both users see each other as their study buddy
 
 ### Requirement: Only daily aggregates are shared
-The app SHALL share only per-day aggregates — whether the user studied, the number of cards graded, the current streak — plus a display name, and SHALL keep at most the last 14 days. Card content, grades, mistakes, settings and exercise answers SHALL NOT be shared.
+The app SHALL share only per-day aggregates keyed by the writer's local learning day — whether the user studied, the number of cards graded, the current streak — plus a display name, and SHALL keep at most the last 14 days. Card content, grades, mistakes, settings and exercise answers SHALL NOT be shared.
 
 #### Scenario: What the partner sees
 - **WHEN** the partner views the buddy section
 - **THEN** they see the user's name, current streak, today's status and the last seven days, and nothing about specific cards
 
 ### Requirement: Shared streak
-The shared streak SHALL be computed by a pure function as the number of consecutive days, ending today or, if today is not yet complete for both, yesterday, on which both partners studied; streak freezes SHALL NOT count as studied.
+The shared streak SHALL be computed by a pure function as the number of consecutive local learning days, ending today or, if today is not yet complete for both, yesterday, on which both partners studied; streak freezes SHALL NOT count as studied.
 
 #### Scenario: One partner missed a day
 - **WHEN** both studied on the last three days except the user missed the day before yesterday
@@ -33,7 +33,11 @@ The shared streak SHALL be computed by a pure function as the number of consecut
 - **THEN** that day breaks the shared streak
 
 ### Requirement: Throttled nudge
-A user SHALL be able to send «Напомнить» to the partner at most once per day, and not after the partner has studied that day; the partner SHALL receive it as a notification when their app next fetches buddy data.
+A user SHALL be able to send «Напомнить» to the partner at most once per learning day, and not after the partner has studied that day; the partner SHALL receive a visible notification delivered through a CloudKit database subscription, without any server of our own.
+
+#### Scenario: Nudge delivered
+- **WHEN** the user taps «Напомнить» and the partner's app is not running
+- **THEN** the partner's device shows a notification from Lorito
 
 #### Scenario: Second nudge same day
 - **WHEN** the user has already nudged the partner today

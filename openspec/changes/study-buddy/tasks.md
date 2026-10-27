@@ -1,21 +1,23 @@
 ## 0. Owner
 
-- [ ] 0.1 After development-schema testing, deploy `BuddyDay` and `BuddyNudge` record types to the production CloudKit schema of `iCloud.com.toffguy.lorito`
-- [ ] 0.2 Confirm the app's Info.plist declares `CKSharingSupported` and the scene accepts CloudKit shares
+- [ ] 0.1 Dependencies applied: `learning-platform-foundation` (local learning day), `cloudkit-schema-release`
+- [ ] 0.2 `BuddyDay`/`BuddyNudge` per `cloudkit-schema-release`: optional fields, schema exported to `cloudkit/schema.ckdb`, deployed to production in CloudKit Console before release
+- [ ] 0.3 Enable the Push Notifications capability on the App ID; add `aps-environment` to `Lorito.entitlements` (development/production per configuration); keep `remote-notification` background mode
+- [ ] 0.4 Declare `CKSharingSupported` in Info.plist (`project.yml`) and accept shares in the app/scene delegate
 
 ## 1. Domain (TDD)
 
-- [ ] 1.1 `BuddyDay`, `BuddyNudge` values
+- [ ] 1.1 `BuddyDay`, `BuddyNudge` values; day keys = local learning day from the foundation
 - [ ] 1.2 Failing tests for `SharedStreakCalculator.streak(mine:theirs:today:)`: both studied N days; gap breaks; today incomplete → counts to yesterday; freeze day breaks; deterministic
 - [ ] 1.3 Failing tests for the nudge rule: once per partner day; not after partner studied
 - [ ] 1.4 Aggregate builder from existing stats (studied, graded count, current streak), last 14 days only
 
 ## 2. CloudKit service (Features)
 
-- [ ] 2.1 `BuddyService`: create `BuddyZone`, zone-wide `CKShare`, present `UICloudSharingController` / share link, accept via `userDidAcceptCloudKitShareWith`
+- [ ] 2.1 `BuddyService`: owner creates `BuddyZone` + zone-wide `CKShare` with read-write participant permission; present `UICloudSharingController`; accept via `userDidAcceptCloudKitShareWith`; no second invite
 - [ ] 2.2 Publish today's `BuddyDay` after session completion and on day rollover; prune > 14 days
-- [ ] 2.3 Fetch partner zone from the shared database on foreground and background refresh; optional zone subscription for silent pushes
-- [ ] 2.4 Nudge: write `BuddyNudge`; on fetch, schedule a local notification «<имя> напоминает: пора повторить испанский»
+- [ ] 2.3 Fetch partner records on foreground and background refresh (owner: private DB zone; participant: shared DB)
+- [ ] 2.4 Nudge: write `BuddyNudge` (`<sender>:<day>` record name); register `CKDatabaseSubscription` (owner → private DB, participant → shared DB) with alert `NotificationInfo` «Ваш напарник напоминает: пора повторить испанский»; ignore own nudges on fetch
 - [ ] 2.5 Leave: owner deletes share + zone; participant leaves the share; local cache cleared
 - [ ] 2.6 Availability check (account status + sync enabled) and error states
 

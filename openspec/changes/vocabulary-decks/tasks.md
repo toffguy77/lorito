@@ -1,42 +1,48 @@
 ## 0. Dependencies
 
-- [ ] 0.1 `conjugation-trainer` applied (card plan ignores non-card ids; accent-aware checker) and `spanish-audio` applied
+- [ ] 0.1 `learning-platform-foundation`, `cloudkit-schema-release`, `conjugation-trainer` (accent-aware checker) and `spanish-audio` applied
 
-## 1. Content model & pipeline (TDD)
+## 1. Licence & attribution
 
-- [ ] 1.1 Document decks and word fields in `content/schema.md`; confirm the frequency source licence and add it to About › licences
-- [ ] 1.2 Failing tests in `tools/test_pipeline.py`: deck registry (duplicate/unknown id, order per level), words (duplicate id, missing fields, noun without article/gender, bad values, rank)
-- [ ] 1.3 Implement in `tools/validate.py` and `tools/compile.py`; `tools/enrich.py --vocab` drafts translations and examples for review
+- [ ] 1.1 Add `content/vocabulary/LICENSE` (CC BY-SA 4.0, derived from FrequencyWords, link to https://github.com/hermitdave/FrequencyWords)
+- [ ] 1.2 About / Licenses: FrequencyWords credit (source, CC BY-SA 4.0) and vocabulary dataset licence; UI test that the entry is shown
+- [ ] 1.3 Keep the dataset separate: no other content generated from the list; `content/conjugation/` verb `rank` values also come from FrequencyWords — credit them in the same About entry and confirm with the owner whether rank numbers alone require CC BY-SA for that folder
 
-## 2. Content
+## 2. Content model & pipeline (TDD)
 
-- [ ] 2.1 A1 decks (~500 words) with translations, examples, gender; human review
-- [ ] 2.2 A2 decks (~500 words); human review
-- [ ] 2.3 B1–B2 decks (follow-up; may ship in a later release)
+- [ ] 2.1 Document decks, word fields, `mf` gender, `forms` and the dataset licence in `content/schema.md`
+- [ ] 2.2 Failing tests in `tools/test_pipeline.py`: deck registry (duplicate/unknown id, order per level), words (duplicate id, missing fields, noun without article/gender, bad values, rank), missing `LICENSE`
+- [ ] 2.3 Implement in `tools/validate.py` and `tools/compile.py`; `tools/enrich.py --vocab` drafts translations and examples for review
 
-## 3. Domain (TDD)
+## 3. Content
 
-- [ ] 3.1 Failing tests: `Word`/`Deck` decode; deck and rank ordering
-- [ ] 3.2 Failing tests: review mode is recognition below 2 repetitions, production from 2; production check with article and gender-mistake reporting
-- [ ] 3.3 Failing tests for `VocabularyPlanner`: due words, quota, personal-first ordering, deck selection, quota 0, determinism
-- [ ] 3.4 Failing test: daily plan count report exposes `wordsDue` / `wordsNew`; card queue unchanged
-- [ ] 3.5 Failing tests for lookup normalisation and matching against `es` and `forms`
-- [ ] 3.6 Implement; `UserSettings.dailyNewWordCount` (default 10) and selected decks
+- [ ] 3.1 A1 decks (~500 words) ranked from FrequencyWords, with translations, examples, gender; human review
+- [ ] 3.2 A2 decks (~500 words); human review
+- [ ] 3.3 B1–B2 decks (follow-up; may ship in a later release)
 
-## 4. Persistence
+## 4. Domain (TDD)
 
-- [ ] 4.1 `PersonalWord` SwiftData model + `UserDataStore` operations; tests on the in-memory store
-- [ ] 4.2 CloudKit: add the record type to the development schema; note production deployment for release
+- [ ] 4.1 Failing tests: `Word`/`Deck` decode; deck and rank ordering
+- [ ] 4.2 Failing tests: review mode from graded events (production after two passing memory-updating reviews; Опять returns to recognition)
+- [ ] 4.3 Failing tests: production check — article required, gender mistake reported, `mf` accepts `el`/`la`, accent-aware rule
+- [ ] 4.4 Failing tests for `VocabularyPlanner`: default quota 0, enabled 5, combined budget (first study event today), personal-first ordering, deck selection, determinism
+- [ ] 4.5 Failing tests for lookup normalisation and matching against `es` and `forms`
+- [ ] 4.6 Implement; settings `dailyNewWordCount` (default 0), selected decks, personal deck
 
-## 5. Features
+## 5. Persistence
 
-- [ ] 5.1 Word session (recognition and production layouts, audio, accent row) in focus mode
-- [ ] 5.2 Word sheet on long press in `SpanishText`/Markdown emphasis; «В мои слова»; unknown-word save with translation
-- [ ] 5.3 Decks screen (select/deselect, progress per deck, personal deck); settings quota
-- [ ] 5.4 Today: «Слова» block with due/new counts
+- [ ] 5.1 `PersonalWord` SwiftData model + `UserDataStore` save/delete; deleting removes the review state and keeps study events; tests on the in-memory store
+- [ ] 5.2 Per `cloudkit-schema-release`: optional/defaulted fields, both-way mapping in `SwiftDataUserDataStore`, store round-trip test, schema export
 
-## 6. Validation
+## 6. Features
 
-- [ ] 6.1 `swift test`, `python3 tools/test_pipeline.py` green
-- [ ] 6.2 `xcodebuild`; UI tests: learn a new word (recognition), production typing with wrong article, long-press save from a card
-- [ ] 6.3 `openspec validate vocabulary-decks --strict`
+- [ ] 6.1 Word session (recognition and production layouts, audio, accent row) in focus mode
+- [ ] 6.2 «В мои слова» handler for the foundation context menu; unknown-word sheet with translation
+- [ ] 6.3 Decks screen (select/deselect, progress per deck, personal deck with delete); settings «Слова» switch and quota
+- [ ] 6.4 Today: «Слова» block with due/new counts; one-time prompt to enable words
+
+## 7. Validation
+
+- [ ] 7.1 `swift test`, `python3 tools/test_pipeline.py` green
+- [ ] 7.2 `xcodebuild`; UI tests: enable words → learn a new word (recognition), production typing with wrong article, «В мои слова» from a card, delete a personal word
+- [ ] 7.3 `openspec validate vocabulary-decks --strict`

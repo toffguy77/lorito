@@ -1,45 +1,47 @@
 ## Why
 
-Lorito has no revenue and no way to fund content work (exam prep, conjugations,
-regional variants). The audit's model is "core free forever, exam prep paid": the
-grammar course, exercises, audio, streaks and widgets stay free; deep, high-intent
-features become Lorito Pro. Payment reality constrains the design: since 1 April
-2026 App Store purchases in Russia can no longer be paid by mobile carrier billing
-or Russian bank cards (Sostav), so Pro targets the diaspora storefronts and must
-never degrade the free experience where purchasing is impossible.
+Lorito has no revenue to fund content work. The audit's model is "core free forever,
+exam prep paid": grammar, exercises, audio, conjugations, regional variants, Grammar
+Lens, streaks and widgets stay free; the DELE/CCSE exam section is Lorito Pro.
+Payment reality shapes the design: Russian bank cards have not worked for Apple
+purchases since 2022, and carrier billing for App Store purchases in Russia ended on
+1 April 2026 (Sostav). Pro therefore targets diaspora storefronts and must never
+degrade the free experience where buying is impossible.
 
 ## What Changes
 
-- **Lorito Pro** via StoreKit 2: one auto-renewable yearly subscription and one
-  lifetime non-consumable. Prices are configured in App Store Connect (hypothesis
-  from the audit: ≈ €34.99/year, ≈ €59 lifetime), never hard-coded.
-- **Entitlements:** Pro unlocks `exam-path` (beyond the free preview),
-  `conjugation-trainer` and `regional-variants`. Everything else stays free.
-- **Pure entitlement mapping in Domain:** a function from verified transactions to
-  a set of features, testable without StoreKit.
-- **Offline-safe:** entitlement derived from `Transaction.currentEntitlements` and
-  cached; no network required to keep Pro after purchase.
-- **Restore purchases**, Family Sharing on both products, Russian paywall copy, and
-  a «Pro недоступен в вашем регионе» state when products cannot be loaded.
-- **No external payment links or codes** that unlock content (App Review).
+- **App Store Connect stage first:** agreements, tax, a non-Russian payout account
+  (blocking), subscription group, products, prices, Family Sharing, localizations,
+  review assets, sandbox testers, StoreKit configuration synced from ASC.
+- **Lorito Pro via StoreKit 2:** one yearly auto-renewable subscription and one
+  lifetime non-consumable; prices configured in App Store Connect only.
+- **Pro = exam path** (`exam-path-dele-ccse`) beyond its free preview set. Nothing
+  else is gated.
+- **Pure entitlement resolution in Domain;** billing grace period counts as entitled;
+  offline-safe via `Transaction.currentEntitlements` and a local cache.
+- **Lapse behaviour:** exam content locks back to the preview set; mock history stays
+  readable; everything else is unaffected.
+- **Restore purchases**, honest Russian paywall, «Lorito Pro пока недоступен в вашем
+  регионе» when products cannot be loaded, no external payment links.
+- **Analytics events** for the paywall funnel via `product-analytics`.
 
 ## Capabilities
 
 ### New Capabilities
-- `monetization`: products, entitlements, paywall, restore, unavailable-storefront
-  behaviour, gating contract for Pro features.
+- `monetization`: products, entitlement rules, grace period, lapse, paywall, restore,
+  unavailable storefront, Pro scope.
 
 ### Modified Capabilities
-<!-- None: gated capabilities consume the entitlement contract defined here. -->
+- `product-analytics`: adds the purchase-funnel events.
 
 ## Impact
 
-- **Domain**: `Entitlement`, `ProFeature`, `EntitlementResolver` (pure).
-- **Features**: `PurchaseService` (StoreKit 2: products, purchase, `Transaction.updates`
-  listener, restore), `PaywallView`, `ProGate` view modifier, Settings «Lorito Pro».
-- **App target**: StoreKit configuration file for local testing; In-App Purchase
-  capability.
-- **App Store Connect (owner)**: create subscription group and products, prices,
-  Family Sharing, review screenshots, paid apps agreement and tax/banking.
-- **Depends on**: `product-analytics` (paywall funnel), consumers `exam-path-dele-ccse`,
-  `conjugation-trainer`, `regional-variants`. Base: `plumaje-design-system`.
+- **Domain**: `VerifiedPurchase`, `ProFeature` (`examPath`), `EntitlementResolver`.
+- **Features**: `PurchaseService` (StoreKit 2), `PaywallView`, `ProGate`, Settings
+  «Lorito Pro».
+- **App target**: In-App Purchase capability; `Lorito.storekit` synced from App Store
+  Connect.
+- **Owner / App Store Connect**: explicit stage in tasks; ASC API key in
+  `secrets/asc.env` (fastlane) may automate parts.
+- **Depends on**: `product-analytics`, `exam-path-dele-ccse` (only consumer),
+  `plumaje-design-system` (archived).

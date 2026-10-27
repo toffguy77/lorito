@@ -1,62 +1,75 @@
 ## Context
 
 After `plumaje-design-system` all Spanish text goes through `SpanishText` or
-the Spanish style in `CardBodyView`'s MarkdownUI theme (emphasis → Instrument
-Serif Italic, accent colour, `accessibilitySpeechLanguage("es-ES")`). That gives
-one hook for audio. AVFoundation's `AVSpeechSynthesizer` speaks with system
-voices selected by language code
+the Spanish style of `CardBodyView`'s MarkdownUI theme (emphasis → Instrument
+Serif Italic). `learning-platform-foundation` turns those spans into links of a
+custom URL scheme handled by `OpenURLAction` (`spanish-text-interactions`):
+tap = speak, long-press = context menu with «Произнести», «В мои слова»,
+«Варианты», each item present only when its feature exists. This change
+provides the speak action. Synthesis uses `AVSpeechSynthesizer`
 (https://developer.apple.com/documentation/avfaudio/avspeechsynthesizer).
 
 ## Goals / Non-Goals
 
-**Goals:** hear any Spanish fragment in one tap; offline; consistent voice per
-user; no surprise sound in silent mode.
+**Goals:** hear any Spanish span in one tap; offline; one variant setting for
+the whole app; a clear audio-session rule; no surprise sound in silent mode.
 
-**Non-Goals:** recorded native audio, listening exercises / dictation and
-pronunciation scoring (→ `listening-and-pronunciation`), auto-play on every
-card, regional content variants (→ `regional-variants`).
+**Non-Goals:** recorded native audio; listening/dictation exercises and
+pronunciation scoring (→ `listening-and-pronunciation`, which follows the
+session policy defined here); content differences between variants
+(→ `regional-variants`); auto-play.
 
 ## Decisions
 
-**What is speakable.** A pure `SpeakableText.extract(markdown:)` returns the
-Spanish runs of a Markdown string — the emphasis spans the Spanish style
-renders — with Markdown markers removed and ¿ ¡ kept. For `SpanishText` the
-whole string is speakable. Russian text is never sent to the synthesizer.
+**Speak action via the interaction contract.** `SpeechService` registers as
+the handler of the "speak" interaction of `spanish-text-interactions`; no
+gesture recognisers are added to text in this change.
 
-**Voice selection.** `SpeechService` picks, for the chosen variant (`es-ES`
-default, or `es-MX`), the highest-quality installed voice
-(`AVSpeechSynthesisVoice.speechVoices()` filtered by language, sorted by
-`quality`); if none for that region, any `es-*` voice; if no Spanish voice,
-the speak affordances are hidden and Settings explains how to download a voice
-in iOS Settings. Chosen voice identifier is cached per launch.
+**Speakable-span rule.** Italic is not a reliable Spanish marker (numbers and
+«…» quotations can be italic too). A pure `SpeakableText.isSpeakable(_:)`
+accepts a span only if it contains at least one Latin letter (a–z, á é í ó ú
+ü ñ in either case) and is not only digits, punctuation or quotation marks.
+Non-speakable spans get no speak affordance. `SpeakableText.extract` strips
+Markdown markers and keeps ¿ ¡.
 
-**Rate.** Two steps mapped onto `AVSpeechUtterance.rate`: "обычно" =
-`AVSpeechUtteranceDefaultSpeechRate`, "медленно" = 0.8 × default. Exact
-values tuned by ear in implementation; stored as an enum, not a float.
+**Variant setting (single source of truth).** `spanishVariant` with cases
+`spain` («Испания», es-ES) and `latinAmerica` («Латинская Америка», es-MX).
+`regional-variants` extends the same enum (e.g. Rioplatense) and adds
+content behavior; no second variant setting may exist. Voice selection: best
+installed voice for the variant's locale by `quality`, fallback any `es-*`;
+with no Spanish voice, speak affordances are hidden and Settings explains how
+to download one.
 
-**Silent switch.** Audio session category `.ambient` by default (silenced by
-the Ring/Silent switch, mixes with other audio); `.playback` with
-`.duckOthers` only when "Звук в беззвучном режиме" is on. Category is set just
-before speaking, not at launch, to avoid interrupting other apps.
+**Audio-session policy (owned here).** A pure `AudioSessionPolicy` maps the
+playback context to a category: `.content` (taps, speaker buttons) →
+`.ambient` (silenced by the Ring/Silent switch, mixes with other audio)
+unless «Звук в беззвучном режиме» is on → `.playback` with `.duckOthers`;
+`.listeningExercise` → always `.playback` (the exercise is meaningless
+silently). Category is set just before playback. iOS offers no public API to
+read the switch, so the first time content speech is triggered on a device a
+one-time hint says: «Нет звука? Выключите беззвучный режим или включите «Звук
+в беззвучном режиме» в настройках».
 
-**Interaction.** Tap on a Spanish run speaks it and shows a short highlight;
-tapping again stops. Speaking a new fragment stops the previous one. A
-`SpeakButton` (speaker icon, 44×44 pt, label "Произнести") appears on the
-recall prompt, on the revealed card next to the title area, and on exercises
-with Spanish prompts. With VoiceOver running, tap-to-speak on text is
-disabled (VoiceOver already reads Spanish with the es-ES speech language);
-the explicit buttons remain.
+**Rate.** «Обычно» = `AVSpeechUtteranceDefaultSpeechRate`; «Медленно» ≈ 0.8 ×
+default, tuned by ear; stored as an enum.
+
+**VoiceOver.** With VoiceOver running, the link activation reads normally and
+the speaker buttons remain the way to hear the synthesizer; Spanish spans keep
+`es-ES` speech language.
+
+**Settings persistence.** `spanishVariant`, `speechRate`,
+`playAudioWhenSilent` are optional/defaulted `SettingsRecord` properties
+mapped both ways in `SwiftDataUserDataStore`, per `cloudkit-schema-release`.
 
 ## Risks / Trade-offs
 
-- [Voice quality differs by device; enhanced voices need a download] → pick
-  best installed; Settings hint links to iOS voice settings.
-- [Tap on text conflicts with text selection / links] → card bodies have no
-  links in Spanish runs; tap target limited to emphasis runs.
-- [Synth mispronounces abbreviations] → content guideline: write out Spanish
-  examples in full; no runtime fixes.
+- [Voice quality varies; enhanced voices need a download] → best installed;
+  Settings hint.
+- [Spanish words that look like Russian transliteration] → rule only needs
+  one Latin letter; content stays responsible for marking Spanish.
+- [Synth mispronounces abbreviations] → content guideline: write examples in full.
 
 ## Migration Plan
 
-Additive. Settings fields default to es-ES / обычно / respect silent. Rollback:
-hide affordances behind a single feature flag in `SpeechService`.
+Additive. Defaults: `spain`, `normal`, silent respected. Rollback: unregister
+the speak action and hide speaker buttons behind one flag.

@@ -10,3 +10,10 @@ When the stats calculator reports that yesterday was frozen, the body of the fir
 #### Scenario: No freeze, no line
 - **WHEN** yesterday was not frozen
 - **THEN** no reminder body includes the freeze line
+
+### Requirement: Foreground reschedule keeps streak copy current
+In addition to the existing rescheduling triggers, the app SHALL recompute and re-schedule reminders when it returns to the foreground, so that streak, freeze and at-risk copy reflects the latest stats. Because reminders are planned several days ahead, copy for days on which the app does not run SHALL be best-effort and MAY be stale.
+
+#### Scenario: Foreground refresh
+- **WHEN** the app returns to the foreground after a freeze was applied to yesterday
+- **THEN** reminders are rescheduled and today's first reminder includes the freeze line

@@ -9,12 +9,13 @@ existing optional CloudKit sync.
 
 ## What Changes
 
-- **Study buddy (one partner):** invite a person via a system share link; once
-  accepted, both see the partner's name, current streak, today's status and last
-  seven days.
+- **Study buddy (one partner):** invite a person via a system share link to one
+  shared zone (read-write for the partner); once accepted, both see the partner's
+  name, current streak, today's status and last seven days.
 - **Shared streak:** a separate «Общая серия» counts consecutive days on which both
   partners studied.
-- **Nudge:** «Напомнить» sends the partner a gentle reminder, at most once per day.
+- **Nudge:** «Напомнить» sends the partner a visible notification, at most once per
+  day, delivered by a CloudKit database subscription (no server).
 - **Privacy by design:** only daily aggregates are shared (studied yes/no, count of
   graded cards, current streak); never card content, grades, errors or settings.
 - **Leave any time:** either partner can stop sharing; data disappears for both.
@@ -32,16 +33,16 @@ existing optional CloudKit sync.
 
 ## Impact
 
-- **CloudKit**: a dedicated record zone for buddy aggregates shared via `CKShare`
-  (zone-wide share); new record type `BuddyDay`; production schema deployment.
+- **CloudKit**: one owner zone shared zone-wide via `CKShare` with read-write
+  participant permission; record types `BuddyDay`, `BuddyNudge` per
+  `cloudkit-schema-release`; `CKDatabaseSubscription`s for nudges.
+- **App target**: Push Notifications capability (`aps-environment`); `CKSharingSupported`.
 - **Domain**: `BuddyDay` value, `SharedStreakCalculator` (pure), nudge throttling
   rule (pure).
 - **Features**: `BuddyService` (publish today's aggregate after each session, fetch
   partner records, accept share via `UICloudSharingController` / scene delegate
   `userDidAcceptCloudKitShareWith`), Buddy section on Progress and Today.
-- **Reminders**: nudge delivered as a local notification on the partner's device
-  when their app fetches a new nudge record (no push server); optional CloudKit
-  subscription for silent pushes.
-- **Depends on**: `cloudkit-sync` (archived), `progress-insights` (week strip),
+- **Depends on**: `cloudkit-sync`, `cloudkit-schema-release`,
+  `learning-platform-foundation` (local learning day), `progress-insights` (week strip),
   `streak-protection` (sibling; freezes do not count as studied for the shared
   streak), `product-analytics`.

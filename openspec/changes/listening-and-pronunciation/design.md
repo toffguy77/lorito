@@ -8,6 +8,9 @@ device: `SFSpeechRecognitionRequest.requiresOnDeviceRecognition` prevents audio
 from being sent over the network, but is honoured only when the recognizer's
 `supportsOnDeviceRecognition` is true, and on-device results are less accurate
 ([Apple docs](https://developer.apple.com/documentation/speech/sfspeechrecognitionrequest/requiresondevicerecognition)).
+The DELE A2 exam has four tests, including «Comprensión auditiva» and
+«Expresión e interacción orales»
+([Instituto Cervantes](https://examenes.cervantes.es/es/dele/examenes/a2)).
 
 ## Goals / Non-Goals
 
@@ -36,9 +39,14 @@ reports `supportsOnDeviceRecognition`, the user granted microphone and speech
 permissions, and the request sets `requiresOnDeviceRecognition = true`. The
 best transcript and up to four alternatives are compared to `answer` and
 `accept` with the dictation normalisation, ignoring diacritics entirely
-(recognisers do not "hear" missing written accents). Match → Хорошо; no match
-after two attempts → the user may accept the outcome (Опять) or self-grade
-after hearing the reference. If any precondition fails, the exercise runs in
+(recognisers do not "hear" missing written accents). Match → Хорошо applied to
+the card (subject to the first-review-per-day rule of
+`learning-platform-foundation`). No match after two attempts → the attempt is
+recorded with its transcript but the card's review is NOT updated: a
+recogniser error must not be punished as a learner error. The user may then
+play the reference and self-grade; in self-assessed mode the chosen grade is
+applied only if it is Трудно or better — an Опять is recorded as an attempt
+only. If any precondition fails, the exercise runs in
 self-assessed mode: the user speaks, plays the reference and grades with the
 four buttons. Pure comparison lives in `Domain`; the recognizer wrapper in
 `Features` behind a protocol so tests use a fake.
@@ -46,6 +54,17 @@ four buttons. Pure comparison lives in `Domain`; the recognizer wrapper in
 **Permissions asked in context.** Microphone and speech-recognition prompts
 appear the first time a `speak` exercise starts, after a one-screen
 explanation; denial is remembered and never re-prompted automatically.
+
+**No Spanish voice installed.** If `spanish-audio` reports no Spanish voice
+on the device, the exercise selector excludes `listen-choose` and `dictation`
+from sessions (they are neither shown nor graded) and Settings explains how to
+download a voice. `speak` stays available because the reference audio is
+optional in auto mode.
+
+**Audio sessions.** Listening and dictation playback uses the listening policy
+of `spanish-audio` (plays regardless of the Ring/Silent switch). Recording for
+`speak` switches to a play-and-record session for the duration of the
+recording and restores the previous session afterwards.
 
 **Skip and opt-out.** «Не могу слушать сейчас» / «Не могу говорить сейчас»
 hide that kind for 15 minutes (session-scoped, not graded, the exercise

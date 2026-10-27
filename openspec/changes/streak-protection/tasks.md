@@ -1,6 +1,7 @@
 ## 0. Dependency
 
 - [ ] 0.1 `streak-reminders` applied (reminder planner takes streak state) — the freeze line builds on its inputs
+- [ ] 0.2 `learning-platform-foundation` applied (local learning day replaces UTC in the calculator)
 
 ## 1. Domain: freezes (TDD)
 
@@ -12,7 +13,7 @@
 ## 2. Domain: revival (TDD)
 
 - [ ] 2.1 Write failing tests: revive a 40-day streak with 3 consecutive days inside (L, L+7]; window missed; run shorter than 2 not revivable; second loss within 30 days not revivable
-- [ ] 2.2 Write failing tests: revival status none / in progress (k of 3, deadline) / completed
+- [ ] 2.2 Write failing tests: revival status none / in progress (k of 3, deadline, lost length) / completed; displayed streak during revival = new run only, then lost + 3
 - [ ] 2.3 Write failing tests: best streak counts bridged runs once (6 + frozen + 6 = 12)
 - [ ] 2.4 Implement revival and bridged best-streak; determinism test with identical log + today
 
@@ -21,6 +22,7 @@
 - [ ] 3.1 Today: "Серия спасена заморозкой" once after a frozen day; revival banner with lost length and days left
 - [ ] 3.2 Progress screen: freezes held indicator (added element; coordinate with `progress-insights` layout)
 - [ ] 3.3 Reminders: pass `frozenYesterday` to the planner; add the freeze line to the first reminder of the day; planner test
+- [ ] 3.4 Reschedule reminders on scene foreground (in addition to launch / rollover / session completion); test that the trigger calls reschedule; document best-effort staleness
 
 ## 4. Validation
 

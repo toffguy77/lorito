@@ -1,8 +1,7 @@
 # Lorito — роадмап OpenSpec-изменений
 
-Источник: продуктовый аудит и бенчмаркинг (https://claude.ai/artifact/WtPw47GCiXwhVZBtVMqfEE), 27.10.2026.
-Все изменения лежат в `openspec/changes/`, каждое проходит `openspec validate --strict`.
-Пересечений по MODIFIED/REMOVED-требованиям между изменениями нет — их можно архивировать в любом порядке, который не нарушает зависимости ниже.
+Источник: продуктовый аудит (https://claude.ai/artifact/WtPw47GCiXwhVZBtVMqfEE), 27.10.2026.
+Все изменения в `openspec/changes/` проходят `openspec validate --strict`. Ни одно требование не меняется двумя изменениями сразу, поэтому конфликтов при архивации нет; порядок задают только зависимости ниже.
 
 ## Уже в работе (ветка `redesign-plumaje`)
 
@@ -13,63 +12,72 @@
 | `progress-insights` | реализуется |
 | `ipad-plumaje-layouts` | ждёт |
 | `home-screen-widgets` | ждёт |
+| `streak-reminders` | реализовано, не заархивировано (спека исправлена в этой ветке) |
+
+## Фаза 0 — Платформа (до всего остального)
+
+| # | Изменение | Что даёт | Задач |
+|---|---|---|---|
+| 0.1 | `learning-platform-foundation` | Чинит баг «бесконечные новые карточки за день»; виды элементов (`conj:`, `word:`, `ccse:`); общий дневной бюджет; локальный учебный день вместо UTC; память обновляется только первой оценкой за день; «Опять» возвращается в конце сессии; единые жесты на испанском тексте; `CardBodyParser` → Domain | 24 |
+| 0.2 | `cloudkit-schema-release` | Правило для синхронизируемых полей, схема CloudKit в git, проверка перед релизом | 11 |
 
 ## Фаза 1 — Фундамент (ноябрь–декабрь 2026)
 
 Ворота: есть базовые D1 / D7 / D30.
 
-| # | Изменение | Capability | Задач | Зависит от |
-|---|---|---|---|---|
-| 1 | `product-analytics` | новая `product-analytics` | 17 | — |
-| 2 | `spanish-audio` | новая `spanish-audio` | 14 | plumaje |
-| 3 | `fsrs-scheduler` | изменяет `srs-engine` | 16 | — (деплой схемы CloudKit) |
-| 4 | `aso-grammar-positioning` | новая `app-store-presence` | 15 | plumaje, recall-first; этап 2 — `exam-path-dele-ccse` |
+| # | Изменение | Задач | Зависит от |
+|---|---|---|---|
+| 1 | `product-analytics` | 19 | foundation |
+| 2 | `spanish-audio` | 16 | foundation, plumaje |
+| 3 | `fsrs-scheduler` | 18 | foundation, cloudkit-schema-release |
+| 4 | `aso-grammar-positioning` | 22 | plumaje, recall-first; этап 2 — `exam-path-dele-ccse`; раскрытие покупок — `lorito-pro` |
 
 ## Фаза 2 — Привычка (январь–февраль 2027)
 
 Ворота: растёт число дней учёбы в неделю.
 
-| # | Изменение | Capability | Задач | Зависит от |
-|---|---|---|---|---|
-| 5 | `placement-test-and-first-session` | новая `placement-test`, + `onboarding-and-selection` | 17 | `streak-reminders` (шаг напоминаний остаётся последним) |
-| 6 | `study-goal` | новая `study-goal`, + `daily-plan` | 14 | — |
-| 7 | `streak-protection` | изменяет `stats-and-streak`, + `reminders` | 16 | `streak-reminders` |
-| 8 | `personal-traps` | новая `personal-traps`, изменяет `study-flow` | 14 | recall-first |
-| 9 | `conjugation-trainer` | новая `conjugation-trainer`, + `content-*`, `daily-plan` | 24 | `spanish-audio` (желательно) |
-| 10 | `weekly-recap-and-milestones` | новая `weekly-recap-and-milestones` | 13 | `progress-insights`, `personal-traps` (желательно) |
+| # | Изменение | Задач | Зависит от |
+|---|---|---|---|
+| 5 | `placement-test-and-first-session` | 20 | foundation, `streak-reminders` |
+| 6 | `study-goal` | 16 | foundation, cloudkit-schema-release |
+| 7 | `streak-protection` | 18 | foundation, `streak-reminders` |
+| 8 | `personal-traps` | 17 | foundation, recall-first |
+| 9 | `conjugation-trainer` | 25 | foundation, `spanish-audio` (желательно) |
+| 10 | `weekly-recap-and-milestones` | 18 | `progress-insights`, `personal-traps` (желательно) |
 
 ## Фаза 3 — Экзамен и деньги (март–апрель 2027)
 
 Ворота: конверсия в Pro измерена.
 
-| # | Изменение | Capability | Задач | Зависит от |
-|---|---|---|---|---|
-| 11 | `lorito-pro` | новая `monetization` | 19 | `product-analytics`, plumaje |
-| 12 | `listening-and-pronunciation` | изменяет `practice-exercises`, `content-*` | 19 | `spanish-audio` |
-| 13 | `exam-path-dele-ccse` | новая `exam-path` | 28 | `spanish-audio`, `study-goal`, `lorito-pro`, `listening-and-pronunciation`, `product-analytics` |
-| 14 | `vocabulary-decks` | новая `vocabulary`, + `content-*`, `daily-plan` | 22 | `conjugation-trainer`, `spanish-audio` |
-| 15 | `regional-variants` | новая `regional-variants`, + `content-*` | 22 | `conjugation-trainer`, `spanish-audio`, `listening-and-pronunciation` |
+| # | Изменение | Задач | Зависит от |
+|---|---|---|---|
+| 11 | `lorito-pro` | 31 | `product-analytics`; этап App Store Connect внутри |
+| 12 | `listening-and-pronunciation` | 21 | `spanish-audio` |
+| 13 | `exam-path-dele-ccse` | 30 | `spanish-audio`, `study-goal`, `lorito-pro`, `listening-and-pronunciation` |
+| 14 | `vocabulary-decks` | 25 | foundation, `spanish-audio` |
+| 15 | `regional-variants` | 22 | `spanish-audio`, `conjugation-trainer`, `listening-and-pronunciation` |
 
 ## Позже (P2)
 
-| # | Изменение | Capability | Задач | Зависит от |
-|---|---|---|---|---|
-| 16 | `grammar-lens` | новая `grammar-lens` | 18 | recall-first, `product-analytics` |
-| 17 | `study-buddy` | новая `study-buddy` | 20 | `cloudkit-sync`, `progress-insights`, `streak-protection` |
+| # | Изменение | Задач | Зависит от |
+|---|---|---|---|
+| 16 | `grammar-lens` | 20 | foundation, `product-analytics` |
+| 17 | `study-buddy` | 22 | `cloudkit-sync`, `progress-insights`, `streak-protection` |
+
+## Решения владельца (27.10.2026)
+
+- **Pro = только экзамены** (DELE A2 + CCSE сверх бесплатного превью). Тренажёр спряжений, региональные варианты, «линза» — бесплатно.
+- **CCSE:** материалы Instituto Cervantes использовать можно — официальный банк вопросов импортируется с указанием источника и редакции.
+- **FrequencyWords:** лицензия контента CC BY-SA 4.0 (код — MIT) подтверждена по README репозитория. `content/vocabulary/` и `content/conjugation/` считаются производными и публикуются под CC BY-SA 4.0 с собственным `LICENSE`; атрибуция — на экране «О приложении». Связываться с автором не нужно.
+- **Название:** «Lorito: испанский язык», подзаголовок «Грамматика по-русски, A1–C2». Для Испании и Латинской Америки — локализации es-ES и es-MX с русскими метаданными (русский язык там не индексируется).
+- **Ключевые слова:** лимит 100 символов (не байт): текущая строка из 85 символов / 149 байт уже опубликована. Проверка — на этапе загрузки в App Store Connect.
+
+## Что остаётся за владельцем
+
+- **Банковский счёт вне России** для выплат Apple — блокирует `lorito-pro` (Apple не выплачивает на российские счета).
+- **Цены Pro** — этап App Store Connect в `lorito-pro` (гипотеза: €34.99/год, €59 навсегда; семейный доступ включён).
+- **Деплой схемы CloudKit** — одна кнопка «Deploy Schema Changes» в CloudKit Console перед релизами с новыми полями; может сделать Claude через браузер с подтверждением.
 
 ## Вне репозитория
 
 Веб-версия правил для SEO — отдельный проект; контент переиспользуется из `content/`.
-
-## Блокирующие решения владельца
-
-- Лицензия на материалы Instituto Cervantes для CCSE (`exam-path-dele-ccse`, гейт-задача).
-- Лицензия частотного списка слов (FrequencyWords, CC BY-SA 4.0) для `vocabulary-decks`.
-- Цены Pro и Family Sharing — App Store Connect (`lorito-pro`).
-- Название в App Store: «Lorito Español» или «Lorito: испанская грамматика» (`aso-grammar-positioning`).
-- Хранение IP у провайдера аналитики (`product-analytics`).
-- Деплой схемы CloudKit в production перед релизами `fsrs-scheduler`, `vocabulary-decks`, `study-goal`, `personal-traps`.
-
-## Известная проблема в существующем изменении
-
-`streak-reminders` не проходит `openspec validate --strict`: MODIFIED «Skip reminders when nothing is due» теряет сценарий «Nothing due means no notification». Перед `/opsx:archive streak-reminders` этот сценарий нужно вернуть в блок, переписав под новое поведение.

@@ -1,8 +1,9 @@
 ## Why
 
-Lorito trains reading and writing only. Half of every real exam (DELE A2:
-listening and speaking are one of the two pass groups) and most of daily life
-in Spain or Latin America is hearing and speaking. The product audit ranked
+Lorito trains reading and writing only. Real exams test listening and speaking
+separately (DELE A2 has a listening comprehension test and a spoken expression
+and interaction test — see design.md), and most of daily life in Spain or
+Latin America is hearing and speaking. The product audit ranked
 "no audio, no listening, no pronunciation" as the gap where every competitor
 beats us. With on-device text-to-speech (sibling change `spanish-audio`) and
 on-device speech recognition, Lorito can add listening and speaking practice
@@ -17,10 +18,17 @@ with no backend, no recordings to host and no audio leaving the device.
   - `speak` — say a target phrase; on-device recognition (es-ES) compares the
     transcript with the target (auto). When on-device recognition is
     unavailable or permission is denied, it falls back to self-assessment
-    against the reference audio.
+    against the reference audio. A failed or recognition-unclear attempt is
+    recorded but never lapses the grammar card (recogniser error ≠ learner
+    error).
 - **Privacy by construction:** speech recognition requests require on-device
   recognition; if the device cannot recognise Spanish offline, the app never
   falls back to server recognition.
+- **No voice, no listening:** when no Spanish voice is installed, listening
+  and dictation exercises are left out of sessions.
+- **Audio session:** listening and dictation play through the `spanish-audio`
+  listening policy (ignores the Silent switch); recording uses a
+  play-and-record session.
 - **"Can't listen / can't speak now"** skips audio or speaking exercises for
   15 minutes without grading; a setting turns them off entirely.
 - **Content & pipeline:** new frontmatter fields (`audio`, `answer`,
@@ -50,7 +58,8 @@ with no backend, no recordings to host and no audio leaving the device.
 - **App target**: `NSMicrophoneUsageDescription` and
   `NSSpeechRecognitionUsageDescription` in Info.plist (`project.yml`).
 - **Content**: new exercises under `content/<LEVEL>/exercises/`; `content/schema.md`.
-- **Dependencies**: sibling `spanish-audio` (speech synthesis service and voice
-  choice) is required; `regional-variants` later selects the voice per variant;
+- **Dependencies**: sibling `spanish-audio` (speech synthesis service, voice
+  availability, audio-session policy) is required; `learning-platform-foundation`
+  (first graded review per learning day updates memory); `regional-variants` later selects the voice per variant;
   `product-analytics` records exercise outcomes. Builds on archived
   `plumaje-design-system`.

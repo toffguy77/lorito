@@ -1,26 +1,33 @@
 ## ADDED Requirements
 
+### Requirement: Onboarding step order
+Onboarding SHALL run its steps in this order: level selection (manual list or placement test), theme narrowing, then the reminder-time step when it exists, which SHALL remain last. Study goal and regional variant SHALL NOT be asked during onboarding; they SHALL be offered as dismissible prompts on Today after the first completed study session, one prompt per visit.
+
+#### Scenario: Order on first run
+- **WHEN** a new user goes through onboarding
+- **THEN** level comes first, themes second, and the reminder step last, with no goal or variant step
+
+#### Scenario: Prompts after first session
+- **WHEN** the user finishes the first study session and returns to Today
+- **THEN** Today offers one of the goal or regional-variant prompts, which can be dismissed
+
 ### Requirement: Placement test path in level selection
-The onboarding level step SHALL offer, alongside the manual level list, an action "Не знаю — проверить за 2 минуты" that runs the placement test. On its result screen the proposed level SHALL be pre-selected, the user SHALL be able to accept it or pick another level, and the accepted level SHALL be applied exactly as a manual choice (including auto-inclusion of lower levels).
+The level step SHALL offer, alongside the manual list, "Не знаю — проверить за 2 минуты", which runs the placement test. The result SHALL pre-select the proposed level; the user MAY pick another. Accepting SHALL apply the level exactly as a manual choice and SHALL store the highest known level as `placementKnownLevel` (an optional setting, unset for a manual choice).
 
-#### Scenario: Accept the proposed level
-- **WHEN** the placement test proposes B1 and the user accepts it
-- **THEN** `UserSettings.targetLevel` is B1 and levels A1–B1 are included
-
-#### Scenario: Override the proposal
-- **WHEN** the placement test proposes B1 and the user picks A2 instead
-- **THEN** `UserSettings.targetLevel` is A2
+#### Scenario: Accept the proposal
+- **WHEN** the test proposes B1 with A1–A2 known and the user accepts
+- **THEN** `targetLevel` is B1, A1–B1 are included, and `placementKnownLevel` is A2
 
 #### Scenario: Manual path unchanged
 - **WHEN** the user picks a level without taking the test
-- **THEN** onboarding continues exactly as before
+- **THEN** onboarding continues as before and `placementKnownLevel` stays unset
 
 ### Requirement: First study session starts after onboarding
-When onboarding completes and today's queue is non-empty, the app SHALL open the study session on the first card of the queue instead of showing Today; closing or finishing that session SHALL lead to Today. When the queue is empty it SHALL show Today. This hand-off SHALL happen only once, right after onboarding, and never on a later launch.
+When onboarding completes, the app SHALL give that learning day a one-off new-card allowance of the larger of 3 and `dailyNewCardCount`, within the daily new-introduction budget, introduce cards failed in the placement test first, and open the study session on the first card instead of showing Today; with an empty queue it SHALL show Today. This SHALL happen once and never on a later launch.
 
-#### Scenario: Session opens after onboarding
-- **WHEN** the user completes onboarding and the queue has cards
-- **THEN** the study session opens on the first card
+#### Scenario: Session opens with three new cards
+- **WHEN** a user with `dailyNewCardCount` 1 completes onboarding
+- **THEN** the study session opens and the day's queue holds 3 new cards
 
 #### Scenario: Relaunch does not auto-start
 - **WHEN** the app is relaunched after onboarding was completed

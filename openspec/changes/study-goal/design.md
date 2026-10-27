@@ -1,60 +1,61 @@
 ## Context
 
-`daily-plan` composes the day's queue purely from review states, the user's
-scope and `UserSettings.dailyNewCardCount` (default 1). Cards are ordered by
-level and `order`; a card is "introduced" once it has a `CardReview`. Today shows
-counts and the start action. There is no notion of a deadline.
+`daily-plan` composes the queue from review states, scope and the new-card limit
+(`UserSettings.dailyNewCardCount`, default 1). `learning-platform-foundation`
+(dependency) defines the local learning day, item kinds (only `.card` counts as a
+card) and a combined daily new-introduction budget. `cloudkit-schema-release`
+requires new synced fields to be optional scalars. `exam-path-dele-ccse`
+(sibling) needs an exam date that is independent of card progress.
 
 ## Goals / Non-Goals
 
-**Goals:** one optional goal with a date; a pace that is derived, not guessed;
-an honest status; zero change for users without a goal.
+**Goals:** an optional level goal that can only speed the user up; an exam date
+with its own lifecycle; an honest status; zero change for users without goals.
 
-**Non-Goals:** multiple concurrent goals; goals measured in minutes or streak
-days; exam content (→ `exam-path-dele-ccse`); goal-aware notifications; changing
-review scheduling.
+**Non-Goals:** several level goals at once; minutes-based goals; exam content
+(→ `exam-path-dele-ccse`); goal-aware notifications; changing review scheduling.
 
 ## Decisions
 
-**Goal = target level + target date.** `StudyGoal { kind: .level | .deleA2,
-targetLevel, targetDate, createdAt }`. "Reached" means every non-suspended card
-of all levels up to `targetLevel` within the user's selected themes has been
-introduced. DELE A2 is a labelled `.level` goal with `targetLevel = A2`; its date
-is entered by the user (we do not ship exam calendars).
+**Two independent parts.** *Level goal*: `goalTargetLevel` + `goalTargetDate`
+(+ `goalStartDate`, `goalStartIntroduced` captured at creation, `goalState`
+active/achieved/expired). *Exam*: `examKind` (deleA2 / ccse) + `examDate` +
+`examDone`. The "DELE A2" preset writes a level goal (A2, date = exam date) and an
+exam (deleA2, same date). Either part can exist alone.
 
-**Pace.** `pace = ceil(cardsLeft / max(daysLeft, 1))`, clamped to
-`[GoalConstants.minDailyNew = 1, GoalConstants.maxDailyNew = 10]`. `daysLeft`
-counts today through the target date inclusive. Pure, injected "today".
-Recomputed whenever the plan is recomputed, so missed days raise the pace
-automatically. When the clamp binds at the maximum, status is "behind" even on
-day one: the goal is not reachable at a sane pace, and the UI says so.
+**Reached / achieved.** Level goal reached when every non-suspended `.card` item
+up to the target level within selected themes is introduced; then pacing stops.
+Exam achieved when `examDate` has passed (learning day after it) or `examDone`.
 
-**Status.** Expected introduced count at today = linear interpolation from
-`createdAt` (introduced count then) to the target date (total). `onTrack` when
-actual ≥ expected; otherwise `behind(by: expected − actual)`.
+**Pace never lowers the user's setting.**
+`pace = ceil(cardsLeft / max(learningDaysLeft, 1))`, learning days counted in the
+device's local calendar from today through the target date inclusive.
+`newPerDay = max(pace, dailyNewCardCount)`, then capped by the foundation's daily
+new-introduction budget. Recomputed with the plan, so missed days raise it.
 
-**Lifecycle.** `active` → `achieved` when reached (first check after the last
-card is introduced); → `expired` when the date passes unreached. Achieved and
-expired goals stop pacing; Today shows the end state once, then the goal card
-disappears until the user sets a new goal.
+**Status.** Expected introduced count today = linear interpolation from
+(`goalStartDate`, `goalStartIntroduced`) to (target date, total). On track when
+actual ≥ expected; else behind by the difference. If the budget caps `newPerDay`
+below `pace`, status is behind. Copy uses `RussianPlural`: «отстаёте на 1 карточку /
+2 карточки / 5 карточек»; days left likewise.
 
-**Daily-plan integration without touching its rules.** The plan's existing
-new-card limit input is fed `GoalPacing.pace(...)` when a goal is active, else
-`UserSettings.dailyNewCardCount`. The composer itself is unchanged.
+**Lifecycle display.** Achieved / expired level goals and achieved exams show
+their end state once on Today, then hide until a new goal is set.
 
-**Persistence.** `UserSettings.goal: StudyGoal?` encoded with defaults so older
-synced records decode as `nil`.
+**Prompt placement.** No onboarding step; after the first completed session,
+Today shows «Есть дедлайн?» via the prompt slot owned by
+`placement-test-and-first-session`; dismiss leaves no goal.
 
 ## Risks / Trade-offs
 
-- [Pace spikes after a missed week] → the max clamp caps it; status turns
-  "behind" instead of flooding the queue.
-- [Introduced ≠ learned] → acceptable for pacing; long-term memory is shown by
-  `progress-insights` and level milestones in `weekly-recap-and-milestones`.
-- [Two devices edit the goal] → last-writer-wins like other `UserSettings`
-  fields per `cloudkit-sync`.
+- [Pace above budget] → budget wins; status turns behind rather than flooding.
+- [Introduced ≠ learned] → acceptable for pacing; long-term memory comes from
+  `progress-insights`.
+- [Concurrent edits on two devices] → last writer wins per field, like other
+  `UserSettings` fields.
 
 ## Migration Plan
 
-Additive; `goal` defaults to nil. Rollback: ignore the field; the plan falls
-back to `dailyNewCardCount`.
+Additive optional fields, nil by default; dev schema exported and production
+deployed per `cloudkit-schema-release`. Rollback: ignore the fields; the plan
+falls back to `dailyNewCardCount`.

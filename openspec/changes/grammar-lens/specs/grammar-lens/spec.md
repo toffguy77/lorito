@@ -12,15 +12,15 @@ Grammar Lens SHALL accept Spanish text from three sources: pasted or typed text,
 - **THEN** paste and share remain available and the camera option explains how to enable access
 
 ### Requirement: On-device analysis
-All analysis SHALL run on the device without network access, using the system natural-language tagger for tokens and lexical classes, and a compiled lemma table whenever the system lemma scheme is unavailable for Spanish.
+All analysis SHALL run on the device without network access, using the system natural-language tokenizer only for sentence and word boundaries and the compiled lemma table shipped with the content for lemmas.
 
 #### Scenario: Offline analysis
 - **WHEN** the device has no network and the user analyses text
 - **THEN** results are produced
 
-#### Scenario: No system lemma model
-- **WHEN** the system reports no lemma scheme for Spanish
-- **THEN** the matcher uses the compiled lemma table and produces the same matches for covered words
+#### Scenario: Same result on every device
+- **WHEN** the same text is analysed on two devices with different OS versions
+- **THEN** the same spans are highlighted
 
 ### Requirement: Deterministic rule matching
 Matching SHALL be performed by a pure function over tokens and authored rules: a span is highlighted only when every pattern and context predicate of a rule holds; overlapping matches keep the longest span, and ties keep the more specific rule. Identical inputs SHALL produce identical matches.
@@ -41,14 +41,22 @@ Each highlight SHALL show the rule's short name in Russian and open the mapped c
 - **THEN** card A1-07 opens in the card reader
 
 ### Requirement: Add to review
-From a highlight the user SHALL be able to choose «Добавить в повторение»: a card without review state becomes a new card queued for today ahead of other new cards, and an already scheduled card becomes due today. The spaced-repetition calculations SHALL NOT change.
+From a highlight on a card the user has not started, «Добавить в повторение» SHALL mark the card as user-requested so it is introduced through the daily plan. For a card that already has review state, the lens SHALL show when it is next due and SHALL NOT change its schedule.
 
-#### Scenario: Scheduled card brought forward
-- **WHEN** the user adds a card that is due in 9 days
-- **THEN** the card is due today and its ease and interval history are unchanged
+#### Scenario: New card requested
+- **WHEN** the user adds card A1-07 that has never been studied
+- **THEN** A1-07 is marked user-requested
+
+#### Scenario: Scheduled card not moved
+- **WHEN** the user looks at a highlight for a card due in 9 days
+- **THEN** the lens shows «Уже в повторении — через 9 дней» and the card's schedule is unchanged
 
 ### Requirement: Rule content validation
-Lens rules SHALL be authored as content files with card IDs, a pattern, context predicates and positive and negative example sentences. Content validation SHALL fail when a rule references an unknown card, when a positive example does not match, or when a negative example matches.
+Lens rules SHALL use only surface-form and lemma predicates and include positive and negative examples. Validation SHALL fail when a rule references an unknown card, uses a lexical-class predicate, references a lemma missing from the lemma table, a positive example does not match, or a negative example matches.
+
+#### Scenario: Lexical-class predicate
+- **WHEN** a rule uses a lexical-class predicate
+- **THEN** validation fails naming the rule id
 
 #### Scenario: Negative example matches
 - **WHEN** a rule's negative example "Espero el autobús" matches the rule

@@ -1,5 +1,9 @@
 ## Context
 
+Motivation reference (not a requirement): Duolingo's streak-revival campaign in
+June 2026 re-engaged lapsed learners, по пересказу отчёта Duolingo за II кв. 2026
+(BigGo).
+
 `StatsCalculator` (Domain, pure) derives current streak, best streak and counts
 from `StudyLog` events with an injected "today". Today is "savable": not studying
 yet today does not break the streak. Pending `streak-reminders` makes reminders
@@ -16,7 +20,8 @@ manual "equip freeze" actions; weekend modes; changing the day boundary.
 
 ## Decisions
 
-**Everything is replayed from the log.** The calculator walks calendar days from
+**Everything is replayed from the log.** The calculator walks local learning
+days (device time zone, from `learning-platform-foundation`) from
 the first study day to yesterday, then applies the "today is savable" rule. A
 day is *studied* if it has ≥ 1 grade event. Because freezes and revivals are a
 pure function of the log, two devices with the same synced log always agree, and
@@ -35,7 +40,9 @@ when stock runs out the next missed day breaks the run.
 **Revival.** When a run with length ≥ 2 breaks on day L (the first missed,
 unfrozen day), it becomes *revivable* until L + 7. If the user then studies on 3
 consecutive days all within (L, L + 7], the gap days become *revived*: the run
-continues from its pre-loss length and those 3 days are added. At most one
+continues from its pre-loss length and those 3 days are added. While a revival is
+in progress, the displayed current streak is the new run only (1, then 2); the
+banner shows the lost length; on the third day the streak becomes lost + 3. At most one
 revival per `StreakConstants.revivalCooldownDays = 30` (measured between loss
 days). Revival status is reported for UI: none / in progress (k of 3 days done,
 deadline) / completed.
@@ -50,6 +57,12 @@ deadline) / completed.
 composition adds "Заморозка спасла вашу серию" for the first reminder after a
 frozen day. Implemented as a separate composition step so it does not alter the
 requirements modified by `streak-reminders`.
+
+**Reminder freshness is best-effort.** Reminders are planned
+`ReminderConstants.horizonDays = 7` days ahead with the streak state known at
+scheduling time. Rescheduling on launch, day rollover, session completion and
+(new) foreground keeps copy current when the app runs; if it does not, a reminder
+may show stale streak copy. Accepted.
 
 ## Risks / Trade-offs
 

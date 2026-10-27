@@ -1,25 +1,33 @@
+## 0. Dependencies
+
+- [ ] 0.1 `learning-platform-foundation` (spanish-text-interactions) and `cloudkit-schema-release` applied
+
 ## 1. Domain (TDD)
 
-- [ ] 1.1 Write failing tests for `SpeakableText.extract(markdown:)`: emphasis runs only, nested bold inside italics, ¿ ¡ kept, Russian text excluded, empty result when no Spanish
-- [ ] 1.2 Implement `SpeakableText`; `SpeechVariant` (`es-ES`, `es-MX`), `SpeechRate` (`normal`, `slow`)
-- [ ] 1.3 Extend `UserSettings` with `speechVariant`, `speechRate`, `playAudioWhenSilent` (defaults es-ES / normal / false); test decoding of old settings
+- [ ] 1.1 Write failing tests for `SpeakableText`: extract strips Markdown and keeps ¿ ¡; `isSpeakable` true for "el agua", "ñ", false for "1492", "«…»", "—", Russian-only text
+- [ ] 1.2 Write failing tests for `AudioSessionPolicy`: content + silent off → ambient; content + silent on → playback/duckOthers; listening exercise → playback
+- [ ] 1.3 Implement `SpeakableText`, `SpanishVariant` (`spain`, `latinAmerica`, locale mapping), `SpeechRate`, `AudioSessionPolicy`
 
-## 2. Features
+## 2. Settings persistence
 
-- [ ] 2.1 `SpeechService` protocol + `SystemSpeechService` (`AVSpeechSynthesizer`): voice selection by variant and quality with fallback, rate mapping, stop-previous, audio session category per setting; fake service for tests
-- [ ] 2.2 Tests with the fake: tapping a new fragment stops the previous; no Spanish voice → `isAvailable == false`
-- [ ] 2.3 Settings section "Звук": variant, speed, silent-mode toggle; hint when no Spanish voice
+- [ ] 2.1 Add `spanishVariant`, `speechRate`, `playAudioWhenSilent` to `UserSettings` and as optional/defaulted `SettingsRecord` properties; map both ways in `SwiftDataUserDataStore`
+- [ ] 2.2 Store round-trip test; export dev CloudKit schema to `cloudkit/schema.ckdb`
 
-## 3. DesignSystem & screens
+## 3. Features
 
-- [ ] 3.1 `SpeakButton` (44×44 pt, label "Произнести", speaking state)
-- [ ] 3.2 Tap-to-speak on `SpanishText` and on emphasis runs in the MarkdownUI theme; disabled while VoiceOver is running
-- [ ] 3.3 Speaker buttons on recall prompt, revealed card, exercises with Spanish prompts; tokens and options speak on tap
-- [ ] 3.4 Gallery entries for `SpeakButton` and speakable text
+- [ ] 3.1 `SpeechService` protocol + `SystemSpeechService`: voice by variant and quality with fallback, rate, stop-previous, category from `AudioSessionPolicy`; fake for tests
+- [ ] 3.2 Register the «Произнести» / tap action with `spanish-text-interactions`; hide it for non-speakable spans and when no Spanish voice exists
+- [ ] 3.3 One-time silence hint (device-local flag)
+- [ ] 3.4 Settings section «Звук»: variant, speed, silent-mode toggle; hint when no Spanish voice
 
-## 4. Validation
+## 4. DesignSystem & screens
 
-- [ ] 4.1 `swift test` green
-- [ ] 4.2 `xcodebuild` build; UI test: speaker button exists on card front and has the label
-- [ ] 4.3 Manual on device: airplane mode, silent switch on/off, es-MX voice, VoiceOver
-- [ ] 4.4 `openspec validate spanish-audio --strict`
+- [ ] 4.1 `SpeakButton` (44×44 pt, label "Произнести", speaking state) + gallery entry
+- [ ] 4.2 Speaker buttons on recall prompt, revealed card, exercises with Spanish prompts
+
+## 5. Validation
+
+- [ ] 5.1 `swift test` green
+- [ ] 5.2 `xcodebuild` build; UI test: speaker button on card front with its label; long-press menu shows «Произнести»
+- [ ] 5.3 Manual on device: airplane mode, silent switch on/off, es-MX voice, VoiceOver
+- [ ] 5.4 `openspec validate spanish-audio --strict`

@@ -39,10 +39,10 @@ Each scheduled notification's body SHALL reflect the due/new counts for the day 
 - **THEN** the notification body conveys the counts without asserting a streak
 
 ### Requirement: Skip reminders when nothing is due
-When the due count and the new-card count for a given day are both zero, the decision function SHALL produce no notification request for that day ONLY IF the streak is not at risk on that day. The streak is "at risk" for a day when the current streak is active (greater than zero) and no grade event has yet occurred on that day, so studying is still needed to preserve it. When nothing is due and the streak is at risk, the decision function SHALL produce a "save your streak / keep learning" nudge for that day instead of skipping it. When nothing is due and the streak is not at risk (streak is zero, or the user has already studied that day), the day SHALL be skipped.
+When the due and new-card counts for a day are both zero, the decision function SHALL skip that day unless the streak is at risk. The streak is at risk on a day when it is active (greater than zero) and no grade event has occurred yet that day; then the function SHALL produce one "save your streak" nudge for that day instead.
 
-#### Scenario: Nothing due and streak not at risk means no notification
-- **WHEN** a day has 0 due reviews, 0 new cards, and the streak is not at risk (streak is 0 or already studied today)
+#### Scenario: Nothing due means no notification
+- **WHEN** a day has 0 due reviews, 0 new cards, and the current streak is 0
 - **THEN** the decision function returns no notification request for that day
 
 #### Scenario: Nothing due but streak at risk fires a save-streak nudge

@@ -1,7 +1,7 @@
 ## ADDED Requirements
 
 ### Requirement: Onboarding reminder-time step
-Onboarding SHALL present a final, skippable reminder-time step after the level/theme selection and before completing onboarding. The step SHALL offer a default reminder time (20:00 local). Choosing a time and confirming SHALL drive the existing `reminders` notification authorization flow and, on success, SHALL persist `reminderConfig` with `enabled = true` and the chosen time as the first reminder time. Skipping the step SHALL leave reminders disabled (`reminderConfig.enabled = false`) and SHALL NOT request authorization. Completing onboarding SHALL NOT be blocked by this step (it remains optional), and this step SHALL NOT redefine the `reminderConfig` shape owned by `reminders`/`app-foundation`.
+Onboarding SHALL end with a skippable reminder-time step (default 20:00 local). Confirming a time SHALL run the existing `reminders` authorization flow and, on success, persist `reminderConfig` enabled with that time first. Skipping SHALL leave reminders disabled without requesting authorization. The step SHALL NOT block completing onboarding or redefine `reminderConfig`.
 
 #### Scenario: Setting a time enables reminders
 - **WHEN** the user picks a reminder time of 20:00 in the onboarding step and confirms, and authorization is granted

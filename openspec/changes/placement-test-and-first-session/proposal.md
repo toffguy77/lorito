@@ -3,48 +3,55 @@
 Onboarding asks the user to self-assess their level from six labels. People who
 "know some Spanish" guess, and a wrong guess hurts on day one: too low and the
 first cards are boring, too high and the first session is a wall of unknown rules.
-After onboarding the user lands on Today and has to find "Начать" themselves —
-the first study session, which is the activation moment, is one more decision
-away. We already ship 892 exercises tagged by level and card, enough to measure
-level in two minutes and to show the user their first personal mistakes.
+After onboarding the user lands on Today and has to find "Начать" themselves, and
+with the default of 1 new card per day the first session is a single card — the
+activation moment is both delayed and tiny. We already ship 892 exercises tagged
+by level and card, enough to measure level in a few minutes, change what gets
+studied, and show the user their first personal mistakes.
 
 ## What Changes
 
-- **Placement test option in onboarding:** next to the manual level list, a
-  "Не знаю — проверить за 2 минуты" action starts a short adaptive test built
-  from existing auto-checkable exercises.
-- **Adaptive selection:** questions climb or drop a level based on answers;
-  the test stops after a fixed question budget or when the level is settled,
-  and proposes a target level the user can accept or change.
-- **Result screen:** proposed level plus "ваши 3 ловушки" — up to three
-  «Частые ошибки» items from cards whose exercises the user failed.
-- **Diagnostic only:** test answers never touch `CardReview` or the study log.
-- **First session right after onboarding:** finishing onboarding opens the
-  first study session directly (when the queue is non-empty) instead of
-  landing on Today.
+- **Placement test option in onboarding:** next to the manual level list,
+  "Не знаю — проверить за 2 минуты" starts a block-based test built from existing
+  auto-checkable exercises: 3 questions per level, a level passes at ≥ 2 of 3.
+- **Result changes what is studied:** the proposed target level is one above the
+  highest passed level (A1 if none) and becomes `targetLevel` when accepted;
+  passed levels are remembered as "known" so their new cards are introduced after
+  the higher levels' cards; an optional «Пропустить то, что я знаю» seeds the
+  cards answered correctly in the test as already reviewed via the scheduler.
+- **Result screen** shows "ваши 3 ловушки" — «Частые ошибки» items of cards the
+  user failed.
+- **One onboarding order:** level (manual or test) → themes → reminders (the
+  pending `streak-reminders` step stays last). Goal and regional-variant prompts
+  move out of onboarding to Today after the first session.
+- **First session right after onboarding** with a one-off allowance of 3 new
+  cards, failed-test cards first, instead of landing on Today.
+- **Analytics:** placement and first-session events added to `product-analytics`.
 
 ## Capabilities
 
 ### New Capabilities
-- `placement-test`: adaptive question selection, stopping rule, level
-  proposal, trap extraction, isolation from SRS state.
+- `placement-test`: block selection, pass/stop rules, level proposal, known
+  levels, optional seeding, trap extraction.
 
 ### Modified Capabilities
-- `onboarding-and-selection`: adds the placement-test path into level
-  selection and the first-session hand-off after completion (ADDED requirements;
-  the pending `streak-reminders` reminder step stays the last onboarding step).
+- `onboarding-and-selection`: ADDED — test path in level selection, the single
+  onboarding order, first-session hand-off with its one-off allowance,
+  post-session prompts on Today.
+- `daily-plan`: ADDED — new cards of placement-known levels are introduced after
+  the cards of higher included levels.
+- `product-analytics` (from sibling change): ADDED placement events.
 
 ## Impact
 
-- **Domain**: `PlacementTest` (pure: next question, stopping rule, proposed
-  level, traps) over `Exercise` + `ContentCatalog`; deterministic with an
-  injected seed.
-- **Features**: `OnboardingView` gains the test path and result screen;
-  `RootView`/`MainTabView` gains a one-shot "start first session" hand-off.
-- **Persistence**: none (test results are not stored; the proposed level is
-  persisted only as `UserSettings.targetLevel` when accepted).
-- **Analytics**: emits events defined by the sibling `product-analytics`
-  change when present (test started / completed / level accepted).
-- Depends on archived `plumaje-design-system` and `recall-first-study`;
-  feeds `personal-traps` (traps found in the test seed the personal list if
-  that change is applied).
+- **Domain**: `PlacementTest` (pure: next question, block scoring, stop rule,
+  proposal, known levels, traps, seeding plan); traps use `CardBodyParser`
+  (moved to Domain by `learning-platform-foundation`).
+- **Persistence**: `UserSettings.placementKnownLevel: CEFRLevel?` (optional
+  scalar, per `cloudkit-schema-release`); optional seeded `CardReview` records.
+- **Features**: onboarding test path and result screen; one-shot first-session
+  hand-off; Today prompt slots for goal (`study-goal`) and variant
+  (`regional-variants`).
+- Depends on `learning-platform-foundation` (learning day, new-item budget,
+  item kinds), `cloudkit-schema-release`, `product-analytics`; pending
+  `streak-reminders` keeps the reminder step last.

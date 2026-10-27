@@ -3,52 +3,52 @@
 The audit identified Russian speakers living in Spain as the segment where Lorito's
 value is highest and who can pay (116.8k Russian citizens with residence permits in
 Spain per Eurostat via The Moscow Times). Spanish nationality by residence requires
-two exams for most applicants: DELE A2 and CCSE. Both have a date, a fee and a
-failure cost (a DELE A2 retake costs the full fee, ≈ €130). Nothing in the App
-Store prepares Russian speakers for both exams with explanations in Russian. Our
-159 grammar cards and 892 exercises already cover most of what DELE A2 tests; what
-is missing is the exam format, the CCSE civics content, and a readiness signal.
+two exams for most applicants: DELE A2 and CCSE; DELE A2 is also asked for by
+employers and programmes. Both exams have a date, a fee and a failure cost (a DELE
+A2 retake costs the full fee, ≈ €130). Our 159 grammar cards and 892 exercises
+already cover most of what DELE A2 tests; what is missing is the exam format, the
+CCSE civics content, and a readiness signal.
 
 ## What Changes
 
-- New «Путь к гражданству» section with two tracks: **DELE A2** and **CCSE**.
-- **DELE A2 track:** practice and timed mock exams in the real four-part format
+- New section «Экзамены DELE и CCSE». Inside it, the track «Путь к гражданству»
+  bundles DELE A2 + CCSE for nationality applicants; DELE A2 is also usable on its
+  own (e.g. for work).
+- **DELE A2:** practice and timed mock exams in the official four-part format
   (reading 60 min, listening 40 min, writing and interaction 45 min, speaking and
-  interaction 12 min + 12 min preparation), scored per group with the pass rule
+  interaction 12 min + 12 min preparation; 25 points each), scored per group with
   "≥ 30/50 in Group 1 (reading + writing) and ≥ 30/50 in Group 2 (listening +
-  speaking)". Writing and speaking are self-assessed against published-style rubrics.
-- **CCSE track:** a question bank of civics and culture questions, practice with
-  spaced repetition, and 25-question mock tests in 45 minutes, pass at ≥ 15 correct.
-- **Our own authored question bank.** Whether Instituto Cervantes materials may be
-  reused is an open question; the content model supports authored items with a
-  per-item source/licence field, and shipping any third-party item is gated on a
-  licensing check.
-- **Exam date and readiness:** the user sets an exam date (shared with
-  `study-goal`), sees a countdown, and a readiness score per part computed by a
-  pure function from mock results and the mastery of mapped grammar cards.
-- The section is a Pro feature (`lorito-pro`); a free preview (one CCSE mock and
-  one DELE reading task) stays available.
+  speaking)". Writing and speaking are self-assessed against rubrics; speaking
+  recordings stay on the device.
+- **CCSE:** the official Instituto Cervantes question bank imported with source
+  attribution (owner decision 2026-10-27), practised with spaced repetition as
+  `ccse:<id>` review items, and 25-question mock tests in 45 minutes, pass at ≥ 15.
+- **Exam date and readiness:** exam date and kind come from `study-goal`
+  (`examDate`, `examKind`); a countdown and a readiness score per part, labelled
+  «Скорее сдадите» / «На грани» / «Пока рано».
+- **Pro:** the section is the Lorito Pro feature (`lorito-pro`); a fixed free
+  preview set (one CCSE mock, one DELE A2 reading task) stays free.
 
 ## Capabilities
 
 ### New Capabilities
-- `exam-path`: exam tracks, item types, mock exam timing and scoring, CCSE bank
-  practice, exam date countdown, readiness score, content and licensing rules.
+- `exam-path`: exam tracks, item types, mock timing, scoring and expiry, CCSE bank
+  practice and quota, readiness, exam date countdown, preview set, attribution.
 
 ### Modified Capabilities
-<!-- None: the daily plan, SRS and exercises are reused, not changed. -->
+<!-- None: review items, quotas and learning days come from learning-platform-foundation. -->
 
 ## Impact
 
-- **Content**: new `content/exams/` (DELE A2 tasks, CCSE items) with front matter
-  incl. `source` and `licence`; `tools/validate.py` / `compile.py` extended; audio
-  for listening tasks (recorded or synthesized via `spanish-audio`).
-- **Domain**: `ExamItem`, `MockExam`, `MockScorer` (pure), `ReadinessCalculator`
-  (pure), CCSE items scheduled by the existing SRS.
-- **Persistence**: `MockAttemptRecord` (CloudKit-friendly, optional fields only).
-- **Features**: «Путь к гражданству» entry on Today and in Catalog; mock runner with
-  timer; results screen; rubric self-assessment.
-- **Depends on**: `spanish-audio` (listening), `listening-and-pronunciation`
-  (speaking practice), `study-goal` (exam date), `lorito-pro` (gating),
-  `product-analytics` (funnel events). Archived base: `plumaje-design-system`,
-  `recall-first-study`.
+- **Content**: `content/exams/` — exam definitions (sections, timings, groups,
+  thresholds, `verifiedOn`), DELE A2 tasks, CCSE items imported from the Cervantes
+  manual with `source` and `edition`; importer + validator in `tools/`.
+- **Domain**: `ExamDefinition`, `ExamItem`, `MockScorer`, `MockTimer`,
+  `ReadinessCalculator` (pure); CCSE items are `ItemKind.ccse` review items.
+- **Persistence**: `MockAttemptRecord` and a `ccseDailyNewLimit` setting, synced per
+  `cloudkit-schema-release`; speaking audio files local only.
+- **Features**: section entry on Today and Catalog; mock runner; results; rubric
+  self-assessment; attribution screen.
+- **Depends on**: `learning-platform-foundation` (review items, combined new-item
+  budget, local learning day), `cloudkit-schema-release`, `study-goal`,
+  `spanish-audio`, `listening-and-pronunciation`, `lorito-pro`, `product-analytics`.

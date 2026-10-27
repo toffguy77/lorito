@@ -8,8 +8,8 @@ already defines long-term memory per level; this change turns it into moments.
 
 ## What Changes
 
-- **Weekly recap:** on the first visit to Today on or after Sunday, once per
-  week, a recap card shows days studied out of 7, new rules introduced this
+- **Weekly recap:** from Monday, once per completed Monday–Sunday week, a recap
+  card shows days studied out of 7, new rules introduced this
   week, the current long-term memory count, and the top trap of the
   week; it can be shared as an image.
 - **Level milestones:** when every non-suspended card of an included level is in
@@ -27,16 +27,18 @@ already defines long-term memory per level; this change turns it into moments.
   milestone detection and celebration, share images.
 
 ### Modified Capabilities
-<!-- None. Reads stats-and-streak and personal-traps outputs; does not change their requirements. -->
+- `stats-and-streak`: ADDED — weeks start on Monday (the calculator's calendar
+  currently defaults to Sunday).
 
 ## Impact
 
 - **Domain**: `WeeklyRecap.make(...)` and `LevelMilestones.newlyClosed(...)`,
   pure with injected today; reuse the week boundary of the stats calculator and
   the long-term memory rule of `progress-insights`.
-- **Persistence**: `UserSettings.lastRecapWeek: String?` (ISO week id) and
-  `UserSettings.celebratedLevels: [CEFRLevel]` — optional/defaulted,
-  CloudKit-compatible.
+- **Persistence**: optional scalars `lastRecapWeek` (ISO week id) and
+  `celebratedLevels` (sorted level codes, merged by union) per
+  `cloudkit-schema-release`.
+- Counts only `.card` items (`learning-platform-foundation`).
 - **Features**: Today recap card, milestone celebration sheet, `ImageRenderer`
   share images (pattern shared with `home-screen-widgets`' streak share card).
 - Depends on `progress-insights` (long-term memory by level). Uses

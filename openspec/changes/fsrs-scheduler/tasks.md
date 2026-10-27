@@ -1,27 +1,32 @@
+## 0. Dependencies
+
+- [ ] 0.1 `learning-platform-foundation` (local learning day, first-grade-per-day memory updates, end-of-session re-show) and `cloudkit-schema-release` applied
+
 ## 1. Model (Domain, TDD)
 
-- [ ] 1.1 Write failing tests: `ReviewState` decodes old data without `stability`/`difficulty`; new optional fields round-trip
-- [ ] 1.2 Add optional `stability`, `difficulty` to `ReviewState`; `FSRSParameters` with the 21 FSRS-6 defaults copied from a reference implementation (cite source in a comment) and `maxInterval = 365`; test pinning the values
-- [ ] 1.3 Add `desiredRetention: Double = 0.9` to `UserSettings` (range-clamped 0.80–0.95); decode test for old settings
+- [ ] 1.1 Add optional `stability`, `difficulty`, `lastReviewDate`, `schedulerVersion`, `fsrsDueDate` to `ReviewState`
+- [ ] 1.2 `FSRSParameters` with the 21 FSRS-6 defaults copied from a reference implementation (cite source in a comment) and `maxInterval = 365`; test pinning the values
+- [ ] 1.3 Add `desiredRetention: Double = 0.9` (clamped 0.80–0.95) to `UserSettings`
 
 ## 2. Scheduler (Domain, TDD)
 
-- [ ] 2.1 Write failing tests from the spec: determinism, four grades distinct, new-card initialisation (easy > good ≥ hard), again → learning/interval 0/difficulty ≤ 10, retention 0.9 → interval == round(stability), 0.95 ≤ 0.9 interval, ordering again ≤ hard ≤ good < easy over a grid of states, suspended no-op, max interval clamp
-- [ ] 2.2 Cross-check against reference values: for 3–5 fixed review histories, compare stability/difficulty with the reference implementation's output (tolerance 1e-3) — fixtures generated once and committed
-- [ ] 2.3 Implement `FSRSScheduler` (retrievability curve, stability/difficulty updates incl. same-day rule, interval inversion, ordering guard, clamps); keep `SpacedRepetitionScheduler` for rollback, unused
-- [ ] 2.4 Write failing tests then implement `SM2Migration.memoryState(from:)`: stability = max(interval, 1), ease→difficulty linear map clamped 1–10, new/suspended untouched
+- [ ] 2.1 Write failing tests from the spec: determinism; four grades distinct; new-card init (easy > good ≥ hard); again → learning/interval 0/difficulty ≤ 10; learning + hard → learning, reps unchanged, ≥ 1 day; learning + good → review; retention 0.9 → interval == round(stability); 0.95 ≤ 0.9; elapsed days from `lastReviewDate`; ordering below cap; equality at cap; suspended no-op; max clamp
+- [ ] 2.2 Cross-check: for 3–5 fixed review histories compare stability/difficulty with the reference implementation (tolerance 1e-3); fixtures committed
+- [ ] 2.3 Implement `FSRSScheduler` (curve, stability/difficulty updates, interval inversion, ordering guard, clamps, sets `lastReviewDate`, `schedulerVersion = 2`, `fsrsDueDate`); keep `SpacedRepetitionScheduler` for rollback, unused
+- [ ] 2.4 Write failing tests then implement `SM2Migration`: stability = max(interval, 1), ease → difficulty map, `lastReviewDate` = dueDate − interval when absent; new/suspended untouched
+- [ ] 2.5 Write failing tests then implement the consistency check: version ≠ 2 or `fsrsDueDate` ≠ `dueDate` → re-migrate
 
 ## 3. Integration
 
-- [ ] 3.1 Switch `GradingService` and `IntervalPreview` to `FSRSScheduler`, passing `desiredRetention`; existing preview tests updated to FSRS values, ordering test added
-- [ ] 3.2 SwiftData record: add optional `stability`, `difficulty`; mapping both ways; persistence round-trip test
-- [ ] 3.3 CloudKit: verify the new fields sync in development; note the production schema deploy step in release checklist
-- [ ] 3.4 Settings row «Целевая запоминаемость» (stepper or segmented 80/85/90/95%) with one-line explanation
+- [ ] 3.1 Switch `GradingService` and `IntervalPreview` to `FSRSScheduler` with `desiredRetention`; update preview tests; allow equal captions at the cap
+- [ ] 3.2 Persistence: new `ReviewRecord` and `SettingsRecord` optional/defaulted properties, mapped both ways in `SwiftDataUserDataStore`; store round-trip tests
+- [ ] 3.3 Export the dev CloudKit schema to `cloudkit/schema.ckdb`; add production deploy to the release gate
+- [ ] 3.4 Settings row «Целевая запоминаемость» (80/85/90/95%) with a one-line explanation
 - [ ] 3.5 Regression: daily-plan due selection and stats tests unchanged and green
 
 ## 4. Validation
 
 - [ ] 4.1 `swift test` green
-- [ ] 4.2 `xcodebuild` build; UI test: grade buttons still show ordered captions
-- [ ] 4.3 Manual: upgrade an install with SM-2 data → studying works, due dates unchanged until graded
+- [ ] 4.2 `xcodebuild` build; UI test: grade buttons show ordered captions
+- [ ] 4.3 Manual: upgrade an install with SM-2 data → studying works, due dates unchanged until graded; edit a card on an old build on a second device → re-migrated on the new build
 - [ ] 4.4 `openspec validate fsrs-scheduler --strict`

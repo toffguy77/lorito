@@ -1,72 +1,85 @@
 ## Context
 
-Cards are Markdown files parsed by `CardBodyParser` into Markdown spans and
-typed callouts; exercises are Markdown files with YAML frontmatter; the
-conjugation trainer (pending sibling) stores six persons per tense
-(yo, tú, él, nosotros, vosotros, ellos). Voseo replaces `tú` with `vos`: in
-the present indicative the verb drops `-r`, adds `-s` and stresses the last
-vowel (`hablás, comés, vivís`; `sos` for ser); affirmative commands drop `-r`
-with an accent (`hablá, comé, viví`); preterite, imperfect and present
-subjunctive are the same as `tú` in the standard Rioplatense norm described in
-[LibreTexts: Vos](https://human.libretexts.org/Courses/Franklin_and_Marshall_College/Puertas_y_Puentes%3A_Intermediate_Spanish_I___2e/08%3A_Apendice/8.01%3A_Vos).
-The same source notes that voseo usage and forms vary by country.
+`spanish-audio` owns the synced setting `spanishVariant` (`spain` «Испания»,
+default; `latinAmerica` «Латинская Америка») and requires other changes to
+extend it rather than add another setting. `learning-platform-foundation`
+moves `CardBodyParser` into `Domain` and defines Spanish spans with a
+long-press context menu that includes «Варианты». Content is seeded from an
+Obsidian vault, where `[[…]]` is the wiki-link syntax. The conjugation trainer
+takes the person set as an input. Voseo replaces `tú` with `vos`: in the
+present indicative the verb drops `-r`, adds `-s` and stresses the last vowel
+(`hablás, comés, vivís`; `sos` for ser); affirmative commands drop `-r` with an
+accent (`hablá, comé, viví`); preterite, imperfect and present subjunctive are
+the same as `tú`, as described in
+[LibreTexts: Vos](https://human.libretexts.org/Courses/Franklin_and_Marshall_College/Puertas_y_Puentes%3A_Intermediate_Spanish_I___2e/08%3A_Apendice/8.01%3A_Vos),
+which also notes that voseo usage and forms vary by country.
 
 ## Goals / Non-Goals
 
 **Goals:** one setting changes what the learner reads, practises, drills and
-hears; content stays a single source with small, validated markup.
+hears; content stays a single source with small, validated markup that is
+safe in Obsidian.
 
-**Non-Goals:** separate courses per country; Caribbean, Andean or Central
-American voseo paradigms; Chilean voseo forms; pronunciation coaching of
-`yeísmo`/`sheísmo`; variant-specific CEFR content.
+**Non-Goals:** separate courses per country; Caribbean, Andean, Central
+American or Chilean voseo paradigms; pronunciation coaching of
+`yeísmo`/`sheísmo`; asking the variant during onboarding.
 
 ## Decisions
 
-**Three variants.** `spain` (tú + vosotros), `latam` (tú + ustedes as the only
-second-person plural), `rioplatense` (vos + ustedes). Default `spain`, since the
-course was written for it.
+**Extend, don't duplicate.** `SpanishVariant` gains `rioplatense`
+(«Риоплатский»). Markup uses short codes mapped to the setting: `es` → `spain`,
+`am` → `latinAmerica`, `rio` → `rioplatense`. Persons: `spain` — tú + vosotros;
+`latinAmerica` — tú + ustedes; `rioplatense` — vos + ustedes.
+
+**When to ask.** After the first completed study session a one-time Today
+prompt («Где вы учите испанский?») offers the three values; dismissing keeps
+«Испания». The choice is always in Settings. Onboarding order belongs to
+`placement-test-and-first-session` and is unchanged.
 
 **Card markup.**
-- Block: a fenced directive `:::variant spain` / `:::variant latam rioplatense`
-  … `:::` around a paragraph, list or table. Content outside directives is
-  common to all variants.
-- Inline: `[[spain:coche|latam:carro|rioplatense:auto]]`; any variant may be
-  omitted and falls back to `spain`.
-- Rendering: the learner's variant block or inline form is shown normally;
-  other variants' blocks collapse into a labelled note («В Испании: …»,
-  «В Латинской Америке: …», «В Аргентине и Уругвае: …») so the learner still
-  understands texts from other regions.
+- Block: a line `:::variant <codes>` … a line `:::` around paragraphs, lists
+  or tables. Content outside blocks applies to all variants.
+- Inline: `{es: coche | am: carro | rio: auto}` — at least two codes; a missing
+  code falls back to `es`. Braces with a `code:` prefix are reserved; plain
+  braces elsewhere stay text. Neither form collides with Obsidian wiki-links
+  (`[[…]]`) or callouts (`> [!note]`).
+- Rendering: the learner's block or inline form is shown in place; other
+  variants' blocks collapse into labelled notes («В Испании: …», «В Латинской
+  Америке: …», «В Аргентине и Уругвае: …»); inline alternatives are Spanish
+  spans whose «Варианты» menu action lists all forms.
 
-**Exercises.** Optional frontmatter `variants: {latam: {answer, accept,
-options}, rioplatense: {…}}` overrides answer data per variant, and optional
-`only: [spain]` restricts an exercise to listed variants (it is never selected
-for others). Resolution is a pure function of the exercise and the variant.
+**Exercises.** Optional frontmatter `variants: {am: {answer, accept, options},
+rio: {…}}` overrides answer data per variant, and optional `only: [es]`
+restricts an exercise to listed variants. Resolution is a pure function of the
+exercise and the variant.
 
-**Conjugation persons.** `spain`: six persons. `latam`: five (no `vosotros`).
-`rioplatense`: `vos` replaces `tú`, no `vosotros`. The pipeline generates `vos`
-forms for the present indicative and affirmative imperative of regular verbs;
-other tenses reuse the `tú` form; verbs may override (`ser` → `sos`).
+**Conjugation persons.** The person set passed to `conjugation-trainer`:
+`spain` six persons; `latinAmerica` five (no vosotros); `rioplatense` vos
+instead of tú, no vosotros. The pipeline generates `vos` forms for the present
+indicative and affirmative imperative of regular verbs, copies `tú` forms for
+other tenses, and verbs may override (`ser` → `sos`).
 
-**Voice selection.** The variant maps to a preferred voice language:
-`spain` → `es-ES`, `latam` → `es-MX`, `rioplatense` → `es-AR`. At runtime the app
-asks the speech service for a voice in that language and falls back to `es-MX`
-then `es-ES` if none is installed (the installed voice list differs per
-device). Speech recognition (`listening-and-pronunciation`) uses the same
-language when on-device recognition supports it, else `es-ES`.
+**Voice fallback.** `spanish-audio` maps `spain` → `es-ES` and
+`latinAmerica` → `es-MX`; this change adds `rioplatense` → `es-AR`, falling back
+to `es-MX` then `es-ES` when no voice in that language is installed (the
+installed voice list differs per device). Recognition in
+`listening-and-pronunciation` uses the same language when on-device
+recognition supports it, else `es-ES`.
 
 ## Risks / Trade-offs
 
 - [Markup noise in card files] → used only where usage differs; validator
-  rejects malformed or unknown variants.
+  rejects malformed blocks and unknown codes.
+- [Older app versions read an unknown `spanishVariant` value] → decoding falls
+  back to `spain` per `cloudkit-schema-release` rules for enum fields.
 - [Voseo norms vary by country] → scope limited to Rioplatense; the note
   explains it.
-- [Changing variant mid-course] → review states are per card/item and stay
-  valid; drills simply ask different persons from then on.
-- [New settings field] → CloudKit development schema change, production
-  deployment before release; default keeps old records valid.
+- [Changing variant mid-course] → review states stay valid; drills ask
+  different persons from then on.
 
 ## Migration Plan
 
-Additive. Existing users stay on `spain` (identical to today) and see the
-option once in settings. Rollback: the parser ignores directives and shows
-the `spain` form, so content with markup stays readable.
+Additive. Existing users stay on their current `spanishVariant`; the Today
+prompt appears once after their next completed session. Rollback: the parser
+shows the `es` form and ignores blocks for other codes, so content with markup
+stays readable.

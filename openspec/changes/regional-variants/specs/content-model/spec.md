@@ -1,21 +1,25 @@
 ## ADDED Requirements
 
 ### Requirement: Card variant markup
-Card bodies MAY contain variant blocks — a line `:::variant` followed by one or more of `spain`, `latam`, `rioplatense`, the block content, and a closing line `:::` — and inline alternatives `[[spain:…|latam:…|rioplatense:…]]` with at least two variants. The parser SHALL treat content outside markup as applying to all variants.
+Card bodies MAY contain variant blocks — a line `:::variant` followed by one or more codes `es`, `am`, `rio`, the block content, and a closing line `:::` — and inline alternatives `{es: … | am: … | rio: …}` with at least two codes. The parser SHALL treat content outside markup as applying to all variants and SHALL treat braces not starting with a known `code:` prefix as plain text.
 
 #### Scenario: Valid block
-- **WHEN** a card contains a `:::variant latam rioplatense` block closed by `:::`
-- **THEN** the card is valid and the block applies to those two variants
+- **WHEN** a card contains a `:::variant am rio` block closed by `:::`
+- **THEN** the card is valid and the block applies to Latin America and Rioplatense
 
-#### Scenario: Unknown variant
-- **WHEN** a card uses `:::variant mexico`
-- **THEN** validation fails and names the card and the unknown variant
+#### Scenario: Unknown code
+- **WHEN** a card contains `{es: coche | mx: carro}`
+- **THEN** validation fails and names the card and the unknown code
+
+#### Scenario: Plain braces stay text
+- **WHEN** a card contains `{1, 2, 3}`
+- **THEN** it is rendered as text and validation passes
 
 ### Requirement: Exercise variant fields
-Exercises MAY declare `variants`, a map from `latam` or `rioplatense` to overrides of `answer`, `accept` and `options` that follow the exercise type's schema, and `only`, a non-empty list of variants the exercise applies to; when present, these fields SHALL be validated against the exercise type's schema.
+Exercises MAY declare `variants`, a map from `am` or `rio` to overrides of `answer`, `accept` and `options`, and `only`, a non-empty list of codes the exercise applies to; when present, these fields SHALL be validated against the exercise type's schema.
 
 #### Scenario: Override follows the type schema
-- **WHEN** a `multiple-choice` exercise's `latam` override sets an `answer` not in its `options`
+- **WHEN** a `multiple-choice` exercise's `am` override sets an `answer` not in its `options`
 - **THEN** validation fails and names the exercise
 
 ### Requirement: Voseo forms in conjugation content
@@ -26,7 +30,7 @@ Verb files MAY declare `vos` forms per tense; for regular verbs without them the
 - **THEN** the compiled paradigm uses `sos`
 
 ### Requirement: Documented variant schema
-`content/schema.md` SHALL document the variants, the card block and inline markup, the exercise `variants` and `only` fields, and voseo forms in verb files.
+`content/schema.md` SHALL document the variant codes, the card block and inline markup (and why `[[…]]` is not used), the exercise `variants` and `only` fields, and `vos` forms in verb files.
 
 #### Scenario: Schema covers variants
 - **WHEN** a contributor opens `content/schema.md`

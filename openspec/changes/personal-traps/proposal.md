@@ -12,15 +12,16 @@ mistake data to copy.
 ## What Changes
 
 - **Personal traps derived from failures:** a card becomes a personal trap when
-  it is graded Опять or one of its exercises is answered incorrectly, provided
-  the card has a «Частые ошибки» section.
+  its first graded study event of a learning day is Опять (exercise failures
+  count through the study event they write, once), provided the card has a
+  «Частые ошибки» section. Only cards in the current scope are shown.
 - **«Мои ловушки» list:** ranked by most recent failure, then by failure count;
   each entry shows the card's mistakes items and opens the card.
 - **5-minute traps session:** up to 10 traps, each shown as the mistake item on
-  the front and the card's explanation on the back, self-assessed "Ещё путаю" /
-  "Понял". It does not change `CardReview` scheduling.
+  the front and the card's explanation on the back, self-assessed «Ещё путаю» /
+  «Ясно». It does not change `CardReview` scheduling.
 - **Leaving the list:** a trap is resolved after two passing outcomes since its
-  last failure (Хорошо/Легко grades in study or "Понял" in the traps session).
+  last failure (Хорошо/Легко grades in study or «Ясно» in the traps session).
 - **Trap of the day prefers personal traps** when the user has any.
 - Entry point on Today ("Мои ловушки · N") and from the session summary.
 
@@ -34,10 +35,12 @@ mistake data to copy.
 
 ## Impact
 
-- **Domain**: `PersonalTraps` pure function over study events, exercise
-  attempts, trap-practice events and the content catalog (with injected today).
+- **Domain**: `PersonalTraps` pure function over study events, trap-practice
+  events, scope and the content catalog (with injected today).
 - **Persistence**: new `TrapPracticeEvent` record (card id, date, outcome) —
-  additive, CloudKit-compatible; no change to existing records.
+  additive, per `cloudkit-schema-release`.
+- Depends on `learning-platform-foundation` (CardBodyParser in Domain, item
+  kinds, learning day, first-grade-per-day rule).
 - **Features**: Today entry card, traps list screen, traps session (focus-mode
   UI from `plumaje-design-system`), trap-of-the-day picker input.
 - Related: `placement-test-and-first-session` shows "ваши 3 ловушки" from the
