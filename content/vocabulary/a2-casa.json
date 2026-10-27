@@ -1,0 +1,249 @@
+[
+ {
+  "id": "alquiler",
+  "es": "alquiler",
+  "pos": "noun",
+  "ru": "аренда, квартплата",
+  "example_es": "El alquiler es caro.",
+  "example_ru": "Аренда дорогая.",
+  "rank": 3217,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "alquileres"
+  ]
+ },
+ {
+  "id": "vecindario",
+  "es": "vecindario",
+  "pos": "noun",
+  "ru": "район, соседи",
+  "example_es": "Es un vecindario tranquilo.",
+  "example_ru": "Это тихий район.",
+  "rank": 3692,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "vecindarios"
+  ]
+ },
+ {
+  "id": "muebles",
+  "es": "muebles",
+  "pos": "noun",
+  "ru": "мебель",
+  "example_es": "Compramos muebles nuevos.",
+  "example_ru": "Мы купили новую мебель.",
+  "rank": 4657,
+  "article": "los",
+  "gender": "m"
+ },
+ {
+  "id": "armario",
+  "es": "armario",
+  "pos": "noun",
+  "ru": "шкаф",
+  "example_es": "La ropa está en el armario.",
+  "example_ru": "Одежда в шкафу.",
+  "rank": 2595,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "armarios"
+  ]
+ },
+ {
+  "id": "sofá",
+  "es": "sofá",
+  "pos": "noun",
+  "ru": "диван",
+  "example_es": "Me siento en el sofá.",
+  "example_ru": "Я сажусь на диван.",
+  "rank": 2809,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "sofás"
+  ]
+ },
+ {
+  "id": "nevera",
+  "es": "nevera",
+  "pos": "noun",
+  "ru": "холодильник",
+  "example_es": "La leche está en la nevera.",
+  "example_ru": "Молоко в холодильнике.",
+  "rank": 6862,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "neveras"
+  ]
+ },
+ {
+  "id": "lavadora",
+  "es": "lavadora",
+  "pos": "noun",
+  "ru": "стиральная машина",
+  "example_es": "Pongo la lavadora.",
+  "example_ru": "Я включаю стиральную машину.",
+  "rank": 12589,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "lavadoras"
+  ]
+ },
+ {
+  "id": "basura",
+  "es": "basura",
+  "pos": "noun",
+  "ru": "мусор",
+  "example_es": "Saca la basura, por favor.",
+  "example_ru": "Вынеси мусор, пожалуйста.",
+  "rank": 947,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "basuras"
+  ]
+ },
+ {
+  "id": "luz",
+  "es": "luz",
+  "pos": "noun",
+  "ru": "свет",
+  "example_es": "Apaga la luz.",
+  "example_ru": "Выключи свет.",
+  "rank": 551,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "luces"
+  ]
+ },
+ {
+  "id": "calefacción",
+  "es": "calefacción",
+  "pos": "noun",
+  "ru": "отопление",
+  "example_es": "La calefacción no funciona.",
+  "example_ru": "Отопление не работает.",
+  "rank": 10168,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "calefacciones"
+  ]
+ },
+ {
+  "id": "jardín",
+  "es": "jardín",
+  "pos": "noun",
+  "ru": "сад",
+  "example_es": "Tenemos un jardín pequeño.",
+  "example_ru": "У нас маленький сад.",
+  "rank": 1829,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "jardines"
+  ]
+ },
+ {
+  "id": "terraza",
+  "es": "terraza",
+  "pos": "noun",
+  "ru": "терраса",
+  "example_es": "Cenamos en la terraza.",
+  "example_ru": "Мы ужинаем на террасе.",
+  "rank": 8752,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "terrazas"
+  ]
+ },
+ {
+  "id": "ascensor",
+  "es": "ascensor",
+  "pos": "noun",
+  "ru": "лифт",
+  "example_es": "El ascensor está roto.",
+  "example_ru": "Лифт сломан.",
+  "rank": 3548,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "ascensores"
+  ]
+ },
+ {
+  "id": "limpiar",
+  "es": "limpiar",
+  "pos": "verb",
+  "ru": "убирать",
+  "example_es": "Limpio la casa los sábados.",
+  "example_ru": "Я убираю дом по субботам.",
+  "rank": 1980
+ },
+ {
+  "id": "lavar",
+  "es": "lavar",
+  "pos": "verb",
+  "ru": "мыть, стирать",
+  "example_es": "Lavo los platos.",
+  "example_ru": "Я мою посуду.",
+  "rank": 4560
+ },
+ {
+  "id": "cocinar",
+  "es": "cocinar",
+  "pos": "verb",
+  "ru": "готовить еду",
+  "example_es": "Me encanta cocinar.",
+  "example_ru": "Я обожаю готовить.",
+  "rank": 3132
+ },
+ {
+  "id": "mudarse",
+  "es": "mudarse",
+  "pos": "verb",
+  "ru": "переезжать",
+  "example_es": "Nos mudamos en mayo.",
+  "example_ru": "Мы переезжаем в мае.",
+  "rank": 8494
+ },
+ {
+  "id": "apagar",
+  "es": "apagar",
+  "pos": "verb",
+  "ru": "выключать",
+  "example_es": "Apaga la televisión.",
+  "example_ru": "Выключи телевизор.",
+  "rank": 4917
+ },
+ {
+  "id": "encender",
+  "es": "encender",
+  "pos": "verb",
+  "ru": "включать",
+  "example_es": "Enciende la luz.",
+  "example_ru": "Включи свет.",
+  "rank": 5129
+ },
+ {
+  "id": "roto",
+  "es": "roto",
+  "pos": "adj",
+  "ru": "сломанный",
+  "example_es": "La silla está rota.",
+  "example_ru": "Стул сломан.",
+  "rank": 1648,
+  "forms": [
+   "rota",
+   "rotos",
+   "rotas"
+  ]
+ }
+]

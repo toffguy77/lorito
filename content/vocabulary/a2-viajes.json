@@ -1,0 +1,333 @@
+[
+ {
+  "id": "viaje",
+  "es": "viaje",
+  "pos": "noun",
+  "ru": "поездка",
+  "example_es": "¡Buen viaje!",
+  "example_ru": "Счастливого пути!",
+  "rank": 626,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "viajes"
+  ]
+ },
+ {
+  "id": "vacaciones",
+  "es": "vacaciones",
+  "pos": "noun",
+  "ru": "отпуск, каникулы",
+  "example_es": "Me voy de vacaciones.",
+  "example_ru": "Я уезжаю в отпуск.",
+  "rank": 1400,
+  "article": "las",
+  "gender": "f"
+ },
+ {
+  "id": "maleta",
+  "es": "maleta",
+  "pos": "noun",
+  "ru": "чемодан",
+  "example_es": "Hago la maleta.",
+  "example_ru": "Я собираю чемодан.",
+  "rank": 3226,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "maletas"
+  ]
+ },
+ {
+  "id": "pasaporte",
+  "es": "pasaporte",
+  "pos": "noun",
+  "ru": "паспорт",
+  "example_es": "No olvides el pasaporte.",
+  "example_ru": "Не забудь паспорт.",
+  "rank": 4119,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "pasaportes"
+  ]
+ },
+ {
+  "id": "reserva",
+  "es": "reserva",
+  "pos": "noun",
+  "ru": "бронь",
+  "example_es": "Tengo una reserva.",
+  "example_ru": "У меня бронь.",
+  "rank": 3405,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "reservas"
+  ]
+ },
+ {
+  "id": "vuelo",
+  "es": "vuelo",
+  "pos": "noun",
+  "ru": "рейс",
+  "example_es": "El vuelo sale con retraso.",
+  "example_ru": "Рейс задерживается.",
+  "rank": 1303,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "vuelos"
+  ]
+ },
+ {
+  "id": "equipaje",
+  "es": "equipaje",
+  "pos": "noun",
+  "ru": "багаж",
+  "example_es": "Mi equipaje no ha llegado.",
+  "example_ru": "Мой багаж не прибыл.",
+  "rank": 3930,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "equipajes"
+  ]
+ },
+ {
+  "id": "turista",
+  "es": "turista",
+  "pos": "noun",
+  "ru": "турист, туристка",
+  "example_es": "Hay muchos turistas.",
+  "example_ru": "Здесь много туристов.",
+  "rank": 11448,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "turistas"
+  ]
+ },
+ {
+  "id": "monumento",
+  "es": "monumento",
+  "pos": "noun",
+  "ru": "памятник",
+  "example_es": "Visitamos el monumento.",
+  "example_ru": "Мы осмотрели памятник.",
+  "rank": 10676,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "monumentos"
+  ]
+ },
+ {
+  "id": "museo",
+  "es": "museo",
+  "pos": "noun",
+  "ru": "музей",
+  "example_es": "El museo abre a las diez.",
+  "example_ru": "Музей открывается в десять.",
+  "rank": 3190,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "museos"
+  ]
+ },
+ {
+  "id": "excursión",
+  "es": "excursión",
+  "pos": "noun",
+  "ru": "экскурсия",
+  "example_es": "Hacemos una excursión.",
+  "example_ru": "Мы едем на экскурсию.",
+  "rank": 8555,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "excursiones"
+  ]
+ },
+ {
+  "id": "montaña",
+  "es": "montaña",
+  "pos": "noun",
+  "ru": "гора",
+  "example_es": "Subimos a la montaña.",
+  "example_ru": "Мы поднялись в горы.",
+  "rank": 2026,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "montañas"
+  ]
+ },
+ {
+  "id": "mar",
+  "es": "mar",
+  "pos": "noun",
+  "ru": "море",
+  "example_es": "Me encanta el mar.",
+  "example_ru": "Я обожаю море.",
+  "rank": 1036,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "mares"
+  ]
+ },
+ {
+  "id": "isla",
+  "es": "isla",
+  "pos": "noun",
+  "ru": "остров",
+  "example_es": "Viven en una isla.",
+  "example_ru": "Они живут на острове.",
+  "rank": 1353,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "islas"
+  ]
+ },
+ {
+  "id": "pueblo",
+  "es": "pueblo",
+  "pos": "noun",
+  "ru": "деревня, городок",
+  "example_es": "Es un pueblo tranquilo.",
+  "example_ru": "Это тихий городок.",
+  "rank": 570,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "pueblos"
+  ]
+ },
+ {
+  "id": "paisaje",
+  "es": "paisaje",
+  "pos": "noun",
+  "ru": "пейзаж",
+  "example_es": "¡Qué paisaje tan bonito!",
+  "example_ru": "Какой красивый пейзаж!",
+  "rank": 7916,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "paisajes"
+  ]
+ },
+ {
+  "id": "recuerdo",
+  "es": "recuerdo",
+  "pos": "noun",
+  "ru": "сувенир; воспоминание",
+  "example_es": "Compré un recuerdo.",
+  "example_ru": "Я купил сувенир.",
+  "rank": 547,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "recuerdos"
+  ]
+ },
+ {
+  "id": "retraso",
+  "es": "retraso",
+  "pos": "noun",
+  "ru": "задержка",
+  "example_es": "El tren tiene retraso.",
+  "example_ru": "Поезд задерживается.",
+  "rank": 4878,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "retrasos"
+  ]
+ },
+ {
+  "id": "alojamiento",
+  "es": "alojamiento",
+  "pos": "noun",
+  "ru": "жильё",
+  "example_es": "Buscamos alojamiento barato.",
+  "example_ru": "Мы ищем недорогое жильё.",
+  "rank": 9749,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "alojamientos"
+  ]
+ },
+ {
+  "id": "camino",
+  "es": "camino",
+  "pos": "noun",
+  "ru": "дорога, путь",
+  "example_es": "Estamos en camino.",
+  "example_ru": "Мы в пути.",
+  "rank": 305,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "caminos"
+  ]
+ },
+ {
+  "id": "reservar",
+  "es": "reservar",
+  "pos": "verb",
+  "ru": "бронировать",
+  "example_es": "Quiero reservar una mesa.",
+  "example_ru": "Я хочу забронировать столик.",
+  "rank": 13900
+ },
+ {
+  "id": "visitar",
+  "es": "visitar",
+  "pos": "verb",
+  "ru": "посещать",
+  "example_es": "Visitamos Granada.",
+  "example_ru": "Мы побывали в Гранаде.",
+  "rank": 2994
+ },
+ {
+  "id": "conocer-a2",
+  "es": "conocer",
+  "pos": "verb",
+  "ru": "узнавать (место)",
+  "example_es": "Quiero conocer México.",
+  "example_ru": "Я хочу побывать в Мексике.",
+  "rank": 1039
+ },
+ {
+  "id": "perder",
+  "es": "perder",
+  "pos": "verb",
+  "ru": "терять; опаздывать",
+  "example_es": "Perdí el tren.",
+  "example_ru": "Я опоздал на поезд.",
+  "rank": 653
+ },
+ {
+  "id": "alquilar",
+  "es": "alquilar",
+  "pos": "verb",
+  "ru": "снимать, арендовать",
+  "example_es": "Alquilamos un coche.",
+  "example_ru": "Мы арендовали машину.",
+  "rank": 8007
+ },
+ {
+  "id": "descansar",
+  "es": "descansar",
+  "pos": "verb",
+  "ru": "отдыхать",
+  "example_es": "Necesito descansar.",
+  "example_ru": "Мне нужно отдохнуть.",
+  "rank": 1937
+ }
+]

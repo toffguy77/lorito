@@ -1,0 +1,418 @@
+[
+ {
+  "id": "persona",
+  "es": "persona",
+  "pos": "noun",
+  "ru": "человек",
+  "example_es": "Es una persona muy amable.",
+  "example_ru": "Это очень добрый человек.",
+  "rank": 310,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "personas"
+  ]
+ },
+ {
+  "id": "hombre",
+  "es": "hombre",
+  "pos": "noun",
+  "ru": "мужчина",
+  "example_es": "Ese hombre es mi vecino.",
+  "example_ru": "Этот мужчина — мой сосед.",
+  "rank": 121,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "hombres"
+  ]
+ },
+ {
+  "id": "mujer",
+  "es": "mujer",
+  "pos": "noun",
+  "ru": "женщина",
+  "example_es": "La mujer lee un libro.",
+  "example_ru": "Женщина читает книгу.",
+  "rank": 195,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "mujeres"
+  ]
+ },
+ {
+  "id": "niño",
+  "es": "niño",
+  "pos": "noun",
+  "ru": "ребёнок, мальчик",
+  "example_es": "El niño juega en el parque.",
+  "example_ru": "Мальчик играет в парке.",
+  "rank": 375,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "niños"
+  ]
+ },
+ {
+  "id": "familia",
+  "es": "familia",
+  "pos": "noun",
+  "ru": "семья",
+  "example_es": "Mi familia es grande.",
+  "example_ru": "Моя семья большая.",
+  "rank": 254,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "familias"
+  ]
+ },
+ {
+  "id": "padre",
+  "es": "padre",
+  "pos": "noun",
+  "ru": "отец",
+  "example_es": "Mi padre trabaja mucho.",
+  "example_ru": "Мой отец много работает.",
+  "rank": 147,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "padres"
+  ]
+ },
+ {
+  "id": "madre",
+  "es": "madre",
+  "pos": "noun",
+  "ru": "мать",
+  "example_es": "Mi madre cocina muy bien.",
+  "example_ru": "Моя мама очень хорошо готовит.",
+  "rank": 175,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "madres"
+  ]
+ },
+ {
+  "id": "hermano",
+  "es": "hermano",
+  "pos": "noun",
+  "ru": "брат",
+  "example_es": "Tengo un hermano mayor.",
+  "example_ru": "У меня есть старший брат.",
+  "rank": 271,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "hermanos"
+  ]
+ },
+ {
+  "id": "hermana",
+  "es": "hermana",
+  "pos": "noun",
+  "ru": "сестра",
+  "example_es": "Mi hermana vive en Madrid.",
+  "example_ru": "Моя сестра живёт в Мадриде.",
+  "rank": 457,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "hermanas"
+  ]
+ },
+ {
+  "id": "hijo",
+  "es": "hijo",
+  "pos": "noun",
+  "ru": "сын",
+  "example_es": "Su hijo tiene cinco años.",
+  "example_ru": "Её сыну пять лет.",
+  "rank": 188,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "hijos"
+  ]
+ },
+ {
+  "id": "hija",
+  "es": "hija",
+  "pos": "noun",
+  "ru": "дочь",
+  "example_es": "La hija estudia medicina.",
+  "example_ru": "Дочь учится на врача.",
+  "rank": 340,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "hijas"
+  ]
+ },
+ {
+  "id": "amigo",
+  "es": "amigo",
+  "pos": "noun",
+  "ru": "друг",
+  "example_es": "Es mi mejor amigo.",
+  "example_ru": "Это мой лучший друг.",
+  "rank": 192,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "amigos"
+  ]
+ },
+ {
+  "id": "amiga",
+  "es": "amiga",
+  "pos": "noun",
+  "ru": "подруга",
+  "example_es": "Mi amiga vive cerca.",
+  "example_ru": "Моя подруга живёт рядом.",
+  "rank": 687,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "amigas"
+  ]
+ },
+ {
+  "id": "nombre",
+  "es": "nombre",
+  "pos": "noun",
+  "ru": "имя",
+  "example_es": "¿Cuál es tu nombre?",
+  "example_ru": "Как тебя зовут?",
+  "rank": 216,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "nombres"
+  ]
+ },
+ {
+  "id": "señor",
+  "es": "señor",
+  "pos": "noun",
+  "ru": "господин, сеньор",
+  "example_es": "El señor García no está.",
+  "example_ru": "Сеньора Гарсии нет.",
+  "rank": 107,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "señores"
+  ]
+ },
+ {
+  "id": "señora",
+  "es": "señora",
+  "pos": "noun",
+  "ru": "госпожа, сеньора",
+  "example_es": "La señora López es profesora.",
+  "example_ru": "Сеньора Лопес — учительница.",
+  "rank": 300,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "señoras"
+  ]
+ },
+ {
+  "id": "gente",
+  "es": "gente",
+  "pos": "noun",
+  "ru": "люди",
+  "example_es": "Hay mucha gente aquí.",
+  "example_ru": "Здесь много людей.",
+  "rank": 145,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "gentes"
+  ]
+ },
+ {
+  "id": "novio",
+  "es": "novio",
+  "pos": "noun",
+  "ru": "парень, жених",
+  "example_es": "Mi novio es de Chile.",
+  "example_ru": "Мой парень из Чили.",
+  "rank": 836,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "novios"
+  ]
+ },
+ {
+  "id": "estudiante",
+  "es": "estudiante",
+  "pos": "noun",
+  "ru": "студент, студентка",
+  "example_es": "Soy estudiante de español.",
+  "example_ru": "Я изучаю испанский.",
+  "rank": 2250,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "estudiantes"
+  ]
+ },
+ {
+  "id": "profesor",
+  "es": "profesor",
+  "pos": "noun",
+  "ru": "преподаватель",
+  "example_es": "El profesor explica la regla.",
+  "example_ru": "Преподаватель объясняет правило.",
+  "rank": 852,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "profesores"
+  ]
+ },
+ {
+  "id": "bebé",
+  "es": "bebé",
+  "pos": "noun",
+  "ru": "малыш",
+  "example_es": "El bebé duerme.",
+  "example_ru": "Малыш спит.",
+  "rank": 479,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "bebés"
+  ]
+ },
+ {
+  "id": "abuelo",
+  "es": "abuelo",
+  "pos": "noun",
+  "ru": "дедушка",
+  "example_es": "Mi abuelo tiene ochenta años.",
+  "example_ru": "Моему дедушке восемьдесят лет.",
+  "rank": 980,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "abuelos"
+  ]
+ },
+ {
+  "id": "abuela",
+  "es": "abuela",
+  "pos": "noun",
+  "ru": "бабушка",
+  "example_es": "Mi abuela vive en el pueblo.",
+  "example_ru": "Моя бабушка живёт в деревне.",
+  "rank": 889,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "abuelas"
+  ]
+ },
+ {
+  "id": "vecino",
+  "es": "vecino",
+  "pos": "noun",
+  "ru": "сосед",
+  "example_es": "El vecino es muy simpático.",
+  "example_ru": "Сосед очень симпатичный.",
+  "rank": 3260,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "vecinos"
+  ]
+ },
+ {
+  "id": "chico",
+  "es": "chico",
+  "pos": "noun",
+  "ru": "парень",
+  "example_es": "Ese chico es alto.",
+  "example_ru": "Этот парень высокий.",
+  "rank": 293,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "chicos"
+  ]
+ },
+ {
+  "id": "chica",
+  "es": "chica",
+  "pos": "noun",
+  "ru": "девушка",
+  "example_es": "La chica habla tres idiomas.",
+  "example_ru": "Девушка говорит на трёх языках.",
+  "rank": 259,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "chicas"
+  ]
+ },
+ {
+  "id": "joven",
+  "es": "joven",
+  "pos": "adj",
+  "ru": "молодой",
+  "example_es": "Es una profesora joven.",
+  "example_ru": "Это молодая учительница.",
+  "rank": 506,
+  "forms": [
+   "jovenes"
+  ]
+ },
+ {
+  "id": "mayor",
+  "es": "mayor",
+  "pos": "adj",
+  "ru": "старший, пожилой",
+  "example_es": "Mi hermano es mayor que yo.",
+  "example_ru": "Мой брат старше меня.",
+  "rank": 482,
+  "forms": [
+   "mayores"
+  ]
+ },
+ {
+  "id": "casado",
+  "es": "casado",
+  "pos": "adj",
+  "ru": "женатый, замужем",
+  "example_es": "Estoy casado.",
+  "example_ru": "Я женат.",
+  "rank": 1472,
+  "forms": [
+   "casada",
+   "casados",
+   "casadas"
+  ]
+ },
+ {
+  "id": "simpático",
+  "es": "simpático",
+  "pos": "adj",
+  "ru": "симпатичный",
+  "example_es": "Tu amigo es muy simpático.",
+  "example_ru": "Твой друг очень симпатичный.",
+  "rank": 6124,
+  "forms": [
+   "simpática",
+   "simpáticos",
+   "simpáticas"
+  ]
+ }
+]

@@ -1,0 +1,366 @@
+[
+ {
+  "id": "ciudad",
+  "es": "ciudad",
+  "pos": "noun",
+  "ru": "город",
+  "example_es": "Madrid es una ciudad grande.",
+  "example_ru": "Мадрид — большой город.",
+  "rank": 336,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "ciudades"
+  ]
+ },
+ {
+  "id": "calle",
+  "es": "calle",
+  "pos": "noun",
+  "ru": "улица",
+  "example_es": "Vivo en esta calle.",
+  "example_ru": "Я живу на этой улице.",
+  "rank": 607,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "calles"
+  ]
+ },
+ {
+  "id": "plaza",
+  "es": "plaza",
+  "pos": "noun",
+  "ru": "площадь",
+  "example_es": "Nos vemos en la plaza.",
+  "example_ru": "Увидимся на площади.",
+  "rank": 3505,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "plazas"
+  ]
+ },
+ {
+  "id": "parque",
+  "es": "parque",
+  "pos": "noun",
+  "ru": "парк",
+  "example_es": "Paseo por el parque.",
+  "example_ru": "Я гуляю по парку.",
+  "rank": 1646,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "parques"
+  ]
+ },
+ {
+  "id": "banco",
+  "es": "banco",
+  "pos": "noun",
+  "ru": "банк; скамейка",
+  "example_es": "El banco cierra a las dos.",
+  "example_ru": "Банк закрывается в два.",
+  "rank": 1103,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "bancos"
+  ]
+ },
+ {
+  "id": "hotel",
+  "es": "hotel",
+  "pos": "noun",
+  "ru": "гостиница",
+  "example_es": "El hotel está cerca.",
+  "example_ru": "Гостиница рядом.",
+  "rank": 764,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "hoteles"
+  ]
+ },
+ {
+  "id": "estación",
+  "es": "estación",
+  "pos": "noun",
+  "ru": "станция, вокзал",
+  "example_es": "¿Dónde está la estación?",
+  "example_ru": "Где вокзал?",
+  "rank": 1179,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "estaciones"
+  ]
+ },
+ {
+  "id": "tren",
+  "es": "tren",
+  "pos": "noun",
+  "ru": "поезд",
+  "example_es": "El tren sale a las diez.",
+  "example_ru": "Поезд отправляется в десять.",
+  "rank": 951,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "trenes"
+  ]
+ },
+ {
+  "id": "autobús",
+  "es": "autobús",
+  "pos": "noun",
+  "ru": "автобус",
+  "example_es": "Voy en autobús.",
+  "example_ru": "Я еду на автобусе.",
+  "rank": 1702,
+  "article": "el",
+  "gender": "m"
+ },
+ {
+  "id": "metro",
+  "es": "metro",
+  "pos": "noun",
+  "ru": "метро",
+  "example_es": "Cojo el metro cada día.",
+  "example_ru": "Я каждый день езжу на метро.",
+  "rank": 3230,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "metros"
+  ]
+ },
+ {
+  "id": "avión",
+  "es": "avión",
+  "pos": "noun",
+  "ru": "самолёт",
+  "example_es": "El avión llega tarde.",
+  "example_ru": "Самолёт опаздывает.",
+  "rank": 929,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "aviones"
+  ]
+ },
+ {
+  "id": "aeropuerto",
+  "es": "aeropuerto",
+  "pos": "noun",
+  "ru": "аэропорт",
+  "example_es": "Voy al aeropuerto.",
+  "example_ru": "Я еду в аэропорт.",
+  "rank": 2069,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "aeropuertos"
+  ]
+ },
+ {
+  "id": "billete",
+  "es": "billete",
+  "pos": "noun",
+  "ru": "билет; купюра",
+  "example_es": "Un billete de ida y vuelta.",
+  "example_ru": "Билет туда и обратно.",
+  "rank": 3981,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "billetes"
+  ]
+ },
+ {
+  "id": "mapa",
+  "es": "mapa",
+  "pos": "noun",
+  "ru": "карта",
+  "example_es": "¿Tienes un mapa?",
+  "example_ru": "У тебя есть карта?",
+  "rank": 2241,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "mapas"
+  ]
+ },
+ {
+  "id": "lugar",
+  "es": "lugar",
+  "pos": "noun",
+  "ru": "место",
+  "example_es": "Es un lugar bonito.",
+  "example_ru": "Это красивое место.",
+  "rank": 177,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "lugares"
+  ]
+ },
+ {
+  "id": "país",
+  "es": "país",
+  "pos": "noun",
+  "ru": "страна",
+  "example_es": "España es un país bonito.",
+  "example_ru": "Испания — красивая страна.",
+  "rank": 583,
+  "article": "el",
+  "gender": "m"
+ },
+ {
+  "id": "mundo",
+  "es": "mundo",
+  "pos": "noun",
+  "ru": "мир",
+  "example_es": "Quiero viajar por el mundo.",
+  "example_ru": "Я хочу путешествовать по миру.",
+  "rank": 165,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "mundos"
+  ]
+ },
+ {
+  "id": "izquierda",
+  "es": "izquierda",
+  "pos": "noun",
+  "ru": "левая сторона",
+  "example_es": "Gira a la izquierda.",
+  "example_ru": "Поверни налево.",
+  "rank": 1051,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "izquierdas"
+  ]
+ },
+ {
+  "id": "derecha",
+  "es": "derecha",
+  "pos": "noun",
+  "ru": "правая сторона",
+  "example_es": "Está a la derecha.",
+  "example_ru": "Это справа.",
+  "rank": 973,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "derechas"
+  ]
+ },
+ {
+  "id": "cerca",
+  "es": "cerca",
+  "pos": "adv",
+  "ru": "близко",
+  "example_es": "El museo está cerca.",
+  "example_ru": "Музей рядом.",
+  "rank": 381
+ },
+ {
+  "id": "lejos",
+  "es": "lejos",
+  "pos": "adv",
+  "ru": "далеко",
+  "example_es": "Mi casa está lejos.",
+  "example_ru": "Мой дом далеко.",
+  "rank": 523
+ },
+ {
+  "id": "aquí",
+  "es": "aquí",
+  "pos": "adv",
+  "ru": "здесь",
+  "example_es": "Estoy aquí.",
+  "example_ru": "Я здесь.",
+  "rank": 33
+ },
+ {
+  "id": "allí",
+  "es": "allí",
+  "pos": "adv",
+  "ru": "там",
+  "example_es": "El coche está allí.",
+  "example_ru": "Машина там.",
+  "rank": 189
+ },
+ {
+  "id": "ir",
+  "es": "ir",
+  "pos": "verb",
+  "ru": "идти, ехать",
+  "example_es": "Voy a la playa.",
+  "example_ru": "Я иду на пляж.",
+  "rank": 128
+ },
+ {
+  "id": "venir",
+  "es": "venir",
+  "pos": "verb",
+  "ru": "приходить",
+  "example_es": "¿Vienes a la fiesta?",
+  "example_ru": "Ты придёшь на вечеринку?",
+  "rank": 339
+ },
+ {
+  "id": "llegar",
+  "es": "llegar",
+  "pos": "verb",
+  "ru": "прибывать",
+  "example_es": "Llego a las ocho.",
+  "example_ru": "Я приезжаю в восемь.",
+  "rank": 400
+ },
+ {
+  "id": "salir",
+  "es": "salir",
+  "pos": "verb",
+  "ru": "выходить",
+  "example_es": "Salgo de casa temprano.",
+  "example_ru": "Я выхожу из дома рано.",
+  "rank": 265
+ },
+ {
+  "id": "viajar",
+  "es": "viajar",
+  "pos": "verb",
+  "ru": "путешествовать",
+  "example_es": "Me gusta viajar.",
+  "example_ru": "Я люблю путешествовать.",
+  "rank": 2530
+ },
+ {
+  "id": "buscar",
+  "es": "buscar",
+  "pos": "verb",
+  "ru": "искать",
+  "example_es": "Busco la estación.",
+  "example_ru": "Я ищу вокзал.",
+  "rank": 635
+ },
+ {
+  "id": "playa",
+  "es": "playa",
+  "pos": "noun",
+  "ru": "пляж",
+  "example_es": "Vamos a la playa.",
+  "example_ru": "Пойдём на пляж.",
+  "rank": 1619,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "playas"
+  ]
+ }
+]

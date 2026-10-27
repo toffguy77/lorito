@@ -1,0 +1,286 @@
+[
+ {
+  "id": "salud",
+  "es": "salud",
+  "pos": "noun",
+  "ru": "здоровье",
+  "example_es": "¡Salud!",
+  "example_ru": "Будь здоров!",
+  "rank": 983,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "saludes"
+  ]
+ },
+ {
+  "id": "cuerpo",
+  "es": "cuerpo",
+  "pos": "noun",
+  "ru": "тело",
+  "example_es": "El cuerpo necesita descanso.",
+  "example_ru": "Телу нужен отдых.",
+  "rank": 435,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "cuerpos"
+  ]
+ },
+ {
+  "id": "cabeza",
+  "es": "cabeza",
+  "pos": "noun",
+  "ru": "голова",
+  "example_es": "Me duele la cabeza.",
+  "example_ru": "У меня болит голова.",
+  "rank": 274,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "cabezas"
+  ]
+ },
+ {
+  "id": "mano",
+  "es": "mano",
+  "pos": "noun",
+  "ru": "рука (кисть)",
+  "example_es": "Lávate las manos.",
+  "example_ru": "Помой руки.",
+  "rank": 373,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "manos"
+  ]
+ },
+ {
+  "id": "pie",
+  "es": "pie",
+  "pos": "noun",
+  "ru": "ступня",
+  "example_es": "Voy a pie.",
+  "example_ru": "Я иду пешком.",
+  "rank": 738,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "pies"
+  ]
+ },
+ {
+  "id": "ojo",
+  "es": "ojo",
+  "pos": "noun",
+  "ru": "глаз",
+  "example_es": "Tiene los ojos azules.",
+  "example_ru": "У неё голубые глаза.",
+  "rank": 1240,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "ojos"
+  ]
+ },
+ {
+  "id": "espalda",
+  "es": "espalda",
+  "pos": "noun",
+  "ru": "спина",
+  "example_es": "Me duele la espalda.",
+  "example_ru": "У меня болит спина.",
+  "rank": 1136,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "espaldas"
+  ]
+ },
+ {
+  "id": "estómago",
+  "es": "estómago",
+  "pos": "noun",
+  "ru": "желудок",
+  "example_es": "Me duele el estómago.",
+  "example_ru": "У меня болит живот.",
+  "rank": 2318,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "estómagos"
+  ]
+ },
+ {
+  "id": "médico",
+  "es": "médico",
+  "pos": "noun",
+  "ru": "врач",
+  "example_es": "Voy al médico.",
+  "example_ru": "Я иду к врачу.",
+  "rank": 704,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "médicos"
+  ]
+ },
+ {
+  "id": "hospital",
+  "es": "hospital",
+  "pos": "noun",
+  "ru": "больница",
+  "example_es": "Está en el hospital.",
+  "example_ru": "Он в больнице.",
+  "rank": 596,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "hospitales"
+  ]
+ },
+ {
+  "id": "farmacia",
+  "es": "farmacia",
+  "pos": "noun",
+  "ru": "аптека",
+  "example_es": "La farmacia está cerrada.",
+  "example_ru": "Аптека закрыта.",
+  "rank": 6877,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "farmacias"
+  ]
+ },
+ {
+  "id": "pastilla",
+  "es": "pastilla",
+  "pos": "noun",
+  "ru": "таблетка",
+  "example_es": "Toma una pastilla.",
+  "example_ru": "Прими таблетку.",
+  "rank": 8797,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "pastillas"
+  ]
+ },
+ {
+  "id": "fiebre",
+  "es": "fiebre",
+  "pos": "noun",
+  "ru": "температура, жар",
+  "example_es": "Tengo fiebre.",
+  "example_ru": "У меня температура.",
+  "rank": 3120,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "fiebres"
+  ]
+ },
+ {
+  "id": "resfriado",
+  "es": "resfriado",
+  "pos": "noun",
+  "ru": "простуда",
+  "example_es": "Tengo un resfriado.",
+  "example_ru": "У меня простуда.",
+  "rank": 8321,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "resfriados"
+  ]
+ },
+ {
+  "id": "dolor",
+  "es": "dolor",
+  "pos": "noun",
+  "ru": "боль",
+  "example_es": "Tengo dolor de muelas.",
+  "example_ru": "У меня болит зуб.",
+  "rank": 733,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "dolores"
+  ]
+ },
+ {
+  "id": "cita",
+  "es": "cita",
+  "pos": "noun",
+  "ru": "приём; свидание",
+  "example_es": "Tengo cita con el dentista.",
+  "example_ru": "У меня приём у стоматолога.",
+  "rank": 751,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "citas"
+  ]
+ },
+ {
+  "id": "deporte",
+  "es": "deporte",
+  "pos": "noun",
+  "ru": "спорт",
+  "example_es": "Hago deporte cada día.",
+  "example_ru": "Я занимаюсь спортом каждый день.",
+  "rank": 4299,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "deportes"
+  ]
+ },
+ {
+  "id": "doler",
+  "es": "doler",
+  "pos": "verb",
+  "ru": "болеть",
+  "example_es": "Me duele la garganta.",
+  "example_ru": "У меня болит горло.",
+  "rank": 7661
+ },
+ {
+  "id": "sentirse",
+  "es": "sentirse",
+  "pos": "verb",
+  "ru": "чувствовать себя",
+  "example_es": "Me siento mejor.",
+  "example_ru": "Я чувствую себя лучше.",
+  "rank": 3890
+ },
+ {
+  "id": "enfermo",
+  "es": "enfermo",
+  "pos": "adj",
+  "ru": "больной",
+  "example_es": "Estoy enfermo.",
+  "example_ru": "Я болен.",
+  "rank": 1184,
+  "forms": [
+   "enferma",
+   "enfermos",
+   "enfermas"
+  ]
+ },
+ {
+  "id": "sano",
+  "es": "sano",
+  "pos": "adj",
+  "ru": "здоровый",
+  "example_es": "Comer fruta es sano.",
+  "example_ru": "Есть фрукты полезно.",
+  "rank": 4063,
+  "forms": [
+   "sana",
+   "sanos",
+   "sanas"
+  ]
+ }
+]

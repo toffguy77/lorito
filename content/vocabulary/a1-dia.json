@@ -1,0 +1,350 @@
+[
+ {
+  "id": "día",
+  "es": "día",
+  "pos": "noun",
+  "ru": "день",
+  "example_es": "Hoy es un buen día.",
+  "example_ru": "Сегодня хороший день.",
+  "rank": 134,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "días"
+  ]
+ },
+ {
+  "id": "noche",
+  "es": "noche",
+  "pos": "noun",
+  "ru": "ночь, вечер",
+  "example_es": "Buenas noches.",
+  "example_ru": "Доброй ночи.",
+  "rank": 136,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "noches"
+  ]
+ },
+ {
+  "id": "mañana",
+  "es": "mañana",
+  "pos": "noun",
+  "ru": "утро",
+  "example_es": "Trabajo por la mañana.",
+  "example_ru": "Я работаю утром.",
+  "rank": 173,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "mañanas"
+  ]
+ },
+ {
+  "id": "tarde",
+  "es": "tarde",
+  "pos": "noun",
+  "ru": "вторая половина дня",
+  "example_es": "Nos vemos por la tarde.",
+  "example_ru": "Увидимся днём.",
+  "rank": 243,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "tardes"
+  ]
+ },
+ {
+  "id": "hora",
+  "es": "hora",
+  "pos": "noun",
+  "ru": "час",
+  "example_es": "¿Qué hora es?",
+  "example_ru": "Который час?",
+  "rank": 245,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "horas"
+  ]
+ },
+ {
+  "id": "semana",
+  "es": "semana",
+  "pos": "noun",
+  "ru": "неделя",
+  "example_es": "Voy al gimnasio dos veces por semana.",
+  "example_ru": "Я хожу в спортзал два раза в неделю.",
+  "rank": 326,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "semanas"
+  ]
+ },
+ {
+  "id": "mes",
+  "es": "mes",
+  "pos": "noun",
+  "ru": "месяц",
+  "example_es": "El mes que viene viajo.",
+  "example_ru": "В следующем месяце я путешествую.",
+  "rank": 822,
+  "article": "el",
+  "gender": "m"
+ },
+ {
+  "id": "año",
+  "es": "año",
+  "pos": "noun",
+  "ru": "год",
+  "example_es": "Tengo veinte años.",
+  "example_ru": "Мне двадцать лет.",
+  "rank": 331,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "años"
+  ]
+ },
+ {
+  "id": "tiempo",
+  "es": "tiempo",
+  "pos": "noun",
+  "ru": "время; погода",
+  "example_es": "No tengo tiempo.",
+  "example_ru": "У меня нет времени.",
+  "rank": 95,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "tiempos"
+  ]
+ },
+ {
+  "id": "vez",
+  "es": "vez",
+  "pos": "noun",
+  "ru": "раз",
+  "example_es": "Otra vez, por favor.",
+  "example_ru": "Ещё раз, пожалуйста.",
+  "rank": 71,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "veces"
+  ]
+ },
+ {
+  "id": "momento",
+  "es": "momento",
+  "pos": "noun",
+  "ru": "момент",
+  "example_es": "Un momento, por favor.",
+  "example_ru": "Минутку, пожалуйста.",
+  "rank": 167,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "momentos"
+  ]
+ },
+ {
+  "id": "minuto",
+  "es": "minuto",
+  "pos": "noun",
+  "ru": "минута",
+  "example_es": "Espera un minuto.",
+  "example_ru": "Подожди минуту.",
+  "rank": 579,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "minutos"
+  ]
+ },
+ {
+  "id": "fin-de-semana",
+  "es": "fin de semana",
+  "pos": "noun",
+  "ru": "выходные",
+  "example_es": "¿Qué haces el fin de semana?",
+  "example_ru": "Что ты делаешь на выходных?",
+  "rank": 386,
+  "article": "el",
+  "gender": "m"
+ },
+ {
+  "id": "hoy",
+  "es": "hoy",
+  "pos": "adv",
+  "ru": "сегодня",
+  "example_es": "Hoy no trabajo.",
+  "example_ru": "Сегодня я не работаю.",
+  "rank": 201
+ },
+ {
+  "id": "ayer",
+  "es": "ayer",
+  "pos": "adv",
+  "ru": "вчера",
+  "example_es": "Ayer fui al cine.",
+  "example_ru": "Вчера я ходил в кино.",
+  "rank": 670
+ },
+ {
+  "id": "ahora",
+  "es": "ahora",
+  "pos": "adv",
+  "ru": "сейчас",
+  "example_es": "Ahora estoy ocupado.",
+  "example_ru": "Сейчас я занят.",
+  "rank": 42
+ },
+ {
+  "id": "siempre",
+  "es": "siempre",
+  "pos": "adv",
+  "ru": "всегда",
+  "example_es": "Siempre llega tarde.",
+  "example_ru": "Он всегда опаздывает.",
+  "rank": 125
+ },
+ {
+  "id": "nunca",
+  "es": "nunca",
+  "pos": "adv",
+  "ru": "никогда",
+  "example_es": "Nunca como carne.",
+  "example_ru": "Я никогда не ем мясо.",
+  "rank": 98
+ },
+ {
+  "id": "temprano",
+  "es": "temprano",
+  "pos": "adv",
+  "ru": "рано",
+  "example_es": "Me levanto temprano.",
+  "example_ru": "Я встаю рано.",
+  "rank": 1085
+ },
+ {
+  "id": "pronto",
+  "es": "pronto",
+  "pos": "adv",
+  "ru": "скоро",
+  "example_es": "Hasta pronto.",
+  "example_ru": "До скорого.",
+  "rank": 333
+ },
+ {
+  "id": "después",
+  "es": "después",
+  "pos": "adv",
+  "ru": "потом",
+  "example_es": "Después vamos al parque.",
+  "example_ru": "Потом пойдём в парк.",
+  "rank": 161
+ },
+ {
+  "id": "antes",
+  "es": "antes",
+  "pos": "adv",
+  "ru": "раньше, до",
+  "example_es": "Antes vivía en Rusia.",
+  "example_ru": "Раньше я жил в России.",
+  "rank": 130
+ },
+ {
+  "id": "todavía",
+  "es": "todavía",
+  "pos": "adv",
+  "ru": "ещё, всё ещё",
+  "example_es": "Todavía no he comido.",
+  "example_ru": "Я ещё не ел.",
+  "rank": 264
+ },
+ {
+  "id": "ya",
+  "es": "ya",
+  "pos": "adv",
+  "ru": "уже",
+  "example_es": "Ya lo sé.",
+  "example_ru": "Я уже знаю.",
+  "rank": 40
+ },
+ {
+  "id": "lunes",
+  "es": "lunes",
+  "pos": "noun",
+  "ru": "понедельник",
+  "example_es": "El lunes empiezo el curso.",
+  "example_ru": "В понедельник я начинаю курс.",
+  "rank": 2202,
+  "article": "el",
+  "gender": "m"
+ },
+ {
+  "id": "domingo",
+  "es": "domingo",
+  "pos": "noun",
+  "ru": "воскресенье",
+  "example_es": "El domingo descanso.",
+  "example_ru": "В воскресенье я отдыхаю.",
+  "rank": 2006,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "domingos"
+  ]
+ },
+ {
+  "id": "verano",
+  "es": "verano",
+  "pos": "noun",
+  "ru": "лето",
+  "example_es": "En verano hace calor.",
+  "example_ru": "Летом жарко.",
+  "rank": 1331,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "veranos"
+  ]
+ },
+ {
+  "id": "invierno",
+  "es": "invierno",
+  "pos": "noun",
+  "ru": "зима",
+  "example_es": "En invierno hace frío.",
+  "example_ru": "Зимой холодно.",
+  "rank": 2609,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "inviernos"
+  ]
+ },
+ {
+  "id": "cumpleaños",
+  "es": "cumpleaños",
+  "pos": "noun",
+  "ru": "день рождения",
+  "example_es": "Hoy es mi cumpleaños.",
+  "example_ru": "Сегодня мой день рождения.",
+  "rank": 863,
+  "article": "el",
+  "gender": "m"
+ },
+ {
+  "id": "tarde-a1",
+  "es": "tarde",
+  "pos": "adv",
+  "ru": "поздно",
+  "example_es": "Es muy tarde.",
+  "example_ru": "Уже очень поздно.",
+  "rank": 243
+ }
+]

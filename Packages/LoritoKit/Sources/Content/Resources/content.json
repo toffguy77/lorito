@@ -31000,5 +31000,4405 @@
         "retired": false
       }
     ]
+  },
+  "vocabulary": {
+    "decks": [
+      {
+        "id": "a1-personas",
+        "level": "A1",
+        "title_ru": "Люди и семья",
+        "order": 1,
+        "words": [
+          {
+            "id": "señor",
+            "es": "señor",
+            "pos": "noun",
+            "ru": "господин, сеньор",
+            "example_es": "El señor García no está.",
+            "example_ru": "Сеньора Гарсии нет.",
+            "rank": 107,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "señores"
+            ]
+          },
+          {
+            "id": "hombre",
+            "es": "hombre",
+            "pos": "noun",
+            "ru": "мужчина",
+            "example_es": "Ese hombre es mi vecino.",
+            "example_ru": "Этот мужчина — мой сосед.",
+            "rank": 121,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "hombres"
+            ]
+          },
+          {
+            "id": "gente",
+            "es": "gente",
+            "pos": "noun",
+            "ru": "люди",
+            "example_es": "Hay mucha gente aquí.",
+            "example_ru": "Здесь много людей.",
+            "rank": 145,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "gentes"
+            ]
+          },
+          {
+            "id": "padre",
+            "es": "padre",
+            "pos": "noun",
+            "ru": "отец",
+            "example_es": "Mi padre trabaja mucho.",
+            "example_ru": "Мой отец много работает.",
+            "rank": 147,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "padres"
+            ]
+          },
+          {
+            "id": "madre",
+            "es": "madre",
+            "pos": "noun",
+            "ru": "мать",
+            "example_es": "Mi madre cocina muy bien.",
+            "example_ru": "Моя мама очень хорошо готовит.",
+            "rank": 175,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "madres"
+            ]
+          },
+          {
+            "id": "hijo",
+            "es": "hijo",
+            "pos": "noun",
+            "ru": "сын",
+            "example_es": "Su hijo tiene cinco años.",
+            "example_ru": "Её сыну пять лет.",
+            "rank": 188,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "hijos"
+            ]
+          },
+          {
+            "id": "amigo",
+            "es": "amigo",
+            "pos": "noun",
+            "ru": "друг",
+            "example_es": "Es mi mejor amigo.",
+            "example_ru": "Это мой лучший друг.",
+            "rank": 192,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "amigos"
+            ]
+          },
+          {
+            "id": "mujer",
+            "es": "mujer",
+            "pos": "noun",
+            "ru": "женщина",
+            "example_es": "La mujer lee un libro.",
+            "example_ru": "Женщина читает книгу.",
+            "rank": 195,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "mujeres"
+            ]
+          },
+          {
+            "id": "nombre",
+            "es": "nombre",
+            "pos": "noun",
+            "ru": "имя",
+            "example_es": "¿Cuál es tu nombre?",
+            "example_ru": "Как тебя зовут?",
+            "rank": 216,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "nombres"
+            ]
+          },
+          {
+            "id": "familia",
+            "es": "familia",
+            "pos": "noun",
+            "ru": "семья",
+            "example_es": "Mi familia es grande.",
+            "example_ru": "Моя семья большая.",
+            "rank": 254,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "familias"
+            ]
+          },
+          {
+            "id": "chica",
+            "es": "chica",
+            "pos": "noun",
+            "ru": "девушка",
+            "example_es": "La chica habla tres idiomas.",
+            "example_ru": "Девушка говорит на трёх языках.",
+            "rank": 259,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "chicas"
+            ]
+          },
+          {
+            "id": "hermano",
+            "es": "hermano",
+            "pos": "noun",
+            "ru": "брат",
+            "example_es": "Tengo un hermano mayor.",
+            "example_ru": "У меня есть старший брат.",
+            "rank": 271,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "hermanos"
+            ]
+          },
+          {
+            "id": "chico",
+            "es": "chico",
+            "pos": "noun",
+            "ru": "парень",
+            "example_es": "Ese chico es alto.",
+            "example_ru": "Этот парень высокий.",
+            "rank": 293,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "chicos"
+            ]
+          },
+          {
+            "id": "señora",
+            "es": "señora",
+            "pos": "noun",
+            "ru": "госпожа, сеньора",
+            "example_es": "La señora López es profesora.",
+            "example_ru": "Сеньора Лопес — учительница.",
+            "rank": 300,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "señoras"
+            ]
+          },
+          {
+            "id": "persona",
+            "es": "persona",
+            "pos": "noun",
+            "ru": "человек",
+            "example_es": "Es una persona muy amable.",
+            "example_ru": "Это очень добрый человек.",
+            "rank": 310,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "personas"
+            ]
+          },
+          {
+            "id": "hija",
+            "es": "hija",
+            "pos": "noun",
+            "ru": "дочь",
+            "example_es": "La hija estudia medicina.",
+            "example_ru": "Дочь учится на врача.",
+            "rank": 340,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "hijas"
+            ]
+          },
+          {
+            "id": "niño",
+            "es": "niño",
+            "pos": "noun",
+            "ru": "ребёнок, мальчик",
+            "example_es": "El niño juega en el parque.",
+            "example_ru": "Мальчик играет в парке.",
+            "rank": 375,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "niños"
+            ]
+          },
+          {
+            "id": "hermana",
+            "es": "hermana",
+            "pos": "noun",
+            "ru": "сестра",
+            "example_es": "Mi hermana vive en Madrid.",
+            "example_ru": "Моя сестра живёт в Мадриде.",
+            "rank": 457,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "hermanas"
+            ]
+          },
+          {
+            "id": "bebé",
+            "es": "bebé",
+            "pos": "noun",
+            "ru": "малыш",
+            "example_es": "El bebé duerme.",
+            "example_ru": "Малыш спит.",
+            "rank": 479,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "bebés"
+            ]
+          },
+          {
+            "id": "mayor",
+            "es": "mayor",
+            "pos": "adj",
+            "ru": "старший, пожилой",
+            "example_es": "Mi hermano es mayor que yo.",
+            "example_ru": "Мой брат старше меня.",
+            "rank": 482,
+            "forms": [
+              "mayores"
+            ]
+          },
+          {
+            "id": "joven",
+            "es": "joven",
+            "pos": "adj",
+            "ru": "молодой",
+            "example_es": "Es una profesora joven.",
+            "example_ru": "Это молодая учительница.",
+            "rank": 506,
+            "forms": [
+              "jovenes"
+            ]
+          },
+          {
+            "id": "amiga",
+            "es": "amiga",
+            "pos": "noun",
+            "ru": "подруга",
+            "example_es": "Mi amiga vive cerca.",
+            "example_ru": "Моя подруга живёт рядом.",
+            "rank": 687,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "amigas"
+            ]
+          },
+          {
+            "id": "novio",
+            "es": "novio",
+            "pos": "noun",
+            "ru": "парень, жених",
+            "example_es": "Mi novio es de Chile.",
+            "example_ru": "Мой парень из Чили.",
+            "rank": 836,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "novios"
+            ]
+          },
+          {
+            "id": "profesor",
+            "es": "profesor",
+            "pos": "noun",
+            "ru": "преподаватель",
+            "example_es": "El profesor explica la regla.",
+            "example_ru": "Преподаватель объясняет правило.",
+            "rank": 852,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "profesores"
+            ]
+          },
+          {
+            "id": "abuela",
+            "es": "abuela",
+            "pos": "noun",
+            "ru": "бабушка",
+            "example_es": "Mi abuela vive en el pueblo.",
+            "example_ru": "Моя бабушка живёт в деревне.",
+            "rank": 889,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "abuelas"
+            ]
+          },
+          {
+            "id": "abuelo",
+            "es": "abuelo",
+            "pos": "noun",
+            "ru": "дедушка",
+            "example_es": "Mi abuelo tiene ochenta años.",
+            "example_ru": "Моему дедушке восемьдесят лет.",
+            "rank": 980,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "abuelos"
+            ]
+          },
+          {
+            "id": "casado",
+            "es": "casado",
+            "pos": "adj",
+            "ru": "женатый, замужем",
+            "example_es": "Estoy casado.",
+            "example_ru": "Я женат.",
+            "rank": 1472,
+            "forms": [
+              "casada",
+              "casados",
+              "casadas"
+            ]
+          },
+          {
+            "id": "estudiante",
+            "es": "estudiante",
+            "pos": "noun",
+            "ru": "студент, студентка",
+            "example_es": "Soy estudiante de español.",
+            "example_ru": "Я изучаю испанский.",
+            "rank": 2250,
+            "article": "el",
+            "gender": "mf",
+            "forms": [
+              "estudiantes"
+            ]
+          },
+          {
+            "id": "vecino",
+            "es": "vecino",
+            "pos": "noun",
+            "ru": "сосед",
+            "example_es": "El vecino es muy simpático.",
+            "example_ru": "Сосед очень симпатичный.",
+            "rank": 3260,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "vecinos"
+            ]
+          },
+          {
+            "id": "simpático",
+            "es": "simpático",
+            "pos": "adj",
+            "ru": "симпатичный",
+            "example_es": "Tu amigo es muy simpático.",
+            "example_ru": "Твой друг очень симпатичный.",
+            "rank": 6124,
+            "forms": [
+              "simpática",
+              "simpáticos",
+              "simpáticas"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "a1-casa",
+        "level": "A1",
+        "title_ru": "Дом и вещи",
+        "order": 2,
+        "words": [
+          {
+            "id": "casa",
+            "es": "casa",
+            "pos": "noun",
+            "ru": "дом",
+            "example_es": "Mi casa es pequeña.",
+            "example_ru": "Мой дом маленький.",
+            "rank": 91,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "casas"
+            ]
+          },
+          {
+            "id": "dinero",
+            "es": "dinero",
+            "pos": "noun",
+            "ru": "деньги",
+            "example_es": "No tengo dinero.",
+            "example_ru": "У меня нет денег.",
+            "rank": 164,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "dineros"
+            ]
+          },
+          {
+            "id": "nuevo",
+            "es": "nuevo",
+            "pos": "adj",
+            "ru": "новый",
+            "example_es": "Tengo un trabajo nuevo.",
+            "example_ru": "У меня новая работа.",
+            "rank": 185,
+            "forms": [
+              "nueva",
+              "nuevos",
+              "nuevas"
+            ]
+          },
+          {
+            "id": "cosa",
+            "es": "cosa",
+            "pos": "noun",
+            "ru": "вещь",
+            "example_es": "Tengo muchas cosas que hacer.",
+            "example_ru": "У меня много дел.",
+            "rank": 187,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "cosas"
+            ]
+          },
+          {
+            "id": "puerta",
+            "es": "puerta",
+            "pos": "noun",
+            "ru": "дверь",
+            "example_es": "Cierra la puerta, por favor.",
+            "example_ru": "Закрой дверь, пожалуйста.",
+            "rank": 321,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "puertas"
+            ]
+          },
+          {
+            "id": "agua",
+            "es": "agua",
+            "pos": "noun",
+            "ru": "вода",
+            "example_es": "Quiero un vaso de agua.",
+            "example_ru": "Я хочу стакан воды.",
+            "rank": 358,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "aguas"
+            ]
+          },
+          {
+            "id": "viejo",
+            "es": "viejo",
+            "pos": "adj",
+            "ru": "старый",
+            "example_es": "Es un coche muy viejo.",
+            "example_ru": "Это очень старая машина.",
+            "rank": 382,
+            "forms": [
+              "vieja",
+              "viejos",
+              "viejas"
+            ]
+          },
+          {
+            "id": "grande",
+            "es": "grande",
+            "pos": "adj",
+            "ru": "большой",
+            "example_es": "Es una casa grande.",
+            "example_ru": "Это большой дом.",
+            "rank": 398,
+            "forms": [
+              "grandes"
+            ]
+          },
+          {
+            "id": "coche",
+            "es": "coche",
+            "pos": "noun",
+            "ru": "машина",
+            "example_es": "Tengo un coche rojo.",
+            "example_ru": "У меня красная машина.",
+            "rank": 408,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "coches"
+            ]
+          },
+          {
+            "id": "pequeño",
+            "es": "pequeño",
+            "pos": "adj",
+            "ru": "маленький",
+            "example_es": "Tengo un perro pequeño.",
+            "example_ru": "У меня маленькая собака.",
+            "rank": 414,
+            "forms": [
+              "pequeña",
+              "pequeños",
+              "pequeñas"
+            ]
+          },
+          {
+            "id": "teléfono",
+            "es": "teléfono",
+            "pos": "noun",
+            "ru": "телефон",
+            "example_es": "Mi teléfono no funciona.",
+            "example_ru": "Мой телефон не работает.",
+            "rank": 443,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "teléfonos"
+            ]
+          },
+          {
+            "id": "habitación",
+            "es": "habitación",
+            "pos": "noun",
+            "ru": "комната",
+            "example_es": "La habitación tiene una ventana.",
+            "example_ru": "В комнате есть окно.",
+            "rank": 496,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "habitaciones"
+            ]
+          },
+          {
+            "id": "cama",
+            "es": "cama",
+            "pos": "noun",
+            "ru": "кровать",
+            "example_es": "Me voy a la cama.",
+            "example_ru": "Я иду спать.",
+            "rank": 540,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "camas"
+            ]
+          },
+          {
+            "id": "libro",
+            "es": "libro",
+            "pos": "noun",
+            "ru": "книга",
+            "example_es": "Este libro es interesante.",
+            "example_ru": "Эта книга интересная.",
+            "rank": 612,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "libros"
+            ]
+          },
+          {
+            "id": "ropa",
+            "es": "ropa",
+            "pos": "noun",
+            "ru": "одежда",
+            "example_es": "La ropa está limpia.",
+            "example_ru": "Одежда чистая.",
+            "rank": 652,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "ropas"
+            ]
+          },
+          {
+            "id": "baño",
+            "es": "baño",
+            "pos": "noun",
+            "ru": "ванная",
+            "example_es": "El baño está a la derecha.",
+            "example_ru": "Ванная справа.",
+            "rank": 715,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "baños"
+            ]
+          },
+          {
+            "id": "foto",
+            "es": "foto",
+            "pos": "noun",
+            "ru": "фотография",
+            "example_es": "Mira esta foto.",
+            "example_ru": "Посмотри на эту фотографию.",
+            "rank": 767,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "fotos"
+            ]
+          },
+          {
+            "id": "mesa",
+            "es": "mesa",
+            "pos": "noun",
+            "ru": "стол",
+            "example_es": "Las llaves están en la mesa.",
+            "example_ru": "Ключи на столе.",
+            "rank": 828,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "mesas"
+            ]
+          },
+          {
+            "id": "regalo",
+            "es": "regalo",
+            "pos": "noun",
+            "ru": "подарок",
+            "example_es": "Es un regalo para ti.",
+            "example_ru": "Это подарок для тебя.",
+            "rank": 918,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "regalos"
+            ]
+          },
+          {
+            "id": "piso",
+            "es": "piso",
+            "pos": "noun",
+            "ru": "квартира; этаж",
+            "example_es": "Vivo en un piso en el centro.",
+            "example_ru": "Я живу в квартире в центре.",
+            "rank": 1007,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "pisos"
+            ]
+          },
+          {
+            "id": "cocina",
+            "es": "cocina",
+            "pos": "noun",
+            "ru": "кухня",
+            "example_es": "Estoy en la cocina.",
+            "example_ru": "Я на кухне.",
+            "rank": 1017,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "cocinas"
+            ]
+          },
+          {
+            "id": "llave",
+            "es": "llave",
+            "pos": "noun",
+            "ru": "ключ",
+            "example_es": "No encuentro la llave.",
+            "example_ru": "Не могу найти ключ.",
+            "rank": 1131,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "llaves"
+            ]
+          },
+          {
+            "id": "ventana",
+            "es": "ventana",
+            "pos": "noun",
+            "ru": "окно",
+            "example_es": "Abre la ventana.",
+            "example_ru": "Открой окно.",
+            "rank": 1140,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "ventanas"
+            ]
+          },
+          {
+            "id": "bolsa",
+            "es": "bolsa",
+            "pos": "noun",
+            "ru": "сумка, пакет",
+            "example_es": "¿Quiere una bolsa?",
+            "example_ru": "Вам нужен пакет?",
+            "rank": 1216,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "bolsas"
+            ]
+          },
+          {
+            "id": "reloj",
+            "es": "reloj",
+            "pos": "noun",
+            "ru": "часы",
+            "example_es": "Mi reloj es nuevo.",
+            "example_ru": "Мои часы новые.",
+            "rank": 1530,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "relojes"
+            ]
+          },
+          {
+            "id": "televisión",
+            "es": "televisión",
+            "pos": "noun",
+            "ru": "телевизор",
+            "example_es": "No veo la televisión.",
+            "example_ru": "Я не смотрю телевизор.",
+            "rank": 1561,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "televisiones"
+            ]
+          },
+          {
+            "id": "silla",
+            "es": "silla",
+            "pos": "noun",
+            "ru": "стул",
+            "example_es": "Siéntate en la silla.",
+            "example_ru": "Садись на стул.",
+            "rank": 1579,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "sillas"
+            ]
+          },
+          {
+            "id": "limpio",
+            "es": "limpio",
+            "pos": "adj",
+            "ru": "чистый",
+            "example_es": "La cocina está limpia.",
+            "example_ru": "Кухня чистая.",
+            "rank": 1872,
+            "forms": [
+              "limpia",
+              "limpios",
+              "limpias"
+            ]
+          },
+          {
+            "id": "vaso",
+            "es": "vaso",
+            "pos": "noun",
+            "ru": "стакан",
+            "example_es": "Un vaso de leche, por favor.",
+            "example_ru": "Стакан молока, пожалуйста.",
+            "rank": 2522,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "vasos"
+            ]
+          },
+          {
+            "id": "ordenador",
+            "es": "ordenador",
+            "pos": "noun",
+            "ru": "компьютер",
+            "example_es": "Trabajo con el ordenador.",
+            "example_ru": "Я работаю за компьютером.",
+            "rank": 3218,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "ordenadores"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "a1-dia",
+        "level": "A1",
+        "title_ru": "День и время",
+        "order": 3,
+        "words": [
+          {
+            "id": "ya",
+            "es": "ya",
+            "pos": "adv",
+            "ru": "уже",
+            "example_es": "Ya lo sé.",
+            "example_ru": "Я уже знаю.",
+            "rank": 40,
+            "forms": []
+          },
+          {
+            "id": "ahora",
+            "es": "ahora",
+            "pos": "adv",
+            "ru": "сейчас",
+            "example_es": "Ahora estoy ocupado.",
+            "example_ru": "Сейчас я занят.",
+            "rank": 42,
+            "forms": []
+          },
+          {
+            "id": "vez",
+            "es": "vez",
+            "pos": "noun",
+            "ru": "раз",
+            "example_es": "Otra vez, por favor.",
+            "example_ru": "Ещё раз, пожалуйста.",
+            "rank": 71,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "veces"
+            ]
+          },
+          {
+            "id": "tiempo",
+            "es": "tiempo",
+            "pos": "noun",
+            "ru": "время; погода",
+            "example_es": "No tengo tiempo.",
+            "example_ru": "У меня нет времени.",
+            "rank": 95,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "tiempos"
+            ]
+          },
+          {
+            "id": "nunca",
+            "es": "nunca",
+            "pos": "adv",
+            "ru": "никогда",
+            "example_es": "Nunca como carne.",
+            "example_ru": "Я никогда не ем мясо.",
+            "rank": 98,
+            "forms": []
+          },
+          {
+            "id": "siempre",
+            "es": "siempre",
+            "pos": "adv",
+            "ru": "всегда",
+            "example_es": "Siempre llega tarde.",
+            "example_ru": "Он всегда опаздывает.",
+            "rank": 125,
+            "forms": []
+          },
+          {
+            "id": "antes",
+            "es": "antes",
+            "pos": "adv",
+            "ru": "раньше, до",
+            "example_es": "Antes vivía en Rusia.",
+            "example_ru": "Раньше я жил в России.",
+            "rank": 130,
+            "forms": []
+          },
+          {
+            "id": "día",
+            "es": "día",
+            "pos": "noun",
+            "ru": "день",
+            "example_es": "Hoy es un buen día.",
+            "example_ru": "Сегодня хороший день.",
+            "rank": 134,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "días"
+            ]
+          },
+          {
+            "id": "noche",
+            "es": "noche",
+            "pos": "noun",
+            "ru": "ночь, вечер",
+            "example_es": "Buenas noches.",
+            "example_ru": "Доброй ночи.",
+            "rank": 136,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "noches"
+            ]
+          },
+          {
+            "id": "después",
+            "es": "después",
+            "pos": "adv",
+            "ru": "потом",
+            "example_es": "Después vamos al parque.",
+            "example_ru": "Потом пойдём в парк.",
+            "rank": 161,
+            "forms": []
+          },
+          {
+            "id": "momento",
+            "es": "momento",
+            "pos": "noun",
+            "ru": "момент",
+            "example_es": "Un momento, por favor.",
+            "example_ru": "Минутку, пожалуйста.",
+            "rank": 167,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "momentos"
+            ]
+          },
+          {
+            "id": "mañana",
+            "es": "mañana",
+            "pos": "noun",
+            "ru": "утро",
+            "example_es": "Trabajo por la mañana.",
+            "example_ru": "Я работаю утром.",
+            "rank": 173,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "mañanas"
+            ]
+          },
+          {
+            "id": "hoy",
+            "es": "hoy",
+            "pos": "adv",
+            "ru": "сегодня",
+            "example_es": "Hoy no trabajo.",
+            "example_ru": "Сегодня я не работаю.",
+            "rank": 201,
+            "forms": []
+          },
+          {
+            "id": "tarde",
+            "es": "tarde",
+            "pos": "noun",
+            "ru": "вторая половина дня",
+            "example_es": "Nos vemos por la tarde.",
+            "example_ru": "Увидимся днём.",
+            "rank": 243,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "tardes"
+            ]
+          },
+          {
+            "id": "tarde-a1",
+            "es": "tarde",
+            "pos": "adv",
+            "ru": "поздно",
+            "example_es": "Es muy tarde.",
+            "example_ru": "Уже очень поздно.",
+            "rank": 243,
+            "forms": []
+          },
+          {
+            "id": "hora",
+            "es": "hora",
+            "pos": "noun",
+            "ru": "час",
+            "example_es": "¿Qué hora es?",
+            "example_ru": "Который час?",
+            "rank": 245,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "horas"
+            ]
+          },
+          {
+            "id": "todavía",
+            "es": "todavía",
+            "pos": "adv",
+            "ru": "ещё, всё ещё",
+            "example_es": "Todavía no he comido.",
+            "example_ru": "Я ещё не ел.",
+            "rank": 264,
+            "forms": []
+          },
+          {
+            "id": "semana",
+            "es": "semana",
+            "pos": "noun",
+            "ru": "неделя",
+            "example_es": "Voy al gimnasio dos veces por semana.",
+            "example_ru": "Я хожу в спортзал два раза в неделю.",
+            "rank": 326,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "semanas"
+            ]
+          },
+          {
+            "id": "año",
+            "es": "año",
+            "pos": "noun",
+            "ru": "год",
+            "example_es": "Tengo veinte años.",
+            "example_ru": "Мне двадцать лет.",
+            "rank": 331,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "años"
+            ]
+          },
+          {
+            "id": "pronto",
+            "es": "pronto",
+            "pos": "adv",
+            "ru": "скоро",
+            "example_es": "Hasta pronto.",
+            "example_ru": "До скорого.",
+            "rank": 333,
+            "forms": []
+          },
+          {
+            "id": "fin-de-semana",
+            "es": "fin de semana",
+            "pos": "noun",
+            "ru": "выходные",
+            "example_es": "¿Qué haces el fin de semana?",
+            "example_ru": "Что ты делаешь на выходных?",
+            "rank": 386,
+            "article": "el",
+            "gender": "m",
+            "forms": []
+          },
+          {
+            "id": "minuto",
+            "es": "minuto",
+            "pos": "noun",
+            "ru": "минута",
+            "example_es": "Espera un minuto.",
+            "example_ru": "Подожди минуту.",
+            "rank": 579,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "minutos"
+            ]
+          },
+          {
+            "id": "ayer",
+            "es": "ayer",
+            "pos": "adv",
+            "ru": "вчера",
+            "example_es": "Ayer fui al cine.",
+            "example_ru": "Вчера я ходил в кино.",
+            "rank": 670,
+            "forms": []
+          },
+          {
+            "id": "mes",
+            "es": "mes",
+            "pos": "noun",
+            "ru": "месяц",
+            "example_es": "El mes que viene viajo.",
+            "example_ru": "В следующем месяце я путешествую.",
+            "rank": 822,
+            "article": "el",
+            "gender": "m",
+            "forms": []
+          },
+          {
+            "id": "cumpleaños",
+            "es": "cumpleaños",
+            "pos": "noun",
+            "ru": "день рождения",
+            "example_es": "Hoy es mi cumpleaños.",
+            "example_ru": "Сегодня мой день рождения.",
+            "rank": 863,
+            "article": "el",
+            "gender": "m",
+            "forms": []
+          },
+          {
+            "id": "temprano",
+            "es": "temprano",
+            "pos": "adv",
+            "ru": "рано",
+            "example_es": "Me levanto temprano.",
+            "example_ru": "Я встаю рано.",
+            "rank": 1085,
+            "forms": []
+          },
+          {
+            "id": "verano",
+            "es": "verano",
+            "pos": "noun",
+            "ru": "лето",
+            "example_es": "En verano hace calor.",
+            "example_ru": "Летом жарко.",
+            "rank": 1331,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "veranos"
+            ]
+          },
+          {
+            "id": "domingo",
+            "es": "domingo",
+            "pos": "noun",
+            "ru": "воскресенье",
+            "example_es": "El domingo descanso.",
+            "example_ru": "В воскресенье я отдыхаю.",
+            "rank": 2006,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "domingos"
+            ]
+          },
+          {
+            "id": "lunes",
+            "es": "lunes",
+            "pos": "noun",
+            "ru": "понедельник",
+            "example_es": "El lunes empiezo el curso.",
+            "example_ru": "В понедельник я начинаю курс.",
+            "rank": 2202,
+            "article": "el",
+            "gender": "m",
+            "forms": []
+          },
+          {
+            "id": "invierno",
+            "es": "invierno",
+            "pos": "noun",
+            "ru": "зима",
+            "example_es": "En invierno hace frío.",
+            "example_ru": "Зимой холодно.",
+            "rank": 2609,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "inviernos"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "a1-comida",
+        "level": "A1",
+        "title_ru": "Еда и магазин",
+        "order": 4,
+        "words": [
+          {
+            "id": "cuenta",
+            "es": "cuenta",
+            "pos": "noun",
+            "ru": "счёт",
+            "example_es": "La cuenta, por favor.",
+            "example_ru": "Счёт, пожалуйста.",
+            "rank": 262,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "cuentas"
+            ]
+          },
+          {
+            "id": "comida",
+            "es": "comida",
+            "pos": "noun",
+            "ru": "еда",
+            "example_es": "La comida está lista.",
+            "example_ru": "Еда готова.",
+            "rank": 483,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "comidas"
+            ]
+          },
+          {
+            "id": "comer",
+            "es": "comer",
+            "pos": "verb",
+            "ru": "есть",
+            "example_es": "Vamos a comer.",
+            "example_ru": "Пойдём поедим.",
+            "rank": 488,
+            "forms": []
+          },
+          {
+            "id": "vino",
+            "es": "vino",
+            "pos": "noun",
+            "ru": "вино",
+            "example_es": "Una copa de vino tinto.",
+            "example_ru": "Бокал красного вина.",
+            "rank": 489,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "vinos"
+            ]
+          },
+          {
+            "id": "café",
+            "es": "café",
+            "pos": "noun",
+            "ru": "кофе",
+            "example_es": "Un café con leche, por favor.",
+            "example_ru": "Кофе с молоком, пожалуйста.",
+            "rank": 617,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "cafés"
+            ]
+          },
+          {
+            "id": "pagar",
+            "es": "pagar",
+            "pos": "verb",
+            "ru": "платить",
+            "example_es": "¿Puedo pagar con tarjeta?",
+            "example_ru": "Можно заплатить картой?",
+            "rank": 775,
+            "forms": []
+          },
+          {
+            "id": "cena",
+            "es": "cena",
+            "pos": "noun",
+            "ru": "ужин",
+            "example_es": "La cena está en la mesa.",
+            "example_ru": "Ужин на столе.",
+            "rank": 797,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "cenas"
+            ]
+          },
+          {
+            "id": "tienda",
+            "es": "tienda",
+            "pos": "noun",
+            "ru": "магазин",
+            "example_es": "La tienda abre a las diez.",
+            "example_ru": "Магазин открывается в десять.",
+            "rank": 817,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "tiendas"
+            ]
+          },
+          {
+            "id": "comprar",
+            "es": "comprar",
+            "pos": "verb",
+            "ru": "покупать",
+            "example_es": "Voy a comprar pan.",
+            "example_ru": "Я пойду куплю хлеб.",
+            "rank": 818,
+            "forms": []
+          },
+          {
+            "id": "hambre",
+            "es": "hambre",
+            "pos": "noun",
+            "ru": "голод",
+            "example_es": "Tengo hambre.",
+            "example_ru": "Я голоден.",
+            "rank": 826,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "hambres"
+            ]
+          },
+          {
+            "id": "carne",
+            "es": "carne",
+            "pos": "noun",
+            "ru": "мясо",
+            "example_es": "No como carne.",
+            "example_ru": "Я не ем мясо.",
+            "rank": 1032,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "carnes"
+            ]
+          },
+          {
+            "id": "beber",
+            "es": "beber",
+            "pos": "verb",
+            "ru": "пить",
+            "example_es": "Quiero beber algo.",
+            "example_ru": "Я хочу что-нибудь выпить.",
+            "rank": 1053,
+            "forms": []
+          },
+          {
+            "id": "cerveza",
+            "es": "cerveza",
+            "pos": "noun",
+            "ru": "пиво",
+            "example_es": "Dos cervezas, por favor.",
+            "example_ru": "Два пива, пожалуйста.",
+            "rank": 1075,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "cervezas"
+            ]
+          },
+          {
+            "id": "precio",
+            "es": "precio",
+            "pos": "noun",
+            "ru": "цена",
+            "example_es": "¿Cuál es el precio?",
+            "example_ru": "Какая цена?",
+            "rank": 1230,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "precios"
+            ]
+          },
+          {
+            "id": "rico",
+            "es": "rico",
+            "pos": "adj",
+            "ru": "вкусный; богатый",
+            "example_es": "La paella está muy rica.",
+            "example_ru": "Паэлья очень вкусная.",
+            "rank": 1396,
+            "forms": [
+              "rica",
+              "ricos",
+              "ricas"
+            ]
+          },
+          {
+            "id": "restaurante",
+            "es": "restaurante",
+            "pos": "noun",
+            "ru": "ресторан",
+            "example_es": "Vamos a un restaurante.",
+            "example_ru": "Пойдём в ресторан.",
+            "rank": 1488,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "restaurantes"
+            ]
+          },
+          {
+            "id": "leche",
+            "es": "leche",
+            "pos": "noun",
+            "ru": "молоко",
+            "example_es": "No bebo leche.",
+            "example_ru": "Я не пью молоко.",
+            "rank": 1495,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "leches"
+            ]
+          },
+          {
+            "id": "pan",
+            "es": "pan",
+            "pos": "noun",
+            "ru": "хлеб",
+            "example_es": "Compra pan, por favor.",
+            "example_ru": "Купи хлеба, пожалуйста.",
+            "rank": 1549,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "panes"
+            ]
+          },
+          {
+            "id": "mercado",
+            "es": "mercado",
+            "pos": "noun",
+            "ru": "рынок",
+            "example_es": "Compro fruta en el mercado.",
+            "example_ru": "Я покупаю фрукты на рынке.",
+            "rank": 1767,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "mercados"
+            ]
+          },
+          {
+            "id": "desayuno",
+            "es": "desayuno",
+            "pos": "noun",
+            "ru": "завтрак",
+            "example_es": "El desayuno es a las ocho.",
+            "example_ru": "Завтрак в восемь.",
+            "rank": 1953,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "desayunos"
+            ]
+          },
+          {
+            "id": "queso",
+            "es": "queso",
+            "pos": "noun",
+            "ru": "сыр",
+            "example_es": "Me gusta el queso.",
+            "example_ru": "Мне нравится сыр.",
+            "rank": 2030,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "quesos"
+            ]
+          },
+          {
+            "id": "pescado",
+            "es": "pescado",
+            "pos": "noun",
+            "ru": "рыба (блюдо)",
+            "example_es": "El pescado está muy rico.",
+            "example_ru": "Рыба очень вкусная.",
+            "rank": 2464,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "pescados"
+            ]
+          },
+          {
+            "id": "caro",
+            "es": "caro",
+            "pos": "adj",
+            "ru": "дорогой",
+            "example_es": "Es demasiado caro.",
+            "example_ru": "Это слишком дорого.",
+            "rank": 3034,
+            "forms": [
+              "cara",
+              "caros",
+              "caras"
+            ]
+          },
+          {
+            "id": "huevo",
+            "es": "huevo",
+            "pos": "noun",
+            "ru": "яйцо",
+            "example_es": "Dos huevos fritos, por favor.",
+            "example_ru": "Два жареных яйца, пожалуйста.",
+            "rank": 3193,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "huevos"
+            ]
+          },
+          {
+            "id": "manzana",
+            "es": "manzana",
+            "pos": "noun",
+            "ru": "яблоко",
+            "example_es": "Quiero una manzana.",
+            "example_ru": "Я хочу яблоко.",
+            "rank": 3475,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "manzanas"
+            ]
+          },
+          {
+            "id": "sed",
+            "es": "sed",
+            "pos": "noun",
+            "ru": "жажда",
+            "example_es": "Tengo sed.",
+            "example_ru": "Я хочу пить.",
+            "rank": 3476,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "sedes"
+            ]
+          },
+          {
+            "id": "barato",
+            "es": "barato",
+            "pos": "adj",
+            "ru": "дешёвый",
+            "example_es": "Este hotel es barato.",
+            "example_ru": "Этот отель дешёвый.",
+            "rank": 3627,
+            "forms": [
+              "barata",
+              "baratos",
+              "baratas"
+            ]
+          },
+          {
+            "id": "fruta",
+            "es": "fruta",
+            "pos": "noun",
+            "ru": "фрукты",
+            "example_es": "Como fruta todos los días.",
+            "example_ru": "Я ем фрукты каждый день.",
+            "rank": 4693,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "frutas"
+            ]
+          },
+          {
+            "id": "costar",
+            "es": "costar",
+            "pos": "verb",
+            "ru": "стоить",
+            "example_es": "¿Cuánto cuesta?",
+            "example_ru": "Сколько стоит?",
+            "rank": 8133,
+            "forms": []
+          },
+          {
+            "id": "euro",
+            "es": "euro",
+            "pos": "noun",
+            "ru": "евро",
+            "example_es": "Cuesta diez euros.",
+            "example_ru": "Это стоит десять евро.",
+            "rank": 30398,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "euros"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "a1-ciudad",
+        "level": "A1",
+        "title_ru": "Город и дорога",
+        "order": 5,
+        "words": [
+          {
+            "id": "aquí",
+            "es": "aquí",
+            "pos": "adv",
+            "ru": "здесь",
+            "example_es": "Estoy aquí.",
+            "example_ru": "Я здесь.",
+            "rank": 33,
+            "forms": []
+          },
+          {
+            "id": "ir",
+            "es": "ir",
+            "pos": "verb",
+            "ru": "идти, ехать",
+            "example_es": "Voy a la playa.",
+            "example_ru": "Я иду на пляж.",
+            "rank": 128,
+            "forms": []
+          },
+          {
+            "id": "mundo",
+            "es": "mundo",
+            "pos": "noun",
+            "ru": "мир",
+            "example_es": "Quiero viajar por el mundo.",
+            "example_ru": "Я хочу путешествовать по миру.",
+            "rank": 165,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "mundos"
+            ]
+          },
+          {
+            "id": "lugar",
+            "es": "lugar",
+            "pos": "noun",
+            "ru": "место",
+            "example_es": "Es un lugar bonito.",
+            "example_ru": "Это красивое место.",
+            "rank": 177,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "lugares"
+            ]
+          },
+          {
+            "id": "allí",
+            "es": "allí",
+            "pos": "adv",
+            "ru": "там",
+            "example_es": "El coche está allí.",
+            "example_ru": "Машина там.",
+            "rank": 189,
+            "forms": []
+          },
+          {
+            "id": "salir",
+            "es": "salir",
+            "pos": "verb",
+            "ru": "выходить",
+            "example_es": "Salgo de casa temprano.",
+            "example_ru": "Я выхожу из дома рано.",
+            "rank": 265,
+            "forms": []
+          },
+          {
+            "id": "ciudad",
+            "es": "ciudad",
+            "pos": "noun",
+            "ru": "город",
+            "example_es": "Madrid es una ciudad grande.",
+            "example_ru": "Мадрид — большой город.",
+            "rank": 336,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "ciudades"
+            ]
+          },
+          {
+            "id": "venir",
+            "es": "venir",
+            "pos": "verb",
+            "ru": "приходить",
+            "example_es": "¿Vienes a la fiesta?",
+            "example_ru": "Ты придёшь на вечеринку?",
+            "rank": 339,
+            "forms": []
+          },
+          {
+            "id": "cerca",
+            "es": "cerca",
+            "pos": "adv",
+            "ru": "близко",
+            "example_es": "El museo está cerca.",
+            "example_ru": "Музей рядом.",
+            "rank": 381,
+            "forms": []
+          },
+          {
+            "id": "llegar",
+            "es": "llegar",
+            "pos": "verb",
+            "ru": "прибывать",
+            "example_es": "Llego a las ocho.",
+            "example_ru": "Я приезжаю в восемь.",
+            "rank": 400,
+            "forms": []
+          },
+          {
+            "id": "lejos",
+            "es": "lejos",
+            "pos": "adv",
+            "ru": "далеко",
+            "example_es": "Mi casa está lejos.",
+            "example_ru": "Мой дом далеко.",
+            "rank": 523,
+            "forms": []
+          },
+          {
+            "id": "país",
+            "es": "país",
+            "pos": "noun",
+            "ru": "страна",
+            "example_es": "España es un país bonito.",
+            "example_ru": "Испания — красивая страна.",
+            "rank": 583,
+            "article": "el",
+            "gender": "m",
+            "forms": []
+          },
+          {
+            "id": "calle",
+            "es": "calle",
+            "pos": "noun",
+            "ru": "улица",
+            "example_es": "Vivo en esta calle.",
+            "example_ru": "Я живу на этой улице.",
+            "rank": 607,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "calles"
+            ]
+          },
+          {
+            "id": "buscar",
+            "es": "buscar",
+            "pos": "verb",
+            "ru": "искать",
+            "example_es": "Busco la estación.",
+            "example_ru": "Я ищу вокзал.",
+            "rank": 635,
+            "forms": []
+          },
+          {
+            "id": "hotel",
+            "es": "hotel",
+            "pos": "noun",
+            "ru": "гостиница",
+            "example_es": "El hotel está cerca.",
+            "example_ru": "Гостиница рядом.",
+            "rank": 764,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "hoteles"
+            ]
+          },
+          {
+            "id": "avión",
+            "es": "avión",
+            "pos": "noun",
+            "ru": "самолёт",
+            "example_es": "El avión llega tarde.",
+            "example_ru": "Самолёт опаздывает.",
+            "rank": 929,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "aviones"
+            ]
+          },
+          {
+            "id": "tren",
+            "es": "tren",
+            "pos": "noun",
+            "ru": "поезд",
+            "example_es": "El tren sale a las diez.",
+            "example_ru": "Поезд отправляется в десять.",
+            "rank": 951,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "trenes"
+            ]
+          },
+          {
+            "id": "derecha",
+            "es": "derecha",
+            "pos": "noun",
+            "ru": "правая сторона",
+            "example_es": "Está a la derecha.",
+            "example_ru": "Это справа.",
+            "rank": 973,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "derechas"
+            ]
+          },
+          {
+            "id": "izquierda",
+            "es": "izquierda",
+            "pos": "noun",
+            "ru": "левая сторона",
+            "example_es": "Gira a la izquierda.",
+            "example_ru": "Поверни налево.",
+            "rank": 1051,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "izquierdas"
+            ]
+          },
+          {
+            "id": "banco",
+            "es": "banco",
+            "pos": "noun",
+            "ru": "банк; скамейка",
+            "example_es": "El banco cierra a las dos.",
+            "example_ru": "Банк закрывается в два.",
+            "rank": 1103,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "bancos"
+            ]
+          },
+          {
+            "id": "estación",
+            "es": "estación",
+            "pos": "noun",
+            "ru": "станция, вокзал",
+            "example_es": "¿Dónde está la estación?",
+            "example_ru": "Где вокзал?",
+            "rank": 1179,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "estaciones"
+            ]
+          },
+          {
+            "id": "playa",
+            "es": "playa",
+            "pos": "noun",
+            "ru": "пляж",
+            "example_es": "Vamos a la playa.",
+            "example_ru": "Пойдём на пляж.",
+            "rank": 1619,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "playas"
+            ]
+          },
+          {
+            "id": "parque",
+            "es": "parque",
+            "pos": "noun",
+            "ru": "парк",
+            "example_es": "Paseo por el parque.",
+            "example_ru": "Я гуляю по парку.",
+            "rank": 1646,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "parques"
+            ]
+          },
+          {
+            "id": "autobús",
+            "es": "autobús",
+            "pos": "noun",
+            "ru": "автобус",
+            "example_es": "Voy en autobús.",
+            "example_ru": "Я еду на автобусе.",
+            "rank": 1702,
+            "article": "el",
+            "gender": "m",
+            "forms": []
+          },
+          {
+            "id": "aeropuerto",
+            "es": "aeropuerto",
+            "pos": "noun",
+            "ru": "аэропорт",
+            "example_es": "Voy al aeropuerto.",
+            "example_ru": "Я еду в аэропорт.",
+            "rank": 2069,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "aeropuertos"
+            ]
+          },
+          {
+            "id": "mapa",
+            "es": "mapa",
+            "pos": "noun",
+            "ru": "карта",
+            "example_es": "¿Tienes un mapa?",
+            "example_ru": "У тебя есть карта?",
+            "rank": 2241,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "mapas"
+            ]
+          },
+          {
+            "id": "viajar",
+            "es": "viajar",
+            "pos": "verb",
+            "ru": "путешествовать",
+            "example_es": "Me gusta viajar.",
+            "example_ru": "Я люблю путешествовать.",
+            "rank": 2530,
+            "forms": []
+          },
+          {
+            "id": "metro",
+            "es": "metro",
+            "pos": "noun",
+            "ru": "метро",
+            "example_es": "Cojo el metro cada día.",
+            "example_ru": "Я каждый день езжу на метро.",
+            "rank": 3230,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "metros"
+            ]
+          },
+          {
+            "id": "plaza",
+            "es": "plaza",
+            "pos": "noun",
+            "ru": "площадь",
+            "example_es": "Nos vemos en la plaza.",
+            "example_ru": "Увидимся на площади.",
+            "rank": 3505,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "plazas"
+            ]
+          },
+          {
+            "id": "billete",
+            "es": "billete",
+            "pos": "noun",
+            "ru": "билет; купюра",
+            "example_es": "Un billete de ida y vuelta.",
+            "example_ru": "Билет туда и обратно.",
+            "rank": 3981,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "billetes"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "a1-verbos",
+        "level": "A1",
+        "title_ru": "Частые действия",
+        "order": 6,
+        "words": [
+          {
+            "id": "ser",
+            "es": "ser",
+            "pos": "verb",
+            "ru": "быть",
+            "example_es": "Soy de Rusia.",
+            "example_ru": "Я из России.",
+            "rank": 63,
+            "forms": []
+          },
+          {
+            "id": "hacer",
+            "es": "hacer",
+            "pos": "verb",
+            "ru": "делать",
+            "example_es": "¿Qué haces?",
+            "example_ru": "Что ты делаешь?",
+            "rank": 68,
+            "forms": []
+          },
+          {
+            "id": "decir",
+            "es": "decir",
+            "pos": "verb",
+            "ru": "говорить, сказать",
+            "example_es": "¿Qué dices?",
+            "example_ru": "Что ты говоришь?",
+            "rank": 111,
+            "forms": []
+          },
+          {
+            "id": "ver",
+            "es": "ver",
+            "pos": "verb",
+            "ru": "видеть",
+            "example_es": "Te veo mañana.",
+            "example_ru": "Увидимся завтра.",
+            "rank": 120,
+            "forms": []
+          },
+          {
+            "id": "estar",
+            "es": "estar",
+            "pos": "verb",
+            "ru": "находиться, быть",
+            "example_es": "Estoy en casa.",
+            "example_ru": "Я дома.",
+            "rank": 131,
+            "forms": []
+          },
+          {
+            "id": "hablar",
+            "es": "hablar",
+            "pos": "verb",
+            "ru": "говорить",
+            "example_es": "Hablo un poco de español.",
+            "example_ru": "Я немного говорю по-испански.",
+            "rank": 154,
+            "forms": []
+          },
+          {
+            "id": "tener",
+            "es": "tener",
+            "pos": "verb",
+            "ru": "иметь",
+            "example_es": "Tengo dos hermanos.",
+            "example_ru": "У меня два брата.",
+            "rank": 169,
+            "forms": []
+          },
+          {
+            "id": "saber",
+            "es": "saber",
+            "pos": "verb",
+            "ru": "знать",
+            "example_es": "No sé la respuesta.",
+            "example_ru": "Я не знаю ответа.",
+            "rank": 236,
+            "forms": []
+          },
+          {
+            "id": "volver",
+            "es": "volver",
+            "pos": "verb",
+            "ru": "возвращаться",
+            "example_es": "Vuelvo a las seis.",
+            "example_ru": "Я вернусь в шесть.",
+            "rank": 301,
+            "forms": []
+          },
+          {
+            "id": "poder",
+            "es": "poder",
+            "pos": "verb",
+            "ru": "мочь",
+            "example_es": "¿Puedo entrar?",
+            "example_ru": "Можно войти?",
+            "rank": 362,
+            "forms": []
+          },
+          {
+            "id": "pensar",
+            "es": "pensar",
+            "pos": "verb",
+            "ru": "думать",
+            "example_es": "Pienso en ti.",
+            "example_ru": "Я думаю о тебе.",
+            "rank": 423,
+            "forms": []
+          },
+          {
+            "id": "trabajar",
+            "es": "trabajar",
+            "pos": "verb",
+            "ru": "работать",
+            "example_es": "Trabajo en un banco.",
+            "example_ru": "Я работаю в банке.",
+            "rank": 431,
+            "forms": []
+          },
+          {
+            "id": "dar",
+            "es": "dar",
+            "pos": "verb",
+            "ru": "давать",
+            "example_es": "Dame el libro.",
+            "example_ru": "Дай мне книгу.",
+            "rank": 453,
+            "forms": []
+          },
+          {
+            "id": "vivir",
+            "es": "vivir",
+            "pos": "verb",
+            "ru": "жить",
+            "example_es": "Vivo en Barcelona.",
+            "example_ru": "Я живу в Барселоне.",
+            "rank": 454,
+            "forms": []
+          },
+          {
+            "id": "esperar",
+            "es": "esperar",
+            "pos": "verb",
+            "ru": "ждать, надеяться",
+            "example_es": "Te espero aquí.",
+            "example_ru": "Я жду тебя здесь.",
+            "rank": 522,
+            "forms": []
+          },
+          {
+            "id": "dormir",
+            "es": "dormir",
+            "pos": "verb",
+            "ru": "спать",
+            "example_es": "Duermo ocho horas.",
+            "example_ru": "Я сплю восемь часов.",
+            "rank": 557,
+            "forms": []
+          },
+          {
+            "id": "ayudar",
+            "es": "ayudar",
+            "pos": "verb",
+            "ru": "помогать",
+            "example_es": "¿Me ayudas?",
+            "example_ru": "Поможешь мне?",
+            "rank": 559,
+            "forms": []
+          },
+          {
+            "id": "llamar",
+            "es": "llamar",
+            "pos": "verb",
+            "ru": "звать, звонить",
+            "example_es": "Te llamo luego.",
+            "example_ru": "Я тебе позвоню позже.",
+            "rank": 581,
+            "forms": []
+          },
+          {
+            "id": "empezar",
+            "es": "empezar",
+            "pos": "verb",
+            "ru": "начинать",
+            "example_es": "La clase empieza a las nueve.",
+            "example_ru": "Урок начинается в девять.",
+            "rank": 619,
+            "forms": []
+          },
+          {
+            "id": "jugar",
+            "es": "jugar",
+            "pos": "verb",
+            "ru": "играть",
+            "example_es": "Los niños juegan fuera.",
+            "example_ru": "Дети играют на улице.",
+            "rank": 639,
+            "forms": []
+          },
+          {
+            "id": "conocer",
+            "es": "conocer",
+            "pos": "verb",
+            "ru": "знать, быть знакомым",
+            "example_es": "Conozco a tu hermano.",
+            "example_ru": "Я знаком с твоим братом.",
+            "rank": 1039,
+            "forms": []
+          },
+          {
+            "id": "entender",
+            "es": "entender",
+            "pos": "verb",
+            "ru": "понимать",
+            "example_es": "No entiendo.",
+            "example_ru": "Я не понимаю.",
+            "rank": 1064,
+            "forms": []
+          },
+          {
+            "id": "leer",
+            "es": "leer",
+            "pos": "verb",
+            "ru": "читать",
+            "example_es": "Leo el periódico.",
+            "example_ru": "Я читаю газету.",
+            "rank": 1171,
+            "forms": []
+          },
+          {
+            "id": "escribir",
+            "es": "escribir",
+            "pos": "verb",
+            "ru": "писать",
+            "example_es": "Escribo un correo.",
+            "example_ru": "Я пишу письмо.",
+            "rank": 1178,
+            "forms": []
+          },
+          {
+            "id": "abrir",
+            "es": "abrir",
+            "pos": "verb",
+            "ru": "открывать",
+            "example_es": "Abre la puerta.",
+            "example_ru": "Открой дверь.",
+            "rank": 1261,
+            "forms": []
+          },
+          {
+            "id": "querer",
+            "es": "querer",
+            "pos": "verb",
+            "ru": "хотеть",
+            "example_es": "Quiero un café.",
+            "example_ru": "Я хочу кофе.",
+            "rank": 1557,
+            "forms": []
+          },
+          {
+            "id": "necesitar",
+            "es": "necesitar",
+            "pos": "verb",
+            "ru": "нуждаться",
+            "example_es": "Necesito ayuda.",
+            "example_ru": "Мне нужна помощь.",
+            "rank": 1692,
+            "forms": []
+          },
+          {
+            "id": "cerrar",
+            "es": "cerrar",
+            "pos": "verb",
+            "ru": "закрывать",
+            "example_es": "Cierro la ventana.",
+            "example_ru": "Я закрываю окно.",
+            "rank": 1798,
+            "forms": []
+          },
+          {
+            "id": "estudiar",
+            "es": "estudiar",
+            "pos": "verb",
+            "ru": "учиться",
+            "example_es": "Estudio español.",
+            "example_ru": "Я изучаю испанский.",
+            "rank": 2477,
+            "forms": []
+          },
+          {
+            "id": "gustar",
+            "es": "gustar",
+            "pos": "verb",
+            "ru": "нравиться",
+            "example_es": "Me gusta la música.",
+            "example_ru": "Мне нравится музыка.",
+            "rank": 4220,
+            "forms": []
+          }
+        ]
+      },
+      {
+        "id": "a1-palabras",
+        "level": "A1",
+        "title_ru": "Служебные слова",
+        "order": 7,
+        "words": [
+          {
+            "id": "no",
+            "es": "no",
+            "pos": "adv",
+            "ru": "нет; не",
+            "example_es": "No, gracias.",
+            "example_ru": "Нет, спасибо.",
+            "rank": 3,
+            "forms": []
+          },
+          {
+            "id": "con",
+            "es": "con",
+            "pos": "prep",
+            "ru": "с",
+            "example_es": "Voy con mi madre.",
+            "example_ru": "Я иду с мамой.",
+            "rank": 19,
+            "forms": []
+          },
+          {
+            "id": "para",
+            "es": "para",
+            "pos": "prep",
+            "ru": "для",
+            "example_es": "Es para ti.",
+            "example_ru": "Это для тебя.",
+            "rank": 20,
+            "forms": []
+          },
+          {
+            "id": "pero",
+            "es": "pero",
+            "pos": "conj",
+            "ru": "но",
+            "example_es": "Es caro, pero bueno.",
+            "example_ru": "Дорого, но хорошо.",
+            "rank": 23,
+            "forms": []
+          },
+          {
+            "id": "sí",
+            "es": "sí",
+            "pos": "interj",
+            "ru": "да",
+            "example_es": "Sí, claro.",
+            "example_ru": "Да, конечно.",
+            "rank": 24,
+            "forms": []
+          },
+          {
+            "id": "bien",
+            "es": "bien",
+            "pos": "adv",
+            "ru": "хорошо",
+            "example_es": "Estoy bien.",
+            "example_ru": "У меня всё хорошо.",
+            "rank": 26,
+            "forms": []
+          },
+          {
+            "id": "todo",
+            "es": "todo",
+            "pos": "pron",
+            "ru": "всё",
+            "example_es": "Todo está bien.",
+            "example_ru": "Всё хорошо.",
+            "rank": 39,
+            "forms": []
+          },
+          {
+            "id": "muy",
+            "es": "muy",
+            "pos": "adv",
+            "ru": "очень",
+            "example_es": "Es muy bonito.",
+            "example_ru": "Это очень красиво.",
+            "rank": 43,
+            "forms": []
+          },
+          {
+            "id": "algo",
+            "es": "algo",
+            "pos": "pron",
+            "ru": "что-нибудь",
+            "example_es": "¿Quieres algo?",
+            "example_ru": "Хочешь что-нибудь?",
+            "rank": 48,
+            "forms": []
+          },
+          {
+            "id": "bueno",
+            "es": "bueno",
+            "pos": "adj",
+            "ru": "хороший",
+            "example_es": "Es un buen libro.",
+            "example_ru": "Это хорошая книга.",
+            "rank": 50,
+            "forms": [
+              "buena",
+              "buenos",
+              "buenas"
+            ]
+          },
+          {
+            "id": "nada",
+            "es": "nada",
+            "pos": "pron",
+            "ru": "ничего",
+            "example_es": "No quiero nada.",
+            "example_ru": "Я ничего не хочу.",
+            "rank": 58,
+            "forms": []
+          },
+          {
+            "id": "gracias",
+            "es": "gracias",
+            "pos": "interj",
+            "ru": "спасибо",
+            "example_es": "Muchas gracias.",
+            "example_ru": "Большое спасибо.",
+            "rank": 70,
+            "forms": []
+          },
+          {
+            "id": "porque",
+            "es": "porque",
+            "pos": "conj",
+            "ru": "потому что",
+            "example_es": "Estudio porque quiero.",
+            "example_ru": "Я учусь, потому что хочу.",
+            "rank": 76,
+            "forms": []
+          },
+          {
+            "id": "hola",
+            "es": "hola",
+            "pos": "interj",
+            "ru": "привет",
+            "example_es": "Hola, ¿qué tal?",
+            "example_ru": "Привет, как дела?",
+            "rank": 88,
+            "forms": []
+          },
+          {
+            "id": "mucho",
+            "es": "mucho",
+            "pos": "adv",
+            "ru": "много",
+            "example_es": "Trabajo mucho.",
+            "example_ru": "Я много работаю.",
+            "rank": 103,
+            "forms": []
+          },
+          {
+            "id": "también",
+            "es": "también",
+            "pos": "adv",
+            "ru": "тоже",
+            "example_es": "Yo también.",
+            "example_ru": "Я тоже.",
+            "rank": 112,
+            "forms": []
+          },
+          {
+            "id": "sin",
+            "es": "sin",
+            "pos": "prep",
+            "ru": "без",
+            "example_es": "Café sin azúcar.",
+            "example_ru": "Кофе без сахара.",
+            "rank": 115,
+            "forms": []
+          },
+          {
+            "id": "alguien",
+            "es": "alguien",
+            "pos": "pron",
+            "ru": "кто-нибудь",
+            "example_es": "¿Hay alguien?",
+            "example_ru": "Здесь кто-нибудь есть?",
+            "rank": 123,
+            "forms": []
+          },
+          {
+            "id": "poco",
+            "es": "poco",
+            "pos": "adv",
+            "ru": "мало, немного",
+            "example_es": "Hablo un poco.",
+            "example_ru": "Я говорю немного.",
+            "rank": 133,
+            "forms": []
+          },
+          {
+            "id": "mismo",
+            "es": "mismo",
+            "pos": "adj",
+            "ru": "тот же самый",
+            "example_es": "Tenemos la misma edad.",
+            "example_ru": "Мы одного возраста.",
+            "rank": 149,
+            "forms": [
+              "misma",
+              "mismos",
+              "mismas"
+            ]
+          },
+          {
+            "id": "nadie",
+            "es": "nadie",
+            "pos": "pron",
+            "ru": "никто",
+            "example_es": "No hay nadie.",
+            "example_ru": "Никого нет.",
+            "rank": 151,
+            "forms": []
+          },
+          {
+            "id": "otro",
+            "es": "otro",
+            "pos": "adj",
+            "ru": "другой",
+            "example_es": "Quiero otro café.",
+            "example_ru": "Я хочу ещё кофе.",
+            "rank": 171,
+            "forms": [
+              "otra",
+              "otros",
+              "otras"
+            ]
+          },
+          {
+            "id": "mal",
+            "es": "mal",
+            "pos": "adv",
+            "ru": "плохо",
+            "example_es": "Hoy estoy mal.",
+            "example_ru": "Сегодня мне плохо.",
+            "rank": 219,
+            "forms": []
+          },
+          {
+            "id": "adiós",
+            "es": "adiós",
+            "pos": "interj",
+            "ru": "до свидания",
+            "example_es": "Adiós, hasta mañana.",
+            "example_ru": "До свидания, до завтра.",
+            "rank": 297,
+            "forms": []
+          },
+          {
+            "id": "difícil",
+            "es": "difícil",
+            "pos": "adj",
+            "ru": "трудный",
+            "example_es": "El español no es difícil.",
+            "example_ru": "Испанский не трудный.",
+            "rank": 404,
+            "forms": [
+              "difíciles"
+            ]
+          },
+          {
+            "id": "malo",
+            "es": "malo",
+            "pos": "adj",
+            "ru": "плохой",
+            "example_es": "Es una mala idea.",
+            "example_ru": "Это плохая идея.",
+            "rank": 476,
+            "forms": [
+              "mala",
+              "malos",
+              "malas"
+            ]
+          },
+          {
+            "id": "fácil",
+            "es": "fácil",
+            "pos": "adj",
+            "ru": "лёгкий",
+            "example_es": "El examen es fácil.",
+            "example_ru": "Экзамен лёгкий.",
+            "rank": 487,
+            "forms": [
+              "fáciles"
+            ]
+          },
+          {
+            "id": "tampoco",
+            "es": "tampoco",
+            "pos": "adv",
+            "ru": "тоже не",
+            "example_es": "Yo tampoco.",
+            "example_ru": "Я тоже нет.",
+            "rank": 504,
+            "forms": []
+          }
+        ]
+      },
+      {
+        "id": "a2-viajes",
+        "level": "A2",
+        "title_ru": "Путешествия",
+        "order": 1,
+        "words": [
+          {
+            "id": "camino",
+            "es": "camino",
+            "pos": "noun",
+            "ru": "дорога, путь",
+            "example_es": "Estamos en camino.",
+            "example_ru": "Мы в пути.",
+            "rank": 305,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "caminos"
+            ]
+          },
+          {
+            "id": "recuerdo",
+            "es": "recuerdo",
+            "pos": "noun",
+            "ru": "сувенир; воспоминание",
+            "example_es": "Compré un recuerdo.",
+            "example_ru": "Я купил сувенир.",
+            "rank": 547,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "recuerdos"
+            ]
+          },
+          {
+            "id": "pueblo",
+            "es": "pueblo",
+            "pos": "noun",
+            "ru": "деревня, городок",
+            "example_es": "Es un pueblo tranquilo.",
+            "example_ru": "Это тихий городок.",
+            "rank": 570,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "pueblos"
+            ]
+          },
+          {
+            "id": "viaje",
+            "es": "viaje",
+            "pos": "noun",
+            "ru": "поездка",
+            "example_es": "¡Buen viaje!",
+            "example_ru": "Счастливого пути!",
+            "rank": 626,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "viajes"
+            ]
+          },
+          {
+            "id": "perder",
+            "es": "perder",
+            "pos": "verb",
+            "ru": "терять; опаздывать",
+            "example_es": "Perdí el tren.",
+            "example_ru": "Я опоздал на поезд.",
+            "rank": 653,
+            "forms": []
+          },
+          {
+            "id": "mar",
+            "es": "mar",
+            "pos": "noun",
+            "ru": "море",
+            "example_es": "Me encanta el mar.",
+            "example_ru": "Я обожаю море.",
+            "rank": 1036,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "mares"
+            ]
+          },
+          {
+            "id": "conocer-a2",
+            "es": "conocer",
+            "pos": "verb",
+            "ru": "узнавать (место)",
+            "example_es": "Quiero conocer México.",
+            "example_ru": "Я хочу побывать в Мексике.",
+            "rank": 1039,
+            "forms": []
+          },
+          {
+            "id": "vuelo",
+            "es": "vuelo",
+            "pos": "noun",
+            "ru": "рейс",
+            "example_es": "El vuelo sale con retraso.",
+            "example_ru": "Рейс задерживается.",
+            "rank": 1303,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "vuelos"
+            ]
+          },
+          {
+            "id": "isla",
+            "es": "isla",
+            "pos": "noun",
+            "ru": "остров",
+            "example_es": "Viven en una isla.",
+            "example_ru": "Они живут на острове.",
+            "rank": 1353,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "islas"
+            ]
+          },
+          {
+            "id": "vacaciones",
+            "es": "vacaciones",
+            "pos": "noun",
+            "ru": "отпуск, каникулы",
+            "example_es": "Me voy de vacaciones.",
+            "example_ru": "Я уезжаю в отпуск.",
+            "rank": 1400,
+            "article": "las",
+            "gender": "f",
+            "forms": []
+          },
+          {
+            "id": "descansar",
+            "es": "descansar",
+            "pos": "verb",
+            "ru": "отдыхать",
+            "example_es": "Necesito descansar.",
+            "example_ru": "Мне нужно отдохнуть.",
+            "rank": 1937,
+            "forms": []
+          },
+          {
+            "id": "montaña",
+            "es": "montaña",
+            "pos": "noun",
+            "ru": "гора",
+            "example_es": "Subimos a la montaña.",
+            "example_ru": "Мы поднялись в горы.",
+            "rank": 2026,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "montañas"
+            ]
+          },
+          {
+            "id": "visitar",
+            "es": "visitar",
+            "pos": "verb",
+            "ru": "посещать",
+            "example_es": "Visitamos Granada.",
+            "example_ru": "Мы побывали в Гранаде.",
+            "rank": 2994,
+            "forms": []
+          },
+          {
+            "id": "museo",
+            "es": "museo",
+            "pos": "noun",
+            "ru": "музей",
+            "example_es": "El museo abre a las diez.",
+            "example_ru": "Музей открывается в десять.",
+            "rank": 3190,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "museos"
+            ]
+          },
+          {
+            "id": "maleta",
+            "es": "maleta",
+            "pos": "noun",
+            "ru": "чемодан",
+            "example_es": "Hago la maleta.",
+            "example_ru": "Я собираю чемодан.",
+            "rank": 3226,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "maletas"
+            ]
+          },
+          {
+            "id": "reserva",
+            "es": "reserva",
+            "pos": "noun",
+            "ru": "бронь",
+            "example_es": "Tengo una reserva.",
+            "example_ru": "У меня бронь.",
+            "rank": 3405,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "reservas"
+            ]
+          },
+          {
+            "id": "equipaje",
+            "es": "equipaje",
+            "pos": "noun",
+            "ru": "багаж",
+            "example_es": "Mi equipaje no ha llegado.",
+            "example_ru": "Мой багаж не прибыл.",
+            "rank": 3930,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "equipajes"
+            ]
+          },
+          {
+            "id": "pasaporte",
+            "es": "pasaporte",
+            "pos": "noun",
+            "ru": "паспорт",
+            "example_es": "No olvides el pasaporte.",
+            "example_ru": "Не забудь паспорт.",
+            "rank": 4119,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "pasaportes"
+            ]
+          },
+          {
+            "id": "retraso",
+            "es": "retraso",
+            "pos": "noun",
+            "ru": "задержка",
+            "example_es": "El tren tiene retraso.",
+            "example_ru": "Поезд задерживается.",
+            "rank": 4878,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "retrasos"
+            ]
+          },
+          {
+            "id": "paisaje",
+            "es": "paisaje",
+            "pos": "noun",
+            "ru": "пейзаж",
+            "example_es": "¡Qué paisaje tan bonito!",
+            "example_ru": "Какой красивый пейзаж!",
+            "rank": 7916,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "paisajes"
+            ]
+          },
+          {
+            "id": "alquilar",
+            "es": "alquilar",
+            "pos": "verb",
+            "ru": "снимать, арендовать",
+            "example_es": "Alquilamos un coche.",
+            "example_ru": "Мы арендовали машину.",
+            "rank": 8007,
+            "forms": []
+          },
+          {
+            "id": "excursión",
+            "es": "excursión",
+            "pos": "noun",
+            "ru": "экскурсия",
+            "example_es": "Hacemos una excursión.",
+            "example_ru": "Мы едем на экскурсию.",
+            "rank": 8555,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "excursiones"
+            ]
+          },
+          {
+            "id": "alojamiento",
+            "es": "alojamiento",
+            "pos": "noun",
+            "ru": "жильё",
+            "example_es": "Buscamos alojamiento barato.",
+            "example_ru": "Мы ищем недорогое жильё.",
+            "rank": 9749,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "alojamientos"
+            ]
+          },
+          {
+            "id": "monumento",
+            "es": "monumento",
+            "pos": "noun",
+            "ru": "памятник",
+            "example_es": "Visitamos el monumento.",
+            "example_ru": "Мы осмотрели памятник.",
+            "rank": 10676,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "monumentos"
+            ]
+          },
+          {
+            "id": "turista",
+            "es": "turista",
+            "pos": "noun",
+            "ru": "турист, туристка",
+            "example_es": "Hay muchos turistas.",
+            "example_ru": "Здесь много туристов.",
+            "rank": 11448,
+            "article": "el",
+            "gender": "mf",
+            "forms": [
+              "turistas"
+            ]
+          },
+          {
+            "id": "reservar",
+            "es": "reservar",
+            "pos": "verb",
+            "ru": "бронировать",
+            "example_es": "Quiero reservar una mesa.",
+            "example_ru": "Я хочу забронировать столик.",
+            "rank": 13900,
+            "forms": []
+          }
+        ]
+      },
+      {
+        "id": "a2-trabajo",
+        "level": "A2",
+        "title_ru": "Работа и учёба",
+        "order": 2,
+        "words": [
+          {
+            "id": "trabajo",
+            "es": "trabajo",
+            "pos": "noun",
+            "ru": "работа",
+            "example_es": "Busco trabajo.",
+            "example_ru": "Я ищу работу.",
+            "rank": 142,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "trabajos"
+            ]
+          },
+          {
+            "id": "jefe",
+            "es": "jefe",
+            "pos": "noun",
+            "ru": "начальник",
+            "example_es": "Mi jefe es muy exigente.",
+            "example_ru": "Мой начальник очень требовательный.",
+            "rank": 357,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "jefes"
+            ]
+          },
+          {
+            "id": "clase",
+            "es": "clase",
+            "pos": "noun",
+            "ru": "урок, класс",
+            "example_es": "La clase es muy interesante.",
+            "example_ru": "Урок очень интересный.",
+            "rank": 410,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "clases"
+            ]
+          },
+          {
+            "id": "oficina",
+            "es": "oficina",
+            "pos": "noun",
+            "ru": "офис",
+            "example_es": "Estoy en la oficina.",
+            "example_ru": "Я в офисе.",
+            "rank": 537,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "oficinas"
+            ]
+          },
+          {
+            "id": "ganar",
+            "es": "ganar",
+            "pos": "verb",
+            "ru": "зарабатывать; выигрывать",
+            "example_es": "Gana mucho dinero.",
+            "example_ru": "Он много зарабатывает.",
+            "rank": 740,
+            "forms": []
+          },
+          {
+            "id": "reunión",
+            "es": "reunión",
+            "pos": "noun",
+            "ru": "совещание",
+            "example_es": "Tengo una reunión a las diez.",
+            "example_ru": "У меня совещание в десять.",
+            "rank": 855,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "reuniones"
+            ]
+          },
+          {
+            "id": "universidad",
+            "es": "universidad",
+            "pos": "noun",
+            "ru": "университет",
+            "example_es": "Estudio en la universidad.",
+            "example_ru": "Я учусь в университете.",
+            "rank": 868,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "universidades"
+            ]
+          },
+          {
+            "id": "terminar",
+            "es": "terminar",
+            "pos": "verb",
+            "ru": "заканчивать",
+            "example_es": "Termino a las cinco.",
+            "example_ru": "Я заканчиваю в пять.",
+            "rank": 909,
+            "forms": []
+          },
+          {
+            "id": "cliente",
+            "es": "cliente",
+            "pos": "noun",
+            "ru": "клиент",
+            "example_es": "El cliente siempre tiene razón.",
+            "example_ru": "Клиент всегда прав.",
+            "rank": 1110,
+            "article": "el",
+            "gender": "mf",
+            "forms": [
+              "clientes"
+            ]
+          },
+          {
+            "id": "ocupado",
+            "es": "ocupado",
+            "pos": "adj",
+            "ru": "занятой",
+            "example_es": "Hoy estoy ocupado.",
+            "example_ru": "Сегодня я занят.",
+            "rank": 1191,
+            "forms": [
+              "ocupada",
+              "ocupados",
+              "ocupadas"
+            ]
+          },
+          {
+            "id": "experiencia",
+            "es": "experiencia",
+            "pos": "noun",
+            "ru": "опыт",
+            "example_es": "No tengo experiencia.",
+            "example_ru": "У меня нет опыта.",
+            "rank": 1198,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "experiencias"
+            ]
+          },
+          {
+            "id": "aprender",
+            "es": "aprender",
+            "pos": "verb",
+            "ru": "учить, учиться",
+            "example_es": "Aprendo rápido.",
+            "example_ru": "Я быстро учусь.",
+            "rank": 1229,
+            "forms": []
+          },
+          {
+            "id": "nota",
+            "es": "nota",
+            "pos": "noun",
+            "ru": "оценка; записка",
+            "example_es": "Saqué buena nota.",
+            "example_ru": "Я получил хорошую оценку.",
+            "rank": 1304,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "notas"
+            ]
+          },
+          {
+            "id": "empresa",
+            "es": "empresa",
+            "pos": "noun",
+            "ru": "компания",
+            "example_es": "Trabajo en una empresa pequeña.",
+            "example_ru": "Я работаю в небольшой компании.",
+            "rank": 1458,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "empresas"
+            ]
+          },
+          {
+            "id": "cansado",
+            "es": "cansado",
+            "pos": "adj",
+            "ru": "усталый",
+            "example_es": "Estoy muy cansado.",
+            "example_ru": "Я очень устал.",
+            "rank": 1469,
+            "forms": [
+              "cansada",
+              "cansados",
+              "cansadas"
+            ]
+          },
+          {
+            "id": "proyecto",
+            "es": "proyecto",
+            "pos": "noun",
+            "ru": "проект",
+            "example_es": "Es un proyecto nuevo.",
+            "example_ru": "Это новый проект.",
+            "rank": 1573,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "proyectos"
+            ]
+          },
+          {
+            "id": "contrato",
+            "es": "contrato",
+            "pos": "noun",
+            "ru": "договор",
+            "example_es": "Firmé el contrato.",
+            "example_ru": "Я подписал договор.",
+            "rank": 1725,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "contratos"
+            ]
+          },
+          {
+            "id": "correo",
+            "es": "correo",
+            "pos": "noun",
+            "ru": "почта, письмо",
+            "example_es": "Te mando un correo.",
+            "example_ru": "Я пришлю тебе письмо.",
+            "rank": 1875,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "correos"
+            ]
+          },
+          {
+            "id": "examen",
+            "es": "examen",
+            "pos": "noun",
+            "ru": "экзамен",
+            "example_es": "Tengo un examen el lunes.",
+            "example_ru": "У меня экзамен в понедельник.",
+            "rank": 2024,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "examenes"
+            ]
+          },
+          {
+            "id": "curso",
+            "es": "curso",
+            "pos": "noun",
+            "ru": "курс",
+            "example_es": "Hago un curso de español.",
+            "example_ru": "Я прохожу курс испанского.",
+            "rank": 2186,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "cursos"
+            ]
+          },
+          {
+            "id": "entrevista",
+            "es": "entrevista",
+            "pos": "noun",
+            "ru": "собеседование, интервью",
+            "example_es": "Mañana tengo una entrevista.",
+            "example_ru": "Завтра у меня собеседование.",
+            "rank": 2218,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "entrevistas"
+            ]
+          },
+          {
+            "id": "preparar",
+            "es": "preparar",
+            "pos": "verb",
+            "ru": "готовить",
+            "example_es": "Preparo el informe.",
+            "example_ru": "Я готовлю отчёт.",
+            "rank": 2987,
+            "forms": []
+          },
+          {
+            "id": "enseñar",
+            "es": "enseñar",
+            "pos": "verb",
+            "ru": "учить кого-то",
+            "example_es": "Enseño inglés.",
+            "example_ru": "Я преподаю английский.",
+            "rank": 3179,
+            "forms": []
+          },
+          {
+            "id": "sueldo",
+            "es": "sueldo",
+            "pos": "noun",
+            "ru": "зарплата",
+            "example_es": "El sueldo es bajo.",
+            "example_ru": "Зарплата низкая.",
+            "rank": 4105,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "sueldos"
+            ]
+          },
+          {
+            "id": "horario",
+            "es": "horario",
+            "pos": "noun",
+            "ru": "расписание",
+            "example_es": "¿Cuál es tu horario?",
+            "example_ru": "Какой у тебя график?",
+            "rank": 4448,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "horarios"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "a2-salud",
+        "level": "A2",
+        "title_ru": "Здоровье и тело",
+        "order": 3,
+        "words": [
+          {
+            "id": "cabeza",
+            "es": "cabeza",
+            "pos": "noun",
+            "ru": "голова",
+            "example_es": "Me duele la cabeza.",
+            "example_ru": "У меня болит голова.",
+            "rank": 274,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "cabezas"
+            ]
+          },
+          {
+            "id": "mano",
+            "es": "mano",
+            "pos": "noun",
+            "ru": "рука (кисть)",
+            "example_es": "Lávate las manos.",
+            "example_ru": "Помой руки.",
+            "rank": 373,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "manos"
+            ]
+          },
+          {
+            "id": "cuerpo",
+            "es": "cuerpo",
+            "pos": "noun",
+            "ru": "тело",
+            "example_es": "El cuerpo necesita descanso.",
+            "example_ru": "Телу нужен отдых.",
+            "rank": 435,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "cuerpos"
+            ]
+          },
+          {
+            "id": "hospital",
+            "es": "hospital",
+            "pos": "noun",
+            "ru": "больница",
+            "example_es": "Está en el hospital.",
+            "example_ru": "Он в больнице.",
+            "rank": 596,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "hospitales"
+            ]
+          },
+          {
+            "id": "médico",
+            "es": "médico",
+            "pos": "noun",
+            "ru": "врач",
+            "example_es": "Voy al médico.",
+            "example_ru": "Я иду к врачу.",
+            "rank": 704,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "médicos"
+            ]
+          },
+          {
+            "id": "dolor",
+            "es": "dolor",
+            "pos": "noun",
+            "ru": "боль",
+            "example_es": "Tengo dolor de muelas.",
+            "example_ru": "У меня болит зуб.",
+            "rank": 733,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "dolores"
+            ]
+          },
+          {
+            "id": "pie",
+            "es": "pie",
+            "pos": "noun",
+            "ru": "ступня",
+            "example_es": "Voy a pie.",
+            "example_ru": "Я иду пешком.",
+            "rank": 738,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "pies"
+            ]
+          },
+          {
+            "id": "cita",
+            "es": "cita",
+            "pos": "noun",
+            "ru": "приём; свидание",
+            "example_es": "Tengo cita con el dentista.",
+            "example_ru": "У меня приём у стоматолога.",
+            "rank": 751,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "citas"
+            ]
+          },
+          {
+            "id": "salud",
+            "es": "salud",
+            "pos": "noun",
+            "ru": "здоровье",
+            "example_es": "¡Salud!",
+            "example_ru": "Будь здоров!",
+            "rank": 983,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "saludes"
+            ]
+          },
+          {
+            "id": "espalda",
+            "es": "espalda",
+            "pos": "noun",
+            "ru": "спина",
+            "example_es": "Me duele la espalda.",
+            "example_ru": "У меня болит спина.",
+            "rank": 1136,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "espaldas"
+            ]
+          },
+          {
+            "id": "enfermo",
+            "es": "enfermo",
+            "pos": "adj",
+            "ru": "больной",
+            "example_es": "Estoy enfermo.",
+            "example_ru": "Я болен.",
+            "rank": 1184,
+            "forms": [
+              "enferma",
+              "enfermos",
+              "enfermas"
+            ]
+          },
+          {
+            "id": "ojo",
+            "es": "ojo",
+            "pos": "noun",
+            "ru": "глаз",
+            "example_es": "Tiene los ojos azules.",
+            "example_ru": "У неё голубые глаза.",
+            "rank": 1240,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "ojos"
+            ]
+          },
+          {
+            "id": "estómago",
+            "es": "estómago",
+            "pos": "noun",
+            "ru": "желудок",
+            "example_es": "Me duele el estómago.",
+            "example_ru": "У меня болит живот.",
+            "rank": 2318,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "estómagos"
+            ]
+          },
+          {
+            "id": "fiebre",
+            "es": "fiebre",
+            "pos": "noun",
+            "ru": "температура, жар",
+            "example_es": "Tengo fiebre.",
+            "example_ru": "У меня температура.",
+            "rank": 3120,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "fiebres"
+            ]
+          },
+          {
+            "id": "sentirse",
+            "es": "sentirse",
+            "pos": "verb",
+            "ru": "чувствовать себя",
+            "example_es": "Me siento mejor.",
+            "example_ru": "Я чувствую себя лучше.",
+            "rank": 3890,
+            "forms": []
+          },
+          {
+            "id": "sano",
+            "es": "sano",
+            "pos": "adj",
+            "ru": "здоровый",
+            "example_es": "Comer fruta es sano.",
+            "example_ru": "Есть фрукты полезно.",
+            "rank": 4063,
+            "forms": [
+              "sana",
+              "sanos",
+              "sanas"
+            ]
+          },
+          {
+            "id": "deporte",
+            "es": "deporte",
+            "pos": "noun",
+            "ru": "спорт",
+            "example_es": "Hago deporte cada día.",
+            "example_ru": "Я занимаюсь спортом каждый день.",
+            "rank": 4299,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "deportes"
+            ]
+          },
+          {
+            "id": "farmacia",
+            "es": "farmacia",
+            "pos": "noun",
+            "ru": "аптека",
+            "example_es": "La farmacia está cerrada.",
+            "example_ru": "Аптека закрыта.",
+            "rank": 6877,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "farmacias"
+            ]
+          },
+          {
+            "id": "doler",
+            "es": "doler",
+            "pos": "verb",
+            "ru": "болеть",
+            "example_es": "Me duele la garganta.",
+            "example_ru": "У меня болит горло.",
+            "rank": 7661,
+            "forms": []
+          },
+          {
+            "id": "resfriado",
+            "es": "resfriado",
+            "pos": "noun",
+            "ru": "простуда",
+            "example_es": "Tengo un resfriado.",
+            "example_ru": "У меня простуда.",
+            "rank": 8321,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "resfriados"
+            ]
+          },
+          {
+            "id": "pastilla",
+            "es": "pastilla",
+            "pos": "noun",
+            "ru": "таблетка",
+            "example_es": "Toma una pastilla.",
+            "example_ru": "Прими таблетку.",
+            "rank": 8797,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "pastillas"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "a2-casa",
+        "level": "A2",
+        "title_ru": "Дом и быт",
+        "order": 4,
+        "words": [
+          {
+            "id": "luz",
+            "es": "luz",
+            "pos": "noun",
+            "ru": "свет",
+            "example_es": "Apaga la luz.",
+            "example_ru": "Выключи свет.",
+            "rank": 551,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "luces"
+            ]
+          },
+          {
+            "id": "basura",
+            "es": "basura",
+            "pos": "noun",
+            "ru": "мусор",
+            "example_es": "Saca la basura, por favor.",
+            "example_ru": "Вынеси мусор, пожалуйста.",
+            "rank": 947,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "basuras"
+            ]
+          },
+          {
+            "id": "roto",
+            "es": "roto",
+            "pos": "adj",
+            "ru": "сломанный",
+            "example_es": "La silla está rota.",
+            "example_ru": "Стул сломан.",
+            "rank": 1648,
+            "forms": [
+              "rota",
+              "rotos",
+              "rotas"
+            ]
+          },
+          {
+            "id": "jardín",
+            "es": "jardín",
+            "pos": "noun",
+            "ru": "сад",
+            "example_es": "Tenemos un jardín pequeño.",
+            "example_ru": "У нас маленький сад.",
+            "rank": 1829,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "jardines"
+            ]
+          },
+          {
+            "id": "limpiar",
+            "es": "limpiar",
+            "pos": "verb",
+            "ru": "убирать",
+            "example_es": "Limpio la casa los sábados.",
+            "example_ru": "Я убираю дом по субботам.",
+            "rank": 1980,
+            "forms": []
+          },
+          {
+            "id": "armario",
+            "es": "armario",
+            "pos": "noun",
+            "ru": "шкаф",
+            "example_es": "La ropa está en el armario.",
+            "example_ru": "Одежда в шкафу.",
+            "rank": 2595,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "armarios"
+            ]
+          },
+          {
+            "id": "sofá",
+            "es": "sofá",
+            "pos": "noun",
+            "ru": "диван",
+            "example_es": "Me siento en el sofá.",
+            "example_ru": "Я сажусь на диван.",
+            "rank": 2809,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "sofás"
+            ]
+          },
+          {
+            "id": "cocinar",
+            "es": "cocinar",
+            "pos": "verb",
+            "ru": "готовить еду",
+            "example_es": "Me encanta cocinar.",
+            "example_ru": "Я обожаю готовить.",
+            "rank": 3132,
+            "forms": []
+          },
+          {
+            "id": "alquiler",
+            "es": "alquiler",
+            "pos": "noun",
+            "ru": "аренда, квартплата",
+            "example_es": "El alquiler es caro.",
+            "example_ru": "Аренда дорогая.",
+            "rank": 3217,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "alquileres"
+            ]
+          },
+          {
+            "id": "ascensor",
+            "es": "ascensor",
+            "pos": "noun",
+            "ru": "лифт",
+            "example_es": "El ascensor está roto.",
+            "example_ru": "Лифт сломан.",
+            "rank": 3548,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "ascensores"
+            ]
+          },
+          {
+            "id": "vecindario",
+            "es": "vecindario",
+            "pos": "noun",
+            "ru": "район, соседи",
+            "example_es": "Es un vecindario tranquilo.",
+            "example_ru": "Это тихий район.",
+            "rank": 3692,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "vecindarios"
+            ]
+          },
+          {
+            "id": "lavar",
+            "es": "lavar",
+            "pos": "verb",
+            "ru": "мыть, стирать",
+            "example_es": "Lavo los platos.",
+            "example_ru": "Я мою посуду.",
+            "rank": 4560,
+            "forms": []
+          },
+          {
+            "id": "muebles",
+            "es": "muebles",
+            "pos": "noun",
+            "ru": "мебель",
+            "example_es": "Compramos muebles nuevos.",
+            "example_ru": "Мы купили новую мебель.",
+            "rank": 4657,
+            "article": "los",
+            "gender": "m",
+            "forms": []
+          },
+          {
+            "id": "apagar",
+            "es": "apagar",
+            "pos": "verb",
+            "ru": "выключать",
+            "example_es": "Apaga la televisión.",
+            "example_ru": "Выключи телевизор.",
+            "rank": 4917,
+            "forms": []
+          },
+          {
+            "id": "encender",
+            "es": "encender",
+            "pos": "verb",
+            "ru": "включать",
+            "example_es": "Enciende la luz.",
+            "example_ru": "Включи свет.",
+            "rank": 5129,
+            "forms": []
+          },
+          {
+            "id": "nevera",
+            "es": "nevera",
+            "pos": "noun",
+            "ru": "холодильник",
+            "example_es": "La leche está en la nevera.",
+            "example_ru": "Молоко в холодильнике.",
+            "rank": 6862,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "neveras"
+            ]
+          },
+          {
+            "id": "mudarse",
+            "es": "mudarse",
+            "pos": "verb",
+            "ru": "переезжать",
+            "example_es": "Nos mudamos en mayo.",
+            "example_ru": "Мы переезжаем в мае.",
+            "rank": 8494,
+            "forms": []
+          },
+          {
+            "id": "terraza",
+            "es": "terraza",
+            "pos": "noun",
+            "ru": "терраса",
+            "example_es": "Cenamos en la terraza.",
+            "example_ru": "Мы ужинаем на террасе.",
+            "rank": 8752,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "terrazas"
+            ]
+          },
+          {
+            "id": "calefacción",
+            "es": "calefacción",
+            "pos": "noun",
+            "ru": "отопление",
+            "example_es": "La calefacción no funciona.",
+            "example_ru": "Отопление не работает.",
+            "rank": 10168,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "calefacciones"
+            ]
+          },
+          {
+            "id": "lavadora",
+            "es": "lavadora",
+            "pos": "noun",
+            "ru": "стиральная машина",
+            "example_es": "Pongo la lavadora.",
+            "example_ru": "Я включаю стиральную машину.",
+            "rank": 12589,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "lavadoras"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "a2-ocio",
+        "level": "A2",
+        "title_ru": "Досуг и общение",
+        "order": 5,
+        "words": [
+          {
+            "id": "equipo",
+            "es": "equipo",
+            "pos": "noun",
+            "ru": "команда",
+            "example_es": "Mi equipo ganó.",
+            "example_ru": "Моя команда выиграла.",
+            "rank": 397,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "equipos"
+            ]
+          },
+          {
+            "id": "juego",
+            "es": "juego",
+            "pos": "noun",
+            "ru": "игра",
+            "example_es": "Es un juego divertido.",
+            "example_ru": "Это весёлая игра.",
+            "rank": 433,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "juegos"
+            ]
+          },
+          {
+            "id": "fiesta",
+            "es": "fiesta",
+            "pos": "noun",
+            "ru": "праздник, вечеринка",
+            "example_es": "Hay una fiesta el sábado.",
+            "example_ru": "В субботу вечеринка.",
+            "rank": 447,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "fiestas"
+            ]
+          },
+          {
+            "id": "plan",
+            "es": "plan",
+            "pos": "noun",
+            "ru": "план",
+            "example_es": "¿Tienes planes para hoy?",
+            "example_ru": "У тебя есть планы на сегодня?",
+            "rank": 565,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "planes"
+            ]
+          },
+          {
+            "id": "música",
+            "es": "música",
+            "pos": "noun",
+            "ru": "музыка",
+            "example_es": "Escucho música.",
+            "example_ru": "Я слушаю музыку.",
+            "rank": 577,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "músicas"
+            ]
+          },
+          {
+            "id": "película",
+            "es": "película",
+            "pos": "noun",
+            "ru": "фильм",
+            "example_es": "Es una película divertida.",
+            "example_ru": "Это смешной фильм.",
+            "rank": 641,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "películas"
+            ]
+          },
+          {
+            "id": "divertido",
+            "es": "divertido",
+            "pos": "adj",
+            "ru": "весёлый, смешной",
+            "example_es": "Es muy divertido.",
+            "example_ru": "Это очень весело.",
+            "rank": 684,
+            "forms": [
+              "divertida",
+              "divertidos",
+              "divertidas"
+            ]
+          },
+          {
+            "id": "canción",
+            "es": "canción",
+            "pos": "noun",
+            "ru": "песня",
+            "example_es": "Me gusta esta canción.",
+            "example_ru": "Мне нравится эта песня.",
+            "rank": 866,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "canciones"
+            ]
+          },
+          {
+            "id": "partido",
+            "es": "partido",
+            "pos": "noun",
+            "ru": "матч",
+            "example_es": "Vemos el partido.",
+            "example_ru": "Мы смотрим матч.",
+            "rank": 1094,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "partidos"
+            ]
+          },
+          {
+            "id": "bailar",
+            "es": "bailar",
+            "pos": "verb",
+            "ru": "танцевать",
+            "example_es": "Me encanta bailar.",
+            "example_ru": "Я обожаю танцевать.",
+            "rank": 1222,
+            "forms": []
+          },
+          {
+            "id": "quedar",
+            "es": "quedar",
+            "pos": "verb",
+            "ru": "договориться о встрече",
+            "example_es": "¿Quedamos a las ocho?",
+            "example_ru": "Встретимся в восемь?",
+            "rank": 1290,
+            "forms": []
+          },
+          {
+            "id": "cine",
+            "es": "cine",
+            "pos": "noun",
+            "ru": "кино",
+            "example_es": "Vamos al cine.",
+            "example_ru": "Пойдём в кино.",
+            "rank": 1406,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "cines"
+            ]
+          },
+          {
+            "id": "cantar",
+            "es": "cantar",
+            "pos": "verb",
+            "ru": "петь",
+            "example_es": "Canta muy bien.",
+            "example_ru": "Он очень хорошо поёт.",
+            "rank": 1620,
+            "forms": []
+          },
+          {
+            "id": "paseo",
+            "es": "paseo",
+            "pos": "noun",
+            "ru": "прогулка",
+            "example_es": "Damos un paseo.",
+            "example_ru": "Мы гуляем.",
+            "rank": 1709,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "paseos"
+            ]
+          },
+          {
+            "id": "aburrido",
+            "es": "aburrido",
+            "pos": "adj",
+            "ru": "скучный; скучающий",
+            "example_es": "La película es aburrida.",
+            "example_ru": "Фильм скучный.",
+            "rank": 2388,
+            "forms": [
+              "aburrida",
+              "aburridos",
+              "aburridas"
+            ]
+          },
+          {
+            "id": "concierto",
+            "es": "concierto",
+            "pos": "noun",
+            "ru": "концерт",
+            "example_es": "Fuimos a un concierto.",
+            "example_ru": "Мы ходили на концерт.",
+            "rank": 2800,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "conciertos"
+            ]
+          },
+          {
+            "id": "invitación",
+            "es": "invitación",
+            "pos": "noun",
+            "ru": "приглашение",
+            "example_es": "Gracias por la invitación.",
+            "example_ru": "Спасибо за приглашение.",
+            "rank": 3577,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "invitaciones"
+            ]
+          },
+          {
+            "id": "invitar",
+            "es": "invitar",
+            "pos": "verb",
+            "ru": "приглашать",
+            "example_es": "Te invito a cenar.",
+            "example_ru": "Приглашаю тебя на ужин.",
+            "rank": 5616,
+            "forms": []
+          },
+          {
+            "id": "divertirse",
+            "es": "divertirse",
+            "pos": "verb",
+            "ru": "веселиться",
+            "example_es": "Nos divertimos mucho.",
+            "example_ru": "Мы отлично повеселились.",
+            "rank": 6223,
+            "forms": []
+          },
+          {
+            "id": "afición",
+            "es": "afición",
+            "pos": "noun",
+            "ru": "хобби, увлечение",
+            "example_es": "Mi afición es la fotografía.",
+            "example_ru": "Моё хобби — фотография.",
+            "rank": 19456,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "aficiones"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "a2-opinion",
+        "level": "A2",
+        "title_ru": "Мнения и чувства",
+        "order": 6,
+        "words": [
+          {
+            "id": "verdad",
+            "es": "verdad",
+            "pos": "noun",
+            "ru": "правда",
+            "example_es": "Es verdad.",
+            "example_ru": "Это правда.",
+            "rank": 90,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "verdades"
+            ]
+          },
+          {
+            "id": "seguro",
+            "es": "seguro",
+            "pos": "adj",
+            "ru": "уверенный; безопасный",
+            "example_es": "¿Estás seguro?",
+            "example_ru": "Ты уверен?",
+            "rank": 180,
+            "forms": [
+              "segura",
+              "seguros",
+              "seguras"
+            ]
+          },
+          {
+            "id": "razón",
+            "es": "razón",
+            "pos": "noun",
+            "ru": "причина; правота",
+            "example_es": "Tienes razón.",
+            "example_ru": "Ты прав.",
+            "rank": 233,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "razones"
+            ]
+          },
+          {
+            "id": "idea",
+            "es": "idea",
+            "pos": "noun",
+            "ru": "идея",
+            "example_es": "¡Buena idea!",
+            "example_ru": "Хорошая идея!",
+            "rank": 241,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "ideas"
+            ]
+          },
+          {
+            "id": "problema",
+            "es": "problema",
+            "pos": "noun",
+            "ru": "проблема",
+            "example_es": "No hay problema.",
+            "example_ru": "Без проблем.",
+            "rank": 244,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "problemas"
+            ]
+          },
+          {
+            "id": "quizás",
+            "es": "quizás",
+            "pos": "adv",
+            "ru": "может быть",
+            "example_es": "Quizás vaya mañana.",
+            "example_ru": "Может быть, пойду завтра.",
+            "rank": 328,
+            "forms": []
+          },
+          {
+            "id": "suerte",
+            "es": "suerte",
+            "pos": "noun",
+            "ru": "удача",
+            "example_es": "¡Buena suerte!",
+            "example_ru": "Удачи!",
+            "rank": 335,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "suertes"
+            ]
+          },
+          {
+            "id": "importante",
+            "es": "importante",
+            "pos": "adj",
+            "ru": "важный",
+            "example_es": "Es muy importante.",
+            "example_ru": "Это очень важно.",
+            "rank": 353,
+            "forms": [
+              "importantes"
+            ]
+          },
+          {
+            "id": "miedo",
+            "es": "miedo",
+            "pos": "noun",
+            "ru": "страх",
+            "example_es": "Tengo miedo.",
+            "example_ru": "Мне страшно.",
+            "rank": 356,
+            "article": "el",
+            "gender": "m",
+            "forms": [
+              "miedos"
+            ]
+          },
+          {
+            "id": "creer",
+            "es": "creer",
+            "pos": "verb",
+            "ru": "верить, считать",
+            "example_es": "Creo que sí.",
+            "example_ru": "Думаю, да.",
+            "rank": 497,
+            "forms": []
+          },
+          {
+            "id": "necesario",
+            "es": "necesario",
+            "pos": "adj",
+            "ru": "необходимый",
+            "example_es": "No es necesario.",
+            "example_ru": "Это не обязательно.",
+            "rank": 880,
+            "forms": [
+              "necesaria",
+              "necesarios",
+              "necesarias"
+            ]
+          },
+          {
+            "id": "triste",
+            "es": "triste",
+            "pos": "adj",
+            "ru": "грустный",
+            "example_es": "Hoy está triste.",
+            "example_ru": "Сегодня ему грустно.",
+            "rank": 987,
+            "forms": [
+              "tristes"
+            ]
+          },
+          {
+            "id": "opinión",
+            "es": "opinión",
+            "pos": "noun",
+            "ru": "мнение",
+            "example_es": "En mi opinión, es caro.",
+            "example_ru": "По-моему, это дорого.",
+            "rank": 1070,
+            "article": "la",
+            "gender": "f",
+            "forms": [
+              "opiniones"
+            ]
+          },
+          {
+            "id": "ganas",
+            "es": "ganas",
+            "pos": "noun",
+            "ru": "желание",
+            "example_es": "Tengo ganas de verte.",
+            "example_ru": "Я хочу тебя увидеть.",
+            "rank": 1234,
+            "article": "las",
+            "gender": "f",
+            "forms": []
+          },
+          {
+            "id": "nervioso",
+            "es": "nervioso",
+            "pos": "adj",
+            "ru": "нервный",
+            "example_es": "Estoy nervioso.",
+            "example_ru": "Я нервничаю.",
+            "rank": 1613,
+            "forms": [
+              "nerviosa",
+              "nerviosos",
+              "nerviosas"
+            ]
+          },
+          {
+            "id": "contento",
+            "es": "contento",
+            "pos": "adj",
+            "ru": "довольный",
+            "example_es": "Estoy muy contento.",
+            "example_ru": "Я очень доволен.",
+            "rank": 1809,
+            "forms": [
+              "contenta",
+              "contentos",
+              "contentas"
+            ]
+          },
+          {
+            "id": "preocuparse",
+            "es": "preocuparse",
+            "pos": "verb",
+            "ru": "беспокоиться",
+            "example_es": "No te preocupes.",
+            "example_ru": "Не беспокойся.",
+            "rank": 2905,
+            "forms": []
+          },
+          {
+            "id": "encantar",
+            "es": "encantar",
+            "pos": "verb",
+            "ru": "очень нравиться",
+            "example_es": "Me encanta tu casa.",
+            "example_ru": "Мне очень нравится твой дом.",
+            "rank": 6805,
+            "forms": []
+          },
+          {
+            "id": "odiar",
+            "es": "odiar",
+            "pos": "verb",
+            "ru": "ненавидеть",
+            "example_es": "Odio madrugar.",
+            "example_ru": "Ненавижу рано вставать.",
+            "rank": 8279,
+            "forms": []
+          },
+          {
+            "id": "preferir",
+            "es": "preferir",
+            "pos": "verb",
+            "ru": "предпочитать",
+            "example_es": "Prefiero el té.",
+            "example_ru": "Я предпочитаю чай.",
+            "rank": 41183,
+            "forms": []
+          }
+        ]
+      }
+    ]
   }
 }

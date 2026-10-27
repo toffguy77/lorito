@@ -1,0 +1,280 @@
+[
+ {
+  "id": "sí",
+  "es": "sí",
+  "pos": "interj",
+  "ru": "да",
+  "example_es": "Sí, claro.",
+  "example_ru": "Да, конечно.",
+  "rank": 24
+ },
+ {
+  "id": "no",
+  "es": "no",
+  "pos": "adv",
+  "ru": "нет; не",
+  "example_es": "No, gracias.",
+  "example_ru": "Нет, спасибо.",
+  "rank": 3
+ },
+ {
+  "id": "gracias",
+  "es": "gracias",
+  "pos": "interj",
+  "ru": "спасибо",
+  "example_es": "Muchas gracias.",
+  "example_ru": "Большое спасибо.",
+  "rank": 70
+ },
+ {
+  "id": "hola",
+  "es": "hola",
+  "pos": "interj",
+  "ru": "привет",
+  "example_es": "Hola, ¿qué tal?",
+  "example_ru": "Привет, как дела?",
+  "rank": 88
+ },
+ {
+  "id": "adiós",
+  "es": "adiós",
+  "pos": "interj",
+  "ru": "до свидания",
+  "example_es": "Adiós, hasta mañana.",
+  "example_ru": "До свидания, до завтра.",
+  "rank": 297
+ },
+ {
+  "id": "bien",
+  "es": "bien",
+  "pos": "adv",
+  "ru": "хорошо",
+  "example_es": "Estoy bien.",
+  "example_ru": "У меня всё хорошо.",
+  "rank": 26
+ },
+ {
+  "id": "mal",
+  "es": "mal",
+  "pos": "adv",
+  "ru": "плохо",
+  "example_es": "Hoy estoy mal.",
+  "example_ru": "Сегодня мне плохо.",
+  "rank": 219
+ },
+ {
+  "id": "muy",
+  "es": "muy",
+  "pos": "adv",
+  "ru": "очень",
+  "example_es": "Es muy bonito.",
+  "example_ru": "Это очень красиво.",
+  "rank": 43
+ },
+ {
+  "id": "mucho",
+  "es": "mucho",
+  "pos": "adv",
+  "ru": "много",
+  "example_es": "Trabajo mucho.",
+  "example_ru": "Я много работаю.",
+  "rank": 103
+ },
+ {
+  "id": "poco",
+  "es": "poco",
+  "pos": "adv",
+  "ru": "мало, немного",
+  "example_es": "Hablo un poco.",
+  "example_ru": "Я говорю немного.",
+  "rank": 133
+ },
+ {
+  "id": "también",
+  "es": "también",
+  "pos": "adv",
+  "ru": "тоже",
+  "example_es": "Yo también.",
+  "example_ru": "Я тоже.",
+  "rank": 112
+ },
+ {
+  "id": "tampoco",
+  "es": "tampoco",
+  "pos": "adv",
+  "ru": "тоже не",
+  "example_es": "Yo tampoco.",
+  "example_ru": "Я тоже нет.",
+  "rank": 504
+ },
+ {
+  "id": "porque",
+  "es": "porque",
+  "pos": "conj",
+  "ru": "потому что",
+  "example_es": "Estudio porque quiero.",
+  "example_ru": "Я учусь, потому что хочу.",
+  "rank": 76
+ },
+ {
+  "id": "pero",
+  "es": "pero",
+  "pos": "conj",
+  "ru": "но",
+  "example_es": "Es caro, pero bueno.",
+  "example_ru": "Дорого, но хорошо.",
+  "rank": 23
+ },
+ {
+  "id": "con",
+  "es": "con",
+  "pos": "prep",
+  "ru": "с",
+  "example_es": "Voy con mi madre.",
+  "example_ru": "Я иду с мамой.",
+  "rank": 19
+ },
+ {
+  "id": "sin",
+  "es": "sin",
+  "pos": "prep",
+  "ru": "без",
+  "example_es": "Café sin azúcar.",
+  "example_ru": "Кофе без сахара.",
+  "rank": 115
+ },
+ {
+  "id": "para",
+  "es": "para",
+  "pos": "prep",
+  "ru": "для",
+  "example_es": "Es para ti.",
+  "example_ru": "Это для тебя.",
+  "rank": 20
+ },
+ {
+  "id": "todo",
+  "es": "todo",
+  "pos": "pron",
+  "ru": "всё",
+  "example_es": "Todo está bien.",
+  "example_ru": "Всё хорошо.",
+  "rank": 39
+ },
+ {
+  "id": "algo",
+  "es": "algo",
+  "pos": "pron",
+  "ru": "что-нибудь",
+  "example_es": "¿Quieres algo?",
+  "example_ru": "Хочешь что-нибудь?",
+  "rank": 48
+ },
+ {
+  "id": "nada",
+  "es": "nada",
+  "pos": "pron",
+  "ru": "ничего",
+  "example_es": "No quiero nada.",
+  "example_ru": "Я ничего не хочу.",
+  "rank": 58
+ },
+ {
+  "id": "alguien",
+  "es": "alguien",
+  "pos": "pron",
+  "ru": "кто-нибудь",
+  "example_es": "¿Hay alguien?",
+  "example_ru": "Здесь кто-нибудь есть?",
+  "rank": 123
+ },
+ {
+  "id": "nadie",
+  "es": "nadie",
+  "pos": "pron",
+  "ru": "никто",
+  "example_es": "No hay nadie.",
+  "example_ru": "Никого нет.",
+  "rank": 151
+ },
+ {
+  "id": "otro",
+  "es": "otro",
+  "pos": "adj",
+  "ru": "другой",
+  "example_es": "Quiero otro café.",
+  "example_ru": "Я хочу ещё кофе.",
+  "rank": 171,
+  "forms": [
+   "otra",
+   "otros",
+   "otras"
+  ]
+ },
+ {
+  "id": "mismo",
+  "es": "mismo",
+  "pos": "adj",
+  "ru": "тот же самый",
+  "example_es": "Tenemos la misma edad.",
+  "example_ru": "Мы одного возраста.",
+  "rank": 149,
+  "forms": [
+   "misma",
+   "mismos",
+   "mismas"
+  ]
+ },
+ {
+  "id": "bueno",
+  "es": "bueno",
+  "pos": "adj",
+  "ru": "хороший",
+  "example_es": "Es un buen libro.",
+  "example_ru": "Это хорошая книга.",
+  "rank": 50,
+  "forms": [
+   "buena",
+   "buenos",
+   "buenas"
+  ]
+ },
+ {
+  "id": "malo",
+  "es": "malo",
+  "pos": "adj",
+  "ru": "плохой",
+  "example_es": "Es una mala idea.",
+  "example_ru": "Это плохая идея.",
+  "rank": 476,
+  "forms": [
+   "mala",
+   "malos",
+   "malas"
+  ]
+ },
+ {
+  "id": "fácil",
+  "es": "fácil",
+  "pos": "adj",
+  "ru": "лёгкий",
+  "example_es": "El examen es fácil.",
+  "example_ru": "Экзамен лёгкий.",
+  "rank": 487,
+  "forms": [
+   "fáciles"
+  ]
+ },
+ {
+  "id": "difícil",
+  "es": "difícil",
+  "pos": "adj",
+  "ru": "трудный",
+  "example_es": "El español no es difícil.",
+  "example_ru": "Испанский не трудный.",
+  "rank": 404,
+  "forms": [
+   "difíciles"
+  ]
+ }
+]

@@ -1,0 +1,327 @@
+[
+ {
+  "id": "trabajo",
+  "es": "trabajo",
+  "pos": "noun",
+  "ru": "работа",
+  "example_es": "Busco trabajo.",
+  "example_ru": "Я ищу работу.",
+  "rank": 142,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "trabajos"
+  ]
+ },
+ {
+  "id": "empresa",
+  "es": "empresa",
+  "pos": "noun",
+  "ru": "компания",
+  "example_es": "Trabajo en una empresa pequeña.",
+  "example_ru": "Я работаю в небольшой компании.",
+  "rank": 1458,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "empresas"
+  ]
+ },
+ {
+  "id": "oficina",
+  "es": "oficina",
+  "pos": "noun",
+  "ru": "офис",
+  "example_es": "Estoy en la oficina.",
+  "example_ru": "Я в офисе.",
+  "rank": 537,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "oficinas"
+  ]
+ },
+ {
+  "id": "jefe",
+  "es": "jefe",
+  "pos": "noun",
+  "ru": "начальник",
+  "example_es": "Mi jefe es muy exigente.",
+  "example_ru": "Мой начальник очень требовательный.",
+  "rank": 357,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "jefes"
+  ]
+ },
+ {
+  "id": "reunión",
+  "es": "reunión",
+  "pos": "noun",
+  "ru": "совещание",
+  "example_es": "Tengo una reunión a las diez.",
+  "example_ru": "У меня совещание в десять.",
+  "rank": 855,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "reuniones"
+  ]
+ },
+ {
+  "id": "sueldo",
+  "es": "sueldo",
+  "pos": "noun",
+  "ru": "зарплата",
+  "example_es": "El sueldo es bajo.",
+  "example_ru": "Зарплата низкая.",
+  "rank": 4105,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "sueldos"
+  ]
+ },
+ {
+  "id": "contrato",
+  "es": "contrato",
+  "pos": "noun",
+  "ru": "договор",
+  "example_es": "Firmé el contrato.",
+  "example_ru": "Я подписал договор.",
+  "rank": 1725,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "contratos"
+  ]
+ },
+ {
+  "id": "entrevista",
+  "es": "entrevista",
+  "pos": "noun",
+  "ru": "собеседование, интервью",
+  "example_es": "Mañana tengo una entrevista.",
+  "example_ru": "Завтра у меня собеседование.",
+  "rank": 2218,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "entrevistas"
+  ]
+ },
+ {
+  "id": "experiencia",
+  "es": "experiencia",
+  "pos": "noun",
+  "ru": "опыт",
+  "example_es": "No tengo experiencia.",
+  "example_ru": "У меня нет опыта.",
+  "rank": 1198,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "experiencias"
+  ]
+ },
+ {
+  "id": "curso",
+  "es": "curso",
+  "pos": "noun",
+  "ru": "курс",
+  "example_es": "Hago un curso de español.",
+  "example_ru": "Я прохожу курс испанского.",
+  "rank": 2186,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "cursos"
+  ]
+ },
+ {
+  "id": "clase",
+  "es": "clase",
+  "pos": "noun",
+  "ru": "урок, класс",
+  "example_es": "La clase es muy interesante.",
+  "example_ru": "Урок очень интересный.",
+  "rank": 410,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "clases"
+  ]
+ },
+ {
+  "id": "examen",
+  "es": "examen",
+  "pos": "noun",
+  "ru": "экзамен",
+  "example_es": "Tengo un examen el lunes.",
+  "example_ru": "У меня экзамен в понедельник.",
+  "rank": 2024,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "examenes"
+  ]
+ },
+ {
+  "id": "nota",
+  "es": "nota",
+  "pos": "noun",
+  "ru": "оценка; записка",
+  "example_es": "Saqué buena nota.",
+  "example_ru": "Я получил хорошую оценку.",
+  "rank": 1304,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "notas"
+  ]
+ },
+ {
+  "id": "universidad",
+  "es": "universidad",
+  "pos": "noun",
+  "ru": "университет",
+  "example_es": "Estudio en la universidad.",
+  "example_ru": "Я учусь в университете.",
+  "rank": 868,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "universidades"
+  ]
+ },
+ {
+  "id": "correo",
+  "es": "correo",
+  "pos": "noun",
+  "ru": "почта, письмо",
+  "example_es": "Te mando un correo.",
+  "example_ru": "Я пришлю тебе письмо.",
+  "rank": 1875,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "correos"
+  ]
+ },
+ {
+  "id": "horario",
+  "es": "horario",
+  "pos": "noun",
+  "ru": "расписание",
+  "example_es": "¿Cuál es tu horario?",
+  "example_ru": "Какой у тебя график?",
+  "rank": 4448,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "horarios"
+  ]
+ },
+ {
+  "id": "cliente",
+  "es": "cliente",
+  "pos": "noun",
+  "ru": "клиент",
+  "example_es": "El cliente siempre tiene razón.",
+  "example_ru": "Клиент всегда прав.",
+  "rank": 1110,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "clientes"
+  ]
+ },
+ {
+  "id": "proyecto",
+  "es": "proyecto",
+  "pos": "noun",
+  "ru": "проект",
+  "example_es": "Es un proyecto nuevo.",
+  "example_ru": "Это новый проект.",
+  "rank": 1573,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "proyectos"
+  ]
+ },
+ {
+  "id": "ganar",
+  "es": "ganar",
+  "pos": "verb",
+  "ru": "зарабатывать; выигрывать",
+  "example_es": "Gana mucho dinero.",
+  "example_ru": "Он много зарабатывает.",
+  "rank": 740
+ },
+ {
+  "id": "aprender",
+  "es": "aprender",
+  "pos": "verb",
+  "ru": "учить, учиться",
+  "example_es": "Aprendo rápido.",
+  "example_ru": "Я быстро учусь.",
+  "rank": 1229
+ },
+ {
+  "id": "enseñar",
+  "es": "enseñar",
+  "pos": "verb",
+  "ru": "учить кого-то",
+  "example_es": "Enseño inglés.",
+  "example_ru": "Я преподаю английский.",
+  "rank": 3179
+ },
+ {
+  "id": "terminar",
+  "es": "terminar",
+  "pos": "verb",
+  "ru": "заканчивать",
+  "example_es": "Termino a las cinco.",
+  "example_ru": "Я заканчиваю в пять.",
+  "rank": 909
+ },
+ {
+  "id": "preparar",
+  "es": "preparar",
+  "pos": "verb",
+  "ru": "готовить",
+  "example_es": "Preparo el informe.",
+  "example_ru": "Я готовлю отчёт.",
+  "rank": 2987
+ },
+ {
+  "id": "cansado",
+  "es": "cansado",
+  "pos": "adj",
+  "ru": "усталый",
+  "example_es": "Estoy muy cansado.",
+  "example_ru": "Я очень устал.",
+  "rank": 1469,
+  "forms": [
+   "cansada",
+   "cansados",
+   "cansadas"
+  ]
+ },
+ {
+  "id": "ocupado",
+  "es": "ocupado",
+  "pos": "adj",
+  "ru": "занятой",
+  "example_es": "Hoy estoy ocupado.",
+  "example_ru": "Сегодня я занят.",
+  "rank": 1191,
+  "forms": [
+   "ocupada",
+   "ocupados",
+   "ocupadas"
+  ]
+ }
+]

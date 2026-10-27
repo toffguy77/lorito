@@ -1,0 +1,80 @@
+[
+ {
+  "id": "a1-personas",
+  "level": "A1",
+  "title_ru": "Люди и семья",
+  "order": 1
+ },
+ {
+  "id": "a1-casa",
+  "level": "A1",
+  "title_ru": "Дом и вещи",
+  "order": 2
+ },
+ {
+  "id": "a1-dia",
+  "level": "A1",
+  "title_ru": "День и время",
+  "order": 3
+ },
+ {
+  "id": "a1-comida",
+  "level": "A1",
+  "title_ru": "Еда и магазин",
+  "order": 4
+ },
+ {
+  "id": "a1-ciudad",
+  "level": "A1",
+  "title_ru": "Город и дорога",
+  "order": 5
+ },
+ {
+  "id": "a1-verbos",
+  "level": "A1",
+  "title_ru": "Частые действия",
+  "order": 6
+ },
+ {
+  "id": "a1-palabras",
+  "level": "A1",
+  "title_ru": "Служебные слова",
+  "order": 7
+ },
+ {
+  "id": "a2-viajes",
+  "level": "A2",
+  "title_ru": "Путешествия",
+  "order": 1
+ },
+ {
+  "id": "a2-trabajo",
+  "level": "A2",
+  "title_ru": "Работа и учёба",
+  "order": 2
+ },
+ {
+  "id": "a2-salud",
+  "level": "A2",
+  "title_ru": "Здоровье и тело",
+  "order": 3
+ },
+ {
+  "id": "a2-casa",
+  "level": "A2",
+  "title_ru": "Дом и быт",
+  "order": 4
+ },
+ {
+  "id": "a2-ocio",
+  "level": "A2",
+  "title_ru": "Досуг и общение",
+  "order": 5
+ },
+ {
+  "id": "a2-opinion",
+  "level": "A2",
+  "title_ru": "Мнения и чувства",
+  "order": 6
+ }
+]

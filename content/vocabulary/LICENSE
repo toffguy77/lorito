@@ -1,0 +1,11 @@
+content/vocabulary/ — Lorito vocabulary decks
+
+Licensed under the Creative Commons Attribution-ShareAlike 4.0 International
+License (CC BY-SA 4.0): https://creativecommons.org/licenses/by-sa/4.0/
+
+Word selection and frequency ranks are derived from FrequencyWords by Hermit
+Dave (https://github.com/hermitdave/FrequencyWords, content/2018/es/es_50k.txt,
+OpenSubtitles; content CC BY-SA 4.0, code MIT). Translations and examples are
+authored for Lorito and are part of this CC BY-SA 4.0 dataset. Nothing outside
+this folder is generated from the list (the conjugation trainer's verb ranks in
+content/conjugation/ are credited separately under the same terms).

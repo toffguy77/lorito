@@ -1,0 +1,257 @@
+[
+ {
+  "id": "fiesta",
+  "es": "fiesta",
+  "pos": "noun",
+  "ru": "праздник, вечеринка",
+  "example_es": "Hay una fiesta el sábado.",
+  "example_ru": "В субботу вечеринка.",
+  "rank": 447,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "fiestas"
+  ]
+ },
+ {
+  "id": "cine",
+  "es": "cine",
+  "pos": "noun",
+  "ru": "кино",
+  "example_es": "Vamos al cine.",
+  "example_ru": "Пойдём в кино.",
+  "rank": 1406,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "cines"
+  ]
+ },
+ {
+  "id": "película",
+  "es": "película",
+  "pos": "noun",
+  "ru": "фильм",
+  "example_es": "Es una película divertida.",
+  "example_ru": "Это смешной фильм.",
+  "rank": 641,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "películas"
+  ]
+ },
+ {
+  "id": "música",
+  "es": "música",
+  "pos": "noun",
+  "ru": "музыка",
+  "example_es": "Escucho música.",
+  "example_ru": "Я слушаю музыку.",
+  "rank": 577,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "músicas"
+  ]
+ },
+ {
+  "id": "canción",
+  "es": "canción",
+  "pos": "noun",
+  "ru": "песня",
+  "example_es": "Me gusta esta canción.",
+  "example_ru": "Мне нравится эта песня.",
+  "rank": 866,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "canciones"
+  ]
+ },
+ {
+  "id": "concierto",
+  "es": "concierto",
+  "pos": "noun",
+  "ru": "концерт",
+  "example_es": "Fuimos a un concierto.",
+  "example_ru": "Мы ходили на концерт.",
+  "rank": 2800,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "conciertos"
+  ]
+ },
+ {
+  "id": "partido",
+  "es": "partido",
+  "pos": "noun",
+  "ru": "матч",
+  "example_es": "Vemos el partido.",
+  "example_ru": "Мы смотрим матч.",
+  "rank": 1094,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "partidos"
+  ]
+ },
+ {
+  "id": "equipo",
+  "es": "equipo",
+  "pos": "noun",
+  "ru": "команда",
+  "example_es": "Mi equipo ganó.",
+  "example_ru": "Моя команда выиграла.",
+  "rank": 397,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "equipos"
+  ]
+ },
+ {
+  "id": "juego",
+  "es": "juego",
+  "pos": "noun",
+  "ru": "игра",
+  "example_es": "Es un juego divertido.",
+  "example_ru": "Это весёлая игра.",
+  "rank": 433,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "juegos"
+  ]
+ },
+ {
+  "id": "invitación",
+  "es": "invitación",
+  "pos": "noun",
+  "ru": "приглашение",
+  "example_es": "Gracias por la invitación.",
+  "example_ru": "Спасибо за приглашение.",
+  "rank": 3577,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "invitaciones"
+  ]
+ },
+ {
+  "id": "plan",
+  "es": "plan",
+  "pos": "noun",
+  "ru": "план",
+  "example_es": "¿Tienes planes para hoy?",
+  "example_ru": "У тебя есть планы на сегодня?",
+  "rank": 565,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "planes"
+  ]
+ },
+ {
+  "id": "afición",
+  "es": "afición",
+  "pos": "noun",
+  "ru": "хобби, увлечение",
+  "example_es": "Mi afición es la fotografía.",
+  "example_ru": "Моё хобби — фотография.",
+  "rank": 19456,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "aficiones"
+  ]
+ },
+ {
+  "id": "paseo",
+  "es": "paseo",
+  "pos": "noun",
+  "ru": "прогулка",
+  "example_es": "Damos un paseo.",
+  "example_ru": "Мы гуляем.",
+  "rank": 1709,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "paseos"
+  ]
+ },
+ {
+  "id": "quedar",
+  "es": "quedar",
+  "pos": "verb",
+  "ru": "договориться о встрече",
+  "example_es": "¿Quedamos a las ocho?",
+  "example_ru": "Встретимся в восемь?",
+  "rank": 1290
+ },
+ {
+  "id": "invitar",
+  "es": "invitar",
+  "pos": "verb",
+  "ru": "приглашать",
+  "example_es": "Te invito a cenar.",
+  "example_ru": "Приглашаю тебя на ужин.",
+  "rank": 5616
+ },
+ {
+  "id": "bailar",
+  "es": "bailar",
+  "pos": "verb",
+  "ru": "танцевать",
+  "example_es": "Me encanta bailar.",
+  "example_ru": "Я обожаю танцевать.",
+  "rank": 1222
+ },
+ {
+  "id": "cantar",
+  "es": "cantar",
+  "pos": "verb",
+  "ru": "петь",
+  "example_es": "Canta muy bien.",
+  "example_ru": "Он очень хорошо поёт.",
+  "rank": 1620
+ },
+ {
+  "id": "divertirse",
+  "es": "divertirse",
+  "pos": "verb",
+  "ru": "веселиться",
+  "example_es": "Nos divertimos mucho.",
+  "example_ru": "Мы отлично повеселились.",
+  "rank": 6223
+ },
+ {
+  "id": "aburrido",
+  "es": "aburrido",
+  "pos": "adj",
+  "ru": "скучный; скучающий",
+  "example_es": "La película es aburrida.",
+  "example_ru": "Фильм скучный.",
+  "rank": 2388,
+  "forms": [
+   "aburrida",
+   "aburridos",
+   "aburridas"
+  ]
+ },
+ {
+  "id": "divertido",
+  "es": "divertido",
+  "pos": "adj",
+  "ru": "весёлый, смешной",
+  "example_es": "Es muy divertido.",
+  "example_ru": "Это очень весело.",
+  "rank": 684,
+  "forms": [
+   "divertida",
+   "divertidos",
+   "divertidas"
+  ]
+ }
+]

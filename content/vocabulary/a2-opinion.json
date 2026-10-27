@@ -1,0 +1,245 @@
+[
+ {
+  "id": "opinión",
+  "es": "opinión",
+  "pos": "noun",
+  "ru": "мнение",
+  "example_es": "En mi opinión, es caro.",
+  "example_ru": "По-моему, это дорого.",
+  "rank": 1070,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "opiniones"
+  ]
+ },
+ {
+  "id": "idea",
+  "es": "idea",
+  "pos": "noun",
+  "ru": "идея",
+  "example_es": "¡Buena idea!",
+  "example_ru": "Хорошая идея!",
+  "rank": 241,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "ideas"
+  ]
+ },
+ {
+  "id": "problema",
+  "es": "problema",
+  "pos": "noun",
+  "ru": "проблема",
+  "example_es": "No hay problema.",
+  "example_ru": "Без проблем.",
+  "rank": 244,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "problemas"
+  ]
+ },
+ {
+  "id": "razón",
+  "es": "razón",
+  "pos": "noun",
+  "ru": "причина; правота",
+  "example_es": "Tienes razón.",
+  "example_ru": "Ты прав.",
+  "rank": 233,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "razones"
+  ]
+ },
+ {
+  "id": "verdad",
+  "es": "verdad",
+  "pos": "noun",
+  "ru": "правда",
+  "example_es": "Es verdad.",
+  "example_ru": "Это правда.",
+  "rank": 90,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "verdades"
+  ]
+ },
+ {
+  "id": "miedo",
+  "es": "miedo",
+  "pos": "noun",
+  "ru": "страх",
+  "example_es": "Tengo miedo.",
+  "example_ru": "Мне страшно.",
+  "rank": 356,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "miedos"
+  ]
+ },
+ {
+  "id": "suerte",
+  "es": "suerte",
+  "pos": "noun",
+  "ru": "удача",
+  "example_es": "¡Buena suerte!",
+  "example_ru": "Удачи!",
+  "rank": 335,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "suertes"
+  ]
+ },
+ {
+  "id": "ganas",
+  "es": "ganas",
+  "pos": "noun",
+  "ru": "желание",
+  "example_es": "Tengo ganas de verte.",
+  "example_ru": "Я хочу тебя увидеть.",
+  "rank": 1234,
+  "article": "las",
+  "gender": "f"
+ },
+ {
+  "id": "creer",
+  "es": "creer",
+  "pos": "verb",
+  "ru": "верить, считать",
+  "example_es": "Creo que sí.",
+  "example_ru": "Думаю, да.",
+  "rank": 497
+ },
+ {
+  "id": "preferir",
+  "es": "preferir",
+  "pos": "verb",
+  "ru": "предпочитать",
+  "example_es": "Prefiero el té.",
+  "example_ru": "Я предпочитаю чай.",
+  "rank": 41183
+ },
+ {
+  "id": "odiar",
+  "es": "odiar",
+  "pos": "verb",
+  "ru": "ненавидеть",
+  "example_es": "Odio madrugar.",
+  "example_ru": "Ненавижу рано вставать.",
+  "rank": 8279
+ },
+ {
+  "id": "encantar",
+  "es": "encantar",
+  "pos": "verb",
+  "ru": "очень нравиться",
+  "example_es": "Me encanta tu casa.",
+  "example_ru": "Мне очень нравится твой дом.",
+  "rank": 6805
+ },
+ {
+  "id": "preocuparse",
+  "es": "preocuparse",
+  "pos": "verb",
+  "ru": "беспокоиться",
+  "example_es": "No te preocupes.",
+  "example_ru": "Не беспокойся.",
+  "rank": 2905
+ },
+ {
+  "id": "contento",
+  "es": "contento",
+  "pos": "adj",
+  "ru": "довольный",
+  "example_es": "Estoy muy contento.",
+  "example_ru": "Я очень доволен.",
+  "rank": 1809,
+  "forms": [
+   "contenta",
+   "contentos",
+   "contentas"
+  ]
+ },
+ {
+  "id": "triste",
+  "es": "triste",
+  "pos": "adj",
+  "ru": "грустный",
+  "example_es": "Hoy está triste.",
+  "example_ru": "Сегодня ему грустно.",
+  "rank": 987,
+  "forms": [
+   "tristes"
+  ]
+ },
+ {
+  "id": "nervioso",
+  "es": "nervioso",
+  "pos": "adj",
+  "ru": "нервный",
+  "example_es": "Estoy nervioso.",
+  "example_ru": "Я нервничаю.",
+  "rank": 1613,
+  "forms": [
+   "nerviosa",
+   "nerviosos",
+   "nerviosas"
+  ]
+ },
+ {
+  "id": "seguro",
+  "es": "seguro",
+  "pos": "adj",
+  "ru": "уверенный; безопасный",
+  "example_es": "¿Estás seguro?",
+  "example_ru": "Ты уверен?",
+  "rank": 180,
+  "forms": [
+   "segura",
+   "seguros",
+   "seguras"
+  ]
+ },
+ {
+  "id": "importante",
+  "es": "importante",
+  "pos": "adj",
+  "ru": "важный",
+  "example_es": "Es muy importante.",
+  "example_ru": "Это очень важно.",
+  "rank": 353,
+  "forms": [
+   "importantes"
+  ]
+ },
+ {
+  "id": "necesario",
+  "es": "necesario",
+  "pos": "adj",
+  "ru": "необходимый",
+  "example_es": "No es necesario.",
+  "example_ru": "Это не обязательно.",
+  "rank": 880,
+  "forms": [
+   "necesaria",
+   "necesarios",
+   "necesarias"
+  ]
+ },
+ {
+  "id": "quizás",
+  "es": "quizás",
+  "pos": "adv",
+  "ru": "может быть",
+  "example_es": "Quizás vaya mañana.",
+  "example_ru": "Может быть, пойду завтра.",
+  "rank": 328
+ }
+]

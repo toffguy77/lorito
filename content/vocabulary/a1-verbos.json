@@ -1,0 +1,272 @@
+[
+ {
+  "id": "ser",
+  "es": "ser",
+  "pos": "verb",
+  "ru": "быть",
+  "example_es": "Soy de Rusia.",
+  "example_ru": "Я из России.",
+  "rank": 63
+ },
+ {
+  "id": "estar",
+  "es": "estar",
+  "pos": "verb",
+  "ru": "находиться, быть",
+  "example_es": "Estoy en casa.",
+  "example_ru": "Я дома.",
+  "rank": 131
+ },
+ {
+  "id": "tener",
+  "es": "tener",
+  "pos": "verb",
+  "ru": "иметь",
+  "example_es": "Tengo dos hermanos.",
+  "example_ru": "У меня два брата.",
+  "rank": 169
+ },
+ {
+  "id": "hacer",
+  "es": "hacer",
+  "pos": "verb",
+  "ru": "делать",
+  "example_es": "¿Qué haces?",
+  "example_ru": "Что ты делаешь?",
+  "rank": 68
+ },
+ {
+  "id": "poder",
+  "es": "poder",
+  "pos": "verb",
+  "ru": "мочь",
+  "example_es": "¿Puedo entrar?",
+  "example_ru": "Можно войти?",
+  "rank": 362
+ },
+ {
+  "id": "decir",
+  "es": "decir",
+  "pos": "verb",
+  "ru": "говорить, сказать",
+  "example_es": "¿Qué dices?",
+  "example_ru": "Что ты говоришь?",
+  "rank": 111
+ },
+ {
+  "id": "querer",
+  "es": "querer",
+  "pos": "verb",
+  "ru": "хотеть",
+  "example_es": "Quiero un café.",
+  "example_ru": "Я хочу кофе.",
+  "rank": 1557
+ },
+ {
+  "id": "saber",
+  "es": "saber",
+  "pos": "verb",
+  "ru": "знать",
+  "example_es": "No sé la respuesta.",
+  "example_ru": "Я не знаю ответа.",
+  "rank": 236
+ },
+ {
+  "id": "ver",
+  "es": "ver",
+  "pos": "verb",
+  "ru": "видеть",
+  "example_es": "Te veo mañana.",
+  "example_ru": "Увидимся завтра.",
+  "rank": 120
+ },
+ {
+  "id": "hablar",
+  "es": "hablar",
+  "pos": "verb",
+  "ru": "говорить",
+  "example_es": "Hablo un poco de español.",
+  "example_ru": "Я немного говорю по-испански.",
+  "rank": 154
+ },
+ {
+  "id": "vivir",
+  "es": "vivir",
+  "pos": "verb",
+  "ru": "жить",
+  "example_es": "Vivo en Barcelona.",
+  "example_ru": "Я живу в Барселоне.",
+  "rank": 454
+ },
+ {
+  "id": "trabajar",
+  "es": "trabajar",
+  "pos": "verb",
+  "ru": "работать",
+  "example_es": "Trabajo en un banco.",
+  "example_ru": "Я работаю в банке.",
+  "rank": 431
+ },
+ {
+  "id": "estudiar",
+  "es": "estudiar",
+  "pos": "verb",
+  "ru": "учиться",
+  "example_es": "Estudio español.",
+  "example_ru": "Я изучаю испанский.",
+  "rank": 2477
+ },
+ {
+  "id": "escribir",
+  "es": "escribir",
+  "pos": "verb",
+  "ru": "писать",
+  "example_es": "Escribo un correo.",
+  "example_ru": "Я пишу письмо.",
+  "rank": 1178
+ },
+ {
+  "id": "leer",
+  "es": "leer",
+  "pos": "verb",
+  "ru": "читать",
+  "example_es": "Leo el periódico.",
+  "example_ru": "Я читаю газету.",
+  "rank": 1171
+ },
+ {
+  "id": "abrir",
+  "es": "abrir",
+  "pos": "verb",
+  "ru": "открывать",
+  "example_es": "Abre la puerta.",
+  "example_ru": "Открой дверь.",
+  "rank": 1261
+ },
+ {
+  "id": "cerrar",
+  "es": "cerrar",
+  "pos": "verb",
+  "ru": "закрывать",
+  "example_es": "Cierro la ventana.",
+  "example_ru": "Я закрываю окно.",
+  "rank": 1798
+ },
+ {
+  "id": "dormir",
+  "es": "dormir",
+  "pos": "verb",
+  "ru": "спать",
+  "example_es": "Duermo ocho horas.",
+  "example_ru": "Я сплю восемь часов.",
+  "rank": 557
+ },
+ {
+  "id": "gustar",
+  "es": "gustar",
+  "pos": "verb",
+  "ru": "нравиться",
+  "example_es": "Me gusta la música.",
+  "example_ru": "Мне нравится музыка.",
+  "rank": 4220
+ },
+ {
+  "id": "necesitar",
+  "es": "necesitar",
+  "pos": "verb",
+  "ru": "нуждаться",
+  "example_es": "Necesito ayuda.",
+  "example_ru": "Мне нужна помощь.",
+  "rank": 1692
+ },
+ {
+  "id": "llamar",
+  "es": "llamar",
+  "pos": "verb",
+  "ru": "звать, звонить",
+  "example_es": "Te llamo luego.",
+  "example_ru": "Я тебе позвоню позже.",
+  "rank": 581
+ },
+ {
+  "id": "esperar",
+  "es": "esperar",
+  "pos": "verb",
+  "ru": "ждать, надеяться",
+  "example_es": "Te espero aquí.",
+  "example_ru": "Я жду тебя здесь.",
+  "rank": 522
+ },
+ {
+  "id": "entender",
+  "es": "entender",
+  "pos": "verb",
+  "ru": "понимать",
+  "example_es": "No entiendo.",
+  "example_ru": "Я не понимаю.",
+  "rank": 1064
+ },
+ {
+  "id": "ayudar",
+  "es": "ayudar",
+  "pos": "verb",
+  "ru": "помогать",
+  "example_es": "¿Me ayudas?",
+  "example_ru": "Поможешь мне?",
+  "rank": 559
+ },
+ {
+  "id": "dar",
+  "es": "dar",
+  "pos": "verb",
+  "ru": "давать",
+  "example_es": "Dame el libro.",
+  "example_ru": "Дай мне книгу.",
+  "rank": 453
+ },
+ {
+  "id": "pensar",
+  "es": "pensar",
+  "pos": "verb",
+  "ru": "думать",
+  "example_es": "Pienso en ti.",
+  "example_ru": "Я думаю о тебе.",
+  "rank": 423
+ },
+ {
+  "id": "conocer",
+  "es": "conocer",
+  "pos": "verb",
+  "ru": "знать, быть знакомым",
+  "example_es": "Conozco a tu hermano.",
+  "example_ru": "Я знаком с твоим братом.",
+  "rank": 1039
+ },
+ {
+  "id": "empezar",
+  "es": "empezar",
+  "pos": "verb",
+  "ru": "начинать",
+  "example_es": "La clase empieza a las nueve.",
+  "example_ru": "Урок начинается в девять.",
+  "rank": 619
+ },
+ {
+  "id": "volver",
+  "es": "volver",
+  "pos": "verb",
+  "ru": "возвращаться",
+  "example_es": "Vuelvo a las seis.",
+  "example_ru": "Я вернусь в шесть.",
+  "rank": 301
+ },
+ {
+  "id": "jugar",
+  "es": "jugar",
+  "pos": "verb",
+  "ru": "играть",
+  "example_es": "Los niños juegan fuera.",
+  "example_ru": "Дети играют на улице.",
+  "rank": 639
+ }
+]

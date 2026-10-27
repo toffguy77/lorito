@@ -1,0 +1,397 @@
+[
+ {
+  "id": "comida",
+  "es": "comida",
+  "pos": "noun",
+  "ru": "еда",
+  "example_es": "La comida está lista.",
+  "example_ru": "Еда готова.",
+  "rank": 483,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "comidas"
+  ]
+ },
+ {
+  "id": "pan",
+  "es": "pan",
+  "pos": "noun",
+  "ru": "хлеб",
+  "example_es": "Compra pan, por favor.",
+  "example_ru": "Купи хлеба, пожалуйста.",
+  "rank": 1549,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "panes"
+  ]
+ },
+ {
+  "id": "café",
+  "es": "café",
+  "pos": "noun",
+  "ru": "кофе",
+  "example_es": "Un café con leche, por favor.",
+  "example_ru": "Кофе с молоком, пожалуйста.",
+  "rank": 617,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "cafés"
+  ]
+ },
+ {
+  "id": "leche",
+  "es": "leche",
+  "pos": "noun",
+  "ru": "молоко",
+  "example_es": "No bebo leche.",
+  "example_ru": "Я не пью молоко.",
+  "rank": 1495,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "leches"
+  ]
+ },
+ {
+  "id": "carne",
+  "es": "carne",
+  "pos": "noun",
+  "ru": "мясо",
+  "example_es": "No como carne.",
+  "example_ru": "Я не ем мясо.",
+  "rank": 1032,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "carnes"
+  ]
+ },
+ {
+  "id": "pescado",
+  "es": "pescado",
+  "pos": "noun",
+  "ru": "рыба (блюдо)",
+  "example_es": "El pescado está muy rico.",
+  "example_ru": "Рыба очень вкусная.",
+  "rank": 2464,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "pescados"
+  ]
+ },
+ {
+  "id": "fruta",
+  "es": "fruta",
+  "pos": "noun",
+  "ru": "фрукты",
+  "example_es": "Como fruta todos los días.",
+  "example_ru": "Я ем фрукты каждый день.",
+  "rank": 4693,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "frutas"
+  ]
+ },
+ {
+  "id": "manzana",
+  "es": "manzana",
+  "pos": "noun",
+  "ru": "яблоко",
+  "example_es": "Quiero una manzana.",
+  "example_ru": "Я хочу яблоко.",
+  "rank": 3475,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "manzanas"
+  ]
+ },
+ {
+  "id": "huevo",
+  "es": "huevo",
+  "pos": "noun",
+  "ru": "яйцо",
+  "example_es": "Dos huevos fritos, por favor.",
+  "example_ru": "Два жареных яйца, пожалуйста.",
+  "rank": 3193,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "huevos"
+  ]
+ },
+ {
+  "id": "queso",
+  "es": "queso",
+  "pos": "noun",
+  "ru": "сыр",
+  "example_es": "Me gusta el queso.",
+  "example_ru": "Мне нравится сыр.",
+  "rank": 2030,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "quesos"
+  ]
+ },
+ {
+  "id": "vino",
+  "es": "vino",
+  "pos": "noun",
+  "ru": "вино",
+  "example_es": "Una copa de vino tinto.",
+  "example_ru": "Бокал красного вина.",
+  "rank": 489,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "vinos"
+  ]
+ },
+ {
+  "id": "cerveza",
+  "es": "cerveza",
+  "pos": "noun",
+  "ru": "пиво",
+  "example_es": "Dos cervezas, por favor.",
+  "example_ru": "Два пива, пожалуйста.",
+  "rank": 1075,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "cervezas"
+  ]
+ },
+ {
+  "id": "desayuno",
+  "es": "desayuno",
+  "pos": "noun",
+  "ru": "завтрак",
+  "example_es": "El desayuno es a las ocho.",
+  "example_ru": "Завтрак в восемь.",
+  "rank": 1953,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "desayunos"
+  ]
+ },
+ {
+  "id": "cena",
+  "es": "cena",
+  "pos": "noun",
+  "ru": "ужин",
+  "example_es": "La cena está en la mesa.",
+  "example_ru": "Ужин на столе.",
+  "rank": 797,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "cenas"
+  ]
+ },
+ {
+  "id": "restaurante",
+  "es": "restaurante",
+  "pos": "noun",
+  "ru": "ресторан",
+  "example_es": "Vamos a un restaurante.",
+  "example_ru": "Пойдём в ресторан.",
+  "rank": 1488,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "restaurantes"
+  ]
+ },
+ {
+  "id": "tienda",
+  "es": "tienda",
+  "pos": "noun",
+  "ru": "магазин",
+  "example_es": "La tienda abre a las diez.",
+  "example_ru": "Магазин открывается в десять.",
+  "rank": 817,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "tiendas"
+  ]
+ },
+ {
+  "id": "mercado",
+  "es": "mercado",
+  "pos": "noun",
+  "ru": "рынок",
+  "example_es": "Compro fruta en el mercado.",
+  "example_ru": "Я покупаю фрукты на рынке.",
+  "rank": 1767,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "mercados"
+  ]
+ },
+ {
+  "id": "precio",
+  "es": "precio",
+  "pos": "noun",
+  "ru": "цена",
+  "example_es": "¿Cuál es el precio?",
+  "example_ru": "Какая цена?",
+  "rank": 1230,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "precios"
+  ]
+ },
+ {
+  "id": "cuenta",
+  "es": "cuenta",
+  "pos": "noun",
+  "ru": "счёт",
+  "example_es": "La cuenta, por favor.",
+  "example_ru": "Счёт, пожалуйста.",
+  "rank": 262,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "cuentas"
+  ]
+ },
+ {
+  "id": "euro",
+  "es": "euro",
+  "pos": "noun",
+  "ru": "евро",
+  "example_es": "Cuesta diez euros.",
+  "example_ru": "Это стоит десять евро.",
+  "rank": 30398,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "euros"
+  ]
+ },
+ {
+  "id": "comer",
+  "es": "comer",
+  "pos": "verb",
+  "ru": "есть",
+  "example_es": "Vamos a comer.",
+  "example_ru": "Пойдём поедим.",
+  "rank": 488
+ },
+ {
+  "id": "beber",
+  "es": "beber",
+  "pos": "verb",
+  "ru": "пить",
+  "example_es": "Quiero beber algo.",
+  "example_ru": "Я хочу что-нибудь выпить.",
+  "rank": 1053
+ },
+ {
+  "id": "comprar",
+  "es": "comprar",
+  "pos": "verb",
+  "ru": "покупать",
+  "example_es": "Voy a comprar pan.",
+  "example_ru": "Я пойду куплю хлеб.",
+  "rank": 818
+ },
+ {
+  "id": "pagar",
+  "es": "pagar",
+  "pos": "verb",
+  "ru": "платить",
+  "example_es": "¿Puedo pagar con tarjeta?",
+  "example_ru": "Можно заплатить картой?",
+  "rank": 775
+ },
+ {
+  "id": "costar",
+  "es": "costar",
+  "pos": "verb",
+  "ru": "стоить",
+  "example_es": "¿Cuánto cuesta?",
+  "example_ru": "Сколько стоит?",
+  "rank": 8133
+ },
+ {
+  "id": "rico",
+  "es": "rico",
+  "pos": "adj",
+  "ru": "вкусный; богатый",
+  "example_es": "La paella está muy rica.",
+  "example_ru": "Паэлья очень вкусная.",
+  "rank": 1396,
+  "forms": [
+   "rica",
+   "ricos",
+   "ricas"
+  ]
+ },
+ {
+  "id": "caro",
+  "es": "caro",
+  "pos": "adj",
+  "ru": "дорогой",
+  "example_es": "Es demasiado caro.",
+  "example_ru": "Это слишком дорого.",
+  "rank": 3034,
+  "forms": [
+   "cara",
+   "caros",
+   "caras"
+  ]
+ },
+ {
+  "id": "barato",
+  "es": "barato",
+  "pos": "adj",
+  "ru": "дешёвый",
+  "example_es": "Este hotel es barato.",
+  "example_ru": "Этот отель дешёвый.",
+  "rank": 3627,
+  "forms": [
+   "barata",
+   "baratos",
+   "baratas"
+  ]
+ },
+ {
+  "id": "hambre",
+  "es": "hambre",
+  "pos": "noun",
+  "ru": "голод",
+  "example_es": "Tengo hambre.",
+  "example_ru": "Я голоден.",
+  "rank": 826,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "hambres"
+  ]
+ },
+ {
+  "id": "sed",
+  "es": "sed",
+  "pos": "noun",
+  "ru": "жажда",
+  "example_es": "Tengo sed.",
+  "example_ru": "Я хочу пить.",
+  "rank": 3476,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "sedes"
+  ]
+ }
+]

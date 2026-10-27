@@ -1,0 +1,420 @@
+[
+ {
+  "id": "casa",
+  "es": "casa",
+  "pos": "noun",
+  "ru": "дом",
+  "example_es": "Mi casa es pequeña.",
+  "example_ru": "Мой дом маленький.",
+  "rank": 91,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "casas"
+  ]
+ },
+ {
+  "id": "piso",
+  "es": "piso",
+  "pos": "noun",
+  "ru": "квартира; этаж",
+  "example_es": "Vivo en un piso en el centro.",
+  "example_ru": "Я живу в квартире в центре.",
+  "rank": 1007,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "pisos"
+  ]
+ },
+ {
+  "id": "habitación",
+  "es": "habitación",
+  "pos": "noun",
+  "ru": "комната",
+  "example_es": "La habitación tiene una ventana.",
+  "example_ru": "В комнате есть окно.",
+  "rank": 496,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "habitaciones"
+  ]
+ },
+ {
+  "id": "cocina",
+  "es": "cocina",
+  "pos": "noun",
+  "ru": "кухня",
+  "example_es": "Estoy en la cocina.",
+  "example_ru": "Я на кухне.",
+  "rank": 1017,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "cocinas"
+  ]
+ },
+ {
+  "id": "baño",
+  "es": "baño",
+  "pos": "noun",
+  "ru": "ванная",
+  "example_es": "El baño está a la derecha.",
+  "example_ru": "Ванная справа.",
+  "rank": 715,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "baños"
+  ]
+ },
+ {
+  "id": "puerta",
+  "es": "puerta",
+  "pos": "noun",
+  "ru": "дверь",
+  "example_es": "Cierra la puerta, por favor.",
+  "example_ru": "Закрой дверь, пожалуйста.",
+  "rank": 321,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "puertas"
+  ]
+ },
+ {
+  "id": "ventana",
+  "es": "ventana",
+  "pos": "noun",
+  "ru": "окно",
+  "example_es": "Abre la ventana.",
+  "example_ru": "Открой окно.",
+  "rank": 1140,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "ventanas"
+  ]
+ },
+ {
+  "id": "mesa",
+  "es": "mesa",
+  "pos": "noun",
+  "ru": "стол",
+  "example_es": "Las llaves están en la mesa.",
+  "example_ru": "Ключи на столе.",
+  "rank": 828,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "mesas"
+  ]
+ },
+ {
+  "id": "silla",
+  "es": "silla",
+  "pos": "noun",
+  "ru": "стул",
+  "example_es": "Siéntate en la silla.",
+  "example_ru": "Садись на стул.",
+  "rank": 1579,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "sillas"
+  ]
+ },
+ {
+  "id": "cama",
+  "es": "cama",
+  "pos": "noun",
+  "ru": "кровать",
+  "example_es": "Me voy a la cama.",
+  "example_ru": "Я иду спать.",
+  "rank": 540,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "camas"
+  ]
+ },
+ {
+  "id": "llave",
+  "es": "llave",
+  "pos": "noun",
+  "ru": "ключ",
+  "example_es": "No encuentro la llave.",
+  "example_ru": "Не могу найти ключ.",
+  "rank": 1131,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "llaves"
+  ]
+ },
+ {
+  "id": "libro",
+  "es": "libro",
+  "pos": "noun",
+  "ru": "книга",
+  "example_es": "Este libro es interesante.",
+  "example_ru": "Эта книга интересная.",
+  "rank": 612,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "libros"
+  ]
+ },
+ {
+  "id": "teléfono",
+  "es": "teléfono",
+  "pos": "noun",
+  "ru": "телефон",
+  "example_es": "Mi teléfono no funciona.",
+  "example_ru": "Мой телефон не работает.",
+  "rank": 443,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "teléfonos"
+  ]
+ },
+ {
+  "id": "coche",
+  "es": "coche",
+  "pos": "noun",
+  "ru": "машина",
+  "example_es": "Tengo un coche rojo.",
+  "example_ru": "У меня красная машина.",
+  "rank": 408,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "coches"
+  ]
+ },
+ {
+  "id": "dinero",
+  "es": "dinero",
+  "pos": "noun",
+  "ru": "деньги",
+  "example_es": "No tengo dinero.",
+  "example_ru": "У меня нет денег.",
+  "rank": 164,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "dineros"
+  ]
+ },
+ {
+  "id": "agua",
+  "es": "agua",
+  "pos": "noun",
+  "ru": "вода",
+  "example_es": "Quiero un vaso de agua.",
+  "example_ru": "Я хочу стакан воды.",
+  "rank": 358,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "aguas"
+  ]
+ },
+ {
+  "id": "cosa",
+  "es": "cosa",
+  "pos": "noun",
+  "ru": "вещь",
+  "example_es": "Tengo muchas cosas que hacer.",
+  "example_ru": "У меня много дел.",
+  "rank": 187,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "cosas"
+  ]
+ },
+ {
+  "id": "ropa",
+  "es": "ropa",
+  "pos": "noun",
+  "ru": "одежда",
+  "example_es": "La ropa está limpia.",
+  "example_ru": "Одежда чистая.",
+  "rank": 652,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "ropas"
+  ]
+ },
+ {
+  "id": "regalo",
+  "es": "regalo",
+  "pos": "noun",
+  "ru": "подарок",
+  "example_es": "Es un regalo para ti.",
+  "example_ru": "Это подарок для тебя.",
+  "rank": 918,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "regalos"
+  ]
+ },
+ {
+  "id": "bolsa",
+  "es": "bolsa",
+  "pos": "noun",
+  "ru": "сумка, пакет",
+  "example_es": "¿Quiere una bolsa?",
+  "example_ru": "Вам нужен пакет?",
+  "rank": 1216,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "bolsas"
+  ]
+ },
+ {
+  "id": "foto",
+  "es": "foto",
+  "pos": "noun",
+  "ru": "фотография",
+  "example_es": "Mira esta foto.",
+  "example_ru": "Посмотри на эту фотографию.",
+  "rank": 767,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "fotos"
+  ]
+ },
+ {
+  "id": "televisión",
+  "es": "televisión",
+  "pos": "noun",
+  "ru": "телевизор",
+  "example_es": "No veo la televisión.",
+  "example_ru": "Я не смотрю телевизор.",
+  "rank": 1561,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "televisiones"
+  ]
+ },
+ {
+  "id": "ordenador",
+  "es": "ordenador",
+  "pos": "noun",
+  "ru": "компьютер",
+  "example_es": "Trabajo con el ordenador.",
+  "example_ru": "Я работаю за компьютером.",
+  "rank": 3218,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "ordenadores"
+  ]
+ },
+ {
+  "id": "reloj",
+  "es": "reloj",
+  "pos": "noun",
+  "ru": "часы",
+  "example_es": "Mi reloj es nuevo.",
+  "example_ru": "Мои часы новые.",
+  "rank": 1530,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "relojes"
+  ]
+ },
+ {
+  "id": "vaso",
+  "es": "vaso",
+  "pos": "noun",
+  "ru": "стакан",
+  "example_es": "Un vaso de leche, por favor.",
+  "example_ru": "Стакан молока, пожалуйста.",
+  "rank": 2522,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "vasos"
+  ]
+ },
+ {
+  "id": "grande",
+  "es": "grande",
+  "pos": "adj",
+  "ru": "большой",
+  "example_es": "Es una casa grande.",
+  "example_ru": "Это большой дом.",
+  "rank": 398,
+  "forms": [
+   "grandes"
+  ]
+ },
+ {
+  "id": "pequeño",
+  "es": "pequeño",
+  "pos": "adj",
+  "ru": "маленький",
+  "example_es": "Tengo un perro pequeño.",
+  "example_ru": "У меня маленькая собака.",
+  "rank": 414,
+  "forms": [
+   "pequeña",
+   "pequeños",
+   "pequeñas"
+  ]
+ },
+ {
+  "id": "nuevo",
+  "es": "nuevo",
+  "pos": "adj",
+  "ru": "новый",
+  "example_es": "Tengo un trabajo nuevo.",
+  "example_ru": "У меня новая работа.",
+  "rank": 185,
+  "forms": [
+   "nueva",
+   "nuevos",
+   "nuevas"
+  ]
+ },
+ {
+  "id": "viejo",
+  "es": "viejo",
+  "pos": "adj",
+  "ru": "старый",
+  "example_es": "Es un coche muy viejo.",
+  "example_ru": "Это очень старая машина.",
+  "rank": 382,
+  "forms": [
+   "vieja",
+   "viejos",
+   "viejas"
+  ]
+ },
+ {
+  "id": "limpio",
+  "es": "limpio",
+  "pos": "adj",
+  "ru": "чистый",
+  "example_es": "La cocina está limpia.",
+  "example_ru": "Кухня чистая.",
+  "rank": 1872,
+  "forms": [
+   "limpia",
+   "limpios",
+   "limpias"
+  ]
+ }
+]
