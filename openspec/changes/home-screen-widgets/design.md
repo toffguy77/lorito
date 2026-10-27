@@ -57,3 +57,11 @@ registration fails.
   provider.
 - [App Group adds signing work] → one-time; documented in tasks.
 - [Live Activity budget] → one activity at a time, ended on exit.
+- [App Group moves the SwiftData store] → with the group entitlement,
+  SwiftData's default `ModelConfiguration` places the store in the group
+  container, which would orphan existing users' data on update. The store is
+  pinned to the app container (`groupContainer: .none`); only the snapshot file
+  lives in the group.
+- [Day boundary] → widgets use the app's existing day calendar (UTC, as the
+  streak and daily plan do) so they never disagree with the app; timelines
+  refresh at both the next local midnight and the next UTC day start.
