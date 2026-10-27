@@ -34,6 +34,9 @@ public final class StudySessionModel {
     private var sessionGrades: [SessionGrade] = []
     /// The session summary, computed once when the last card is graded.
     public private(set) var summary: SessionSummary?
+    /// Personal traps this session created (set with the summary).
+    public private(set) var newTrapsCount = 0
+    private var trapsBefore: Set<String> = []
 
     public init(store: UserDataStore, catalog: ContentCatalog, queue: [String], today: Date = Date(),
                 analytics: AnalyticsRecording? = nil) {
@@ -44,6 +47,12 @@ public final class StudySessionModel {
         self.queue = queue
         self.today = today
         self.retention = (try? store.loadSettings().desiredRetention) ?? 0.9
+        self.trapsBefore = Set(currentTrapIDs())
+    }
+
+    private func currentTrapIDs() -> [String] {
+        PersonalTraps.list(events: (try? store.allEvents()) ?? [], practice: (try? store.allTrapPractice()) ?? [],
+                           catalog: catalog, settings: (try? store.loadSettings()) ?? .default, today: today).map(\.cardID)
     }
 
     public var currentCard: Card? {
@@ -151,6 +160,7 @@ public final class StudySessionModel {
         isRevealed = false
         if isComplete {
             let summary = makeSummary()
+            newTrapsCount = Set(currentTrapIDs()).subtracting(trapsBefore).count
             self.summary = summary
             analytics.record(.sessionCompleted(items: summary.studied, firstTryPercent: summary.firstTryPercent))
         }

@@ -18,9 +18,15 @@ public protocol UserDataStore: AnyObject {
     // conformers source-compatible; the SwiftData store overrides them.
     func appendAttempt(_ attempt: ExerciseAttempt) throws
     func allAttempts() throws -> [ExerciseAttempt]
+
+    // Traps-session outcomes (personal-traps), outside SRS.
+    func appendTrapPractice(_ event: TrapPracticeEvent) throws
+    func allTrapPractice() throws -> [TrapPracticeEvent]
 }
 
 public extension UserDataStore {
     func appendAttempt(_ attempt: ExerciseAttempt) throws {}
     func allAttempts() throws -> [ExerciseAttempt] { [] }
+    func appendTrapPractice(_ event: TrapPracticeEvent) throws {}
+    func allTrapPractice() throws -> [TrapPracticeEvent] { [] }
 }

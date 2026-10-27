@@ -15,10 +15,12 @@ public struct TrapCandidate: Sendable, Hashable {
 public enum DailyTrap {
     /// Prefers candidates the user has studied; index = stableHash(yyyy-MM-dd)
     /// mod count over candidates sorted by card id. Nil when there are none.
-    public static func pick(candidates: [TrapCandidate], studiedIDs: Set<String>, day: Date,
-                            calendar: Calendar = .learningDay) -> TrapCandidate? {
+    /// With in-scope personal trap ids (personal-traps), the pick is among those.
+    public static func pick(candidates: [TrapCandidate], studiedIDs: Set<String>, personalTrapIDs: Set<String> = [],
+                            day: Date, calendar: Calendar = .learningDay) -> TrapCandidate? {
+        let personal = candidates.filter { personalTrapIDs.contains($0.cardID) }
         let studied = candidates.filter { studiedIDs.contains($0.cardID) }
-        let pool = (studied.isEmpty ? candidates : studied).sorted { $0.cardID < $1.cardID }
+        let pool = (!personal.isEmpty ? personal : studied.isEmpty ? candidates : studied).sorted { $0.cardID < $1.cardID }
         guard !pool.isEmpty else { return nil }
         let index = Int(stableHash(dayKey(day, calendar: calendar)) % UInt64(pool.count))
         return pool[index]

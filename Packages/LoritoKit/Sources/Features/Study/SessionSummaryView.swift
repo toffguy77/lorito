@@ -8,6 +8,8 @@ import DesignSystem
 struct SessionSummaryView: View {
     let summary: SessionSummary
     let revisitThemes: [String]
+    var newTraps = 0
+    var onOpenTraps: () -> Void = {}
     let onClose: () -> Void
     @State private var shareImage: Image?
 
@@ -16,6 +18,14 @@ struct SessionSummaryView: View {
             content
             VStack(spacing: LoritoSpacing.sm) {
                 PrimaryButton("Готово", variant: .ink, action: onClose)
+                if newTraps > 0 {
+                    Button("Мои ловушки · \(newTraps)", action: onOpenTraps)
+                        .font(LoritoFont.bodyStrong)
+                        .foregroundStyle(LoritoColor.accent)
+                        .frame(minHeight: LoritoLayout.minTouchTarget)
+                        .accessibilityLabel("Мои ловушки: новых — \(TrapsModel.countLabel(newTraps))")
+                        .accessibilityIdentifier("summary.traps")
+                }
                 if let image = shareImage {
                     ShareLink(item: image, preview: SharePreview("Серия \(summary.currentStreak)", image: image)) {
                         Text("Поделиться")

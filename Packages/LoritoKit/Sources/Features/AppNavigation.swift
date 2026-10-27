@@ -41,6 +41,8 @@ public final class AppNavigation {
     public private(set) var session: StudySessionModel?
     /// Bumped when a session closes, so screens can refresh.
     public private(set) var sessionEndCount = 0
+    /// «Мои ловушки» requested from the session summary (personal-traps).
+    public var showTraps = false
 
     public init() {}
 

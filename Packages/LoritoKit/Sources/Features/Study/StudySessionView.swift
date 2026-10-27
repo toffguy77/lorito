@@ -9,6 +9,7 @@ import DesignSystem
 struct StudySessionView: View {
     @State var model: StudySessionModel
     let onClose: () -> Void
+    var onOpenTraps: () -> Void = {}
     @AccessibilityFocusState private var revealFocused: Bool
     @State private var openedRelated: Card?
     @Environment(\.horizontalSizeClass) private var sizeClass
@@ -20,7 +21,8 @@ struct StudySessionView: View {
             if let card = model.currentCard {
                 sessionContent(card)
             } else if let summary = model.summary {
-                SessionSummaryView(summary: summary, revisitThemes: model.revisitThemeTitles, onClose: onClose)
+                SessionSummaryView(summary: summary, revisitThemes: model.revisitThemeTitles,
+                                   newTraps: model.newTrapsCount, onOpenTraps: onOpenTraps, onClose: onClose)
             } else {
                 SessionCompleteView(subtitle: "Все карточки на сегодня пройдены.", onClose: onClose)
             }

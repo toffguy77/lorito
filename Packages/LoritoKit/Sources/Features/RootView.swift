@@ -79,6 +79,10 @@ public struct RootView: View {
             let container = PersistenceController.makeUserContainer(cloudKitEnabled: cloudKitEnabled, inMemory: uiTesting)
             let store = SwiftDataUserDataStore(container: container)
             if demoData { try DemoSeed.make(catalog: catalog, today: Date()).apply(to: store) }
+            if uiTesting, CommandLine.arguments.contains("-lorito-seed-trap") {
+                try DemoSeed.trapClearedOnce(today: Date()).apply(to: store)
+                didCompleteOnboarding = true
+            }
             if uiTesting, CommandLine.arguments.contains("-lorito-seed-frozen-yesterday") {
                 try DemoSeed.frozenYesterday(catalog: catalog, today: Date()).apply(to: store)
                 didCompleteOnboarding = true

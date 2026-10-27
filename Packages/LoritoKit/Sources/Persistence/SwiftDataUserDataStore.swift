@@ -139,6 +139,21 @@ public final class SwiftDataUserDataStore: UserDataStore {
         }
     }
 
+    // MARK: Trap practice (personal-traps)
+
+    public func appendTrapPractice(_ event: TrapPracticeEvent) throws {
+        context.insert(TrapPracticeRecord(eventID: event.id, cardID: event.cardID, date: event.date,
+                                          outcomeRaw: event.outcome.rawValue))
+        try context.save()
+    }
+
+    public func allTrapPractice() throws -> [TrapPracticeEvent] {
+        try context.fetch(FetchDescriptor<TrapPracticeRecord>()).map {
+            TrapPracticeEvent(id: $0.eventID, cardID: $0.cardID, date: $0.date,
+                              outcome: TrapPracticeEvent.Outcome(rawValue: $0.outcomeRaw) ?? .stillConfused)
+        }
+    }
+
     // MARK: Helpers
 
     private func fetchRecord(cardID: String) throws -> ReviewRecord? {

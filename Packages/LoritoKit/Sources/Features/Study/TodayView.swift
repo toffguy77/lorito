@@ -44,6 +44,15 @@ public struct TodayView: View {
         .hardwareKeyCommands(model.hasWork && navigation.session == nil
                              ? [HardwareKeyCommand(.return, title: "Начать", action: startSession)] : [])
         .onChange(of: navigation.sessionEndCount) { _, _ in model.refresh() }
+        .sheet(isPresented: Binding(get: { navigation.showTraps }, set: { navigation.showTraps = $0 }),
+               onDismiss: { model.refresh() }) {
+            NavigationStack {
+                TrapsView(model: TrapsModel(store: store, catalog: catalog))
+                    .toolbar {
+                        ToolbarItem(placement: .confirmationAction) { Button("Готово") { navigation.showTraps = false } }
+                    }
+            }
+        }
         .sheet(item: $goalModel, onDismiss: { model.refresh() }) { goals in
             NavigationStack {
                 GoalSettingsView(model: goals)
@@ -80,6 +89,7 @@ public struct TodayView: View {
             streakBannerView
             goalCard
             promptCard
+            trapsEntry
             trap
         }
         .frame(maxWidth: LoritoLayout.readingWidth)
@@ -102,6 +112,7 @@ public struct TodayView: View {
                     streakBannerView
                     goalCard
                     promptCard
+                    trapsEntry
                     trap
                     memorySummary
                 }
@@ -160,6 +171,34 @@ public struct TodayView: View {
         model.dismissPrompt()
         if prompt.id == TodayModel.goalPrompt.id {
             goalModel = GoalSettingsModel(store: store, catalog: catalog)
+        }
+    }
+
+    /// «Мои ловушки · N» (personal-traps).
+    @ViewBuilder
+    private var trapsEntry: some View {
+        if !model.personalTraps.isEmpty {
+            Button { navigation.showTraps = true } label: {
+                HStack(spacing: LoritoSpacing.sm) {
+                    Image(systemName: "exclamationmark.triangle")
+                        .foregroundStyle(LoritoColor.dangerText)
+                        .accessibilityHidden(true)
+                    Text("Мои ловушки · \(model.personalTraps.count)")
+                        .font(LoritoFont.bodyStrong)
+                        .foregroundStyle(LoritoColor.textPrimary)
+                    Spacer()
+                    Image(systemName: "chevron.right")
+                        .foregroundStyle(LoritoColor.textSecondary)
+                        .accessibilityHidden(true)
+                }
+                .padding(LoritoSpacing.md)
+                .frame(minHeight: LoritoLayout.minTouchTarget)
+                .background(LoritoColor.surfaceRaised, in: RoundedRectangle(cornerRadius: LoritoRadius.md, style: .continuous))
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+            .accessibilityLabel("Мои ловушки: \(TrapsModel.countLabel(model.personalTraps.count))")
+            .accessibilityIdentifier("today.traps")
         }
     }
 

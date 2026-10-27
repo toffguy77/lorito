@@ -151,3 +151,18 @@ struct SyncedSettingsRoundTripTests {
         #expect(loaded.levelGoal == nil && loaded.exam == nil)
     }
 }
+
+@Suite("Trap practice round trip (personal-traps)")
+struct TrapPracticeRoundTripTests {
+    @Test("Every field round-trips; an unknown outcome loads as «Ещё путаю»")
+    func roundTrip() throws {
+        let container = try PersistenceController.makeContainer(config: .init(inMemory: true))
+        let e = TrapPracticeEvent(cardID: "A1-07", date: Date(timeIntervalSinceReferenceDate: 800_000_000), outcome: .clear)
+        try SwiftDataUserDataStore(container: container).appendTrapPractice(e)
+        #expect(try SwiftDataUserDataStore(container: container).allTrapPractice() == [e])
+        let context = ModelContext(container)
+        context.insert(TrapPracticeRecord(cardID: "A1-09", outcomeRaw: "future"))
+        try context.save()
+        #expect(try SwiftDataUserDataStore(container: container).allTrapPractice().contains { $0.cardID == "A1-09" && $0.outcome == .stillConfused })
+    }
+}

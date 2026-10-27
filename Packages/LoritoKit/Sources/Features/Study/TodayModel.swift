@@ -33,6 +33,8 @@ public final class TodayModel {
         didSet { prompt = promptSlot.prompt(candidates: promptCandidates, events: (try? store.allEvents()) ?? []) }
     }
     private let promptSlot: TodayPromptSlot
+    /// In-scope personal traps (personal-traps).
+    public private(set) var personalTraps: [PersonalTrap] = []
     /// Streak-protection banner (freeze used / revival in progress).
     public private(set) var streakBanner: StreakBanner?
     private let streakLedger: StreakBannerLedger
@@ -128,7 +130,10 @@ public final class TodayModel {
         let levels = settings.targetLevel.map(SelectionScope.includedLevels(for:)) ?? []
         let rows = StatsCalculator.longTermMemory(reviews: reviews, catalog: catalog, levels: levels)
         memory = (rows.reduce(0) { $0 + $1.longTerm }, rows.reduce(0) { $0 + $1.total })
-        trap = Self.pickTrap(settings: settings, reviews: reviews, catalog: catalog, today: today)
+        personalTraps = PersonalTraps.list(events: events, practice: (try? store.allTrapPractice()) ?? [],
+                                           catalog: catalog, settings: settings, today: today)
+        trap = Self.pickTrap(settings: settings, reviews: reviews, catalog: catalog, today: today,
+                             personalTrapIDs: Set(personalTraps.map(\.cardID)))
         streakBanner = streakLedger.banner(events: events, today: today, keepFrozen: streakBanner == .frozen)
         goalLines = goalBuilder.lines(settings: settings, cards: catalog.cards, reviews: reviews, today: today,
                                       keepShowing: shownEndStates)
@@ -150,7 +155,8 @@ public final class TodayModel {
 
     /// Candidates are in-scope cards with a "Частые ошибки" section.
     static func pickTrap(
-        settings: UserSettings, reviews: [ReviewState], catalog: ContentCatalog, today: Date
+        settings: UserSettings, reviews: [ReviewState], catalog: ContentCatalog, today: Date,
+        personalTrapIDs: Set<String> = []
     ) -> TrapCandidate? {
         guard let level = settings.targetLevel else { return nil }
         let candidates = SelectionScope
@@ -159,6 +165,6 @@ public final class TodayModel {
                 CardBodyParser.firstMistake(in: card.body).map { TrapCandidate(cardID: card.id, text: $0) }
             }
         let studied = Set(reviews.filter { $0.status != .new }.map(\.cardID))
-        return DailyTrap.pick(candidates: candidates, studiedIDs: studied, day: today)
+        return DailyTrap.pick(candidates: candidates, studiedIDs: studied, personalTrapIDs: personalTrapIDs, day: today)
     }
 }

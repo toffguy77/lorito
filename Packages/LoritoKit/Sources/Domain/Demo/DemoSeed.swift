@@ -8,6 +8,7 @@ public struct DemoSeed: Sendable {
     public var settings: UserSettings
     public var reviews: [ReviewState]
     public var events: [StudyEvent]
+    public var trapPractice: [TrapPracticeEvent] = []
 
     public static let streakDays = 12
 
@@ -66,10 +67,24 @@ public struct DemoSeed: Sendable {
         return DemoSeed(settings: UserSettings(targetLevel: .a1, didCompleteOnboarding: true), reviews: [review], events: events)
     }
 
+    /// personal-traps UI test: A1-07 failed two days ago, «Ясно» yesterday —
+    /// one more «Ясно» today resolves it.
+    public static func trapClearedOnce(today: Date, calendar: Calendar = .learningDay) -> DemoSeed {
+        let start = calendar.startOfDay(for: today)
+        func at(_ days: Int) -> Date { calendar.date(byAdding: .hour, value: 10 - days * 24, to: start) ?? start }
+        let review = ReviewState(cardID: "A1-07", interval: 1, repetitions: 0,
+                                 dueDate: calendar.date(byAdding: .day, value: 5, to: start) ?? start, status: .learning)
+        var seed = DemoSeed(settings: UserSettings(targetLevel: .a1, didCompleteOnboarding: true), reviews: [review],
+                            events: [StudyEvent(cardID: "A1-07", date: at(2), grade: Grade.again.rawValue)])
+        seed.trapPractice = [TrapPracticeEvent(cardID: "A1-07", date: at(1), outcome: .clear)]
+        return seed
+    }
+
     /// Writes the seed into an (empty, in-memory) store.
     public func apply(to store: UserDataStore) throws {
         try store.saveSettings(settings)
         for r in reviews { try store.upsertReview(r) }
         for e in events { try store.appendEvent(e) }
+        for p in trapPractice { try store.appendTrapPractice(p) }
     }
 }

@@ -63,7 +63,8 @@ public struct AdaptiveRootView: View {
             afterStudy()
             Task { await reminders.reschedule() }
         }) { session in
-            StudySessionView(model: session) { navigation.endSession() }
+            StudySessionView(model: session, onClose: { navigation.endSession() },
+                             onOpenTraps: { navigation.showTraps = true; navigation.endSession() })
         }
         .task {
             // Route tapped reminders to Today, then reschedule on launch.

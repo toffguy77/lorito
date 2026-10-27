@@ -125,3 +125,20 @@ public final class AttemptRecord {
         self.grade = grade
     }
 }
+
+/// A traps-session outcome (personal-traps). Optional/defaulted per the
+/// synced-data checklist.
+@Model
+public final class TrapPracticeRecord {
+    public var eventID: UUID = UUID()
+    public var cardID: String = ""
+    public var date: Date = Date.distantPast
+    public var outcomeRaw: String = "stillConfused"
+
+    public init(eventID: UUID = UUID(), cardID: String = "", date: Date = .distantPast, outcomeRaw: String = "stillConfused") {
+        self.eventID = eventID
+        self.cardID = cardID
+        self.date = date
+        self.outcomeRaw = outcomeRaw
+    }
+}
