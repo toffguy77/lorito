@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Карточка — оценка</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&amp;family=Onest:wght@400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#0E7C47}a:hover{color:#0A5C35}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; padding: 62px 20px 34px; background: #0F1A14; font-family: Onest, system-ui, sans-serif; color: #F3F4EF; display: flex; flex-direction: column; gap: 16px;">
+
+  <div style="display: flex; align-items: center; gap: 14px;">
+    <a href="Today.dc.html" aria-label="Закрыть" style="width: 44px; height: 44px; border-radius: 50%; background: #1C2A22; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F3F4EF" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></a>
+    <div style="flex-grow: 1; height: 6px; border-radius: 3px; background: #33443A; overflow: hidden;"><div style="width: 22%; height: 6px; background: #CBEF6B;"></div></div>
+    <span style="font-size: 14px; font-weight: 600; color: #A9B5AD;">4/18</span>
+  </div>
+
+  <div style="flex-grow: 1; border-radius: 36px; background: #FFFFFF; color: #0F1A14; padding: 22px 22px 20px; display: flex; flex-direction: column; gap: 14px; overflow: hidden;">
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; font-family: 'Instrument Serif', serif; font-style: italic; font-size: 26px; line-height: 1.1;">
+      <div style="padding: 10px 12px; border-radius: 16px; background: #E4F3EA;"><b style="font-style: normal; font-family: Onest, sans-serif; font-size: 17px; color: #0E7C47;">el</b> problema</div>
+      <div style="padding: 10px 12px; border-radius: 16px; background: #FBE3DD;"><b style="font-style: normal; font-family: Onest, sans-serif; font-size: 17px; color: #B93519;">la</b> mano</div>
+      <div style="padding: 10px 12px; border-radius: 16px; background: #FBE3DD;"><b style="font-style: normal; font-family: Onest, sans-serif; font-size: 17px; color: #B93519;">la</b> canción</div>
+      <div style="padding: 10px 12px; border-radius: 16px; background: #E4F3EA;"><b style="font-style: normal; font-family: Onest, sans-serif; font-size: 17px; color: #0E7C47;">el</b> agua<sup style="font-family: Onest, sans-serif; font-style: normal; font-size: 13px; color: #B93519;"> ж.р.</sup></div>
+    </div>
+
+    <div style="padding: 14px 16px; border-radius: 20px; background: #0F1A14; color: #F3F4EF; display: flex; flex-direction: column; gap: 6px;">
+      <span style="font-size: 11px; font-weight: 700; letter-spacing: 1.4px; color: #CBEF6B;">СУТЬ</span>
+      <span style="font-size: 15px; line-height: 1.4;">Два рода, среднего нет. Род решает окончание, а не русский перевод.</span>
+    </div>
+
+    <div style="display: flex; flex-direction: column;">
+      <div style="display: grid; grid-template-columns: 120px minmax(0, 1fr); padding: 9px 0; border-bottom: 1px solid #E7EAE3; font-size: 14px;"><b>-o, -or, -aje, -ma</b><span style="color: #0E7C47; font-weight: 600;">мужской</span></div>
+      <div style="display: grid; grid-template-columns: 120px minmax(0, 1fr); padding: 9px 0; border-bottom: 1px solid #E7EAE3; font-size: 14px;"><b>-a, -ción, -dad</b><span style="color: #B93519; font-weight: 600;">женский</span></div>
+      <div style="display: grid; grid-template-columns: 120px minmax(0, 1fr); padding: 9px 0; font-size: 14px;"><b>Исключения</b><span style="font-family: 'Instrument Serif', serif; font-style: italic; font-size: 18px;">el día, el mapa, la mano, la foto</span></div>
+    </div>
+
+    <div style="margin-top: auto; display: flex; align-items: center; justify-content: space-between; font-size: 13px; color: #56625B;">
+      <span>Полная карточка · 4 раздела</span>
+      <span style="display: flex; align-items: center; gap: 4px; color: #0E7C47; font-weight: 600;">Развернуть <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0E7C47" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></span>
+    </div>
+  </div>
+
+  <div style="font-size: 13px; color: #A9B5AD; text-align: center;">Насколько легко вспомнилось?</div>
+  <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px;">
+    <a href="CardFront.dc.html" style="text-decoration: none; border-radius: 22px; padding: 13px 4px; background: #3A1F19; color: #FF9B85; font-weight: 700; font-size: 15px; display: flex; flex-direction: column; gap: 3px; align-items: center;">Опять<span style="font-size: 12px; font-weight: 500;">сегодня</span></a>
+    <a href="Exercise.dc.html" style="text-decoration: none; border-radius: 22px; padding: 13px 4px; background: #1C2A22; color: #F3F4EF; font-weight: 700; font-size: 15px; display: flex; flex-direction: column; gap: 3px; align-items: center;">Трудно<span style="font-size: 12px; font-weight: 500; color: #A9B5AD;">1 день</span></a>
+    <a href="Exercise.dc.html" style="text-decoration: none; border-radius: 22px; padding: 13px 4px; background: #0E7C47; color: #FFFFFF; font-weight: 700; font-size: 15px; display: flex; flex-direction: column; gap: 3px; align-items: center;">Хорошо<span style="font-size: 12px; font-weight: 500;">3 дня</span></a>
+    <a href="Exercise.dc.html" style="text-decoration: none; border-radius: 22px; padding: 13px 4px; background: #CBEF6B; color: #0F1A14; font-weight: 700; font-size: 15px; display: flex; flex-direction: column; gap: 3px; align-items: center;">Легко<span style="font-size: 12px; font-weight: 500;">8 дней</span></a>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

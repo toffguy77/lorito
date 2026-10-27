@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Виджеты и Live Activity</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&amp;family=Onest:wght@400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#CBEF6B}a:hover{color:#FFFFFF}
+</style>
+</helmet>
+<div style="width: 860px; height: 844px; box-sizing: border-box; padding: 44px; background: #0A5C35; font-family: Onest, system-ui, sans-serif; color: #F3F4EF; display: grid; grid-template-columns: 372px minmax(0, 1fr); gap: 40px;">
+
+  <div style="display: flex; flex-direction: column; gap: 18px;">
+    <span style="font-size: 12px; font-weight: 700; letter-spacing: 1.4px; color: #CBEF6B;">ДОМАШНИЙ ЭКРАН</span>
+    <div style="display: flex; gap: 20px;">
+      <div style="width: 170px; height: 170px; box-sizing: border-box; border-radius: 28px; background: #0F1A14; padding: 16px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="display: flex; justify-content: space-between; align-items: center;"><b style="font-family: Unbounded, sans-serif; font-size: 18px; color: #CBEF6B;">¡L</b><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E5482A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4 0 7-2.7 7-6.8 0-3.6-2.6-6-4.2-8.7-.4 2.1-1.5 3.3-2.8 3.9C12.6 6.9 11 4 8.6 2 8.9 6 5 8.4 5 13.6 5 18.9 8.2 22 12 22z"></path></svg></div>
+        <div><b style="font-family: Unbounded, sans-serif; font-size: 44px; line-height: 0.9;">13</b><div style="font-size: 13px; color: #A9B5AD; margin-top: 4px;">дней · 18 ждут</div></div>
+      </div>
+      <div style="width: 170px; height: 170px; box-sizing: border-box; border-radius: 28px; background: #CBEF6B; color: #0F1A14; padding: 16px; display: flex; flex-direction: column; justify-content: space-between;">
+        <span style="font-size: 11px; font-weight: 700; letter-spacing: 1px;">СЛОВО ДНЯ</span>
+        <div><i style="font-family: 'Instrument Serif', serif; font-size: 34px; line-height: 1;">el águila</i><div style="font-size: 13px; margin-top: 6px;">орёл — ж.р., но с <b>el</b></div></div>
+      </div>
+    </div>
+
+    <div style="width: 360px; height: 170px; box-sizing: border-box; border-radius: 28px; background: #F3F4EF; color: #0F1A14; padding: 16px 18px; display: flex; flex-direction: column; gap: 10px;">
+      <div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 700; letter-spacing: 1px;"><span>ВСПОМНИ БЕЗ ПРИЛОЖЕНИЯ</span><span style="color: #56625B;">1 из 3</span></div>
+      <div style="font-size: 15px;">Какой артикль? <i style="font-family: 'Instrument Serif', serif; font-size: 26px;">___ idioma</i></div>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: auto;">
+        <button style="border: 0; height: 44px; border-radius: 14px; background: #0F1A14; color: #CBEF6B; font: 700 18px Onest, sans-serif;">el</button>
+        <button style="border: 0; height: 44px; border-radius: 14px; background: #E7EAE3; color: #0F1A14; font: 700 18px Onest, sans-serif;">la</button>
+      </div>
+    </div>
+
+    <span style="font-size: 12px; font-weight: 700; letter-spacing: 1.4px; color: #CBEF6B; margin-top: 10px;">ЭКРАН БЛОКИРОВКИ</span>
+    <div style="display: flex; gap: 14px; align-items: center;">
+      <div style="width: 72px; height: 72px; border-radius: 50%; background: rgba(255,255,255,0.14); display: flex; align-items: center; justify-content: center; position: relative;">
+        <svg aria-hidden="true" width="72" height="72" viewBox="0 0 72 72" style="position: absolute; left: 0; top: 0;"><circle cx="36" cy="36" r="31" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="6"></circle><circle cx="36" cy="36" r="31" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-dasharray="195" stroke-dashoffset="130" stroke-linecap="round" transform="rotate(-90 36 36)"></circle></svg>
+        <b style="font-family: Unbounded, sans-serif; font-size: 18px;">6</b>
+      </div>
+      <div style="height: 72px; flex-grow: 1; box-sizing: border-box; border-radius: 20px; background: rgba(255,255,255,0.14); padding: 12px 16px; display: flex; flex-direction: column; justify-content: center; gap: 2px;">
+        <b style="font-size: 15px;">Серия 13 — ещё не сегодня</b>
+        <span style="font-size: 13px; color: #D5E8DC;">5 минут до 23:59 спасут её</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 18px;">
+    <span style="font-size: 12px; font-weight: 700; letter-spacing: 1.4px; color: #CBEF6B;">LIVE ACTIVITY · DYNAMIC ISLAND</span>
+    <div style="align-self: center; width: 250px; height: 38px; border-radius: 999px; background: #000000; display: flex; align-items: center; justify-content: space-between; padding: 0 16px; box-sizing: border-box;">
+      <b style="font-family: Unbounded, sans-serif; font-size: 13px; color: #CBEF6B;">¡L</b>
+      <span style="font-size: 13px; font-weight: 600;">4 / 18 · 9 мин</span>
+    </div>
+    <div style="border-radius: 28px; background: #000000; padding: 18px 20px; display: flex; flex-direction: column; gap: 12px;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline;"><b style="font-size: 16px;">Сессия идёт</b><span style="font-size: 13px; color: #A9B5AD;">≈ 9 мин осталось</span></div>
+      <div style="display: grid; grid-template-columns: 4fr 14fr; gap: 4px; height: 8px;"><span style="background: #CBEF6B; border-radius: 4px;"></span><span style="background: #2A3B31; border-radius: 4px;"></span></div>
+      <div style="font-size: 14px; color: #C9D2CC;">Следующая: <i style="font-family: 'Instrument Serif', serif; font-size: 19px; color: #F3F4EF;">ser vs estar</i></div>
+    </div>
+
+    <span style="font-size: 12px; font-weight: 700; letter-spacing: 1.4px; color: #CBEF6B; margin-top: 10px;">КАРТОЧКА ДЛЯ STORIES</span>
+    <div style="align-self: flex-start; width: 210px; height: 373px; box-sizing: border-box; border-radius: 24px; background: #CBEF6B; color: #0F1A14; padding: 22px 20px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden;">
+      <div aria-hidden="true" style="position: absolute; right: -24px; bottom: -40px; font-family: Unbounded, sans-serif; font-weight: 800; font-size: 240px; line-height: 1; color: #BCE258;">¿</div>
+      <b style="position: relative; font-family: Unbounded, sans-serif; font-size: 16px;">¡Lorito!</b>
+      <div style="position: relative;"><b style="font-family: Unbounded, sans-serif; font-size: 80px; line-height: 0.85;">13</b><div style="font-size: 15px; font-weight: 600; margin-top: 8px;">дней испанского<br>без пропусков</div></div>
+      <i style="position: relative; font-family: 'Instrument Serif', serif; font-size: 22px;">Poco a poco se va lejos.</i>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":860,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>iPad — Прогресс</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&amp;family=Onest:wght@400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#0E7C47}a:hover{color:#0A5C35}
+</style>
+</helmet>
+<div style="width: 834px; height: 1194px; box-sizing: border-box; padding: 28px 40px 40px; background: #F3F4EF; font-family: Onest, system-ui, sans-serif; color: #0F1A14; display: flex; flex-direction: column; gap: 24px;">
+
+  <nav aria-label="Разделы" style="align-self: center; display: flex; gap: 4px; padding: 5px; border-radius: 999px; background: rgba(255,255,255,0.85); border: 1px solid #DDE1DA; box-shadow: 0 8px 24px rgba(15,26,20,0.10);">
+    <a href="iPadToday.dc.html" style="text-decoration: none; height: 44px; padding: 0 20px; border-radius: 999px; display: flex; align-items: center; color: #0F1A14; font-weight: 600; font-size: 15px;">Сегодня</a>
+    <a href="iPadCatalog.dc.html" style="text-decoration: none; height: 44px; padding: 0 20px; border-radius: 999px; display: flex; align-items: center; color: #0F1A14; font-weight: 600; font-size: 15px;">Каталог</a>
+    <a href="iPadProgress.dc.html" style="text-decoration: none; height: 44px; padding: 0 20px; border-radius: 999px; display: flex; align-items: center; background: #0F1A14; color: #CBEF6B; font-weight: 600; font-size: 15px;">Прогресс</a>
+    <a href="Main.dc.html" style="text-decoration: none; height: 44px; padding: 0 20px; border-radius: 999px; display: flex; align-items: center; color: #0F1A14; font-weight: 600; font-size: 15px;">Настройки</a>
+  </nav>
+
+  <h1 style="margin: 8px 0 0; font-family: Unbounded, sans-serif; font-weight: 800; font-size: 44px; letter-spacing: -1.5px;">Прогресс</h1>
+
+  <div style="display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 14px;">
+    <div style="background: #E5482A; border-radius: 32px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; min-height: 190px;">
+      <svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0F1A14" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4 0 7-2.7 7-6.8 0-3.6-2.6-6-4.2-8.7-.4 2.1-1.5 3.3-2.8 3.9C12.6 6.9 11 4 8.6 2 8.9 6 5 8.4 5 13.6 5 18.9 8.2 22 12 22z"></path></svg>
+      <div><b style="font-family: Unbounded, sans-serif; font-size: 72px; line-height: 0.9;">13</b><div style="font-size: 16px; font-weight: 600; margin-top: 6px;">дней подряд</div></div>
+    </div>
+    <div style="background: #FFFFFF; border-radius: 32px; padding: 24px; display: flex; flex-direction: column; justify-content: flex-end; gap: 4px;"><b style="font-family: Unbounded, sans-serif; font-size: 40px;">21</b><span style="font-size: 14px; color: #56625B;">лучшая серия</span></div>
+    <div style="background: #FFFFFF; border-radius: 32px; padding: 24px; display: flex; flex-direction: column; justify-content: flex-end; gap: 4px;"><b style="font-family: Unbounded, sans-serif; font-size: 40px;">412</b><span style="font-size: 14px; color: #56625B;">повторений всего</span></div>
+  </div>
+
+  <div style="background: #FFFFFF; border-radius: 32px; padding: 24px 26px; display: flex; flex-direction: column; gap: 14px;">
+    <div style="display: flex; justify-content: space-between; font-size: 15px;"><b>12 недель</b><span style="color: #56625B;">298 повторений за период</span></div>
+    <div style="display: grid; grid-template-columns: 36px minmax(0, 1fr); gap: 10px;">
+      <div style="display: grid; grid-template-rows: repeat(7, 32px); gap: 6px; font-size: 12px; color: #56625B; align-items: center;"><span>Пн</span><span></span><span>Ср</span><span></span><span>Пт</span><span></span><span>Вс</span></div>
+      <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); grid-template-rows: repeat(7, 32px); grid-auto-flow: column; gap: 6px;">
+        <sc-for list="{{ cells }}" as="c" hint-placeholder-count="84">
+          <span style="border-radius: 8px; background: {{ c.bg }};"></span>
+        </sc-for>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: #56625B; justify-content: flex-end;">меньше <span style="width: 14px; height: 14px; border-radius: 4px; background: #E7EAE3;"></span><span style="width: 14px; height: 14px; border-radius: 4px; background: #9FD9B6;"></span><span style="width: 14px; height: 14px; border-radius: 4px; background: #3BB273;"></span><span style="width: 14px; height: 14px; border-radius: 4px; background: #0A5C35;"></span> больше</div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 14px; flex-grow: 1;">
+    <div style="background: #FFFFFF; border-radius: 32px; padding: 24px 26px; display: flex; flex-direction: column; gap: 14px;">
+      <div style="display: flex; justify-content: space-between; font-size: 15px;"><b>В долгой памяти</b><span style="color: #56625B;">интервал от 21 дня</span></div>
+      <div style="display: grid; grid-template-columns: 36px minmax(0, 1fr) 48px; gap: 10px; align-items: center; font-size: 14px;"><b style="font-family: Unbounded, sans-serif;">A1</b><div style="height: 12px; border-radius: 6px; background: #E7EAE3; overflow: hidden;"><div style="width: 70%; height: 12px; background: #0E7C47;"></div></div><span style="text-align: right;">21/30</span></div>
+      <div style="display: grid; grid-template-columns: 36px minmax(0, 1fr) 48px; gap: 10px; align-items: center; font-size: 14px;"><b style="font-family: Unbounded, sans-serif;">A2</b><div style="height: 12px; border-radius: 6px; background: #E7EAE3; overflow: hidden;"><div style="width: 24%; height: 12px; background: #0E7C47;"></div></div><span style="text-align: right;">7/29</span></div>
+      <div style="display: grid; grid-template-columns: 36px minmax(0, 1fr) 48px; gap: 10px; align-items: center; font-size: 14px;"><b style="font-family: Unbounded, sans-serif;">B1</b><div style="height: 12px; border-radius: 6px; background: #E7EAE3; overflow: hidden;"><div style="width: 4%; height: 12px; background: #0E7C47;"></div></div><span style="text-align: right;">1/25</span></div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 14px;">
+      <div style="flex-grow: 1; background: #0F1A14; color: #F3F4EF; border-radius: 32px; padding: 22px 24px; display: flex; flex-direction: column; justify-content: flex-end; gap: 4px;"><b style="font-family: Unbounded, sans-serif; font-size: 36px; color: #CBEF6B;">12</b><span style="font-size: 14px; color: #A9B5AD;">сегодня</span></div>
+      <div style="flex-grow: 1; background: #FFFFFF; border-radius: 32px; padding: 22px 24px; display: flex; flex-direction: column; justify-content: flex-end; gap: 4px;"><b style="font-family: Unbounded, sans-serif; font-size: 36px;">74</b><span style="font-size: 14px; color: #56625B;">за неделю</span></div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":834,"height":1194}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const shades = ['#E7EAE3', '#9FD9B6', '#3BB273', '#0A5C35'];
+    const cells = [];
+    for (let i = 0; i < 84; i++) {
+      let v;
+      if (i >= 71) v = (i === 83) ? 0 : 2 + (i % 2);
+      else if (i < 14) v = (i * 7) % 5 === 0 ? 1 : 0;
+      else v = ((i * 13) % 7 === 0) ? 0 : 1 + ((i * 5) % 3);
+      cells.push({ bg: shades[v] });
+    }
+    return { cells: cells };
+  }
+}
+</script>
+</body>
+</html>
