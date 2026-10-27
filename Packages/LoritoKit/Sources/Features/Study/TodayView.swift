@@ -54,6 +54,7 @@ public struct TodayView: View {
 
     private func startSession() {
         guard model.hasWork else { return }
+        AnalyticsService.shared.record(.sessionStarted(due: model.dueRemaining, new: model.newRemaining))
         navigation.startSession(StudySessionModel(store: store, catalog: catalog, queue: model.sessionQueue()))
     }
 

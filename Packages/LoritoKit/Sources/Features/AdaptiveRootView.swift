@@ -48,6 +48,7 @@ public struct AdaptiveRootView: View {
         .focusModeCover(item: sessionBinding, onDismiss: {
             refreshPath()
             publishWidgets()
+            afterStudy()
             Task { await reminders.reschedule() }
         }) { session in
             StudySessionView(model: session) { navigation.endSession() }
@@ -60,12 +61,15 @@ public struct AdaptiveRootView: View {
             navigation.restoreCatalogSelection(storedCatalogSelection, in: catalog)
             refreshPath()
             publishWidgets()
+            AnalyticsService.shared.checkStreakOnLaunch(currentStreak())
+            await AnalyticsService.shared.flush()
             await reminders.reschedule()
         }
         .onChange(of: scenePhase) { _, phase in
             // Foreground / day-rollover trigger.
             if phase == .active {
                 publishWidgets()
+                Task { await AnalyticsService.shared.flush() }
                 Task { await reminders.reschedule() }
             }
         }
@@ -86,9 +90,16 @@ public struct AdaptiveRootView: View {
         .onOpenURL { url in
             if LoritoDeepLink.isToday(url) { navigation.openToday() }
         }
-        .environment(\.practiceSessionDidEnd, { publishWidgets() })
+        .environment(\.practiceSessionDidEnd, {
+            publishWidgets()
+            afterStudy()
+        })
         .onChange(of: router.openToday) { _, open in
-            if open { navigation.openToday(); router.consume() }  // reminder deep link
+            if open {   // reminder deep link
+                AnalyticsService.shared.record(.reminderOpened)
+                navigation.openToday()
+                router.consume()
+            }
         }
         .onChange(of: navigation.catalogSelectionStorage) { _, stored in
             storedCatalogSelection = stored
@@ -179,6 +190,16 @@ public struct AdaptiveRootView: View {
                     }
             }
         }
+    }
+
+    /// After a study or exercise session: streak-extended event, then flush.
+    private func afterStudy() {
+        AnalyticsService.shared.noteStreak(currentStreak())
+        Task { await AnalyticsService.shared.flush() }
+    }
+
+    private func currentStreak() -> Int {
+        StatsCalculator.compute(events: (try? store.allEvents()) ?? [], today: Date()).currentStreak
     }
 
     private func publishWidgets() {

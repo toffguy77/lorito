@@ -1,0 +1,7 @@
+// Build settings for the app target. Secrets/IDs stay out of git:
+// put real values in Lorito/Config.local.xcconfig (gitignored), e.g.
+//   TELEMETRYDECK_APP_ID = 00000000-0000-0000-0000-000000000000
+// CI writes that file from the TELEMETRYDECK_APP_ID secret. Without it the
+// app uses a no-op analytics sink.
+TELEMETRYDECK_APP_ID =
+#include? "Config.local.xcconfig"

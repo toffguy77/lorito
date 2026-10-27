@@ -34,3 +34,8 @@ extension View {
         #endif
     }
 }
+
+extension EnvironmentValues {
+    /// Launched with `-lorito-ui-testing` (exposes test-only state such as the analytics queue size).
+    @Entry var loritoUITesting = false
+}

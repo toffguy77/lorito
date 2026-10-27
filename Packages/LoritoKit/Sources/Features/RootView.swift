@@ -44,12 +44,15 @@ public struct RootView: View {
                     .background(LoritoColor.surface.ignoresSafeArea())
             }
         }
+        .environment(\.loritoUITesting, uiTesting)
         .task { await load() }
     }
 
     @MainActor
     private func load() async {
         guard model == nil else { return }
+        // Device-local analytics consent is resolved before any event.
+        AnalyticsService.shared.resolveConsentOnFirstLaunch()
         do {
             let catalog = try ContentLoader.loadCatalog()
             // Syncs through the user's private CloudKit DB when enabled (and an

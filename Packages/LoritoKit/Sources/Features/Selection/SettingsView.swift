@@ -9,6 +9,7 @@ import DesignSystem
 public struct SettingsView: View {
     @State private var model: ScopeSelectionModel
     private let reminders: ReminderService?
+    @Environment(\.loritoUITesting) private var uiTesting
 
     public init(model: ScopeSelectionModel, reminders: ReminderService? = nil) {
         _model = State(initialValue: model)
@@ -33,6 +34,8 @@ public struct SettingsView: View {
                     settingsRow("О приложении", systemImage: "info.circle")
                 }
                 .buttonStyle(.plain)
+
+                analyticsSection
 
                 section("Уровень") {
                     LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: LoritoSpacing.sm) {
@@ -97,6 +100,33 @@ public struct SettingsView: View {
                 .foregroundStyle(LoritoColor.textSecondary)
             content()
         }
+    }
+
+    /// Device-local consent for anonymous usage analytics.
+    private var analyticsSection: some View {
+        let analytics = AnalyticsService.shared
+        return VStack(alignment: .leading, spacing: LoritoSpacing.xs) {
+            Toggle(isOn: Binding(get: { analytics.isEnabled }, set: { analytics.setEnabled($0) })) {
+                Text("Помогать улучшать Lorito")
+                    .font(LoritoFont.bodyStrong)
+                    .foregroundStyle(LoritoColor.textPrimary)
+            }
+            .tint(LoritoColor.accent)
+            .accessibilityIdentifier("analyticsToggle")
+            Text("Анонимная статистика использования: какие экраны открываются и как проходят занятия. Без аккаунта, без текста карточек и личных данных. Настройка хранится только на этом устройстве.")
+                .font(LoritoFont.caption)
+                .foregroundStyle(LoritoColor.textSecondary)
+            Link("Политика конфиденциальности", destination: URL(string: "https://toffguy77.github.io/lorito/privacy.html")!)
+                .font(LoritoFont.caption)
+                .foregroundStyle(LoritoColor.accent)
+            if uiTesting {
+                Text("\(analytics.queue.records.count)")
+                    .font(LoritoFont.caption)
+                    .accessibilityIdentifier("analytics.queueCount")
+            }
+        }
+        .padding(LoritoSpacing.md)
+        .background(LoritoColor.surfaceRaised, in: RoundedRectangle(cornerRadius: LoritoRadius.md, style: .continuous))
     }
 
     private func settingsRow(_ title: String, systemImage: String) -> some View {

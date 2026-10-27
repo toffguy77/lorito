@@ -13,6 +13,7 @@ public final class ExerciseSessionModel: Identifiable {
     public let id = UUID()
     private let practice: ExercisePracticeService
     private let queue: [Exercise]
+    private let analytics: AnalyticsRecording
 
     public private(set) var index = 0
     /// Set once an auto-checkable exercise has been submitted.
@@ -26,9 +27,10 @@ public final class ExerciseSessionModel: Identifiable {
     public var ordering: [String] = []           // word-order (chosen order)
     public var matches: [String: String] = [:]   // matching (left→right) / picture (label→image)
 
-    public init(store: UserDataStore, exercises: [Exercise]) {
+    public init(store: UserDataStore, exercises: [Exercise], analytics: AnalyticsRecording? = nil) {
         self.practice = ExercisePracticeService(store: store)
         self.queue = exercises
+        self.analytics = analytics ?? AnalyticsService.shared
     }
 
     public var current: Exercise? {
@@ -127,12 +129,16 @@ public final class ExerciseSessionModel: Identifiable {
             return
         }
         lastCheck = try? practice.submit(current, answer: answer, today: Date()).check
+        if let lastCheck {
+            analytics.record(.exerciseAnswered(type: ExerciseTypeName(current.kind), correct: lastCheck.isCorrect))
+        }
     }
 
     /// Self-grade a revealed `free-response` exercise, then advance.
     public func selfGrade(_ grade: Grade) {
         guard isRevealed, let current, case .freeResponse = current.kind else { return }
         _ = try? practice.submitSelfGraded(current, grade: grade, today: Date())
+        analytics.record(.exerciseAnswered(type: .freeResponse, correct: grade != .again))
         advance()
     }
 

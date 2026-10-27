@@ -21,6 +21,11 @@ jobs:
       - name: Install fastlane and XcodeGen
         run: brew install fastlane xcodegen
 
+      - name: Write analytics app ID (TelemetryDeck)
+        env:
+          TELEMETRYDECK_APP_ID: ${{ secrets.TELEMETRYDECK_APP_ID }}
+        run: printf 'TELEMETRYDECK_APP_ID = %s\n' "$TELEMETRYDECK_APP_ID" > Lorito/Config.local.xcconfig
+
       - name: Generate Xcode project
         run: xcodegen generate
 

@@ -2,7 +2,7 @@ import Foundation
 
 /// The kind of a reviewable item, read from its identifier. The prefix is the
 /// contract, so stored data needs no extra field or migration.
-public enum ItemKind: String, Sendable, Hashable, CaseIterable {
+public enum ItemKind: String, Codable, Sendable, Hashable, CaseIterable {
     /// Grammar card: `A1-07`.
     case card
     /// Conjugation drill: `conj:<verb>:<tense>`.

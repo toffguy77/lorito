@@ -14,6 +14,7 @@ import DesignSystem
 public final class StudySessionModel {
     private let store: UserDataStore
     private let grading: GradingService
+    private let analytics: AnalyticsRecording
     private let catalog: ContentCatalog
     /// The session's cards; a card graded Опять is appended once (relearn).
     private var queue: [String]
@@ -32,7 +33,9 @@ public final class StudySessionModel {
     /// The session summary, computed once when the last card is graded.
     public private(set) var summary: SessionSummary?
 
-    public init(store: UserDataStore, catalog: ContentCatalog, queue: [String], today: Date = Date()) {
+    public init(store: UserDataStore, catalog: ContentCatalog, queue: [String], today: Date = Date(),
+                analytics: AnalyticsRecording? = nil) {
+        self.analytics = analytics ?? AnalyticsService.shared
         self.store = store
         self.grading = GradingService(store: store)
         self.catalog = catalog
@@ -135,6 +138,7 @@ public final class StudySessionModel {
         _ = try? grading.grade(cardID: cardID, grade: grade.domain, today: today)
         grades.append(grade)
         sessionGrades.append(SessionGrade(cardID: cardID, grade: grade.domain))
+        analytics.record(.itemGraded(kind: ItemKind.parse(cardID), grade: grade.domain, revealed: true))
         // In-session relearn: an Опять card comes back once at the end.
         if grade == .again, !relearned.contains(cardID) {
             relearned.insert(cardID)
@@ -142,7 +146,11 @@ public final class StudySessionModel {
         }
         index += 1
         isRevealed = false
-        if isComplete { summary = makeSummary() }
+        if isComplete {
+            let summary = makeSummary()
+            self.summary = summary
+            analytics.record(.sessionCompleted(items: summary.studied, firstTryPercent: summary.firstTryPercent))
+        }
     }
 
     // MARK: Completion

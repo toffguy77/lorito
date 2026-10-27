@@ -12,7 +12,17 @@ public struct OnboardingView: View {
     private let onComplete: () -> Void
     private let reminders: ReminderService?
 
-    private enum Step { case level, themes, reminders }
+    private enum Step {
+        case level, themes, reminders
+
+        var analyticsName: OnboardingStepName {
+            switch self {
+            case .level: return .level
+            case .themes: return .themes
+            case .reminders: return .reminders
+            }
+        }
+    }
 
     public init(
         model: ScopeSelectionModel,
@@ -38,6 +48,8 @@ public struct OnboardingView: View {
             case .reminders: reminderStep
             }
         }
+        .onAppear { AnalyticsService.shared.record(.onboardingStep(step.analyticsName)) }
+        .onChange(of: step) { _, step in AnalyticsService.shared.record(.onboardingStep(step.analyticsName)) }
         .frame(maxWidth: LoritoLayout.readingWidth)
         .frame(maxWidth: .infinity)
         .background(LoritoColor.surface.ignoresSafeArea())
@@ -167,6 +179,7 @@ public struct OnboardingView: View {
                 )
             }
             if model.persist(completingOnboarding: true) {
+                AnalyticsService.shared.record(.onboardingCompleted)
                 onComplete()
             }
         }
