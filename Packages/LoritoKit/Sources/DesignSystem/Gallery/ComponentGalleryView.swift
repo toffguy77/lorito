@@ -52,6 +52,16 @@ public struct ComponentGalleryView: View {
                     .foregroundStyle(LoritoColor.textPrimary)
                 }
 
+                section("Звук") {
+                    HStack(spacing: LoritoSpacing.sm) {
+                        SpeakButton(isSpeaking: false) {}
+                        SpeakButton(isSpeaking: true) {}
+                        SpeakButton(isSpeaking: false, tone: .ink) {}
+                            .padding(6)
+                            .background(LoritoColor.ink, in: RoundedRectangle(cornerRadius: LoritoRadius.sm))
+                    }
+                }
+
                 section("Chips") {
                     HStack {
                         LevelChip(level: "A1", theme: "Тема 2")

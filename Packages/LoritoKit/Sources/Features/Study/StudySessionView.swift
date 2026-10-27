@@ -27,6 +27,7 @@ struct StudySessionView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(LoritoColor.ink.ignoresSafeArea())
+        .speechSilenceHint()
         // Esc closes the session (the close button is always shown).
         .hardwareKeyCommands(openedRelated == nil ? [HardwareKeyCommand(.escape, title: "Выйти", action: onClose)] : [])
         .sheet(item: $openedRelated) { card in
@@ -73,7 +74,11 @@ struct StudySessionView: View {
     private func front(_ card: Card) -> some View {
         ScrollView {
             StudyCardContainer {
-                LevelChip(level: card.level.rawValue, theme: card.themeID)
+                HStack {
+                    LevelChip(level: card.level.rawValue, theme: card.themeID)
+                    Spacer()
+                    SurfaceSpeakButton(spans: SpeakableText.spans(inMarkdown: model.recallPrompt))
+                }
                 Text(card.title)
                     .font(LoritoFont.body)
                     .foregroundStyle(LoritoColor.textSecondary)
@@ -143,7 +148,12 @@ struct StudySessionView: View {
 
     @ViewBuilder
     private func cardHeader(_ card: Card) -> some View {
-        LevelChip(level: card.level.rawValue, theme: card.themeID)
+        HStack {
+            LevelChip(level: card.level.rawValue, theme: card.themeID)
+            Spacer()
+            // The revealed card's main Spanish content: its first examples.
+            SurfaceSpeakButton(spans: Array(SpeakableText.spans(inMarkdown: card.body).prefix(8)))
+        }
         Text(card.title)
             .loritoStyle(.title)
             .foregroundStyle(LoritoColor.textPrimary)

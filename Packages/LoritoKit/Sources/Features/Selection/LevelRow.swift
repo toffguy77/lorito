@@ -35,16 +35,20 @@ struct LevelRow: View {
     let level: CEFRLevel
     let state: State
     let action: () -> Void
+    @Environment(\.spanishSpanActions) private var spanActions
 
     var body: some View {
-        Button(action: action) {
+        Button {
+            action()
+            spanActions.performPrimary(level.samplePhrase)
+        } label: {
             HStack(spacing: LoritoSpacing.sm) {
                 Text(level.rawValue)
                     .loritoStyle(LoritoTextStyle.heading.sized(state == .target ? 24 : 20))
                     .foregroundStyle(codeColor)
                     .frame(width: 52, alignment: .leading)
                 VStack(alignment: .leading, spacing: 2) {
-                    SpanishText(level.samplePhrase, size: .custom(state == .target ? 24 : 21), color: phraseColor, interactive: false)
+                    SpanishText(level.samplePhrase, size: .custom(state == .target ? 24 : 21), color: phraseColor, interaction: .inButton)
                     Text(state == .target ? "\(level.blurb) · цель" : level.blurb)
                         .font(LoritoFont.caption)
                         .foregroundStyle(state == .target ? LoritoColor.onInkSecondary : LoritoColor.textSecondary)

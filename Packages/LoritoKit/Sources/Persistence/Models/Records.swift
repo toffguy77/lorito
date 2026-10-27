@@ -14,6 +14,10 @@ public final class SettingsRecord {
     public var remindersEnabled: Bool = false
     public var reminderMinutes: [Int] = []
     public var didCompleteOnboarding: Bool = false
+    // spanish-audio (optional/defaulted per the synced-data checklist)
+    public var spanishVariantRaw: String?
+    public var speechRateRaw: String?
+    public var playAudioWhenSilent: Bool = false
 
     public init(
         targetLevelRaw: String? = nil,

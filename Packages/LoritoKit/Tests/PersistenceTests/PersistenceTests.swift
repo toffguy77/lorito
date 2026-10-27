@@ -101,6 +101,9 @@ struct SyncedSettingsRoundTripTests {
         s.dailyNewCardCount = 4
         s.didCompleteOnboarding = true
         s.reminderConfig = ReminderConfig(enabled: true, times: [ReminderTime(hour: 8, minute: 30)])
+        s.spanishVariant = .latinAmerica                                // spanish-audio
+        s.speechRate = .slow
+        s.playAudioWhenSilent = true
         #expect(try Self.roundTrip(s) == s)
     }
 
@@ -114,5 +117,6 @@ struct SyncedSettingsRoundTripTests {
         #expect(loaded.targetLevel == .a1)
         #expect(loaded.dailyNewCardCount == UserSettings.default.dailyNewCardCount)
         #expect(loaded.didCompleteOnboarding == false)
+        #expect(loaded.spanishVariant == .spain && loaded.speechRate == .normal && !loaded.playAudioWhenSilent)
     }
 }

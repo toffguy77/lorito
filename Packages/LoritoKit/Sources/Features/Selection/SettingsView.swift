@@ -9,11 +9,16 @@ import DesignSystem
 public struct SettingsView: View {
     @State private var model: ScopeSelectionModel
     private let reminders: ReminderService?
+    private let audio: AudioSettingsModel?
+    private let hasSpanishVoice: Bool
     @Environment(\.loritoUITesting) private var uiTesting
 
-    public init(model: ScopeSelectionModel, reminders: ReminderService? = nil) {
+    public init(model: ScopeSelectionModel, reminders: ReminderService? = nil,
+                audio: AudioSettingsModel? = nil, hasSpanishVoice: Bool = true) {
         _model = State(initialValue: model)
         self.reminders = reminders
+        self.audio = audio
+        self.hasSpanishVoice = hasSpanishVoice
     }
 
     public var body: some View {
@@ -34,6 +39,8 @@ public struct SettingsView: View {
                     settingsRow("О приложении", systemImage: "info.circle")
                 }
                 .buttonStyle(.plain)
+
+                if let audio { soundSection(audio) }
 
                 analyticsSection
 
@@ -99,6 +106,37 @@ public struct SettingsView: View {
                 .loritoStyle(.label)
                 .foregroundStyle(LoritoColor.textSecondary)
             content()
+        }
+    }
+
+    /// «Звук»: Spanish variant, speed, silent-mode playback.
+    private func soundSection(_ audio: AudioSettingsModel) -> some View {
+        @Bindable var audio = audio
+        return section("Звук") {
+            VStack(alignment: .leading, spacing: LoritoSpacing.sm) {
+                Picker("Произношение", selection: $audio.variant) {
+                    ForEach(SpanishVariant.allCases, id: \.self) { Text($0.title).tag($0) }
+                }
+                .pickerStyle(.segmented)
+                .accessibilityIdentifier("spanishVariantPicker")
+                Picker("Скорость", selection: $audio.rate) {
+                    ForEach(SpeechRate.allCases, id: \.self) { Text($0.title).tag($0) }
+                }
+                .pickerStyle(.segmented)
+                Toggle(isOn: $audio.playWhenSilent) {
+                    Text("Звук в беззвучном режиме")
+                        .font(LoritoFont.bodyStrong)
+                        .foregroundStyle(LoritoColor.textPrimary)
+                }
+                .tint(LoritoColor.accent)
+                if !hasSpanishVoice {
+                    Text("На устройстве нет испанского голоса. Добавьте его: Настройки → Универсальный доступ → Устный контент → Голоса → Испанский.")
+                        .font(LoritoFont.caption)
+                        .foregroundStyle(LoritoColor.dangerText)
+                }
+            }
+            .padding(LoritoSpacing.md)
+            .background(LoritoColor.surfaceRaised, in: RoundedRectangle(cornerRadius: LoritoRadius.md, style: .continuous))
         }
     }
 

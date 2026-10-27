@@ -336,6 +336,7 @@ struct CardReaderView: View {
             .frame(maxWidth: .infinity)
         }
         .background(LoritoColor.surface.ignoresSafeArea())
+        .speechSilenceHint()
         .navigationTitle(card.id)
         .focusModeCover(item: $practiceSession) { session in
             ExerciseSessionView(model: session) {

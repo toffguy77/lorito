@@ -10,6 +10,7 @@ import DesignSystem
 public struct ExerciseSessionView: View {
     @State private var model: ExerciseSessionModel
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.spanishSpanActions) private var spanActions
     let onClose: () -> Void
 
     public init(model: ExerciseSessionModel, onClose: @escaping () -> Void) {
@@ -27,6 +28,7 @@ public struct ExerciseSessionView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(LoritoColor.ink.ignoresSafeArea())
+        .speechSilenceHint()
     }
 
     private func content(_ exercise: Exercise) -> some View {
@@ -41,9 +43,13 @@ public struct ExerciseSessionView: View {
 
             ScrollView {
                 VStack(alignment: .leading, spacing: LoritoSpacing.md) {
-                    Text("\(exercise.level.rawValue) · \(exercise.card)")
-                        .loritoStyle(.label)
-                        .foregroundStyle(LoritoColor.highlight)
+                    HStack {
+                        Text("\(exercise.level.rawValue) · \(exercise.card)")
+                            .loritoStyle(.label)
+                            .foregroundStyle(LoritoColor.highlight)
+                        Spacer()
+                        SurfaceSpeakButton(spans: SpeakableText.spans(inMarkdown: exercise.prompt), tone: .ink)
+                    }
                     CardContentView(exercise.prompt, tone: .ink)
 
                     inputSection(exercise)
@@ -87,7 +93,10 @@ public struct ExerciseSessionView: View {
     private var optionButtons: some View {
         VStack(spacing: LoritoSpacing.sm) {
             ForEach(model.options, id: \.self) { option in
-                Button { model.selectedOption = option } label: {
+                Button {
+                    model.selectedOption = option
+                    spanActions.performPrimary(option)          // tap Spanish to hear it
+                } label: {
                     HStack {
                         AnswerText(option, color: optionForeground(option))
                         Spacer()
@@ -131,7 +140,7 @@ public struct ExerciseSessionView: View {
                         .font(LoritoFont.body)
                         .foregroundStyle(LoritoColor.onInkSecondary)
                 } else {
-                    AnswerText(model.ordering.joined(separator: " "), color: LoritoColor.onInk)
+                    AnswerText(model.ordering.joined(separator: " "), color: LoritoColor.onInk, interaction: .standalone)
                 }
             }
             .frame(maxWidth: .infinity, minHeight: 88, alignment: .topLeading)
@@ -158,7 +167,7 @@ public struct ExerciseSessionView: View {
         return VStack(spacing: LoritoSpacing.sm) {
             ForEach(model.matchingLefts, id: \.self) { left in
                 VStack(alignment: .leading, spacing: LoritoSpacing.xs) {
-                    AnswerText(left, color: LoritoColor.onInk)
+                    AnswerText(left, color: LoritoColor.onInk, interaction: .standalone)
                     ChipRow(items: model.matchingRights, selected: model.matches[left]) { right in
                         if !model.isResolved { model.matches[left] = right }
                     }
@@ -173,7 +182,7 @@ public struct ExerciseSessionView: View {
         VStack(spacing: LoritoSpacing.sm) {
             ForEach(model.pictureOptions, id: \.label) { option in
                 VStack(alignment: .leading, spacing: LoritoSpacing.xs) {
-                    AnswerText(option.label, color: LoritoColor.onInk)
+                    AnswerText(option.label, color: LoritoColor.onInk, interaction: .standalone)
                     HStack(spacing: LoritoSpacing.sm) {
                         ForEach(model.pictureOptions, id: \.image) { pic in
                             Button { if !model.isResolved { model.matches[option.label] = pic.image } } label: {
@@ -217,7 +226,7 @@ public struct ExerciseSessionView: View {
             if !check.isCorrect {
                 HStack(alignment: .firstTextBaseline, spacing: LoritoSpacing.xs) {
                     Text("Правильный ответ:").font(LoritoFont.body).foregroundStyle(foreground)
-                    AnswerText(check.correctAnswer, color: LoritoColor.accent)
+                    AnswerText(check.correctAnswer, color: LoritoColor.accent, interaction: .standalone)
                 }
                 .accessibilityElement(children: .combine)
             }
@@ -233,7 +242,7 @@ public struct ExerciseSessionView: View {
     private func reveal(_ exercise: Exercise) -> some View {
         VStack(alignment: .leading, spacing: LoritoSpacing.xs) {
             Text("Образец ответа").loritoStyle(.label).foregroundStyle(LoritoColor.highlight)
-            AnswerText(model.referenceAnswer, color: LoritoColor.onInk)
+            AnswerText(model.referenceAnswer, color: LoritoColor.onInk, interaction: .standalone)
             if !exercise.explanation.isEmpty { CardContentView(exercise.explanation, tone: .ink) }
             Text("Оцените свой ответ:").font(LoritoFont.caption)
                 .foregroundStyle(LoritoColor.onInkSecondary).padding(.top, LoritoSpacing.xs)
@@ -288,6 +297,7 @@ public struct ExerciseSessionView: View {
 
 /// A wrapping-ish row of selectable text chips (single line, horizontally scrollable).
 private struct ChipRow: View {
+    @Environment(\.spanishSpanActions) private var spanActions
     let items: [String]
     var selected: String? = nil
     let onTap: (String) -> Void
@@ -296,7 +306,10 @@ private struct ChipRow: View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: LoritoSpacing.xs) {
                 ForEach(items, id: \.self) { item in
-                    Button { onTap(item) } label: {
+                    Button {
+                        onTap(item)
+                        spanActions.performPrimary(item)            // tap a token to hear it
+                    } label: {
                         AnswerText(item, color: item == selected ? LoritoColor.onHighlight : LoritoColor.onInk)
                             .padding(.horizontal, LoritoSpacing.md)
                             .frame(minHeight: LoritoLayout.minTouchTarget)

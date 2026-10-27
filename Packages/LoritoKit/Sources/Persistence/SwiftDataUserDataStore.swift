@@ -27,7 +27,10 @@ public final class SwiftDataUserDataStore: UserDataStore {
             dailyNewCardCount: r.dailyNewCardCount,
             remindersEnabled: r.remindersEnabled,
             reminderMinutes: r.reminderMinutes,
-            didCompleteOnboarding: r.didCompleteOnboarding
+            didCompleteOnboarding: r.didCompleteOnboarding,
+            spanishVariant: r.spanishVariantRaw.flatMap(SpanishVariant.init(rawValue:)) ?? .spain,
+            speechRate: r.speechRateRaw.flatMap(SpeechRate.init(rawValue:)) ?? .normal,
+            playAudioWhenSilent: r.playAudioWhenSilent
         )
     }
 
@@ -43,6 +46,9 @@ public final class SwiftDataUserDataStore: UserDataStore {
         record.remindersEnabled = settings.remindersEnabled
         record.reminderMinutes = settings.reminderMinutes
         record.didCompleteOnboarding = settings.didCompleteOnboarding
+        record.spanishVariantRaw = settings.spanishVariant.rawValue
+        record.speechRateRaw = settings.speechRate.rawValue
+        record.playAudioWhenSilent = settings.playAudioWhenSilent
         try context.save()
     }
 

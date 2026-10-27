@@ -17,6 +17,7 @@ public struct RootView: View {
     @State private var store: (any UserDataStore)?
     @State private var catalog: ContentCatalog?
     @State private var reminders: ReminderService?
+    @State private var speech: SystemSpeechService?
     @State private var loadError = false
     private let cloudKitEnabled: Bool
     private let uiTesting: Bool
@@ -44,6 +45,8 @@ public struct RootView: View {
                     .background(LoritoColor.surface.ignoresSafeArea())
             }
         }
+        .speechSilenceHint()
+        .spanishSpeech(speech)
         .environment(\.loritoUITesting, uiTesting)
         .task { await load() }
     }
@@ -66,6 +69,7 @@ public struct RootView: View {
             }
             self.catalog = catalog
             self.store = store
+            self.speech = SystemSpeechService(settings: { (try? store.loadSettings()) ?? .default })
             self.model = ScopeSelectionModel(store: store, catalog: catalog)
             self.reminders = ReminderService(
                 scheduler: SystemNotificationScheduler(), store: store, catalog: catalog

@@ -15,6 +15,8 @@ final class AnalyticsConsentUITests: XCTestCase {
 
         tabButton(app, "Настройки").tap()
         let count = app.staticTexts["analytics.queueCount"]
+        // The section sits below «Звук»; the list is lazy, so scroll to it.
+        for _ in 0..<6 where !count.exists { app.swipeUp() }
         XCTAssertTrue(count.waitForExistence(timeout: 10))
         XCTAssertNotEqual(count.label, "0", "onboarding events were not recorded")
 
@@ -27,6 +29,7 @@ final class AnalyticsConsentUITests: XCTestCase {
         // Something that would normally be recorded: open Today and come back.
         tabButton(app, "Сегодня").tap()
         tabButton(app, "Настройки").tap()
+        for _ in 0..<6 where !count.exists { app.swipeUp() }
         XCTAssertTrue(count.waitForExistence(timeout: 10))
         XCTAssertEqual(count.label, "0", "events recorded after opt-out")
     }

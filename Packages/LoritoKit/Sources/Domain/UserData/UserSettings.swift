@@ -14,6 +14,12 @@ public struct UserSettings: Codable, Sendable, Hashable {
     public var reminderMinutes: [Int]
     /// Whether onboarding has been completed.
     public var didCompleteOnboarding: Bool
+    /// Spanish variant of the speech voice (spanish-audio).
+    public var spanishVariant: SpanishVariant
+    /// Speech speed (spanish-audio).
+    public var speechRate: SpeechRate
+    /// Speak even when the Ring/Silent switch is on (spanish-audio).
+    public var playAudioWhenSilent: Bool
 
     public init(
         targetLevel: CEFRLevel? = nil,
@@ -21,7 +27,10 @@ public struct UserSettings: Codable, Sendable, Hashable {
         dailyNewCardCount: Int = 1,
         remindersEnabled: Bool = false,
         reminderMinutes: [Int] = [],
-        didCompleteOnboarding: Bool = false
+        didCompleteOnboarding: Bool = false,
+        spanishVariant: SpanishVariant = .spain,
+        speechRate: SpeechRate = .normal,
+        playAudioWhenSilent: Bool = false
     ) {
         self.targetLevel = targetLevel
         self.selectedThemeIDs = selectedThemeIDs
@@ -29,6 +38,9 @@ public struct UserSettings: Codable, Sendable, Hashable {
         self.remindersEnabled = remindersEnabled
         self.reminderMinutes = reminderMinutes
         self.didCompleteOnboarding = didCompleteOnboarding
+        self.spanishVariant = spanishVariant
+        self.speechRate = speechRate
+        self.playAudioWhenSilent = playAudioWhenSilent
     }
 
     public static let `default` = UserSettings()

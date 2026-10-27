@@ -22,6 +22,8 @@ public struct AdaptiveRootView: View {
     @State private var notificationDelegate: ReminderNotificationDelegate?
     @State private var path: [LevelPathProgress] = []
     @State private var liveActivity = SessionActivityController()
+    @State private var audioSettings: AudioSettingsModel
+    @Environment(\.speechService) private var speech
     @SceneStorage("lorito.catalogSelection") private var storedCatalogSelection = ""
     @Environment(\.horizontalSizeClass) private var sizeClass
     @Environment(\.scenePhase) private var scenePhase
@@ -31,6 +33,7 @@ public struct AdaptiveRootView: View {
         self.catalog = catalog
         self.scopeModel = scopeModel
         self.reminders = ReminderService(scheduler: SystemNotificationScheduler(), store: store, catalog: catalog)
+        _audioSettings = State(initialValue: AudioSettingsModel(store: store))
     }
 
     private static let tabs: [FloatingTabItem<AppNavigation.Destination>] =
@@ -125,7 +128,10 @@ public struct AdaptiveRootView: View {
         case .progress:
             StatsView(store: store, catalog: catalog)
         case .settings:
-            NavigationStack { SettingsView(model: scopeModel, reminders: reminders) }
+            NavigationStack {
+                SettingsView(model: scopeModel, reminders: reminders, audio: audioSettings,
+                             hasSpanishVoice: speech != nil)
+            }
         }
     }
 

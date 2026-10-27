@@ -16,15 +16,31 @@ public struct SpanishText: View {
     private let text: String
     private let size: Size
     private let color: Color
-    private let interactive: Bool
+    private let interaction: Interaction
     @Environment(\.spanishSpanActions) private var spanActions
 
-    /// `interactive: false` inside buttons, where the button's action wins.
-    public init(_ text: String, size: Size = .display, color: Color = LoritoColor.accent, interactive: Bool = true) {
+    /// How the span takes part in the Spanish-text gesture contract.
+    public enum Interaction: Sendable {
+        /// Tap = primary action; long press = menu.
+        case standalone
+        /// Inside a button: no gesture of its own (it would swallow the button's
+        /// tap) — the button's action calls the primary action; long press = menu.
+        case inButton
+        /// Not interactive (widgets, rendered images).
+        case none
+    }
+
+    public init(_ text: String, size: Size = .display, color: Color = LoritoColor.accent,
+                interaction: Interaction = .standalone) {
         self.text = text
         self.size = size
         self.color = color
-        self.interactive = interactive
+        self.interaction = interaction
+    }
+
+    /// Back-compat shorthand: `interactive: false` → `.none`.
+    public init(_ text: String, size: Size = .display, color: Color = LoritoColor.accent, interactive: Bool) {
+        self.init(text, size: size, color: color, interaction: interactive ? .standalone : .none)
     }
 
     /// The text tagged with its language (drives VoiceOver pronunciation).
@@ -49,12 +65,15 @@ public struct SpanishText: View {
             .font(style.font)
             .foregroundStyle(color)
             .environment(\.locale, Locale(identifier: "es_ES"))
-        if interactive {
+        switch interaction {
+        case .standalone:
             // Same gesture contract as card-body spans: tap = primary, long press = menu.
             label
                 .onTapGesture { spanActions.performPrimary(text) }
                 .spanishSpanMenu(spans: [text], actions: spanActions)
-        } else {
+        case .inButton:
+            label.spanishSpanMenu(spans: [text], actions: spanActions)
+        case .none:
             label
         }
     }
@@ -76,10 +95,14 @@ public struct AnswerText: View {
     private let spanishSize: CGFloat
     private let color: Color
 
-    public init(_ text: String, spanishSize: CGFloat = LoritoTextStyle.spanishInline.size + 4, color: Color) {
+    private let interaction: SpanishText.Interaction
+
+    public init(_ text: String, spanishSize: CGFloat = LoritoTextStyle.spanishInline.size + 4, color: Color,
+                interaction: SpanishText.Interaction = .inButton) {
         self.text = text
         self.spanishSize = spanishSize
         self.color = color
+        self.interaction = interaction
     }
 
     /// True when the text contains no Cyrillic letters (the Spanish face has none).
@@ -89,7 +112,7 @@ public struct AnswerText: View {
 
     public var body: some View {
         if Self.isSpanish(text) {
-            SpanishText(text, size: .custom(spanishSize), color: color, interactive: false)
+            SpanishText(text, size: .custom(spanishSize), color: color, interaction: interaction)
         } else {
             Text(text).font(LoritoFont.body).foregroundStyle(color)
         }
