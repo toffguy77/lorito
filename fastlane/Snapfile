@@ -3,7 +3,8 @@ languages(["ru"])
 scheme("Lorito")
 # Only the screenshot test — not the functional PracticeFlowUITests in the same target.
 only_testing(["LoritoUITests/ScreenshotUITests"])
-output_directory("./fastlane/screenshots")
+# Raw captures; tools/frame_screenshots.swift adds headlines into fastlane/screenshots/<locale>.
+output_directory("./fastlane/screenshots_raw")
 clear_previous_screenshots(true)
 reinstall_app(true)
 app_identifier("com.toffguy.lorito")

@@ -8,6 +8,17 @@ import XCTest
 func launchFresh(_ app: XCUIApplication) {
     app.launchArguments += ["-lorito-ui-testing"]
     app.launch()
+    // The first launch of a full run has been seen to come up in normal mode
+    // (persistent store, onboarding done). A fresh UI-testing launch always
+    // starts on onboarding — unless demo data is seeded — so relaunch once.
+    guard !app.launchArguments.contains("-lorito-demo-data") else { return }
+    let deadline = Date().addingTimeInterval(40)
+    while Date() < deadline, !app.buttons["A1"].exists, !tabButton(app, "Сегодня").exists { usleep(250_000) }
+    if !app.buttons["A1"].exists, tabButton(app, "Сегодня").exists {
+        print("[ui] launch came up without UI-testing state — relaunching")
+        app.terminate()
+        app.launch()
+    }
 }
 
 /// Dismiss any system alert (notification permission, etc.) that may block the UI.
@@ -24,7 +35,16 @@ func dismissSystemAlerts(_ app: XCUIApplication) {
 /// Mirrors the current three-step flow so downstream tests reach the main app.
 @MainActor
 func completeOnboardingIfPresent(_ app: XCUIApplication, level: String = "A1") {
-    guard app.buttons[level].waitForExistence(timeout: 8) else { return }
+    // A cold first launch can take well over 8 s: wait for onboarding or the
+    // main app, whichever shows first, instead of silently skipping onboarding.
+    let deadline = Date().addingTimeInterval(40)
+    while Date() < deadline, !app.buttons[level].exists, !tabButton(app, "Сегодня").exists {
+        usleep(250_000)
+    }
+    guard app.buttons[level].exists else {
+        if !tabButton(app, "Сегодня").exists { print("[ui] onboarding not found:\n\(app.debugDescription)") }
+        return
+    }
     app.buttons[level].tap()
     app.buttons["Далее"].tap()                                   // level → themes
     if app.staticTexts["Что изучать"].waitForExistence(timeout: 10) {
@@ -33,6 +53,18 @@ func completeOnboardingIfPresent(_ app: XCUIApplication, level: String = "A1") {
     if app.buttons["Пропустить"].waitForExistence(timeout: 10) {
         app.buttons["Пропустить"].tap()                          // skip the reminder step
     }
+    closeFirstSessionIfOpen(app)
+}
+
+/// Onboarding opens the first study session directly (placement-test); close it
+/// so tests start from Today.
+@MainActor
+func closeFirstSessionIfOpen(_ app: XCUIApplication) {
+    // Wait for the session itself: on iPad the sidebar's «Сегодня» stays in the
+    // hierarchy behind the session cover, so it can't end the wait.
+    guard app.buttons["Показать ответ"].waitForExistence(timeout: 8) else { return }
+    if app.buttons["Закрыть"].exists { app.buttons["Закрыть"].tap() }
+    _ = app.staticTexts["¡Hola!"].waitForExistence(timeout: 5)
 }
 
 /// Resolve a tab by label. On iPhone the floating tab bar exposes each
@@ -57,9 +89,10 @@ func waitForCount(_ query: XCUIElementQuery, atLeast n: Int, timeout: TimeInterv
     return query.count >= n
 }
 
-/// Drives the app through its main surfaces and captures App Store screenshots
-/// via fastlane snapshot. Runs against a freshly reinstalled app (first-run
-/// onboarding visible).
+/// App Store screenshots (app-store-presence): six scenes per device class from
+/// a seeded demo store (`-lorito-demo-data`) so every screen is full and
+/// deterministic — Today plan, recall front, revealed card with «Частые ошибки»,
+/// exercise, progress, catalog. Headlines are added by `tools/frame_screenshots.swift`.
 @MainActor
 final class ScreenshotUITests: XCTestCase {
     override func setUpWithError() throws {
@@ -70,61 +103,59 @@ final class ScreenshotUITests: XCTestCase {
         }
         let app = XCUIApplication()
         setupSnapshot(app)
+        app.launchArguments += ["-lorito-demo-data"]
         launchFresh(app)
     }
 
     func testCaptureScreens() {
         let app = XCUIApplication()
+        dismissSystemAlerts(app)
 
-        // 1 — Onboarding: choose a level.
-        XCTAssertTrue(app.buttons["A1"].waitForExistence(timeout: 30))
-        snapshot("01Onboarding")
-
-        app.buttons["A2"].tap()
-        app.buttons["Далее"].tap()                              // level → themes
-
-        // 2 — Onboarding: theme selection (all selected by default).
-        XCTAssertTrue(app.staticTexts["Что изучать"].waitForExistence(timeout: 15))
-        snapshot("02Themes")
-        app.buttons["Далее"].tap()                              // themes → reminders
-
-        // 3 — Onboarding: reminder-time step (skippable).
-        XCTAssertTrue(app.staticTexts["Напоминания"].waitForExistence(timeout: 15))
-        snapshot("03Reminders")
-        app.buttons["Пропустить"].tap()
-
-        // 4 — Today screen.
+        // 1 — Today: the day's plan (demo reviews due + new cards, streak).
         let start = app.buttons["Начать"]
-        XCTAssertTrue(start.waitForExistence(timeout: 15))
-        snapshot("04Today")
+        XCTAssertTrue(start.waitForExistence(timeout: 30), "Today plan not shown")
+        snapshot("01Today")
 
-        // 5 — Study session: recall front, then the revealed card.
+        // 2 — Recall-first card front.
         start.tap()
         let reveal = app.buttons["Показать ответ"]
         XCTAssertTrue(reveal.waitForExistence(timeout: 15))
-        snapshot("05Recall")
+        snapshot("02Recall")
+
+        // 3 — Revealed card scrolled to its «Частые ошибки» section.
         reveal.tap()
         XCTAssertTrue(app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'Хорошо'")).firstMatch.waitForExistence(timeout: 15))
-        snapshot("05Study")
+        let mistakes = app.staticTexts.matching(NSPredicate(format: "label CONTAINS 'Частые ошибки'")).firstMatch
+        for _ in 0..<8 where !(mistakes.exists && mistakes.isHittable) { app.swipeUp() }
+        snapshot("03Mistakes")
         if app.buttons["Закрыть"].exists { app.buttons["Закрыть"].tap() }
 
-        // 6 — Catalog. Resolve the tab across iPhone (bottom bar) and iPad (top bar).
-        let catalog = tabButton(app, "Каталог")
-        if catalog.waitForExistence(timeout: 10) {
-            catalog.tap()
-            // Wait for catalog content (level header) rather than a navigation bar,
-            // which differs between iPhone and iPad.
-            _ = app.staticTexts["A1"].waitForExistence(timeout: 10)
-            snapshot("06Catalog")
-        }
-
-        // 7 — Progress: streak, heatmap, long-term memory.
+        // 5 — Progress: streak, heatmap, long-term memory.
         let progress = tabButton(app, "Прогресс")
-        if progress.waitForExistence(timeout: 10) {
-            progress.tap()
-            _ = app.otherElements["heatmap.today"].firstMatch.waitForExistence(timeout: 10)
-            snapshot("07Progress")
-        }
+        XCTAssertTrue(progress.waitForExistence(timeout: 10))
+        progress.tap()
+        _ = app.otherElements["heatmap.today"].firstMatch.waitForExistence(timeout: 10)
+        snapshot("05Progress")
+
+        // 6 — Catalog.
+        let catalog = tabButton(app, "Каталог")
+        XCTAssertTrue(catalog.waitForExistence(timeout: 10))
+        catalog.tap()
+        _ = app.staticTexts["A1"].waitForExistence(timeout: 10)
+        snapshot("06Catalog")
+
+        // 4 — Exercise on «Род существительных» (A1-07), an option chosen and checked.
+        let theme = app.staticTexts["Существительное и его окружение"]
+        XCTAssertTrue(theme.waitForExistence(timeout: 15), "noun theme row not found")
+        theme.tap()
+        let card = app.staticTexts["Род существительных"]
+        XCTAssertTrue(card.waitForExistence(timeout: 15), "A1-07 card row not found")
+        card.tap()
+        let practice = app.buttons.containing(NSPredicate(format: "label BEGINSWITH 'Практика'")).firstMatch
+        XCTAssertTrue(practice.waitForExistence(timeout: 15), "Практика button not found")
+        practice.tap()
+        XCTAssertTrue(app.buttons["Проверить"].waitForExistence(timeout: 15), "exercise screen not shown")
+        snapshot("04Exercise")
     }
 }
 

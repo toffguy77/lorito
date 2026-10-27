@@ -36,3 +36,4 @@ Lorito/Info.plist
 tools/__pycache__/
 LoritoWidgets/Info.plist
 Lorito/Config.local.xcconfig
+fastlane/screenshots_raw/

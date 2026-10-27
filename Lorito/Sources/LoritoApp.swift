@@ -37,15 +37,18 @@ struct LoritoApp: App {
 
     /// UI tests launch with `-lorito-ui-testing`: in-memory store, onboarding first.
     private static let uiTesting = CommandLine.arguments.contains("-lorito-ui-testing")
+    /// Screenshot tests add `-lorito-demo-data`: the in-memory store is seeded
+    /// with deterministic demo progress (UI testing only).
+    private static let demoData = uiTesting && CommandLine.arguments.contains("-lorito-demo-data")
 
     var body: some Scene {
         WindowGroup {
             // `LORITO_CLOUDKIT` is defined only in builds that carry the iCloud
             // entitlement (cloudkit-sync branch). Off elsewhere → local store.
             #if LORITO_CLOUDKIT
-            RootView(cloudKitEnabled: true, uiTesting: Self.uiTesting)
+            RootView(cloudKitEnabled: true, uiTesting: Self.uiTesting, demoData: Self.demoData)
             #else
-            RootView(cloudKitEnabled: false, uiTesting: Self.uiTesting)
+            RootView(cloudKitEnabled: false, uiTesting: Self.uiTesting, demoData: Self.demoData)
             #endif
         }
     }

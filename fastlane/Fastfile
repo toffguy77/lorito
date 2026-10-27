@@ -1,5 +1,8 @@
 default_platform(:ios)
 
+# app-store-presence stage 1: exam terms ship only with the exam path (stage 2 clears this).
+METADATA_FORBIDDEN_TERMS = "DELE,CCSE,экзамен,гражданство"
+
 # App Store Connect API key. Prefer the on-disk .p8 (ASC_KEY_PATH) — it avoids a
 # transporter base64-decoding bug in some fastlane builds; fall back to the
 # base64 env var for local use.
@@ -99,6 +102,8 @@ platform :ios do
 
   desc "CI: import signing assets, build, upload to TestFlight, submit for review"
   lane :ci_release do
+    # Metadata lint (limits, keyword rules; no exam terms before the exam path).
+    sh("python3", "../tools/lint_metadata.py", "--forbid-terms", METADATA_FORBIDDEN_TERMS)
     # CloudKit release gate: production must have every development field.
     sh("bash", "../tools/cloudkit_schema_check.sh")
     setup_ci
@@ -110,6 +115,8 @@ platform :ios do
     )
     # Fresh iPhone + iPad screenshots on the runner's reliable simulators.
     capture_screenshots
+    # Headlines over the raw captures → fastlane/screenshots/{ru,es-ES,es-MX}.
+    Dir.chdir("..") { sh("swift", "tools/frame_screenshots.swift") }
     build  # archives (automatic) + downloads the App Store profile + manual export
     upload_to_testflight(
       api_key: asc_api_key,
@@ -132,6 +139,8 @@ platform :ios do
 
   desc "Deliver metadata + screenshots and submit the version for review"
   lane :submit do
+    # Metadata lint (limits, keyword rules; no exam terms before the exam path).
+    sh("python3", "../tools/lint_metadata.py", "--forbid-terms", METADATA_FORBIDDEN_TERMS)
     # CloudKit release gate: production must have every development field.
     sh("bash", "../tools/cloudkit_schema_check.sh")
     deliver(

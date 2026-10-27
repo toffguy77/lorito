@@ -21,12 +21,15 @@ public struct RootView: View {
     @State private var loadError = false
     private let cloudKitEnabled: Bool
     private let uiTesting: Bool
+    private let demoData: Bool
 
     /// `uiTesting`: in-memory store and first-run onboarding on every launch, so
     /// UI tests are independent of each other (launch argument `-lorito-ui-testing`).
-    public init(cloudKitEnabled: Bool = false, uiTesting: Bool = false) {
+    /// `demoData` (UI testing only): seed that store with `DemoSeed` for screenshots.
+    public init(cloudKitEnabled: Bool = false, uiTesting: Bool = false, demoData: Bool = false) {
         self.cloudKitEnabled = cloudKitEnabled
         self.uiTesting = uiTesting
+        self.demoData = uiTesting && demoData
     }
 
     public var body: some View {
@@ -63,6 +66,7 @@ public struct RootView: View {
             if uiTesting { didCompleteOnboarding = false }
             let container = PersistenceController.makeUserContainer(cloudKitEnabled: cloudKitEnabled, inMemory: uiTesting)
             let store = SwiftDataUserDataStore(container: container)
+            if demoData { try DemoSeed.make(catalog: catalog, today: Date()).apply(to: store) }
             // Respect a completion flag already recorded in persisted settings.
             if let settings = try? store.loadSettings(), settings.didCompleteOnboarding {
                 didCompleteOnboarding = true
