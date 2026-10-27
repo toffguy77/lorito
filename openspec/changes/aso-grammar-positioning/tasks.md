@@ -31,12 +31,12 @@
 
 ## 6. Later stages
 
-- [ ] 6.1 Stage 2 (with exam path): switch to stage-2 keywords and add the exam paragraph; lint green
-- [ ] 6.2 With `lorito-pro`: add the free vs paid disclosure to every description
+- [x] 6.1 Stage 2 (with exam path): switch to stage-2 keywords and add the exam paragraph; lint green
+- [x] 6.2 With `lorito-pro`: add the free vs paid disclosure to every description
 
 ## 7. Validation
 
 - [x] 7.1 `python3 tools/test_lint_metadata.py` and `python3 tools/lint_metadata.py` green
 - [x] 7.2 Screenshot UI tests green on iPhone and iPad simulators
-- [ ] 7.3 After 4 weeks: compare impressions and conversion per storefront
-- [ ] 7.4 `openspec validate aso-grammar-positioning --strict`
+- [ ] 7.3 (owner, after release) After 4 weeks: compare impressions and conversion per storefront
+- [x] 7.4 `openspec validate aso-grammar-positioning --strict`
