@@ -416,3 +416,65 @@ struct DailyPlanCountsTests {
         #expect(!dueIDs(after).contains("A1-01"))
     }
 }
+
+@Suite("Daily plan — new cards introduced today count against the limit")
+struct DailyPlanIntroductionTests {
+    private static let cards = (1...5).map { card(String(format: "A1-%02d", $0), order: $0) }
+
+    @Test("Bug repro: limit 1 → grade the new card → recompose the same day → no new card")
+    func recomposeAfterGrading() {
+        let graded = StudyEvent(cardID: "A1-01", date: today.addingTimeInterval(9 * 3600), grade: "good")
+        let state = ReviewState(cardID: "A1-01", interval: 1, repetitions: 1,
+                                dueDate: today.addingTimeInterval(86_400), status: .learning)
+        let plan = DailyPlanner.composePlan(DailyPlanRequest(
+            cards: Self.cards, reviews: [state], settings: settings(newPerDay: 1),
+            today: today.addingTimeInterval(10 * 3600), events: [graded]
+        ))
+        #expect(newIDs(plan).isEmpty)
+        #expect(plan.counts.newCount == 0)
+    }
+
+    @Test("Limit 3, one introduced today → two more")
+    func remainingAllowance() {
+        let graded = StudyEvent(cardID: "A1-01", date: today, grade: "again")
+        let state = ReviewState(cardID: "A1-01", dueDate: today, status: .learning)
+        let plan = DailyPlanner.composePlan(DailyPlanRequest(
+            cards: Self.cards, reviews: [state], settings: settings(newPerDay: 3), today: today, events: [graded]
+        ))
+        #expect(newIDs(plan) == ["A1-02", "A1-03"])
+    }
+
+    @Test("Cards introduced on an earlier day don't use today's allowance")
+    func earlierDayIgnored() {
+        let yesterday = today.addingTimeInterval(-86_400)
+        let graded = StudyEvent(cardID: "A1-01", date: yesterday, grade: "good")
+        let state = ReviewState(cardID: "A1-01", dueDate: today.addingTimeInterval(86_400), status: .learning)
+        let plan = DailyPlanner.composePlan(DailyPlanRequest(
+            cards: Self.cards, reviews: [state], settings: settings(newPerDay: 1), today: today, events: [graded]
+        ))
+        #expect(newIDs(plan) == ["A1-02"])
+    }
+}
+
+@Suite("Introduction ledger")
+struct IntroductionLedgerTests {
+    @Test("An item is introduced on the day of its earliest graded event")
+    func earliestGradedEvent() {
+        let yesterday = today.addingTimeInterval(-86_400)
+        let events = [
+            StudyEvent(cardID: "A1-01", date: yesterday, grade: "good"),   // introduced yesterday
+            StudyEvent(cardID: "A1-01", date: today, grade: "good"),       // reviewed today
+            StudyEvent(cardID: "A1-02", date: today, grade: "again"),      // introduced today
+            StudyEvent(cardID: "A1-02", date: today.addingTimeInterval(60), grade: "good"),
+            StudyEvent(cardID: "A1-03", date: today, grade: nil),          // not a grade
+        ]
+        let ledger = IntroductionLedger(events: events, day: today)
+        #expect(ledger.introducedToday == ["A1-02"])
+        #expect(ledger.count == 1)
+    }
+
+    @Test("No events → nothing introduced")
+    func empty() {
+        #expect(IntroductionLedger(events: [], day: today).count == 0)
+    }
+}

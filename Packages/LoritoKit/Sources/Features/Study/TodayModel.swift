@@ -51,7 +51,7 @@ public final class TodayModel {
         let today = Date()
 
         let plan = DailyPlanner.composePlan(
-            DailyPlanRequest(cards: catalog.cards, reviews: reviews, settings: settings, today: today)
+            DailyPlanRequest(cards: catalog.cards, reviews: reviews, settings: settings, today: today, events: events)
         )
         let gradedToday = Set(
             events.filter { $0.grade != nil && StudyDay.isSameDay($0.date, today) }.map(\.cardID)
