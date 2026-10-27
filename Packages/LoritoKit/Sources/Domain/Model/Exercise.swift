@@ -75,6 +75,33 @@ public enum ExerciseKind: Sendable, Hashable {
     }
 }
 
+/// A regional variant's replacement answer data (`variants` in content).
+public struct ExerciseOverride: Codable, Sendable, Hashable {
+    public var answer: String?
+    public var accept: [String]?
+    public var options: [String]?
+
+    public init(answer: String? = nil, accept: [String]? = nil, options: [String]? = nil) {
+        self.answer = answer
+        self.accept = accept
+        self.options = options
+    }
+
+    /// The kind with this override's fields applied (fields a type lacks are ignored).
+    func apply(to kind: ExerciseKind) -> ExerciseKind {
+        switch kind {
+        case let .multipleChoice(o, a): return .multipleChoice(options: options ?? o, answer: answer ?? a)
+        case let .fillInTheBlank(a, acc): return .fillInTheBlank(answer: answer ?? a, accept: accept ?? acc)
+        case let .wordOrder(t, a, acc): return .wordOrder(tokens: t, answer: answer ?? a, accept: accept ?? acc)
+        case let .freeResponse(a, acc): return .freeResponse(answer: answer ?? a, accept: accept ?? acc)
+        case let .listenChoose(au, o, a): return .listenChoose(audio: au, options: options ?? o, answer: answer ?? a)
+        case let .dictation(au, acc): return .dictation(audio: au, accept: accept ?? acc)
+        case let .speak(a, acc): return .speak(answer: answer ?? a, accept: accept ?? acc)
+        case .matching, .pictureMatching: return kind
+        }
+    }
+}
+
 public struct Exercise: Codable, Sendable, Identifiable, Hashable {
     public let id: String
     public let level: CEFRLevel
@@ -84,6 +111,18 @@ public struct Exercise: Codable, Sendable, Identifiable, Hashable {
     public let prompt: String       // Markdown
     public let explanation: String  // Markdown, shown after checking/revealing
     public let kind: ExerciseKind
+    /// Per-variant answer overrides (regional-variants).
+    public let variants: [SpanishVariant: ExerciseOverride]
+    /// Variants the exercise applies to; nil = all.
+    public let only: Set<SpanishVariant>?
+
+    /// The exercise as the learner of `variant` sees it, or nil when `only` excludes it.
+    public func resolved(for variant: SpanishVariant) -> Exercise? {
+        if let only, !only.contains(variant) { return nil }
+        guard let override = variants[variant] else { return self }
+        return Exercise(id: id, level: level, themeID: themeID, card: card, prompt: prompt, explanation: explanation,
+                        kind: override.apply(to: kind), variants: variants, only: only)
+    }
 
     /// Alias matching the card-keyed vocabulary used across the SRS.
     public var cardID: String { card }
@@ -95,7 +134,9 @@ public struct Exercise: Codable, Sendable, Identifiable, Hashable {
         card: String,
         prompt: String,
         explanation: String,
-        kind: ExerciseKind
+        kind: ExerciseKind,
+        variants: [SpanishVariant: ExerciseOverride] = [:],
+        only: Set<SpanishVariant>? = nil
     ) {
         self.id = id
         self.level = level
@@ -104,11 +145,14 @@ public struct Exercise: Codable, Sendable, Identifiable, Hashable {
         self.prompt = prompt
         self.explanation = explanation
         self.kind = kind
+        self.variants = variants
+        self.only = only
     }
 
     private enum CodingKeys: String, CodingKey {
         case id, level, themeID, card, type, prompt, explanation
         case options, answer, accept, pairs, tokens, audio
+        case variants, only
     }
 
     public enum DecodingError: Error, Equatable {
@@ -123,6 +167,10 @@ public struct Exercise: Codable, Sendable, Identifiable, Hashable {
         card = try c.decode(String.self, forKey: .card)
         prompt = try c.decodeIfPresent(String.self, forKey: .prompt) ?? ""
         explanation = try c.decodeIfPresent(String.self, forKey: .explanation) ?? ""
+        // Unknown codes (from newer content) are ignored.
+        let rawVariants = try c.decodeIfPresent([String: ExerciseOverride].self, forKey: .variants) ?? [:]
+        variants = Dictionary(uniqueKeysWithValues: rawVariants.compactMap { k, v in SpanishVariant(code: k).map { ($0, v) } })
+        only = try c.decodeIfPresent([String].self, forKey: .only).map { Set($0.compactMap(SpanishVariant.init(code:))) }
 
         let type = try c.decode(String.self, forKey: .type)
         func strings(_ k: CodingKeys) throws -> [String] {
@@ -167,6 +215,10 @@ public struct Exercise: Codable, Sendable, Identifiable, Hashable {
         try c.encode(prompt, forKey: .prompt)
         try c.encode(explanation, forKey: .explanation)
         try c.encode(kind.typeName, forKey: .type)
+        if !variants.isEmpty {
+            try c.encode(Dictionary(uniqueKeysWithValues: variants.map { ($0.key.code, $0.value) }), forKey: .variants)
+        }
+        if let only { try c.encode(SpanishVariant.allCases.filter(only.contains).map(\.code), forKey: .only) }
         switch kind {
         case let .multipleChoice(options, answer):
             try c.encode(options, forKey: .options)

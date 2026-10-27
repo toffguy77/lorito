@@ -15,6 +15,8 @@ public final class ConjugationDrillModel: Identifiable {
     private let grading: GradingService
     private let now: () -> Date
     let personSet: [Int]
+    /// The learner's variant: decides the person set and asks `vos` for Rioplatense.
+    public let variant: SpanishVariant
     public let items: [ConjugationItem]
 
     public private(set) var index = 0
@@ -26,11 +28,12 @@ public final class ConjugationDrillModel: Identifiable {
     public var focusedField = 0
 
     public init(store: UserDataStore, catalog: ConjugationCatalog, itemIDs: [String],
-                personSet: [Int] = PersonRotation.spain, today: @escaping () -> Date = { Date() }) {
+                variant: SpanishVariant = .spain, today: @escaping () -> Date = { Date() }) {
         self.store = store
         self.catalog = catalog
         self.grading = GradingService(store: store)
-        self.personSet = personSet
+        self.variant = variant
+        self.personSet = PersonRotation.personSet(for: variant)
         self.now = today
         self.items = itemIDs.compactMap { ConjugationItem(id: $0, catalog: catalog) }
         preparePersons()
@@ -43,7 +46,12 @@ public final class ConjugationDrillModel: Identifiable {
 
     public func expected(_ slot: Int) -> String {
         guard let item = current, slot < persons.count else { return "" }
-        return item.forms[persons[slot]]
+        return item.form(person: persons[slot], variant: variant)
+    }
+
+    /// «yo», «vos», «ellos / ustedes»… for an answer field.
+    public func label(_ slot: Int) -> String {
+        slot < persons.count ? PersonRotation.label(persons[slot], variant: variant) : ""
     }
 
     public static let accents = ["á", "é", "í", "ó", "ú", "ñ", "ü"]

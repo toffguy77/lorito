@@ -116,6 +116,8 @@ struct SyncedSettingsRoundTripTests {
         s.dailyNewWordCount = 7                                         // vocabulary-decks
         s.selectedDeckIDs = ["a1-casa"]
         s.personalWordIDs = ["casa", "p-123"]
+        s.spanishVariant = .rioplatense                                 // regional-variants
+        s.variantPromptAnswered = true
         s.exam = ExamGoal(kind: .ccse, date: Date(timeIntervalSinceReferenceDate: 821_000_000), done: true)
         #expect(try Self.roundTrip(s) == s)
     }
@@ -160,6 +162,7 @@ struct SyncedSettingsRoundTripTests {
         #expect(loaded.lastRecapWeek == nil && loaded.celebratedLevels.isEmpty)
         #expect(loaded.ccseDailyNewLimit == 5)
         #expect(loaded.dailyNewWordCount == 0 && loaded.selectedDeckIDs.isEmpty && loaded.personalWordIDs.isEmpty)
+        #expect(!loaded.variantPromptAnswered)
     }
 }
 

@@ -26,7 +26,7 @@ struct CardBodyCorpusTests {
                 switch block {
                 case .callout(let kind, _):
                     seenCallouts.insert(kind)
-                case .markdown(let md):
+                case .markdown(let md), .variantNote(_, let md):
                     if md.contains("|") && md.contains("---") { sawTable = true }
                 }
             }

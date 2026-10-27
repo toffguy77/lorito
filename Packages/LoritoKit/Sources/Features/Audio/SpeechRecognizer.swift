@@ -27,7 +27,8 @@ public protocol SpeechRecognizing: AnyObject {
     func stop()
 }
 
-/// `SFSpeechRecognizer` for es-ES with `requiresOnDeviceRecognition`; refuses to
+/// `SFSpeechRecognizer` in the variant's language when on-device recognition
+/// supports it, else es-ES, with `requiresOnDeviceRecognition`; refuses to
 /// start unless `supportsOnDeviceRecognition`. Audio is never sent to a server.
 /// Recording uses a play-and-record session only while recording and restores
 /// the previous session afterwards.
@@ -35,15 +36,17 @@ public protocol SpeechRecognizing: AnyObject {
 @Observable
 public final class SystemSpeechRecognizer: SpeechRecognizing {
     static let deniedKey = "speech.permissionDenied"
-    private let recognizer = SFSpeechRecognizer(locale: Locale(identifier: "es-ES"))
+    private let recognizer: SFSpeechRecognizer?
     private let defaults: UserDefaults
     private var engine: AVAudioEngine?
     private var request: SFSpeechAudioBufferRecognitionRequest?
     private var task: SFSpeechRecognitionTask?
     public private(set) var level: Float = 0
 
-    public init(defaults: UserDefaults = .standard) {
+    public init(variant: SpanishVariant = .spain, defaults: UserDefaults = .standard) {
         self.defaults = defaults
+        let own = SFSpeechRecognizer(locale: Locale(identifier: variant.localeIdentifier))
+        self.recognizer = own?.supportsOnDeviceRecognition == true ? own : SFSpeechRecognizer(locale: Locale(identifier: "es-ES"))
     }
 
     public var availability: RecognitionAvailability {

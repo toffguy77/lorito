@@ -746,5 +746,68 @@ class VocabularyPipelineTests(unittest.TestCase):
         self.assertTrue(any("LICENSE" in e for e in errs), errs)
 
 
+# --- regional-variants ---------------------------------------------------------
+
+import variants  # noqa: E402
+
+
+class VariantMarkupTests(unittest.TestCase):
+    def test_blocks_and_inline_are_valid(self):
+        body = "Общее.\n\n:::variant es\nВ Испании *vosotros*.\n:::\n\n:::variant am rio\nВ Америке *ustedes*.\n:::\n\nМашина: {es: coche | am: carro | rio: auto}. {a, b}"
+        self.assertEqual(variants.check_markup(body), [])
+
+    def test_unclosed_or_nested_block(self):
+        self.assertTrue(any("unclosed" in e for e in variants.check_markup(":::variant es\nтекст")))
+        self.assertTrue(any("nested" in e for e in variants.check_markup(":::variant es\n:::variant am\nx\n:::\n:::")))
+
+    def test_unknown_code(self):
+        self.assertTrue(any("unknown variant code 'mx'" in e for e in variants.check_markup(":::variant mx\nx\n:::")))
+        self.assertTrue(any("unknown variant code 'xx'" in e for e in variants.check_markup("{es: a | xx: b}")))
+
+    def test_inline_needs_two_distinct_codes(self):
+        self.assertTrue(any("two" in e for e in variants.check_markup("{es: coche}")))
+        self.assertTrue(any("repeated" in e for e in variants.check_markup("{es: a | es: b}")))
+
+    def test_plain_braces_are_text(self):
+        self.assertEqual(variants.check_markup("Множество {1, 2, 3} и {нечто}."), [])
+
+    def test_migrate_clean_body_keeps_markup(self):
+        body = "# T\n\n:::variant am rio\nТекст [[A1-02 — X]].\n:::\n\n{es: coche | am: carro}\n"
+        out = lib.clean_body(body)
+        self.assertIn(":::variant am rio\n", out)
+        self.assertIn("\n:::\n", out)
+        self.assertIn("{es: coche | am: carro}", out)
+
+    def test_exercise_variants_and_only(self):
+        mc = {"options": ["vosotros", "ustedes"], "answer": "vosotros",
+              "variants": {"am": {"answer": "ustedes"}}, "only": ["es", "am"]}
+        self.assertEqual(variants.check_exercise("multiple-choice", mc), [])
+        bad = {"options": ["a", "b"], "answer": "a", "variants": {"am": {"answer": "c"}}}
+        self.assertTrue(any("am" in e and "answer" in e for e in variants.check_exercise("multiple-choice", bad)))
+        self.assertTrue(any("only" in e for e in variants.check_exercise("multiple-choice", {"options": ["a", "b"], "answer": "a", "only": ["zz"]})))
+
+
+class VoseoTests(unittest.TestCase):
+    def test_present_and_copies(self):
+        self.assertEqual(conjugate.vos_form("hablar", "ar", "presente", tu="hablas"), "hablás")
+        self.assertEqual(conjugate.vos_form("comer", "er", "presente", tu="comes"), "comés")
+        self.assertEqual(conjugate.vos_form("vivir", "ir", "presente", tu="vives"), "vivís")
+        self.assertEqual(conjugate.vos_imperative("hablar"), "hablá")
+        self.assertEqual(conjugate.vos_form("leer", "er", "presente", tu="lees"), "leés")
+        self.assertEqual(conjugate.vos_form("dar", "ar", "presente", tu="das"), "das")
+        self.assertEqual(conjugate.vos_form("oír", "ir", "presente", tu="oyes"), "oís")
+        self.assertEqual(conjugate.vos_form("hablar", "ar", "preterito-indefinido", tu="hablaste"), "hablaste")
+
+    def test_ser_override_and_bundle(self):
+        ser = {"infinitive": "ser", "rank": 1, "ru": "быть", "model": "ar", "vos": {"presente": "sos"},
+               "forms": {"presente": ["soy", "eres", "es", "somos", "sois", "son"]}}
+        v = conjugate.vos_paradigm(ser, ["presente", "preterito-indefinido"], {"presente": ["soy", "eres", "es", "somos", "sois", "son"],
+                                                                                "preterito-indefinido": ["fui", "fuiste", "fue", "fuimos", "fuisteis", "fueron"]})
+        self.assertEqual(v, {"presente": "sos", "preterito-indefinido": "fuiste"})
+        tener = {"infinitive": "tener", "rank": 2, "ru": "иметь", "model": "irregular"}
+        v2 = conjugate.vos_paradigm(tener, ["presente"], {"presente": ["tengo", "tienes", "tiene", "tenemos", "tenéis", "tienen"]})
+        self.assertEqual(v2["presente"], "tenés")
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

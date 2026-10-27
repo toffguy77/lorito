@@ -86,7 +86,7 @@ public final class CatalogModel {
             exercises = exercises.filter { types.contains($0.kind.typeName) }
         }
         guard !exercises.isEmpty else { return nil }
-        let session = ExerciseSessionModel(store: store, exercises: exercises, recognizer: SystemSpeechRecognizer(),
+        let session = ExerciseSessionModel(store: store, exercises: exercises, recognizer: SystemSpeechRecognizer(variant: (try? store.loadSettings())?.spanishVariant ?? .spain),
                                            hasSpanishVoice: hasSpanishVoice)
         return session.count > 0 ? session : nil
     }
@@ -126,6 +126,7 @@ public final class CatalogModel {
     func makeConjugationDrill(forCard cardID: String) -> ConjugationDrillModel? {
         guard let conj = catalog.conjugation else { return nil }
         let items = ConjugationToday.readerItems(tenseCard: cardID, store: store, catalog: catalog)
-        return items.isEmpty ? nil : ConjugationDrillModel(store: store, catalog: conj, itemIDs: items)
+        return items.isEmpty ? nil : ConjugationDrillModel(store: store, catalog: conj, itemIDs: items,
+                                                           variant: (try? store.loadSettings())?.spanishVariant ?? .spain)
     }
 }

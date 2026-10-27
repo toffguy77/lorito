@@ -13,7 +13,11 @@ import WidgetSupport
 /// day rollover, session end) and the reminder deep link to Today.
 public struct AdaptiveRootView: View {
     private let store: UserDataStore
-    private let catalog: ContentCatalog
+    /// The bundle as loaded; screens get it resolved for the learner's variant.
+    private let baseCatalog: ContentCatalog
+    /// regional-variants: exercises with the variant's overrides, `only` applied.
+    @State private var variantCatalog: ContentCatalog?
+    private var catalog: ContentCatalog { variantCatalog ?? baseCatalog }
     private let scopeModel: ScopeSelectionModel
     private let reminders: ReminderService
 
@@ -42,7 +46,8 @@ public struct AdaptiveRootView: View {
                 autoStartFirstSession: Bool = false) {
         _autoStartFirstSession = State(initialValue: autoStartFirstSession)
         self.store = store
-        self.catalog = catalog
+        self.baseCatalog = catalog
+        _variantCatalog = State(initialValue: catalog.resolved(for: ((try? store.loadSettings()) ?? .default).spanishVariant))
         self.scopeModel = scopeModel
         self.reminders = ReminderService(scheduler: SystemNotificationScheduler(), store: store, catalog: catalog)
         _audioSettings = State(initialValue: AudioSettingsModel(store: store))
@@ -130,7 +135,10 @@ public struct AdaptiveRootView: View {
             storedCatalogSelection = stored
         }
         .onChange(of: navigation.destination) { _, _ in refreshPath() }
+        .onChange(of: audioSettings.variant) { _, variant in variantCatalog = baseCatalog.resolved(for: variant) }
         // Last, so presented sessions inherit them too.
+        .environment(\.spanishVariant, audioSettings.variant)
+        .environment(\.spanishVariantDidChange, { audioSettings.reload() })
         .environment(purchases)
         .modifier(SaveWordAction(enabled: catalog.vocabulary != nil, vocabulary: vocabulary))
     }

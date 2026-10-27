@@ -36,6 +36,13 @@ public struct ContentCatalog: Codable, Sendable {
         vocabulary = try c.decodeIfPresent(VocabularyCatalog.self, forKey: .vocabulary)
     }
 
+    /// The catalog as the learner of `variant` practises it: exercise overrides
+    /// applied, exercises restricted to other variants (`only`) removed.
+    public func resolved(for variant: SpanishVariant) -> ContentCatalog {
+        ContentCatalog(themes: themes, cards: cards, exercises: exercises.compactMap { $0.resolved(for: variant) },
+                       conjugation: conjugation, exams: exams, vocabulary: vocabulary)
+    }
+
     /// Levels that actually have content, in CEFR order.
     public var levels: [CEFRLevel] {
         let present = Set(cards.map(\.level))

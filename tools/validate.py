@@ -15,6 +15,7 @@ from pathlib import Path
 
 import conjugate
 import exams
+import variants
 import vocab
 import lib
 
@@ -74,7 +75,7 @@ def _missing(data: dict, *keys: str) -> list[str]:
 
 
 def _validate_exercise_type(ex: lib.Exercise) -> list[str]:
-    return validate_exercise_data(ex.type, ex.data)
+    return validate_exercise_data(ex.type, ex.data) + variants.check_exercise(ex.type, ex.data)
 
 
 def validate_exercise_data(ex_type: str, d: dict) -> list[str]:
@@ -200,6 +201,7 @@ def validate() -> list[str]:
             if r not in id_set:
                 errors.append(f"{c.id}: unresolved related '{r}'")
         errors.extend(validate_recall(c))
+        errors.extend(f"{c.id}: {e}" for e in variants.check_markup(c.body))
 
     # per-level: unique order + theme contiguity
     by_level: dict[str, list[lib.Card]] = {}

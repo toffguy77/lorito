@@ -5,19 +5,67 @@ import Foundation
 public enum SpanishVariant: String, Codable, Sendable, CaseIterable {
     case spain
     case latinAmerica
+    case rioplatense
 
-    /// Locale of the speech voice.
-    public var localeIdentifier: String {
+    /// Stored value → variant; unknown (from a newer version) or missing → spain.
+    public static func decode(_ raw: String?) -> SpanishVariant {
+        raw.flatMap(SpanishVariant.init(rawValue:)) ?? .spain
+    }
+
+    /// Content markup code (`es`, `am`, `rio`).
+    public var code: String {
         switch self {
-        case .spain: return "es-ES"
-        case .latinAmerica: return "es-MX"
+        case .spain: return "es"
+        case .latinAmerica: return "am"
+        case .rioplatense: return "rio"
         }
+    }
+
+    public init?(code: String) {
+        guard let v = Self.allCases.first(where: { $0.code == code }) else { return nil }
+        self = v
+    }
+
+    /// Locale of the speech voice (first choice).
+    public var localeIdentifier: String { voiceLanguages[0] }
+
+    /// Voice languages in order of preference (installed voices differ per device).
+    public var voiceLanguages: [String] {
+        switch self {
+        case .spain: return ["es-ES"]
+        case .latinAmerica: return ["es-MX", "es-ES"]
+        case .rioplatense: return ["es-AR", "es-MX", "es-ES"]
+        }
+    }
+
+    /// The first preferred language with an installed voice.
+    public func preferredVoiceLanguage(installed: Set<String>) -> String? {
+        voiceLanguages.first { installed.contains($0) }
     }
 
     public var title: String {
         switch self {
         case .spain: return "Испания"
         case .latinAmerica: return "Латинская Америка"
+        case .rioplatense: return "Риоплатский"
+        }
+    }
+
+    /// Where the variant is spoken («Варианты» menu).
+    public var regionName: String {
+        switch self {
+        case .spain: return "Испания"
+        case .latinAmerica: return "Латинская Америка"
+        case .rioplatense: return "Аргентина и Уругвай"
+        }
+    }
+
+    /// Prepositional place for note titles («В Испании»).
+    var notePlace: String {
+        switch self {
+        case .spain: return "Испании"
+        case .latinAmerica: return "Латинской Америке"
+        case .rioplatense: return "Аргентине и Уругвае"
         }
     }
 }

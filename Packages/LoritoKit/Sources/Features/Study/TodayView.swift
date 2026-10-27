@@ -21,6 +21,7 @@ public struct TodayView: View {
     private let store: UserDataStore
     private let navigation: AppNavigation
     @Environment(\.horizontalSizeClass) private var sizeClass
+    @Environment(\.spanishVariantDidChange) private var variantDidChange
 
     public init(store: UserDataStore, catalog: ContentCatalog, navigation: AppNavigation) {
         self.store = store
@@ -182,10 +183,24 @@ public struct TodayView: View {
                     .font(LoritoFont.body)
                     .foregroundStyle(LoritoColor.textSecondary)
                     .fixedSize(horizontal: false, vertical: true)
-                HStack {
-                    Button(prompt.actionTitle) { onPromptAction(prompt) }
-                        .buttonStyle(PrimaryButtonStyle(.ink))
-                        .fixedSize()
+                if prompt.choices.isEmpty {
+                    HStack {
+                        Button(prompt.actionTitle) { onPromptAction(prompt) }
+                            .buttonStyle(PrimaryButtonStyle(.ink))
+                            .fixedSize()
+                        notNowButton
+                    }
+                } else {
+                    // Answer buttons stack so long titles fit at large Dynamic Type sizes.
+                    ForEach(prompt.choices) { choice in
+                        Button(choice.title) {
+                            model.choosePrompt(choice)
+                            variantDidChange()
+                            model.refresh()
+                        }
+                            .buttonStyle(PrimaryButtonStyle(.ink))
+                            .accessibilityIdentifier("today.prompt.\(choice.id)")
+                    }
                     notNowButton
                 }
             }

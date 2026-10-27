@@ -4,7 +4,8 @@
 Content lives in content/conjugation/:
   tenses.json          registry: [{id, es, ru, mood, level, card, order}]
   verbs/<inf>.json     {infinitive, rank, ru, model: ar|er|ir|irregular,
-                        reflexive?, forms?: {<tense-id>: [6 forms]}}
+                        reflexive?, forms?: {<tense-id>: [6 forms]},
+                        vos?: {<tense-id>: form}}
 
 Regular ar/er/ir paradigms are generated here for every registered tense; a
 verb's `forms` replace the generated forms of that tense (stem changes,
@@ -114,6 +115,70 @@ def paradigms(verb: dict, tense_ids: list[str]) -> dict[str, list[str]]:
     return out
 
 
+# --- voseo (Rioplatense) ---------------------------------------------------
+# `vos` replaces `tú`: the present indicative drops -r, adds -s and stresses the
+# last vowel (hablás, comés, vivís); the affirmative imperative drops -r with an
+# accent (hablá, comé, viví); every other tense uses the `tú` form. A verb's
+# `vos: {<tense-id>: form}` overrides the generated form (ser → sos).
+
+VOS_REFLEXIVE_PRONOUN = "te"
+_STRESS = str.maketrans("aei", "áéí")
+_VOWELS = set("aeiouáéíóú")
+_STRONG = set("aeoáéíóú")  # an accented weak vowel forms a hiatus like a strong one
+
+
+def _syllables(word: str) -> int:
+    """Rough syllable count: vowel groups, splitting strong-vowel hiatus
+    (`le|er`, `tra|er`) — enough to leave monosyllables unaccented."""
+    count, prev = 0, ""
+    for ch in word:
+        if ch in _VOWELS and (prev not in _VOWELS or (prev in _STRONG and ch in _STRONG)):
+            count += 1
+        prev = ch if ch in _VOWELS else ""
+    return count
+
+
+def _stressed_stem(infinitive: str) -> str:
+    """`hablar` → `hablá`; monosyllables stay unaccented (`dar` → `da`)."""
+    stem = base_infinitive(infinitive)[:-1]
+    if _syllables(stem) < 2:
+        return stem
+    return stem[:-1] + stem[-1].translate(_STRESS)
+
+
+def vos_form(infinitive: str, model: str, tense_id: str, tu: str) -> str:
+    """The `vos` form of a non-reflexive verb in `tense_id` (`tu` = the tú form)."""
+    if tense_id == "presente":
+        return _stressed_stem(infinitive) + "s"
+    return tu
+
+
+def vos_imperative(infinitive: str) -> str:
+    """Affirmative `vos` imperative: `hablar` → `hablá`."""
+    return _stressed_stem(infinitive)
+
+
+def vos_paradigm(verb: dict, tense_ids: list[str], paradigms_: dict[str, list[str]]) -> dict[str, str]:
+    """`vos` form per registered tense (reflexive pronoun prefixed), from the
+    verb's complete `paradigms_` (as returned by `paradigms`)."""
+    overrides = verb.get("vos") or {}
+    out: dict[str, str] = {}
+    for tid in tense_ids:
+        tu = paradigms_[tid][1]
+        if tid in overrides:
+            form = overrides[tid]
+            if verb.get("reflexive"):
+                form = f"{VOS_REFLEXIVE_PRONOUN} {form}"
+        elif tid == "presente":
+            form = vos_form(verb["infinitive"], verb.get("model", ""), tid, tu="")
+            if verb.get("reflexive"):
+                form = f"{VOS_REFLEXIVE_PRONOUN} {form}"
+        else:
+            form = tu  # already carries the reflexive `te`
+        out[tid] = form
+    return out
+
+
 # --- content loading & validation ------------------------------------------
 
 def conjugation_dir() -> Path:
@@ -187,6 +252,15 @@ def validate_conjugation(card_level: dict[str, str]) -> list[str]:
                 errors.append(f"conjugation: {name}: unknown tense '{tid}' in forms")
             if not (isinstance(six, list) and len(six) == 6 and all(isinstance(f, str) and f.strip() for f in six)):
                 errors.append(f"conjugation: {name}: tense '{tid}' needs exactly six non-empty forms")
+        vos = v.get("vos") or {}
+        if not isinstance(vos, dict):
+            errors.append(f"conjugation: {name}: 'vos' must map tense ids to forms")
+            vos = {}
+        for tid, form in vos.items():
+            if tid not in registered:
+                errors.append(f"conjugation: {name}: unknown tense '{tid}' in vos")
+            if not (isinstance(form, str) and form.strip()):
+                errors.append(f"conjugation: {name}: vos form for '{tid}' must be a non-empty string")
         if model == "irregular":
             for tid in registered:
                 if tid not in forms:
@@ -207,6 +281,7 @@ def bundle() -> dict | None:
             "rank": v["rank"],
             "ru": v["ru"],
             "reflexive": bool(v.get("reflexive", False)),
-            "paradigms": paradigms(v, ids),
+            "paradigms": (p := paradigms(v, ids)),
+            "vos": vos_paradigm(v, ids, p),
         })
     return {"tenses": tenses, "verbs": verbs}

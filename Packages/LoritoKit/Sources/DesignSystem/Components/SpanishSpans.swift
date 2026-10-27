@@ -77,10 +77,15 @@ public struct SpanishSpanAction: Identifiable, @unchecked Sendable {
     /// sheet from where the span was long-pressed (works inside full-screen
     /// sessions), instead of calling `perform`. The closure argument dismisses it.
     public let sheet: (@MainActor (String, @escaping @MainActor () -> Void) -> AnyView?)?
+    /// Spans the action is offered for (nil = every span), e.g. «Варианты» only
+    /// on inline variant alternatives.
+    public let appliesTo: (@MainActor (String) -> Bool)?
 
     public init(id: String, title: String, systemImage: String, isPrimary: Bool = false,
+                appliesTo: (@MainActor (String) -> Bool)? = nil,
                 sheet: (@MainActor (String, @escaping @MainActor () -> Void) -> AnyView?)? = nil,
                 perform: @escaping @MainActor (String) -> Void) {
+        self.appliesTo = appliesTo
         self.id = id
         self.title = title
         self.systemImage = systemImage
@@ -90,12 +95,22 @@ public struct SpanishSpanAction: Identifiable, @unchecked Sendable {
     }
 }
 
+extension SpanishSpanAction {
+    @MainActor func applies(to span: String) -> Bool { appliesTo?(span) ?? true }
+}
+
 /// The registry of span actions, carried in the environment. Features add items
 /// with `.spanishSpanAction(_:)`; they never attach their own gestures.
 public struct SpanishSpanActions: Sendable {
     public private(set) var menuItems: [SpanishSpanAction] = []
 
     public init() {}
+
+    /// The actions offered for one span.
+    @MainActor
+    public func items(for span: String) -> [SpanishSpanAction] {
+        menuItems.filter { $0.applies(to: span) }
+    }
 
     public mutating func register(_ action: SpanishSpanAction) {
         guard !menuItems.contains(where: { $0.id == action.id }) else { return }
@@ -105,7 +120,7 @@ public struct SpanishSpanActions: Sendable {
     /// Run the primary action; false (and nothing happens) when none is registered.
     @MainActor @discardableResult
     public func performPrimary(_ text: String) -> Bool {
-        guard let primary = menuItems.first(where: \.isPrimary) else { return false }
+        guard let primary = menuItems.first(where: { $0.isPrimary && $0.applies(to: text) }) else { return false }
         primary.perform(text)
         return true
     }
@@ -154,7 +169,7 @@ private struct SpanishSpanMenu: ViewModifier {
                 .contextMenu {
                     ForEach(spans, id: \.self) { span in
                         Section(span) {
-                            ForEach(actions.menuItems) { item in
+                            ForEach(actions.items(for: span)) { item in
                                 Button(item.title, systemImage: item.systemImage) { run(item, span) }
                             }
                         }
@@ -163,7 +178,7 @@ private struct SpanishSpanMenu: ViewModifier {
                 .sheet(item: $presented) { $0.view }
                 .accessibilityActions {
                     ForEach(spans, id: \.self) { span in
-                        ForEach(actions.menuItems) { item in
+                        ForEach(actions.items(for: span)) { item in
                             Button("\(item.title): \(span)") { run(item, span) }
                         }
                     }

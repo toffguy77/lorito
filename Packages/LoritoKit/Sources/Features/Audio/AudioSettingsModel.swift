@@ -30,6 +30,12 @@ public final class AudioSettingsModel {
         set { update { $0.playAudioWhenSilent = newValue } }
     }
 
+    /// Re-read after another screen saved settings (the Today variant prompt).
+    public func reload() {
+        let s = (try? store.loadSettings()) ?? .default
+        if s != settings { settings = s }
+    }
+
     /// Load fresh, change, save — so other settings written elsewhere survive.
     private func update(_ change: (inout UserSettings) -> Void) {
         var s = (try? store.loadSettings()) ?? .default
@@ -37,4 +43,11 @@ public final class AudioSettingsModel {
         try? store.saveSettings(s)
         settings = s
     }
+}
+
+import SwiftUI
+
+public extension EnvironmentValues {
+    /// Called after a screen other than Settings changed the Spanish variant.
+    @Entry var spanishVariantDidChange: @MainActor () -> Void = {}
 }

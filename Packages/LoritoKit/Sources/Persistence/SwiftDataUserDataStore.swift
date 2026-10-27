@@ -36,7 +36,7 @@ public final class SwiftDataUserDataStore: UserDataStore {
             remindersEnabled: r.remindersEnabled,
             reminderMinutes: r.reminderMinutes,
             didCompleteOnboarding: r.didCompleteOnboarding,
-            spanishVariant: r.spanishVariantRaw.flatMap(SpanishVariant.init(rawValue:)) ?? .spain,
+            spanishVariant: SpanishVariant.decode(r.spanishVariantRaw),
             speechRate: r.speechRateRaw.flatMap(SpeechRate.init(rawValue:)) ?? .normal,
             playAudioWhenSilent: r.playAudioWhenSilent,
             desiredRetention: r.desiredRetention,
@@ -55,6 +55,7 @@ public final class SwiftDataUserDataStore: UserDataStore {
         settings.ccseDailyNewLimit = r.ccseDailyNewLimit
         settings.dailyNewWordCount = r.dailyNewWordCount
         settings.selectedDeckIDs = r.selectedDeckIDs
+        settings.variantPromptAnswered = r.variantPromptAnswered
         settings.personalWordIDs = r.personalWordIDs
         // Union with this device's mirror (an incoming sync may have dropped levels).
         settings.celebratedLevelsRaw = Self.nonEmpty(CelebratedLevels.merge(r.celebratedLevels, mirroredCelebrated))
@@ -91,6 +92,7 @@ public final class SwiftDataUserDataStore: UserDataStore {
         record.ccseDailyNewLimit = settings.ccseDailyNewLimit
         record.dailyNewWordCount = settings.dailyNewWordCount
         record.selectedDeckIDs = settings.selectedDeckIDs
+        record.variantPromptAnswered = settings.variantPromptAnswered
         record.personalWordIDs = settings.personalWordIDs
         // Celebrated levels only grow: union of stored, incoming and mirrored values.
         let celebrated = CelebratedLevels.merge(CelebratedLevels.merge(record.celebratedLevels, settings.celebratedLevelsRaw),

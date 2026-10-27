@@ -79,7 +79,7 @@ public struct ConjugationDrillView: View {
 
     private func field(_ slot: Int) -> some View {
         VStack(alignment: .leading, spacing: LoritoSpacing.xs) {
-            Text(PersonRotation.labels[model.persons[slot]])
+            Text(model.label(slot))
                 .font(LoritoFont.bodyStrong)
                 .foregroundStyle(LoritoColor.onInk)
             TextField("", text: $model.answers[slot], prompt: Text("форма").foregroundStyle(LoritoColor.onInkSecondary))
@@ -93,7 +93,7 @@ public struct ConjugationDrillView: View {
                 .frame(minHeight: LoritoLayout.primaryButtonHeight)
                 .background(LoritoColor.inkRaised, in: RoundedRectangle(cornerRadius: LoritoRadius.md, style: .continuous))
                 .disabled(model.results != nil)
-                .accessibilityLabel(PersonRotation.labels[model.persons[slot]])
+                .accessibilityLabel(model.label(slot))
                 .accessibilityIdentifier("conj.field.\(slot)")
             if let r = model.results?[slot] {
                 feedback(r)

@@ -6,6 +6,8 @@ import Foundation
 public enum CardBlock: Equatable, Sendable {
     case markdown(String)
     case callout(CalloutKind, String)
+    /// Another regional variant's block, shown collapsed under its title («В Испании»).
+    case variantNote(title: String, String)
 }
 
 /// Splits a card's Markdown body into renderable blocks, recognizing the four
@@ -14,7 +16,33 @@ public enum CardBlock: Equatable, Sendable {
 /// (`## 🔑 Ключевые моменты`). Everything else stays Markdown. Pure.
 public enum CardBodyParser {
 
-    public static func parse(_ body: String) -> [CardBlock] {
+    /// Blocks for the learner's variant: their variant blocks and inline forms in
+    /// place, other variants' blocks as `.variantNote`s where they stood.
+    public static func parse(_ body: String, variant: SpanishVariant = .spain) -> [CardBlock] {
+        var blocks: [CardBlock] = []
+        var shown: [String] = []
+        func flush() {
+            blocks += parseResolved(VariantMarkup.resolveInline(shown.joined(separator: "\n"), for: variant))
+            shown.removeAll()
+        }
+        for segment in VariantMarkup.segments(body) {
+            switch segment {
+            case .common(let lines):
+                shown += lines
+            case .block(let codes, let lines) where codes.contains(variant):
+                shown += lines
+            case .block(let codes, let lines):
+                flush()
+                let text = VariantMarkup.resolveInline(lines.joined(separator: "\n"), for: variant)
+                    .trimmingCharacters(in: .whitespacesAndNewlines)
+                if !text.isEmpty { blocks.append(.variantNote(title: VariantMarkup.noteTitle(codes), text)) }
+            }
+        }
+        flush()
+        return blocks
+    }
+
+    private static func parseResolved(_ body: String) -> [CardBlock] {
         let lines = body.components(separatedBy: "\n")
         var blocks: [CardBlock] = []
         var markdown: [String] = []

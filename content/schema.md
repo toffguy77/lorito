@@ -78,6 +78,26 @@ rendered specially by the app:
 Tables (GFM) are supported. The card `title` is stored in frontmatter, so the
 body SHOULD NOT repeat it as a top-level `#` heading.
 
+### Regional variants
+
+Codes: `es` — Spain (setting «Испания»), `am` — Latin America («Латинская
+Америка»), `rio` — Rioplatense («Риоплатский»). Use markup only where usage
+actually differs (second person plural, imperatives, lexical items).
+
+- **Block** — a line `:::variant <codes>` … a line `:::` around paragraphs,
+  lists or tables. Content outside blocks applies to every variant. Blocks
+  don't nest and must be closed.
+- **Inline** — `{es: coche | am: carro | rio: auto}`: at least two distinct
+  codes; a missing code falls back to `es`. Braces whose first entry has a
+  `code:` prefix are reserved; plain braces (`{1, 2}`) stay text.
+
+The app shows the learner's variant in place, collapses other variants'
+blocks into labelled notes («В Испании: …») and renders inline alternatives
+as Spanish spans whose «Варианты» menu lists all forms. Both forms are plain
+text in Obsidian: they don't collide with wiki-links (`[[…]]`, the reason for
+not using double brackets) or callouts (`> [!note]`), and `tools/migrate.py`
+keeps them intact. `tools/validate.py` rejects unclosed or nested blocks,
+unknown codes, and inline groups with one code or a repeated code.
 
 ## Practice exercises
 
@@ -118,6 +138,13 @@ as JSON; otherwise it is a quoted/plain scalar string):
 | `listen-choose` | auto | `audio` (Spanish text spoken by the device voice, one line) + `options` (JSON array, ≥2) + `answer` (must be in `options`) |
 | `dictation` | auto | `audio` (Spanish text spoken and typed back, one line, ≤ 120 characters) + optional `accept` (JSON array) |
 | `speak` | auto with on-device recognition, else self-assessed | `answer` (Spanish target phrase, one line, ≤ 80 characters) + optional `accept` (JSON array) |
+
+**Regional variants.** Optional `variants` (JSON object) overrides answer data
+per variant code: `{"am": {"answer": "ustedes"}, "rio": {"accept": […]}}` —
+only `answer`, `accept` and `options` may be overridden, and each merged
+variant must still satisfy the type rules above. Optional `only` (JSON array of
+codes, e.g. `["es"]`) restricts the exercise to those variants (an exercise
+drilling `vosotros` is `only: ["es"]`). Codes as in *Regional variants* above.
 
 **Answer matching (auto types).** `fill-in-the-blank` and `word-order` compare
 the user's input to the expected answer(s) under a **normalized** match:
@@ -202,6 +229,7 @@ A JSON array; each entry:
 | `model` | `ar`, `er`, `ir` (regular paradigms generated) or `irregular` |
 | `reflexive` | optional `true`: forms are drilled with the pronoun (`me levanto`) |
 | `forms` | optional `{<tense-id>: [six forms]}` |
+| `vos` | optional `{<tense-id>: form}` — Rioplatense `vos` override (`ser` → `sos`) |
 
 **Person order** in every form list: yo, tú, él/ella/usted, nosotros,
 vosotros, ellos/ustedes.
@@ -216,6 +244,14 @@ written without reflexive pronouns; the pipeline prefixes `me/te/se/nos/os/se`
 for reflexive verbs. `tools/validate.py` checks the registry, ranks, models
 and form counts; `tools/compile.py` writes the tenses and every verb's full
 paradigms into the bundle under `conjugation`.
+
+**Voseo.** The bundle also carries each verb's `vos` form per tense: the
+present indicative is generated from the infinitive (drop `-r`, add `-s`,
+stress the last vowel: `hablás, comés, vivís, tenés`; monosyllables stay
+unaccented: `das, ves`); every other tense copies the `tú` form. Irregular
+present forms are listed in `vos` (`ser → sos`, `ir → vas`, `haber → has`).
+The affirmative imperative generator (`hablá`) is ready for when an imperative
+tense is registered.
 
 ## Exam path (`content/exams/`)
 

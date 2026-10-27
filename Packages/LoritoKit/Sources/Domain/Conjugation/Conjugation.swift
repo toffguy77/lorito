@@ -19,6 +19,30 @@ public struct ConjugationVerb: Codable, Sendable, Hashable {
     public let ru: String
     public let reflexive: Bool
     public let paradigms: [String: [String]]
+    /// Rioplatense `vos` form per tense (regional-variants); empty in older bundles.
+    public let vos: [String: String]
+
+    public init(infinitive: String, rank: Int, ru: String, reflexive: Bool, paradigms: [String: [String]],
+                vos: [String: String] = [:]) {
+        self.infinitive = infinitive
+        self.rank = rank
+        self.ru = ru
+        self.reflexive = reflexive
+        self.paradigms = paradigms
+        self.vos = vos
+    }
+
+    private enum CodingKeys: String, CodingKey { case infinitive, rank, ru, reflexive, paradigms, vos }
+
+    public init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+        infinitive = try c.decode(String.self, forKey: .infinitive)
+        rank = try c.decode(Int.self, forKey: .rank)
+        ru = try c.decode(String.self, forKey: .ru)
+        reflexive = try c.decode(Bool.self, forKey: .reflexive)
+        paradigms = try c.decode([String: [String]].self, forKey: .paradigms)
+        vos = try c.decodeIfPresent([String: String].self, forKey: .vos) ?? [:]
+    }
 }
 
 /// The `conjugation` section of the content bundle.
@@ -42,6 +66,13 @@ public struct ConjugationItem: Sendable, Hashable, Identifiable {
 
     public var id: String { Self.id(verb: verb.infinitive, tense: tense.id) }
     public var forms: [String] { verb.paradigms[tense.id] ?? [] }
+
+    /// The form asked for `person` (paradigm index); Rioplatense asks `vos` in
+    /// place of `tú` (falling back to `tú` when the bundle has no vos form).
+    public func form(person: Int, variant: SpanishVariant) -> String {
+        if person == 1, variant == .rioplatense, let vos = verb.vos[tense.id] { return vos }
+        return forms.indices.contains(person) ? forms[person] : ""
+    }
 
     public static func id(verb: String, tense: String) -> String { "conj:\(verb):\(tense)" }
 
@@ -121,6 +152,16 @@ public enum PersonRotation {
     public static let spain = [0, 1, 2, 3, 4, 5]
     public static let personsPerReview = 2
     public static let labels = ["yo", "tú", "él / ella / usted", "nosotros", "vosotros", "ellos / ustedes"]
+
+    /// Spain: six persons; Latin America: no vosotros; Rioplatense: vos (index 1), no vosotros.
+    public static func personSet(for variant: SpanishVariant) -> [Int] {
+        variant == .spain ? spain : [0, 1, 2, 3, 5]
+    }
+
+    public static func label(_ person: Int, variant: SpanishVariant) -> String {
+        if person == 1, variant == .rioplatense { return "vos" }
+        return labels.indices.contains(person) ? labels[person] : ""
+    }
 
     public static func persons(itemID: String, gradedCount: Int, personSet: [Int]) -> [Int] {
         guard !personSet.isEmpty else { return [] }

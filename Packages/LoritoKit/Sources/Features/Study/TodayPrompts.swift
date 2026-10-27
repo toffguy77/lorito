@@ -9,12 +9,25 @@ public struct TodayPrompt: Identifiable, Sendable, Equatable {
     public let title: String
     public let message: String
     public let actionTitle: String
+    /// Answer buttons instead of the single action (the variant prompt).
+    public let choices: [TodayPromptChoice]
 
-    public init(id: String, title: String, message: String, actionTitle: String) {
+    public init(id: String, title: String, message: String, actionTitle: String = "", choices: [TodayPromptChoice] = []) {
         self.id = id
         self.title = title
         self.message = message
         self.actionTitle = actionTitle
+        self.choices = choices
+    }
+}
+
+public struct TodayPromptChoice: Identifiable, Sendable, Equatable {
+    public let id: String
+    public let title: String
+
+    public init(id: String, title: String) {
+        self.id = id
+        self.title = title
     }
 }
 

@@ -42,6 +42,8 @@ public final class SettingsRecord {
     public var dailyNewWordCount: Int = 0
     public var selectedDeckIDs: [String] = []
     public var personalWordIDs: [String] = []
+    // regional-variants
+    public var variantPromptAnswered: Bool = false
 
     public init(
         targetLevelRaw: String? = nil,

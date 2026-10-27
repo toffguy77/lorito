@@ -101,6 +101,12 @@ public final class TodayModel {
         "\(dueRemaining) на повторение + \(newRemaining) новых"
     }
 
+    /// regional-variants: asked once after the first completed session (never in onboarding).
+    public static let variantPrompt = TodayPrompt(
+        id: "variant", title: "Где вы учите испанский?",
+        message: "Карточки, упражнения, спряжения и озвучка подстроятся под выбранный вариант. Поменять можно в Настройках.",
+        choices: SpanishVariant.allCases.map { TodayPromptChoice(id: $0.rawValue, title: $0.title) })
+
     public static let wordsPrompt = TodayPrompt(
         id: "words", title: "Учить слова?",
         message: "Пять частотных слов в день с повторением — вместе с правилами, в общем лимите новых.",
@@ -139,6 +145,24 @@ public final class TodayModel {
         promptSlot.dismiss(prompt.id)
         promptHandledThisVisit = true
         self.prompt = nil
+        // Dismissing the variant prompt keeps the current value, on every device.
+        if prompt.id == Self.variantPrompt.id { saveVariantAnswer(nil) }
+    }
+
+    /// An answer button of a prompt with choices (the variant prompt).
+    public func choosePrompt(_ choice: TodayPromptChoice) {
+        guard let prompt else { return }
+        promptSlot.dismiss(prompt.id)
+        promptHandledThisVisit = true
+        self.prompt = nil
+        if prompt.id == Self.variantPrompt.id { saveVariantAnswer(SpanishVariant(rawValue: choice.id)) }
+    }
+
+    private func saveVariantAnswer(_ variant: SpanishVariant?) {
+        guard var s = try? store.loadSettings() else { return }
+        if let variant { s.spanishVariant = variant }
+        s.variantPromptAnswered = true
+        try? store.saveSettings(s)
     }
 
     /// Today appeared: a new visit may show the next open prompt.
@@ -150,7 +174,8 @@ public final class TodayModel {
 
     func makeConjugationDrill() -> ConjugationDrillModel? {
         guard let conj = catalog.conjugation, !conjugationItems.isEmpty else { return nil }
-        return ConjugationDrillModel(store: store, catalog: conj, itemIDs: conjugationItems, today: now)
+        return ConjugationDrillModel(store: store, catalog: conj, itemIDs: conjugationItems,
+                                     variant: (try? store.loadSettings())?.spanishVariant ?? .spain, today: now)
     }
 
     /// The ordered card ids to study now (snapshot for a session).
@@ -199,6 +224,7 @@ public final class TodayModel {
         // «Есть дедлайн?» until the user sets a goal or dismisses it.
         var prompts: [TodayPrompt] = []
         if settings.levelGoal == nil && settings.exam == nil { prompts.append(Self.goalPrompt) }
+        if !settings.variantPromptAnswered { prompts.append(Self.variantPrompt) }
         if catalog.vocabulary != nil, settings.dailyNewWordCount == 0 { prompts.append(Self.wordsPrompt) }
         wordItems = catalog.vocabulary == nil ? [] : VocabularyModel(store: store, catalog: catalog, today: now).todayItems(today: today)
         promptCandidates = prompts

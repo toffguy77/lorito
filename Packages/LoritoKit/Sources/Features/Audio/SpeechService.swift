@@ -40,10 +40,12 @@ public final class SystemSpeechService: NSObject, SpeechService {
 
     public var hasSpanishVoice: Bool { Self.voice(for: .spain) != nil }
 
-    /// Highest-quality installed voice for the variant, else any Spanish voice.
+    /// Highest-quality installed voice in the variant's first available language
+    /// (Rioplatense: es-AR → es-MX → es-ES), else any Spanish voice.
     nonisolated static func voice(for variant: SpanishVariant) -> AVSpeechSynthesisVoice? {
         let voices = AVSpeechSynthesisVoice.speechVoices()
-        let exact = voices.filter { $0.language == variant.localeIdentifier }
+        let language = variant.preferredVoiceLanguage(installed: Set(voices.map(\.language)))
+        let exact = voices.filter { $0.language == language }
         if let best = exact.max(by: { $0.quality.rawValue < $1.quality.rawValue }) { return best }
         return voices.filter { $0.language.hasPrefix("es") }.max { $0.quality.rawValue < $1.quality.rawValue }
     }

@@ -60,6 +60,10 @@ public struct UserSettings: Codable, Sendable, Hashable {
     public var personalWordIDs: [String] = []
     public static let wordsDefaultWhenEnabled = 5
 
+    /// The one-time «Где вы учите испанский?» prompt was answered or dismissed
+    /// (regional-variants; synced so other devices don't ask again).
+    public var variantPromptAnswered: Bool = false
+
     public static let conjugationDefaultWhenEnabled = 3
     public static let conjugationRange = 0...20
 
