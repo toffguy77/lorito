@@ -150,3 +150,49 @@ struct AnalyticsEmitPointTests {
         #expect(recorder.events == [.exerciseAnswered(type: .multipleChoice, correct: false)])
     }
 }
+
+@Suite("Analytics privacy hardening")
+@MainActor
+struct AnalyticsPrivacyTests {
+    private actor StopCountingSink: AnalyticsSink {
+        var stops = 0
+        var sent = 0
+        func send(_ batch: [AnalyticsRecord]) async throws { sent += batch.count }
+        func stop() async { stops += 1 }
+    }
+
+    @Test("Opt-out deletes the queue file synchronously and stops the provider")
+    func optOutDeletesFile() async throws {
+        let url = FileManager.default.temporaryDirectory.appendingPathComponent("aq-\(UUID().uuidString).json")
+        let sink = StopCountingSink()
+        let service = AnalyticsService(sink: sink, defaults: freshDefaults(), queueURL: url, flushEnabled: false)
+        service.resolveConsentOnFirstLaunch()
+        for _ in 0..<20 { service.record(.reminderOpened) }   // many pending background writes
+        service.setEnabled(false)
+        #expect(!FileManager.default.fileExists(atPath: url.path))
+        try await Task.sleep(nanoseconds: 300_000_000)        // let any stale write try to land
+        #expect(!FileManager.default.fileExists(atPath: url.path))
+        #expect(await sink.stops == 1)
+    }
+
+    @Test("A launch with consent denied ignores and deletes a saved queue")
+    func deniedLaunchDropsQueue() throws {
+        let url = FileManager.default.temporaryDirectory.appendingPathComponent("aq-\(UUID().uuidString).json")
+        let data = try JSONEncoder().encode(EventQueue(records: [AnalyticsRecord(event: .reminderOpened, date: Date())]))
+        try data.write(to: url)
+        let defaults = freshDefaults()
+        defaults.set("denied", forKey: AnalyticsConsent.key)
+        let service = AnalyticsService(sink: NoOpAnalyticsSink(), defaults: defaults, queueURL: url)
+        #expect(service.queue.records.isEmpty)
+        #expect(!FileManager.default.fileExists(atPath: url.path))
+    }
+
+    @Test("Nothing reaches the sink without consent")
+    func noSendWithoutConsent() async {
+        let sink = StopCountingSink()
+        let service = AnalyticsService(sink: sink, defaults: freshDefaults(), queueURL: nil)
+        service.record(.reminderOpened)
+        await service.flush()
+        #expect(await sink.sent == 0)
+    }
+}

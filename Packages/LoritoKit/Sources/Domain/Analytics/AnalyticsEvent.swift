@@ -101,6 +101,12 @@ public struct AnalyticsRecord: Codable, Sendable, Hashable {
 /// concrete sink; tests and previews use a recording or no-op sink.
 public protocol AnalyticsSink: Sendable {
     func send(_ batch: [AnalyticsRecord]) async throws
+    /// Opt-out: tear down any provider state (no further sends follow).
+    func stop() async
+}
+
+public extension AnalyticsSink {
+    func stop() async {}
 }
 
 /// Drops everything (tests, previews, opted-out or unconfigured builds).

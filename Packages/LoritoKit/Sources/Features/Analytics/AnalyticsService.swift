@@ -36,6 +36,7 @@ public final class AnalyticsService: AnalyticsRecording {
 
     public private(set) var queue: EventQueue
     public private(set) var consent: AnalyticsConsent?
+    private let writer: QueueFileWriter
     private var failures = 0
     private var nextAttempt: Date = .distantPast
     private var flushing = false
@@ -50,9 +51,18 @@ public final class AnalyticsService: AnalyticsRecording {
         self.queueURL = queueURL
         self.flushEnabled = flushEnabled
         self.now = now
-        self.consent = defaults?.string(forKey: AnalyticsConsent.key).flatMap(AnalyticsConsent.init(rawValue:))
-        let stored = queueURL.flatMap { try? Data(contentsOf: $0) }.flatMap { try? JSONDecoder().decode(EventQueue.self, from: $0) }
-        self.queue = stored ?? EventQueue()
+        self.writer = QueueFileWriter(url: queueURL)
+        let consent = defaults?.string(forKey: AnalyticsConsent.key).flatMap(AnalyticsConsent.init(rawValue:))
+        self.consent = consent
+        if consent == .denied {
+            // Opted out on this device: never resurrect a saved queue.
+            if let queueURL { try? FileManager.default.removeItem(at: queueURL) }
+            self.queue = EventQueue()
+        } else {
+            let stored = queueURL.flatMap { try? Data(contentsOf: $0) }
+                .flatMap { try? JSONDecoder().decode(EventQueue.self, from: $0) }
+            self.queue = stored ?? EventQueue()
+        }
     }
 
     /// The default queue file in Application Support.
@@ -80,8 +90,12 @@ public final class AnalyticsService: AnalyticsRecording {
         consent = granted ? .granted : .denied
         defaults.set(consent?.rawValue, forKey: AnalyticsConsent.key)
         if !granted {
+            // Purge now: drop the queue, cancel pending writes, delete the file
+            // synchronously, and tear down the provider.
             queue.removeAll()
-            persist()
+            writer.purge()
+            let sink = sink
+            Task { await sink.stop() }
         }
     }
 
@@ -140,12 +154,51 @@ public final class AnalyticsService: AnalyticsRecording {
         persist()
     }
 
-    /// Queue persistence happens off the main thread.
+    /// Queue persistence happens off the main thread, in order.
     private func persist() {
-        guard let queueURL, let data = try? JSONEncoder().encode(queue) else { return }
-        Task.detached(priority: .utility) {
-            try? FileManager.default.createDirectory(at: queueURL.deletingLastPathComponent(), withIntermediateDirectories: true)
-            try? data.write(to: queueURL, options: .atomic)
+        guard consent == .granted, let data = try? JSONEncoder().encode(queue) else { return }
+        writer.write(data)
+    }
+}
+
+/// Writes queue snapshots on one serial background queue, in order. Each
+/// snapshot carries a version; a write older than the latest request (or than
+/// a purge) is skipped, so a stale snapshot can never land after an opt-out.
+final class QueueFileWriter: @unchecked Sendable {
+    private let url: URL?
+    private let io = DispatchQueue(label: "lorito.analytics.queue-writer", qos: .utility)
+    private let lock = NSLock()
+    private var version = 0
+
+    init(url: URL?) {
+        self.url = url
+    }
+
+    func write(_ data: Data) {
+        guard let url else { return }
+        let mine = bump()
+        io.async { [self] in
+            guard current == mine else { return }   // superseded or purged
+            try? FileManager.default.createDirectory(at: url.deletingLastPathComponent(), withIntermediateDirectories: true)
+            try? data.write(to: url, options: .atomic)
         }
+    }
+
+    /// Cancel pending writes and delete the file now (synchronously).
+    func purge() {
+        _ = bump()
+        guard let url else { return }
+        io.sync { try? FileManager.default.removeItem(at: url) }
+    }
+
+    private func bump() -> Int {
+        lock.lock(); defer { lock.unlock() }
+        version += 1
+        return version
+    }
+
+    private var current: Int {
+        lock.lock(); defer { lock.unlock() }
+        return version
     }
 }
