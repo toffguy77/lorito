@@ -25,8 +25,9 @@ Plumaje redesign landing, iPad should get layouts built for it.
 - **Progress (regular width):** dashboard grid with larger heatmap cells and
   per-level memory bars.
 - **Hardware keyboard:** Return starts the session, Space reveals the answer,
-  1–4 grade, E expands the card, Esc closes, ⌘F searches the catalog, arrow
-  keys move through catalog lists; all discoverable in the ⌘ overlay.
+  1–4 grade, Esc closes, arrow keys move through catalog lists; all
+  discoverable in the ⌘ overlay. (Card expansion and catalog search, with
+  their E / ⌘F shortcuts, are left to a future change.)
 - **Pointer and multitasking:** hover effects on interactive elements; Split
   View / Stage Manager resizes switch between compact and regular layouts
   without losing navigation or session state.

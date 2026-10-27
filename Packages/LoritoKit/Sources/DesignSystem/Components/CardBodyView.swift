@@ -21,7 +21,7 @@ public struct CardBodyView: View {
     @ScaledMetric(relativeTo: .body) private var spanishSize = LoritoTextStyle.spanishInline.size
 
     public init(_ markdown: String, tone: CardBodyTone = .surface) {
-        self.markdown = markdown
+        self.markdown = CardBodyParser.stripHeadingEmoji(markdown)
         self.tone = tone
     }
 

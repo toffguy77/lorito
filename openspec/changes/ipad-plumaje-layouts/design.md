@@ -48,9 +48,13 @@ so the existing reading-width requirement still holds. Side panel (300 pt):
 related cards + keyboard hints. Grade bar spans the card width with key caps.
 
 **Keyboard.** SwiftUI `.keyboardShortcut` on buttons (shows in the ⌘ overlay):
-Return → "Начать" (Today), Space → "Показать ответ", 1/2/3/4 → grades,
-E → expand card, Esc → close session, ⌘F → focus catalog search. Arrow keys in
-catalog lists via `List` selection (native). Shortcuts are active only when
+Space → "Показать ответ", 1/2/3/4 → grades. Return → "Начать" (Today) and
+Esc → close session go through a UIKit `UIKeyCommand` with
+`wantsPriorityOverSystemBehavior` (the iPadOS focus system otherwise consumes
+them; SwiftUI can't set that flag), also listed in the ⌘ overlay. Arrow keys in
+catalog lists via `List` selection (native). "E → expand card" and "⌘F →
+catalog search" were dropped: neither action exists in the app; they belong to
+a future change that adds them. Shortcuts are active only when
 the corresponding button is visible and enabled, so they cannot grade a card
 before reveal.
 

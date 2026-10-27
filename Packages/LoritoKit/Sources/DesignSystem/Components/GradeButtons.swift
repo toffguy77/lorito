@@ -37,6 +37,16 @@ public enum StudyGrade: String, CaseIterable, Sendable {
         }
     }
 
+    /// Hardware-keyboard key: 1 Опять … 4 Легко.
+    public var key: String {
+        switch self {
+        case .again: return "1"
+        case .hard: return "2"
+        case .good: return "3"
+        case .easy: return "4"
+        }
+    }
+
     var captionColor: Color {
         self == .hard ? LoritoColor.onInkSecondary : foreground
     }
@@ -69,15 +79,18 @@ public struct GradeButtonItem: Equatable, Sendable {
 /// (e.g. the interval preview supplied by the study flow).
 public struct GradeButtons: View {
     private let items: [GradeButtonItem]
+    private let showsKeyCaps: Bool
     private let onGrade: (StudyGrade) -> Void
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     public init(
         captions: [StudyGrade: String] = [:],
         spokenCaptions: [StudyGrade: String] = [:],
+        showsKeyCaps: Bool = false,
         onGrade: @escaping (StudyGrade) -> Void
     ) {
         self.items = Self.items(captions: captions, spokenCaptions: spokenCaptions)
+        self.showsKeyCaps = showsKeyCaps
         self.onGrade = onGrade
     }
 
@@ -95,24 +108,29 @@ public struct GradeButtons: View {
 
     public var body: some View {
         // Four across truncates at accessibility sizes; fall back to 2×2.
-        let columns = dynamicTypeSize.isAccessibilitySize ? 2 : 4
+        let columns = dynamicTypeSize.isAccessibilitySize && !showsKeyCaps ? 2 : 4
         LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: LoritoSpacing.xs), count: columns),
                   spacing: LoritoSpacing.xs) {
             ForEach(items, id: \.grade) { item in
                 Button {
                     onGrade(item.grade)
                 } label: {
-                    VStack(spacing: 3) {
-                        Text(item.title)
-                            .font(LoritoFont.bodyStrong)
-                            .lineLimit(1)
-                            .minimumScaleFactor(0.7)
-                        if let caption = item.caption {
-                            Text(caption)
-                                .font(LoritoFont.caption)
-                                .foregroundStyle(item.grade.captionColor)
+                    HStack(spacing: LoritoSpacing.xs) {
+                        VStack(spacing: 3) {
+                            Text(item.title)
+                                .font(LoritoFont.bodyStrong)
                                 .lineLimit(1)
                                 .minimumScaleFactor(0.7)
+                            if let caption = item.caption {
+                                Text(caption)
+                                    .font(LoritoFont.caption)
+                                    .foregroundStyle(item.grade.captionColor)
+                                    .lineLimit(1)
+                                    .minimumScaleFactor(0.7)
+                            }
+                        }
+                        if showsKeyCaps {
+                            KeyCap(item.grade.key, tone: .surface)
                         }
                     }
                     .foregroundStyle(item.grade.foreground)
@@ -122,6 +140,8 @@ public struct GradeButtons: View {
                     .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
+                .keyboardShortcut(KeyEquivalent(Character(item.grade.key)), modifiers: [])
+                .loritoHover()
                 .accessibilityLabel(item.accessibilityLabel)
             }
         }

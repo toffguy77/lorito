@@ -35,7 +35,7 @@ private let catalog = ContentCatalog(
     cards: [
         Card(id: "A1-01", level: .a1, themeID: "a1-1", order: 1, title: "Алфавит", body: "> **Суть**\n> Буквы.",
              recall: "**Сколько букв?** *abecedario*"),
-        Card(id: "A1-02", level: .a1, themeID: "a1-2", order: 2, title: "Род", body: mistakesBody),
+        Card(id: "A1-02", level: .a1, themeID: "a1-2", order: 2, title: "Род", related: ["A1-03", "A1-77", "A1-01"], body: mistakesBody),
         Card(id: "A1-03", level: .a1, themeID: "a1-2", order: 3, title: "Артикли", aliases: ["El artículo"], body: mistakesBody),
     ]
 )
@@ -105,6 +105,18 @@ struct RecallFirstSessionTests {
         #expect(summary?.firstTryPercent == 33)
         #expect(summary?.currentStreak == 1)
         #expect(session.revisitThemeTitles == ["Существительное"])
+    }
+}
+
+@Suite("Related cards in the session")
+@MainActor
+struct SessionRelatedCardsTests {
+    @Test("Related cards appear only after reveal, resolved in order, unknown skipped")
+    func related() {
+        let session = StudySessionModel(store: MemoryStore(), catalog: catalog, queue: ["A1-02"])
+        #expect(session.visibleRelatedCards.isEmpty)        // front side
+        session.reveal()
+        #expect(session.visibleRelatedCards.map(\.id) == ["A1-03", "A1-01"])
     }
 }
 

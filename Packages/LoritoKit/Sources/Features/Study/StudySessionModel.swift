@@ -86,6 +86,16 @@ public final class StudySessionModel {
 
     // MARK: Back side
 
+    /// The current card's related cards — after reveal only (they would leak
+    /// the answer on the front).
+    public var visibleRelatedCards: [Card] {
+        guard isRevealed, let card = currentCard else { return [] }
+        return catalog.relatedCards(of: card)
+    }
+
+    /// A catalog model for opening a related card in the reader.
+    func makeCatalogModel() -> CatalogModel { CatalogModel(store: store, catalog: catalog) }
+
     /// Interval preview per grade for the current card (read-only).
     public var captions: [StudyGrade: String] {
         preview { IntervalPreview.captions(for: $0, today: today) }

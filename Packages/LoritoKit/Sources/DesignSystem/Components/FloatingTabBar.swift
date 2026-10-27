@@ -42,6 +42,7 @@ public struct FloatingTabBar<ID: Hashable>: View {
                         .contentShape(Capsule())
                 }
                 .buttonStyle(.plain)
+                .loritoHover()
                 .frame(minWidth: LoritoLayout.minTouchTarget, minHeight: LoritoLayout.minTouchTarget)
                 .accessibilityLabel(item.title)
                 .accessibilityAddTraits(isSelected ? .isSelected : [])

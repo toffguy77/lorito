@@ -93,6 +93,28 @@ public enum CardBodyParser {
         return nil
     }
 
+    /// Drop decorative emoji that lead Markdown headings ("## 📐 Правило" →
+    /// "## Правило"): the brand fonts have no emoji glyphs and Plumaje uses no
+    /// emoji as iconography. Content files stay unchanged.
+    public static func stripHeadingEmoji(_ markdown: String) -> String {
+        markdown.components(separatedBy: "\n").map { line in
+            guard headingTitle(line) != nil else { return line }
+            let hashes = line.prefix { $0 == "#" || $0 == " " }
+            var rest = Substring(line.dropFirst(hashes.count))
+            while let first = rest.unicodeScalars.first, isDecorative(first) || first == " " {
+                rest = Substring(String(rest.unicodeScalars.dropFirst()))
+            }
+            return rest.isEmpty ? line : String(hashes) + rest
+        }.joined(separator: "\n")
+    }
+
+    private static func isDecorative(_ scalar: Unicode.Scalar) -> Bool {
+        let p = scalar.properties
+        return p.isEmojiPresentation
+            || (p.isEmoji && scalar.value > 0x238C)          // pictographs; not digits, #, *
+            || scalar.value == 0xFE0F || scalar.value == 0x200D  // variation selector, ZWJ
+    }
+
     // MARK: - Helpers
 
     private static func isBlockquote(_ line: String) -> Bool {
@@ -135,23 +157,33 @@ public enum CardBodyParser {
 public struct CardContentView: View {
     private let blocks: [CardBlock]
     private let tone: CardBodyTone
+    /// When set, blocks balance across two columns unless they fit this height.
+    private let twoColumnsAbove: CGFloat?
 
-    public init(_ body: String, tone: CardBodyTone = .surface) {
+    public init(_ body: String, tone: CardBodyTone = .surface, twoColumnsAbove: CGFloat? = nil) {
         self.blocks = CardBodyParser.parse(body)
         self.tone = tone
+        self.twoColumnsAbove = twoColumnsAbove
     }
 
     public var body: some View {
-        VStack(alignment: .leading, spacing: LoritoSpacing.md) {
-            ForEach(Array(blocks.enumerated()), id: \.offset) { _, block in
-                switch block {
-                case .markdown(let md):
-                    CardBodyView(md, tone: tone)
-                case .callout(let kind, let md):
-                    CalloutBlock(kind) { CardBodyView(md, tone: kind.isOnInk ? .ink : .surface) }
-                }
+        if let height = twoColumnsAbove {
+            BalancedColumnsLayout(availableHeight: height) { blockViews }
+        } else {
+            VStack(alignment: .leading, spacing: LoritoSpacing.md) { blockViews }
+                .frame(maxWidth: .infinity, alignment: .leading)
+        }
+    }
+
+    private var blockViews: some View {
+        ForEach(Array(blocks.enumerated()), id: \.offset) { _, block in
+            switch block {
+            case .markdown(let md):
+                CardBodyView(md, tone: tone)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+            case .callout(let kind, let md):
+                CalloutBlock(kind) { CardBodyView(md, tone: kind.isOnInk ? .ink : .surface) }
             }
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }

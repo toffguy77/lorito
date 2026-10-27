@@ -76,7 +76,7 @@ At regular width the progress screen SHALL arrange the streak, best streak and t
 - **THEN** the streak tiles share one row and the heatmap spans the content width
 
 ### Requirement: Hardware keyboard shortcuts
-With a hardware keyboard the app SHALL support: Return to start the session from Today, Space to reveal the answer, 1–4 to choose Опять, Трудно, Хорошо and Легко, E to expand the card, Esc to close the session, ⌘F to focus catalog search, and arrow keys to move through catalog lists. Each shortcut SHALL be active only while its on-screen action is visible and enabled, and SHALL be listed in the system keyboard-shortcut overlay.
+With a hardware keyboard the app SHALL support: Return to start the session from Today, Space to reveal the answer, 1–4 to choose Опять, Трудно, Хорошо and Легко, Esc to close the session, and arrow keys to move through catalog lists. Each shortcut SHALL be active only while its on-screen action is visible and enabled, and SHALL be listed in the system keyboard-shortcut overlay.
 
 #### Scenario: Keyboard-only study
 - **WHEN** the user presses Return on Today, then Space, then 3 on the first card

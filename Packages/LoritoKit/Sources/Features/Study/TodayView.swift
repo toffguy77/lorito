@@ -2,62 +2,44 @@ import SwiftUI
 import Domain
 import DesignSystem
 
-/// The Today screen: summary of the day's queue, a start action, and distinct
-/// empty / all-done states. Presents the study session modally.
+/// The Today screen: summary of the day's queue, a start action, distinct
+/// empty / all-done states, the week strip and the trap of the day. Starting a
+/// session hands it to `AppNavigation`, which presents it above every layout.
+/// At regular width it is a two-column dashboard.
 public struct TodayView: View {
     @State private var model: TodayModel
-    @State private var session: StudySessionModel?
     @State private var trapCard: Card?
     private let catalog: ContentCatalog
     private let store: UserDataStore
-    private let onSessionComplete: () -> Void
+    private let navigation: AppNavigation
+    @Environment(\.horizontalSizeClass) private var sizeClass
 
-    public init(
-        store: UserDataStore,
-        catalog: ContentCatalog,
-        onSessionComplete: @escaping () -> Void = {}
-    ) {
+    public init(store: UserDataStore, catalog: ContentCatalog, navigation: AppNavigation) {
         self.store = store
         self.catalog = catalog
-        self.onSessionComplete = onSessionComplete
+        self.navigation = navigation
         _model = State(initialValue: TodayModel(store: store, catalog: catalog))
     }
 
     public var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: LoritoSpacing.md) {
-                header
-
-                if model.hasWork {
-                    activeState
-                } else if model.isAllDone {
-                    message(mark: "¡", markColor: LoritoColor.accent,
-                            title: "Всё на сегодня!", subtitle: "Вы прошли все карточки дня.")
+            Group {
+                if sizeClass == .regular {
+                    regularLayout
                 } else {
-                    message(mark: "¿", markColor: LoritoColor.textSecondary,
-                            title: "Пока нечего изучать", subtitle: "Загляните позже — карточки появятся, когда придёт срок.")
-                }
-
-                WeekStrip(days: model.week)
-
-                if let trap = model.trap, let card = catalog.card(id: trap.cardID) {
-                    trapCard(trap, card: card)
+                    compactLayout
                 }
             }
             .padding(.horizontal, LoritoSpacing.screenGutter)
             .padding(.top, LoritoSpacing.lg)
             .padding(.bottom, LoritoSpacing.xl)
-            .frame(maxWidth: LoritoLayout.readingWidth)
-            .frame(maxWidth: .infinity)
         }
         .background(LoritoColor.surface.ignoresSafeArea())
         .onAppear { model.refresh() }
-        .focusModeCover(item: $session, onDismiss: {
-            model.refresh()
-            onSessionComplete()
-        }) { session in
-            StudySessionView(model: session) { self.session = nil }
-        }
+        // Return starts the session while "Начать" is shown and enabled.
+        .hardwareKeyCommands(model.hasWork && navigation.session == nil
+                             ? [HardwareKeyCommand(.return, title: "Начать", action: startSession)] : [])
+        .onChange(of: navigation.sessionEndCount) { _, _ in model.refresh() }
         .sheet(item: $trapCard, onDismiss: { model.refresh() }) { card in
             NavigationStack {
                 CardReaderView(model: CatalogModel(store: store, catalog: catalog), card: card)
@@ -68,6 +50,88 @@ public struct TodayView: View {
                     }
             }
         }
+    }
+
+    private func startSession() {
+        guard model.hasWork else { return }
+        navigation.startSession(StudySessionModel(store: store, catalog: catalog, queue: model.sessionQueue()))
+    }
+
+    private var compactLayout: some View {
+        VStack(alignment: .leading, spacing: LoritoSpacing.md) {
+            header
+            planOrState
+            WeekStrip(days: model.week)
+            trap
+        }
+        .frame(maxWidth: LoritoLayout.readingWidth)
+        .frame(maxWidth: .infinity)
+    }
+
+    /// Two columns: plan hero and start on the leading side; week strip, trap
+    /// of the day and long-term memory on the trailing side.
+    private var regularLayout: some View {
+        VStack(alignment: .leading, spacing: LoritoSpacing.lg) {
+            header
+            HStack(alignment: .top, spacing: LoritoSpacing.lg) {
+                planOrState
+                    .frame(maxWidth: .infinity, alignment: .top)
+                VStack(spacing: LoritoSpacing.md) {
+                    WeekStrip(days: model.week)
+                        .padding(.horizontal, LoritoSpacing.md)
+                        .padding(.vertical, LoritoSpacing.sm)
+                        .background(LoritoColor.surfaceRaised, in: RoundedRectangle(cornerRadius: LoritoRadius.lg, style: .continuous))
+                    trap
+                    memorySummary
+                }
+                .frame(maxWidth: 420)
+            }
+        }
+        .frame(maxWidth: 1100)
+        .frame(maxWidth: .infinity)
+    }
+
+    @ViewBuilder
+    private var planOrState: some View {
+        if model.hasWork {
+            activeState
+        } else if model.isAllDone {
+            message(mark: "¡", markColor: LoritoColor.accent,
+                    title: "Всё на сегодня!", subtitle: "Вы прошли все карточки дня.")
+        } else {
+            message(mark: "¿", markColor: LoritoColor.textSecondary,
+                    title: "Пока нечего изучать", subtitle: "Загляните позже — карточки появятся, когда придёт срок.")
+        }
+    }
+
+    @ViewBuilder
+    private var trap: some View {
+        if let trap = model.trap, let card = catalog.card(id: trap.cardID) {
+            trapCard(trap, card: card)
+        }
+    }
+
+    private var memorySummary: some View {
+        VStack(alignment: .leading, spacing: LoritoSpacing.xs) {
+            Text("В долгой памяти")
+                .loritoStyle(.label)
+                .foregroundStyle(LoritoColor.textSecondary)
+            HStack(alignment: .firstTextBaseline, spacing: LoritoSpacing.xs) {
+                Text("\(model.memory.longTerm)")
+                    .loritoStyle(LoritoTextStyle.title.sized(30))
+                    .foregroundStyle(LoritoColor.textPrimary)
+                Text("из \(model.memory.total) \(RussianPlural.form(model.memory.total, one: "карточки", few: "карточек", many: "карточек"))")
+                    .font(LoritoFont.body)
+                    .foregroundStyle(LoritoColor.textSecondary)
+            }
+            Text("Интервал повторения от \(StatsConstants.longTermIntervalDays) дня")
+                .font(LoritoFont.caption)
+                .foregroundStyle(LoritoColor.textSecondary)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(LoritoSpacing.md + 2)
+        .background(LoritoColor.surfaceRaised, in: RoundedRectangle(cornerRadius: LoritoRadius.lg, style: .continuous))
+        .accessibilityElement(children: .combine)
     }
 
     /// "Ловушка дня": one common mistake from a card in scope; opens the card.
@@ -101,6 +165,7 @@ public struct TodayView: View {
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
+        .loritoHover()
         .accessibilityElement(children: .combine)
         .accessibilityHint("Открывает карточку \(card.title)")
     }
@@ -129,11 +194,9 @@ public struct TodayView: View {
             showsCounts: false
         ) {
             DayProgressBar(completed: model.studiedCount, total: max(model.totalCount, 1), tone: .ink)
-            Button("Начать") {
-                session = StudySessionModel(store: store, catalog: catalog, queue: model.sessionQueue())
-            }
-            .buttonStyle(PrimaryButtonStyle(.highlight))
-            .disabled(!model.hasWork)
+            Button("Начать", action: startSession)
+                .buttonStyle(PrimaryButtonStyle(.highlight))
+                .disabled(!model.hasWork)
         }
     }
 

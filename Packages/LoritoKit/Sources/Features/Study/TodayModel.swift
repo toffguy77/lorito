@@ -24,6 +24,8 @@ public final class TodayModel {
     public private(set) var trap: TrapCandidate?
     /// The last seven days ending today (week strip).
     public private(set) var week: [WeekDay] = []
+    /// Long-term memory across the included levels (regular-width dashboard).
+    public private(set) var memory: (longTerm: Int, total: Int) = (0, 0)
 
     /// One day of the week strip.
     public struct WeekDay: Equatable, Sendable {
@@ -78,6 +80,9 @@ public final class TodayModel {
         newRemaining = remaining.filter { $0.kind == .new }.count
         studiedCount = gradedToday.count
         week = Self.weekStrip(events: events, today: today)
+        let levels = settings.targetLevel.map(SelectionScope.includedLevels(for:)) ?? []
+        let rows = StatsCalculator.longTermMemory(reviews: reviews, catalog: catalog, levels: levels)
+        memory = (rows.reduce(0) { $0 + $1.longTerm }, rows.reduce(0) { $0 + $1.total })
         trap = Self.pickTrap(settings: settings, reviews: reviews, catalog: catalog, today: today)
     }
 

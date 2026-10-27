@@ -34,6 +34,7 @@ public struct PrimaryButtonStyle: ButtonStyle {
                 }
             }
             .contentShape(Capsule())
+            .loritoHover()
             .opacity(isEnabled ? (configuration.isPressed ? 0.85 : 1) : 0.4)
             .scaleEffect(configuration.isPressed ? 0.98 : 1)
             .animation(.easeOut(duration: 0.12), value: configuration.isPressed)

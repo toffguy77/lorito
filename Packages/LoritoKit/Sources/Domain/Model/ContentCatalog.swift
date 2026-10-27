@@ -66,3 +66,11 @@ public struct ContentCatalog: Codable, Sendable {
         exercises.filter { $0.level == level }
     }
 }
+
+public extension ContentCatalog {
+    /// The cards named in `card.related`, in that order; unknown ids (and the
+    /// card itself) are skipped.
+    func relatedCards(of card: Card) -> [Card] {
+        card.related.filter { $0 != card.id }.compactMap { self.card(id: $0) }
+    }
+}

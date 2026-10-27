@@ -18,6 +18,7 @@ struct SessionTopBar: View {
                     .background(LoritoColor.inkRaised, in: Circle())
             }
             .buttonStyle(.plain)
+            .loritoHover()
             .accessibilityLabel("Закрыть")
 
             SessionProgressBar(segments: segments)

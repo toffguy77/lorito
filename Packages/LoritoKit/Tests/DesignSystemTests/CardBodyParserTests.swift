@@ -125,3 +125,42 @@ struct ActivityHeatmapLayoutTests {
         #expect(columns.last![2] == nil)                                               // future slots empty
     }
 }
+
+@Suite("Balanced columns")
+struct BalancedColumnsTests {
+    @Test("Blocks go, in order, to the currently shorter column")
+    func greedy() {
+        let result = BalancedColumnsLayout.assign(heights: [100, 40, 40, 30, 200], spacing: 10)
+        #expect(result.columns == [0, 1, 1, 1, 0])
+        #expect(result.columnHeights == [310, 130])
+    }
+
+    @Test("Each block is placed whole, never split")
+    func whole() {
+        let result = BalancedColumnsLayout.assign(heights: [500], spacing: 10)
+        #expect(result.columns == [0])
+        #expect(result.columnHeights == [500, 0])
+    }
+
+    @Test("Single column when the body fits the available height")
+    func fits() {
+        #expect(BalancedColumnsLayout.usesSingleColumn(totalHeight: 380, availableHeight: 400, count: 4))
+        #expect(!BalancedColumnsLayout.usesSingleColumn(totalHeight: 900, availableHeight: 400, count: 4))
+        #expect(BalancedColumnsLayout.usesSingleColumn(totalHeight: 900, availableHeight: 400, count: 1))
+    }
+}
+
+@Suite("Heading emoji")
+struct HeadingEmojiTests {
+    @Test("Leading emoji are dropped from headings only")
+    func strips() {
+        let md = "## 📐 Базовое правило\n### ⚠️ Исключения\nТекст 💡 остаётся.\n# Без эмодзи\n## 👩‍🏫 Учитель"
+        #expect(CardBodyParser.stripHeadingEmoji(md) == "## Базовое правило\n### Исключения\nТекст 💡 остаётся.\n# Без эмодзи\n## Учитель")
+    }
+
+    @Test("Keeps ¡ ¿ and digits at the start of a heading")
+    func keepsText() {
+        #expect(CardBodyParser.stripHeadingEmoji("## ¿Qué? 1 вопрос") == "## ¿Qué? 1 вопрос")
+        #expect(CardBodyParser.stripHeadingEmoji("## 1. Шаг") == "## 1. Шаг")
+    }
+}

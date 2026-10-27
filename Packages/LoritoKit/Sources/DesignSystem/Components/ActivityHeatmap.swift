@@ -18,10 +18,12 @@ public struct HeatmapDay: Sendable, Equatable {
 public struct ActivityHeatmap: View {
     private let days: [HeatmapDay]
     private let calendar: Calendar
+    private let cellHeight: CGFloat
 
-    public init(days: [HeatmapDay], calendar: Calendar) {
+    public init(days: [HeatmapDay], calendar: Calendar, cellHeight: CGFloat = 18) {
         self.days = days
         self.calendar = calendar
+        self.cellHeight = cellHeight
     }
 
     /// Row (0 = Monday … 6 = Sunday) of a day.
@@ -62,7 +64,7 @@ public struct ActivityHeatmap: View {
     public var body: some View {
         let columns = Self.columns(days, calendar: calendar)
         let formatter = dayFormatter
-        Grid(horizontalSpacing: 4, verticalSpacing: 4) {
+        Grid(horizontalSpacing: cellHeight > 18 ? 6 : 4, verticalSpacing: cellHeight > 18 ? 6 : 4) {
             ForEach(0..<7, id: \.self) { row in
                 GridRow {
                     ForEach(columns.indices, id: \.self) { col in
@@ -78,14 +80,14 @@ public struct ActivityHeatmap: View {
         if let day {
             RoundedRectangle(cornerRadius: 4, style: .continuous)
                 .fill(Self.color(bucket: day.bucket))
-                .frame(maxWidth: .infinity, minHeight: 14, maxHeight: 18)
+                .frame(maxWidth: .infinity).frame(height: cellHeight)
                 .accessibilityElement()
                 .accessibilityLabel(formatter.string(from: day.day))
                 .accessibilityValue("\(day.count)")
                 .accessibilityIdentifier(day == days.last ? "heatmap.today" : "heatmap.day")
         } else {
             Color.clear
-                .frame(maxWidth: .infinity, minHeight: 14, maxHeight: 18)
+                .frame(maxWidth: .infinity).frame(height: cellHeight)
                 .accessibilityHidden(true)
         }
     }

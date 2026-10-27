@@ -6,6 +6,9 @@ import DesignSystem
 /// counts. Shows an encouraging zero state when there's no history yet.
 public struct StatsView: View {
     @State private var model: StatsModel
+    @Environment(\.horizontalSizeClass) private var sizeClass
+
+    private var isRegular: Bool { sizeClass == .regular }
 
     public init(store: UserDataStore, catalog: ContentCatalog) {
         _model = State(initialValue: StatsModel(store: store, catalog: catalog))
@@ -21,24 +24,44 @@ public struct StatsView: View {
                     .accessibilityAddTraits(.isHeader)
                     .padding(.bottom, LoritoSpacing.xs)
 
-                HStack(spacing: LoritoSpacing.sm - 2) {
-                    streakTile
-                    VStack(spacing: LoritoSpacing.sm - 2) {
+                if isRegular {
+                    // Dashboard: streak tiles in one row, heatmap at full width.
+                    HStack(spacing: LoritoSpacing.sm) {
+                        streakTile
                         statTile("лучшая серия", model.stats.bestStreak)
                         statTile("повторений всего", model.stats.studiedAllTime)
                     }
-                }
-                .fixedSize(horizontal: false, vertical: true)
+                    .fixedSize(horizontal: false, vertical: true)
+                    heatmapCard
+                    HStack(alignment: .top, spacing: LoritoSpacing.sm) {
+                        if !model.memory.isEmpty { memoryCard }
+                        VStack(spacing: LoritoSpacing.sm - 2) {
+                            statTile("сегодня", model.stats.studiedToday)
+                            statTile("за неделю", model.stats.studiedThisWeek)
+                        }
+                        .frame(maxWidth: 280)
+                    }
+                    .fixedSize(horizontal: false, vertical: true)
+                } else {
+                    HStack(spacing: LoritoSpacing.sm - 2) {
+                        streakTile
+                        VStack(spacing: LoritoSpacing.sm - 2) {
+                            statTile("лучшая серия", model.stats.bestStreak)
+                            statTile("повторений всего", model.stats.studiedAllTime)
+                        }
+                    }
+                    .fixedSize(horizontal: false, vertical: true)
 
-                HStack(spacing: LoritoSpacing.sm - 2) {
-                    statTile("сегодня", model.stats.studiedToday)
-                    statTile("за неделю", model.stats.studiedThisWeek)
-                }
+                    HStack(spacing: LoritoSpacing.sm - 2) {
+                        statTile("сегодня", model.stats.studiedToday)
+                        statTile("за неделю", model.stats.studiedThisWeek)
+                    }
 
-                heatmapCard
+                    heatmapCard
 
-                if !model.memory.isEmpty {
-                    memoryCard
+                    if !model.memory.isEmpty {
+                        memoryCard
+                    }
                 }
 
                 if !model.hasHistory {
@@ -50,7 +73,7 @@ public struct StatsView: View {
             }
             .padding(.horizontal, LoritoSpacing.screenGutter)
             .padding(.vertical, LoritoSpacing.lg)
-            .frame(maxWidth: LoritoLayout.readingWidth)
+            .frame(maxWidth: isRegular ? 1100 : LoritoLayout.readingWidth)
             .frame(maxWidth: .infinity)
         }
         .background(LoritoColor.surface.ignoresSafeArea())
@@ -69,7 +92,8 @@ public struct StatsView: View {
             .foregroundStyle(LoritoColor.textPrimary)
             ActivityHeatmap(
                 days: zip(model.activity, model.buckets).map { HeatmapDay(day: $0.day, count: $0.count, bucket: $1) },
-                calendar: .utcDay
+                calendar: .utcDay,
+                cellHeight: isRegular ? 30 : 18
             )
             .accessibilityElement(children: .contain)
             .accessibilityLabel(heatmapSummary)

@@ -28,7 +28,7 @@ public struct RootView: View {
         Group {
             if let model, let store, let catalog {
                 if didCompleteOnboarding {
-                    MainTabView(store: store, catalog: catalog, scopeModel: model)
+                    AdaptiveRootView(store: store, catalog: catalog, scopeModel: model)
                 } else {
                     OnboardingView(model: model, reminders: reminders) { didCompleteOnboarding = true }
                 }
