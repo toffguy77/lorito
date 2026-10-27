@@ -6,7 +6,7 @@
 
 - [x] 1.1 `project.yml`: add `LoritoWidgets` (`type: app-extension`, WidgetKit/ActivityKit, depends on LoritoKit `Domain` + `DesignSystem`), embed in `Lorito`
 - [x] 1.2 App Group `group.com.toffguy.lorito` in both entitlements; `NSSupportsLiveActivities: YES` in app Info.plist
-- [ ] 1.3 _(owner: Developer Portal + signing — steps in the implementation report)_ Register App Group + extension App ID in the developer portal; update fastlane signing; `xcodegen generate` and build
+- [x] 1.3 _(owner — done 2026-10-27)_ Register App Group + extension App ID in the developer portal; update fastlane signing; `xcodegen generate` and build
 
 ## 2. Snapshot (Domain + Features, TDD)
 
