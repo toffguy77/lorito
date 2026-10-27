@@ -122,3 +122,10 @@ The app SHALL record anonymous events `lens_opened` (with input source: paste, s
 - **WHEN** the user analyses a pasted paragraph with three matches
 - **THEN** `lens_analyzed` is recorded with source paste and the match bucket, and no text
 
+### Requirement: Study buddy events
+The app SHALL record the anonymous events `buddy_invite_sent`, `buddy_invite_accepted`, `buddy_nudge_sent` and `buddy_left`, without payload, and SHALL NOT record names, user record names or partner data.
+
+#### Scenario: Nudge recorded without identity
+- **WHEN** the user nudges their partner
+- **THEN** `buddy_nudge_sent` is recorded with no parameters
+
