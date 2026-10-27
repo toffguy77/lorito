@@ -9,15 +9,25 @@ struct SessionSummaryView: View {
     let summary: SessionSummary
     let revisitThemes: [String]
     let onClose: () -> Void
+    @State private var shareImage: Image?
 
     var body: some View {
         VStack(spacing: 0) {
             content
-            PrimaryButton("Готово", variant: .ink, action: onClose)
-                .frame(maxWidth: LoritoLayout.readingWidth)
-                .padding(.horizontal, LoritoSpacing.screenGutter)
-                .padding(.vertical, LoritoSpacing.md)
+            VStack(spacing: LoritoSpacing.sm) {
+                PrimaryButton("Готово", variant: .ink, action: onClose)
+                if let image = shareImage {
+                    ShareLink(item: image, preview: SharePreview("Серия \(summary.currentStreak)", image: image)) {
+                        Text("Поделиться")
+                    }
+                    .buttonStyle(PrimaryButtonStyle(.outline))
+                }
+            }
+            .frame(maxWidth: LoritoLayout.readingWidth)
+            .padding(.horizontal, LoritoSpacing.screenGutter)
+            .padding(.vertical, LoritoSpacing.md)
         }
+        .task { shareImage = StreakShareCard.render(streak: summary.currentStreak) }
         .background(alignment: .topTrailing) {
             Text("¡")
                 .loritoStyle(LoritoTextStyle.display.sized(360))

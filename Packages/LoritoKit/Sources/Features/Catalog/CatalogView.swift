@@ -305,6 +305,7 @@ struct CardReaderView: View {
     let model: CatalogModel
     let card: Card
     @State private var practiceSession: ExerciseSessionModel?
+    @Environment(\.practiceSessionDidEnd) private var practiceSessionDidEnd
 
     private var exerciseCount: Int { model.exercises(forCard: card.id).count }
 
@@ -340,6 +341,7 @@ struct CardReaderView: View {
             ExerciseSessionView(model: session) {
                 practiceSession = nil
                 model.refresh()
+                practiceSessionDidEnd()
             }
         }
     }

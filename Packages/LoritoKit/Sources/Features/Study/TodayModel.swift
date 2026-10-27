@@ -98,7 +98,7 @@ public final class TodayModel {
     }
 
     /// Candidates are in-scope cards with a "Частые ошибки" section.
-    private static func pickTrap(
+    static func pickTrap(
         settings: UserSettings, reviews: [ReviewState], catalog: ContentCatalog, today: Date
     ) -> TrapCandidate? {
         guard let level = settings.targetLevel else { return nil }

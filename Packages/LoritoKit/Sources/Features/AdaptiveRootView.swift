@@ -2,6 +2,7 @@ import SwiftUI
 import UserNotifications
 import Domain
 import DesignSystem
+import WidgetSupport
 
 /// The app's main flow after onboarding. Switches layout by horizontal size
 /// class — compact: the iPhone tree with the floating bottom bar; regular: the
@@ -20,6 +21,7 @@ public struct AdaptiveRootView: View {
     @State private var router = RemindersRouter()
     @State private var notificationDelegate: ReminderNotificationDelegate?
     @State private var path: [LevelPathProgress] = []
+    @State private var liveActivity = SessionActivityController()
     @SceneStorage("lorito.catalogSelection") private var storedCatalogSelection = ""
     @Environment(\.horizontalSizeClass) private var sizeClass
     @Environment(\.scenePhase) private var scenePhase
@@ -45,6 +47,7 @@ public struct AdaptiveRootView: View {
         .tint(LoritoColor.accent)
         .focusModeCover(item: sessionBinding, onDismiss: {
             refreshPath()
+            publishWidgets()
             Task { await reminders.reschedule() }
         }) { session in
             StudySessionView(model: session) { navigation.endSession() }
@@ -56,12 +59,34 @@ public struct AdaptiveRootView: View {
             UNUserNotificationCenter.current().delegate = delegate
             navigation.restoreCatalogSelection(storedCatalogSelection, in: catalog)
             refreshPath()
+            publishWidgets()
             await reminders.reschedule()
         }
         .onChange(of: scenePhase) { _, phase in
             // Foreground / day-rollover trigger.
-            if phase == .active { Task { await reminders.reschedule() } }
+            if phase == .active {
+                publishWidgets()
+                Task { await reminders.reschedule() }
+            }
         }
+        // Live Activity follows the open study session.
+        .onChange(of: navigation.session.map(ObjectIdentifier.init)) { _, id in
+            if id != nil, let session = navigation.session {
+                liveActivity.start(total: session.totalCount)
+            } else {
+                liveActivity.end()
+            }
+        }
+        .onChange(of: navigation.session?.index) { _, index in
+            guard let session = navigation.session, let index else { return }
+            liveActivity.update(position: index, total: session.totalCount)
+            if session.isComplete { liveActivity.end() }
+        }
+        // Widgets deep-link to Today.
+        .onOpenURL { url in
+            if LoritoDeepLink.isToday(url) { navigation.openToday() }
+        }
+        .environment(\.practiceSessionDidEnd, { publishWidgets() })
         .onChange(of: router.openToday) { _, open in
             if open { navigation.openToday(); router.consume() }  // reminder deep link
         }
@@ -156,6 +181,10 @@ public struct AdaptiveRootView: View {
         }
     }
 
+    private func publishWidgets() {
+        WidgetSnapshotPublisher.publish(store: store, catalog: catalog)
+    }
+
     private func refreshPath() {
         path = PathProgress.levels(store: store, catalog: catalog)
     }
@@ -185,4 +214,9 @@ private extension View {
                 Color.clear.frame(height: LoritoLayout.tabBarHeight + LoritoSpacing.xs)
             }
     }
+}
+
+extension EnvironmentValues {
+    /// Called when an exercise (practice) session closes — a widget refresh trigger.
+    @Entry var practiceSessionDidEnd: @MainActor () -> Void = {}
 }

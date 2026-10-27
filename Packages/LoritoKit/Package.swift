@@ -12,6 +12,7 @@ let package = Package(
         .library(name: "Persistence", targets: ["Persistence"]),
         .library(name: "DesignSystem", targets: ["DesignSystem"]),
         .library(name: "Features", targets: ["Features"]),
+        .library(name: "WidgetSupport", targets: ["WidgetSupport"]),
     ],
     dependencies: [
         .package(url: "https://github.com/gonzalezreal/swift-markdown-ui", from: "2.4.0"),
@@ -42,10 +43,14 @@ let package = Package(
             resources: [.process("Resources/Fonts")]
         ),
 
+        // Shared by the app and the widget extension: App Group snapshot file,
+        // widget practice answers, Live Activity attributes. No SwiftData.
+        .target(name: "WidgetSupport", dependencies: ["Domain"]),
+
         // SwiftUI screens. Depends inward on every other layer.
         .target(
             name: "Features",
-            dependencies: ["Domain", "Content", "Persistence", "DesignSystem"]
+            dependencies: ["Domain", "Content", "Persistence", "DesignSystem", "WidgetSupport"]
         ),
 
         // Tests
@@ -54,5 +59,6 @@ let package = Package(
         .testTarget(name: "ContentTests", dependencies: ["Content"]),
         .testTarget(name: "PersistenceTests", dependencies: ["Persistence"]),
         .testTarget(name: "FeaturesTests", dependencies: ["Features", "Domain", "Content", "DesignSystem", "Persistence"]),
+        .testTarget(name: "WidgetSupportTests", dependencies: ["WidgetSupport", "Domain"]),
     ]
 )
