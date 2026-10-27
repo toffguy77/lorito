@@ -50,6 +50,9 @@ public struct UserSettings: Codable, Sendable, Hashable {
         set { celebratedLevelsRaw = newValue.isEmpty ? nil : CelebratedLevels.encode(newValue) }
     }
 
+    /// New CCSE questions per day within the shared budget (exam-path; 0 = off).
+    public var ccseDailyNewLimit: Int = 5
+
     public static let conjugationDefaultWhenEnabled = 3
     public static let conjugationRange = 0...20
 

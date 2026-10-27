@@ -112,6 +112,7 @@ struct SyncedSettingsRoundTripTests {
         s.dailyConjugationCount = 5                                     // conjugation-trainer
         s.lastRecapWeek = "2026-W43"                                    // weekly-recap-and-milestones
         s.celebratedLevels = [.a1, .a2]
+        s.ccseDailyNewLimit = 0                                         // exam-path-dele-ccse
         s.exam = ExamGoal(kind: .ccse, date: Date(timeIntervalSinceReferenceDate: 821_000_000), done: true)
         #expect(try Self.roundTrip(s) == s)
     }
@@ -154,6 +155,7 @@ struct SyncedSettingsRoundTripTests {
         #expect(loaded.levelGoal == nil && loaded.exam == nil)
         #expect(loaded.dailyConjugationCount == 0)
         #expect(loaded.lastRecapWeek == nil && loaded.celebratedLevels.isEmpty)
+        #expect(loaded.ccseDailyNewLimit == 5)
     }
 }
 
@@ -198,5 +200,23 @@ struct CelebratedLevelsSyncTests {
         var removal = try a.loadSettings(); removal.celebratedLevels = []
         try a.saveSettings(removal)
         #expect(try a.loadSettings().celebratedLevels == [.a1, .a2])
+    }
+}
+
+@Suite("Mock attempts round trip (exam-path-dele-ccse)")
+struct MockAttemptRoundTripTests {
+    @Test("Every field round-trips; delete removes it")
+    func roundTrip() throws {
+        let container = try PersistenceController.makeContainer(config: .init(inMemory: true))
+        let store = SwiftDataUserDataStore(container: container, localMirror: nil)
+        let a = MockAttempt(examID: "dele-a2", form: 2, startedAt: Date(timeIntervalSinceReferenceDate: 800_000_000),
+                            sectionIndex: 1, sectionStartedAt: Date(timeIntervalSinceReferenceDate: 800_003_600),
+                            answers: ["r1": "b"], rubricTicks: ["w1": [0, 2]], state: .completed,
+                            finishedAt: Date(timeIntervalSinceReferenceDate: 800_010_000),
+                            sectionPoints: ["reading": 0.75], expired: true)
+        try store.upsertMockAttempt(a)
+        #expect(try SwiftDataUserDataStore(container: container, localMirror: nil).allMockAttempts() == [a])
+        try store.deleteMockAttempt(a.id)
+        #expect(try store.allMockAttempts().isEmpty)
     }
 }

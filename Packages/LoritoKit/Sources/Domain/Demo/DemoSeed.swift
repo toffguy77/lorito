@@ -9,6 +9,7 @@ public struct DemoSeed: Sendable {
     public var reviews: [ReviewState]
     public var events: [StudyEvent]
     public var trapPractice: [TrapPracticeEvent] = []
+    public var mockAttempts: [MockAttempt] = []
 
     public static let streakDays = 12
 
@@ -107,11 +108,19 @@ public struct DemoSeed: Sendable {
                         events: Array(events))
     }
 
+    /// exam-path UI test: a DELE A2 mock left running two hours ago (time ran out while away).
+    public static func expiredMock(today: Date) -> DemoSeed {
+        var seed = DemoSeed(settings: UserSettings(targetLevel: .a2, didCompleteOnboarding: true), reviews: [], events: [])
+        seed.mockAttempts = [MockAttempt(examID: "dele-a2", form: 0, startedAt: today.addingTimeInterval(-2 * 3600))]
+        return seed
+    }
+
     /// Writes the seed into an (empty, in-memory) store.
     public func apply(to store: UserDataStore) throws {
         try store.saveSettings(settings)
         for r in reviews { try store.upsertReview(r) }
         for e in events { try store.appendEvent(e) }
         for p in trapPractice { try store.appendTrapPractice(p) }
+        for a in mockAttempts { try store.upsertMockAttempt(a) }
     }
 }

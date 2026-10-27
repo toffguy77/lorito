@@ -57,6 +57,12 @@ public struct RootView: View {
         .speechSilenceHint()
         .spanishSpeech(speech)
         .environment(\.loritoUITesting, uiTesting)
+        // UI tests check this marker to know the launch really is in UI-testing mode.
+        .overlay(alignment: .topLeading) {
+            if uiTesting {
+                Color.clear.frame(width: 1, height: 1).accessibilityElement().accessibilityIdentifier("ui-testing-mode")
+            }
+        }
         .task { await load() }
     }
 
@@ -80,6 +86,10 @@ public struct RootView: View {
             // UI tests: no device-local mirror, so nothing leaks between launches.
             let store = SwiftDataUserDataStore(container: container, localMirror: uiTesting ? nil : .standard)
             if demoData { try DemoSeed.make(catalog: catalog, today: Date()).apply(to: store) }
+            if uiTesting, CommandLine.arguments.contains("-lorito-seed-expired-mock") {
+                try DemoSeed.expiredMock(today: Date()).apply(to: store)
+                didCompleteOnboarding = true
+            }
             if uiTesting, CommandLine.arguments.contains("-lorito-seed-recap") {
                 try DemoSeed.recapAndMilestone(catalog: catalog, today: Date()).apply(to: store)
                 didCompleteOnboarding = true

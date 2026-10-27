@@ -12,6 +12,8 @@ public struct CatalogView: View {
     private let catalog: ContentCatalog
     private let navigation: AppNavigation
     @Environment(\.horizontalSizeClass) private var sizeClass
+    @Environment(PurchaseService.self) private var purchases: PurchaseService?
+    @State private var exams: ExamsModel?
 
     public init(store: UserDataStore, catalog: ContentCatalog, navigation: AppNavigation) {
         _model = State(initialValue: CatalogModel(store: store, catalog: catalog))
@@ -30,6 +32,35 @@ public struct CatalogView: View {
             }
         }
         .onAppear { model.refresh() }
+        .sheet(item: $exams) { exams in
+            NavigationStack {
+                ExamsView(model: exams)
+                    .toolbar { ToolbarItem(placement: .confirmationAction) { Button("Готово") { self.exams = nil } } }
+            }
+        }
+    }
+
+    /// «Экзамены DELE и CCSE» (exam-path-dele-ccse).
+    @ViewBuilder
+    private var examsRow: some View {
+        if catalog.exams != nil {
+            Button {
+                exams = ExamsModel(store: model.store, catalog: catalog, purchases: purchases)
+            } label: {
+                HStack(spacing: LoritoSpacing.sm) {
+                    Image(systemName: "graduationcap").foregroundStyle(LoritoColor.accent).accessibilityHidden(true)
+                    Text("Экзамены DELE и CCSE").font(LoritoFont.bodyStrong).foregroundStyle(LoritoColor.textPrimary)
+                    Spacer()
+                    Image(systemName: "chevron.right").foregroundStyle(LoritoColor.textSecondary).accessibilityHidden(true)
+                }
+                .padding(LoritoSpacing.md)
+                .frame(minHeight: LoritoLayout.minTouchTarget)
+                .background(LoritoColor.surfaceRaised, in: RoundedRectangle(cornerRadius: LoritoRadius.md, style: .continuous))
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+            .accessibilityIdentifier("catalog.exams")
+        }
     }
 
     // MARK: Compact
@@ -40,6 +71,7 @@ public struct CatalogView: View {
                 Group {
                     header
                     levelPills
+                    examsRow
                     ForEach(model.themes(in: level)) { theme in
                         themeRow(theme)
                     }
@@ -79,6 +111,7 @@ public struct CatalogView: View {
                 Group {
                     header
                     levelPills
+                    examsRow
                 }
                 .listRowSeparator(.hidden)
                 .listRowBackground(Color.clear)

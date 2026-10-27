@@ -60,3 +60,15 @@ struct ContentTests {
         }
     }
 }
+
+@Suite("Bundled exam content")
+struct BundledExamContentTests {
+    @Test("DELE A2 definition and three mock forms decode; form 1 reading is the preview")
+    func exams() throws {
+        let exams = try #require(try ContentLoader.loadCatalog().exams)
+        #expect(exams.definition("dele-a2")?.groups.count == 2 && exams.definition("ccse") != nil)
+        #expect(exams.forms(exam: "dele-a2") == [1, 2, 3])
+        #expect(exams.isPreview(exam: "dele-a2", form: 1) && !exams.isPreview(exam: "dele-a2", form: 2))
+        #expect(exams.items(exam: "dele-a2", form: 1).filter { $0.preview }.allSatisfy { $0.section == "reading" })
+    }
+}

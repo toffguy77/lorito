@@ -33,6 +33,10 @@ public final class TodayModel {
         didSet { prompt = promptSlot.prompt(candidates: promptCandidates, events: (try? store.allEvents()) ?? []) }
     }
     private let promptSlot: TodayPromptSlot
+    /// The goal has an exam date (study-goal) → Today offers the exam path.
+    public private(set) var hasExamGoal = false
+    /// CCSE questions planned today (exam-path-dele-ccse).
+    public private(set) var ccseCount = 0
     /// Weekly recap of the completed Monday–Sunday week, shown once from Monday.
     public private(set) var recap: WeeklyRecap?
     /// A newly closed level to celebrate (shown once).
@@ -124,6 +128,8 @@ public final class TodayModel {
         self.prompt = nil
     }
 
+    func makeCCSEDrill() -> CCSEDrillModel? { CCSEDrillModel.today(store: store, catalog: catalog, today: now()) }
+
     func makeConjugationDrill() -> ConjugationDrillModel? {
         guard let conj = catalog.conjugation, !conjugationItems.isEmpty else { return nil }
         return ConjugationDrillModel(store: store, catalog: conj, itemIDs: conjugationItems, today: now)
@@ -157,6 +163,8 @@ public final class TodayModel {
         let levels = settings.targetLevel.map(SelectionScope.includedLevels(for:)) ?? []
         let rows = StatsCalculator.longTermMemory(reviews: reviews, catalog: catalog, levels: levels)
         memory = (rows.reduce(0) { $0 + $1.longTerm }, rows.reduce(0) { $0 + $1.total })
+        hasExamGoal = settings.exam.map { !$0.done } ?? false
+        ccseCount = CCSEDrillModel.today(store: store, catalog: catalog, today: today)?.items.count ?? 0
         recap = Self.pendingRecap(events: events, reviews: reviews, practice: (try? store.allTrapPractice()) ?? [],
                                   catalog: catalog, settings: settings, today: today, keep: recap)
         milestone = milestone ?? LevelMilestones.newlyClosed(cards: catalog.cards, reviews: reviews, settings: settings,

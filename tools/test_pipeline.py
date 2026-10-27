@@ -582,5 +582,100 @@ class ListeningExerciseTests(unittest.TestCase):
         self.assertEqual((ex["type"], ex["audio"], ex["accept"]), ("dictation", "Me llamo Ana.", ["me llamo ana"]))
 
 
+# --- exam-path-dele-ccse -----------------------------------------------------
+
+import exams  # noqa: E402
+
+DEFS = [
+    {"id": "ccse", "title": "CCSE", "verifiedOn": "2026-10-27",
+     "sections": [{"id": "ccse", "title": "CCSE", "minutes": 45, "maxPoints": 25, "productive": False}],
+     "groups": [{"id": "all", "title": "Итог", "sections": ["ccse"], "passPoints": 15}]},
+]
+
+
+def exam_item(root: Path, iid: str, **fields) -> None:
+    d = root / "exams" / fields.get("exam", "ccse") / "items"
+    d.mkdir(parents=True, exist_ok=True)
+    fm = {"id": iid, "exam": "ccse", "section": "ccse", "type": "choice", "form": 1,
+          "options": ["sí", "no"], "answer": "sí", "source": "cervantes-ccse", "edition": "2026", **fields}
+    lines = ["---"]
+    for k, v in fm.items():
+        if v is None:
+            continue
+        lines.append(f"{k}: {json.dumps(v, ensure_ascii=False) if isinstance(v, (list, dict, bool, int, float)) else lib.quote_scalar(str(v))}")
+    lines += ["---", "¿Pregunta?", "", "> **Объяснение**", "> Пояснение."]
+    (d / f"{iid}.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+class ExamPipelineTests(unittest.TestCase):
+    def setUp(self) -> None:
+        self.tmp = tempfile.TemporaryDirectory()
+        os.environ["LORITO_CONTENT_DIR"] = self.tmp.name
+        self.root = Path(self.tmp.name)
+        write_content(self.root, [card("A1-01", 1)], THEME)
+        (self.root / "exams").mkdir()
+        (self.root / "exams" / "definitions.json").write_text(json.dumps(DEFS, ensure_ascii=False), encoding="utf-8")
+
+    def tearDown(self) -> None:
+        os.environ.pop("LORITO_CONTENT_DIR", None)
+        os.environ.pop("LORITO_BUNDLE_PATH", None)
+        self.tmp.cleanup()
+
+    def test_clean_bank_passes_and_compiles(self):
+        exam_item(self.root, "ccse-1", preview=True)
+        exam_item(self.root, "ccse-2")
+        self.assertEqual(validate.validate(), [])
+        out = self.root / "content.json"
+        os.environ["LORITO_BUNDLE_PATH"] = str(out)
+        self.assertEqual(compile_mod.main(), 0)
+        data = json.loads(out.read_text(encoding="utf-8"))["exams"]
+        self.assertEqual(data["definitions"][0]["id"], "ccse")
+        item = data["items"][0]
+        self.assertEqual((item["id"], item["text"], item["explanation"]), ("ccse-1", "¿Pregunta?", "Пояснение."))
+        self.assertEqual(item["kind"], {"choice": {"options": ["sí", "no"], "answer": "sí"}})
+
+    def test_missing_source_or_edition_fails(self):
+        exam_item(self.root, "ccse-1", preview=True, edition=None)
+        errs = validate.validate()
+        self.assertTrue(any("ccse-1" in e and "edition" in e for e in errs), errs)
+        exam_item(self.root, "ccse-1", preview=True, source=None)
+        self.assertTrue(any("ccse-1" in e and "source" in e for e in validate.validate()))
+
+    def test_invalid_answer_key_fails(self):
+        exam_item(self.root, "ccse-1", preview=True, answer="quizá")
+        self.assertTrue(any("ccse-1" in e and "answer" in e for e in validate.validate()))
+
+    def test_preview_set_required(self):
+        exam_item(self.root, "ccse-1")
+        self.assertTrue(any("preview" in e for e in validate.validate()))
+
+    def test_productive_tasks_need_rubric(self):
+        exam_item(self.root, "ccse-1", preview=True)
+        exam_item(self.root, "dele-w1", exam="dele-a2", section="writing", type="writing", options=None, answer=None,
+                  source=None, edition=None, rubric=[], preview=True)
+        defs = DEFS + [{"id": "dele-a2", "title": "DELE A2", "verifiedOn": "2026-10-27",
+                        "sections": [{"id": "writing", "title": "Письмо", "minutes": 45, "maxPoints": 25, "productive": True}],
+                        "groups": [{"id": "g1", "title": "G1", "sections": ["writing"], "passPoints": 15}]}]
+        (self.root / "exams" / "definitions.json").write_text(json.dumps(defs, ensure_ascii=False), encoding="utf-8")
+        self.assertTrue(any("dele-w1" in e and "rubric" in e for e in validate.validate()))
+
+    def test_import_ccse_writes_items_and_retires_missing(self):
+        src = self.root / "exams" / "ccse" / "source"
+        src.mkdir(parents=True)
+        (src / "2026.md").write_text(
+            "## Tarea 1\n\n1. ¿Pregunta uno?\na) sí\nb) no\nc) quizá\nRespuesta: a\n\n"
+            "2. ¿Pregunta dos?\na) uno\nb) dos\nRespuesta: b\n", encoding="utf-8")
+        old = self.root / "exams" / "ccse" / "items"
+        old.mkdir(parents=True)
+        exam_item(self.root, "ccse-1099", edition="2025")
+        written = exams.import_ccse(src / "2026.md", edition="2026")
+        self.assertEqual(written, ["ccse-1", "ccse-2"])
+        items = {p.stem: lib.parse_exercise_fm(lib.split_frontmatter(p.read_text(encoding="utf-8"))[0]) for p in old.glob("*.md")}
+        self.assertEqual(items["ccse-1"]["answer"], "sí")
+        self.assertEqual(items["ccse-2"]["options"], ["uno", "dos"])
+        self.assertEqual(items["ccse-1"]["edition"], "2026")
+        self.assertTrue(items["ccse-1099"]["retired"])
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

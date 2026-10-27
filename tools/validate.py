@@ -14,6 +14,7 @@ import sys
 from pathlib import Path
 
 import conjugate
+import exams
 import lib
 
 
@@ -219,6 +220,8 @@ def validate() -> list[str]:
     # Conjugation trainer (content/conjugation/), when present.
     errors.extend(conjugate.validate_conjugation(card_level))
 
+    # Exam path (content/exams/), when present.
+    errors.extend(exams.validate_exams(set(card_level)))
     return errors
 
 

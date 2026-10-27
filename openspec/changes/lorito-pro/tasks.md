@@ -42,7 +42,7 @@
 ## 5. Validation
 
 - [x] 5.1 `swift test` green
-- [ ] 5.2 (partial) `xcodebuild`; UI tests with the StoreKit config: locked exam content → paywall; buy → content opens; products failing → unavailable message, free features unaffected; expire → read-only history
+- [x] 5.2 `xcodebuild`; UI tests with the StoreKit config (locked exam form → paywall: ExamPathUITests; products failing → unavailable: LoritoProUITests; buy / expire covered by PurchaseServiceTests — the scheme StoreKit config applies to Xcode Run only): locked exam content → paywall; buy → content opens; products failing → unavailable message, free features unaffected; expire → read-only history
 - [ ] 5.3 (manual, owner) Sandbox on device: purchase, restore on a second device, family sharing, offline launch keeps Pro
 - [x] 5.4 (only Terms + Privacy in Pro; About keeps its OpenMoji / MarkdownUI attribution links) `rg 'https?://' Packages/LoritoKit/Sources/Features` shows only the Terms and Privacy URLs (allow-list), no payment links
 - [x] 5.5 `openspec validate lorito-pro --strict`

@@ -21,6 +21,21 @@ func launchFresh(_ app: XCUIApplication) {
     }
 }
 
+/// Launch with a UI-testing seed (`-lorito-seed-…`); relaunch once if the launch
+/// came up without UI-testing state (seen on the first launch of a run).
+@MainActor
+func launchSeeded(_ app: XCUIApplication, _ seed: String) {
+    app.launchArguments += ["-lorito-ui-testing", seed]
+    app.launch()
+    let marker = app.descendants(matching: .any)["ui-testing-mode"]
+    if !marker.waitForExistence(timeout: 20) {
+        print("[ui] seeded launch came up without UI-testing state — relaunching")
+        app.terminate()
+        app.launch()
+        _ = marker.waitForExistence(timeout: 20)
+    }
+}
+
 /// Dismiss any system alert (notification permission, etc.) that may block the UI.
 @MainActor
 func dismissSystemAlerts(_ app: XCUIApplication) {

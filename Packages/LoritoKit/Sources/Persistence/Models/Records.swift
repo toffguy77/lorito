@@ -36,6 +36,8 @@ public final class SettingsRecord {
     // weekly-recap-and-milestones
     public var lastRecapWeek: String?
     public var celebratedLevels: String?
+    // exam-path-dele-ccse
+    public var ccseDailyNewLimit: Int = 5
 
     public init(
         targetLevelRaw: String? = nil,
@@ -149,5 +151,27 @@ public final class TrapPracticeRecord {
         self.cardID = cardID
         self.date = date
         self.outcomeRaw = outcomeRaw
+    }
+}
+
+/// A mock exam attempt (exam-path-dele-ccse). Answers / ticks / points are
+/// JSON strings (composite values → scalar fields, per the synced-data checklist).
+@Model
+public final class MockAttemptRecord {
+    public var attemptID: UUID = UUID()
+    public var examID: String = ""
+    public var form: Int = 1
+    public var startedAt: Date = Date.distantPast
+    public var sectionIndex: Int = 0
+    public var sectionStartedAt: Date = Date.distantPast
+    public var answersJSON: String = "{}"
+    public var rubricJSON: String = "{}"
+    public var stateRaw: String = "inProgress"
+    public var finishedAt: Date?
+    public var sectionPointsJSON: String = "{}"
+    public var expired: Bool = false
+
+    public init(attemptID: UUID = UUID()) {
+        self.attemptID = attemptID
     }
 }

@@ -215,3 +215,31 @@ written without reflexive pronouns; the pipeline prefixes `me/te/se/nos/os/se`
 for reflexive verbs. `tools/validate.py` checks the registry, ranks, models
 and form counts; `tools/compile.py` writes the tenses and every verb's full
 paradigms into the bundle under `conjugation`.
+
+## Exam path (`content/exams/`)
+
+`definitions.json` — exam definitions: `id`, `title`, `verifiedOn` (date the
+timings, thresholds and fees were checked; shown in the app), `summary`, `fee`,
+`sections` (`id`, `title`, `minutes`, `maxPoints`, `productive`,
+optional `prepMinutes`) and `groups` (`id`, `title`, `sections`, `passPoints`).
+DELE A2 passes with ≥ 30/50 in each group; CCSE with ≥ 15/25.
+
+`<exam>/items/<id>.md` — one item per file, front matter + question text +
+optional `> **Объяснение**` block:
+
+| Field | Meaning |
+|---|---|
+| `id`, `exam`, `section` | identity; `section` from the exam definition |
+| `type` | `choice` (incl. true/false), `listening` (+ `script`, spoken by the device voice), `writing`, `speaking` (+ `prep` seconds) |
+| `form` | mock exam number |
+| `points` | weight inside its section (default 1; sections are scaled to `maxPoints`) |
+| `options`, `answer` | choice / listening; `answer` must be one of `options` |
+| `rubric` | writing / speaking: JSON list of `{text, points}` (self-assessment) |
+| `cards` | grammar cards the item practises (weakest cards on results) |
+| `preview` | `true` = free without Lorito Pro (content-based preview) |
+| `source`, `edition` | required for CCSE (`cervantes-ccse`, manual edition) |
+| `retired` | `true` = removed from the current edition; kept, never scheduled |
+
+CCSE items come from `tools/import_ccse.py` (see `content/exams/ccse/SOURCE.md`)
+and are also spaced-repetition items `ccse:<item-id>` capped by the
+`ccseDailyNewLimit` setting inside the shared daily budget.

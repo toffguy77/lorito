@@ -155,6 +155,12 @@ public struct SettingsView: View {
                             .foregroundStyle(LoritoColor.textPrimary)
                     }
                 }
+                Stepper(value: $conjugation.ccseDailyNewLimit, in: 0...20) {
+                    Text("Новых вопросов CCSE в день: \(conjugation.ccseDailyNewLimit)")
+                        .font(LoritoFont.body)
+                        .foregroundStyle(LoritoColor.textPrimary)
+                }
+                .accessibilityIdentifier("ccseLimit")
                 Text("Глаголы по частоте, по временам из изученных карточек. Учитываются в общем лимите новых на день.")
                     .font(LoritoFont.caption)
                     .foregroundStyle(LoritoColor.textSecondary)

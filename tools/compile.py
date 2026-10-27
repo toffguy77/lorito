@@ -16,6 +16,7 @@ import sys
 from pathlib import Path
 
 import conjugate
+import exams
 import lib
 import validate
 
@@ -72,6 +73,9 @@ def main() -> int:
     conjugation = conjugate.bundle()
     if conjugation is not None:
         catalog["conjugation"] = conjugation
+    exam_content = exams.bundle()
+    if exam_content is not None:
+        catalog["exams"] = exam_content
     out = bundle_path()
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(

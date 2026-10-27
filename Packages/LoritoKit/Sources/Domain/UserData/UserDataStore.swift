@@ -22,6 +22,11 @@ public protocol UserDataStore: AnyObject {
     // Traps-session outcomes (personal-traps), outside SRS.
     func appendTrapPractice(_ event: TrapPracticeEvent) throws
     func allTrapPractice() throws -> [TrapPracticeEvent]
+
+    // Mock exams (exam-path-dele-ccse).
+    func upsertMockAttempt(_ attempt: MockAttempt) throws
+    func allMockAttempts() throws -> [MockAttempt]
+    func deleteMockAttempt(_ id: UUID) throws
 }
 
 public extension UserDataStore {
@@ -29,4 +34,7 @@ public extension UserDataStore {
     func allAttempts() throws -> [ExerciseAttempt] { [] }
     func appendTrapPractice(_ event: TrapPracticeEvent) throws {}
     func allTrapPractice() throws -> [TrapPracticeEvent] { [] }
+    func upsertMockAttempt(_ attempt: MockAttempt) throws {}
+    func allMockAttempts() throws -> [MockAttempt] { [] }
+    func deleteMockAttempt(_ id: UUID) throws {}
 }

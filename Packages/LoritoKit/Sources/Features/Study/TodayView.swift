@@ -13,6 +13,9 @@ public struct TodayView: View {
     @State private var drill: ConjugationDrillModel?
     @State private var shareImage: Image?
     @State private var recapImage: Image?
+    @State private var exams: ExamsModel?
+    @State private var ccseDrill: CCSEDrillModel?
+    @Environment(PurchaseService.self) private var purchases: PurchaseService?
     private let catalog: ContentCatalog
     private let store: UserDataStore
     private let navigation: AppNavigation
@@ -62,6 +65,15 @@ public struct TodayView: View {
                 trapCard = catalog.card(id: id)
             }) { drill = nil }
         }
+        .focusModeCover(item: $ccseDrill, onDismiss: { model.refresh() }) { d in
+            CCSEDrillView(model: d) { ccseDrill = nil }
+        }
+        .sheet(item: $exams, onDismiss: { model.refresh() }) { exams in
+            NavigationStack {
+                ExamsView(model: exams)
+                    .toolbar { ToolbarItem(placement: .confirmationAction) { Button("Готово") { self.exams = nil } } }
+            }
+        }
         .sheet(item: $goalModel, onDismiss: { model.refresh() }) { goals in
             NavigationStack {
                 GoalSettingsView(model: goals)
@@ -99,6 +111,7 @@ public struct TodayView: View {
             recapCard
             streakBannerView
             goalCard
+            examEntry
             promptCard
             conjugationEntry
             trapsEntry
@@ -125,6 +138,7 @@ public struct TodayView: View {
                     recapCard
                     streakBannerView
                     goalCard
+                    examEntry
                     promptCard
                     conjugationEntry
                     trapsEntry
@@ -249,6 +263,42 @@ public struct TodayView: View {
             .accessibilityElement(children: .contain)
             .accessibilityIdentifier("today.recap")
             .onAppear { if !r.isEmpty { recapImage = RecapShareCard.render(ShareCardContent.recap(r)) } }
+        }
+    }
+
+    /// Exam path entry when the goal has an exam date (exam-path-dele-ccse).
+    @ViewBuilder
+    private var examEntry: some View {
+        if model.ccseCount > 0 {
+            Button { ccseDrill = model.makeCCSEDrill() } label: {
+                HStack(spacing: LoritoSpacing.sm) {
+                    Image(systemName: "building.columns").foregroundStyle(LoritoColor.accent).accessibilityHidden(true)
+                    Text("Вопросы CCSE · \(model.ccseCount)").font(LoritoFont.bodyStrong).foregroundStyle(LoritoColor.textPrimary)
+                    Spacer()
+                }
+                .padding(LoritoSpacing.md)
+                .frame(minHeight: LoritoLayout.minTouchTarget)
+                .background(LoritoColor.surfaceRaised, in: RoundedRectangle(cornerRadius: LoritoRadius.md, style: .continuous))
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+            .accessibilityIdentifier("today.ccse")
+        }
+        if model.hasExamGoal, catalog.exams != nil {
+            Button { exams = ExamsModel(store: store, catalog: catalog, purchases: purchases) } label: {
+                HStack(spacing: LoritoSpacing.sm) {
+                    Image(systemName: "graduationcap").foregroundStyle(LoritoColor.accent).accessibilityHidden(true)
+                    Text("Экзамены DELE и CCSE").font(LoritoFont.bodyStrong).foregroundStyle(LoritoColor.textPrimary)
+                    Spacer()
+                    Image(systemName: "chevron.right").foregroundStyle(LoritoColor.textSecondary).accessibilityHidden(true)
+                }
+                .padding(LoritoSpacing.md)
+                .frame(minHeight: LoritoLayout.minTouchTarget)
+                .background(LoritoColor.surfaceRaised, in: RoundedRectangle(cornerRadius: LoritoRadius.md, style: .continuous))
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+            .accessibilityIdentifier("today.exams")
         }
     }
 

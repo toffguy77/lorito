@@ -61,6 +61,7 @@ public struct AdaptiveRootView: View {
             }
         }
         .tint(LoritoColor.accent)
+        .environment(purchases)
         .focusModeCover(item: sessionBinding, onDismiss: {
             refreshPath()
             publishWidgets()

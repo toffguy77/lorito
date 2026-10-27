@@ -52,6 +52,7 @@ public final class SwiftDataUserDataStore: UserDataStore {
         settings.examDone = r.examDone
         settings.dailyConjugationCount = r.dailyConjugationCount
         settings.lastRecapWeek = r.lastRecapWeek
+        settings.ccseDailyNewLimit = r.ccseDailyNewLimit
         // Union with this device's mirror (an incoming sync may have dropped levels).
         settings.celebratedLevelsRaw = Self.nonEmpty(CelebratedLevels.merge(r.celebratedLevels, mirroredCelebrated))
         return settings
@@ -84,6 +85,7 @@ public final class SwiftDataUserDataStore: UserDataStore {
         record.examDone = settings.examDone
         record.dailyConjugationCount = settings.dailyConjugationCount
         record.lastRecapWeek = settings.lastRecapWeek
+        record.ccseDailyNewLimit = settings.ccseDailyNewLimit
         // Celebrated levels only grow: union of stored, incoming and mirrored values.
         let celebrated = CelebratedLevels.merge(CelebratedLevels.merge(record.celebratedLevels, settings.celebratedLevelsRaw),
                                                 mirroredCelebrated)
@@ -173,6 +175,55 @@ public final class SwiftDataUserDataStore: UserDataStore {
             TrapPracticeEvent(id: $0.eventID, cardID: $0.cardID, date: $0.date,
                               outcome: TrapPracticeEvent.Outcome(rawValue: $0.outcomeRaw) ?? .stillConfused)
         }
+    }
+
+    // MARK: Mock attempts (exam-path-dele-ccse)
+
+    public func upsertMockAttempt(_ a: MockAttempt) throws {
+        let id = a.id
+        var descriptor = FetchDescriptor<MockAttemptRecord>(predicate: #Predicate { $0.attemptID == id })
+        descriptor.fetchLimit = 1
+        let r = try context.fetch(descriptor).first ?? {
+            let new = MockAttemptRecord(attemptID: a.id)
+            context.insert(new)
+            return new
+        }()
+        r.examID = a.examID
+        r.form = a.form
+        r.startedAt = a.startedAt
+        r.sectionIndex = a.sectionIndex
+        r.sectionStartedAt = a.sectionStartedAt
+        r.answersJSON = Self.json(a.answers)
+        r.rubricJSON = Self.json(a.rubricTicks)
+        r.stateRaw = a.state.rawValue
+        r.finishedAt = a.finishedAt
+        r.sectionPointsJSON = Self.json(a.sectionPoints)
+        r.expired = a.expired
+        try context.save()
+    }
+
+    public func allMockAttempts() throws -> [MockAttempt] {
+        try context.fetch(FetchDescriptor<MockAttemptRecord>()).map {
+            MockAttempt(id: $0.attemptID, examID: $0.examID, form: $0.form, startedAt: $0.startedAt,
+                        sectionIndex: $0.sectionIndex, sectionStartedAt: $0.sectionStartedAt,
+                        answers: Self.decode($0.answersJSON) ?? [:], rubricTicks: Self.decode($0.rubricJSON) ?? [:],
+                        state: MockAttempt.State(rawValue: $0.stateRaw) ?? .abandoned, finishedAt: $0.finishedAt,
+                        sectionPoints: Self.decode($0.sectionPointsJSON) ?? [:], expired: $0.expired)
+        }
+    }
+
+    public func deleteMockAttempt(_ id: UUID) throws {
+        let records = try context.fetch(FetchDescriptor<MockAttemptRecord>(predicate: #Predicate { $0.attemptID == id }))
+        records.forEach(context.delete)
+        try context.save()
+    }
+
+    private static func json<T: Encodable>(_ value: T) -> String {
+        (try? String(data: JSONEncoder().encode(value), encoding: .utf8)) ?? "{}"
+    }
+
+    private static func decode<T: Decodable>(_ s: String) -> T? {
+        try? JSONDecoder().decode(T.self, from: Data(s.utf8))
     }
 
     // MARK: Helpers

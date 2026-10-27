@@ -28,6 +28,12 @@ public final class ConjugationSettingsModel {
         }
     }
 
+    /// «Новых вопросов CCSE в день» (exam-path-dele-ccse): 0 turns CCSE introductions off.
+    public var ccseDailyNewLimit: Int {
+        get { settings.ccseDailyNewLimit }
+        set { update { $0.ccseDailyNewLimit = min(max(newValue, 0), 20) } }
+    }
+
     private func update(_ change: (inout UserSettings) -> Void) {
         var s = (try? store.loadSettings()) ?? .default
         change(&s)

@@ -53,6 +53,11 @@ public enum AnalyticsEvent: Codable, Sendable, Hashable {
     case purchaseCompleted(productID: String)
     case purchaseFailed(productID: String, reason: PurchaseFailure)
     case restore(outcome: RestoreOutcome)
+    // exam-path-dele-ccse
+    case mockStarted(exam: String, preview: Bool)
+    case mockCompleted(exam: String, passed: Bool)
+    case mockExpired(exam: String)
+    case mockAbandoned(exam: String)
 
     public var name: String {
         switch self {
@@ -74,6 +79,10 @@ public enum AnalyticsEvent: Codable, Sendable, Hashable {
         case .purchaseCompleted: return "purchase_completed"
         case .purchaseFailed: return "purchase_failed"
         case .restore: return "restore"
+        case .mockStarted: return "mock_started"
+        case .mockCompleted: return "mock_completed"
+        case .mockExpired: return "mock_expired"
+        case .mockAbandoned: return "mock_abandoned"
         }
     }
 
@@ -89,6 +98,9 @@ public enum AnalyticsEvent: Codable, Sendable, Hashable {
         case .purchaseStarted(let id), .purchaseCompleted(let id): return ["product": id]
         case .purchaseFailed(let id, let reason): return ["product": id, "reason": reason.rawValue]
         case .restore(let outcome): return ["outcome": outcome.rawValue]
+        case .mockStarted(let exam, let preview): return ["exam": exam, "preview": "\(preview)"]
+        case .mockCompleted(let exam, let passed): return ["exam": exam, "band": passed ? "pass" : "fail"]
+        case .mockExpired(let exam), .mockAbandoned(let exam): return ["exam": exam]
         case .sessionStarted(let due, let new): return ["due": "\(due)", "new": "\(new)"]
         case .sessionCompleted(let items, let pct): return ["items": "\(items)", "firstTryPercent": "\(pct)"]
         case .itemGraded(let kind, let grade, let revealed):
