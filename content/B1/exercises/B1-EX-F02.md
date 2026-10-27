@@ -6,6 +6,7 @@ card: B1-01
 type: free-response
 answer: "tenga, tengas, tenga, tengamos, tengáis, tengan"
 accept: ["tenga tengas tenga tengamos tengáis tengan", "tenga, tengas, tenga, tengamos, tengais, tengan"]
+only: ["es"]
 ---
 Проспрягайте глагол **tener** в presente de subjuntivo (все шесть лиц).
 

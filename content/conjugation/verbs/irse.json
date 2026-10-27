@@ -117,5 +117,8 @@
       "fueren"
     ]
   },
-  "reflexive": true
+  "reflexive": true,
+  "vos": {
+    "presente": "vas"
+  }
 }
