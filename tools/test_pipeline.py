@@ -349,5 +349,173 @@ class RecallTests(unittest.TestCase):
         self.assertNotIn("нет", ctx)
 
 
+
+
+# --- conjugation-trainer -----------------------------------------------------
+
+import conjugate  # noqa: E402
+
+AUX = {
+    "preterito-perfecto": ["he", "has", "ha", "hemos", "habéis", "han"],
+    "pluscuamperfecto": ["había", "habías", "había", "habíamos", "habíais", "habían"],
+    "futuro-perfecto": ["habré", "habrás", "habrá", "habremos", "habréis", "habrán"],
+    "condicional-perfecto": ["habría", "habrías", "habría", "habríamos", "habríais", "habrían"],
+    "perfecto-subjuntivo": ["haya", "hayas", "haya", "hayamos", "hayáis", "hayan"],
+    "pluscuamperfecto-subjuntivo": ["hubiera", "hubieras", "hubiera", "hubiéramos", "hubierais", "hubieran"],
+}
+
+HAND = {
+    "hablar": {
+        "presente": "hablo hablas habla hablamos habláis hablan",
+        "preterito-indefinido": "hablé hablaste habló hablamos hablasteis hablaron",
+        "preterito-imperfecto": "hablaba hablabas hablaba hablábamos hablabais hablaban",
+        "futuro-simple": "hablaré hablarás hablará hablaremos hablaréis hablarán",
+        "condicional-simple": "hablaría hablarías hablaría hablaríamos hablaríais hablarían",
+        "presente-subjuntivo": "hable hables hable hablemos habléis hablen",
+        "imperfecto-subjuntivo": "hablara hablaras hablara habláramos hablarais hablaran",
+        "futuro-subjuntivo": "hablare hablares hablare habláremos hablareis hablaren",
+        "participle": "hablado",
+    },
+    "comer": {
+        "presente": "como comes come comemos coméis comen",
+        "preterito-indefinido": "comí comiste comió comimos comisteis comieron",
+        "preterito-imperfecto": "comía comías comía comíamos comíais comían",
+        "futuro-simple": "comeré comerás comerá comeremos comeréis comerán",
+        "condicional-simple": "comería comerías comería comeríamos comeríais comerían",
+        "presente-subjuntivo": "coma comas coma comamos comáis coman",
+        "imperfecto-subjuntivo": "comiera comieras comiera comiéramos comierais comieran",
+        "futuro-subjuntivo": "comiere comieres comiere comiéremos comiereis comieren",
+        "participle": "comido",
+    },
+    "vivir": {
+        "presente": "vivo vives vive vivimos vivís viven",
+        "preterito-indefinido": "viví viviste vivió vivimos vivisteis vivieron",
+        "preterito-imperfecto": "vivía vivías vivía vivíamos vivíais vivían",
+        "futuro-simple": "viviré vivirás vivirá viviremos viviréis vivirán",
+        "condicional-simple": "viviría vivirías viviría viviríamos viviríais vivirían",
+        "presente-subjuntivo": "viva vivas viva vivamos viváis vivan",
+        "imperfecto-subjuntivo": "viviera vivieras viviera viviéramos vivierais vivieran",
+        "futuro-subjuntivo": "viviere vivieres viviere viviéremos viviereis vivieren",
+        "participle": "vivido",
+    },
+}
+
+TENSE_IDS = list(HAND["hablar"].keys())[:-1] + list(AUX.keys())
+
+
+def tense(tid: str, card_id: str = "A1-01", level: str = "A1", order: int = 1) -> dict:
+    return {"id": tid, "es": tid, "ru": tid, "mood": "indicativo", "level": level, "card": card_id, "order": order}
+
+
+def write_conjugation(root: Path, tenses: list[dict], verbs: dict[str, dict]) -> None:
+    d = root / "conjugation"
+    (d / "verbs").mkdir(parents=True, exist_ok=True)
+    (d / "tenses.json").write_text(json.dumps(tenses, ensure_ascii=False), encoding="utf-8")
+    for name, verb in verbs.items():
+        (d / "verbs" / f"{name}.json").write_text(json.dumps(verb, ensure_ascii=False), encoding="utf-8")
+
+
+class ConjugationGenerationTests(unittest.TestCase):
+    def test_regular_paradigms_match_hand_checked_tables(self):
+        for inf, model in [("hablar", "ar"), ("comer", "er"), ("vivir", "ir")]:
+            for tid in TENSE_IDS:
+                got = conjugate.regular_paradigm(inf, model, tid)
+                if tid in AUX:
+                    want = [f"{a} {HAND[inf]['participle']}" for a in AUX[tid]]
+                else:
+                    want = HAND[inf][tid].split()
+                self.assertEqual(got, want, f"{inf} {tid}")
+
+    def test_override_replaces_generated_tense(self):
+        buscar = {"infinitive": "buscar", "rank": 1, "ru": "искать", "model": "ar",
+                  "forms": {"preterito-indefinido": ["busqué", "buscaste", "buscó", "buscamos", "buscasteis", "buscaron"]}}
+        p = conjugate.paradigms(buscar, TENSE_IDS)
+        self.assertEqual(p["preterito-indefinido"][0], "busqué")
+        self.assertEqual(p["presente"][0], "busco")
+
+    def test_reflexive_forms_carry_the_pronoun(self):
+        verb = {"infinitive": "levantarse", "rank": 1, "ru": "вставать", "model": "ar", "reflexive": True}
+        p = conjugate.paradigms(verb, TENSE_IDS)
+        self.assertEqual(p["presente"], ["me levanto", "te levantas", "se levanta", "nos levantamos",
+                                         "os levantáis", "se levantan"])
+        self.assertEqual(p["preterito-perfecto"][0], "me he levantado")
+
+
+class ConjugationValidationTests(unittest.TestCase):
+    def setUp(self) -> None:
+        self.tmp = tempfile.TemporaryDirectory()
+        os.environ["LORITO_CONTENT_DIR"] = self.tmp.name
+        self.root = Path(self.tmp.name)
+        write_content(self.root, [card("A1-01", 1), card("A1-02", 2)], THEME)
+        self.tenses = [tense("presente")]
+        self.hablar = {"infinitive": "hablar", "rank": 1, "ru": "говорить", "model": "ar"}
+
+    def tearDown(self) -> None:
+        os.environ.pop("LORITO_CONTENT_DIR", None)
+        os.environ.pop("LORITO_BUNDLE_PATH", None)
+        self.tmp.cleanup()
+
+    def errors(self, tenses, verbs) -> list[str]:
+        write_conjugation(self.root, tenses, verbs)
+        return validate.validate()
+
+    def test_clean_conjugation_passes(self):
+        self.assertEqual(self.errors(self.tenses, {"hablar": self.hablar}), [])
+
+    def test_no_conjugation_dir_is_fine(self):
+        self.assertEqual(validate.validate(), [])
+
+    def test_duplicate_tense_id(self):
+        errs = self.errors([tense("presente"), tense("presente", order=2)], {"hablar": self.hablar})
+        self.assertTrue(any("duplicate tense" in e for e in errs), errs)
+
+    def test_missing_or_wrong_level_card(self):
+        errs = self.errors([tense("presente", card_id="A1-99")], {"hablar": self.hablar})
+        self.assertTrue(any("presente" in e and "A1-99" in e for e in errs), errs)
+        errs = self.errors([tense("presente", level="B1")], {"hablar": self.hablar})
+        self.assertTrue(any("presente" in e and "level" in e for e in errs), errs)
+
+    def test_file_name_must_match_infinitive(self):
+        errs = self.errors(self.tenses, {"hablarr": self.hablar})
+        self.assertTrue(any("hablarr" in e and "infinitive" in e for e in errs), errs)
+
+    def test_duplicate_or_bad_rank(self):
+        comer = {"infinitive": "comer", "rank": 1, "ru": "есть", "model": "er"}
+        errs = self.errors(self.tenses, {"hablar": self.hablar, "comer": comer})
+        self.assertTrue(any("duplicate rank" in e for e in errs), errs)
+        errs = self.errors(self.tenses, {"hablar": {**self.hablar, "rank": 0}})
+        self.assertTrue(any("rank" in e for e in errs), errs)
+
+    def test_unknown_model(self):
+        errs = self.errors(self.tenses, {"hablar": {**self.hablar, "model": "xr"}})
+        self.assertTrue(any("model" in e for e in errs), errs)
+
+    def test_unknown_tense_in_forms(self):
+        errs = self.errors(self.tenses, {"hablar": {**self.hablar, "forms": {"aoristo": ["a"] * 6}}})
+        self.assertTrue(any("aoristo" in e for e in errs), errs)
+
+    def test_wrong_form_count(self):
+        errs = self.errors(self.tenses, {"hablar": {**self.hablar, "forms": {"presente": ["a"] * 5}}})
+        self.assertTrue(any("hablar" in e and "presente" in e for e in errs), errs)
+
+    def test_incomplete_irregular(self):
+        ser = {"infinitive": "ser", "rank": 2, "ru": "быть", "model": "irregular", "forms": {}}
+        errs = self.errors(self.tenses, {"hablar": self.hablar, "ser": ser})
+        self.assertTrue(any("ser" in e and "presente" in e for e in errs), errs)
+
+    def test_compile_bundles_paradigms_and_is_blocked_when_invalid(self):
+        write_conjugation(self.root, self.tenses, {"hablar": self.hablar})
+        out = self.root / "content.json"
+        os.environ["LORITO_BUNDLE_PATH"] = str(out)
+        self.assertEqual(compile_mod.main(), 0)
+        data = json.loads(out.read_text(encoding="utf-8"))
+        self.assertEqual(data["conjugation"]["tenses"][0]["id"], "presente")
+        self.assertEqual(data["conjugation"]["verbs"][0]["paradigms"]["presente"][0], "hablo")
+        out.unlink()
+        write_conjugation(self.root, self.tenses, {"hablar": {**self.hablar, "model": "xr"}})
+        self.assertEqual(compile_mod.main(), 1)
+        self.assertFalse(out.exists())
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

@@ -1,0 +1,16 @@
+[
+  {"id": "presente", "es": "Presente", "ru": "Настоящее время", "mood": "indicativo", "level": "A1", "card": "A1-19", "order": 1},
+  {"id": "preterito-perfecto", "es": "Pretérito perfecto", "ru": "Прошедшее совершённое (he hablado)", "mood": "indicativo", "level": "A2", "card": "A2-01", "order": 2},
+  {"id": "preterito-indefinido", "es": "Pretérito indefinido", "ru": "Простое прошедшее (hablé)", "mood": "indicativo", "level": "A2", "card": "A2-02", "order": 3},
+  {"id": "preterito-imperfecto", "es": "Pretérito imperfecto", "ru": "Прошедшее незавершённое (hablaba)", "mood": "indicativo", "level": "A2", "card": "A2-04", "order": 4},
+  {"id": "futuro-simple", "es": "Futuro simple", "ru": "Будущее время (hablaré)", "mood": "indicativo", "level": "A2", "card": "A2-07", "order": 5},
+  {"id": "condicional-simple", "es": "Condicional simple", "ru": "Условное наклонение (hablaría)", "mood": "condicional", "level": "A2", "card": "A2-09", "order": 6},
+  {"id": "presente-subjuntivo", "es": "Presente de subjuntivo", "ru": "Сослагательное, настоящее (hable)", "mood": "subjuntivo", "level": "B1", "card": "B1-01", "order": 7},
+  {"id": "imperfecto-subjuntivo", "es": "Pretérito imperfecto de subjuntivo", "ru": "Сослагательное, прошедшее (hablara)", "mood": "subjuntivo", "level": "B1", "card": "B1-10", "order": 8},
+  {"id": "pluscuamperfecto", "es": "Pretérito pluscuamperfecto", "ru": "Предпрошедшее (había hablado)", "mood": "indicativo", "level": "B1", "card": "B1-11", "order": 9},
+  {"id": "futuro-perfecto", "es": "Futuro perfecto", "ru": "Будущее совершённое (habré hablado)", "mood": "indicativo", "level": "B1", "card": "B1-12", "order": 10},
+  {"id": "condicional-perfecto", "es": "Condicional perfecto", "ru": "Условное совершённое (habría hablado)", "mood": "condicional", "level": "B1", "card": "B1-12", "order": 11},
+  {"id": "perfecto-subjuntivo", "es": "Pretérito perfecto de subjuntivo", "ru": "Сослагательное совершённое (haya hablado)", "mood": "subjuntivo", "level": "B2", "card": "B2-01", "order": 12},
+  {"id": "pluscuamperfecto-subjuntivo", "es": "Pretérito pluscuamperfecto de subjuntivo", "ru": "Сослагательное предпрошедшее (hubiera hablado)", "mood": "subjuntivo", "level": "B2", "card": "B2-02", "order": 13},
+  {"id": "futuro-subjuntivo", "es": "Futuro de subjuntivo", "ru": "Сослагательное будущее (hablare)", "mood": "subjuntivo", "level": "C1", "card": "C1-03", "order": 14}
+]

@@ -15,6 +15,7 @@ import shutil
 import sys
 from pathlib import Path
 
+import conjugate
 import lib
 import validate
 
@@ -68,6 +69,9 @@ def main() -> int:
         exercises_out.append(entry)
 
     catalog = {"themes": themes, "cards": cards_out, "exercises": exercises_out}
+    conjugation = conjugate.bundle()
+    if conjugation is not None:
+        catalog["conjugation"] = conjugation
     out = bundle_path()
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(

@@ -13,6 +13,7 @@ import json
 import sys
 from pathlib import Path
 
+import conjugate
 import lib
 
 
@@ -187,6 +188,9 @@ def validate() -> list[str]:
     # Practice exercises (content/<LEVEL>/exercises/<id>.md).
     card_level = {c.id: c.level for _, c in cards}
     errors.extend(validate_exercises(themes, card_level))
+
+    # Conjugation trainer (content/conjugation/), when present.
+    errors.extend(conjugate.validate_conjugation(card_level))
 
     return errors
 

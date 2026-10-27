@@ -163,3 +163,46 @@ See `tools/`:
 - `validate.py` — enforce every rule above (non-zero exit on failure)
 - `compile.py` — validate, then compile to the app bundle (`content.json`)
 - `test_pipeline.py` — pipeline unit tests
+
+## Conjugation trainer (`content/conjugation/`)
+
+Licensed CC BY-SA 4.0 (see `content/conjugation/LICENSE`; verb ranks derive
+from FrequencyWords).
+
+### `tenses.json` — registry of drillable tenses
+
+A JSON array; each entry:
+
+| Field | Meaning |
+|---|---|
+| `id` | unique kebab-case id (`presente`, `preterito-indefinido`, …); must be a tense the pipeline can generate |
+| `es`, `ru` | Spanish and Russian names |
+| `mood` | `indicativo`, `subjuntivo` or `condicional` |
+| `level` | CEFR level of the teaching card |
+| `card` | id of the existing card of that level that teaches the tense (unlocks it in the app) |
+| `order` | display / unlock order |
+
+### `verbs/<infinitive>.json` — one file per verb
+
+| Field | Meaning |
+|---|---|
+| `infinitive` | must equal the file name (`levantarse` for reflexive verbs) |
+| `rank` | unique positive integer, frequency order (lower = more frequent) |
+| `ru` | Russian translation |
+| `model` | `ar`, `er`, `ir` (regular paradigms generated) or `irregular` |
+| `reflexive` | optional `true`: forms are drilled with the pronoun (`me levanto`) |
+| `forms` | optional `{<tense-id>: [six forms]}` |
+
+**Person order** in every form list: yo, tú, él/ella/usted, nosotros,
+vosotros, ellos/ustedes.
+
+**Generated vs overriding forms.** For `ar`/`er`/`ir` verbs
+`tools/conjugate.py` generates all registered tenses (compound tenses as
+haber + regular participle); a tense listed in `forms` replaces the generated
+one entirely — use it for stem changes (`pensar`), orthographic changes
+(`buscar → busqué`), irregular stems and participles (`volver → he vuelto`).
+An `irregular` verb must list `forms` for every registered tense. Forms are
+written without reflexive pronouns; the pipeline prefixes `me/te/se/nos/os/se`
+for reflexive verbs. `tools/validate.py` checks the registry, ranks, models
+and form counts; `tools/compile.py` writes the tenses and every verb's full
+paradigms into the bundle under `conjugation`.

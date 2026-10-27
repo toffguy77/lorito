@@ -1,0 +1,10 @@
+content/conjugation/ — Lorito conjugation data
+
+Licensed under the Creative Commons Attribution-ShareAlike 4.0 International
+License (CC BY-SA 4.0): https://creativecommons.org/licenses/by-sa/4.0/
+
+The `rank` of each verb is derived from FrequencyWords by Hermit Dave
+(https://github.com/hermitdave/FrequencyWords, content/2018/es/es_50k.txt),
+whose word lists are licensed CC BY-SA 4.0. Only the rank number of each
+infinitive's word form is used; this directory is treated as an adaptation
+and is shared under the same license.
