@@ -1,0 +1,43 @@
+{
+  "id": "si-tipo-3",
+  "title_ru": "Условие тип 3: si + hubiera + participio",
+  "cards": [
+    "B2-06"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "si"
+      ]
+    },
+    {
+      "surface": [
+        "hubiera",
+        "hubieras",
+        "hubiéramos",
+        "hubierais",
+        "hubieran",
+        "hubiese",
+        "hubieses",
+        "hubiesen"
+      ],
+      "gap": 1
+    },
+    {
+      "set": "participio"
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Si hubiera sabido, habría venido.",
+      "Si hubieras estudiado, habrías aprobado.",
+      "Si no hubiéramos salido, no nos habríamos perdido."
+    ],
+    "negative": [
+      "Si hay tiempo, vamos.",
+      "Hubiera querido ir.",
+      "Si había gente, no entraba."
+    ]
+  }
+}

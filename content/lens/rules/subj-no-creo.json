@@ -1,0 +1,42 @@
+{
+  "id": "subj-no-creo",
+  "title_ru": "Subjuntivo после «no creo que»",
+  "cards": [
+    "B1-04"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "no"
+      ]
+    },
+    {
+      "lemma": [
+        "creer",
+        "pensar"
+      ]
+    },
+    {
+      "surface": [
+        "que"
+      ]
+    },
+    {
+      "set": "presente-subjuntivo",
+      "gap": 3
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "No creo que sea verdad.",
+      "No pienso que tengas razón.",
+      "No creo que venga hoy."
+    ],
+    "negative": [
+      "Creo que es verdad.",
+      "No creo nada.",
+      "Pienso que tienes razón."
+    ]
+  }
+}

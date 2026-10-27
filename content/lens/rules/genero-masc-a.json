@@ -1,0 +1,47 @@
+{
+  "id": "genero-masc-a",
+  "title_ru": "Мужской род на -a (el problema)",
+  "cards": [
+    "A1-07"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "el",
+        "un",
+        "este",
+        "ese",
+        "aquel"
+      ]
+    },
+    {
+      "surface": [
+        "problema",
+        "día",
+        "mapa",
+        "idioma",
+        "sistema",
+        "tema",
+        "programa",
+        "clima",
+        "planeta",
+        "sofá",
+        "drama"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Tengo un problema.",
+      "El día es largo.",
+      "Este mapa es viejo.",
+      "El idioma español es bonito."
+    ],
+    "negative": [
+      "Tengo problemas.",
+      "La casa es grande.",
+      "Hoy es lunes."
+    ]
+  }
+}

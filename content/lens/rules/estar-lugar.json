@@ -1,0 +1,36 @@
+{
+  "id": "estar-lugar",
+  "title_ru": "Estar для местонахождения",
+  "cards": [
+    "A1-16"
+  ],
+  "pattern": [
+    {
+      "lemma": [
+        "estar"
+      ]
+    },
+    {
+      "surface": [
+        "en",
+        "aquí",
+        "allí",
+        "cerca",
+        "lejos"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "El libro está en la mesa.",
+      "Estamos en Madrid.",
+      "¿Dónde estás? Estoy aquí.",
+      "La farmacia está cerca."
+    ],
+    "negative": [
+      "La fiesta es en mi casa.",
+      "Estoy cansado."
+    ]
+  }
+}

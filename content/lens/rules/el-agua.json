@@ -1,0 +1,39 @@
+{
+  "id": "el-agua",
+  "title_ru": "El + существительное ж. р. на ударное a- (el agua)",
+  "cards": [
+    "A1-09"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "el",
+        "un"
+      ]
+    },
+    {
+      "surface": [
+        "agua",
+        "águila",
+        "hambre",
+        "alma",
+        "aula",
+        "arma",
+        "hacha",
+        "área"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Bebo el agua fría.",
+      "Tengo un hambre terrible.",
+      "El aula está vacía."
+    ],
+    "negative": [
+      "Las aguas están frías.",
+      "La casa es grande."
+    ]
+  }
+}

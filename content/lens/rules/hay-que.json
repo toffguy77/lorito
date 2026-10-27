@@ -1,0 +1,34 @@
+{
+  "id": "hay-que",
+  "title_ru": "Hay que + infinitivo",
+  "cards": [
+    "A2-24"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "hay"
+      ]
+    },
+    {
+      "surface": [
+        "que"
+      ]
+    },
+    {
+      "set": "infinitivo"
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Hay que estudiar.",
+      "Hay que pagar en efectivo.",
+      "Para aprobar hay que trabajar."
+    ],
+    "negative": [
+      "Hay un libro.",
+      "Hay mucha gente que viene."
+    ]
+  }
+}

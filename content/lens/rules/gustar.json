@@ -1,0 +1,44 @@
+{
+  "id": "gustar",
+  "title_ru": "Глаголы типа gustar (me gusta…)",
+  "cards": [
+    "A1-22",
+    "A2-26"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "me",
+        "te",
+        "le",
+        "nos",
+        "os",
+        "les"
+      ]
+    },
+    {
+      "lemma": [
+        "gustar",
+        "encantar",
+        "interesar",
+        "doler",
+        "molestar",
+        "apetecer"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Me gusta el café.",
+      "¿Te gustan los perros?",
+      "Nos encanta viajar.",
+      "Me duele la cabeza."
+    ],
+    "negative": [
+      "Me llamo Ana.",
+      "Te quiero mucho.",
+      "El gusto es mío."
+    ]
+  }
+}

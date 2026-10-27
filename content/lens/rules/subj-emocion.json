@@ -1,0 +1,42 @@
+{
+  "id": "subj-emocion",
+  "title_ru": "Subjuntivo после чувств (me alegro de que…)",
+  "cards": [
+    "B1-03"
+  ],
+  "pattern": [
+    {
+      "lemma": [
+        "alegrar",
+        "gustar",
+        "encantar",
+        "molestar",
+        "preocupar"
+      ]
+    },
+    {
+      "surface": [
+        "que"
+      ],
+      "gap": 1
+    },
+    {
+      "set": "presente-subjuntivo",
+      "gap": 3
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Me alegro de que estés aquí.",
+      "Me molesta que llegues tarde.",
+      "Nos encanta que vengas.",
+      "Me preocupa que no duerma."
+    ],
+    "negative": [
+      "Me alegro mucho.",
+      "Me gusta el café.",
+      "Me gusta que.."
+    ]
+  }
+}

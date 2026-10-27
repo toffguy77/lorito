@@ -1,0 +1,41 @@
+{
+  "id": "subj-deseo",
+  "title_ru": "Subjuntivo после желания (quiero que…)",
+  "cards": [
+    "B1-02"
+  ],
+  "pattern": [
+    {
+      "lemma": [
+        "querer",
+        "esperar",
+        "desear",
+        "preferir",
+        "necesitar"
+      ]
+    },
+    {
+      "surface": [
+        "que"
+      ]
+    },
+    {
+      "set": "presente-subjuntivo",
+      "gap": 3
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Espero que vengas mañana.",
+      "Quiero que me llames esta noche.",
+      "Prefiero que hablemos en persona.",
+      "Necesito que me ayudes."
+    ],
+    "negative": [
+      "Espero el autobús.",
+      "Quiero comer ahora.",
+      "Creo que vienes mañana."
+    ]
+  }
+}

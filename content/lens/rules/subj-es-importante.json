@@ -1,0 +1,50 @@
+{
+  "id": "subj-es-importante",
+  "title_ru": "Subjuntivo после безличной оценки (es importante que…)",
+  "cards": [
+    "B1-05"
+  ],
+  "pattern": [
+    {
+      "lemma": [
+        "ser"
+      ]
+    },
+    {
+      "surface": [
+        "importante",
+        "necesario",
+        "posible",
+        "imposible",
+        "mejor",
+        "raro",
+        "normal",
+        "increíble",
+        "fundamental"
+      ]
+    },
+    {
+      "surface": [
+        "que"
+      ]
+    },
+    {
+      "set": "presente-subjuntivo",
+      "gap": 3
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Es importante que estudies.",
+      "Es posible que llueva.",
+      "Es mejor que vengas temprano.",
+      "Es raro que no llame."
+    ],
+    "negative": [
+      "Es importante estudiar.",
+      "Es verdad que viene.",
+      "Es mejor así."
+    ]
+  }
+}

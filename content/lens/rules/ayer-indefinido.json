@@ -1,0 +1,31 @@
+{
+  "id": "ayer-indefinido",
+  "title_ru": "Indefinido с маркерами ayer / anoche",
+  "cards": [
+    "A2-05"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "ayer",
+        "anoche"
+      ]
+    },
+    {
+      "set": "preterito-indefinido",
+      "gap": 3
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Ayer fui al cine.",
+      "Anoche comí mucho.",
+      "Ayer por la tarde estudié."
+    ],
+    "negative": [
+      "Ayer era lunes.",
+      "Mañana voy al cine."
+    ]
+  }
+}

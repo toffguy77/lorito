@@ -1,0 +1,31 @@
+{
+  "id": "estar-gerundio",
+  "title_ru": "Estar + gerundio",
+  "cards": [
+    "A2-10"
+  ],
+  "pattern": [
+    {
+      "lemma": [
+        "estar"
+      ]
+    },
+    {
+      "set": "gerundio",
+      "gap": 1
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Estoy leyendo un libro.",
+      "¿Qué estás haciendo?",
+      "Estábamos durmiendo.",
+      "Está lloviendo mucho."
+    ],
+    "negative": [
+      "Estoy cansado.",
+      "Leyendo se aprende."
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "tener-que",
+  "title_ru": "Tener que + infinitivo",
+  "cards": [
+    "A2-24"
+  ],
+  "pattern": [
+    {
+      "lemma": [
+        "tener"
+      ]
+    },
+    {
+      "surface": [
+        "que"
+      ]
+    },
+    {
+      "set": "infinitivo"
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Tengo que trabajar.",
+      "Tienes que estudiar más.",
+      "Tenemos que salir ya."
+    ],
+    "negative": [
+      "Tengo un coche.",
+      "Creo que tiene razón."
+    ]
+  }
+}

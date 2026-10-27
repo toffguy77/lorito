@@ -1,0 +1,35 @@
+{
+  "id": "se-lo",
+  "title_ru": "Комбинация местоимений se lo / se la",
+  "cards": [
+    "A2-14"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "se"
+      ]
+    },
+    {
+      "surface": [
+        "lo",
+        "la",
+        "los",
+        "las"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Se lo doy mañana.",
+      "Se la compré ayer.",
+      "¿Se lo dijiste?"
+    ],
+    "negative": [
+      "Se llama Juan.",
+      "Lo sé.",
+      "Le doy el libro."
+    ]
+  }
+}

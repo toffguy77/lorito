@@ -1,0 +1,38 @@
+{
+  "id": "genero-fem-o",
+  "title_ru": "Женский род на -o (la mano)",
+  "cards": [
+    "A1-07"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "la",
+        "una",
+        "esta",
+        "esa",
+        "aquella"
+      ]
+    },
+    {
+      "surface": [
+        "mano",
+        "foto",
+        "moto",
+        "radio"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Dame la mano.",
+      "Es una foto bonita.",
+      "Esta moto es rápida."
+    ],
+    "negative": [
+      "El libro es mío.",
+      "Tengo fotos."
+    ]
+  }
+}

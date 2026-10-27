@@ -1,0 +1,31 @@
+{
+  "id": "subj-cuando-futuro",
+  "title_ru": "Subjuntivo после cuando о будущем",
+  "cards": [
+    "B1-06"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "cuando"
+      ]
+    },
+    {
+      "set": "presente-subjuntivo",
+      "gap": 2
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Cuando llegues, llámame.",
+      "Te llamo cuando termine.",
+      "Cuando tengas tiempo, escríbeme."
+    ],
+    "negative": [
+      "Cuando llego a casa, como.",
+      "¿Cuándo vienes?",
+      "Cuando era niño, jugaba mucho."
+    ]
+  }
+}

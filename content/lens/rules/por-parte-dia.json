@@ -1,0 +1,39 @@
+{
+  "id": "por-parte-dia",
+  "title_ru": "Por + часть дня (por la mañana)",
+  "cards": [
+    "A2-27"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "por"
+      ]
+    },
+    {
+      "surface": [
+        "la"
+      ]
+    },
+    {
+      "surface": [
+        "mañana",
+        "tarde",
+        "noche"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Trabajo por la mañana.",
+      "Estudio por la tarde.",
+      "Por la noche leo."
+    ],
+    "negative": [
+      "Mañana trabajo.",
+      "Para la noche tengo planes.",
+      "Por favor, ayúdame."
+    ]
+  }
+}

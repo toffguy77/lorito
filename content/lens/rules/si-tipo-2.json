@@ -1,0 +1,31 @@
+{
+  "id": "si-tipo-2",
+  "title_ru": "Условие тип 2: si + imperfecto de subjuntivo",
+  "cards": [
+    "B1-16"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "si"
+      ]
+    },
+    {
+      "set": "imperfecto-subjuntivo",
+      "gap": 2
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Si tuviera dinero, viajaría.",
+      "Si fuera tú, no lo haría.",
+      "Si pudiera, te ayudaría."
+    ],
+    "negative": [
+      "Si tengo tiempo, voy.",
+      "Sí, quiero ir.",
+      "Quería que vinieras."
+    ]
+  }
+}

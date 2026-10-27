@@ -1,0 +1,39 @@
+{
+  "id": "de-nino-imperfecto",
+  "title_ru": "Imperfecto для детства и привычек (de niño…)",
+  "cards": [
+    "A2-05"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "de"
+      ]
+    },
+    {
+      "surface": [
+        "niño",
+        "niña",
+        "pequeño",
+        "pequeña",
+        "joven"
+      ]
+    },
+    {
+      "set": "preterito-imperfecto",
+      "gap": 3
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "De niño jugaba mucho.",
+      "De pequeña vivía en Moscú.",
+      "De joven trabajaba en un bar."
+    ],
+    "negative": [
+      "El niño juega.",
+      "De niño fui a París."
+    ]
+  }
+}

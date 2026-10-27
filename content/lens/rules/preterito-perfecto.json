@@ -1,0 +1,34 @@
+{
+  "id": "preterito-perfecto",
+  "title_ru": "Pretérito perfecto (he hablado)",
+  "cards": [
+    "A2-01"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "he",
+        "has",
+        "ha",
+        "hemos",
+        "habéis",
+        "han"
+      ]
+    },
+    {
+      "set": "participio"
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Hoy he comido mucho.",
+      "¿Has terminado?",
+      "Hemos vivido aquí."
+    ],
+    "negative": [
+      "Hay mucha gente.",
+      "He de irme."
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "para-infinitivo",
+  "title_ru": "Para + infinitivo (цель)",
+  "cards": [
+    "A2-27"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "para"
+      ]
+    },
+    {
+      "set": "infinitivo"
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Estudio para aprender.",
+      "Trabajo para vivir.",
+      "Vine para ayudar."
+    ],
+    "negative": [
+      "Esto es para ti.",
+      "Para mí, es fácil.",
+      "Salgo para Madrid."
+    ]
+  }
+}

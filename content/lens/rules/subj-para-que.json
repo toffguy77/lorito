@@ -1,0 +1,36 @@
+{
+  "id": "subj-para-que",
+  "title_ru": "Subjuntivo после para que",
+  "cards": [
+    "B1-06"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "para"
+      ]
+    },
+    {
+      "surface": [
+        "que"
+      ]
+    },
+    {
+      "set": "presente-subjuntivo",
+      "gap": 3
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Te lo digo para que lo sepas.",
+      "Habla despacio para que te entiendan.",
+      "Lo compro para que lo uses."
+    ],
+    "negative": [
+      "Estudio para aprender.",
+      "Para mí, es fácil.",
+      "Es para que.."
+    ]
+  }
+}

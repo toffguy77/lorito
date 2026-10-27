@@ -1,0 +1,30 @@
+{
+  "id": "subj-ojala",
+  "title_ru": "Subjuntivo после ojalá",
+  "cards": [
+    "B1-02"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "ojalá"
+      ]
+    },
+    {
+      "set": "presente-subjuntivo",
+      "gap": 2
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Ojalá llueva mañana.",
+      "¡Ojalá tengas suerte!",
+      "Ojalá no llegue tarde."
+    ],
+    "negative": [
+      "Dijo ojalá y se fue.",
+      "Mañana llueve."
+    ]
+  }
+}

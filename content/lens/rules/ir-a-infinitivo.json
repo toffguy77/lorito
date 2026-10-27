@@ -1,0 +1,34 @@
+{
+  "id": "ir-a-infinitivo",
+  "title_ru": "Ir a + infinitivo (ближайшее будущее)",
+  "cards": [
+    "A1-20"
+  ],
+  "pattern": [
+    {
+      "lemma": [
+        "ir"
+      ]
+    },
+    {
+      "surface": [
+        "a"
+      ]
+    },
+    {
+      "set": "infinitivo"
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Voy a comer.",
+      "Vamos a estudiar mañana.",
+      "¿Vas a venir?"
+    ],
+    "negative": [
+      "Voy a casa.",
+      "Voy al cine."
+    ]
+  }
+}

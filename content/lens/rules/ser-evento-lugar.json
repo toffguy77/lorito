@@ -1,0 +1,43 @@
+{
+  "id": "ser-evento-lugar",
+  "title_ru": "Ser для места события (la fiesta es en…)",
+  "cards": [
+    "A2-28"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "fiesta",
+        "concierto",
+        "reunión",
+        "boda",
+        "clase",
+        "examen",
+        "partido"
+      ]
+    },
+    {
+      "lemma": [
+        "ser"
+      ],
+      "gap": 1
+    },
+    {
+      "surface": [
+        "en"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "La fiesta es en mi casa.",
+      "El concierto será en el teatro.",
+      "La reunión es en la oficina."
+    ],
+    "negative": [
+      "La fiesta está muy bien.",
+      "El libro está en la mesa."
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "pluscuamperfecto",
+  "title_ru": "Pluscuamperfecto (había hablado)",
+  "cards": [
+    "B1-11"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "había",
+        "habías",
+        "habíamos",
+        "habíais",
+        "habían"
+      ]
+    },
+    {
+      "set": "participio"
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Cuando llegué, ya había salido.",
+      "No habíamos comido.",
+      "Habían terminado antes."
+    ],
+    "negative": [
+      "Había mucha gente.",
+      "Hay que salir."
+    ]
+  }
+}
