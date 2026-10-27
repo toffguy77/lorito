@@ -70,7 +70,7 @@ public struct RootView: View {
     private var errorView: some View {
         Text("Не удалось загрузить контент")
             .font(LoritoFont.caption)
-            .foregroundStyle(LoritoColor.danger)
+            .foregroundStyle(LoritoColor.dangerText)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(LoritoColor.surface.ignoresSafeArea())
     }

@@ -35,10 +35,11 @@ let package = Package(
         // SwiftData + CloudKit user-data store.
         .target(name: "Persistence", dependencies: ["Domain"]),
 
-        // "Modern Calm" design tokens and reusable SwiftUI components.
+        // "Plumaje" design tokens, bundled brand fonts, and reusable SwiftUI components.
         .target(
             name: "DesignSystem",
-            dependencies: [.product(name: "MarkdownUI", package: "swift-markdown-ui")]
+            dependencies: [.product(name: "MarkdownUI", package: "swift-markdown-ui")],
+            resources: [.process("Resources/Fonts")]
         ),
 
         // SwiftUI screens. Depends inward on every other layer.

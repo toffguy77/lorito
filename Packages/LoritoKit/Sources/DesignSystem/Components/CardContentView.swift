@@ -115,9 +115,11 @@ public enum CardBodyParser {
 /// identical in both.
 public struct CardContentView: View {
     private let blocks: [CardBlock]
+    private let tone: CardBodyTone
 
-    public init(_ body: String) {
+    public init(_ body: String, tone: CardBodyTone = .surface) {
         self.blocks = CardBodyParser.parse(body)
+        self.tone = tone
     }
 
     public var body: some View {
@@ -125,9 +127,9 @@ public struct CardContentView: View {
             ForEach(Array(blocks.enumerated()), id: \.offset) { _, block in
                 switch block {
                 case .markdown(let md):
-                    CardBodyView(md)
+                    CardBodyView(md, tone: tone)
                 case .callout(let kind, let md):
-                    CalloutBlock(kind) { CardBodyView(md) }
+                    CalloutBlock(kind) { CardBodyView(md, tone: kind.isOnInk ? .ink : .surface) }
                 }
             }
         }

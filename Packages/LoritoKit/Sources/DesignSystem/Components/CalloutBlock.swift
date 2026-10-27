@@ -16,27 +16,29 @@ public enum CalloutKind: String, CaseIterable, Sendable {
         }
     }
 
-    var accent: Color {
+    /// Суть is the card's key idea and sits on ink; the rest on `surfaceSunken`.
+    var isOnInk: Bool { self == .essence }
+
+    var titleColor: Color {
         switch self {
-        case .essence: return LoritoColor.accent
-        case .keyPoints: return LoritoColor.info
-        case .mistakes: return LoritoColor.danger
-        case .useful: return LoritoColor.warning
+        case .essence: return LoritoColor.highlight
+        case .keyPoints: return LoritoColor.onAccentSoft
+        case .mistakes: return LoritoColor.dangerText
+        case .useful: return LoritoColor.textSecondary
         }
     }
 
     var background: Color {
-        switch self {
-        case .essence: return LoritoColor.accentSoft
-        case .keyPoints: return LoritoColor.infoSoft
-        case .mistakes: return LoritoColor.dangerSoft
-        case .useful: return LoritoColor.warningSoft
-        }
+        isOnInk ? LoritoColor.ink : LoritoColor.surfaceSunken
+    }
+
+    var textColor: Color {
+        isOnInk ? LoritoColor.onInk : LoritoColor.textPrimary
     }
 }
 
-/// A titled callout block with a leading accent rule, used for Суть / Ключевые
-/// моменты / Ошибки / Полезно sections of a card.
+/// A titled callout block used for Суть / Ключевые моменты / Ошибки / Полезно
+/// sections of a card. Суть renders on ink; the others on `surfaceSunken`.
 public struct CalloutBlock<Content: View>: View {
     private let kind: CalloutKind
     private let content: Content
@@ -48,23 +50,17 @@ public struct CalloutBlock<Content: View>: View {
 
     public var body: some View {
         VStack(alignment: .leading, spacing: LoritoSpacing.xs) {
-            Text(kind.title.uppercased())
-                .font(LoritoFont.label)
-                .tracking(0.6)
-                .foregroundStyle(kind.accent)
+            Text(kind.title)
+                .loritoStyle(.label)
+                .foregroundStyle(kind.titleColor)
             content
                 .font(LoritoFont.body)
-                .foregroundStyle(LoritoColor.textPrimary)
+                .foregroundStyle(kind.textColor)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(LoritoSpacing.sm)
-        .background(kind.background, in: RoundedRectangle(cornerRadius: LoritoRadius.md))
-        .overlay(alignment: .leading) {
-            Rectangle()
-                .fill(kind.accent)
-                .frame(width: 3)
-                .clipShape(RoundedRectangle(cornerRadius: LoritoRadius.md))
-        }
+        .padding(.horizontal, LoritoSpacing.md)
+        .padding(.vertical, LoritoSpacing.sm + 2)
+        .background(kind.background, in: RoundedRectangle(cornerRadius: LoritoRadius.md, style: .continuous))
     }
 }
 

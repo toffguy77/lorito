@@ -1,5 +1,5 @@
-// DesignSystem — "Modern Calm" tokens and reusable SwiftUI components.
-// Tokens and components are added in the design-system tasks of bootstrap-foundation.
+// DesignSystem — "Plumaje" tokens, bundled fonts, and reusable SwiftUI components.
+// Token values mirror design/brand/tokens.json.
 
 import SwiftUI
 

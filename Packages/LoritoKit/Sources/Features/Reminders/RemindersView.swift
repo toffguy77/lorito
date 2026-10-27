@@ -33,7 +33,7 @@ public struct RemindersView: View {
             VStack(alignment: .leading, spacing: LoritoSpacing.lg) {
                 Toggle(isOn: enabledBinding) {
                     Text("Ежедневные напоминания")
-                        .font(LoritoFont.heading)
+                        .font(LoritoFont.bodyStrong)
                         .foregroundStyle(LoritoColor.textPrimary)
                 }
                 .tint(LoritoColor.accent)
@@ -53,7 +53,10 @@ public struct RemindersView: View {
 
                 Spacer()
             }
-            .padding(LoritoSpacing.lg)
+            .padding(.horizontal, LoritoSpacing.screenGutter)
+            .padding(.vertical, LoritoSpacing.lg)
+            .frame(maxWidth: LoritoLayout.readingWidth)
+            .frame(maxWidth: .infinity)
         }
         .background(LoritoColor.surface.ignoresSafeArea())
         .navigationTitle("Напоминания")
@@ -76,8 +79,8 @@ public struct RemindersView: View {
     private var timesSection: some View {
         VStack(alignment: .leading, spacing: LoritoSpacing.sm) {
             Text("Время")
-                .font(LoritoFont.label)
-                .foregroundStyle(LoritoColor.textTertiary)
+                .loritoStyle(.label)
+                .foregroundStyle(LoritoColor.textSecondary)
 
             ForEach(service.config.times, id: \.minutesFromMidnight) { time in
                 HStack {
@@ -90,11 +93,14 @@ public struct RemindersView: View {
                         Task { await service.removeTime(time) }
                     } label: {
                         Image(systemName: "trash")
-                            .foregroundStyle(LoritoColor.danger)
+                            .foregroundStyle(LoritoColor.dangerText)
+                            .frame(width: LoritoLayout.minTouchTarget, height: LoritoLayout.minTouchTarget)
                     }
                     .buttonStyle(.plain)
+                    .accessibilityLabel("Удалить")
                 }
-                .padding(.vertical, LoritoSpacing.xxs)
+                .padding(.leading, LoritoSpacing.md)
+                .background(LoritoColor.surfaceRaised, in: RoundedRectangle(cornerRadius: LoritoRadius.sm, style: .continuous))
             }
 
             // Wheel picker above a full-width button: the inline wheel is greedy,
@@ -105,12 +111,7 @@ public struct RemindersView: View {
                     let comps = Calendar.current.dateComponents([.hour, .minute], from: newTime)
                     Task { await service.addTime(ReminderTime(hour: comps.hour ?? 20, minute: comps.minute ?? 0)) }
                 }
-                .font(LoritoFont.body.weight(.semibold))
-                .foregroundStyle(LoritoColor.onAccent)
-                .frame(maxWidth: .infinity)
-                .padding(.vertical, LoritoSpacing.xs)
-                .background(LoritoColor.accent, in: Capsule())
-                .buttonStyle(.plain)
+                .buttonStyle(PrimaryButtonStyle(.ink))
             }
         }
     }
@@ -118,32 +119,33 @@ public struct RemindersView: View {
     private var saveFailedGuidance: some View {
         Text("Не удалось сохранить настройки напоминаний. Проверьте место на устройстве и попробуйте снова.")
             .font(LoritoFont.caption)
-            .foregroundStyle(LoritoColor.danger)
-            .padding(LoritoSpacing.sm)
+            .foregroundStyle(LoritoColor.dangerText)
+            .padding(LoritoSpacing.md)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .background(LoritoColor.dangerSoft, in: RoundedRectangle(cornerRadius: LoritoRadius.md))
+            .background(LoritoColor.dangerSoft, in: RoundedRectangle(cornerRadius: LoritoRadius.md, style: .continuous))
     }
 
     private var deniedGuidance: some View {
         VStack(alignment: .leading, spacing: LoritoSpacing.xs) {
             Text("Уведомления отключены")
-                .font(LoritoFont.body.weight(.semibold))
-                .foregroundStyle(LoritoColor.danger)
+                .font(LoritoFont.bodyStrong)
+                .foregroundStyle(LoritoColor.dangerText)
             Text("Разрешите уведомления для Lorito в Настройках, чтобы получать напоминания.")
                 .font(LoritoFont.caption)
-                .foregroundStyle(LoritoColor.textSecondary)
+                .foregroundStyle(LoritoColor.textPrimary)
             #if canImport(UIKit)
             Button("Открыть Настройки") {
                 if let url = URL(string: UIApplication.openSettingsURLString) {
                     UIApplication.shared.open(url)
                 }
             }
-            .font(LoritoFont.body.weight(.semibold))
-            .foregroundStyle(LoritoColor.onAccentSoft)
+            .font(LoritoFont.bodyStrong)
+            .foregroundStyle(LoritoColor.dangerText)
+            .frame(minHeight: LoritoLayout.minTouchTarget)
             #endif
         }
-        .padding(LoritoSpacing.sm)
+        .padding(LoritoSpacing.md)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(LoritoColor.dangerSoft, in: RoundedRectangle(cornerRadius: LoritoRadius.md))
+        .background(LoritoColor.dangerSoft, in: RoundedRectangle(cornerRadius: LoritoRadius.md, style: .continuous))
     }
 }

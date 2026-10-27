@@ -16,55 +16,114 @@ public enum StudyGrade: String, CaseIterable, Sendable {
         }
     }
 
+    /// Token names, so tests can check lightness separation on raw values.
+    /// Трудно uses `inkTrack` (not `inkRaised`) so it stays lighter than the
+    /// dark-theme Опять background.
+    var backgroundToken: String {
+        switch self {
+        case .again: return "dangerSoft"
+        case .hard: return "inkTrack"
+        case .good: return "accent"
+        case .easy: return "highlight"
+        }
+    }
+
     var foreground: Color {
         switch self {
-        case .again: return LoritoColor.danger
-        case .hard: return LoritoColor.warning
-        case .good: return LoritoColor.success
-        case .easy: return LoritoColor.onAccent
+        case .again: return LoritoColor.dangerText
+        case .hard: return LoritoColor.onInk
+        case .good: return LoritoColor.onAccent
+        case .easy: return LoritoColor.onHighlight
         }
+    }
+
+    var captionColor: Color {
+        self == .hard ? LoritoColor.onInkSecondary : foreground
     }
 
     var background: Color {
         switch self {
         case .again: return LoritoColor.dangerSoft
-        case .hard: return LoritoColor.warningSoft
-        case .good: return LoritoColor.successSoft
-        case .easy: return LoritoColor.accent
+        case .hard: return LoritoColor.inkTrack
+        case .good: return LoritoColor.accent
+        case .easy: return LoritoColor.highlight
         }
     }
 }
 
-/// A row of the four SM-2 grade buttons.
-public struct GradeButtons: View {
-    private let onGrade: (StudyGrade) -> Void
+/// What one grade button shows: the label and an optional second line.
+public struct GradeButtonItem: Equatable, Sendable {
+    public let grade: StudyGrade
+    public let title: String
+    public let caption: String?
 
-    public init(onGrade: @escaping (StudyGrade) -> Void) {
+    /// VoiceOver label: "Хорошо, 3 дня" with a caption, the title alone without.
+    public var accessibilityLabel: String {
+        caption.map { "\(title), \($0)" } ?? title
+    }
+}
+
+/// A row of the four SM-2 grade buttons, each with an optional caption line
+/// (e.g. the interval preview supplied by the study flow).
+public struct GradeButtons: View {
+    private let items: [GradeButtonItem]
+    private let onGrade: (StudyGrade) -> Void
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+
+    public init(captions: [StudyGrade: String] = [:], onGrade: @escaping (StudyGrade) -> Void) {
+        self.items = Self.items(captions: captions)
         self.onGrade = onGrade
     }
 
+    /// Pure layout model: four items in grade order; empty captions are dropped.
+    nonisolated public static func items(captions: [StudyGrade: String]) -> [GradeButtonItem] {
+        StudyGrade.allCases.map { grade in
+            let caption = captions[grade].flatMap { $0.isEmpty ? nil : $0 }
+            return GradeButtonItem(grade: grade, title: grade.title, caption: caption)
+        }
+    }
+
     public var body: some View {
-        HStack(spacing: LoritoSpacing.xs) {
-            ForEach(StudyGrade.allCases, id: \.self) { grade in
+        // Four across truncates at accessibility sizes; fall back to 2×2.
+        let columns = dynamicTypeSize.isAccessibilitySize ? 2 : 4
+        LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: LoritoSpacing.xs), count: columns),
+                  spacing: LoritoSpacing.xs) {
+            ForEach(items, id: \.grade) { item in
                 Button {
-                    onGrade(grade)
+                    onGrade(item.grade)
                 } label: {
-                    Text(grade.title)
-                        .font(LoritoFont.body.weight(.semibold))
-                        .foregroundStyle(grade.foreground)
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, LoritoSpacing.sm)
-                        .background(grade.background, in: RoundedRectangle(cornerRadius: LoritoRadius.md))
+                    VStack(spacing: 3) {
+                        Text(item.title)
+                            .font(LoritoFont.bodyStrong)
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.7)
+                        if let caption = item.caption {
+                            Text(caption)
+                                .font(LoritoFont.caption)
+                                .foregroundStyle(item.grade.captionColor)
+                                .lineLimit(1)
+                                .minimumScaleFactor(0.7)
+                        }
+                    }
+                    .foregroundStyle(item.grade.foreground)
+                    .frame(maxWidth: .infinity, minHeight: LoritoLayout.primaryButtonHeight)
+                    .padding(.horizontal, LoritoSpacing.xxs)
+                    .background(item.grade.background, in: RoundedRectangle(cornerRadius: LoritoRadius.md + 2, style: .continuous))
+                    .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
-                .accessibilityLabel(grade.title)
+                .accessibilityLabel(item.title)
+                .accessibilityValue(item.caption ?? "")
             }
         }
     }
 }
 
 #Preview {
-    GradeButtons { _ in }
-        .padding()
-        .background(LoritoColor.surface)
+    VStack(spacing: LoritoSpacing.md) {
+        GradeButtons { _ in }
+        GradeButtons(captions: [.again: "сегодня", .hard: "1 день", .good: "3 дня", .easy: "8 дней"]) { _ in }
+    }
+    .padding()
+    .background(LoritoColor.ink)
 }

@@ -2,30 +2,139 @@ import SwiftUI
 import Domain
 import DesignSystem
 
-/// Catalog browsing: levels → themes → cards, each card row showing its status,
-/// drilling into a reader that reuses the shared Markdown rendering and can
-/// suspend / unsuspend the card.
+/// Catalog browsing: level pills → the level's themes as a path with progress
+/// per theme → cards, each card row showing its status, drilling into a reader
+/// that reuses the shared Markdown rendering and can suspend / unsuspend the
+/// card.
 public struct CatalogView: View {
     @State private var model: CatalogModel
+    @State private var level: CEFRLevel
 
     public init(store: UserDataStore, catalog: ContentCatalog) {
-        _model = State(initialValue: CatalogModel(store: store, catalog: catalog))
+        let model = CatalogModel(store: store, catalog: catalog)
+        _model = State(initialValue: model)
+        _level = State(initialValue: model.levels.first ?? .a1)
     }
 
     public var body: some View {
         NavigationStack {
-            List(model.levels) { level in
-                Section(level.rawValue) {
+            List {
+                Group {
+                    header
+                    levelPills
                     ForEach(model.themes(in: level)) { theme in
-                        NavigationLink(theme.title) {
-                            themeCards(theme)
-                        }
+                        themeRow(theme)
                     }
                 }
+                .listRowSeparator(.hidden)
+                .listRowBackground(Color.clear)
+                .listRowInsets(EdgeInsets(top: LoritoSpacing.xxs, leading: LoritoSpacing.screenGutter,
+                                          bottom: LoritoSpacing.xxs, trailing: LoritoSpacing.screenGutter))
             }
+            .listStyle(.plain)
+            .scrollContentBackground(.hidden)
+            .background(LoritoColor.surface.ignoresSafeArea())
+            .frame(maxWidth: LoritoLayout.readingWidth)
+            .frame(maxWidth: .infinity)
+            .background(LoritoColor.surface.ignoresSafeArea())
+            .navigationBarVisibility(.hidden)
             .navigationTitle("Каталог")
             .onAppear { model.refresh() }
         }
+    }
+
+    private var header: some View {
+        let overall = model.overallProgress
+        return HStack(alignment: .firstTextBaseline) {
+            Text("Каталог")
+                .loritoStyle(.title)
+                .foregroundStyle(LoritoColor.textPrimary)
+                .loritoTitleFit(lines: 1)
+                .accessibilityAddTraits(.isHeader)
+            Spacer()
+            Text("\(overall.started) из \(overall.total)")
+                .font(LoritoFont.caption)
+                .foregroundStyle(LoritoColor.textSecondary)
+        }
+        .padding(.top, LoritoSpacing.lg)
+    }
+
+    private var levelPills: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 6) {
+                ForEach(model.levels) { item in
+                    let isSelected = item == level
+                    Button { level = item } label: {
+                        Text(item.rawValue)
+                            .font(LoritoTextStyle.heading.sized(13).font)
+                            .foregroundStyle(isSelected ? LoritoColor.highlight : LoritoColor.textPrimary)
+                            .padding(.horizontal, LoritoSpacing.md)
+                            .frame(minWidth: LoritoLayout.minTouchTarget, minHeight: LoritoLayout.minTouchTarget)
+                            .background(isSelected ? LoritoColor.ink : LoritoColor.surfaceRaised, in: Capsule())
+                            .overlay(Capsule().strokeBorder(isSelected ? Color.clear : LoritoColor.separator))
+                    }
+                    .buttonStyle(.plain)
+                    .accessibilityLabel("Уровень \(item.rawValue)")
+                    .accessibilityAddTraits(isSelected ? .isSelected : [])
+                }
+            }
+        }
+        .padding(.vertical, LoritoSpacing.xs)
+    }
+
+    private func themeRow(_ theme: Theme) -> some View {
+        let progress = model.progress(in: theme)
+        let isCurrent = model.currentTheme(in: level)?.id == theme.id
+        let isDone = progress.total > 0 && progress.started == progress.total
+        return ZStack {
+            NavigationLink { themeCards(theme) } label: { EmptyView() }
+                .opacity(0)
+            HStack(alignment: .top, spacing: LoritoSpacing.sm) {
+                pathMarker(isCurrent: isCurrent, isDone: isDone)
+                VStack(alignment: .leading, spacing: LoritoSpacing.xs) {
+                    HStack(alignment: .firstTextBaseline) {
+                        Text(theme.title)
+                            .font(isCurrent ? LoritoFont.bodyStrong : LoritoFont.body)
+                            .foregroundStyle(isCurrent ? LoritoColor.onInk : LoritoColor.textPrimary)
+                        Spacer(minLength: LoritoSpacing.xs)
+                        Text("\(progress.started)/\(progress.total)")
+                            .font(LoritoFont.caption)
+                            .monospacedDigit()
+                            .foregroundStyle(isCurrent ? LoritoColor.highlight
+                                             : (isDone ? LoritoColor.accent : LoritoColor.textSecondary))
+                    }
+                    if isCurrent, progress.total > 0 {
+                        ProgressView(value: Double(progress.started), total: Double(progress.total))
+                            .tint(LoritoColor.highlight)
+                            .background(LoritoColor.inkTrack, in: Capsule())
+                            .accessibilityHidden(true)
+                    }
+                }
+                .padding(.horizontal, LoritoSpacing.md)
+                .padding(.vertical, LoritoSpacing.sm + 2)
+                .background(isCurrent ? LoritoColor.ink : LoritoColor.surfaceRaised,
+                            in: RoundedRectangle(cornerRadius: LoritoRadius.md, style: .continuous))
+            }
+        }
+    }
+
+    /// The node on the vertical path: filled when done, Lima when current.
+    private func pathMarker(isCurrent: Bool, isDone: Bool) -> some View {
+        ZStack {
+            if isDone {
+                Circle().fill(LoritoColor.accent)
+                Image(systemName: "checkmark")
+                    .font(.system(size: 12, weight: .bold))
+                    .foregroundStyle(LoritoColor.onAccent)
+            } else if isCurrent {
+                Circle().fill(LoritoColor.highlight)
+            } else {
+                Circle().strokeBorder(LoritoColor.separator, lineWidth: 3)
+            }
+        }
+        .frame(width: 26, height: 26)
+        .padding(.top, LoritoSpacing.sm)
+        .accessibilityHidden(true)
     }
 
     private func themeCards(_ theme: Theme) -> some View {
@@ -37,7 +146,7 @@ public struct CatalogView: View {
                     VStack(alignment: .leading, spacing: LoritoSpacing.xxs) {
                         Text(card.id)
                             .font(LoritoFont.caption)
-                            .foregroundStyle(LoritoColor.textTertiary)
+                            .foregroundStyle(LoritoColor.textSecondary)
                         Text(card.title)
                             .font(LoritoFont.body)
                             .foregroundStyle(LoritoColor.textPrimary)
@@ -46,9 +155,13 @@ public struct CatalogView: View {
                     StatusBadge(status: model.status(for: card.id))
                 }
             }
+            .listRowBackground(LoritoColor.surfaceRaised)
         }
         .listStyle(.plain)
+        .scrollContentBackground(.hidden)
+        .background(LoritoColor.surface.ignoresSafeArea())
         .navigationTitle(theme.title)
+        .navigationBarVisibility(.visible)
         .onAppear { model.refresh() }
     }
 }
@@ -59,20 +172,29 @@ private struct StatusBadge: View {
 
     var body: some View {
         Text(status.title)
-            .font(LoritoFont.label)
-            .foregroundStyle(color)
-            .padding(.horizontal, LoritoSpacing.xs)
+            .font(LoritoFont.caption)
+            .foregroundStyle(foreground)
+            .padding(.horizontal, LoritoSpacing.xs + 2)
             .padding(.vertical, LoritoSpacing.xxs)
-            .background(color.opacity(0.12), in: Capsule())
+            .background(background, in: Capsule())
     }
 
-    private var color: Color {
+    private var foreground: Color {
         switch status {
-        case .new: return LoritoColor.textTertiary
-        case .learning: return LoritoColor.info
-        case .review: return LoritoColor.accent
-        case .due: return LoritoColor.success
-        case .suspended: return LoritoColor.warning
+        case .new: return LoritoColor.textSecondary
+        case .learning: return LoritoColor.onAccentSoft
+        case .review: return LoritoColor.onAccentSoft
+        case .due: return LoritoColor.onHighlight
+        case .suspended: return LoritoColor.dangerText
+        }
+    }
+
+    private var background: Color {
+        switch status {
+        case .new: return LoritoColor.surfaceSunken
+        case .learning, .review: return LoritoColor.accentSoft
+        case .due: return LoritoColor.highlight
+        case .suspended: return LoritoColor.dangerSoft
         }
     }
 }
@@ -90,48 +212,30 @@ private struct CardReaderView: View {
             StudyCardContainer {
                 LevelChip(level: card.level.rawValue, theme: card.themeID)
                 Text(card.title)
-                    .font(LoritoFont.title)
+                    .loritoStyle(.title)
                     .foregroundStyle(LoritoColor.textPrimary)
+                    .loritoTitleFit()
                 CardContentView(card.body)
 
                 if exerciseCount > 0 {
-                    Button {
+                    PrimaryButton("Практика · \(exerciseCount)", variant: .ink) {
                         practiceSession = model.makeExerciseSession(forCard: card.id)
-                    } label: {
-                        Text("Практика · \(exerciseCount)")
-                            .font(LoritoFont.body.weight(.semibold))
-                            .foregroundStyle(LoritoColor.onAccent)
-                            .frame(maxWidth: .infinity)
-                            .padding(.vertical, LoritoSpacing.sm)
-                            .background(LoritoColor.accent, in: RoundedRectangle(cornerRadius: LoritoRadius.md))
                     }
-                    .buttonStyle(.plain)
                     .padding(.top, LoritoSpacing.sm)
                 }
 
-                Button {
+                PrimaryButton(model.isSuspended(card.id) ? "Вернуть в изучение" : "Отложить карточку",
+                              variant: .outline) {
                     model.toggleSuspended(card.id)
-                } label: {
-                    Text(model.isSuspended(card.id) ? "Вернуть в изучение" : "Отложить карточку")
-                        .font(LoritoFont.body.weight(.semibold))
-                        .foregroundStyle(model.isSuspended(card.id) ? LoritoColor.onAccent : LoritoColor.warning)
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, LoritoSpacing.sm)
-                        .background(
-                            (model.isSuspended(card.id) ? LoritoColor.accent : LoritoColor.warningSoft),
-                            in: RoundedRectangle(cornerRadius: LoritoRadius.md)
-                        )
                 }
-                .buttonStyle(.plain)
-                .padding(.top, LoritoSpacing.sm)
             }
             .padding(LoritoSpacing.md)
             .frame(maxWidth: LoritoLayout.readingWidth)
             .frame(maxWidth: .infinity)
         }
-        .background(LoritoColor.surfaceSecondary.ignoresSafeArea())
+        .background(LoritoColor.surface.ignoresSafeArea())
         .navigationTitle(card.id)
-        .sheet(item: $practiceSession) { session in
+        .focusModeCover(item: $practiceSession) { session in
             ExerciseSessionView(model: session) {
                 practiceSession = nil
                 model.refresh()

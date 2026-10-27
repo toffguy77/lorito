@@ -9,6 +9,7 @@ import DesignSystem
 /// (`free-response`) before continuing.
 public struct ExerciseSessionView: View {
     @State private var model: ExerciseSessionModel
+    @Environment(\.colorScheme) private var colorScheme
     let onClose: () -> Void
 
     public init(model: ExerciseSessionModel, onClose: @escaping () -> Void) {
@@ -17,36 +18,33 @@ public struct ExerciseSessionView: View {
     }
 
     public var body: some View {
-        NavigationStack {
-            Group {
-                if let exercise = model.current {
-                    content(exercise)
-                } else {
-                    completionState
-                }
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(LoritoColor.surfaceSecondary.ignoresSafeArea())
-            .toolbar {
-                ToolbarItem(placement: .primaryAction) {
-                    Button("Закрыть", action: onClose)
-                        .foregroundStyle(LoritoColor.textSecondary)
-                }
+        Group {
+            if let exercise = model.current {
+                content(exercise)
+            } else {
+                SessionCompleteView(subtitle: "Все упражнения пройдены.", onClose: onClose)
             }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(LoritoColor.ink.ignoresSafeArea())
     }
 
     private func content(_ exercise: Exercise) -> some View {
         VStack(spacing: LoritoSpacing.md) {
-            Text(model.positionText)
-                .font(LoritoFont.caption)
-                .foregroundStyle(LoritoColor.textTertiary)
-                .padding(.top, LoritoSpacing.xs)
+            SessionTopBar(
+                segments: SessionProgressBar.segments(current: model.index, total: model.count),
+                position: model.positionText.replacingOccurrences(of: " ", with: ""),
+                onClose: onClose
+            )
+            .padding(.horizontal, LoritoSpacing.screenGutter)
+            .padding(.top, LoritoSpacing.sm)
 
             ScrollView {
-                StudyCardContainer {
-                    LevelChip(level: exercise.level.rawValue, theme: exercise.themeID)
-                    CardContentView(exercise.prompt)
+                VStack(alignment: .leading, spacing: LoritoSpacing.md) {
+                    Text("\(exercise.level.rawValue) · \(exercise.card)")
+                        .loritoStyle(.label)
+                        .foregroundStyle(LoritoColor.highlight)
+                    CardContentView(exercise.prompt, tone: .ink)
 
                     inputSection(exercise)
 
@@ -56,14 +54,15 @@ public struct ExerciseSessionView: View {
                         reveal(exercise)
                     }
                 }
-                .padding(LoritoSpacing.md)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.horizontal, LoritoSpacing.screenGutter)
                 .frame(maxWidth: LoritoLayout.readingWidth)
                 .frame(maxWidth: .infinity)
             }
 
             actionArea
                 .frame(maxWidth: LoritoLayout.readingWidth)
-                .padding(.horizontal, LoritoSpacing.md)
+                .padding(.horizontal, LoritoSpacing.screenGutter)
                 .padding(.bottom, LoritoSpacing.md)
         }
     }
@@ -90,14 +89,17 @@ public struct ExerciseSessionView: View {
             ForEach(model.options, id: \.self) { option in
                 Button { model.selectedOption = option } label: {
                     HStack {
-                        Text(option).font(LoritoFont.body).foregroundStyle(LoritoColor.textPrimary)
+                        AnswerText(option, color: optionForeground(option))
                         Spacer()
                     }
-                    .padding(LoritoSpacing.sm)
-                    .background(optionBackground(option), in: RoundedRectangle(cornerRadius: LoritoRadius.md))
-                    .overlay(RoundedRectangle(cornerRadius: LoritoRadius.md)
-                        .strokeBorder(optionBorder(option), lineWidth: 1.5))
+                    .padding(.horizontal, LoritoSpacing.md)
+                    .frame(minHeight: LoritoLayout.primaryButtonHeight)
+                    .background(optionBackground(option), in: RoundedRectangle(cornerRadius: LoritoRadius.md, style: .continuous))
+                    .overlay(RoundedRectangle(cornerRadius: LoritoRadius.md, style: .continuous)
+                        .strokeBorder(optionBorder(option), lineWidth: 2))
+                    .contentShape(Rectangle())
                 }
+                .accessibilityLabel(option)
                 .buttonStyle(.plain)
                 .disabled(model.isResolved)
             }
@@ -107,10 +109,14 @@ public struct ExerciseSessionView: View {
 
     private var textInput: some View {
         @Bindable var model = model
-        return TextField("Ваш ответ", text: $model.typedText)
-            .textFieldStyle(.roundedBorder)
+        return TextField("", text: $model.typedText, prompt: Text("Ваш ответ").foregroundStyle(LoritoColor.onInkSecondary))
             .autocorrectionDisabled()
             .font(LoritoFont.body)
+            .foregroundStyle(LoritoColor.onInk)
+            .tint(LoritoColor.highlight)
+            .padding(.horizontal, LoritoSpacing.md)
+            .frame(minHeight: LoritoLayout.primaryButtonHeight)
+            .background(LoritoColor.inkRaised, in: RoundedRectangle(cornerRadius: LoritoRadius.md, style: .continuous))
             .disabled(model.isResolved)
             .padding(.top, LoritoSpacing.sm)
             .onSubmit { if model.canSubmit { model.submit() } }
@@ -119,12 +125,19 @@ public struct ExerciseSessionView: View {
     private var wordOrderInput: some View {
         VStack(alignment: .leading, spacing: LoritoSpacing.sm) {
             // The sentence built so far.
-            Text(model.ordering.isEmpty ? "Нажимайте слова по порядку" : model.ordering.joined(separator: " "))
-                .font(LoritoFont.body)
-                .foregroundStyle(model.ordering.isEmpty ? LoritoColor.textTertiary : LoritoColor.textPrimary)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(LoritoSpacing.sm)
-                .background(LoritoColor.surface, in: RoundedRectangle(cornerRadius: LoritoRadius.md))
+            Group {
+                if model.ordering.isEmpty {
+                    Text("Нажимайте слова по порядку")
+                        .font(LoritoFont.body)
+                        .foregroundStyle(LoritoColor.onInkSecondary)
+                } else {
+                    AnswerText(model.ordering.joined(separator: " "), color: LoritoColor.onInk)
+                }
+            }
+            .frame(maxWidth: .infinity, minHeight: 88, alignment: .topLeading)
+            .padding(LoritoSpacing.md)
+            .overlay(RoundedRectangle(cornerRadius: LoritoRadius.lg, style: .continuous)
+                .strokeBorder(LoritoColor.inkTrack, style: StrokeStyle(lineWidth: 2, dash: [6, 5])))
 
             ChipRow(items: model.remainingTokens) { token in
                 if !model.isResolved { model.placeToken(token) }
@@ -133,7 +146,8 @@ public struct ExerciseSessionView: View {
             if !model.ordering.isEmpty && !model.isResolved {
                 Button("Сбросить") { model.resetOrdering() }
                     .font(LoritoFont.caption)
-                    .foregroundStyle(LoritoColor.textSecondary)
+                    .foregroundStyle(LoritoColor.onInkSecondary)
+                    .frame(minHeight: LoritoLayout.minTouchTarget)
             }
         }
         .padding(.top, LoritoSpacing.sm)
@@ -144,7 +158,7 @@ public struct ExerciseSessionView: View {
         return VStack(spacing: LoritoSpacing.sm) {
             ForEach(model.matchingLefts, id: \.self) { left in
                 VStack(alignment: .leading, spacing: LoritoSpacing.xs) {
-                    Text(left).font(LoritoFont.body.weight(.semibold)).foregroundStyle(LoritoColor.textPrimary)
+                    AnswerText(left, color: LoritoColor.onInk)
                     ChipRow(items: model.matchingRights, selected: model.matches[left]) { right in
                         if !model.isResolved { model.matches[left] = right }
                     }
@@ -159,13 +173,13 @@ public struct ExerciseSessionView: View {
         VStack(spacing: LoritoSpacing.sm) {
             ForEach(model.pictureOptions, id: \.label) { option in
                 VStack(alignment: .leading, spacing: LoritoSpacing.xs) {
-                    Text(option.label).font(LoritoFont.body.weight(.semibold)).foregroundStyle(LoritoColor.textPrimary)
+                    AnswerText(option.label, color: LoritoColor.onInk)
                     HStack(spacing: LoritoSpacing.sm) {
                         ForEach(model.pictureOptions, id: \.image) { pic in
                             Button { if !model.isResolved { model.matches[option.label] = pic.image } } label: {
                                 assetThumbnail(pic.image)
-                                    .overlay(RoundedRectangle(cornerRadius: LoritoRadius.md)
-                                        .strokeBorder(model.matches[option.label] == pic.image ? LoritoColor.accent : LoritoColor.separator,
+                                    .overlay(RoundedRectangle(cornerRadius: LoritoRadius.sm)
+                                        .strokeBorder(model.matches[option.label] == pic.image ? LoritoColor.highlight : LoritoColor.inkTrack,
                                                       lineWidth: 2))
                             }
                             .buttonStyle(.plain)
@@ -183,46 +197,50 @@ public struct ExerciseSessionView: View {
             if let url = ContentLoader.exerciseAssetURL(image) {
                 AsyncImage(url: url) { img in img.resizable().scaledToFit() } placeholder: { ProgressView() }
             } else {
-                Text(image).font(LoritoFont.caption).foregroundStyle(LoritoColor.textTertiary)
+                Text(image).font(LoritoFont.caption).foregroundStyle(LoritoColor.textSecondary)
             }
         }
+        .padding(LoritoSpacing.xxs)
         .frame(width: 64, height: 64)
-        .background(LoritoColor.surface, in: RoundedRectangle(cornerRadius: LoritoRadius.md))
+        .background(LoritoColor.surfaceRaised, in: RoundedRectangle(cornerRadius: LoritoRadius.sm))
     }
 
     // MARK: Feedback / reveal
 
     private func feedback(_ check: ExerciseCheck, exercise: Exercise) -> some View {
-        VStack(alignment: .leading, spacing: LoritoSpacing.xs) {
+        let foreground = check.isCorrect ? LoritoColor.onHighlight : LoritoColor.textPrimary
+        return VStack(alignment: .leading, spacing: LoritoSpacing.xs) {
             Label(check.isCorrect ? "Верно" : "Неверно",
                   systemImage: check.isCorrect ? "checkmark.circle.fill" : "xmark.circle.fill")
-                .font(LoritoFont.body.weight(.semibold))
-                .foregroundStyle(check.isCorrect ? LoritoColor.success : LoritoColor.warning)
+                .loritoStyle(.heading)
+                .foregroundStyle(check.isCorrect ? LoritoColor.onHighlight : LoritoColor.dangerText)
             if !check.isCorrect {
-                Text("Правильный ответ: \(check.correctAnswer)")
-                    .font(LoritoFont.body).foregroundStyle(LoritoColor.textPrimary)
+                HStack(alignment: .firstTextBaseline, spacing: LoritoSpacing.xs) {
+                    Text("Правильный ответ:").font(LoritoFont.body).foregroundStyle(foreground)
+                    AnswerText(check.correctAnswer, color: LoritoColor.accent)
+                }
+                .accessibilityElement(children: .combine)
             }
             if !exercise.explanation.isEmpty { CardContentView(exercise.explanation) }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(LoritoSpacing.sm)
-        .background((check.isCorrect ? LoritoColor.success : LoritoColor.warning).opacity(0.10),
-                   in: RoundedRectangle(cornerRadius: LoritoRadius.md))
-        .padding(.top, LoritoSpacing.sm)
+        .padding(LoritoSpacing.md)
+        .background(check.isCorrect ? LoritoColor.highlight : LoritoColor.surfaceRaised,
+                    in: RoundedRectangle(cornerRadius: LoritoRadius.md + 4, style: .continuous))
+        .environment(\.colorScheme, check.isCorrect ? .light : (colorScheme))
     }
 
     private func reveal(_ exercise: Exercise) -> some View {
         VStack(alignment: .leading, spacing: LoritoSpacing.xs) {
-            Text("Образец ответа").font(LoritoFont.caption).foregroundStyle(LoritoColor.textTertiary)
-            Text(model.referenceAnswer).font(LoritoFont.body).foregroundStyle(LoritoColor.textPrimary)
-            if !exercise.explanation.isEmpty { CardContentView(exercise.explanation) }
+            Text("Образец ответа").loritoStyle(.label).foregroundStyle(LoritoColor.highlight)
+            AnswerText(model.referenceAnswer, color: LoritoColor.onInk)
+            if !exercise.explanation.isEmpty { CardContentView(exercise.explanation, tone: .ink) }
             Text("Оцените свой ответ:").font(LoritoFont.caption)
-                .foregroundStyle(LoritoColor.textSecondary).padding(.top, LoritoSpacing.xs)
+                .foregroundStyle(LoritoColor.onInkSecondary).padding(.top, LoritoSpacing.xs)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(LoritoSpacing.sm)
-        .background(LoritoColor.info.opacity(0.10), in: RoundedRectangle(cornerRadius: LoritoRadius.md))
-        .padding(.top, LoritoSpacing.sm)
+        .padding(LoritoSpacing.md)
+        .background(LoritoColor.inkRaised, in: RoundedRectangle(cornerRadius: LoritoRadius.md + 4, style: .continuous))
     }
 
     // MARK: Action area
@@ -240,55 +258,31 @@ public struct ExerciseSessionView: View {
     }
 
     private func primaryButton(_ title: String, enabled: Bool = true, action: @escaping () -> Void) -> some View {
-        Button(action: action) {
-            Text(title)
-                .font(LoritoFont.body.weight(.semibold))
-                .foregroundStyle(LoritoColor.onAccent)
-                .frame(maxWidth: .infinity)
-                .padding(.vertical, LoritoSpacing.sm)
-                .background(enabled ? LoritoColor.accent : LoritoColor.accent.opacity(0.4),
-                           in: RoundedRectangle(cornerRadius: LoritoRadius.md))
-        }
-        .buttonStyle(.plain)
-        .disabled(!enabled)
+        PrimaryButton(title, variant: .highlight, action: action)
+            .disabled(!enabled)
     }
 
     // MARK: Option styling
 
     private func optionBackground(_ option: String) -> Color {
         if model.isResolved, let check = model.lastCheck {
-            if option == check.correctAnswer { return LoritoColor.success.opacity(0.15) }
-            if option == model.selectedOption { return LoritoColor.warning.opacity(0.15) }
-        } else if option == model.selectedOption {
-            return LoritoColor.accent.opacity(0.12)
+            if option == check.correctAnswer { return LoritoColor.highlight }
+            if option == model.selectedOption { return LoritoColor.dangerSoft }
         }
-        return LoritoColor.surface
+        return LoritoColor.inkRaised
+    }
+
+    private func optionForeground(_ option: String) -> Color {
+        if model.isResolved, let check = model.lastCheck {
+            if option == check.correctAnswer { return LoritoColor.onHighlight }
+            if option == model.selectedOption { return LoritoColor.dangerText }
+        }
+        return LoritoColor.onInk
     }
 
     private func optionBorder(_ option: String) -> Color {
-        if model.isResolved, let check = model.lastCheck {
-            if option == check.correctAnswer { return LoritoColor.success }
-            if option == model.selectedOption { return LoritoColor.warning }
-        } else if option == model.selectedOption {
-            return LoritoColor.accent
-        }
-        return LoritoColor.separator
-    }
-
-    private var completionState: some View {
-        VStack(spacing: LoritoSpacing.sm) {
-            Text("🎉").font(.system(size: 52))
-            Text("Готово!").font(LoritoFont.title).foregroundStyle(LoritoColor.textPrimary)
-            Text("Все упражнения пройдены.").font(LoritoFont.body).foregroundStyle(LoritoColor.textSecondary)
-            Button("На главную", action: onClose)
-                .font(LoritoFont.body.weight(.semibold))
-                .foregroundStyle(LoritoColor.onAccent)
-                .padding(.horizontal, LoritoSpacing.lg)
-                .padding(.vertical, LoritoSpacing.sm)
-                .background(LoritoColor.accent, in: Capsule())
-                .padding(.top, LoritoSpacing.sm)
-        }
-        .padding(LoritoSpacing.xl)
+        if !model.isResolved, option == model.selectedOption { return LoritoColor.highlight }
+        return .clear
     }
 }
 
@@ -303,16 +297,13 @@ private struct ChipRow: View {
             HStack(spacing: LoritoSpacing.xs) {
                 ForEach(items, id: \.self) { item in
                     Button { onTap(item) } label: {
-                        Text(item)
-                            .font(LoritoFont.body)
-                            .foregroundStyle(LoritoColor.textPrimary)
-                            .padding(.horizontal, LoritoSpacing.sm)
-                            .padding(.vertical, LoritoSpacing.xs)
-                            .background(item == selected ? LoritoColor.accent.opacity(0.15) : LoritoColor.surface,
-                                       in: Capsule())
-                            .overlay(Capsule().strokeBorder(item == selected ? LoritoColor.accent : LoritoColor.separator,
-                                                            lineWidth: 1.5))
+                        AnswerText(item, color: item == selected ? LoritoColor.onHighlight : LoritoColor.onInk)
+                            .padding(.horizontal, LoritoSpacing.md)
+                            .frame(minHeight: LoritoLayout.minTouchTarget)
+                            .background(item == selected ? LoritoColor.highlight : LoritoColor.inkRaised,
+                                        in: RoundedRectangle(cornerRadius: LoritoRadius.sm, style: .continuous))
                     }
+                    .accessibilityLabel(item)
                     .buttonStyle(.plain)
                 }
             }

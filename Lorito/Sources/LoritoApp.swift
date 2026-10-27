@@ -1,8 +1,15 @@
 import SwiftUI
 import Features
+import DesignSystem
 
 @main
 struct LoritoApp: App {
+    init() {
+        // Bundled brand fonts live in the DesignSystem package bundle, which
+        // `UIAppFonts` can't see — register them before the first view renders.
+        FontRegistry.registerAll()
+    }
+
     var body: some Scene {
         WindowGroup {
             // `LORITO_CLOUDKIT` is defined only in builds that carry the iCloud

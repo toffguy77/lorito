@@ -24,29 +24,44 @@ public struct MainTabView: View {
         self.reminders = ReminderService(scheduler: SystemNotificationScheduler(), store: store, catalog: catalog)
     }
 
+    private static let tabs: [FloatingTabItem<Int>] = [
+        FloatingTabItem(id: 0, title: "Сегодня", systemImage: "sun.max"),
+        FloatingTabItem(id: 1, title: "Каталог", systemImage: "point.topleft.down.to.point.bottomright.curvepath"),
+        FloatingTabItem(id: 2, title: "Прогресс", systemImage: "flame"),
+        FloatingTabItem(id: 3, title: "Настройки", systemImage: "slider.horizontal.3"),
+    ]
+
     public var body: some View {
+        // `TabView` keeps per-tab state and the reminder deep link; its system
+        // chrome is hidden in favor of the floating bar.
         TabView(selection: $selection) {
             TodayView(store: store, catalog: catalog, onSessionComplete: {
                 Task { await reminders.reschedule() }
             })
-            .tabItem { Label("Сегодня", systemImage: "sun.max") }
+            .floatingTabBarInset()
             .tag(0)
 
             CatalogView(store: store, catalog: catalog)
-                .tabItem { Label("Каталог", systemImage: "books.vertical") }
+                .floatingTabBarInset()
                 .tag(1)
 
             StatsView(store: store)
-                .tabItem { Label("Прогресс", systemImage: "flame") }
+                .floatingTabBarInset()
                 .tag(2)
 
             NavigationStack {
                 SettingsView(model: scopeModel, reminders: reminders)
             }
-            .tabItem { Label("Настройки", systemImage: "gearshape") }
+            .floatingTabBarInset()
             .tag(3)
         }
         .tint(LoritoColor.accent)
+        .overlay(alignment: .bottom) {
+            FloatingTabBar(items: Self.tabs, selection: $selection)
+                .frame(maxWidth: LoritoLayout.readingWidth)
+                .padding(.horizontal, LoritoSpacing.screenGutter)
+                .padding(.bottom, LoritoSpacing.xs)
+        }
         .task {
             // Route tapped reminders to Today, then reschedule on launch.
             let delegate = ReminderNotificationDelegate(router: router)
@@ -61,5 +76,16 @@ public struct MainTabView: View {
         .onChange(of: router.openToday) { _, open in
             if open { selection = 0; router.consume() }  // reminder deep link
         }
+    }
+}
+
+private extension View {
+    /// Hide the system tab bar and reserve room for the floating one so content
+    /// scrolls clear of it.
+    func floatingTabBarInset() -> some View {
+        systemTabBarHidden()
+            .safeAreaInset(edge: .bottom, spacing: 0) {
+                Color.clear.frame(height: LoritoLayout.tabBarHeight + LoritoSpacing.xs)
+            }
     }
 }

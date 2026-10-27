@@ -27,10 +27,9 @@ func completeOnboardingIfPresent(_ app: XCUIApplication, level: String = "A1") {
     }
 }
 
-/// Resolve a tab by label across layouts. iPhone renders `TabView` as a bottom
-/// `tabBars`; iPad (regular width) renders it as a top bar whose tabs are plain
-/// `Button`s (nested duplicates) not under `tabBars`. In both cases the tab is an
-/// `app.buttons` match by label, so `.firstMatch` disambiguates the iPad nesting.
+/// Resolve a tab by label. The app's floating tab bar exposes each destination
+/// as a plain `Button` labeled with the tab title (the system tab bar is hidden),
+/// so the tab is an `app.buttons` match by label on every layout.
 @MainActor
 func tabButton(_ app: XCUIApplication, _ label: String) -> XCUIElement {
     app.buttons[label].firstMatch
@@ -125,8 +124,8 @@ final class PracticeFlowUITests: XCTestCase {
         dismissSystemAlertIfPresent()
 
         // Go to the Catalog.
-        XCTAssertTrue(app.tabBars.buttons["Каталог"].waitForExistence(timeout: 15))
-        app.tabBars.buttons["Каталог"].tap()
+        XCTAssertTrue(tabButton(app, "Каталог").waitForExistence(timeout: 15))
+        tabButton(app, "Каталог").tap()
 
         // A1 → theme "Существительное и его окружение".
         let theme = app.staticTexts["Существительное и его окружение"]
@@ -180,8 +179,8 @@ final class PracticeFlowUITests: XCTestCase {
         completeOnboardingIfPresent(app)
         dismissSystemAlertIfPresent()
 
-        XCTAssertTrue(app.tabBars.buttons["Каталог"].waitForExistence(timeout: 15))
-        app.tabBars.buttons["Каталог"].tap()
+        XCTAssertTrue(tabButton(app, "Каталог").waitForExistence(timeout: 15))
+        tabButton(app, "Каталог").tap()
 
         let theme = app.staticTexts["Числа, время и быт"]
         XCTAssertTrue(theme.waitForExistence(timeout: 15), "a1-5 theme row not found")
@@ -211,8 +210,8 @@ final class PracticeFlowUITests: XCTestCase {
         completeOnboardingIfPresent(app)
         dismissSystemAlertIfPresent()
 
-        XCTAssertTrue(app.tabBars.buttons["Настройки"].waitForExistence(timeout: 15))
-        app.tabBars.buttons["Настройки"].tap()
+        XCTAssertTrue(tabButton(app, "Настройки").waitForExistence(timeout: 15))
+        tabButton(app, "Настройки").tap()
 
         let about = app.staticTexts["О приложении"]
         XCTAssertTrue(about.waitForExistence(timeout: 15), "«О приложении» entry not found")
@@ -241,8 +240,8 @@ final class RemindersSettingsUITests: XCTestCase {
         dismissSystemAlerts(app)
 
         // Settings → Напоминания.
-        XCTAssertTrue(app.tabBars.buttons["Настройки"].waitForExistence(timeout: 15))
-        app.tabBars.buttons["Настройки"].tap()
+        XCTAssertTrue(tabButton(app, "Настройки").waitForExistence(timeout: 15))
+        tabButton(app, "Настройки").tap()
         let entry = app.staticTexts["Напоминания"]
         XCTAssertTrue(entry.waitForExistence(timeout: 15), "Reminders entry not found in Settings")
         entry.tap()

@@ -53,25 +53,22 @@ public struct OnboardingView: View {
             )
 
             ScrollView {
-                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: LoritoSpacing.sm) {
+                VStack(spacing: 6) {
                     ForEach(model.allLevels) { level in
-                        SelectableChip(
-                            title: level.rawValue,
-                            isSelected: model.includedLevels.contains(level)
-                        ) {
+                        LevelRow(level: level, state: rowState(level)) {
                             model.selectLevel(level)
                             model.selectAllThemes()
                         }
                     }
                 }
-                .padding(.horizontal, LoritoSpacing.lg)
+                .padding(.horizontal, LoritoSpacing.screenGutter)
 
                 if model.targetLevel != nil {
                     Text("Включено: \(model.includedLevels.map(\.rawValue).joined(separator: ", "))")
                         .font(LoritoFont.caption)
-                        .foregroundStyle(LoritoColor.textTertiary)
+                        .foregroundStyle(LoritoColor.textSecondary)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.horizontal, LoritoSpacing.lg)
+                        .padding(.horizontal, LoritoSpacing.screenGutter)
                         .padding(.top, LoritoSpacing.sm)
                 }
             }
@@ -79,6 +76,7 @@ public struct OnboardingView: View {
             primaryButton(title: "Далее", enabled: model.targetLevel != nil) {
                 step = .themes
             }
+            .padding(.horizontal, LoritoSpacing.screenGutter)
         }
         .padding(.vertical, LoritoSpacing.lg)
     }
@@ -103,28 +101,26 @@ public struct OnboardingView: View {
                         }
                     }
                 }
-                .padding(.horizontal, LoritoSpacing.lg)
+                .padding(.horizontal, LoritoSpacing.screenGutter)
             }
 
             if !model.isStudyable {
                 Text("Выберите хотя бы одну тему, чтобы продолжить.")
                     .font(LoritoFont.caption)
-                    .foregroundStyle(LoritoColor.danger)
-                    .padding(.horizontal, LoritoSpacing.lg)
+                    .foregroundStyle(LoritoColor.dangerText)
+                    .padding(.horizontal, LoritoSpacing.screenGutter)
             }
 
             HStack(spacing: LoritoSpacing.sm) {
                 Button("Назад") { step = .level }
-                    .font(LoritoFont.body.weight(.semibold))
-                    .foregroundStyle(LoritoColor.textSecondary)
-                    .padding(.vertical, LoritoSpacing.sm)
-                    .padding(.horizontal, LoritoSpacing.lg)
+                    .buttonStyle(PrimaryButtonStyle(.outline))
+                    .fixedSize()
 
                 primaryButton(title: "Далее", enabled: model.isStudyable) {
                     step = .reminders
                 }
             }
-            .padding(.horizontal, LoritoSpacing.lg)
+            .padding(.horizontal, LoritoSpacing.screenGutter)
         }
         .padding(.vertical, LoritoSpacing.lg)
     }
@@ -139,22 +135,20 @@ public struct OnboardingView: View {
             )
 
             reminderTimePicker
-                .padding(.horizontal, LoritoSpacing.lg)
+                .padding(.horizontal, LoritoSpacing.screenGutter)
 
             Spacer()
 
             HStack(spacing: LoritoSpacing.sm) {
                 Button("Пропустить") { finish(enableReminderAt: nil) }
-                    .font(LoritoFont.body.weight(.semibold))
-                    .foregroundStyle(LoritoColor.textSecondary)
-                    .padding(.vertical, LoritoSpacing.sm)
-                    .padding(.horizontal, LoritoSpacing.lg)
+                    .buttonStyle(PrimaryButtonStyle(.outline))
+                    .fixedSize()
 
                 primaryButton(title: "Готово", enabled: true) {
                     finish(enableReminderAt: reminderTime)
                 }
             }
-            .padding(.horizontal, LoritoSpacing.lg)
+            .padding(.horizontal, LoritoSpacing.screenGutter)
         }
         .padding(.vertical, LoritoSpacing.lg)
     }
@@ -191,32 +185,45 @@ public struct OnboardingView: View {
 
     // MARK: - Shared pieces
 
+    private func rowState(_ level: CEFRLevel) -> LevelRow.State {
+        if level == model.targetLevel { return .target }
+        return model.includedLevels.contains(level) ? .included : .off
+    }
+
+    private var stepIndex: Int {
+        switch step {
+        case .level: return 0
+        case .themes: return 1
+        case .reminders: return 2
+        }
+    }
+
     private func header(title: String, subtitle: String) -> some View {
-        VStack(alignment: .leading, spacing: LoritoSpacing.xs) {
+        VStack(alignment: .leading, spacing: LoritoSpacing.sm) {
+            HStack(spacing: 6) {
+                ForEach(0..<3, id: \.self) { i in
+                    Capsule()
+                        .fill(i <= stepIndex ? LoritoColor.textPrimary : LoritoColor.separator)
+                        .frame(height: 5)
+                }
+            }
+            .accessibilityElement()
+            .accessibilityLabel("Шаг \(stepIndex + 1) из 3")
+            .padding(.bottom, LoritoSpacing.xs)
             Text(title)
-                .font(LoritoFont.title)
+                .loritoStyle(LoritoTextStyle.title.sized(32))
                 .foregroundStyle(LoritoColor.textPrimary)
+                .loritoTitleFit(lines: 2)
+                .accessibilityAddTraits(.isHeader)
             Text(subtitle)
                 .font(LoritoFont.body)
                 .foregroundStyle(LoritoColor.textSecondary)
         }
-        .padding(.horizontal, LoritoSpacing.lg)
+        .padding(.horizontal, LoritoSpacing.screenGutter)
     }
 
     private func primaryButton(title: String, enabled: Bool, action: @escaping () -> Void) -> some View {
-        Button(action: action) {
-            Text(title)
-                .font(LoritoFont.body.weight(.semibold))
-                .foregroundStyle(LoritoColor.onAccent)
-                .frame(maxWidth: .infinity)
-                .padding(.vertical, LoritoSpacing.sm)
-                .background(
-                    enabled ? LoritoColor.accent : LoritoColor.segmentTrack,
-                    in: Capsule()
-                )
-        }
-        .buttonStyle(.plain)
-        .disabled(!enabled)
-        .padding(.horizontal, LoritoSpacing.lg)
+        PrimaryButton(title, variant: .ink, action: action)
+            .disabled(!enabled)
     }
 }

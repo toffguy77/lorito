@@ -63,8 +63,11 @@ is ink with a Lima icon.
 **Grade buttons gain a secondary line.** `GradeButtons` accepts an optional
 per-grade caption (`[StudyGrade: String]`). This change renders without
 captions; `recall-first-study` supplies interval text. Colors: Опять =
-dangerSoft/dangerText, Трудно = inkRaised/onInk, Хорошо = accent/onAccent,
+dangerSoft/dangerText, Трудно = inkTrack/onInk, Хорошо = accent/onAccent,
 Легко = highlight/onHighlight — distinguishable by lightness, not only hue.
+(Трудно was `inkRaised` in the mockups; in dark it has the same lightness as
+dark `dangerSoft` (ratio 1.01), so it moved to `inkTrack` to satisfy the
+"Grades distinguishable without color" scenario.)
 
 **Icon from vector source.** `design/brand/AppIcon*.svg` are the masters; the
 committed PNGs are 1024×1024 RGB without alpha. Asset catalog uses

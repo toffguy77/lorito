@@ -47,14 +47,14 @@ public struct AboutView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: LoritoSpacing.lg) {
                 Text("Lorito Español")
-                    .font(LoritoFont.title)
+                    .loritoStyle(.title)
                     .foregroundStyle(LoritoColor.textPrimary)
                 Text("Испанский по карточкам с интервальным повторением.")
                     .font(LoritoFont.body)
                     .foregroundStyle(LoritoColor.textSecondary)
 
                 Text("Лицензии и благодарности")
-                    .font(LoritoFont.heading)
+                    .loritoStyle(.heading)
                     .foregroundStyle(LoritoColor.textPrimary)
                     .padding(.top, LoritoSpacing.sm)
 
@@ -62,29 +62,30 @@ public struct AboutView: View {
                     VStack(alignment: .leading, spacing: LoritoSpacing.xxs) {
                         HStack {
                             Text(entry.name)
-                                .font(LoritoFont.body.weight(.semibold))
+                                .font(LoritoFont.bodyStrong)
                                 .foregroundStyle(LoritoColor.textPrimary)
                             Spacer()
                             Text(entry.license)
-                                .font(LoritoFont.label)
-                                .foregroundStyle(LoritoColor.accent)
+                                .font(LoritoFont.caption)
+                                .foregroundStyle(LoritoColor.onAccentSoft)
                                 .padding(.horizontal, LoritoSpacing.xs)
                                 .padding(.vertical, LoritoSpacing.xxs)
-                                .background(LoritoColor.accent.opacity(0.12), in: Capsule())
+                                .background(LoritoColor.accentSoft, in: Capsule())
                         }
                         Text(entry.detail)
                             .font(LoritoFont.caption)
                             .foregroundStyle(LoritoColor.textSecondary)
                         Text(entry.url)
                             .font(LoritoFont.caption)
-                            .foregroundStyle(LoritoColor.textTertiary)
+                            .foregroundStyle(LoritoColor.accent)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(LoritoSpacing.sm)
-                    .background(LoritoColor.surfaceSecondary, in: RoundedRectangle(cornerRadius: LoritoRadius.md))
+                    .padding(LoritoSpacing.md)
+                    .background(LoritoColor.surfaceRaised, in: RoundedRectangle(cornerRadius: LoritoRadius.md, style: .continuous))
                 }
             }
-            .padding(LoritoSpacing.lg)
+            .padding(.horizontal, LoritoSpacing.screenGutter)
+            .padding(.vertical, LoritoSpacing.lg)
             .frame(maxWidth: LoritoLayout.readingWidth)
             .frame(maxWidth: .infinity)
         }

@@ -22,14 +22,7 @@ public struct SettingsView: View {
                     NavigationLink {
                         RemindersView(service: reminders)
                     } label: {
-                        HStack {
-                            Text("Напоминания")
-                                .font(LoritoFont.heading)
-                                .foregroundStyle(LoritoColor.textPrimary)
-                            Spacer()
-                            Image(systemName: "chevron.right")
-                                .foregroundStyle(LoritoColor.textTertiary)
-                        }
+                        settingsRow("Напоминания", systemImage: "bell")
                     }
                     .buttonStyle(.plain)
                 }
@@ -37,14 +30,7 @@ public struct SettingsView: View {
                 NavigationLink {
                     AboutView()
                 } label: {
-                    HStack {
-                        Text("О приложении")
-                            .font(LoritoFont.heading)
-                            .foregroundStyle(LoritoColor.textPrimary)
-                        Spacer()
-                        Image(systemName: "chevron.right")
-                            .foregroundStyle(LoritoColor.textTertiary)
-                    }
+                    settingsRow("О приложении", systemImage: "info.circle")
                 }
                 .buttonStyle(.plain)
 
@@ -82,11 +68,12 @@ public struct SettingsView: View {
                     if !model.isStudyable {
                         Text("Выберите хотя бы одну тему.")
                             .font(LoritoFont.caption)
-                            .foregroundStyle(LoritoColor.danger)
+                            .foregroundStyle(LoritoColor.dangerText)
                     }
                 }
             }
-            .padding(LoritoSpacing.lg)
+            .padding(.horizontal, LoritoSpacing.screenGutter)
+            .padding(.vertical, LoritoSpacing.lg)
             .frame(maxWidth: LoritoLayout.readingWidth)
             .frame(maxWidth: .infinity)
         }
@@ -106,9 +93,29 @@ public struct SettingsView: View {
     ) -> some View {
         VStack(alignment: .leading, spacing: LoritoSpacing.sm) {
             Text(title)
-                .font(LoritoFont.heading)
-                .foregroundStyle(LoritoColor.textPrimary)
+                .loritoStyle(.label)
+                .foregroundStyle(LoritoColor.textSecondary)
             content()
         }
+    }
+
+    private func settingsRow(_ title: String, systemImage: String) -> some View {
+        HStack(spacing: LoritoSpacing.sm) {
+            Image(systemName: systemImage)
+                .foregroundStyle(LoritoColor.accent)
+                .frame(width: 24)
+                .accessibilityHidden(true)
+            Text(title)
+                .font(LoritoFont.bodyStrong)
+                .foregroundStyle(LoritoColor.textPrimary)
+            Spacer()
+            Image(systemName: "chevron.right")
+                .foregroundStyle(LoritoColor.textSecondary)
+                .accessibilityHidden(true)
+        }
+        .padding(.horizontal, LoritoSpacing.md)
+        .frame(minHeight: LoritoLayout.primaryButtonHeight)
+        .background(LoritoColor.surfaceRaised, in: RoundedRectangle(cornerRadius: LoritoRadius.md, style: .continuous))
+        .contentShape(Rectangle())
     }
 }

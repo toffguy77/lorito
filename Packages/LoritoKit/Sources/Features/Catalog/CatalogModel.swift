@@ -49,6 +49,25 @@ public final class CatalogModel {
     public func cards(in theme: Theme) -> [Card] { catalog.cards(themeID: theme.id) }
     public func theme(id: String) -> Theme? { catalog.theme(id: id) }
 
+    // MARK: Progress
+
+    /// Cards of a theme the user has started (any status but `new`) of its total.
+    public func progress(in theme: Theme) -> (started: Int, total: Int) {
+        let cards = cards(in: theme)
+        return (cards.filter { status(for: $0.id) != .new }.count, cards.count)
+    }
+
+    /// Started cards across the whole catalog, of all cards.
+    public var overallProgress: (started: Int, total: Int) {
+        let all = levels.flatMap(themes(in:)).flatMap(cards(in:))
+        return (all.filter { status(for: $0.id) != .new }.count, all.count)
+    }
+
+    /// The theme to continue in a level: the first one not fully started.
+    public func currentTheme(in level: CEFRLevel) -> Theme? {
+        themes(in: level).first { let p = progress(in: $0); return p.started < p.total }
+    }
+
     // MARK: Practice
 
     /// Exercises drilling a given card.

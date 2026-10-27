@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// The elevated surface that wraps a study card's content (chip, title, body).
+/// The raised surface that wraps a study card's content (chip, title, body).
 public struct StudyCardContainer<Content: View>: View {
     private let content: Content
 
@@ -9,13 +9,13 @@ public struct StudyCardContainer<Content: View>: View {
     }
 
     public var body: some View {
-        VStack(alignment: .leading, spacing: LoritoSpacing.sm) {
+        VStack(alignment: .leading, spacing: LoritoSpacing.md) {
             content
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(LoritoSpacing.lg)
-        .background(LoritoColor.surface, in: RoundedRectangle(cornerRadius: LoritoRadius.lg))
-        .loritoElevation()
+        .padding(.horizontal, LoritoSpacing.lg)
+        .padding(.vertical, LoritoSpacing.lg + 2)
+        .background(LoritoColor.surfaceRaised, in: RoundedRectangle(cornerRadius: LoritoRadius.xl, style: .continuous))
     }
 }
 
@@ -23,10 +23,10 @@ public struct StudyCardContainer<Content: View>: View {
     StudyCardContainer {
         LevelChip(level: "A1", theme: "Verbos")
         Text("El verbo ser")
-            .font(LoritoFont.title)
+            .loritoStyle(.title)
             .foregroundStyle(LoritoColor.textPrimary)
         CalloutBlock(.essence, "Ser выражает идентичность и неизменные свойства.")
     }
     .padding()
-    .background(LoritoColor.surfaceSecondary)
+    .background(LoritoColor.ink)
 }

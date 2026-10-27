@@ -13,31 +13,38 @@ public struct StatsView: View {
 
     public var body: some View {
         ScrollView {
-            VStack(spacing: LoritoSpacing.lg) {
+            VStack(alignment: .leading, spacing: LoritoSpacing.sm) {
                 Text("Прогресс")
-                    .font(LoritoFont.title)
+                    .loritoStyle(.title)
                     .foregroundStyle(LoritoColor.textPrimary)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .loritoTitleFit(lines: 1)
+                    .accessibilityAddTraits(.isHeader)
+                    .padding(.bottom, LoritoSpacing.xs)
 
-                streakCard
+                HStack(spacing: LoritoSpacing.sm - 2) {
+                    streakTile
+                        .layoutPriority(1.3)
+                    VStack(spacing: LoritoSpacing.sm - 2) {
+                        statTile("лучшая серия", model.stats.bestStreak)
+                        statTile("повторений всего", model.stats.studiedAllTime)
+                    }
+                }
+                .fixedSize(horizontal: false, vertical: true)
 
-                HStack(spacing: LoritoSpacing.sm) {
-                    statTile("Сегодня", model.stats.studiedToday)
-                    statTile("За неделю", model.stats.studiedThisWeek)
-                    statTile("Всего", model.stats.studiedAllTime)
+                HStack(spacing: LoritoSpacing.sm - 2) {
+                    statTile("сегодня", model.stats.studiedToday)
+                    statTile("за неделю", model.stats.studiedThisWeek)
                 }
 
                 if !model.hasHistory {
-                    Text("Начните учиться сегодня — и заложите первый день серии! 🌱")
+                    Text("Начните учиться сегодня — и заложите первый день серии!")
                         .font(LoritoFont.body)
                         .foregroundStyle(LoritoColor.textSecondary)
-                        .multilineTextAlignment(.center)
                         .padding(.top, LoritoSpacing.sm)
                 }
-
-                Spacer()
             }
-            .padding(LoritoSpacing.lg)
+            .padding(.horizontal, LoritoSpacing.screenGutter)
+            .padding(.vertical, LoritoSpacing.lg)
             .frame(maxWidth: LoritoLayout.readingWidth)
             .frame(maxWidth: .infinity)
         }
@@ -45,38 +52,42 @@ public struct StatsView: View {
         .onAppear { model.refresh() }
     }
 
-    private var streakCard: some View {
-        VStack(spacing: LoritoSpacing.xs) {
-            Text("🔥").font(.system(size: 44))
+    private var streakTile: some View {
+        VStack(alignment: .leading) {
+            Image(systemName: "flame.fill")
+                .font(.system(size: 26, weight: .semibold))
+                .accessibilityHidden(true)
+            Spacer(minLength: LoritoSpacing.md)
             Text("\(model.stats.currentStreak)")
-                .font(.system(size: 56, weight: .bold, design: .rounded))
-                .foregroundStyle(LoritoColor.onAccent)
+                .loritoStyle(LoritoTextStyle.number.sized(52))
+                .lineLimit(1)
+                .minimumScaleFactor(0.6)
             Text(dayWord(model.stats.currentStreak))
-                .font(LoritoFont.body.weight(.semibold))
-                .foregroundStyle(LoritoColor.onAccent.opacity(0.9))
-            Text("Лучшая серия: \(model.stats.bestStreak)")
-                .font(LoritoFont.caption)
-                .foregroundStyle(LoritoColor.onAccentSoft)
-                .padding(.top, LoritoSpacing.xxs)
+                .font(LoritoFont.bodyStrong)
         }
-        .frame(maxWidth: .infinity)
-        .padding(.vertical, LoritoSpacing.lg)
-        .background(LoritoColor.accent, in: RoundedRectangle(cornerRadius: LoritoRadius.lg))
-        .loritoElevation()
+        .foregroundStyle(LoritoColor.ink)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+        .padding(LoritoSpacing.md + 2)
+        .frame(minHeight: 140)
+        .background(LoritoColor.danger, in: RoundedRectangle(cornerRadius: LoritoRadius.lg, style: .continuous))
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("Текущая серия: \(model.stats.currentStreak) \(dayWord(model.stats.currentStreak))")
     }
 
     private func statTile(_ title: String, _ value: Int) -> some View {
-        VStack(spacing: LoritoSpacing.xxs) {
+        VStack(alignment: .leading, spacing: 2) {
             Text("\(value)")
-                .font(LoritoFont.title)
+                .loritoStyle(.heading)
                 .foregroundStyle(LoritoColor.textPrimary)
             Text(title)
                 .font(LoritoFont.caption)
                 .foregroundStyle(LoritoColor.textSecondary)
         }
-        .frame(maxWidth: .infinity)
-        .padding(.vertical, LoritoSpacing.md)
-        .background(LoritoColor.surfaceSecondary, in: RoundedRectangle(cornerRadius: LoritoRadius.md))
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+        .padding(.horizontal, LoritoSpacing.md - 2)
+        .padding(.vertical, LoritoSpacing.sm)
+        .background(LoritoColor.surfaceRaised, in: RoundedRectangle(cornerRadius: LoritoRadius.md + 2, style: .continuous))
+        .accessibilityElement(children: .combine)
     }
 
     /// Russian plural for "день/дня/дней".
