@@ -5498,6 +5498,181 @@
       ]
     },
     {
+      "id": "A1-EX-L01",
+      "level": "A1",
+      "themeID": "a1-1",
+      "card": "A1-02",
+      "type": "listen-choose",
+      "prompt": "Какое слово прозвучало?",
+      "explanation": "*perro* (собака) — раскатистое **rr**; *pero* (но) — одиночное **r**.",
+      "audio": "perro",
+      "options": [
+        "perro",
+        "pero"
+      ],
+      "answer": "perro"
+    },
+    {
+      "id": "A1-EX-L02",
+      "level": "A1",
+      "themeID": "a1-1",
+      "card": "A1-06",
+      "type": "dictation",
+      "prompt": "Послушайте и запишите фразу по-испански.",
+      "explanation": "Вопрос открывается знаком **¿**; *cómo* — с ударением, потому что это вопросительное слово.",
+      "audio": "¿Cómo te llamas?"
+    },
+    {
+      "id": "A1-EX-L03",
+      "level": "A1",
+      "themeID": "a1-1",
+      "card": "A1-02",
+      "type": "speak",
+      "prompt": "Скажите фразу вслух.",
+      "explanation": "**H** не читается: *hola* — [ола].",
+      "answer": "Hola, ¿qué tal?"
+    },
+    {
+      "id": "A1-EX-L04",
+      "level": "A1",
+      "themeID": "a1-2",
+      "card": "A1-09",
+      "type": "listen-choose",
+      "prompt": "Послушайте и выберите, что вы услышали.",
+      "explanation": "*el problema* — мужского рода, поэтому *un problema*.",
+      "audio": "Tengo un problema.",
+      "options": [
+        "У меня проблема.",
+        "У меня нет проблем."
+      ],
+      "answer": "У меня проблема."
+    },
+    {
+      "id": "A1-EX-L05",
+      "level": "A1",
+      "themeID": "a1-2",
+      "card": "A1-11",
+      "type": "dictation",
+      "prompt": "Послушайте и запишите фразу по-испански.",
+      "explanation": "Прилагательное согласуется с существительным: *la casa* → *bonita*.",
+      "audio": "La casa es muy bonita."
+    },
+    {
+      "id": "A1-EX-L06",
+      "level": "A1",
+      "themeID": "a1-2",
+      "card": "A1-13",
+      "type": "speak",
+      "prompt": "Скажите фразу вслух.",
+      "explanation": "*este* — «этот», рядом с говорящим.",
+      "answer": "Este libro es mío."
+    },
+    {
+      "id": "A1-EX-L07",
+      "level": "A1",
+      "themeID": "a1-3",
+      "card": "A1-16",
+      "type": "listen-choose",
+      "prompt": "Послушайте и выберите, что вы услышали.",
+      "explanation": "Местонахождение — **estar**: *estoy en casa*.",
+      "audio": "Estoy en casa.",
+      "options": [
+        "Я дома.",
+        "Я — дом."
+      ],
+      "answer": "Я дома."
+    },
+    {
+      "id": "A1-EX-L08",
+      "level": "A1",
+      "themeID": "a1-3",
+      "card": "A1-22",
+      "type": "dictation",
+      "prompt": "Послушайте и запишите фразу по-испански.",
+      "explanation": "*gustar*: нравится сама вещь — *me gusta el café*.",
+      "audio": "Me gusta el café."
+    },
+    {
+      "id": "A1-EX-L09",
+      "level": "A1",
+      "themeID": "a1-3",
+      "card": "A1-14",
+      "type": "speak",
+      "prompt": "Скажите фразу вслух.",
+      "explanation": "Возвратное *llamarse*: *me llamo*.",
+      "answer": "Me llamo Ana."
+    },
+    {
+      "id": "A1-EX-L10",
+      "level": "A1",
+      "themeID": "a1-4",
+      "card": "A1-24",
+      "type": "listen-choose",
+      "prompt": "Послушайте и выберите, что вы услышали.",
+      "explanation": "*dónde* — «где»; *cuándo* — «когда».",
+      "audio": "¿Dónde vives?",
+      "options": [
+        "Где ты живёшь?",
+        "Когда ты живёшь?"
+      ],
+      "answer": "Где ты живёшь?"
+    },
+    {
+      "id": "A1-EX-L11",
+      "level": "A1",
+      "themeID": "a1-4",
+      "card": "A1-23",
+      "type": "dictation",
+      "prompt": "Послушайте и запишите фразу по-испански.",
+      "explanation": "Отрицание **no** стоит перед глаголом.",
+      "audio": "No hablo inglés."
+    },
+    {
+      "id": "A1-EX-L12",
+      "level": "A1",
+      "themeID": "a1-4",
+      "card": "A1-26",
+      "type": "speak",
+      "prompt": "Скажите фразу вслух.",
+      "explanation": "*mucho* согласуется с существительным: *muchas gracias*.",
+      "answer": "Muchas gracias."
+    },
+    {
+      "id": "A1-EX-L13",
+      "level": "A1",
+      "themeID": "a1-5",
+      "card": "A1-28",
+      "type": "listen-choose",
+      "prompt": "Послушайте и выберите, что вы услышали.",
+      "explanation": "*las tres y media* — 3:30, т. е. половина четвёртого.",
+      "audio": "Son las tres y media.",
+      "options": [
+        "Половина четвёртого.",
+        "Без четверти три."
+      ],
+      "answer": "Половина четвёртого."
+    },
+    {
+      "id": "A1-EX-L14",
+      "level": "A1",
+      "themeID": "a1-5",
+      "card": "A1-29",
+      "type": "dictation",
+      "prompt": "Послушайте и запишите фразу по-испански.",
+      "explanation": "Дни недели пишутся со строчной буквы: *lunes*.",
+      "audio": "Hoy es lunes."
+    },
+    {
+      "id": "A1-EX-L15",
+      "level": "A1",
+      "themeID": "a1-5",
+      "card": "A1-27",
+      "type": "speak",
+      "prompt": "Скажите фразу вслух.",
+      "explanation": "Возраст — через **tener**: *tengo veinte años*.",
+      "answer": "Tengo veinte años."
+    },
+    {
       "id": "A1-EX-M01",
       "level": "A1",
       "themeID": "a1-1",
@@ -8105,6 +8280,181 @@
       ]
     },
     {
+      "id": "A2-EX-L01",
+      "level": "A2",
+      "themeID": "a2-1",
+      "card": "A2-02",
+      "type": "listen-choose",
+      "prompt": "Послушайте и выберите, что вы услышали.",
+      "explanation": "*comí* — pretérito indefinido: законченное действие вчера.",
+      "audio": "Ayer comí paella.",
+      "options": [
+        "Вчера я ел паэлью.",
+        "Завтра я поем паэлью."
+      ],
+      "answer": "Вчера я ел паэлью."
+    },
+    {
+      "id": "A2-EX-L02",
+      "level": "A2",
+      "themeID": "a2-1",
+      "card": "A2-04",
+      "type": "dictation",
+      "prompt": "Послушайте и запишите фразу по-испански.",
+      "explanation": "Описание прошлого фона — **imperfecto**: *era*, *vivía*.",
+      "audio": "Cuando era niño, vivía en Madrid."
+    },
+    {
+      "id": "A2-EX-L03",
+      "level": "A2",
+      "themeID": "a2-1",
+      "card": "A2-01",
+      "type": "speak",
+      "prompt": "Скажите фразу вслух.",
+      "explanation": "Опыт до сих пор — **pretérito perfecto**: *he estado*.",
+      "answer": "He estado en España."
+    },
+    {
+      "id": "A2-EX-L04",
+      "level": "A2",
+      "themeID": "a2-2",
+      "card": "A2-08",
+      "type": "listen-choose",
+      "prompt": "Послушайте и выберите, что вы услышали.",
+      "explanation": "*ir a* + инфинитив — ближайшие планы.",
+      "audio": "Voy a estudiar mañana.",
+      "options": [
+        "Я буду учиться завтра.",
+        "Я учился вчера."
+      ],
+      "answer": "Я буду учиться завтра."
+    },
+    {
+      "id": "A2-EX-L05",
+      "level": "A2",
+      "themeID": "a2-2",
+      "card": "A2-09",
+      "type": "dictation",
+      "prompt": "Послушайте и запишите фразу по-испански.",
+      "explanation": "Вежливое желание — **condicional**: *me gustaría*.",
+      "audio": "Me gustaría viajar a México."
+    },
+    {
+      "id": "A2-EX-L06",
+      "level": "A2",
+      "themeID": "a2-2",
+      "card": "A2-10",
+      "type": "speak",
+      "prompt": "Скажите фразу вслух.",
+      "explanation": "*estar* + герундий — действие прямо сейчас.",
+      "answer": "Estoy trabajando."
+    },
+    {
+      "id": "A2-EX-L07",
+      "level": "A2",
+      "themeID": "a2-3",
+      "card": "A2-14",
+      "type": "listen-choose",
+      "prompt": "Послушайте и выберите, что вы услышали.",
+      "explanation": "*le* перед *lo* превращается в **se**: *se lo doy*.",
+      "audio": "Se lo doy mañana.",
+      "options": [
+        "Я дам ему это завтра.",
+        "Я дам себе это завтра."
+      ],
+      "answer": "Я дам ему это завтра."
+    },
+    {
+      "id": "A2-EX-L08",
+      "level": "A2",
+      "themeID": "a2-3",
+      "card": "A2-16",
+      "type": "dictation",
+      "prompt": "Послушайте и запишите фразу по-испански.",
+      "explanation": "В отрицательном императиве местоимение стоит **перед** глаголом.",
+      "audio": "No lo hagas."
+    },
+    {
+      "id": "A2-EX-L09",
+      "level": "A2",
+      "themeID": "a2-3",
+      "card": "A2-15",
+      "type": "speak",
+      "prompt": "Скажите фразу вслух.",
+      "explanation": "В утвердительном императиве местоимения пишутся слитно: *dímelo*.",
+      "answer": "Dímelo, por favor."
+    },
+    {
+      "id": "A2-EX-L10",
+      "level": "A2",
+      "themeID": "a2-4",
+      "card": "A2-19",
+      "type": "listen-choose",
+      "prompt": "Послушайте и выберите, что вы услышали.",
+      "explanation": "*mejor* — «лучше / лучший», *peor* — «хуже / худший».",
+      "audio": "Este es el mejor restaurante.",
+      "options": [
+        "Это лучший ресторан.",
+        "Это худший ресторан."
+      ],
+      "answer": "Это лучший ресторан."
+    },
+    {
+      "id": "A2-EX-L11",
+      "level": "A2",
+      "themeID": "a2-4",
+      "card": "A2-20",
+      "type": "dictation",
+      "prompt": "Послушайте и запишите фразу по-испански.",
+      "explanation": "Наречие на **-mente** образуется от женского рода: *rápida* → *rápidamente*.",
+      "audio": "Habla muy rápidamente."
+    },
+    {
+      "id": "A2-EX-L12",
+      "level": "A2",
+      "themeID": "a2-4",
+      "card": "A2-22",
+      "type": "speak",
+      "prompt": "Скажите фразу вслух.",
+      "explanation": "*sin embargo* — «однако».",
+      "answer": "Sin embargo, quiero ir."
+    },
+    {
+      "id": "A2-EX-L13",
+      "level": "A2",
+      "themeID": "a2-5",
+      "card": "A2-25",
+      "type": "listen-choose",
+      "prompt": "Послушайте и выберите, что вы услышали.",
+      "explanation": "*desde hace* + срок — действие продолжается до сих пор.",
+      "audio": "Vivo aquí desde hace dos años.",
+      "options": [
+        "Я живу здесь два года.",
+        "Я жил здесь два года назад."
+      ],
+      "answer": "Я живу здесь два года."
+    },
+    {
+      "id": "A2-EX-L14",
+      "level": "A2",
+      "themeID": "a2-5",
+      "card": "A2-24",
+      "type": "dictation",
+      "prompt": "Послушайте и запишите фразу по-испански.",
+      "explanation": "Личная обязанность — *tener que* + инфинитив.",
+      "audio": "Tengo que trabajar mañana."
+    },
+    {
+      "id": "A2-EX-L15",
+      "level": "A2",
+      "themeID": "a2-5",
+      "card": "A2-27",
+      "type": "speak",
+      "prompt": "Скажите фразу вслух.",
+      "explanation": "*para* — назначение, получатель.",
+      "answer": "Este regalo es para ti."
+    },
+    {
       "id": "A2-EX-M01",
       "level": "A2",
       "themeID": "a2-1",
@@ -10170,6 +10520,181 @@
       "accept": [
         "Echo de menos a mi familia"
       ]
+    },
+    {
+      "id": "B1-EX-L01",
+      "level": "B1",
+      "themeID": "b1-1",
+      "card": "B1-02",
+      "type": "listen-choose",
+      "prompt": "Послушайте и выберите, что вы услышали.",
+      "explanation": "Разные подлежащие + желание → **subjuntivo**: *que vengas*.",
+      "audio": "Quiero que vengas.",
+      "options": [
+        "Я хочу, чтобы ты пришёл.",
+        "Я хочу прийти."
+      ],
+      "answer": "Я хочу, чтобы ты пришёл."
+    },
+    {
+      "id": "B1-EX-L02",
+      "level": "B1",
+      "themeID": "b1-1",
+      "card": "B1-03",
+      "type": "dictation",
+      "prompt": "Послушайте и запишите фразу по-испански.",
+      "explanation": "Эмоция + *que* → **subjuntivo**: *estés*.",
+      "audio": "Me alegro de que estés aquí."
+    },
+    {
+      "id": "B1-EX-L03",
+      "level": "B1",
+      "themeID": "b1-1",
+      "card": "B1-05",
+      "type": "speak",
+      "prompt": "Скажите фразу вслух.",
+      "explanation": "Безличная оценка + *que* → **subjuntivo**: *sepas*.",
+      "answer": "Es importante que lo sepas."
+    },
+    {
+      "id": "B1-EX-L04",
+      "level": "B1",
+      "themeID": "b1-2",
+      "card": "B1-06",
+      "type": "listen-choose",
+      "prompt": "Послушайте и выберите, что вы услышали.",
+      "explanation": "*cuando* о будущем → **subjuntivo**: *llegues*.",
+      "audio": "Cuando llegues, llámame.",
+      "options": [
+        "Когда приедешь, позвони мне.",
+        "Когда ты приехал, ты позвонил."
+      ],
+      "answer": "Когда приедешь, позвони мне."
+    },
+    {
+      "id": "B1-EX-L05",
+      "level": "B1",
+      "themeID": "b1-2",
+      "card": "B1-10",
+      "type": "dictation",
+      "prompt": "Послушайте и запишите фразу по-испански.",
+      "explanation": "Нереальное условие: *si* + **imperfecto de subjuntivo** + **condicional**.",
+      "audio": "Si tuviera tiempo, viajaría más."
+    },
+    {
+      "id": "B1-EX-L06",
+      "level": "B1",
+      "themeID": "b1-2",
+      "card": "B1-07",
+      "type": "speak",
+      "prompt": "Скажите фразу вслух.",
+      "explanation": "*aunque* + subjuntivo — уступка о возможном.",
+      "answer": "Aunque llueva, saldré."
+    },
+    {
+      "id": "B1-EX-L07",
+      "level": "B1",
+      "themeID": "b1-3",
+      "card": "B1-11",
+      "type": "listen-choose",
+      "prompt": "Послушайте и выберите, что вы услышали.",
+      "explanation": "*había ido* — **pluscuamperfecto**: раньше другого прошедшего.",
+      "audio": "Cuando llegué, ya se había ido.",
+      "options": [
+        "Когда я пришёл, он уже ушёл.",
+        "Когда я приду, он уйдёт."
+      ],
+      "answer": "Когда я пришёл, он уже ушёл."
+    },
+    {
+      "id": "B1-EX-L08",
+      "level": "B1",
+      "themeID": "b1-3",
+      "card": "B1-14",
+      "type": "dictation",
+      "prompt": "Послушайте и запишите фразу по-испански.",
+      "explanation": "**Futuro** выражает предположение о настоящем: «наверное, сейчас десять».",
+      "audio": "Serán las diez."
+    },
+    {
+      "id": "B1-EX-L09",
+      "level": "B1",
+      "themeID": "b1-3",
+      "card": "B1-12",
+      "type": "speak",
+      "prompt": "Скажите фразу вслух.",
+      "explanation": "*habría venido* — **condicional perfecto**.",
+      "answer": "Habría venido antes."
+    },
+    {
+      "id": "B1-EX-L10",
+      "level": "B1",
+      "themeID": "b1-4",
+      "card": "B1-17",
+      "type": "listen-choose",
+      "prompt": "Послушайте и выберите, что вы услышали.",
+      "explanation": "Косвенная речь: *estoy* → *estaba*.",
+      "audio": "Dijo que estaba cansado.",
+      "options": [
+        "Он сказал, что устал.",
+        "Он скажет, что устанет."
+      ],
+      "answer": "Он сказал, что устал."
+    },
+    {
+      "id": "B1-EX-L11",
+      "level": "B1",
+      "themeID": "b1-4",
+      "card": "B1-19",
+      "type": "dictation",
+      "prompt": "Послушайте и запишите фразу по-испански.",
+      "explanation": "**Pasiva refleja**: глагол согласуется с *pisos*.",
+      "audio": "Se venden pisos."
+    },
+    {
+      "id": "B1-EX-L12",
+      "level": "B1",
+      "themeID": "b1-4",
+      "card": "B1-16",
+      "type": "speak",
+      "prompt": "Скажите фразу вслух.",
+      "explanation": "Тип 2: *si* + imperfecto de subjuntivo + condicional.",
+      "answer": "Si pudiera, te ayudaría."
+    },
+    {
+      "id": "B1-EX-L13",
+      "level": "B1",
+      "themeID": "b1-5",
+      "card": "B1-20",
+      "type": "listen-choose",
+      "prompt": "Послушайте и выберите, что вы услышали.",
+      "explanation": "*ponerse* + прилагательное — временная перемена состояния.",
+      "audio": "Se puso muy nervioso.",
+      "options": [
+        "Он очень разнервничался.",
+        "Он надел что-то нервное."
+      ],
+      "answer": "Он очень разнервничался."
+    },
+    {
+      "id": "B1-EX-L14",
+      "level": "B1",
+      "themeID": "b1-5",
+      "card": "B1-24",
+      "type": "dictation",
+      "prompt": "Послушайте и запишите фразу по-испански.",
+      "explanation": "*en mi opinión* — вводная фраза мнения.",
+      "audio": "En mi opinión, tienes razón."
+    },
+    {
+      "id": "B1-EX-L15",
+      "level": "B1",
+      "themeID": "b1-5",
+      "card": "B1-23",
+      "type": "speak",
+      "prompt": "Скажите фразу вслух.",
+      "explanation": "*por lo tanto* — «поэтому, следовательно».",
+      "answer": "Por lo tanto, no voy a ir."
     },
     {
       "id": "B1-EX-M01",
