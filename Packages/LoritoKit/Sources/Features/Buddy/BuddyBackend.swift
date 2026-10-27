@@ -130,9 +130,12 @@ public final class CloudKitBuddyBackend: BuddyBackend {
         }
         let keep = Set(days.map(\.recordName))
         let (existing, _) = try await fetchRecords(db, zone)
-        let stale = existing.filter { $0.recordType == "BuddyDay" && Self.creator($0, me: owner) == owner
+        // A record under one of my names that isn't wholly mine was planted: delete it first,
+        // so my save creates a fresh record instead of merging into it.
+        try await removeSquatted(existing, names: keep, author: owner, db: db)
+        let stale = existing.filter { $0.recordType == "BuddyDay" && Self.isAuthored($0, by: owner, me: owner)
             && !keep.contains($0.recordID.recordName) }.map(\.recordID)
-        _ = try await db.modifyRecords(saving: records, deleting: stale, savePolicy: .changedKeys)
+        _ = try await db.modifyRecords(saving: records, deleting: stale, savePolicy: .allKeys)
     }
 
     public func fetch() async throws -> (days: [BuddyDay], nudges: [BuddyNudge]) {
@@ -143,23 +146,33 @@ public final class CloudKitBuddyBackend: BuddyBackend {
         // creator matches the claimed author and the name is `<author>:<day>`.
         let days = records.filter { $0.recordType == "BuddyDay" }.compactMap { r -> BuddyDay? in
             guard let owner = r["owner"] as? String, let day = r["day"] as? String,
-                  Self.creator(r, me: me) == owner, r.recordID.recordName == "\(owner):\(day)" else { return nil }
+                  Self.isAuthored(r, by: owner, me: me), r.recordID.recordName == "\(owner):\(day)" else { return nil }
             return BuddyDay(owner: owner, day: day, studied: (r["studied"] as? Int ?? 0) != 0,
                             gradedCount: r["gradedCount"] as? Int ?? 0, currentStreak: r["currentStreak"] as? Int ?? 0,
                             displayName: r["displayName"] as? String ?? "")
         }
         let nudges = records.filter { $0.recordType == "BuddyNudge" }.compactMap { r -> BuddyNudge? in
             guard let from = r["from"] as? String, let day = r["day"] as? String,
-                  Self.creator(r, me: me) == from, r.recordID.recordName == "\(from):\(day)" else { return nil }
+                  Self.isAuthored(r, by: from, me: me), r.recordID.recordName == "\(from):\(day)" else { return nil }
             return BuddyNudge(from: from, day: day)
         }
         return (days, nudges)
     }
 
-    /// The record's author as set by the server (own records report the default owner name).
-    nonisolated static func creator(_ record: CKRecord, me: String) -> String? {
-        guard let name = record.creatorUserRecordID?.recordName else { return nil }
+    /// A server-set user id, with this user's default owner name mapped to `me`.
+    nonisolated static func user(_ id: CKRecord.ID?, me: String) -> String? {
+        guard let name = id?.recordName else { return nil }
         return name == CKCurrentUserDefaultName ? me : name
+    }
+
+    /// Both the creator and the last modifier (server-set) are the claimed author.
+    nonisolated static func isAuthored(_ record: CKRecord, by author: String, me: String) -> Bool {
+        user(record.creatorUserRecordID, me: me) == author && user(record.lastModifiedUserRecordID, me: me) == author
+    }
+
+    private func removeSquatted(_ existing: [CKRecord], names: Set<String>, author: String, db: CKDatabase) async throws {
+        let planted = existing.filter { names.contains($0.recordID.recordName) && !Self.isAuthored($0, by: author, me: author) }
+        if !planted.isEmpty { _ = try await db.modifyRecords(saving: [], deleting: planted.map(\.recordID)) }
     }
 
     /// Every record of the zone (no query index needed).
@@ -178,6 +191,8 @@ public final class CloudKitBuddyBackend: BuddyBackend {
 
     public func send(_ nudge: BuddyNudge) async throws {
         guard let (db, zone) = try await pairZone() else { return }
+        let (existing, _) = try await fetchRecords(db, zone)
+        try await removeSquatted(existing, names: [nudge.recordName], author: nudge.from, db: db)
         let r = CKRecord(recordType: "BuddyNudge", recordID: CKRecord.ID(recordName: nudge.recordName, zoneID: zone))
         r["from"] = nudge.from
         r["day"] = nudge.day

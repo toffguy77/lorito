@@ -153,6 +153,9 @@ struct BuddyAttributionTests {
     @Test("Own records (default owner) map to me; others keep the server-set creator; none without creator")
     func creator() {
         let mine = CKRecord(recordType: "BuddyDay")
-        #expect(CloudKitBuddyBackend.creator(mine, me: "me") == nil)   // unsaved: no creator
+        #expect(CloudKitBuddyBackend.user(mine.creatorUserRecordID, me: "me") == nil)   // unsaved: no creator
+        #expect(CloudKitBuddyBackend.user(CKRecord.ID(recordName: CKCurrentUserDefaultName), me: "me") == "me")
+        #expect(CloudKitBuddyBackend.user(CKRecord.ID(recordName: "_abc"), me: "me") == "_abc")
+        #expect(!CloudKitBuddyBackend.isAuthored(mine, by: "me", me: "me"))
     }
 }
