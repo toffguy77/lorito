@@ -77,8 +77,13 @@ public struct RootView: View {
                 StreakBannerLedger().reset()
             }
             let container = PersistenceController.makeUserContainer(cloudKitEnabled: cloudKitEnabled, inMemory: uiTesting)
-            let store = SwiftDataUserDataStore(container: container)
+            // UI tests: no device-local mirror, so nothing leaks between launches.
+            let store = SwiftDataUserDataStore(container: container, localMirror: uiTesting ? nil : .standard)
             if demoData { try DemoSeed.make(catalog: catalog, today: Date()).apply(to: store) }
+            if uiTesting, CommandLine.arguments.contains("-lorito-seed-recap") {
+                try DemoSeed.recapAndMilestone(catalog: catalog, today: Date()).apply(to: store)
+                didCompleteOnboarding = true
+            }
             if uiTesting, CommandLine.arguments.contains("-lorito-seed-conjugation") {
                 try DemoSeed.conjugationReady(today: Date()).apply(to: store)
                 didCompleteOnboarding = true

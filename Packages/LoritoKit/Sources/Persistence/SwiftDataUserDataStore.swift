@@ -6,14 +6,22 @@ import Domain
 /// SwiftData @Model records. Use one instance per `ModelContext`.
 public final class SwiftDataUserDataStore: UserDataStore {
     private let context: ModelContext
+    /// Device-local mirror of celebrated levels: CloudKit resolves a field
+    /// conflict by last writer, so the union is restored from here on load and
+    /// written back on save (weekly-recap-and-milestones).
+    private let localMirror: UserDefaults?
+    static let celebratedMirrorKey = "lorito.celebratedLevels.local"
 
-    public init(context: ModelContext) {
+    public init(context: ModelContext, localMirror: UserDefaults? = .standard) {
         self.context = context
+        self.localMirror = localMirror
     }
 
-    public convenience init(container: ModelContainer) {
-        self.init(context: ModelContext(container))
+    public convenience init(container: ModelContainer, localMirror: UserDefaults? = .standard) {
+        self.init(context: ModelContext(container), localMirror: localMirror)
     }
+
+    private var mirroredCelebrated: String? { localMirror?.string(forKey: Self.celebratedMirrorKey) }
 
     // MARK: Settings
 
@@ -43,6 +51,9 @@ public final class SwiftDataUserDataStore: UserDataStore {
         settings.examDate = r.examDate
         settings.examDone = r.examDone
         settings.dailyConjugationCount = r.dailyConjugationCount
+        settings.lastRecapWeek = r.lastRecapWeek
+        // Union with this device's mirror (an incoming sync may have dropped levels).
+        settings.celebratedLevelsRaw = Self.nonEmpty(CelebratedLevels.merge(r.celebratedLevels, mirroredCelebrated))
         return settings
     }
 
@@ -72,6 +83,13 @@ public final class SwiftDataUserDataStore: UserDataStore {
         record.examDate = settings.examDate
         record.examDone = settings.examDone
         record.dailyConjugationCount = settings.dailyConjugationCount
+        record.lastRecapWeek = settings.lastRecapWeek
+        // Celebrated levels only grow: union of stored, incoming and mirrored values.
+        let celebrated = CelebratedLevels.merge(CelebratedLevels.merge(record.celebratedLevels, settings.celebratedLevelsRaw),
+                                                mirroredCelebrated)
+        record.celebratedLevels = Self.nonEmpty(celebrated)
+        // Write the mirror only on change (UserDefaults writes re-render @AppStorage views).
+        if !celebrated.isEmpty, mirroredCelebrated != celebrated { localMirror?.set(celebrated, forKey: Self.celebratedMirrorKey) }
         try context.save()
     }
 
@@ -157,6 +175,8 @@ public final class SwiftDataUserDataStore: UserDataStore {
     }
 
     // MARK: Helpers
+
+    private static func nonEmpty(_ s: String) -> String? { s.isEmpty ? nil : s }
 
     private func fetchRecord(cardID: String) throws -> ReviewRecord? {
         let id = cardID

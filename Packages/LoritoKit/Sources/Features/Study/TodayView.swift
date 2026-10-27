@@ -11,6 +11,8 @@ public struct TodayView: View {
     @State private var trapCard: Card?
     @State private var goalModel: GoalSettingsModel?
     @State private var drill: ConjugationDrillModel?
+    @State private var shareImage: Image?
+    @State private var recapImage: Image?
     private let catalog: ContentCatalog
     private let store: UserDataStore
     private let navigation: AppNavigation
@@ -93,6 +95,8 @@ public struct TodayView: View {
             header
             planOrState
             WeekStrip(days: model.week)
+            milestoneCard
+            recapCard
             streakBannerView
             goalCard
             promptCard
@@ -117,6 +121,8 @@ public struct TodayView: View {
                         .padding(.horizontal, LoritoSpacing.md)
                         .padding(.vertical, LoritoSpacing.sm)
                         .background(LoritoColor.surfaceRaised, in: RoundedRectangle(cornerRadius: LoritoRadius.lg, style: .continuous))
+                    milestoneCard
+                    recapCard
                     streakBannerView
                     goalCard
                     promptCard
@@ -180,6 +186,69 @@ public struct TodayView: View {
         model.dismissPrompt()
         if prompt.id == TodayModel.goalPrompt.id {
             goalModel = GoalSettingsModel(store: store, catalog: catalog)
+        }
+    }
+
+    /// "A1 закрыт": a newly closed level, shown once, with a share image.
+    @ViewBuilder
+    private var milestoneCard: some View {
+        if let level = model.milestone {
+            let content = ShareCardContent.milestone(level, date: Date())
+            VStack(alignment: .leading, spacing: LoritoSpacing.sm) {
+                Text("¡").loritoStyle(.display).foregroundStyle(LoritoColor.accent).accessibilityHidden(true)
+                Text(content.headline).loritoStyle(.heading).foregroundStyle(LoritoColor.textPrimary)
+                Text("Все правила \(level.rawValue) — в долгой памяти. Это уровень, пройденный в Lorito.")
+                    .font(LoritoFont.body)
+                    .foregroundStyle(LoritoColor.textSecondary)
+                    .fixedSize(horizontal: false, vertical: true)
+                if let image = shareImage {
+                    ShareLink(item: image, preview: SharePreview(content.headline, image: image)) {
+                        Label("Поделиться", systemImage: "square.and.arrow.up").font(LoritoFont.bodyStrong)
+                    }
+                }
+            }
+            .padding(LoritoSpacing.md)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(LoritoColor.surfaceRaised, in: RoundedRectangle(cornerRadius: LoritoRadius.md, style: .continuous))
+            .accessibilityElement(children: .contain)
+            .accessibilityIdentifier("today.milestone")
+            .onAppear { shareImage = RecapShareCard.render(content) }
+        }
+    }
+
+    /// Weekly recap of the completed Monday–Sunday week (shown once).
+    @ViewBuilder
+    private var recapCard: some View {
+        if let r = model.recap {
+            VStack(alignment: .leading, spacing: LoritoSpacing.sm) {
+                Text("Итоги недели").loritoStyle(.label).foregroundStyle(LoritoColor.textSecondary)
+                if r.isEmpty {
+                    Text("На прошлой неделе занятий не было. Новая неделя — хороший момент начать: хватит одной карточки в день.")
+                        .font(LoritoFont.body)
+                        .foregroundStyle(LoritoColor.textPrimary)
+                        .fixedSize(horizontal: false, vertical: true)
+                } else {
+                    ForEach(ShareCardContent.recap(r).lines, id: \.self) { line in
+                        Text(line).font(LoritoFont.bodyStrong).foregroundStyle(LoritoColor.textPrimary)
+                    }
+                    if let id = r.topTrapCardID, let card = catalog.card(id: id) {
+                        Text("Главная ловушка недели: \(card.title)")
+                            .font(LoritoFont.caption)
+                            .foregroundStyle(LoritoColor.textSecondary)
+                    }
+                    if let image = recapImage {
+                        ShareLink(item: image, preview: SharePreview("Моя неделя", image: image)) {
+                            Label("Поделиться", systemImage: "square.and.arrow.up").font(LoritoFont.bodyStrong)
+                        }
+                    }
+                }
+            }
+            .padding(LoritoSpacing.md)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(LoritoColor.surfaceRaised, in: RoundedRectangle(cornerRadius: LoritoRadius.md, style: .continuous))
+            .accessibilityElement(children: .contain)
+            .accessibilityIdentifier("today.recap")
+            .onAppear { if !r.isEmpty { recapImage = RecapShareCard.render(ShareCardContent.recap(r)) } }
         }
     }
 

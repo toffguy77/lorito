@@ -88,9 +88,9 @@ struct SyncedSettingsRoundTripTests {
     /// Save `settings` through a fresh store and load them back.
     static func roundTrip(_ settings: UserSettings) throws -> UserSettings {
         let container = try PersistenceController.makeContainer(config: .init(inMemory: true))
-        let store = SwiftDataUserDataStore(container: container)
+        let store = SwiftDataUserDataStore(container: container, localMirror: nil)
         try store.saveSettings(settings)
-        return try SwiftDataUserDataStore(container: container).loadSettings()
+        return try SwiftDataUserDataStore(container: container, localMirror: nil).loadSettings()
     }
 
     @Test("Every settings field round-trips")
@@ -110,6 +110,8 @@ struct SyncedSettingsRoundTripTests {
                                 startDate: Date(timeIntervalSinceReferenceDate: 810_000_000), startIntroduced: 12,
                                 state: .active)                         // study-goal
         s.dailyConjugationCount = 5                                     // conjugation-trainer
+        s.lastRecapWeek = "2026-W43"                                    // weekly-recap-and-milestones
+        s.celebratedLevels = [.a1, .a2]
         s.exam = ExamGoal(kind: .ccse, date: Date(timeIntervalSinceReferenceDate: 821_000_000), done: true)
         #expect(try Self.roundTrip(s) == s)
     }
@@ -142,7 +144,7 @@ struct SyncedSettingsRoundTripTests {
         let context = ModelContext(container)
         context.insert(SettingsRecord(targetLevelRaw: "A1"))   // only what an old version wrote
         try context.save()
-        let loaded = try SwiftDataUserDataStore(container: container).loadSettings()
+        let loaded = try SwiftDataUserDataStore(container: container, localMirror: nil).loadSettings()
         #expect(loaded.targetLevel == .a1)
         #expect(loaded.dailyNewCardCount == UserSettings.default.dailyNewCardCount)
         #expect(loaded.didCompleteOnboarding == false)
@@ -151,6 +153,7 @@ struct SyncedSettingsRoundTripTests {
         #expect(loaded.placementKnownLevel == nil)
         #expect(loaded.levelGoal == nil && loaded.exam == nil)
         #expect(loaded.dailyConjugationCount == 0)
+        #expect(loaded.lastRecapWeek == nil && loaded.celebratedLevels.isEmpty)
     }
 }
 
@@ -166,5 +169,34 @@ struct TrapPracticeRoundTripTests {
         context.insert(TrapPracticeRecord(cardID: "A1-09", outcomeRaw: "future"))
         try context.save()
         #expect(try SwiftDataUserDataStore(container: container).allTrapPractice().contains { $0.cardID == "A1-09" && $0.outcome == .stillConfused })
+    }
+}
+
+@Suite("Celebrated levels union across devices")
+struct CelebratedLevelsSyncTests {
+    @Test("A sync overwrite never loses a level: device-local mirror restores the union on load and save")
+    func twoDevices() throws {
+        let deviceA = try PersistenceController.makeContainer(config: .init(inMemory: true))
+        let deviceB = try PersistenceController.makeContainer(config: .init(inMemory: true))
+        let mirrorA = UserDefaults(suiteName: "lorito.tests.\(UUID().uuidString)")!
+        let mirrorB = UserDefaults(suiteName: "lorito.tests.\(UUID().uuidString)")!
+        let a = SwiftDataUserDataStore(container: deviceA, localMirror: mirrorA)
+        let b = SwiftDataUserDataStore(container: deviceB, localMirror: mirrorB)
+
+        var sa = try a.loadSettings(); sa.celebratedLevels.insert(.a1); try a.saveSettings(sa)
+        var sb = try b.loadSettings(); sb.celebratedLevels.insert(.a2); try b.saveSettings(sb)
+
+        // CloudKit delivers B's field to A (last writer wins on the record).
+        let recordA = try ModelContext(deviceA).fetch(FetchDescriptor<SettingsRecord>()).first!
+        recordA.celebratedLevels = "A2"
+        try recordA.modelContext?.save()
+
+        #expect(try a.loadSettings().celebratedLevels == [.a1, .a2])
+        try a.saveSettings(try a.loadSettings())
+        #expect(try ModelContext(deviceA).fetch(FetchDescriptor<SettingsRecord>()).first?.celebratedLevels == "A1,A2")
+        // A write never removes levels.
+        var removal = try a.loadSettings(); removal.celebratedLevels = []
+        try a.saveSettings(removal)
+        #expect(try a.loadSettings().celebratedLevels == [.a1, .a2])
     }
 }

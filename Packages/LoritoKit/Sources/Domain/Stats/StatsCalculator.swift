@@ -38,7 +38,8 @@ public enum StatsCalculator {
         // Counts speak about cards; the streak counts any study activity.
         let cardEvents = events.filter(\.isCard)
         let studiedToday = cardEvents.filter { calendar.isDate($0.date, inSameDayAs: today) }.count
-        let week = calendar.dateInterval(of: .weekOfYear, for: today)
+        // Weeks run Monday–Sunday everywhere (weekly-recap-and-milestones).
+        let week = calendar.mondayWeeks.dateInterval(of: .weekOfYear, for: today)
         let studiedThisWeek = week.map { iv in cardEvents.filter { iv.contains($0.date) }.count } ?? 0
 
         return StudyStats(

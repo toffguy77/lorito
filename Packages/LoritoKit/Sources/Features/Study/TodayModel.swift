@@ -33,6 +33,10 @@ public final class TodayModel {
         didSet { prompt = promptSlot.prompt(candidates: promptCandidates, events: (try? store.allEvents()) ?? []) }
     }
     private let promptSlot: TodayPromptSlot
+    /// Weekly recap of the completed Monday–Sunday week, shown once from Monday.
+    public private(set) var recap: WeeklyRecap?
+    /// A newly closed level to celebrate (shown once).
+    public private(set) var milestone: CEFRLevel?
     /// Today's conjugation items (conjugation-trainer); empty when the trainer is off.
     public private(set) var conjugationItems: [String] = []
     /// In-scope personal traps (personal-traps).
@@ -95,6 +99,22 @@ public final class TodayModel {
     public func markShownOnAppear() {
         if streakBanner == .frozen { streakLedger.markFrozenShown(today: now()) }
         goalBuilder.markSeen(goalLines.filter(\.isEndState).map(\.id))
+        guard recap != nil || milestone != nil, var s = try? store.loadSettings() else { return }
+        if let recap { s.lastRecapWeek = recap.weekID }
+        if let milestone { s.celebratedLevels.insert(milestone) }
+        if s != (try? store.loadSettings()) { try? store.saveSettings(s) }
+    }
+
+    /// The completed week's recap until it has been shown; nil for users with no history.
+    static func pendingRecap(events: [StudyEvent], reviews: [ReviewState], practice: [TrapPracticeEvent],
+                             catalog: ContentCatalog, settings: UserSettings, today: Date, keep: WeeklyRecap?) -> WeeklyRecap? {
+        guard !events.isEmpty else { return nil }
+        let r = WeeklyRecap.make(events: events, reviews: reviews, practice: practice, catalog: catalog,
+                                 settings: settings, today: today)
+        if let keep, keep.weekID == r.weekID { return keep }       // keeps showing during this visit
+        // Nothing before the recap week → too new to recap.
+        guard events.contains(where: { $0.date < r.weekStart.addingTimeInterval(7 * 86_400) }) else { return nil }
+        return settings.lastRecapWeek == r.weekID ? nil : r
     }
 
     /// "Не сейчас" on the prompt: never offered again; the slot stays empty this visit.
@@ -137,6 +157,10 @@ public final class TodayModel {
         let levels = settings.targetLevel.map(SelectionScope.includedLevels(for:)) ?? []
         let rows = StatsCalculator.longTermMemory(reviews: reviews, catalog: catalog, levels: levels)
         memory = (rows.reduce(0) { $0 + $1.longTerm }, rows.reduce(0) { $0 + $1.total })
+        recap = Self.pendingRecap(events: events, reviews: reviews, practice: (try? store.allTrapPractice()) ?? [],
+                                  catalog: catalog, settings: settings, today: today, keep: recap)
+        milestone = milestone ?? LevelMilestones.newlyClosed(cards: catalog.cards, reviews: reviews, settings: settings,
+                                                             celebrated: settings.celebratedLevels).first
         conjugationItems = ConjugationToday.plan(store: store, catalog: catalog, today: today)?.all ?? []
         personalTraps = PersonalTraps.list(events: events, practice: (try? store.allTrapPractice()) ?? [],
                                            catalog: catalog, settings: settings, today: today)

@@ -33,6 +33,9 @@ public final class SettingsRecord {
     public var examDone: Bool?
     // conjugation-trainer
     public var dailyConjugationCount: Int = 0
+    // weekly-recap-and-milestones
+    public var lastRecapWeek: String?
+    public var celebratedLevels: String?
 
     public init(
         targetLevelRaw: String? = nil,

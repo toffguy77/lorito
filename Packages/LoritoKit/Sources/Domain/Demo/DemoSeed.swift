@@ -91,6 +91,22 @@ public struct DemoSeed: Sendable {
         return DemoSeed(settings: settings, reviews: [review], events: [])
     }
 
+    /// weekly-recap UI test: study last week, every A1 card long-term → recap + "A1 закрыт".
+    public static func recapAndMilestone(catalog: ContentCatalog, today: Date, calendar: Calendar = .learningDay) -> DemoSeed {
+        let start = calendar.startOfDay(for: today)
+        let weekAgo = calendar.date(byAdding: .day, value: -8, to: start) ?? start
+        let reviews = catalog.cards(in: .a1).map {
+            ReviewState(cardID: $0.id, interval: 30, repetitions: 5,
+                        dueDate: calendar.date(byAdding: .day, value: 15, to: start) ?? start, status: .review)
+        }
+        let events = catalog.cards(in: .a1).prefix(3).enumerated().map { i, card in
+            StudyEvent(cardID: card.id, date: calendar.date(byAdding: .hour, value: 10 + i, to: weekAgo) ?? weekAgo,
+                       grade: Grade.good.rawValue)
+        }
+        return DemoSeed(settings: UserSettings(targetLevel: .a1, didCompleteOnboarding: true), reviews: reviews,
+                        events: Array(events))
+    }
+
     /// Writes the seed into an (empty, in-memory) store.
     public func apply(to store: UserDataStore) throws {
         try store.saveSettings(settings)

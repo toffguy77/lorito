@@ -40,6 +40,16 @@ public struct UserSettings: Codable, Sendable, Hashable {
     /// New conjugation items per day (conjugation-trainer): 0 = trainer off.
     public var dailyConjugationCount: Int = 0
 
+    /// ISO week id of the last weekly recap shown (weekly-recap-and-milestones).
+    public var lastRecapWeek: String?
+    /// Celebrated (closed) levels as sorted codes, merged as a union.
+    public var celebratedLevelsRaw: String?
+
+    public var celebratedLevels: Set<CEFRLevel> {
+        get { CelebratedLevels.decode(celebratedLevelsRaw) }
+        set { celebratedLevelsRaw = newValue.isEmpty ? nil : CelebratedLevels.encode(newValue) }
+    }
+
     public static let conjugationDefaultWhenEnabled = 3
     public static let conjugationRange = 0...20
 
