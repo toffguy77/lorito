@@ -17,6 +17,7 @@ public struct TodayView: View {
     @State private var ccseDrill: CCSEDrillModel?
     @State private var wordSession: WordSessionModel?
     @Environment(PurchaseService.self) private var purchases: PurchaseService?
+    @Environment(BuddyModel.self) private var buddy: BuddyModel?
     private let catalog: ContentCatalog
     private let store: UserDataStore
     private let navigation: AppNavigation
@@ -114,6 +115,7 @@ public struct TodayView: View {
             header
             planOrState
             WeekStrip(days: model.week)
+            if let buddy { BuddyTodayLine(model: buddy) }
             milestoneCard
             recapCard
             streakBannerView
@@ -142,6 +144,7 @@ public struct TodayView: View {
                         .padding(.horizontal, LoritoSpacing.md)
                         .padding(.vertical, LoritoSpacing.sm)
                         .background(LoritoColor.surfaceRaised, in: RoundedRectangle(cornerRadius: LoritoRadius.lg, style: .continuous))
+                    if let buddy { BuddyTodayLine(model: buddy) }
                     milestoneCard
                     recapCard
                     streakBannerView

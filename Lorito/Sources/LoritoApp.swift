@@ -1,10 +1,15 @@
 import SwiftUI
+import UIKit
+import CloudKit
 import Features
 import DesignSystem
 import Domain
 
 @main
 struct LoritoApp: App {
+    /// Study buddy: accepting a CloudKit share arrives through the scene delegate.
+    @UIApplicationDelegateAdaptor(LoritoAppDelegate.self) private var appDelegate
+
     init() {
         // Bundled brand fonts live in the DesignSystem package bundle, which
         // `UIAppFonts` can't see — register them before the first view renders.
@@ -50,6 +55,27 @@ struct LoritoApp: App {
             #else
             RootView(cloudKitEnabled: false, uiTesting: Self.uiTesting, demoData: Self.demoData)
             #endif
+        }
+    }
+}
+
+/// Supplies the scene delegate that receives accepted CloudKit shares.
+final class LoritoAppDelegate: NSObject, UIApplicationDelegate {
+    func application(_ application: UIApplication, configurationForConnecting session: UISceneSession,
+                     options: UIScene.ConnectionOptions) -> UISceneConfiguration {
+        let config = UISceneConfiguration(name: nil, sessionRole: session.role)
+        config.delegateClass = LoritoSceneDelegate.self
+        return config
+    }
+}
+
+/// Study buddy invite accepted (link opened by the partner).
+final class LoritoSceneDelegate: NSObject, UIWindowSceneDelegate {
+    func windowScene(_ windowScene: UIWindowScene, userDidAcceptCloudKitShareWith metadata: CKShare.Metadata) {
+        Task { @MainActor in
+            guard (try? await CloudKitBuddyBackend.accept(metadata)) != nil else { return }
+            AnalyticsService.shared.record(.buddyInviteAccepted)
+            NotificationCenter.default.post(name: BuddyModel.shareAccepted, object: nil)
         }
     }
 }

@@ -78,6 +78,8 @@ public enum AnalyticsEvent: Codable, Sendable, Hashable {
     case lensOpened(source: LensSource)
     case lensAnalyzed(source: LensSource, matches: LensMatchBucket)
     case lensCardRequested
+    // study-buddy (no names)
+    case buddyInviteSent, buddyInviteAccepted, buddyNudgeSent, buddyLeft
 
     public var name: String {
         switch self {
@@ -106,6 +108,10 @@ public enum AnalyticsEvent: Codable, Sendable, Hashable {
         case .lensOpened: return "lens_opened"
         case .lensAnalyzed: return "lens_analyzed"
         case .lensCardRequested: return "lens_card_requested"
+        case .buddyInviteSent: return "buddy_invite_sent"
+        case .buddyInviteAccepted: return "buddy_invite_accepted"
+        case .buddyNudgeSent: return "buddy_nudge_sent"
+        case .buddyLeft: return "buddy_left"
         }
     }
 
@@ -113,6 +119,7 @@ public enum AnalyticsEvent: Codable, Sendable, Hashable {
         switch self {
         case .onboardingStep(let step): return ["step": step.rawValue]
         case .onboardingCompleted, .reminderOpened, .placementStarted, .lensCardRequested: return [:]
+        case .buddyInviteSent, .buddyInviteAccepted, .buddyNudgeSent, .buddyLeft: return [:]
         case .lensOpened(let source): return ["source": source.rawValue]
         case .lensAnalyzed(let source, let matches): return ["source": source.rawValue, "matches": matches.rawValue]
         case .placementCompleted(let level, let known, let questions):

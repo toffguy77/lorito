@@ -37,6 +37,8 @@ public struct AdaptiveRootView: View {
     /// Grammar Lens rules (nil without lens.json) and the open lens.
     private let lensCatalog = LensModel.bundledCatalog()
     @State private var lens: LensModel?
+    /// Study buddy (CloudKit share; unavailable without iCloud sync).
+    @State private var buddy: BuddyModel
     @Environment(\.speechService) private var speech
     @SceneStorage("lorito.catalogSelection") private var storedCatalogSelection = ""
     @Environment(\.horizontalSizeClass) private var sizeClass
@@ -46,7 +48,7 @@ public struct AdaptiveRootView: View {
     @State private var autoStartFirstSession: Bool
 
     public init(store: UserDataStore, catalog: ContentCatalog, scopeModel: ScopeSelectionModel,
-                autoStartFirstSession: Bool = false) {
+                autoStartFirstSession: Bool = false, syncEnabled: Bool = false) {
         _autoStartFirstSession = State(initialValue: autoStartFirstSession)
         self.store = store
         self.baseCatalog = catalog
@@ -58,6 +60,8 @@ public struct AdaptiveRootView: View {
         _goalSettings = State(initialValue: GoalSettingsModel(store: store, catalog: catalog))
         _conjugationSettings = State(initialValue: ConjugationSettingsModel(store: store))
         _vocabulary = State(initialValue: VocabularyModel(store: store, catalog: catalog))
+        _buddy = State(initialValue: BuddyModel(backend: syncEnabled ? CloudKitBuddyBackend() : nil, store: store,
+                                                syncEnabled: syncEnabled))
     }
 
     private static let tabs: [FloatingTabItem<AppNavigation.Destination>] =
@@ -103,6 +107,7 @@ public struct AdaptiveRootView: View {
                         publishWidgets: publishWidgets,
                         flushAnalytics: { await AnalyticsService.shared.flush() },
                         rescheduleReminders: { await reminders.reschedule() })
+                    await buddy.refresh()
                 }
             }
         }
@@ -143,7 +148,12 @@ public struct AdaptiveRootView: View {
         .modifier(LensPresenter(store: store, catalog: catalog, lens: $lens,
                                 open: lensCatalog == nil ? nil : { openLens($0, $1) },
                                 onDismiss: { navigation.notePlanChanged(); refreshPath() }))
+        .onChange(of: navigation.sessionEndCount) { _, _ in Task { await buddy.refresh() } }
+        .onReceive(NotificationCenter.default.publisher(for: BuddyModel.shareAccepted)) { _ in
+            Task { await buddy.refresh() }
+        }
         // Last, so presented sessions inherit them too.
+        .environment(buddy)
         .environment(\.spanishVariant, audioSettings.variant)
         .environment(\.spanishVariantDidChange, { audioSettings.reload() })
         .environment(purchases)

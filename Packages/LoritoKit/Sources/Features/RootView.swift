@@ -39,7 +39,7 @@ public struct RootView: View {
             if let model, let store, let catalog {
                 if didCompleteOnboarding {
                     AdaptiveRootView(store: store, catalog: catalog, scopeModel: model,
-                                     autoStartFirstSession: justOnboarded)
+                                     autoStartFirstSession: justOnboarded, syncEnabled: cloudKitEnabled && !uiTesting)
                 } else {
                     OnboardingView(model: model, reminders: reminders) {
                         justOnboarded = true

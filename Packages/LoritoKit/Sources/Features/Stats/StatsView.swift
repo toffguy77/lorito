@@ -7,6 +7,7 @@ import DesignSystem
 public struct StatsView: View {
     @State private var model: StatsModel
     @Environment(\.horizontalSizeClass) private var sizeClass
+    @Environment(BuddyModel.self) private var buddy: BuddyModel?
 
     private var isRegular: Bool { sizeClass == .regular }
 
@@ -70,6 +71,8 @@ public struct StatsView: View {
                         .foregroundStyle(LoritoColor.textSecondary)
                         .padding(.top, LoritoSpacing.sm)
                 }
+
+                if let buddy { BuddyCard(model: buddy).padding(.top, LoritoSpacing.sm) }
             }
             .padding(.horizontal, LoritoSpacing.screenGutter)
             .padding(.vertical, LoritoSpacing.lg)
