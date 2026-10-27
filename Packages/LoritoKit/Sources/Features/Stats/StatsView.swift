@@ -7,8 +7,8 @@ import DesignSystem
 public struct StatsView: View {
     @State private var model: StatsModel
 
-    public init(store: UserDataStore) {
-        _model = State(initialValue: StatsModel(store: store))
+    public init(store: UserDataStore, catalog: ContentCatalog) {
+        _model = State(initialValue: StatsModel(store: store, catalog: catalog))
     }
 
     public var body: some View {
@@ -23,7 +23,6 @@ public struct StatsView: View {
 
                 HStack(spacing: LoritoSpacing.sm - 2) {
                     streakTile
-                        .layoutPriority(1.3)
                     VStack(spacing: LoritoSpacing.sm - 2) {
                         statTile("лучшая серия", model.stats.bestStreak)
                         statTile("повторений всего", model.stats.studiedAllTime)
@@ -34,6 +33,12 @@ public struct StatsView: View {
                 HStack(spacing: LoritoSpacing.sm - 2) {
                     statTile("сегодня", model.stats.studiedToday)
                     statTile("за неделю", model.stats.studiedThisWeek)
+                }
+
+                heatmapCard
+
+                if !model.memory.isEmpty {
+                    memoryCard
                 }
 
                 if !model.hasHistory {
@@ -50,6 +55,68 @@ public struct StatsView: View {
         }
         .background(LoritoColor.surface.ignoresSafeArea())
         .onAppear { model.refresh() }
+    }
+
+    private var heatmapCard: some View {
+        VStack(alignment: .leading, spacing: LoritoSpacing.sm - 2) {
+            HStack(alignment: .firstTextBaseline) {
+                Text("12 недель").font(LoritoFont.bodyStrong)
+                Spacer()
+                Text("\(model.windowTotal) \(RussianPlural.form(model.windowTotal, one: "повторение", few: "повторения", many: "повторений"))")
+                    .font(LoritoFont.caption)
+                    .foregroundStyle(LoritoColor.textSecondary)
+            }
+            .foregroundStyle(LoritoColor.textPrimary)
+            ActivityHeatmap(
+                days: zip(model.activity, model.buckets).map { HeatmapDay(day: $0.day, count: $0.count, bucket: $1) },
+                calendar: .utcDay
+            )
+            .accessibilityElement(children: .contain)
+            .accessibilityLabel(heatmapSummary)
+            ActivityHeatmapLegend()
+        }
+        .padding(.horizontal, LoritoSpacing.md + 2)
+        .padding(.vertical, LoritoSpacing.md)
+        .background(LoritoColor.surfaceRaised, in: RoundedRectangle(cornerRadius: LoritoRadius.lg, style: .continuous))
+    }
+
+    /// One-line VoiceOver summary of the whole grid.
+    private var heatmapSummary: String {
+        let active = model.activity.filter { $0.count > 0 }.count
+        return "Активность за 12 недель: \(model.windowTotal) повторений, занятий в \(active) из \(model.activity.count) дней"
+    }
+
+    private var memoryCard: some View {
+        VStack(alignment: .leading, spacing: LoritoSpacing.sm - 2) {
+            HStack(alignment: .firstTextBaseline) {
+                Text("В долгой памяти").font(LoritoFont.bodyStrong).foregroundStyle(LoritoColor.textPrimary)
+                Spacer()
+                Text("интервал от \(StatsConstants.longTermIntervalDays) дня")
+                    .font(LoritoFont.caption)
+                    .foregroundStyle(LoritoColor.textSecondary)
+            }
+            ForEach(model.memory, id: \.level) { row in
+                HStack(spacing: LoritoSpacing.xs) {
+                    Text(row.level.rawValue)
+                        .loritoStyle(LoritoTextStyle.heading.sized(13))
+                        .foregroundStyle(LoritoColor.textPrimary)
+                        .frame(minWidth: 32, alignment: .leading)
+                    ProgressView(value: Double(row.longTerm), total: Double(max(row.total, 1)))
+                        .tint(LoritoColor.accent)
+                        .background(LoritoColor.surfaceSunken, in: Capsule())
+                    Text("\(row.longTerm)/\(row.total)")
+                        .font(LoritoFont.caption)
+                        .monospacedDigit()
+                        .foregroundStyle(LoritoColor.textPrimary)
+                        .frame(minWidth: 44, alignment: .trailing)
+                }
+                .accessibilityElement(children: .ignore)
+                .accessibilityLabel("\(row.level.rawValue): \(row.longTerm) из \(row.total) карточек в долгой памяти")
+            }
+        }
+        .padding(.horizontal, LoritoSpacing.md + 2)
+        .padding(.vertical, LoritoSpacing.md)
+        .background(LoritoColor.surfaceRaised, in: RoundedRectangle(cornerRadius: LoritoRadius.lg, style: .continuous))
     }
 
     private var streakTile: some View {

@@ -1,3 +1,4 @@
+import Foundation
 import Testing
 @testable import DesignSystem
 
@@ -104,5 +105,23 @@ struct RecallPromptRunsTests {
     func plain() {
         let runs = RecallPromptView.runs("Вспомните главное: «Род»")
         #expect(runs.count == 1 && runs[0].voice == .plain)
+    }
+}
+
+@Suite("Activity heatmap layout")
+struct ActivityHeatmapLayoutTests {
+    @Test("Rows are Monday…Sunday; columns hold whole weeks, oldest first")
+    func layout() {
+        let cal = { var c = Calendar(identifier: .gregorian); c.timeZone = TimeZone(identifier: "UTC")!; return c }()
+        let today = cal.date(from: DateComponents(year: 2026, month: 10, day: 27))!   // Tuesday
+        let days = (0..<84).reversed().map { offset in
+            HeatmapDay(day: cal.date(byAdding: .day, value: -offset, to: today)!, count: 0, bucket: 0)
+        }
+        let columns = ActivityHeatmap.columns(days, calendar: cal)
+        #expect(columns.allSatisfy { $0.count == 7 })
+        #expect(columns.flatMap { $0 }.compactMap { $0 }.count == 84)
+        #expect(ActivityHeatmap.row(of: today, calendar: cal) == 1)                  // Tuesday
+        #expect(columns.last?[1]?.day == today)                                      // today in its weekday row
+        #expect(columns.last![2] == nil)                                               // future slots empty
     }
 }

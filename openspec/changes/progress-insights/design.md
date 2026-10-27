@@ -30,7 +30,8 @@ status is `review` and `interval >= 21`. Suspended cards are excluded from both
 numerator and denominator. Constant lives in Domain next to SRS constants.
 
 **Grid layout.** Columns are weeks (oldest left), rows Mon–Sun; built with
-`Grid` in SwiftUI; each cell has an accessibility value "N повторений, дата",
+`Grid` in SwiftUI. Because the 84-day window rarely starts on a Monday, the
+grid shows 12–13 week columns with the slots outside the window left blank; each cell has an accessibility value "N повторений, дата",
 and the whole grid is also summarised as one accessibility label.
 
 ## Risks / Trade-offs

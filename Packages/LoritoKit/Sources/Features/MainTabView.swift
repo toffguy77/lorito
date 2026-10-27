@@ -45,7 +45,7 @@ public struct MainTabView: View {
                 .floatingTabBarInset()
                 .tag(1)
 
-            StatsView(store: store)
+            StatsView(store: store, catalog: catalog)
                 .floatingTabBarInset()
                 .tag(2)
 

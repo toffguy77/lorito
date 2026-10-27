@@ -38,6 +38,8 @@ public struct TodayView: View {
                             title: "Пока нечего изучать", subtitle: "Загляните позже — карточки появятся, когда придёт срок.")
                 }
 
+                WeekStrip(days: model.week)
+
                 if let trap = model.trap, let card = catalog.card(id: trap.cardID) {
                     trapCard(trap, card: card)
                 }
@@ -162,4 +164,47 @@ private extension String {
 // Allow presenting the session via `.sheet(item:)`.
 extension StudySessionModel: @MainActor Identifiable {
     public var id: ObjectIdentifier { ObjectIdentifier(self) }
+}
+
+/// The last seven days: filled accent circles for studied days, a dashed ring
+/// for today until it is studied.
+private struct WeekStrip: View {
+    let days: [TodayModel.WeekDay]
+
+    var body: some View {
+        HStack(spacing: 6) {
+            ForEach(days, id: \.day) { day in
+                VStack(spacing: 6) {
+                    marker(day)
+                    Text(day.label)
+                        .font(day.isToday ? LoritoFont.bodyStrong : LoritoFont.caption)
+                        .foregroundStyle(day.isToday ? LoritoColor.textPrimary : LoritoColor.textSecondary)
+                }
+                .frame(maxWidth: .infinity)
+                .accessibilityElement(children: .ignore)
+                .accessibilityLabel(day.isToday ? "Сегодня, \(day.label)" : day.label)
+                .accessibilityValue(day.studied ? "занимались" : "не занимались")
+                .accessibilityIdentifier(day.isToday ? "weekStrip.today" : "weekStrip.day")
+            }
+        }
+        .padding(.vertical, LoritoSpacing.xs)
+    }
+
+    @ViewBuilder
+    private func marker(_ day: TodayModel.WeekDay) -> some View {
+        if day.studied {
+            Circle().fill(LoritoColor.accent)
+                .frame(width: 34, height: 34)
+                .overlay {
+                    if day.isToday {
+                        Circle().strokeBorder(LoritoColor.textPrimary, lineWidth: 2).padding(-4)
+                    }
+                }
+        } else if day.isToday {
+            Circle().strokeBorder(LoritoColor.textPrimary, style: StrokeStyle(lineWidth: 2, dash: [4, 3]))
+                .frame(width: 34, height: 34)
+        } else {
+            Circle().fill(LoritoColor.surfaceSunken).frame(width: 34, height: 34)
+        }
+    }
 }
