@@ -29290,5 +29290,1715 @@
         }
       }
     ]
+  },
+  "exams": {
+    "definitions": [
+      {
+        "id": "dele-a2",
+        "title": "DELE A2",
+        "verifiedOn": "2026-10-27",
+        "summary": "Четыре части: чтение (60 мин), аудирование (40 мин), письмо (45 мин), устная часть (12 мин + 12 мин подготовки). Каждая — 25 баллов. Сдано, если в группе 1 (чтение + письмо) и в группе 2 (аудирование + устная часть) не меньше 30 из 50.",
+        "fee": "≈ 130 €; пересдача — полная стоимость",
+        "sections": [
+          {
+            "id": "reading",
+            "title": "Чтение",
+            "minutes": 60,
+            "maxPoints": 25,
+            "productive": false
+          },
+          {
+            "id": "listening",
+            "title": "Аудирование",
+            "minutes": 40,
+            "maxPoints": 25,
+            "productive": false
+          },
+          {
+            "id": "writing",
+            "title": "Письмо",
+            "minutes": 45,
+            "maxPoints": 25,
+            "productive": true
+          },
+          {
+            "id": "speaking",
+            "title": "Устная часть",
+            "minutes": 12,
+            "maxPoints": 25,
+            "productive": true,
+            "prepMinutes": 12
+          }
+        ],
+        "groups": [
+          {
+            "id": "g1",
+            "title": "Группа 1: чтение и письмо",
+            "sections": [
+              "reading",
+              "writing"
+            ],
+            "passPoints": 30
+          },
+          {
+            "id": "g2",
+            "title": "Группа 2: аудирование и устная часть",
+            "sections": [
+              "listening",
+              "speaking"
+            ],
+            "passPoints": 30
+          }
+        ]
+      },
+      {
+        "id": "ccse",
+        "title": "CCSE",
+        "verifiedOn": "2026-10-27",
+        "summary": "25 вопросов (выбор ответа и «верно/неверно»), 45 минут. Сдано при 15 правильных ответах и больше.",
+        "fee": "85 €; вторая попытка бесплатно в течение 18 месяцев",
+        "sections": [
+          {
+            "id": "ccse",
+            "title": "CCSE",
+            "minutes": 45,
+            "maxPoints": 25,
+            "productive": false
+          }
+        ],
+        "groups": [
+          {
+            "id": "all",
+            "title": "Итог",
+            "sections": [
+              "ccse"
+            ],
+            "passPoints": 15
+          }
+        ]
+      }
+    ],
+    "items": [
+      {
+        "id": "dele-a2-f1-l1",
+        "exam": "dele-a2",
+        "section": "listening",
+        "points": 1.0,
+        "kind": {
+          "listeningTask": {
+            "script": "Buenos días. El tren a Sevilla sale del andén cuatro a las diez y cuarto.",
+            "options": [
+              "A las 10:15",
+              "A las 10:45",
+              "A las 4:10"
+            ],
+            "answer": "A las 10:15"
+          }
+        },
+        "text": "¿A qué hora sale el tren?",
+        "explanation": "*a las diez y cuarto* — 10:15.",
+        "form": 1,
+        "preview": false,
+        "cards": [
+          "A1-28"
+        ],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f1-l2",
+        "exam": "dele-a2",
+        "section": "listening",
+        "points": 1.0,
+        "kind": {
+          "listeningTask": {
+            "script": "Perdona, ¿la farmacia? Sí, sigue recto y gira a la derecha; está al lado del banco.",
+            "options": [
+              "Al lado del banco",
+              "Enfrente del banco",
+              "Detrás del banco"
+            ],
+            "answer": "Al lado del banco"
+          }
+        },
+        "text": "¿Dónde está la farmacia?",
+        "explanation": "*al lado de* — рядом с.",
+        "form": 1,
+        "preview": false,
+        "cards": [
+          "A1-25"
+        ],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f1-l3",
+        "exam": "dele-a2",
+        "section": "listening",
+        "points": 1.0,
+        "kind": {
+          "listeningTask": {
+            "script": "Hoy en el restaurante tenemos sopa de pescado, pollo con patatas y, de postre, flan.",
+            "options": [
+              "Sopa",
+              "Pollo",
+              "Flan"
+            ],
+            "answer": "Flan"
+          }
+        },
+        "text": "¿Qué hay de postre?",
+        "explanation": "*de postre, flan*.",
+        "form": 1,
+        "preview": false,
+        "cards": [
+          "A1-30"
+        ],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f1-l4",
+        "exam": "dele-a2",
+        "section": "listening",
+        "points": 1.0,
+        "kind": {
+          "listeningTask": {
+            "script": "El fin de semana pasado estuve en la playa con mis amigos y nadamos mucho.",
+            "options": [
+              "Fue a la montaña",
+              "Fue a la playa",
+              "Se quedó en casa"
+            ],
+            "answer": "Fue a la playa"
+          }
+        },
+        "text": "¿Qué hizo el fin de semana?",
+        "explanation": "*estuve en la playa* — был на пляже.",
+        "form": 1,
+        "preview": false,
+        "cards": [
+          "A2-03"
+        ],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f1-l5",
+        "exam": "dele-a2",
+        "section": "listening",
+        "points": 1.0,
+        "kind": {
+          "listeningTask": {
+            "script": "Mañana va a hacer frío y por la tarde va a llover en el norte.",
+            "options": [
+              "Sol",
+              "Lluvia",
+              "Nieve"
+            ],
+            "answer": "Lluvia"
+          }
+        },
+        "text": "¿Qué tiempo hará por la tarde en el norte?",
+        "explanation": "*va a llover* — будет дождь.",
+        "form": 1,
+        "preview": false,
+        "cards": [
+          "A2-08"
+        ],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f1-l6",
+        "exam": "dele-a2",
+        "section": "listening",
+        "points": 1.0,
+        "kind": {
+          "listeningTask": {
+            "script": "Si quieres, te llamo esta noche y quedamos para el sábado.",
+            "options": [
+              "Para esta noche",
+              "Para el sábado",
+              "Para el domingo"
+            ],
+            "answer": "Para el sábado"
+          }
+        },
+        "text": "¿Para cuándo quieren quedar?",
+        "explanation": "*quedamos para el sábado*.",
+        "form": 1,
+        "preview": false,
+        "cards": [
+          "A2-22"
+        ],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f1-r1",
+        "exam": "dele-a2",
+        "section": "reading",
+        "points": 1.0,
+        "kind": {
+          "choice": {
+            "options": [
+              "Por las mañanas",
+              "Por las tardes",
+              "Los fines de semana"
+            ],
+            "answer": "Por las tardes"
+          }
+        },
+        "text": "Lee el anuncio: «Se alquila piso en el centro. Dos habitaciones, cocina nueva. 650 € al mes. Llamar por las tardes.» ¿Cuándo hay que llamar?",
+        "explanation": "«Llamar por las tardes» — звонить во второй половине дня.",
+        "form": 1,
+        "preview": true,
+        "cards": [
+          "A1-28"
+        ],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f1-r2",
+        "exam": "dele-a2",
+        "section": "reading",
+        "points": 1.0,
+        "kind": {
+          "choice": {
+            "options": [
+              "Que vaya al médico",
+              "Los apuntes de la clase",
+              "Que llame al profesor"
+            ],
+            "answer": "Los apuntes de la clase"
+          }
+        },
+        "text": "Lee el mensaje: «Hola, Marta. Mañana no puedo ir a clase porque tengo médico. ¿Me pasas los apuntes? Gracias, Luis.» ¿Qué le pide Luis a Marta?",
+        "explanation": "«¿Me pasas los apuntes?» — Луис просит конспекты.",
+        "form": 1,
+        "preview": true,
+        "cards": [
+          "A1-21"
+        ],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f1-r3",
+        "exam": "dele-a2",
+        "section": "reading",
+        "points": 1.0,
+        "kind": {
+          "choice": {
+            "options": [
+              "El lunes",
+              "El martes",
+              "El domingo"
+            ],
+            "answer": "El lunes"
+          }
+        },
+        "text": "Lee: «El museo abre de martes a domingo de 10:00 a 18:00. Los lunes está cerrado.» ¿Qué día no se puede visitar?",
+        "explanation": "«Los lunes está cerrado» — по понедельникам закрыто.",
+        "form": 1,
+        "preview": true,
+        "cards": [
+          "A1-29"
+        ],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f1-r4",
+        "exam": "dele-a2",
+        "section": "reading",
+        "points": 1.0,
+        "kind": {
+          "choice": {
+            "options": [
+              "Fruta",
+              "Pan",
+              "Nada"
+            ],
+            "answer": "Pan"
+          }
+        },
+        "text": "Lee: «Ayer Ana fue al mercado y compró fruta, pero olvidó el pan.» ¿Qué no compró Ana?",
+        "explanation": "*olvidó el pan* — забыла хлеб.",
+        "form": 1,
+        "preview": true,
+        "cards": [
+          "A2-03"
+        ],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f1-r5",
+        "exam": "dele-a2",
+        "section": "reading",
+        "points": 1.0,
+        "kind": {
+          "choice": {
+            "options": [
+              "Vivía en una ciudad",
+              "Jugaba al fútbol",
+              "Trabajaba en un pueblo"
+            ],
+            "answer": "Jugaba al fútbol"
+          }
+        },
+        "text": "Lee: «Cuando era pequeño, Pedro vivía en un pueblo y jugaba al fútbol todos los días.» ¿Qué hacía Pedro de niño?",
+        "explanation": "Imperfecto описывает привычку в прошлом: *jugaba*.",
+        "form": 1,
+        "preview": true,
+        "cards": [
+          "A2-04"
+        ],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f1-r6",
+        "exam": "dele-a2",
+        "section": "reading",
+        "points": 1.0,
+        "kind": {
+          "choice": {
+            "options": [
+              "Viajar con su hermana",
+              "Visitar a su hermana en Perú",
+              "Trabajar en verano"
+            ],
+            "answer": "Viajar con su hermana"
+          }
+        },
+        "text": "Lee: «Este verano voy a viajar a Perú con mi hermana.» ¿Qué va a hacer la persona?",
+        "explanation": "*voy a viajar* — планирует поездку.",
+        "form": 1,
+        "preview": true,
+        "cards": [
+          "A2-08"
+        ],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f1-r7",
+        "exam": "dele-a2",
+        "section": "reading",
+        "points": 1.0,
+        "kind": {
+          "choice": {
+            "options": [
+              "El tren",
+              "El avión",
+              "Los dos igual"
+            ],
+            "answer": "El avión"
+          }
+        },
+        "text": "Lee: «Es más barato ir en tren que en avión, pero el avión es más rápido.» ¿Qué es más rápido?",
+        "explanation": "*el avión es más rápido*.",
+        "form": 1,
+        "preview": true,
+        "cards": [
+          "A2-17"
+        ],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f1-r8",
+        "exam": "dele-a2",
+        "section": "reading",
+        "points": 1.0,
+        "kind": {
+          "choice": {
+            "options": [
+              "Ir al cine",
+              "Quedarse en casa",
+              "Salir a pasear"
+            ],
+            "answer": "Quedarse en casa"
+          }
+        },
+        "text": "Lee: «Si llueve mañana, nos quedamos en casa y vemos una película.» ¿Qué harán si llueve?",
+        "explanation": "*nos quedamos en casa* — остаёмся дома.",
+        "form": 1,
+        "preview": true,
+        "cards": [
+          "A2-24"
+        ],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f1-s1",
+        "exam": "dele-a2",
+        "section": "speaking",
+        "points": 1.0,
+        "kind": {
+          "speakingTask": {
+            "prompt": "Preséntate: nombre, de dónde eres, dónde vives, a qué te dedicas y qué te gusta hacer en tu tiempo libre (2–3 minutos).",
+            "prepSeconds": 240,
+            "rubric": [
+              {
+                "text": "Говорю без долгих пауз",
+                "points": 2
+              },
+              {
+                "text": "Понятное произношение",
+                "points": 2
+              },
+              {
+                "text": "Подходящая лексика по теме",
+                "points": 2
+              },
+              {
+                "text": "Правильные основные формы глаголов",
+                "points": 2
+              },
+              {
+                "text": "Отвечаю на все вопросы задания",
+                "points": 2
+              }
+            ]
+          }
+        },
+        "text": "Preséntate: nombre, de dónde eres, dónde vives, a qué te dedicas y qué te gusta hacer en tu tiempo libre (2–3 minutos).",
+        "explanation": "",
+        "form": 1,
+        "preview": false,
+        "cards": [],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f1-s2",
+        "exam": "dele-a2",
+        "section": "speaking",
+        "points": 1.0,
+        "kind": {
+          "speakingTask": {
+            "prompt": "Describe tu casa o tu piso: cuántas habitaciones tiene, qué hay en cada una y qué te gusta más (2–3 minutos).",
+            "prepSeconds": 240,
+            "rubric": [
+              {
+                "text": "Говорю без долгих пауз",
+                "points": 2
+              },
+              {
+                "text": "Понятное произношение",
+                "points": 2
+              },
+              {
+                "text": "Подходящая лексика по теме",
+                "points": 2
+              },
+              {
+                "text": "Правильные основные формы глаголов",
+                "points": 2
+              },
+              {
+                "text": "Отвечаю на все вопросы задания",
+                "points": 2
+              }
+            ]
+          }
+        },
+        "text": "Describe tu casa o tu piso: cuántas habitaciones tiene, qué hay en cada una y qué te gusta más (2–3 minutos).",
+        "explanation": "",
+        "form": 1,
+        "preview": false,
+        "cards": [],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f1-s3",
+        "exam": "dele-a2",
+        "section": "speaking",
+        "points": 1.0,
+        "kind": {
+          "speakingTask": {
+            "prompt": "Conversación: en una tienda de ropa quieres cambiar una camisa que es pequeña. Pregunta por otra talla y por el precio.",
+            "prepSeconds": 240,
+            "rubric": [
+              {
+                "text": "Говорю без долгих пауз",
+                "points": 2
+              },
+              {
+                "text": "Понятное произношение",
+                "points": 2
+              },
+              {
+                "text": "Подходящая лексика по теме",
+                "points": 2
+              },
+              {
+                "text": "Правильные основные формы глаголов",
+                "points": 2
+              },
+              {
+                "text": "Отвечаю на все вопросы задания",
+                "points": 2
+              }
+            ]
+          }
+        },
+        "text": "Conversación: en una tienda de ropa quieres cambiar una camisa que es pequeña. Pregunta por otra talla y por el precio.",
+        "explanation": "",
+        "form": 1,
+        "preview": false,
+        "cards": [],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f1-w1",
+        "exam": "dele-a2",
+        "section": "writing",
+        "points": 1.0,
+        "kind": {
+          "writingTask": {
+            "prompt": "Escribe un correo a un amigo (60–80 palabras): cuéntale qué hiciste el fin de semana pasado, con quién estuviste y qué te gustó más.",
+            "rubric": [
+              {
+                "text": "Выполнены все пункты задания",
+                "points": 2
+              },
+              {
+                "text": "Текст понятен и логично построен",
+                "points": 2
+              },
+              {
+                "text": "Правильные времена глаголов",
+                "points": 2
+              },
+              {
+                "text": "Согласование рода и числа",
+                "points": 2
+              },
+              {
+                "text": "Нужный объём (60–80 слов)",
+                "points": 2
+              }
+            ]
+          }
+        },
+        "text": "Escribe un correo a un amigo (60–80 palabras): cuéntale qué hiciste el fin de semana pasado, con quién estuviste y qué te gustó más.",
+        "explanation": "",
+        "form": 1,
+        "preview": false,
+        "cards": [],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f1-w2",
+        "exam": "dele-a2",
+        "section": "writing",
+        "points": 1.0,
+        "kind": {
+          "writingTask": {
+            "prompt": "Escribe una nota a tu vecino (60–80 palabras): vas a estar fuera una semana; pídele que riegue tus plantas y explícale dónde está la llave.",
+            "rubric": [
+              {
+                "text": "Выполнены все пункты задания",
+                "points": 2
+              },
+              {
+                "text": "Текст понятен и логично построен",
+                "points": 2
+              },
+              {
+                "text": "Правильные времена глаголов",
+                "points": 2
+              },
+              {
+                "text": "Согласование рода и числа",
+                "points": 2
+              },
+              {
+                "text": "Нужный объём (60–80 слов)",
+                "points": 2
+              }
+            ]
+          }
+        },
+        "text": "Escribe una nota a tu vecino (60–80 palabras): vas a estar fuera una semana; pídele que riegue tus plantas y explícale dónde está la llave.",
+        "explanation": "",
+        "form": 1,
+        "preview": false,
+        "cards": [],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f2-l1",
+        "exam": "dele-a2",
+        "section": "listening",
+        "points": 1.0,
+        "kind": {
+          "listeningTask": {
+            "script": "Atención: el vuelo a Madrid tiene un retraso de cuarenta minutos.",
+            "options": [
+              "Está cancelado",
+              "Llega con retraso",
+              "Sale antes"
+            ],
+            "answer": "Llega con retraso"
+          }
+        },
+        "text": "¿Qué le pasa al vuelo?",
+        "explanation": "*un retraso de cuarenta minutos*.",
+        "form": 2,
+        "preview": false,
+        "cards": [
+          "A2-25"
+        ],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f2-l2",
+        "exam": "dele-a2",
+        "section": "listening",
+        "points": 1.0,
+        "kind": {
+          "listeningTask": {
+            "script": "Para la fiesta necesitamos refrescos, hielo y vasos; las pizzas ya las he pedido.",
+            "options": [
+              "Refrescos",
+              "Vasos",
+              "Pizzas"
+            ],
+            "answer": "Pizzas"
+          }
+        },
+        "text": "¿Qué no necesitan comprar?",
+        "explanation": "*las pizzas ya las he pedido* — пиццы уже заказаны.",
+        "form": 2,
+        "preview": false,
+        "cards": [
+          "A2-12"
+        ],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f2-l3",
+        "exam": "dele-a2",
+        "section": "listening",
+        "points": 1.0,
+        "kind": {
+          "listeningTask": {
+            "script": "La consulta del doctor García es el jueves a las cinco; trae la tarjeta sanitaria.",
+            "options": [
+              "La tarjeta sanitaria",
+              "El pasaporte",
+              "Dinero"
+            ],
+            "answer": "La tarjeta sanitaria"
+          }
+        },
+        "text": "¿Qué tiene que llevar?",
+        "explanation": "*trae la tarjeta sanitaria*.",
+        "form": 2,
+        "preview": false,
+        "cards": [
+          "A2-24"
+        ],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f2-l4",
+        "exam": "dele-a2",
+        "section": "listening",
+        "points": 1.0,
+        "kind": {
+          "listeningTask": {
+            "script": "Mi hermano es más alto que yo, pero yo soy mayor.",
+            "options": [
+              "El hermano",
+              "La persona que habla",
+              "Tienen la misma edad"
+            ],
+            "answer": "La persona que habla"
+          }
+        },
+        "text": "¿Quién es mayor?",
+        "explanation": "*yo soy mayor* — я старше.",
+        "form": 2,
+        "preview": false,
+        "cards": [
+          "A2-17"
+        ],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f2-l5",
+        "exam": "dele-a2",
+        "section": "listening",
+        "points": 1.0,
+        "kind": {
+          "listeningTask": {
+            "script": "Cuando llegué a casa, mis padres ya estaban cenando.",
+            "options": [
+              "Cenaban",
+              "Dormían",
+              "Salían"
+            ],
+            "answer": "Cenaban"
+          }
+        },
+        "text": "¿Qué hacían los padres?",
+        "explanation": "*estaban cenando* — ужинали.",
+        "form": 2,
+        "preview": false,
+        "cards": [
+          "A2-10"
+        ],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f2-l6",
+        "exam": "dele-a2",
+        "section": "listening",
+        "points": 1.0,
+        "kind": {
+          "listeningTask": {
+            "script": "No me gustan nada los lunes, pero me encantan los viernes.",
+            "options": [
+              "El lunes",
+              "El viernes",
+              "El domingo"
+            ],
+            "answer": "El viernes"
+          }
+        },
+        "text": "¿Qué día le encanta?",
+        "explanation": "*me encantan los viernes*.",
+        "form": 2,
+        "preview": false,
+        "cards": [
+          "A2-26"
+        ],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f2-r1",
+        "exam": "dele-a2",
+        "section": "reading",
+        "points": 1.0,
+        "kind": {
+          "choice": {
+            "options": [
+              "Nada",
+              "Diez euros",
+              "No se dice"
+            ],
+            "answer": "Nada"
+          }
+        },
+        "text": "Lee: «Clases de yoga para principiantes: lunes y miércoles a las 19:00. Primera clase gratis.» ¿Cuánto cuesta la primera clase?",
+        "explanation": "*gratis* — бесплатно.",
+        "form": 2,
+        "preview": false,
+        "cards": [
+          "A1-27"
+        ],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f2-r2",
+        "exam": "dele-a2",
+        "section": "reading",
+        "points": 1.0,
+        "kind": {
+          "choice": {
+            "options": [
+              "Té y fruta",
+              "Café con tostadas",
+              "Nada"
+            ],
+            "answer": "Café con tostadas"
+          }
+        },
+        "text": "Lee: «Juan se levanta a las siete, se ducha y desayuna café con tostadas.» ¿Qué desayuna Juan?",
+        "explanation": "*desayuna café con tostadas*.",
+        "form": 2,
+        "preview": false,
+        "cards": [
+          "A1-21"
+        ],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f2-r3",
+        "exam": "dele-a2",
+        "section": "reading",
+        "points": 1.0,
+        "kind": {
+          "choice": {
+            "options": [
+              "Por vacaciones",
+              "Por obras",
+              "Por la noche"
+            ],
+            "answer": "Por obras"
+          }
+        },
+        "text": "Lee: «La biblioteca está cerrada por obras hasta el 15 de marzo.» ¿Por qué está cerrada?",
+        "explanation": "*por obras* — из-за ремонта.",
+        "form": 2,
+        "preview": false,
+        "cards": [
+          "A2-27"
+        ],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f2-r4",
+        "exam": "dele-a2",
+        "section": "reading",
+        "points": 1.0,
+        "kind": {
+          "choice": {
+            "options": [
+              "Negra",
+              "Azul",
+              "Roja"
+            ],
+            "answer": "Azul"
+          }
+        },
+        "text": "Lee: «He perdido mis gafas. Son negras y estaban en una funda azul.» ¿De qué color es la funda?",
+        "explanation": "*una funda azul* — синий футляр.",
+        "form": 2,
+        "preview": false,
+        "cards": [
+          "A2-01"
+        ],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f2-r5",
+        "exam": "dele-a2",
+        "section": "reading",
+        "points": 1.0,
+        "kind": {
+          "choice": {
+            "options": [
+              "En un banco",
+              "Es profesora de música",
+              "No trabaja"
+            ],
+            "answer": "Es profesora de música"
+          }
+        },
+        "text": "Lee: «Antes trabajaba en un banco; ahora es profesora de música.» ¿En qué trabaja ahora?",
+        "explanation": "*ahora es profesora* — сейчас она учитель.",
+        "form": 2,
+        "preview": false,
+        "cards": [
+          "A2-05"
+        ],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f2-r6",
+        "exam": "dele-a2",
+        "section": "reading",
+        "points": 1.0,
+        "kind": {
+          "choice": {
+            "options": [
+              "Pasaporte y fotos",
+              "Solo fotos",
+              "Dinero"
+            ],
+            "answer": "Pasaporte y fotos"
+          }
+        },
+        "text": "Lee: «Hay que llevar el pasaporte y dos fotos para hacer el trámite.» ¿Qué es obligatorio llevar?",
+        "explanation": "*hay que* — нужно, обязательно.",
+        "form": 2,
+        "preview": false,
+        "cards": [
+          "A2-24"
+        ],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f2-r7",
+        "exam": "dele-a2",
+        "section": "reading",
+        "points": 1.0,
+        "kind": {
+          "choice": {
+            "options": [
+              "Muy buena",
+              "Mala",
+              "Cara"
+            ],
+            "answer": "Muy buena"
+          }
+        },
+        "text": "Lee: «Te recomiendo este restaurante: la comida es buenísima y el precio, razonable.» ¿Cómo es la comida?",
+        "explanation": "*buenísima* — очень хорошая.",
+        "form": 2,
+        "preview": false,
+        "cards": [
+          "A2-18"
+        ],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f2-r8",
+        "exam": "dele-a2",
+        "section": "reading",
+        "points": 1.0,
+        "kind": {
+          "choice": {
+            "options": [
+              "Desde hace tres años",
+              "Hace tres años que no estudia",
+              "Empezará en tres años"
+            ],
+            "answer": "Desde hace tres años"
+          }
+        },
+        "text": "Lee: «Llevo tres años estudiando español.» ¿Desde cuándo estudia español?",
+        "explanation": "*llevo tres años estudiando* — учу уже три года.",
+        "form": 2,
+        "preview": false,
+        "cards": [
+          "A2-25"
+        ],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f2-s1",
+        "exam": "dele-a2",
+        "section": "speaking",
+        "points": 1.0,
+        "kind": {
+          "speakingTask": {
+            "prompt": "Habla de tu rutina diaria: a qué hora te levantas, qué haces por la mañana, por la tarde y por la noche (2–3 minutos).",
+            "prepSeconds": 240,
+            "rubric": [
+              {
+                "text": "Говорю без долгих пауз",
+                "points": 2
+              },
+              {
+                "text": "Понятное произношение",
+                "points": 2
+              },
+              {
+                "text": "Подходящая лексика по теме",
+                "points": 2
+              },
+              {
+                "text": "Правильные основные формы глаголов",
+                "points": 2
+              },
+              {
+                "text": "Отвечаю на все вопросы задания",
+                "points": 2
+              }
+            ]
+          }
+        },
+        "text": "Habla de tu rutina diaria: a qué hora te levantas, qué haces por la mañana, por la tarde y por la noche (2–3 minutos).",
+        "explanation": "",
+        "form": 2,
+        "preview": false,
+        "cards": [],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f2-s2",
+        "exam": "dele-a2",
+        "section": "speaking",
+        "points": 1.0,
+        "kind": {
+          "speakingTask": {
+            "prompt": "Describe una foto de una familia en un parque: quiénes son, qué llevan puesto y qué están haciendo (2–3 minutos).",
+            "prepSeconds": 240,
+            "rubric": [
+              {
+                "text": "Говорю без долгих пауз",
+                "points": 2
+              },
+              {
+                "text": "Понятное произношение",
+                "points": 2
+              },
+              {
+                "text": "Подходящая лексика по теме",
+                "points": 2
+              },
+              {
+                "text": "Правильные основные формы глаголов",
+                "points": 2
+              },
+              {
+                "text": "Отвечаю на все вопросы задания",
+                "points": 2
+              }
+            ]
+          }
+        },
+        "text": "Describe una foto de una familia en un parque: quiénes son, qué llevan puesto y qué están haciendo (2–3 minutos).",
+        "explanation": "",
+        "form": 2,
+        "preview": false,
+        "cards": [],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f2-s3",
+        "exam": "dele-a2",
+        "section": "speaking",
+        "points": 1.0,
+        "kind": {
+          "speakingTask": {
+            "prompt": "Conversación: en un restaurante pides la comida, preguntas por un plato y pides la cuenta.",
+            "prepSeconds": 240,
+            "rubric": [
+              {
+                "text": "Говорю без долгих пауз",
+                "points": 2
+              },
+              {
+                "text": "Понятное произношение",
+                "points": 2
+              },
+              {
+                "text": "Подходящая лексика по теме",
+                "points": 2
+              },
+              {
+                "text": "Правильные основные формы глаголов",
+                "points": 2
+              },
+              {
+                "text": "Отвечаю на все вопросы задания",
+                "points": 2
+              }
+            ]
+          }
+        },
+        "text": "Conversación: en un restaurante pides la comida, preguntas por un plato y pides la cuenta.",
+        "explanation": "",
+        "form": 2,
+        "preview": false,
+        "cards": [],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f2-w1",
+        "exam": "dele-a2",
+        "section": "writing",
+        "points": 1.0,
+        "kind": {
+          "writingTask": {
+            "prompt": "Escribe un mensaje a un amigo (60–80 palabras) para invitarle a tu cumpleaños: di cuándo y dónde es la fiesta y qué vais a hacer.",
+            "rubric": [
+              {
+                "text": "Выполнены все пункты задания",
+                "points": 2
+              },
+              {
+                "text": "Текст понятен и логично построен",
+                "points": 2
+              },
+              {
+                "text": "Правильные времена глаголов",
+                "points": 2
+              },
+              {
+                "text": "Согласование рода и числа",
+                "points": 2
+              },
+              {
+                "text": "Нужный объём (60–80 слов)",
+                "points": 2
+              }
+            ]
+          }
+        },
+        "text": "Escribe un mensaje a un amigo (60–80 palabras) para invitarle a tu cumpleaños: di cuándo y dónde es la fiesta y qué vais a hacer.",
+        "explanation": "",
+        "form": 2,
+        "preview": false,
+        "cards": [],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f2-w2",
+        "exam": "dele-a2",
+        "section": "writing",
+        "points": 1.0,
+        "kind": {
+          "writingTask": {
+            "prompt": "Escribe un texto (60–80 palabras) sobre tu último viaje: adónde fuiste, con quién, qué visitaste y qué tal fue.",
+            "rubric": [
+              {
+                "text": "Выполнены все пункты задания",
+                "points": 2
+              },
+              {
+                "text": "Текст понятен и логично построен",
+                "points": 2
+              },
+              {
+                "text": "Правильные времена глаголов",
+                "points": 2
+              },
+              {
+                "text": "Согласование рода и числа",
+                "points": 2
+              },
+              {
+                "text": "Нужный объём (60–80 слов)",
+                "points": 2
+              }
+            ]
+          }
+        },
+        "text": "Escribe un texto (60–80 palabras) sobre tu último viaje: adónde fuiste, con quién, qué visitaste y qué tal fue.",
+        "explanation": "",
+        "form": 2,
+        "preview": false,
+        "cards": [],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f3-l1",
+        "exam": "dele-a2",
+        "section": "listening",
+        "points": 1.0,
+        "kind": {
+          "listeningTask": {
+            "script": "¿Diga? Hola, soy Carmen. Te llamo porque esta tarde no puedo ir al gimnasio.",
+            "options": [
+              "Para quedar en el gimnasio",
+              "Porque no puede ir al gimnasio",
+              "Para pedir dinero"
+            ],
+            "answer": "Porque no puede ir al gimnasio"
+          }
+        },
+        "text": "¿Por qué llama Carmen?",
+        "explanation": "*no puedo ir*.",
+        "form": 3,
+        "preview": false,
+        "cards": [
+          "A1-23"
+        ],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f3-l2",
+        "exam": "dele-a2",
+        "section": "listening",
+        "points": 1.0,
+        "kind": {
+          "listeningTask": {
+            "script": "La sopa está muy salada; ¿me trae otra, por favor?",
+            "options": [
+              "Está fría",
+              "Tiene mucha sal",
+              "Es pequeña"
+            ],
+            "answer": "Tiene mucha sal"
+          }
+        },
+        "text": "¿Qué problema tiene la sopa?",
+        "explanation": "*salada* — пересоленный.",
+        "form": 3,
+        "preview": false,
+        "cards": [
+          "A2-28"
+        ],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f3-l3",
+        "exam": "dele-a2",
+        "section": "listening",
+        "points": 1.0,
+        "kind": {
+          "listeningTask": {
+            "script": "Este autobús no va al aeropuerto; tienes que coger el número veinte.",
+            "options": [
+              "El diez",
+              "El veinte",
+              "El doce"
+            ],
+            "answer": "El veinte"
+          }
+        },
+        "text": "¿Qué autobús va al aeropuerto?",
+        "explanation": "*el número veinte*.",
+        "form": 3,
+        "preview": false,
+        "cards": [
+          "A1-27"
+        ],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f3-l4",
+        "exam": "dele-a2",
+        "section": "listening",
+        "points": 1.0,
+        "kind": {
+          "listeningTask": {
+            "script": "Me levanté tarde, perdí el autobús y llegué tarde al trabajo.",
+            "options": [
+              "Llegó tarde al trabajo",
+              "No fue al trabajo",
+              "Llegó pronto"
+            ],
+            "answer": "Llegó tarde al trabajo"
+          }
+        },
+        "text": "¿Qué le pasó?",
+        "explanation": "*llegué tarde al trabajo*.",
+        "form": 3,
+        "preview": false,
+        "cards": [
+          "A2-03"
+        ],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f3-l5",
+        "exam": "dele-a2",
+        "section": "listening",
+        "points": 1.0,
+        "kind": {
+          "listeningTask": {
+            "script": "¿Cuál prefieres, la camiseta roja o la verde? La verde me queda mejor.",
+            "options": [
+              "La roja",
+              "La verde",
+              "Ninguna"
+            ],
+            "answer": "La verde"
+          }
+        },
+        "text": "¿Qué camiseta prefiere?",
+        "explanation": "*la verde me queda mejor*.",
+        "form": 3,
+        "preview": false,
+        "cards": [
+          "A2-19"
+        ],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f3-l6",
+        "exam": "dele-a2",
+        "section": "listening",
+        "points": 1.0,
+        "kind": {
+          "listeningTask": {
+            "script": "Mañana te lo explico, que ahora tengo prisa.",
+            "options": [
+              "Ahora",
+              "Mañana",
+              "Nunca"
+            ],
+            "answer": "Mañana"
+          }
+        },
+        "text": "¿Cuándo se lo explicará?",
+        "explanation": "*mañana te lo explico*.",
+        "form": 3,
+        "preview": false,
+        "cards": [
+          "A2-12"
+        ],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f3-r1",
+        "exam": "dele-a2",
+        "section": "reading",
+        "points": 1.0,
+        "kind": {
+          "choice": {
+            "options": [
+              "Por correo electrónico",
+              "En persona",
+              "Por teléfono"
+            ],
+            "answer": "Por correo electrónico"
+          }
+        },
+        "text": "Lee: «Se busca camarero con experiencia. Horario de tarde. Enviar currículum por correo electrónico.» ¿Cómo hay que enviar el currículum?",
+        "explanation": "*por correo electrónico* — по e-mail.",
+        "form": 3,
+        "preview": false,
+        "cards": [
+          "A1-25"
+        ],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f3-r2",
+        "exam": "dele-a2",
+        "section": "reading",
+        "points": 1.0,
+        "kind": {
+          "choice": {
+            "options": [
+              "Nadar",
+              "Correr",
+              "Bailar"
+            ],
+            "answer": "Nadar"
+          }
+        },
+        "text": "Lee: «Mi abuela tiene ochenta años y todavía nada todas las semanas.» ¿Qué hace la abuela cada semana?",
+        "explanation": "*nada* от *nadar*.",
+        "form": 3,
+        "preview": false,
+        "cards": [
+          "A1-19"
+        ],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f3-r3",
+        "exam": "dele-a2",
+        "section": "reading",
+        "points": 1.0,
+        "kind": {
+          "choice": {
+            "options": [
+              "Una",
+              "Dos",
+              "Tres"
+            ],
+            "answer": "Tres"
+          }
+        },
+        "text": "Lee: «Este año he viajado tres veces a Italia.» ¿Cuántas veces ha viajado a Italia este año?",
+        "explanation": "*tres veces*.",
+        "form": 3,
+        "preview": false,
+        "cards": [
+          "A2-01"
+        ],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f3-r4",
+        "exam": "dele-a2",
+        "section": "reading",
+        "points": 1.0,
+        "kind": {
+          "choice": {
+            "options": [
+              "Llevó el sofá a casa",
+              "Vendió una mesa",
+              "Cerró pronto"
+            ],
+            "answer": "Llevó el sofá a casa"
+          }
+        },
+        "text": "Lee: «Compramos el sofá en una tienda del centro y nos lo trajeron a casa.» ¿Qué hizo la tienda?",
+        "explanation": "*nos lo trajeron* — нам его привезли.",
+        "form": 3,
+        "preview": false,
+        "cards": [
+          "A2-14"
+        ],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f3-r5",
+        "exam": "dele-a2",
+        "section": "reading",
+        "points": 1.0,
+        "kind": {
+          "choice": {
+            "options": [
+              "Hacer deporte",
+              "Quedarse en la cama",
+              "Ir a trabajar"
+            ],
+            "answer": "Quedarse en la cama"
+          }
+        },
+        "text": "Lee: «Si tienes fiebre, quédate en la cama y bebe mucha agua.» ¿Qué debe hacer una persona con fiebre?",
+        "explanation": "Императив *quédate*.",
+        "form": 3,
+        "preview": false,
+        "cards": [
+          "A2-15"
+        ],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f3-r6",
+        "exam": "dele-a2",
+        "section": "reading",
+        "points": 1.0,
+        "kind": {
+          "choice": {
+            "options": [
+              "Detrás de la fuente",
+              "Delante de la fuente",
+              "En un bar"
+            ],
+            "answer": "Delante de la fuente"
+          }
+        },
+        "text": "Lee: «Nos vemos en la plaza mayor, delante de la fuente, a las ocho.» ¿Dónde quedan?",
+        "explanation": "*delante de* — перед.",
+        "form": 3,
+        "preview": false,
+        "cards": [
+          "A1-25"
+        ],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f3-r7",
+        "exam": "dele-a2",
+        "section": "reading",
+        "points": 1.0,
+        "kind": {
+          "choice": {
+            "options": [
+              "Pedro",
+              "Lucía",
+              "Ninguno"
+            ],
+            "answer": "Ninguno"
+          }
+        },
+        "text": "Lee: «Ni Pedro ni Lucía saben cocinar.» ¿Quién sabe cocinar?",
+        "explanation": "*ni… ni…* — ни тот, ни другой.",
+        "form": 3,
+        "preview": false,
+        "cards": [
+          "A2-21"
+        ],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f3-r8",
+        "exam": "dele-a2",
+        "section": "reading",
+        "points": 1.0,
+        "kind": {
+          "choice": {
+            "options": [
+              "En diciembre",
+              "En febrero",
+              "En marzo"
+            ],
+            "answer": "En febrero"
+          }
+        },
+        "text": "Lee: «El curso empieza el 3 de octubre y dura cuatro meses.» ¿Cuándo termina el curso?",
+        "explanation": "С 3 октября + 4 месяца → февраль.",
+        "form": 3,
+        "preview": false,
+        "cards": [
+          "A1-29"
+        ],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f3-s1",
+        "exam": "dele-a2",
+        "section": "speaking",
+        "points": 1.0,
+        "kind": {
+          "speakingTask": {
+            "prompt": "Habla de tu comida favorita: qué es, cómo se prepara y cuándo la comes (2–3 minutos).",
+            "prepSeconds": 240,
+            "rubric": [
+              {
+                "text": "Говорю без долгих пауз",
+                "points": 2
+              },
+              {
+                "text": "Понятное произношение",
+                "points": 2
+              },
+              {
+                "text": "Подходящая лексика по теме",
+                "points": 2
+              },
+              {
+                "text": "Правильные основные формы глаголов",
+                "points": 2
+              },
+              {
+                "text": "Отвечаю на все вопросы задания",
+                "points": 2
+              }
+            ]
+          }
+        },
+        "text": "Habla de tu comida favorita: qué es, cómo se prepara y cuándo la comes (2–3 minutos).",
+        "explanation": "",
+        "form": 3,
+        "preview": false,
+        "cards": [],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f3-s2",
+        "exam": "dele-a2",
+        "section": "speaking",
+        "points": 1.0,
+        "kind": {
+          "speakingTask": {
+            "prompt": "Cuenta qué hiciste el último fin de semana: adónde fuiste, con quién y qué tal lo pasaste (2–3 minutos).",
+            "prepSeconds": 240,
+            "rubric": [
+              {
+                "text": "Говорю без долгих пауз",
+                "points": 2
+              },
+              {
+                "text": "Понятное произношение",
+                "points": 2
+              },
+              {
+                "text": "Подходящая лексика по теме",
+                "points": 2
+              },
+              {
+                "text": "Правильные основные формы глаголов",
+                "points": 2
+              },
+              {
+                "text": "Отвечаю на все вопросы задания",
+                "points": 2
+              }
+            ]
+          }
+        },
+        "text": "Cuenta qué hiciste el último fin de semana: adónde fuiste, con quién y qué tal lo pasaste (2–3 minutos).",
+        "explanation": "",
+        "form": 3,
+        "preview": false,
+        "cards": [],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f3-s3",
+        "exam": "dele-a2",
+        "section": "speaking",
+        "points": 1.0,
+        "kind": {
+          "speakingTask": {
+            "prompt": "Conversación: en la estación compras un billete de tren: pregunta horarios, precio y andén.",
+            "prepSeconds": 240,
+            "rubric": [
+              {
+                "text": "Говорю без долгих пауз",
+                "points": 2
+              },
+              {
+                "text": "Понятное произношение",
+                "points": 2
+              },
+              {
+                "text": "Подходящая лексика по теме",
+                "points": 2
+              },
+              {
+                "text": "Правильные основные формы глаголов",
+                "points": 2
+              },
+              {
+                "text": "Отвечаю на все вопросы задания",
+                "points": 2
+              }
+            ]
+          }
+        },
+        "text": "Conversación: en la estación compras un billete de tren: pregunta horarios, precio y andén.",
+        "explanation": "",
+        "form": 3,
+        "preview": false,
+        "cards": [],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f3-w1",
+        "exam": "dele-a2",
+        "section": "writing",
+        "points": 1.0,
+        "kind": {
+          "writingTask": {
+            "prompt": "Escribe un correo (60–80 palabras) a una academia: pide información sobre los cursos de español (horarios, precio, nivel).",
+            "rubric": [
+              {
+                "text": "Выполнены все пункты задания",
+                "points": 2
+              },
+              {
+                "text": "Текст понятен и логично построен",
+                "points": 2
+              },
+              {
+                "text": "Правильные времена глаголов",
+                "points": 2
+              },
+              {
+                "text": "Согласование рода и числа",
+                "points": 2
+              },
+              {
+                "text": "Нужный объём (60–80 слов)",
+                "points": 2
+              }
+            ]
+          }
+        },
+        "text": "Escribe un correo (60–80 palabras) a una academia: pide información sobre los cursos de español (horarios, precio, nivel).",
+        "explanation": "",
+        "form": 3,
+        "preview": false,
+        "cards": [],
+        "retired": false
+      },
+      {
+        "id": "dele-a2-f3-w2",
+        "exam": "dele-a2",
+        "section": "writing",
+        "points": 1.0,
+        "kind": {
+          "writingTask": {
+            "prompt": "Escribe un texto (60–80 palabras) sobre tu ciudad: dónde está, qué se puede hacer y qué es lo que más te gusta.",
+            "rubric": [
+              {
+                "text": "Выполнены все пункты задания",
+                "points": 2
+              },
+              {
+                "text": "Текст понятен и логично построен",
+                "points": 2
+              },
+              {
+                "text": "Правильные времена глаголов",
+                "points": 2
+              },
+              {
+                "text": "Согласование рода и числа",
+                "points": 2
+              },
+              {
+                "text": "Нужный объём (60–80 слов)",
+                "points": 2
+              }
+            ]
+          }
+        },
+        "text": "Escribe un texto (60–80 palabras) sobre tu ciudad: dónde está, qué se puede hacer y qué es lo que más te gusta.",
+        "explanation": "",
+        "form": 3,
+        "preview": false,
+        "cards": [],
+        "retired": false
+      }
+    ]
   }
 }

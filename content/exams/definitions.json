@@ -1,0 +1,32 @@
+[
+  {
+    "id": "dele-a2",
+    "title": "DELE A2",
+    "verifiedOn": "2026-10-27",
+    "summary": "Четыре части: чтение (60 мин), аудирование (40 мин), письмо (45 мин), устная часть (12 мин + 12 мин подготовки). Каждая — 25 баллов. Сдано, если в группе 1 (чтение + письмо) и в группе 2 (аудирование + устная часть) не меньше 30 из 50.",
+    "fee": "≈ 130 €; пересдача — полная стоимость",
+    "sections": [
+      {"id": "reading", "title": "Чтение", "minutes": 60, "maxPoints": 25, "productive": false},
+      {"id": "listening", "title": "Аудирование", "minutes": 40, "maxPoints": 25, "productive": false},
+      {"id": "writing", "title": "Письмо", "minutes": 45, "maxPoints": 25, "productive": true},
+      {"id": "speaking", "title": "Устная часть", "minutes": 12, "maxPoints": 25, "productive": true, "prepMinutes": 12}
+    ],
+    "groups": [
+      {"id": "g1", "title": "Группа 1: чтение и письмо", "sections": ["reading", "writing"], "passPoints": 30},
+      {"id": "g2", "title": "Группа 2: аудирование и устная часть", "sections": ["listening", "speaking"], "passPoints": 30}
+    ]
+  },
+  {
+    "id": "ccse",
+    "title": "CCSE",
+    "verifiedOn": "2026-10-27",
+    "summary": "25 вопросов (выбор ответа и «верно/неверно»), 45 минут. Сдано при 15 правильных ответах и больше.",
+    "fee": "85 €; вторая попытка бесплатно в течение 18 месяцев",
+    "sections": [
+      {"id": "ccse", "title": "CCSE", "minutes": 45, "maxPoints": 25, "productive": false}
+    ],
+    "groups": [
+      {"id": "all", "title": "Итог", "sections": ["ccse"], "passPoints": 15}
+    ]
+  }
+]
