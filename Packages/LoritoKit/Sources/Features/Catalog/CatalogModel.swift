@@ -27,8 +27,8 @@ public enum CatalogCardStatus: String, Sendable {
 @MainActor
 @Observable
 public final class CatalogModel {
-    private let store: UserDataStore
-    private let catalog: ContentCatalog
+    let store: UserDataStore
+    let catalog: ContentCatalog
     private var reviewsByID: [String: ReviewState] = [:]
 
     public init(store: UserDataStore, catalog: ContentCatalog) {
@@ -111,5 +111,12 @@ public final class CatalogModel {
         }
         try? store.upsertReview(review)
         reviewsByID[cardID] = review
+    }
+
+    /// «Тренировать спряжения» on a tense card (conjugation-trainer); nil when nothing to drill.
+    func makeConjugationDrill(forCard cardID: String) -> ConjugationDrillModel? {
+        guard let conj = catalog.conjugation else { return nil }
+        let items = ConjugationToday.readerItems(tenseCard: cardID, store: store, catalog: catalog)
+        return items.isEmpty ? nil : ConjugationDrillModel(store: store, catalog: conj, itemIDs: items)
     }
 }

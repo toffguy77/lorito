@@ -25,6 +25,7 @@ public struct AdaptiveRootView: View {
     @State private var audioSettings: AudioSettingsModel
     @State private var retentionSettings: RetentionSettingsModel
     @State private var goalSettings: GoalSettingsModel
+    @State private var conjugationSettings: ConjugationSettingsModel
     @Environment(\.speechService) private var speech
     @SceneStorage("lorito.catalogSelection") private var storedCatalogSelection = ""
     @Environment(\.horizontalSizeClass) private var sizeClass
@@ -43,6 +44,7 @@ public struct AdaptiveRootView: View {
         _audioSettings = State(initialValue: AudioSettingsModel(store: store))
         _retentionSettings = State(initialValue: RetentionSettingsModel(store: store))
         _goalSettings = State(initialValue: GoalSettingsModel(store: store, catalog: catalog))
+        _conjugationSettings = State(initialValue: ConjugationSettingsModel(store: store))
     }
 
     private static let tabs: [FloatingTabItem<AppNavigation.Destination>] =
@@ -156,7 +158,7 @@ public struct AdaptiveRootView: View {
         case .settings:
             NavigationStack {
                 SettingsView(model: scopeModel, reminders: reminders, audio: audioSettings,
-                             retention: retentionSettings, goals: goalSettings,
+                             retention: retentionSettings, goals: goalSettings, conjugation: conjugationSettings,
                              hasSpanishVoice: speech != nil)
             }
         }

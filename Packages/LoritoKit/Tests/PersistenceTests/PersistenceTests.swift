@@ -109,6 +109,7 @@ struct SyncedSettingsRoundTripTests {
         s.levelGoal = LevelGoal(targetLevel: .b1, targetDate: Date(timeIntervalSinceReferenceDate: 820_000_000),
                                 startDate: Date(timeIntervalSinceReferenceDate: 810_000_000), startIntroduced: 12,
                                 state: .active)                         // study-goal
+        s.dailyConjugationCount = 5                                     // conjugation-trainer
         s.exam = ExamGoal(kind: .ccse, date: Date(timeIntervalSinceReferenceDate: 821_000_000), done: true)
         #expect(try Self.roundTrip(s) == s)
     }
@@ -149,6 +150,7 @@ struct SyncedSettingsRoundTripTests {
         #expect(loaded.desiredRetention == 0.9)
         #expect(loaded.placementKnownLevel == nil)
         #expect(loaded.levelGoal == nil && loaded.exam == nil)
+        #expect(loaded.dailyConjugationCount == 0)
     }
 }
 

@@ -10,6 +10,7 @@ public struct TodayView: View {
     @State private var model: TodayModel
     @State private var trapCard: Card?
     @State private var goalModel: GoalSettingsModel?
+    @State private var drill: ConjugationDrillModel?
     private let catalog: ContentCatalog
     private let store: UserDataStore
     private let navigation: AppNavigation
@@ -53,6 +54,12 @@ public struct TodayView: View {
                     }
             }
         }
+        .focusModeCover(item: $drill, onDismiss: { model.refresh() }) { d in
+            ConjugationDrillView(model: d, onOpenCard: { id in
+                drill = nil
+                trapCard = catalog.card(id: id)
+            }) { drill = nil }
+        }
         .sheet(item: $goalModel, onDismiss: { model.refresh() }) { goals in
             NavigationStack {
                 GoalSettingsView(model: goals)
@@ -89,6 +96,7 @@ public struct TodayView: View {
             streakBannerView
             goalCard
             promptCard
+            conjugationEntry
             trapsEntry
             trap
         }
@@ -112,6 +120,7 @@ public struct TodayView: View {
                     streakBannerView
                     goalCard
                     promptCard
+                    conjugationEntry
                     trapsEntry
                     trap
                     memorySummary
@@ -171,6 +180,33 @@ public struct TodayView: View {
         model.dismissPrompt()
         if prompt.id == TodayModel.goalPrompt.id {
             goalModel = GoalSettingsModel(store: store, catalog: catalog)
+        }
+    }
+
+    /// «Спряжения · N» (conjugation-trainer), when items are planned today.
+    @ViewBuilder
+    private var conjugationEntry: some View {
+        if !model.conjugationItems.isEmpty {
+            Button { drill = model.makeConjugationDrill() } label: {
+                HStack(spacing: LoritoSpacing.sm) {
+                    Image(systemName: "character.cursor.ibeam")
+                        .foregroundStyle(LoritoColor.accent)
+                        .accessibilityHidden(true)
+                    Text("Спряжения · \(model.conjugationItems.count)")
+                        .font(LoritoFont.bodyStrong)
+                        .foregroundStyle(LoritoColor.textPrimary)
+                    Spacer()
+                    Image(systemName: "chevron.right")
+                        .foregroundStyle(LoritoColor.textSecondary)
+                        .accessibilityHidden(true)
+                }
+                .padding(LoritoSpacing.md)
+                .frame(minHeight: LoritoLayout.minTouchTarget)
+                .background(LoritoColor.surfaceRaised, in: RoundedRectangle(cornerRadius: LoritoRadius.md, style: .continuous))
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+            .accessibilityIdentifier("today.conjugation")
         }
     }
 

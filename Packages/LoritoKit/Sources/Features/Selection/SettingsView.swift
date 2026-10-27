@@ -12,13 +12,16 @@ public struct SettingsView: View {
     private let audio: AudioSettingsModel?
     private let retention: RetentionSettingsModel?
     private let goals: GoalSettingsModel?
+    private let conjugation: ConjugationSettingsModel?
     private let hasSpanishVoice: Bool
     @Environment(\.loritoUITesting) private var uiTesting
 
     public init(model: ScopeSelectionModel, reminders: ReminderService? = nil,
                 audio: AudioSettingsModel? = nil, retention: RetentionSettingsModel? = nil,
-                goals: GoalSettingsModel? = nil, hasSpanishVoice: Bool = true) {
+                goals: GoalSettingsModel? = nil, conjugation: ConjugationSettingsModel? = nil,
+                hasSpanishVoice: Bool = true) {
         self.goals = goals
+        self.conjugation = conjugation
         _model = State(initialValue: model)
         self.reminders = reminders
         self.audio = audio
@@ -55,6 +58,8 @@ public struct SettingsView: View {
                 .buttonStyle(.plain)
 
                 if let retention { retentionSection(retention) }
+
+                if let conjugation { conjugationSection(conjugation) }
 
                 if let audio { soundSection(audio) }
 
@@ -122,6 +127,35 @@ public struct SettingsView: View {
                 .loritoStyle(.label)
                 .foregroundStyle(LoritoColor.textSecondary)
             content()
+        }
+    }
+
+    /// «Тренажёр спряжений»: on/off and daily quota.
+    private func conjugationSection(_ conjugation: ConjugationSettingsModel) -> some View {
+        @Bindable var conjugation = conjugation
+        return section("Тренажёр спряжений") {
+            VStack(alignment: .leading, spacing: LoritoSpacing.sm) {
+                Toggle(isOn: $conjugation.isEnabled) {
+                    Text("Тренировать спряжения")
+                        .font(LoritoFont.bodyStrong)
+                        .foregroundStyle(LoritoColor.textPrimary)
+                }
+                .tint(LoritoColor.accent)
+                .accessibilityIdentifier("conjugationToggle")
+                if conjugation.isEnabled {
+                    Stepper(value: $conjugation.quota, in: 1...UserSettings.conjugationRange.upperBound) {
+                        Text("Новых в день: \(conjugation.quota)")
+                            .font(LoritoFont.body)
+                            .foregroundStyle(LoritoColor.textPrimary)
+                    }
+                }
+                Text("Глаголы по частоте, по временам из изученных карточек. Учитываются в общем лимите новых на день.")
+                    .font(LoritoFont.caption)
+                    .foregroundStyle(LoritoColor.textSecondary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            .padding(LoritoSpacing.md)
+            .background(LoritoColor.surfaceRaised, in: RoundedRectangle(cornerRadius: LoritoRadius.md, style: .continuous))
         }
     }
 

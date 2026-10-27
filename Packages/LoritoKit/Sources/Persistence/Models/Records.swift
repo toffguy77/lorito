@@ -31,6 +31,8 @@ public final class SettingsRecord {
     public var examKindRaw: String?
     public var examDate: Date?
     public var examDone: Bool?
+    // conjugation-trainer
+    public var dailyConjugationCount: Int = 0
 
     public init(
         targetLevelRaw: String? = nil,

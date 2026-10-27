@@ -305,6 +305,7 @@ struct CardReaderView: View {
     let model: CatalogModel
     let card: Card
     @State private var practiceSession: ExerciseSessionModel?
+    @State private var drill: ConjugationDrillModel?
     @Environment(\.practiceSessionDidEnd) private var practiceSessionDidEnd
 
     private var exerciseCount: Int { model.exercises(forCard: card.id).count }
@@ -326,6 +327,14 @@ struct CardReaderView: View {
                     .padding(.top, LoritoSpacing.sm)
                 }
 
+                if model.catalog.conjugation?.tenses.contains(where: { $0.card == card.id }) == true {
+                    PrimaryButton("Тренировать спряжения", variant: .ink) {
+                        drill = model.makeConjugationDrill(forCard: card.id)
+                    }
+                    .disabled(ConjugationToday.readerItems(tenseCard: card.id, store: model.store, catalog: model.catalog).isEmpty)
+                    .accessibilityIdentifier("reader.conjugation")
+                }
+
                 PrimaryButton(model.isSuspended(card.id) ? "Вернуть в изучение" : "Отложить карточку",
                               variant: .outline) {
                     model.toggleSuspended(card.id)
@@ -341,6 +350,13 @@ struct CardReaderView: View {
         .focusModeCover(item: $practiceSession) { session in
             ExerciseSessionView(model: session) {
                 practiceSession = nil
+                model.refresh()
+                practiceSessionDidEnd()
+            }
+        }
+        .focusModeCover(item: $drill) { d in
+            ConjugationDrillView(model: d, onOpenCard: { _ in drill = nil }) {
+                drill = nil
                 model.refresh()
                 practiceSessionDidEnd()
             }

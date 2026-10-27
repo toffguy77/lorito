@@ -4,15 +4,18 @@ public struct ContentCatalog: Codable, Sendable {
     public let themes: [Theme]
     public let cards: [Card]
     public let exercises: [Exercise]
+    /// Conjugation trainer data (tenses + paradigms); nil in bundles without it.
+    public let conjugation: ConjugationCatalog?
 
-    public init(themes: [Theme], cards: [Card], exercises: [Exercise] = []) {
+    public init(themes: [Theme], cards: [Card], exercises: [Exercise] = [], conjugation: ConjugationCatalog? = nil) {
         self.themes = themes
         self.cards = cards
         self.exercises = exercises
+        self.conjugation = conjugation
     }
 
     private enum CodingKeys: String, CodingKey {
-        case themes, cards, exercises
+        case themes, cards, exercises, conjugation
     }
 
     // Custom init so a bundle without an `exercises` key still decodes.
@@ -21,6 +24,7 @@ public struct ContentCatalog: Codable, Sendable {
         themes = try c.decode([Theme].self, forKey: .themes)
         cards = try c.decode([Card].self, forKey: .cards)
         exercises = try c.decodeIfPresent([Exercise].self, forKey: .exercises) ?? []
+        conjugation = try c.decodeIfPresent(ConjugationCatalog.self, forKey: .conjugation)
     }
 
     /// Levels that actually have content, in CEFR order.

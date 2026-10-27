@@ -42,6 +42,7 @@ public final class SwiftDataUserDataStore: UserDataStore {
         settings.examKind = r.examKindRaw.flatMap(ExamKind.init(rawValue:))
         settings.examDate = r.examDate
         settings.examDone = r.examDone
+        settings.dailyConjugationCount = r.dailyConjugationCount
         return settings
     }
 
@@ -70,6 +71,7 @@ public final class SwiftDataUserDataStore: UserDataStore {
         record.examKindRaw = settings.examKind?.rawValue
         record.examDate = settings.examDate
         record.examDone = settings.examDone
+        record.dailyConjugationCount = settings.dailyConjugationCount
         try context.save()
     }
 

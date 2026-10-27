@@ -80,6 +80,17 @@ public struct DemoSeed: Sendable {
         return seed
     }
 
+    /// conjugation-trainer UI test: the futuro-simple card (A2-07) studied, trainer
+    /// on with quota 1 → today's single item is `conj:ser:futuro-simple`.
+    public static func conjugationReady(today: Date, calendar: Calendar = .learningDay) -> DemoSeed {
+        let start = calendar.startOfDay(for: today)
+        var settings = UserSettings(targetLevel: .a2, didCompleteOnboarding: true)
+        settings.dailyConjugationCount = 1
+        let review = ReviewState(cardID: "A2-07", interval: 10, repetitions: 2,
+                                 dueDate: calendar.date(byAdding: .day, value: 8, to: start) ?? start, status: .review)
+        return DemoSeed(settings: settings, reviews: [review], events: [])
+    }
+
     /// Writes the seed into an (empty, in-memory) store.
     public func apply(to store: UserDataStore) throws {
         try store.saveSettings(settings)

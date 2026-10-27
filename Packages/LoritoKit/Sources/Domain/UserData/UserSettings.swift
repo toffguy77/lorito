@@ -37,6 +37,11 @@ public struct UserSettings: Codable, Sendable, Hashable {
     public var examKind: ExamKind?
     public var examDate: Date?
     public var examDone: Bool?
+    /// New conjugation items per day (conjugation-trainer): 0 = trainer off.
+    public var dailyConjugationCount: Int = 0
+
+    public static let conjugationDefaultWhenEnabled = 3
+    public static let conjugationRange = 0...20
 
     public static let retentionRange: ClosedRange<Double> = 0.80...0.95
 

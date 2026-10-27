@@ -15,9 +15,11 @@ public struct DailyBudget: Sendable, Equatable {
         self.quotas = quotas
     }
 
-    /// The standard budget: cards from `dailyNewCardCount`, other kinds off.
+    /// The standard budget: cards from `dailyNewCardCount`, conjugations from
+    /// `dailyConjugationCount` (0 = off); other kinds off until their changes.
     public static func standard(settings: UserSettings) -> DailyBudget {
-        DailyBudget(quotas: [.card: max(0, settings.dailyNewCardCount)])
+        DailyBudget(quotas: [.card: max(0, settings.dailyNewCardCount),
+                             .conjugation: max(0, settings.dailyConjugationCount)])
     }
 
     /// Remaining new items per kind for the rest of the day.

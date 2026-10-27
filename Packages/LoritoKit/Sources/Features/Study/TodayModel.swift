@@ -33,6 +33,8 @@ public final class TodayModel {
         didSet { prompt = promptSlot.prompt(candidates: promptCandidates, events: (try? store.allEvents()) ?? []) }
     }
     private let promptSlot: TodayPromptSlot
+    /// Today's conjugation items (conjugation-trainer); empty when the trainer is off.
+    public private(set) var conjugationItems: [String] = []
     /// In-scope personal traps (personal-traps).
     public private(set) var personalTraps: [PersonalTrap] = []
     /// Streak-protection banner (freeze used / revival in progress).
@@ -102,6 +104,11 @@ public final class TodayModel {
         self.prompt = nil
     }
 
+    func makeConjugationDrill() -> ConjugationDrillModel? {
+        guard let conj = catalog.conjugation, !conjugationItems.isEmpty else { return nil }
+        return ConjugationDrillModel(store: store, catalog: conj, itemIDs: conjugationItems, today: now)
+    }
+
     /// The ordered card ids to study now (snapshot for a session).
     public func sessionQueue() -> [String] { remaining.map(\.cardID) }
 
@@ -130,6 +137,7 @@ public final class TodayModel {
         let levels = settings.targetLevel.map(SelectionScope.includedLevels(for:)) ?? []
         let rows = StatsCalculator.longTermMemory(reviews: reviews, catalog: catalog, levels: levels)
         memory = (rows.reduce(0) { $0 + $1.longTerm }, rows.reduce(0) { $0 + $1.total })
+        conjugationItems = ConjugationToday.plan(store: store, catalog: catalog, today: today)?.all ?? []
         personalTraps = PersonalTraps.list(events: events, practice: (try? store.allTrapPractice()) ?? [],
                                            catalog: catalog, settings: settings, today: today)
         trap = Self.pickTrap(settings: settings, reviews: reviews, catalog: catalog, today: today,
