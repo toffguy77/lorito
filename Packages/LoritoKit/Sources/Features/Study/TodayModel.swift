@@ -193,7 +193,8 @@ public final class TodayModel {
                                                    reviews: reviews, today: today)
         let plan = DailyPlanner.composePlan(
             DailyPlanRequest(cards: catalog.cards, reviews: reviews, settings: planSettings, today: today, events: events,
-                             firstSession: boosts.current(today: today))
+                             firstSession: boosts.current(today: today),
+                             requested: (try? store.allRequestedItems()) ?? [])
         )
         let gradedToday = Set(
             events.filter { $0.grade != nil && $0.isCard && StudyDay.isSameDay($0.date, today) }.map(\.cardID)

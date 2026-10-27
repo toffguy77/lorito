@@ -78,6 +78,17 @@ public struct FirstSessionBoost: Sendable, Hashable, Codable {
 
 /// The bundle of inputs the planner reads. A value type so recomputation is
 /// simply re-invoking the planner with an updated request.
+/// An item the user asked to learn (Grammar Lens «Добавить в повторение»).
+public struct RequestedItem: Sendable, Hashable {
+    public let itemID: String
+    public let requestedAt: Date
+
+    public init(itemID: String, requestedAt: Date) {
+        self.itemID = itemID
+        self.requestedAt = requestedAt
+    }
+}
+
 public struct DailyPlanRequest: Sendable {
     /// Read-only content snapshot (each `Card` exposes `id`/`level`/`themeID`/`order`/`related`).
     public var cards: [Card]
@@ -95,6 +106,8 @@ public struct DailyPlanRequest: Sendable {
     public var calendar: Calendar
     /// First-session boost; ignored on any other learning day.
     public var firstSession: FirstSessionBoost?
+    /// User-requested items: introduced first among new items, oldest request first.
+    public var requested: [RequestedItem]
 
     public init(
         cards: [Card],
@@ -104,7 +117,8 @@ public struct DailyPlanRequest: Sendable {
         maxReviewsPerDay: Int = DailyPlanner.defaultMaxReviewsPerDay,
         events: [StudyEvent] = [],
         calendar: Calendar = .learningDay,
-        firstSession: FirstSessionBoost? = nil
+        firstSession: FirstSessionBoost? = nil,
+        requested: [RequestedItem] = []
     ) {
         self.cards = cards
         self.reviews = reviews
@@ -114,6 +128,7 @@ public struct DailyPlanRequest: Sendable {
         self.events = events
         self.calendar = calendar
         self.firstSession = firstSession
+        self.requested = requested
     }
 }
 
@@ -238,8 +253,18 @@ public enum DailyPlanner {
         // today, within the combined daily budget.
         let ledger = IntroductionLedger(events: request.events, day: request.today, calendar: request.calendar)
         let limit = DailyBudget.standard(settings: settings).allowances(introducedToday: ledger.countsByKind)[.card] ?? 0
-        guard limit > 0, !eligible.isEmpty else {
-            return ([], scopeExhausted)
+
+        // User-requested cards without review state come first (oldest request
+        // first), in or out of scope; items with review state are never moved.
+        let cardIDs = Set(request.cards.map(\.id))
+        let requestedIDs = request.requested
+            .filter { ItemKind.parse($0.itemID) == .card && cardIDs.contains($0.itemID) && reviewsByID[$0.itemID] == nil }
+            .sorted { $0.requestedAt != $1.requestedAt ? $0.requestedAt < $1.requestedAt : $0.itemID < $1.itemID }
+            .map(\.itemID)
+        var seen = Set<String>()
+        let requestedToday = Array(requestedIDs.filter { seen.insert($0).inserted }.prefix(max(0, limit)))
+        guard limit > requestedToday.count, !eligible.isEmpty else {
+            return (requestedToday, scopeExhausted)
         }
 
         // Prerequisites = `related` ∩ selection. Satisfied when the prerequisite
@@ -257,9 +282,9 @@ public enum DailyPlanner {
 
         // Greedy topological introduction under the daily limit. `introduced`
         // starts with every card that already has a review state.
-        var introduced = Set(reviewsByID.keys)
-        var introducedToday: [String] = []
-        var remaining = eligible
+        var introduced = Set(reviewsByID.keys).union(requestedToday)
+        var introducedToday: [String] = requestedToday
+        var remaining = eligible.filter { !introduced.contains($0.id) }
 
         while introducedToday.count < limit, !remaining.isEmpty {
             // Work within the highest-priority group (boosted, above the known

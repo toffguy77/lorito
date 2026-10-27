@@ -182,6 +182,18 @@ public final class MockAttemptRecord {
     }
 }
 
+/// An item the user asked to learn from Grammar Lens; the planner introduces it first.
+@Model
+public final class RequestedItemRecord {
+    public var itemID: String = ""
+    public var requestedAt: Date = Date.distantPast
+
+    public init(itemID: String = "", requestedAt: Date = .distantPast) {
+        self.itemID = itemID
+        self.requestedAt = requestedAt
+    }
+}
+
 /// A word saved by the user outside the bundled decks (vocabulary-decks).
 @Model
 public final class PersonalWordRecord {

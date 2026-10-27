@@ -246,3 +246,19 @@ struct PersonalWordStoreTests {
         #expect(try store.allEvents().count == 1)
     }
 }
+
+@Suite("Requested items (grammar-lens)")
+struct RequestedItemStoreTests {
+    @Test("Round trip; a repeated request keeps the first request time")
+    func roundTrip() throws {
+        let container = try PersistenceController.makeContainer(config: .init(inMemory: true))
+        let store = SwiftDataUserDataStore(container: container, localMirror: nil)
+        let t0 = Date(timeIntervalSinceReferenceDate: 800_000_000)
+        try store.requestItem("A1-07", at: t0)
+        try store.requestItem("B1-02", at: t0.addingTimeInterval(60))
+        try store.requestItem("A1-07", at: t0.addingTimeInterval(120))
+        let loaded = try SwiftDataUserDataStore(container: container, localMirror: nil).allRequestedItems()
+        #expect(Set(loaded) == [RequestedItem(itemID: "A1-07", requestedAt: t0),
+                                RequestedItem(itemID: "B1-02", requestedAt: t0.addingTimeInterval(60))])
+    }
+}

@@ -809,5 +809,119 @@ class VoseoTests(unittest.TestCase):
         self.assertEqual(v2["presente"], "tenés")
 
 
+# --- grammar-lens ---------------------------------------------------------------
+
+import lens  # noqa: E402
+
+
+def lens_rule(rid="subj-esperar-que", **over):
+    r = {
+        "id": rid, "title_ru": "Subjuntivo после «esperar que»", "cards": ["A1-01"],
+        "pattern": [{"lemma": ["esperar", "querer"]}, {"surface": ["que"]}, {"set": "presente-subjuntivo", "gap": 3}],
+        "requires": [],
+        "examples": {"positive": ["Espero que vengas mañana.", "Quiero que me llames.", "Espero que llames."],
+                     "negative": ["Espero el autobús.", "Creo que vienes."]},
+    }
+    r.update(over)
+    return r
+
+
+class LensMatcherTests(unittest.TestCase):
+    table = {"espero": "esperar", "quiero": "querer", "esperar": "esperar", "querer": "querer",
+             "vengas": "venir", "llames": "llamar", "vienes": "venir", "creo": "creer"}
+    sets = {"presente-subjuntivo": ["vengas", "llames", "venga"]}
+
+    def toks(self, text):
+        return lens.tokens(text, self.table)
+
+    def test_tokenizer(self):
+        t = lens.tokenize("¿Vienes? Sí, voy.  Espero que vengas")
+        self.assertEqual([x.lower for x in t], ["vienes", "sí", "voy", "espero", "que", "vengas"])
+        self.assertEqual([x.sentence for x in t], [0, 1, 1, 2, 2, 2])
+        self.assertEqual(t[0].surface, "Vienes")
+
+    def test_match_with_gap_and_sentence_boundary(self):
+        m = lens.match(self.toks("Espero que mañana vengas."), [lens_rule()], self.sets)
+        self.assertEqual([(x.rule, x.start, x.end) for x in m], [("subj-esperar-que", 0, 3)])
+        self.assertEqual(lens.match(self.toks("Espero que sí. Vengas."), [lens_rule()], self.sets), [])
+        self.assertEqual(lens.match(self.toks("Espero el autobús."), [lens_rule()], self.sets), [])
+
+    def test_requires_context(self):
+        rule = lens_rule("x", pattern=[{"surface": ["que"]}], requires=[{"not_before": {"lemma": ["creer"]}, "within": 2}])
+        self.assertEqual(len(lens.match(self.toks("Espero que"), [rule], self.sets)), 1)
+        self.assertEqual(lens.match(self.toks("Creo que"), [rule], self.sets), [])
+
+    def test_overlap_longest_then_specific_then_id(self):
+        short = lens_rule("a-short", pattern=[{"surface": ["que"]}, {"set": "presente-subjuntivo"}])
+        long_ = lens_rule("b-long")
+        m = lens.match(self.toks("Espero que vengas"), [short, long_], self.sets)
+        self.assertEqual([x.rule for x in m], ["b-long"])
+        same1 = lens_rule("z", pattern=[{"surface": ["que"]}])
+        same2 = lens_rule("y", pattern=[{"surface": ["que"]}], requires=[{"before": {"lemma": ["esperar"]}, "within": 1}])
+        self.assertEqual([x.rule for x in lens.match(self.toks("Espero que"), [same1, same2], self.sets)], ["y"])
+        self.assertEqual(lens.match(self.toks("Espero que vengas"), [short, long_], self.sets),
+                         lens.match(self.toks("Espero que vengas"), [long_, short], self.sets))
+
+
+class LensPipelineTests(unittest.TestCase):
+    def setUp(self) -> None:
+        self.tmp = tempfile.TemporaryDirectory()
+        os.environ["LORITO_CONTENT_DIR"] = self.tmp.name
+        self.root = Path(self.tmp.name)
+        write_content(self.root, [card("A1-01", 1)], THEME)
+        self.dir = self.root / "lens"
+        (self.dir / "rules").mkdir(parents=True)
+        (self.dir / "lemmas.tsv").write_text(
+            "# form\tlemma\nespero\tesperar\nquiero\tquerer\nesperar\tesperar\nquerer\tquerer\ncreo\tcreer\n",
+            encoding="utf-8")
+        (self.dir / "sets.json").write_text(json.dumps({"presente-subjuntivo": ["vengas", "llames"]}), encoding="utf-8")
+
+    def tearDown(self) -> None:
+        os.environ.pop("LORITO_CONTENT_DIR", None)
+        os.environ.pop("LORITO_BUNDLE_PATH", None)
+        self.tmp.cleanup()
+
+    def write(self, *rules):
+        for r in rules:
+            (self.dir / "rules" / f"{r['id']}.json").write_text(json.dumps(r, ensure_ascii=False), encoding="utf-8")
+        return validate.validate()
+
+    def test_clean_rules_compile_lens_json(self):
+        self.assertEqual(self.write(lens_rule()), [])
+        out = self.root / "content.json"
+        os.environ["LORITO_BUNDLE_PATH"] = str(out)
+        self.assertEqual(compile_mod.main(), 0)
+        b = json.loads((self.root / "lens.json").read_text(encoding="utf-8"))
+        self.assertEqual([r["id"] for r in b["rules"]], ["subj-esperar-que"])
+        self.assertEqual(b["lemmas"]["espero"], "esperar")
+        self.assertIn("vengas", b["sets"]["presente-subjuntivo"])
+        cc = {c["text"]: c for c in b["crosscheck"]}
+        self.assertEqual(cc["Espero que vengas mañana."]["matches"], [["subj-esperar-que", 0, 2]])
+        self.assertEqual(cc["Espero que vengas mañana."]["tokens"], ["espero", "que", "vengas", "mañana"])
+        self.assertEqual(cc["Espero el autobús."]["matches"], [])
+        self.assertNotIn("lens", json.loads(out.read_text(encoding="utf-8")))
+
+    def test_unknown_card(self):
+        errs = self.write(lens_rule(cards=["Z9-99"]))
+        self.assertTrue(any("subj-esperar-que" in e and "Z9-99" in e for e in errs), errs)
+
+    def test_lexical_class_predicate(self):
+        errs = self.write(lens_rule(pattern=[{"pos": "VERB"}]))
+        self.assertTrue(any("subj-esperar-que" in e and "pos" in e for e in errs), errs)
+
+    def test_lemma_missing_from_table(self):
+        errs = self.write(lens_rule(pattern=[{"lemma": ["desear"]}, {"surface": ["que"]}], examples={"positive": [], "negative": []}))
+        self.assertTrue(any("desear" in e for e in errs), errs)
+
+    def test_positive_must_match_negative_must_not(self):
+        errs = self.write(lens_rule(examples={"positive": ["Espero el autobús."], "negative": ["Espero que vengas."]}))
+        self.assertTrue(any("positive" in e and "Espero el autobús" in e for e in errs), errs)
+        self.assertTrue(any("negative" in e and "Espero que vengas" in e for e in errs), errs)
+
+    def test_examples_minimum(self):
+        errs = self.write(lens_rule(examples={"positive": ["Espero que vengas."], "negative": []}))
+        self.assertTrue(any("examples" in e for e in errs), errs)
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

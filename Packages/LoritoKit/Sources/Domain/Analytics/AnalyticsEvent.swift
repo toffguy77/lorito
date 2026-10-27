@@ -28,6 +28,22 @@ public enum ExerciseTypeName: String, Codable, Sendable, CaseIterable {
 /// The closed, anonymous product-event taxonomy. Payloads are enums, ints and
 /// bools only — never item ids, text or personal data. New events are added
 /// only by an ADDED requirement in the `product-analytics` capability.
+/// Where Grammar Lens text came from.
+public enum LensSource: String, Codable, Sendable, CaseIterable { case paste, share, camera, photo }
+
+/// Highlights found, bucketed (never the text).
+public enum LensMatchBucket: String, Codable, Sendable {
+    case none = "0", one = "1", few = "2-5", many = "6+"
+    public init(_ count: Int) {
+        switch count {
+        case ..<1: self = .none
+        case 1: self = .one
+        case 2...5: self = .few
+        default: self = .many
+        }
+    }
+}
+
 public enum PaywallEntry: String, Codable, Sendable { case settings, examPath }
 public enum PurchaseFailure: String, Codable, Sendable { case cancelled, pending, error, unavailable }
 public enum RestoreOutcome: String, Codable, Sendable { case restored, nothingToRestore, failed }
@@ -58,6 +74,10 @@ public enum AnalyticsEvent: Codable, Sendable, Hashable {
     case mockCompleted(exam: String, passed: Bool)
     case mockExpired(exam: String)
     case mockAbandoned(exam: String)
+    // grammar-lens (no analysed text; no item id — product-analytics forbids identifiers)
+    case lensOpened(source: LensSource)
+    case lensAnalyzed(source: LensSource, matches: LensMatchBucket)
+    case lensCardRequested
 
     public var name: String {
         switch self {
@@ -83,13 +103,18 @@ public enum AnalyticsEvent: Codable, Sendable, Hashable {
         case .mockCompleted: return "mock_completed"
         case .mockExpired: return "mock_expired"
         case .mockAbandoned: return "mock_abandoned"
+        case .lensOpened: return "lens_opened"
+        case .lensAnalyzed: return "lens_analyzed"
+        case .lensCardRequested: return "lens_card_requested"
         }
     }
 
     public var parameters: [String: String] {
         switch self {
         case .onboardingStep(let step): return ["step": step.rawValue]
-        case .onboardingCompleted, .reminderOpened, .placementStarted: return [:]
+        case .onboardingCompleted, .reminderOpened, .placementStarted, .lensCardRequested: return [:]
+        case .lensOpened(let source): return ["source": source.rawValue]
+        case .lensAnalyzed(let source, let matches): return ["source": source.rawValue, "matches": matches.rawValue]
         case .placementCompleted(let level, let known, let questions):
             return ["level": level.rawValue, "known": known?.rawValue ?? "none", "questions": "\(questions)"]
         case .placementSkipKnownApplied(let cards): return ["cards": "\(cards)"]

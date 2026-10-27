@@ -34,6 +34,9 @@ public protocol UserDataStore: AnyObject {
     func deletePersonalWord(_ id: UUID) throws
     /// Removes an item's review state (study events stay for statistics).
     func deleteReview(for itemID: String) throws
+    /// Grammar Lens «Добавить в повторение»: the first request time is kept.
+    func requestItem(_ itemID: String, at date: Date) throws
+    func allRequestedItems() throws -> [RequestedItem]
 }
 
 public extension UserDataStore {
@@ -48,4 +51,6 @@ public extension UserDataStore {
     func allPersonalWords() throws -> [PersonalWord] { [] }
     func deletePersonalWord(_ id: UUID) throws {}
     func deleteReview(for itemID: String) throws {}
+    func requestItem(_ itemID: String, at date: Date) throws {}
+    func allRequestedItems() throws -> [RequestedItem] { [] }
 }

@@ -15,6 +15,7 @@ from pathlib import Path
 
 import conjugate
 import exams
+import lens
 import variants
 import vocab
 import lib
@@ -233,6 +234,9 @@ def validate() -> list[str]:
 
     # Vocabulary decks (content/vocabulary/), when present.
     errors.extend(vocab.validate_vocabulary())
+
+    # Grammar Lens rules (content/lens/), when present.
+    errors.extend(lens.validate_lens(set(card_level)))
 
     return errors
 

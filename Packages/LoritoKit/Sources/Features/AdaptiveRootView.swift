@@ -34,6 +34,9 @@ public struct AdaptiveRootView: View {
     @State private var purchases = PurchaseService()
     /// Words (vocabulary-decks): «В мои слова» and the personal deck.
     @State private var vocabulary: VocabularyModel
+    /// Grammar Lens rules (nil without lens.json) and the open lens.
+    private let lensCatalog = LensModel.bundledCatalog()
+    @State private var lens: LensModel?
     @Environment(\.speechService) private var speech
     @SceneStorage("lorito.catalogSelection") private var storedCatalogSelection = ""
     @Environment(\.horizontalSizeClass) private var sizeClass
@@ -119,6 +122,7 @@ public struct AdaptiveRootView: View {
         // Widgets deep-link to Today.
         .onOpenURL { url in
             if LoritoDeepLink.isToday(url) { navigation.openToday() }
+            if let text = LoritoDeepLink.lensText(url) { openLens(.share, text) }
         }
         .environment(\.practiceSessionDidEnd, {
             publishWidgets()
@@ -136,11 +140,21 @@ public struct AdaptiveRootView: View {
         }
         .onChange(of: navigation.destination) { _, _ in refreshPath() }
         .onChange(of: audioSettings.variant) { _, variant in variantCatalog = baseCatalog.resolved(for: variant) }
+        .modifier(LensPresenter(store: store, catalog: catalog, lens: $lens,
+                                open: lensCatalog == nil ? nil : { openLens($0, $1) },
+                                onDismiss: { navigation.notePlanChanged(); refreshPath() }))
         // Last, so presented sessions inherit them too.
         .environment(\.spanishVariant, audioSettings.variant)
         .environment(\.spanishVariantDidChange, { audioSettings.reload() })
         .environment(purchases)
         .modifier(SaveWordAction(enabled: catalog.vocabulary != nil, vocabulary: vocabulary))
+    }
+
+    private func openLens(_ source: LensSource, _ text: String) {
+        guard let lensCatalog else { return }
+        let model = LensModel(store: store, catalog: catalog, lens: lensCatalog, source: source, text: text)
+        if !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty { model.analyze() }
+        lens = model
     }
 
     /// The first session after onboarding opens on its first card instead of
@@ -316,5 +330,26 @@ private struct SaveWordAction: ViewModifier {
         } else {
             content
         }
+    }
+}
+
+/// Grammar Lens sheet and the `openLens` action for everything below.
+private struct LensPresenter: ViewModifier {
+    let store: UserDataStore
+    let catalog: ContentCatalog
+    @Binding var lens: LensModel?
+    let open: (@MainActor (LensSource, String) -> Void)?
+    /// A requested card changes today's plan.
+    let onDismiss: @MainActor () -> Void
+
+    func body(content: Content) -> some View {
+        content
+            .sheet(item: $lens, onDismiss: onDismiss) { model in
+                NavigationStack {
+                    LensView(model: model, catalogModel: CatalogModel(store: store, catalog: catalog))
+                        .toolbar { ToolbarItem(placement: .confirmationAction) { Button("Готово") { lens = nil } } }
+                }
+            }
+            .environment(\.openLens, open)
     }
 }

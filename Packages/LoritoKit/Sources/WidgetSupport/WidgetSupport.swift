@@ -20,6 +20,21 @@ public enum LoritoDeepLink {
     public static func isToday(_ url: URL) -> Bool {
         url.scheme == today.scheme && url.host == today.host
     }
+
+    /// Grammar Lens with text (the Action extension's «Открыть в Lorito»). The
+    /// text travels only in the URL; nothing is written to shared storage.
+    public static func lens(text: String) -> URL {
+        var c = URLComponents()
+        c.scheme = today.scheme
+        c.host = "lens"
+        c.queryItems = [URLQueryItem(name: "text", value: text)]
+        return c.url!
+    }
+
+    public static func lensText(_ url: URL) -> String? {
+        guard url.scheme == today.scheme, url.host == "lens" else { return nil }
+        return URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems?.first { $0.name == "text" }?.value ?? ""
+    }
 }
 
 /// Reads and atomically writes `widget-snapshot.json` in a directory (the App

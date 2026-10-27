@@ -41,6 +41,8 @@ public final class AppNavigation {
     public private(set) var session: StudySessionModel?
     /// Bumped when a session closes, so screens can refresh.
     public private(set) var sessionEndCount = 0
+    /// Bumped when the plan may have changed outside a session (Grammar Lens requests).
+    public private(set) var planChangeCount = 0
     /// «Мои ловушки» requested from the session summary (personal-traps).
     public var showTraps = false
 
@@ -60,6 +62,8 @@ public final class AppNavigation {
         session = nil
         sessionEndCount += 1
     }
+
+    public func notePlanChanged() { planChangeCount += 1 }
 
     // MARK: Catalog selection
 

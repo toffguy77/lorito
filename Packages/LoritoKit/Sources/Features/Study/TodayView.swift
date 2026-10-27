@@ -53,6 +53,7 @@ public struct TodayView: View {
         .hardwareKeyCommands(model.hasWork && navigation.session == nil
                              ? [HardwareKeyCommand(.return, title: "Начать", action: startSession)] : [])
         .onChange(of: navigation.sessionEndCount) { _, _ in model.refresh() }
+        .onChange(of: navigation.planChangeCount) { _, _ in model.refresh() }
         .sheet(isPresented: Binding(get: { navigation.showTraps }, set: { navigation.showTraps = $0 }),
                onDismiss: { model.refresh() }) {
             NavigationStack {
@@ -122,6 +123,7 @@ public struct TodayView: View {
             conjugationEntry
             trapsEntry
             trap
+            LensEntryButton(identifier: "today.lens")
         }
         .frame(maxWidth: LoritoLayout.readingWidth)
         .frame(maxWidth: .infinity)
@@ -149,6 +151,7 @@ public struct TodayView: View {
                     conjugationEntry
                     trapsEntry
                     trap
+                    LensEntryButton(identifier: "today.lens")
                     memorySummary
                 }
                 .frame(maxWidth: 420)

@@ -254,6 +254,23 @@ public final class SwiftDataUserDataStore: UserDataStore {
         try context.save()
     }
 
+    public func requestItem(_ itemID: String, at date: Date) throws {
+        let existing = try context.fetch(FetchDescriptor<RequestedItemRecord>(predicate: #Predicate { $0.itemID == itemID }))
+        guard existing.isEmpty else { return }
+        context.insert(RequestedItemRecord(itemID: itemID, requestedAt: date))
+        try context.save()
+    }
+
+    /// One per item (the earliest, should sync ever duplicate a request).
+    public func allRequestedItems() throws -> [RequestedItem] {
+        var earliest: [String: Date] = [:]
+        for r in try context.fetch(FetchDescriptor<RequestedItemRecord>()) {
+            earliest[r.itemID] = min(earliest[r.itemID] ?? r.requestedAt, r.requestedAt)
+        }
+        return earliest.map { RequestedItem(itemID: $0.key, requestedAt: $0.value) }
+            .sorted { $0.requestedAt != $1.requestedAt ? $0.requestedAt < $1.requestedAt : $0.itemID < $1.itemID }
+    }
+
     public func deleteReview(for itemID: String) throws {
         if let r = try fetchRecord(cardID: itemID) { context.delete(r) }
         try context.save()

@@ -300,3 +300,52 @@ example_es, example_ru, rank}]`:
 
 `tools/enrich.py --vocab <deck-id>` prints a drafting prompt for translations
 and examples (LLM integration point); drafts are reviewed by a human.
+
+## Grammar Lens (`content/lens/`)
+
+Rules that find grammar constructions in Spanish text and link them to cards.
+`tools/lens.py` is the reference tokenizer and matcher; the app's matcher
+mirrors it and is cross-checked on every rule example.
+
+### `rules/<id>.json` — one rule per file
+
+| Field | Meaning |
+|---|---|
+| `id` | unique, equals the file name |
+| `title_ru` | short Russian name shown on the highlight |
+| `cards` | one or more card ids the construction is taught in |
+| `pattern` | token steps in order (below) |
+| `requires` | optional context predicates (below) |
+| `examples.positive` | ≥ 3 sentences the rule must match |
+| `examples.negative` | ≥ 2 sentences it must not match |
+
+A **step** tests one token with surface and lemma predicates only —
+`{"surface": [...]}` (case-insensitive), `{"lemma": [...]}`, `{"set": "<name>"}`;
+several keys must all hold. `"gap": N` lets up to N tokens precede the step.
+Steps stay within one sentence. A **context predicate** is
+`{"before" | "not_before" | "after" | "not_after": <step>, "within": N}`.
+Lexical-class predicates (part of speech, mood…) are rejected: the validator
+can't evaluate them, and the app must give the same result on every device.
+
+Example — `subj-deseo`: `{"lemma": ["querer", "esperar"]}`, `{"surface":
+["que"]}`, `{"set": "presente-subjuntivo", "gap": 3}` matches «Espero que
+vengas» but not «Espero el autobús».
+
+**Matching.** Every step and context predicate must hold. Overlapping matches
+keep the longest span, then the more specific rule (more predicates), then the
+lower id. **Tokens:** words are letter runs; `.` `!` `?` `…` end a sentence.
+
+### `lemmas.tsv` and `sets.json`
+
+`lemmas.tsv` maps `form<TAB>lemma` (`#` comments) for words rules reference
+that aren't in the conjugation data; the compiled table adds every single-word
+form (and `vos` form) of every verb in `content/conjugation/`. A rule naming a
+lemma missing from the table fails validation.
+
+`sets.json` names surface sets: a list of forms; `{"tense": "<id>"}` — all
+single-word forms of a conjugation tense; `{"generate": "infinitives" |
+"participles"}`; `"extra"` adds forms to a generated set.
+
+`tools/compile.py` writes `lens.json` (rules, the lemma table, expanded sets)
+next to `content.json`.
+

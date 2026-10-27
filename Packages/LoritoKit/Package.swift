@@ -29,6 +29,7 @@ let package = Package(
             // directory so picture-matching images resolve via subdirectory:.
             resources: [
                 .process("Resources/content.json"),
+                .process("Resources/lens.json"),
                 .copy("Resources/exercise-assets"),
             ]
         ),

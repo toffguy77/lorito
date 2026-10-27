@@ -2,7 +2,8 @@
 """Compile repo content into the app's bundled content artifact.
 
 Runs validation first; refuses to write a bundle if validation fails.
-Output: Packages/LoritoKit/Sources/Content/Resources/content.json
+Output: Packages/LoritoKit/Sources/Content/Resources/content.json (+ lens.json
+next to it when content/lens/ exists)
 (shape matches Domain.ContentCatalog).
 
 Usage: python3 tools/compile.py
@@ -17,6 +18,7 @@ from pathlib import Path
 
 import conjugate
 import exams
+import lens
 import vocab
 import lib
 import validate
@@ -85,6 +87,10 @@ def main() -> int:
     out.write_text(
         json.dumps(catalog, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
+    # Grammar Lens: rules, lemma table and sets in their own resource.
+    lens_content = lens.bundle()
+    if lens_content is not None:
+        (out.parent / "lens.json").write_text(json.dumps(lens_content, ensure_ascii=False) + "\n", encoding="utf-8")
 
     # Bundle image assets referenced by picture-matching exercises.
     referenced = {img for ex in (lib.parse_exercise_file(p) for p in lib.iter_exercise_files())

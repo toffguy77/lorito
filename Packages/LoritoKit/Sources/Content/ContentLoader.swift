@@ -16,6 +16,14 @@ public enum ContentLoader {
         return try JSONDecoder().decode(ContentCatalog.self, from: data)
     }
 
+    /// Grammar Lens rules, lemma table and sets from the bundled `lens.json`.
+    public static func loadLens() throws -> LensCatalog {
+        guard let url = Bundle.module.url(forResource: "lens", withExtension: "json") else {
+            throw LoadError.missingResource
+        }
+        return try JSONDecoder().decode(LensCatalog.self, from: Data(contentsOf: url))
+    }
+
     /// The URL of a bundled picture-matching image asset (nil if not present).
     public static func exerciseAssetURL(_ name: String) -> URL? {
         let stem = (name as NSString).deletingPathExtension

@@ -130,12 +130,13 @@ public final class ReminderService {
         let cards = catalog.cards
         let cal = calendar
         let boost = FirstSessionBoostStore.shared.current(today: now)
+        let requested = (try? store.allRequestedItems()) ?? []
         let countsForDay: (Date) -> DayCounts = { day in
             let plan = DailyPlanner.composePlan(
                 DailyPlanRequest(cards: cards, reviews: reviews,
                                  settings: GoalPacing.planSettings(settings, goal: settings.levelGoal, cards: cards,
                                                                    reviews: reviews, today: day, calendar: cal),
-                                 today: day, events: events, firstSession: boost)
+                                 today: day, events: events, firstSession: boost, requested: requested)
             )
             return DayCounts(due: plan.counts.dueCount, new: plan.counts.newCount)
         }

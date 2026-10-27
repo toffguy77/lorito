@@ -72,6 +72,7 @@ public struct CatalogView: View {
                     header
                     levelPills
                     examsRow
+                    LensEntryButton(identifier: "catalog.lens")
                     ForEach(model.themes(in: level)) { theme in
                         themeRow(theme)
                     }
@@ -112,6 +113,7 @@ public struct CatalogView: View {
                     header
                     levelPills
                     examsRow
+                    LensEntryButton(identifier: "catalog.lens")
                 }
                 .listRowSeparator(.hidden)
                 .listRowBackground(Color.clear)
