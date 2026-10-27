@@ -5,18 +5,36 @@ import DesignSystem
 /// Catalog browsing: level pills → the level's themes as a path with progress
 /// per theme → cards, each card row showing its status, drilling into a reader
 /// that reuses the shared Markdown rendering and can suspend / unsuspend the
-/// card.
+/// card. At regular width: three columns (themes, cards, reader) whose
+/// selection lives in `AppNavigation` so it survives rotation and resizes.
 public struct CatalogView: View {
     @State private var model: CatalogModel
-    @State private var level: CEFRLevel
+    private let catalog: ContentCatalog
+    private let navigation: AppNavigation
+    @Environment(\.horizontalSizeClass) private var sizeClass
 
-    public init(store: UserDataStore, catalog: ContentCatalog) {
-        let model = CatalogModel(store: store, catalog: catalog)
-        _model = State(initialValue: model)
-        _level = State(initialValue: model.levels.first ?? .a1)
+    public init(store: UserDataStore, catalog: ContentCatalog, navigation: AppNavigation) {
+        _model = State(initialValue: CatalogModel(store: store, catalog: catalog))
+        self.catalog = catalog
+        self.navigation = navigation
     }
 
+    private var level: CEFRLevel { navigation.catalogLevel ?? model.levels.first ?? .a1 }
+
     public var body: some View {
+        Group {
+            if sizeClass == .regular {
+                regularLayout
+            } else {
+                compactLayout
+            }
+        }
+        .onAppear { model.refresh() }
+    }
+
+    // MARK: Compact
+
+    private var compactLayout: some View {
         NavigationStack {
             List {
                 Group {
@@ -33,13 +51,106 @@ public struct CatalogView: View {
             }
             .listStyle(.plain)
             .scrollContentBackground(.hidden)
-            .background(LoritoColor.surface.ignoresSafeArea())
             .frame(maxWidth: LoritoLayout.readingWidth)
             .frame(maxWidth: .infinity)
             .background(LoritoColor.surface.ignoresSafeArea())
             .navigationBarVisibility(.hidden)
             .navigationTitle("Каталог")
-            .onAppear { model.refresh() }
+        }
+    }
+
+    // MARK: Regular — themes | cards | reader
+
+    private var themeSelection: Binding<String?> {
+        Binding(get: { navigation.catalogThemeID },
+                set: { id in navigation.selectTheme(id.flatMap(catalog.theme(id:))) })
+    }
+
+    private var cardSelection: Binding<String?> {
+        Binding(get: { navigation.catalogCardID },
+                set: { id in
+                    if let card = id.flatMap(catalog.card(id:)) { navigation.selectCard(card) } else { navigation.clearCard() }
+                })
+    }
+
+    private var regularLayout: some View {
+        NavigationSplitView {
+            List(selection: themeSelection) {
+                Group {
+                    header
+                    levelPills
+                }
+                .listRowSeparator(.hidden)
+                .listRowBackground(Color.clear)
+                ForEach(model.themes(in: level)) { theme in
+                    let progress = model.progress(in: theme)
+                    HStack {
+                        Text(theme.title)
+                            .font(LoritoFont.body)
+                            .foregroundStyle(LoritoColor.textPrimary)
+                        Spacer()
+                        Text("\(progress.started)/\(progress.total)")
+                            .font(LoritoFont.caption)
+                            .monospacedDigit()
+                            .foregroundStyle(LoritoColor.textSecondary)
+                    }
+                    .tag(theme.id)
+                    .loritoHover()
+                }
+            }
+            .scrollContentBackground(.hidden)
+            .background(LoritoColor.surface)
+            .navigationSplitViewColumnWidth(min: 280, ideal: 320)
+        } content: {
+            if let theme = navigation.catalogThemeID.flatMap(catalog.theme(id:)) {
+                List(model.cards(in: theme), selection: cardSelection) { card in
+                    cardRow(card)
+                        .tag(card.id)
+                        .loritoHover()
+                }
+                .scrollContentBackground(.hidden)
+                .background(LoritoColor.surface)
+                .navigationTitle(theme.title)
+            } else {
+                placeholder("Выберите тему")
+            }
+        } detail: {
+            if let card = navigation.catalogCardID.flatMap(catalog.card(id:)) {
+                CardReaderView(model: model, card: card)
+                    .id(card.id)
+            } else {
+                placeholder("Выберите карточку")
+            }
+        }
+        .navigationSplitViewStyle(.balanced)
+    }
+
+    private func placeholder(_ text: String) -> some View {
+        VStack(spacing: LoritoSpacing.xs) {
+            Text("¿")
+                .loritoStyle(.display)
+                .foregroundStyle(LoritoColor.textSecondary)
+                .accessibilityHidden(true)
+            Text(text)
+                .font(LoritoFont.body)
+                .foregroundStyle(LoritoColor.textSecondary)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(LoritoColor.surface)
+    }
+
+    private func cardRow(_ card: Card) -> some View {
+        HStack {
+            VStack(alignment: .leading, spacing: LoritoSpacing.xxs) {
+                Text(card.id)
+                    .font(LoritoFont.caption)
+                    .foregroundStyle(LoritoColor.textSecondary)
+                Text(card.title)
+                    .font(LoritoFont.body)
+                    .foregroundStyle(LoritoColor.textPrimary)
+            }
+            Spacer()
+            StatusBadge(status: model.status(for: card.id))
         }
     }
 
@@ -64,7 +175,7 @@ public struct CatalogView: View {
             HStack(spacing: 6) {
                 ForEach(model.levels) { item in
                     let isSelected = item == level
-                    Button { level = item } label: {
+                    Button { navigation.selectLevel(item) } label: {
                         Text(item.rawValue)
                             .font(LoritoTextStyle.heading.sized(13).font)
                             .foregroundStyle(isSelected ? LoritoColor.highlight : LoritoColor.textPrimary)
@@ -74,6 +185,7 @@ public struct CatalogView: View {
                             .overlay(Capsule().strokeBorder(isSelected ? Color.clear : LoritoColor.separator))
                     }
                     .buttonStyle(.plain)
+                    .loritoHover()
                     .accessibilityLabel("Уровень \(item.rawValue)")
                     .accessibilityAddTraits(isSelected ? .isSelected : [])
                 }
@@ -142,18 +254,7 @@ public struct CatalogView: View {
             NavigationLink {
                 CardReaderView(model: model, card: card)
             } label: {
-                HStack {
-                    VStack(alignment: .leading, spacing: LoritoSpacing.xxs) {
-                        Text(card.id)
-                            .font(LoritoFont.caption)
-                            .foregroundStyle(LoritoColor.textSecondary)
-                        Text(card.title)
-                            .font(LoritoFont.body)
-                            .foregroundStyle(LoritoColor.textPrimary)
-                    }
-                    Spacer()
-                    StatusBadge(status: model.status(for: card.id))
-                }
+                cardRow(card)
             }
             .listRowBackground(LoritoColor.surfaceRaised)
         }
@@ -204,6 +305,7 @@ struct CardReaderView: View {
     let model: CatalogModel
     let card: Card
     @State private var practiceSession: ExerciseSessionModel?
+    @Environment(\.practiceSessionDidEnd) private var practiceSessionDidEnd
 
     private var exerciseCount: Int { model.exercises(forCard: card.id).count }
 
@@ -239,6 +341,7 @@ struct CardReaderView: View {
             ExerciseSessionView(model: session) {
                 practiceSession = nil
                 model.refresh()
+                practiceSessionDidEnd()
             }
         }
     }

@@ -155,3 +155,29 @@ The Today screen SHALL show a "Ловушка дня" card with the first item o
 - **WHEN** no card in the included scope has a mistakes section
 - **THEN** no trap card is shown
 
+### Requirement: Today screen week strip
+The Today screen SHALL show the last seven calendar days ending today, each labeled with its short Russian weekday name and marked as studied when its daily activity count is greater than zero; today SHALL be visually distinguished as the current day, and shown as studied once it has at least one grade event.
+
+#### Scenario: Studied days marked
+- **WHEN** the user studied on five of the six previous days and not yet today
+- **THEN** the strip shows those five days as studied, the other previous day as not studied, and today as the current, not-yet-studied day
+
+#### Scenario: Today becomes studied
+- **WHEN** the user grades a card and returns to the Today screen
+- **THEN** today is shown as studied
+
+### Requirement: Related cards on a revealed card
+After reveal, the study session SHALL list the card's related cards (from its `related` field, resolved against the content catalog and skipping unknown identifiers) with their titles and identifiers. Tapping one SHALL open it in the card reader without ending the session. Related cards SHALL NOT be shown on the front side.
+
+#### Scenario: Related cards after reveal
+- **WHEN** card A1-07 with related A1-08, A1-09 and A1-11 is revealed
+- **THEN** the session lists those three cards with their titles
+
+#### Scenario: Hidden before reveal
+- **WHEN** the front side of a card is shown
+- **THEN** no related cards are listed
+
+#### Scenario: Unknown related id
+- **WHEN** a card's `related` field contains an identifier missing from the catalog
+- **THEN** that identifier is skipped and the others are listed
+

@@ -126,6 +126,34 @@ public struct ComponentGalleryView: View {
                     .background(LoritoColor.ink, in: RoundedRectangle(cornerRadius: LoritoRadius.lg))
                 }
 
+                section("iPad: навигация") {
+                    VStack(alignment: .leading, spacing: LoritoSpacing.md) {
+                        TopTabBar(items: [
+                            FloatingTabItem(id: 0, title: "Сегодня", systemImage: "sun.max"),
+                            FloatingTabItem(id: 1, title: "Каталог", systemImage: "point.topleft.down.to.point.bottomright.curvepath"),
+                        ], selection: $tab)
+                        Sidebar(items: [
+                            FloatingTabItem(id: 0, title: "Сегодня", systemImage: "sun.max"),
+                            FloatingTabItem(id: 1, title: "Каталог", systemImage: "point.topleft.down.to.point.bottomright.curvepath"),
+                        ], selection: $tab, path: [
+                            LevelPathProgress(level: "A1", fraction: 0.7),
+                            LevelPathProgress(level: "A2", fraction: 0.25),
+                        ])
+                        .frame(width: LoritoLayout.sidebarWidth, height: 320)
+                    }
+                }
+
+                section("iPad: клавиатура") {
+                    VStack(alignment: .leading, spacing: LoritoSpacing.sm) {
+                        HStack { KeyCap("1", tone: .surface); KeyCap("Пробел", tone: .surface); KeyCap("esc", tone: .surface) }
+                        KeyboardHintsPanel(hints: [.init("Показать ответ", key: "Пробел"), .init("Оценка", key: "1 – 4")])
+                        GradeButtons(captions: [.again: "сегодня", .hard: "1 день", .good: "3 дня", .easy: "8 дней"],
+                                     showsKeyCaps: true) { _ in }
+                    }
+                    .padding(LoritoSpacing.md)
+                    .background(LoritoColor.ink, in: RoundedRectangle(cornerRadius: LoritoRadius.lg))
+                }
+
                 section("Таб-бар") {
                     FloatingTabBar(items: [
                         FloatingTabItem(id: 0, title: "Сегодня", systemImage: "sun.max"),

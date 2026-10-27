@@ -12,6 +12,7 @@ import DesignSystem
 public final class TodayModel {
     private let store: UserDataStore
     private let catalog: ContentCatalog
+    private let now: () -> Date
 
     /// Cards still to study today, in queue order.
     public private(set) var remaining: [PlanEntry] = []
@@ -21,10 +22,25 @@ public final class TodayModel {
     public private(set) var studiedCount = 0
     /// "Ловушка дня": one mistakes item from an in-scope card, stable per day.
     public private(set) var trap: TrapCandidate?
+    /// The last seven days ending today (week strip).
+    public private(set) var week: [WeekDay] = []
+    /// Long-term memory across the included levels (regular-width dashboard).
+    public private(set) var memory: (longTerm: Int, total: Int) = (0, 0)
 
-    public init(store: UserDataStore, catalog: ContentCatalog) {
+    /// One day of the week strip.
+    public struct WeekDay: Equatable, Sendable {
+        public let day: Date
+        /// Short Russian weekday name ("Пн").
+        public let label: String
+        public let studied: Bool
+        public let isToday: Bool
+    }
+
+    /// `today` is a clock so tests can pin the date; defaults to now.
+    public init(store: UserDataStore, catalog: ContentCatalog, today: @escaping () -> Date = { Date() }) {
         self.store = store
         self.catalog = catalog
+        self.now = today
         refresh()
     }
 
@@ -51,7 +67,7 @@ public final class TodayModel {
         let settings = (try? store.loadSettings()) ?? .default
         let reviews = (try? store.allReviews()) ?? []
         let events = (try? store.allEvents()) ?? []
-        let today = Date()
+        let today = now()
 
         let plan = DailyPlanner.composePlan(
             DailyPlanRequest(cards: catalog.cards, reviews: reviews, settings: settings, today: today)
@@ -63,11 +79,26 @@ public final class TodayModel {
         dueRemaining = remaining.filter { $0.kind == .due }.count
         newRemaining = remaining.filter { $0.kind == .new }.count
         studiedCount = gradedToday.count
+        week = Self.weekStrip(events: events, today: today)
+        let levels = settings.targetLevel.map(SelectionScope.includedLevels(for:)) ?? []
+        let rows = StatsCalculator.longTermMemory(reviews: reviews, catalog: catalog, levels: levels)
+        memory = (rows.reduce(0) { $0 + $1.longTerm }, rows.reduce(0) { $0 + $1.total })
         trap = Self.pickTrap(settings: settings, reviews: reviews, catalog: catalog, today: today)
     }
 
+    private static let weekdayLabels = ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"]  // Calendar weekday 1…7
+
+    private static func weekStrip(events: [StudyEvent], today: Date) -> [WeekDay] {
+        let series = StatsCalculator.dailyActivity(events: events, days: 7, today: today)
+        return series.enumerated().map { i, entry in
+            let weekday = Calendar.utcDay.component(.weekday, from: entry.day)
+            return WeekDay(day: entry.day, label: weekdayLabels[weekday - 1],
+                           studied: entry.count > 0, isToday: i == series.count - 1)
+        }
+    }
+
     /// Candidates are in-scope cards with a "Частые ошибки" section.
-    private static func pickTrap(
+    static func pickTrap(
         settings: UserSettings, reviews: [ReviewState], catalog: ContentCatalog, today: Date
     ) -> TrapCandidate? {
         guard let level = settings.targetLevel else { return nil }

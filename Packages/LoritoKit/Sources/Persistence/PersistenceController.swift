@@ -43,9 +43,13 @@ public enum PersistenceController {
         if let url = config.url {
             modelConfig = ModelConfiguration(schema: schema, url: url, cloudKitDatabase: cloudKit)
         } else {
+            // Keep the store in the app's own container. With the App Group
+            // entitlement (widgets) the default would move it to the group
+            // container, orphaning existing users' data on update.
             modelConfig = ModelConfiguration(
                 schema: schema,
                 isStoredInMemoryOnly: config.inMemory,
+                groupContainer: .none,
                 cloudKitDatabase: cloudKit
             )
         }

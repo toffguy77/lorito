@@ -27,12 +27,15 @@ func completeOnboardingIfPresent(_ app: XCUIApplication, level: String = "A1") {
     }
 }
 
-/// Resolve a tab by label. The app's floating tab bar exposes each destination
-/// as a plain `Button` labeled with the tab title (the system tab bar is hidden),
-/// so the tab is an `app.buttons` match by label on every layout.
+/// Resolve a tab by label. On iPhone the floating tab bar exposes each
+/// destination as a `Button`; on iPad (sidebar-adaptable tab view) the sidebar
+/// exposes them as cells. Match either by label.
 @MainActor
 func tabButton(_ app: XCUIApplication, _ label: String) -> XCUIElement {
-    app.buttons[label].firstMatch
+    app.descendants(matching: .any).matching(NSPredicate(
+        format: "label == %@ AND (elementType == %d OR elementType == %d)",
+        label, XCUIElement.ElementType.button.rawValue, XCUIElement.ElementType.cell.rawValue
+    )).firstMatch
 }
 
 /// Poll a query until it reports at least `n` matches (or timeout).
@@ -53,6 +56,10 @@ func waitForCount(_ query: XCUIElementQuery, atLeast n: Int, timeout: TimeInterv
 final class ScreenshotUITests: XCTestCase {
     override func setUpWithError() throws {
         continueAfterFailure = false
+        // iPad App Store screenshots are taken in landscape (sidebar layouts).
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            XCUIDevice.shared.orientation = .landscapeLeft
+        }
         let app = XCUIApplication()
         setupSnapshot(app)
         app.launch()
@@ -101,6 +108,14 @@ final class ScreenshotUITests: XCTestCase {
             // which differs between iPhone and iPad.
             _ = app.staticTexts["A1"].waitForExistence(timeout: 10)
             snapshot("06Catalog")
+        }
+
+        // 7 — Progress: streak, heatmap, long-term memory.
+        let progress = tabButton(app, "Прогресс")
+        if progress.waitForExistence(timeout: 10) {
+            progress.tap()
+            _ = app.otherElements["heatmap.today"].firstMatch.waitForExistence(timeout: 10)
+            snapshot("07Progress")
         }
     }
 }

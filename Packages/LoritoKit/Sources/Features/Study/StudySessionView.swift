@@ -10,6 +10,10 @@ struct StudySessionView: View {
     @State var model: StudySessionModel
     let onClose: () -> Void
     @AccessibilityFocusState private var revealFocused: Bool
+    @State private var openedRelated: Card?
+    @Environment(\.horizontalSizeClass) private var sizeClass
+
+    private var isRegular: Bool { sizeClass == .regular }
 
     var body: some View {
         Group {
@@ -23,6 +27,19 @@ struct StudySessionView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(LoritoColor.ink.ignoresSafeArea())
+        // Esc closes the session (the close button is always shown).
+        .hardwareKeyCommands(openedRelated == nil ? [HardwareKeyCommand(.escape, title: "Выйти", action: onClose)] : [])
+        .sheet(item: $openedRelated) { card in
+            // Opens over the session; closing it returns to the same card.
+            NavigationStack {
+                CardReaderView(model: model.makeCatalogModel(), card: card)
+                    .toolbar {
+                        ToolbarItem(placement: .confirmationAction) {
+                            Button("Готово") { openedRelated = nil }
+                        }
+                    }
+            }
+        }
     }
 
     private func sessionContent(_ card: Card) -> some View {
@@ -38,11 +55,11 @@ struct StudySessionView: View {
                     front(card)
                 }
             }
-            .frame(maxWidth: LoritoLayout.readingWidth)
+            .frame(maxWidth: model.isRevealed && isRegular ? .infinity : LoritoLayout.readingWidth)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
 
             actions
-                .frame(maxWidth: LoritoLayout.readingWidth)
+                .frame(maxWidth: model.isRevealed && isRegular ? 900 : LoritoLayout.readingWidth)
                 .padding(.horizontal, LoritoSpacing.screenGutter)
                 .padding(.bottom, LoritoSpacing.md)
         }
@@ -105,17 +122,91 @@ struct StudySessionView: View {
 
     // MARK: Back
 
+    @ViewBuilder
     private func back(_ card: Card) -> some View {
-        ScrollView {
-            StudyCardContainer {
-                LevelChip(level: card.level.rawValue, theme: card.themeID)
-                Text(card.title)
-                    .loritoStyle(.title)
-                    .foregroundStyle(LoritoColor.textPrimary)
-                    .loritoTitleFit()
-                CardContentView(card.body)
+        if isRegular {
+            regularBack(card)
+        } else {
+            ScrollView {
+                StudyCardContainer {
+                    cardHeader(card)
+                    CardContentView(card.body)
+                    if !model.visibleRelatedCards.isEmpty {
+                        relatedList(tone: .surface)
+                            .padding(.top, LoritoSpacing.sm)
+                    }
+                }
+                .padding(.horizontal, LoritoSpacing.screenGutter)
             }
-            .padding(.horizontal, LoritoSpacing.screenGutter)
+        }
+    }
+
+    @ViewBuilder
+    private func cardHeader(_ card: Card) -> some View {
+        LevelChip(level: card.level.rawValue, theme: card.themeID)
+        Text(card.title)
+            .loritoStyle(.title)
+            .foregroundStyle(LoritoColor.textPrimary)
+            .loritoTitleFit()
+    }
+
+    /// Regular width: the body balanced over two columns next to a side panel
+    /// with related cards and keyboard hints.
+    private func regularBack(_ card: Card) -> some View {
+        HStack(alignment: .top, spacing: LoritoSpacing.lg) {
+            GeometryReader { proxy in
+                ScrollView {
+                    StudyCardContainer {
+                        cardHeader(card)
+                        CardContentView(card.body, twoColumnsAbove: max(proxy.size.height - 220, 200))
+                    }
+                }
+            }
+            VStack(spacing: LoritoSpacing.md) {
+                if !model.visibleRelatedCards.isEmpty {
+                    relatedList(tone: .ink)
+                        .padding(LoritoSpacing.md)
+                        .background(LoritoColor.inkRaised, in: RoundedRectangle(cornerRadius: LoritoRadius.md, style: .continuous))
+                }
+                KeyboardHintsPanel(hints: Self.keyboardHints)
+                Spacer(minLength: 0)
+            }
+            .frame(width: LoritoLayout.sidePanelWidth)
+        }
+        .padding(.horizontal, LoritoSpacing.screenGutter)
+    }
+
+    static let keyboardHints: [KeyboardHintsPanel.Hint] = [
+        .init("Показать ответ", key: "Пробел"),
+        .init("Оценка", key: "1 – 4"),
+        .init("Выйти", key: "esc"),
+    ]
+
+    private func relatedList(tone: CardBodyTone) -> some View {
+        VStack(alignment: .leading, spacing: LoritoSpacing.xs) {
+            Text("Связанные")
+                .loritoStyle(.label)
+                .foregroundStyle(tone == .ink ? LoritoColor.onInkSecondary : LoritoColor.textSecondary)
+            ForEach(model.visibleRelatedCards) { related in
+                Button { openedRelated = related } label: {
+                    HStack {
+                        Text(related.title)
+                            .font(LoritoFont.bodyStrong)
+                            .foregroundStyle(tone == .ink ? LoritoColor.onInk : LoritoColor.textPrimary)
+                            .multilineTextAlignment(.leading)
+                        Spacer(minLength: LoritoSpacing.xs)
+                        Text(related.id)
+                            .font(LoritoFont.caption)
+                            .foregroundStyle(tone == .ink ? LoritoColor.onInkSecondary : LoritoColor.textSecondary)
+                    }
+                    .frame(minHeight: LoritoLayout.minTouchTarget)
+                    .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                .loritoHover()
+                .accessibilityLabel("\(related.title), \(related.id)")
+                .accessibilityHint("Открывает связанную карточку")
+            }
         }
     }
 
@@ -130,12 +221,14 @@ struct StudySessionView: View {
                     .foregroundStyle(LoritoColor.onInkSecondary)
                     .multilineTextAlignment(.center)
                     .fixedSize(horizontal: false, vertical: true)
-                GradeButtons(captions: model.captions, spokenCaptions: model.spokenCaptions) { grade in
+                GradeButtons(captions: model.captions, spokenCaptions: model.spokenCaptions,
+                             showsKeyCaps: isRegular) { grade in
                     model.grade(grade)
                 }
             }
         } else {
             PrimaryButton("Показать ответ", variant: .highlight) { model.reveal() }
+                .keyboardShortcut(.space, modifiers: [])
                 .accessibilityFocused($revealFocused)
         }
     }

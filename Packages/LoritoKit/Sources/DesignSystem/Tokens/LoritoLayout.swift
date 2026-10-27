@@ -23,6 +23,10 @@ public enum LoritoLayout {
     public static let primaryButtonHeight: CGFloat = 56
     /// Height of the floating tab bar capsule.
     public static let tabBarHeight: CGFloat = 64
+    /// Width of the study session's side panel at regular width.
+    public static let sidePanelWidth: CGFloat = 300
+    /// Width of the fixed sidebar at regular width (iPadOS 17 fallback).
+    public static let sidebarWidth: CGFloat = 260
 }
 
 /// Corner-radius scale. Mirrors `tokens.json` → `radius`.

@@ -43,6 +43,8 @@ final class RecallFlowUITests: XCTestCase {
 
         XCTAssertTrue(app.staticTexts["¡Olé!"].waitForExistence(timeout: 10), "session summary not shown")
         XCTAssertTrue(app.staticTexts["с первого раза"].exists)
+        // Streak share card (rendered on device) is offered on the summary.
+        XCTAssertTrue(app.buttons["Поделиться"].waitForExistence(timeout: 5), "share action missing")
         app.buttons["Готово"].tap()
         // Back on Today (the plan may top up new cards, so don't assume all-done).
         XCTAssertTrue(app.staticTexts["¡Hola!"].waitForExistence(timeout: 10), "did not return to Today")
