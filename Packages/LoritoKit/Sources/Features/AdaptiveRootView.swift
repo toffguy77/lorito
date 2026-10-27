@@ -29,7 +29,12 @@ public struct AdaptiveRootView: View {
     @Environment(\.horizontalSizeClass) private var sizeClass
     @Environment(\.scenePhase) private var scenePhase
 
-    public init(store: UserDataStore, catalog: ContentCatalog, scopeModel: ScopeSelectionModel) {
+    /// Open the study session right away (first launch after onboarding only).
+    @State private var autoStartFirstSession: Bool
+
+    public init(store: UserDataStore, catalog: ContentCatalog, scopeModel: ScopeSelectionModel,
+                autoStartFirstSession: Bool = false) {
+        _autoStartFirstSession = State(initialValue: autoStartFirstSession)
         self.store = store
         self.catalog = catalog
         self.scopeModel = scopeModel
@@ -64,6 +69,7 @@ public struct AdaptiveRootView: View {
             notificationDelegate = delegate
             UNUserNotificationCenter.current().delegate = delegate
             navigation.restoreCatalogSelection(storedCatalogSelection, in: catalog)
+            startFirstSessionIfNeeded()
             refreshPath()
             publishWidgets()
             AnalyticsService.shared.checkStreakOnLaunch(currentStreak())
@@ -110,6 +116,18 @@ public struct AdaptiveRootView: View {
             storedCatalogSelection = stored
         }
         .onChange(of: navigation.destination) { _, _ in refreshPath() }
+    }
+
+    /// The first session after onboarding opens on its first card instead of
+    /// Today; with an empty queue Today stays. Consumed once (not on relaunch).
+    private func startFirstSessionIfNeeded() {
+        guard autoStartFirstSession else { return }
+        autoStartFirstSession = false
+        let today = TodayModel(store: store, catalog: catalog)
+        guard today.hasWork else { return }
+        AnalyticsService.shared.record(.firstSessionStarted(newCards: today.newRemaining))
+        AnalyticsService.shared.record(.sessionStarted(due: today.dueRemaining, new: today.newRemaining))
+        navigation.startSession(StudySessionModel(store: store, catalog: catalog, queue: today.sessionQueue()))
     }
 
     private var sessionBinding: Binding<StudySessionModel?> {

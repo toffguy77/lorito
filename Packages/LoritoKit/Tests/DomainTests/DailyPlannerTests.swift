@@ -478,3 +478,49 @@ struct IntroductionLedgerTests {
         #expect(IntroductionLedger(events: [], day: today).count == 0)
     }
 }
+
+@Suite("Daily plan: placement-known levels and the first session")
+struct PlacementPlanTests {
+    let utc = Calendar.learningDay(in: TimeZone(identifier: "UTC")!)
+    // A1 orders 1–3, A2 4–5, B1 6–7 (content order is global across levels).
+    let cards = [
+        card("A1-01", order: 1), card("A1-02", order: 2), card("A1-03", order: 3),
+        card("A2-01", level: .a2, theme: "a2-1", order: 4), card("A2-02", level: .a2, theme: "a2-1", order: 5),
+        card("B1-01", level: .b1, theme: "b1-1", order: 6, related: ["A1-02"]),
+        card("B1-02", level: .b1, theme: "b1-1", order: 7),
+    ]
+
+    func newIDs(known: CEFRLevel?, perDay: Int = 3, reviews: [ReviewState] = [],
+                boost: FirstSessionBoost? = nil) -> [String] {
+        var s = settings(target: .b1, newPerDay: perDay)
+        s.placementKnownLevel = known
+        let plan = DailyPlanner.composePlan(DailyPlanRequest(cards: cards, reviews: reviews, settings: s, today: today,
+                                                             calendar: utc, firstSession: boost))
+        return plan.queue.filter { $0.kind == .new }.map(\.cardID)
+    }
+
+    @Test("Known A2, target B1: B1 cards before any A1 card (known-level prerequisites count as met)")
+    func higherFirst() {
+        #expect(newIDs(known: .a2) == ["B1-01", "B1-02", "A1-01"])
+    }
+
+    @Test("Higher levels exhausted → known levels in ascending order")
+    func knownAfter() {
+        let seen = ["B1-01", "B1-02", "A1-01", "A1-02", "A1-03"].map { review($0, due: day(2026, 7, 1), status: .review) }
+        #expect(newIDs(known: .a2, reviews: seen) == ["A2-01", "A2-02"])
+    }
+
+    @Test("Unset known level keeps ascending order")
+    func unset() {
+        #expect(newIDs(known: nil) == ["A1-01", "A1-02", "A1-03"])
+    }
+
+    @Test("First-session boost: max(3, dailyNewCardCount) on that learning day only, failed-test cards first")
+    func boost() {
+        let boost = FirstSessionBoost(day: today, priorityCardIDs: ["A2-02", "X-99"])
+        #expect(newIDs(known: nil, perDay: 1, boost: boost) == ["A2-02", "A1-01", "A1-02"])
+        #expect(newIDs(known: nil, perDay: 5, boost: boost).count == 5)
+        let yesterday = FirstSessionBoost(day: day(2026, 6, 23), priorityCardIDs: ["A2-02"])
+        #expect(newIDs(known: nil, perDay: 1, boost: yesterday) == ["A1-01"])
+    }
+}

@@ -10,8 +10,8 @@ import Domain
 @MainActor
 @Observable
 public final class ScopeSelectionModel {
-    private let store: UserDataStore
-    private let catalog: ContentCatalog
+    let store: UserDataStore
+    let catalog: ContentCatalog
 
     /// Working target level (nil until the user picks one in onboarding).
     public private(set) var targetLevel: CEFRLevel?

@@ -31,7 +31,8 @@ public final class SwiftDataUserDataStore: UserDataStore {
             spanishVariant: r.spanishVariantRaw.flatMap(SpanishVariant.init(rawValue:)) ?? .spain,
             speechRate: r.speechRateRaw.flatMap(SpeechRate.init(rawValue:)) ?? .normal,
             playAudioWhenSilent: r.playAudioWhenSilent,
-            desiredRetention: r.desiredRetention
+            desiredRetention: r.desiredRetention,
+            placementKnownLevel: r.placementKnownLevelRaw.flatMap(CEFRLevel.init(rawValue:))
         )
     }
 
@@ -51,6 +52,7 @@ public final class SwiftDataUserDataStore: UserDataStore {
         record.speechRateRaw = settings.speechRate.rawValue
         record.playAudioWhenSilent = settings.playAudioWhenSilent
         record.desiredRetention = settings.desiredRetention
+        record.placementKnownLevelRaw = settings.placementKnownLevel?.rawValue
         try context.save()
     }
 

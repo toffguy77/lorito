@@ -13,6 +13,7 @@ public final class TodayModel {
     private let store: UserDataStore
     private let catalog: ContentCatalog
     private let now: () -> Date
+    private let boosts: FirstSessionBoostStore
 
     /// Cards still to study today, in queue order.
     public private(set) var remaining: [PlanEntry] = []
@@ -24,6 +25,14 @@ public final class TodayModel {
     public private(set) var trap: TrapCandidate?
     /// The last seven days ending today (week strip).
     public private(set) var week: [WeekDay] = []
+    /// The one prompt of this visit (goal / variant …), if any.
+    public private(set) var prompt: TodayPrompt?
+    /// Open prompts in priority order; registered by `study-goal` and
+    /// `regional-variants`.
+    public var promptCandidates: [TodayPrompt] = [] {
+        didSet { prompt = promptSlot.prompt(candidates: promptCandidates, events: (try? store.allEvents()) ?? []) }
+    }
+    private let promptSlot: TodayPromptSlot
     /// Long-term memory across the included levels (regular-width dashboard).
     public private(set) var memory: (longTerm: Int, total: Int) = (0, 0)
 
@@ -37,10 +46,13 @@ public final class TodayModel {
     }
 
     /// `today` is a clock so tests can pin the date; defaults to now.
-    public init(store: UserDataStore, catalog: ContentCatalog, today: @escaping () -> Date = { Date() }) {
+    public init(store: UserDataStore, catalog: ContentCatalog, today: @escaping () -> Date = { Date() },
+                boosts: FirstSessionBoostStore = .shared, prompts: TodayPromptSlot = TodayPromptSlot()) {
+        self.promptSlot = prompts
         self.store = store
         self.catalog = catalog
         self.now = today
+        self.boosts = boosts
         refresh()
     }
 
@@ -59,6 +71,13 @@ public final class TodayModel {
         "\(dueRemaining) на повторение + \(newRemaining) новых"
     }
 
+    /// "Не сейчас" on the prompt: never offered again; the slot stays empty this visit.
+    public func dismissPrompt() {
+        guard let prompt else { return }
+        promptSlot.dismiss(prompt.id)
+        self.prompt = nil
+    }
+
     /// The ordered card ids to study now (snapshot for a session).
     public func sessionQueue() -> [String] { remaining.map(\.cardID) }
 
@@ -70,7 +89,8 @@ public final class TodayModel {
         let today = now()
 
         let plan = DailyPlanner.composePlan(
-            DailyPlanRequest(cards: catalog.cards, reviews: reviews, settings: settings, today: today, events: events)
+            DailyPlanRequest(cards: catalog.cards, reviews: reviews, settings: settings, today: today, events: events,
+                             firstSession: boosts.current(today: today))
         )
         let gradedToday = Set(
             events.filter { $0.grade != nil && $0.isCard && StudyDay.isSameDay($0.date, today) }.map(\.cardID)
@@ -84,6 +104,7 @@ public final class TodayModel {
         let rows = StatsCalculator.longTermMemory(reviews: reviews, catalog: catalog, levels: levels)
         memory = (rows.reduce(0) { $0 + $1.longTerm }, rows.reduce(0) { $0 + $1.total })
         trap = Self.pickTrap(settings: settings, reviews: reviews, catalog: catalog, today: today)
+        prompt = promptSlot.prompt(candidates: promptCandidates, events: events)
     }
 
     private static let weekdayLabels = ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"]  // Calendar weekday 1…7

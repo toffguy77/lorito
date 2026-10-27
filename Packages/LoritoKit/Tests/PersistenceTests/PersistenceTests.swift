@@ -105,6 +105,7 @@ struct SyncedSettingsRoundTripTests {
         s.speechRate = .slow
         s.playAudioWhenSilent = true
         s.desiredRetention = 0.85                                       // fsrs-scheduler
+        s.placementKnownLevel = .a2                                     // placement-test
         #expect(try Self.roundTrip(s) == s)
     }
 
@@ -142,5 +143,6 @@ struct SyncedSettingsRoundTripTests {
         #expect(loaded.didCompleteOnboarding == false)
         #expect(loaded.spanishVariant == .spain && loaded.speechRate == .normal && !loaded.playAudioWhenSilent)
         #expect(loaded.desiredRetention == 0.9)
+        #expect(loaded.placementKnownLevel == nil)
     }
 }

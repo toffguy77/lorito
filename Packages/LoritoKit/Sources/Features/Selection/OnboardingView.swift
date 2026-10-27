@@ -2,22 +2,26 @@ import SwiftUI
 import Domain
 import DesignSystem
 
-/// First-run onboarding: pick a target level (auto-including lower levels), then
-/// optionally narrow the themes. Enforces the non-empty-scope guard before it
-/// can finish. UI copy is in Russian.
+/// First-run onboarding: level (manual list or the placement test) → themes →
+/// reminders. Enforces the non-empty-scope guard before it can finish. On
+/// completion it stores the placement result and the one-off first-session
+/// boost. UI copy is in Russian.
 public struct OnboardingView: View {
     @State private var model: ScopeSelectionModel
     @State private var step: Step = .level
     @State private var reminderTime: Date
+    /// Set while/after taking the placement test; cleared by a manual level choice.
+    @State private var placement: PlacementModel?
     private let onComplete: () -> Void
     private let reminders: ReminderService?
+    @Environment(\.loritoUITesting) private var uiTesting
 
     private enum Step {
-        case level, themes, reminders
+        case level, placement, themes, reminders
 
         var analyticsName: OnboardingStepName {
             switch self {
-            case .level: return .level
+            case .level, .placement: return .level
             case .themes: return .themes
             case .reminders: return .reminders
             }
@@ -44,6 +48,7 @@ public struct OnboardingView: View {
         VStack(spacing: 0) {
             switch step {
             case .level: levelStep
+            case .placement: placementStep
             case .themes: themeStep
             case .reminders: reminderStep
             }
@@ -68,12 +73,29 @@ public struct OnboardingView: View {
                 VStack(spacing: 6) {
                     ForEach(model.allLevels) { level in
                         LevelRow(level: level, state: rowState(level)) {
+                            placement = nil                       // manual choice
                             model.selectLevel(level)
                             model.selectAllThemes()
                         }
                     }
                 }
                 .padding(.horizontal, LoritoSpacing.screenGutter)
+
+                Button {
+                    placement = PlacementModel(
+                        catalog: model.catalog,
+                        scripted: uiTesting ? PlacementModel.uiTestScript(from: CommandLine.arguments) : nil)
+                    step = .placement
+                } label: {
+                    Label("Не знаю — проверить за 2 минуты", systemImage: "checklist")
+                        .font(LoritoFont.bodyStrong)
+                        .foregroundStyle(LoritoColor.accent)
+                        .frame(maxWidth: .infinity, minHeight: LoritoLayout.minTouchTarget, alignment: .leading)
+                }
+                .buttonStyle(.plain)
+                .accessibilityIdentifier("placement.start")
+                .padding(.horizontal, LoritoSpacing.screenGutter)
+                .padding(.top, LoritoSpacing.sm)
 
                 if model.targetLevel != nil {
                     Text("Включено: \(model.includedLevels.map(\.rawValue).joined(separator: ", "))")
@@ -91,6 +113,22 @@ public struct OnboardingView: View {
             .padding(.horizontal, LoritoSpacing.screenGutter)
         }
         .padding(.vertical, LoritoSpacing.lg)
+    }
+
+    // MARK: - Placement step
+
+    @ViewBuilder
+    private var placementStep: some View {
+        if let placement {
+            PlacementView(model: placement, onAccept: { level in
+                model.selectLevel(level)
+                model.selectAllThemes()
+                step = .themes
+            }, onCancel: {
+                self.placement = nil
+                step = .level
+            })
+        }
     }
 
     // MARK: - Theme step
@@ -179,6 +217,12 @@ public struct OnboardingView: View {
                 )
             }
             if model.persist(completingOnboarding: true) {
+                // Placement result (known level, opt-in seeding), then the one-off
+                // first-session boost with the failed-test cards first.
+                let today = Date()
+                let seeded = placement.flatMap { try? $0.apply(to: model.store, today: today) } ?? []
+                let failed = (placement?.failedCardIDs ?? []).filter { !seeded.contains($0) }
+                FirstSessionBoostStore.shared.save(FirstSessionBoost(day: today, priorityCardIDs: failed))
                 AnalyticsService.shared.record(.onboardingCompleted)
                 onComplete()
             }
@@ -205,7 +249,7 @@ public struct OnboardingView: View {
 
     private var stepIndex: Int {
         switch step {
-        case .level: return 0
+        case .level, .placement: return 0
         case .themes: return 1
         case .reminders: return 2
         }

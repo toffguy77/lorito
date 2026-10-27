@@ -19,6 +19,8 @@ public struct RootView: View {
     @State private var reminders: ReminderService?
     @State private var speech: SystemSpeechService?
     @State private var loadError = false
+    /// Onboarding finished in this launch → the first session opens (once).
+    @State private var justOnboarded = false
     private let cloudKitEnabled: Bool
     private let uiTesting: Bool
     private let demoData: Bool
@@ -36,9 +38,13 @@ public struct RootView: View {
         Group {
             if let model, let store, let catalog {
                 if didCompleteOnboarding {
-                    AdaptiveRootView(store: store, catalog: catalog, scopeModel: model)
+                    AdaptiveRootView(store: store, catalog: catalog, scopeModel: model,
+                                     autoStartFirstSession: justOnboarded)
                 } else {
-                    OnboardingView(model: model, reminders: reminders) { didCompleteOnboarding = true }
+                    OnboardingView(model: model, reminders: reminders) {
+                        justOnboarded = true
+                        didCompleteOnboarding = true
+                    }
                 }
             } else if loadError {
                 errorView
@@ -63,7 +69,10 @@ public struct RootView: View {
             let catalog = try ContentLoader.loadCatalog()
             // Syncs through the user's private CloudKit DB when enabled (and an
             // iCloud account is available); falls back to a local store otherwise.
-            if uiTesting { didCompleteOnboarding = false }
+            if uiTesting {
+                didCompleteOnboarding = false
+                FirstSessionBoostStore.shared.clear()
+            }
             let container = PersistenceController.makeUserContainer(cloudKitEnabled: cloudKitEnabled, inMemory: uiTesting)
             let store = SwiftDataUserDataStore(container: container)
             if demoData { try DemoSeed.make(catalog: catalog, today: Date()).apply(to: store) }

@@ -57,6 +57,25 @@ public struct DailyPlan: Sendable, Hashable, Codable {
     }
 }
 
+/// The one-off first study session after onboarding (placement-test): on that
+/// learning day the card allowance is max(3, `dailyNewCardCount`) within the
+/// daily budget, and `priorityCardIDs` (cards failed in the test) come first.
+public struct FirstSessionBoost: Sendable, Hashable, Codable {
+    public static let minimumNewCards = 3
+
+    public var day: Date
+    public var priorityCardIDs: [String]
+
+    public init(day: Date, priorityCardIDs: [String] = []) {
+        self.day = day
+        self.priorityCardIDs = priorityCardIDs
+    }
+
+    public func applies(on today: Date, calendar: Calendar) -> Bool {
+        calendar.isDate(day, inSameDayAs: today)
+    }
+}
+
 /// The bundle of inputs the planner reads. A value type so recomputation is
 /// simply re-invoking the planner with an updated request.
 public struct DailyPlanRequest: Sendable {
@@ -74,6 +93,8 @@ public struct DailyPlanRequest: Sendable {
     public var events: [StudyEvent]
     /// The learning-day calendar (local time zone; injected for tests).
     public var calendar: Calendar
+    /// First-session boost; ignored on any other learning day.
+    public var firstSession: FirstSessionBoost?
 
     public init(
         cards: [Card],
@@ -82,7 +103,8 @@ public struct DailyPlanRequest: Sendable {
         today: Date,
         maxReviewsPerDay: Int = DailyPlanner.defaultMaxReviewsPerDay,
         events: [StudyEvent] = [],
-        calendar: Calendar = .learningDay
+        calendar: Calendar = .learningDay,
+        firstSession: FirstSessionBoost? = nil
     ) {
         self.cards = cards
         self.reviews = reviews
@@ -91,6 +113,7 @@ public struct DailyPlanRequest: Sendable {
         self.maxReviewsPerDay = maxReviewsPerDay
         self.events = events
         self.calendar = calendar
+        self.firstSession = firstSession
     }
 }
 
@@ -166,14 +189,21 @@ public enum DailyPlanner {
 
     /// Eligible new cards, introduced in ascending `order` (then `id`) while
     /// respecting `related` prerequisites and the remaining daily allowance:
-    /// `dailyNewCardCount` minus cards already introduced today.
+    /// `dailyNewCardCount` minus cards already introduced today. With a
+    /// `placementKnownLevel`, levels above it come first and prerequisites at
+    /// known levels count as met; a first-session boost puts its cards first.
     /// Returns the introduced ids in queue order plus whether the new-card
     /// scope is exhausted (no eligible new cards remain in the selection).
     private static func selectNew(
         request: DailyPlanRequest,
         reviewsByID: [String: ReviewState]
     ) -> (ids: [String], scopeExhausted: Bool) {
-        let settings = request.settings
+        var settings = request.settings
+        let boost = request.firstSession.flatMap { $0.applies(on: request.today, calendar: request.calendar) ? $0 : nil }
+        if boost != nil {
+            settings.dailyNewCardCount = max(FirstSessionBoost.minimumNewCards, settings.dailyNewCardCount)
+        }
+        let known = settings.placementKnownLevel
 
         // In-scope = included level (target plus all lower) and selected theme.
         // An empty `selectedThemeIDs` means "all themes in scope" (foundation contract).
@@ -186,10 +216,19 @@ public enum DailyPlanner {
 
         let inScopeIDs = Set(request.cards.filter(inScope).map(\.id))
 
-        // Eligible new = in scope and no prior review state, ordered (order, id).
+        // Eligible new = in scope and no prior review state, ordered (order, id);
+        // with a known level, the levels above it first. Boosted cards lead.
+        let priority = boost?.priorityCardIDs ?? []
+        func rank(_ card: Card) -> Int {
+            if let i = priority.firstIndex(of: card.id) { return i - priority.count }
+            if let known, card.level <= known { return 1 }
+            return 0
+        }
         let eligible = request.cards
             .filter { inScope($0) && reviewsByID[$0.id] == nil }
             .sorted { lhs, rhs in
+                let (l, r) = (rank(lhs), rank(rhs))
+                if l != r { return l < r }
                 if lhs.order != rhs.order { return lhs.order < rhs.order }
                 return lhs.id < rhs.id
             }
@@ -206,9 +245,14 @@ public enum DailyPlanner {
         // Prerequisites = `related` ∩ selection. Satisfied when the prerequisite
         // already has a review state (introduced on a prior day) or is introduced
         // earlier in this same plan.
+        let levelByID = Dictionary(request.cards.map { ($0.id, $0.level) }, uniquingKeysWith: { a, _ in a })
         var prereqs: [String: [String]] = [:]
-        for card in eligible {
-            prereqs[card.id] = card.related.filter { inScopeIDs.contains($0) }
+        for card in eligible where !priority.contains(card.id) {
+            prereqs[card.id] = card.related.filter { id in
+                guard inScopeIDs.contains(id) else { return false }
+                if let known, let level = levelByID[id], level <= known { return false }
+                return true
+            }
         }
 
         // Greedy topological introduction under the daily limit. `introduced`
@@ -218,13 +262,16 @@ public enum DailyPlanner {
         var remaining = eligible
 
         while introducedToday.count < limit, !remaining.isEmpty {
-            let available = remaining.first { card in
+            // Work within the highest-priority group (boosted, above the known
+            // level, known) so a prerequisite cycle never lets a lower group jump ahead.
+            let group = remaining.filter { rank($0) == rank(remaining[0]) }
+            let available = group.first { card in
                 (prereqs[card.id] ?? []).allSatisfy { introduced.contains($0) }
             }
             // Defensive cycle break: if no card's prerequisites are satisfied
             // (a `related` cycle within the selection), take the lowest (order, id)
             // remaining card so introduction always makes progress.
-            let pick = available ?? remaining[0]
+            let pick = available ?? group[0]
 
             introducedToday.append(pick.id)
             introduced.insert(pick.id)

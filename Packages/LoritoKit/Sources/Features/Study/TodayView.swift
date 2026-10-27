@@ -63,6 +63,7 @@ public struct TodayView: View {
             header
             planOrState
             WeekStrip(days: model.week)
+            promptCard
             trap
         }
         .frame(maxWidth: LoritoLayout.readingWidth)
@@ -82,6 +83,7 @@ public struct TodayView: View {
                         .padding(.horizontal, LoritoSpacing.md)
                         .padding(.vertical, LoritoSpacing.sm)
                         .background(LoritoColor.surfaceRaised, in: RoundedRectangle(cornerRadius: LoritoRadius.lg, style: .continuous))
+                    promptCard
                     trap
                     memorySummary
                 }
@@ -103,6 +105,41 @@ public struct TodayView: View {
             message(mark: "¿", markColor: LoritoColor.textSecondary,
                     title: "Пока нечего изучать", subtitle: "Загляните позже — карточки появятся, когда придёт срок.")
         }
+    }
+
+    /// Today's prompt slot (at most one prompt per visit).
+    @ViewBuilder
+    private var promptCard: some View {
+        if let prompt = model.prompt {
+            VStack(alignment: .leading, spacing: LoritoSpacing.sm) {
+                Text(prompt.title)
+                    .font(LoritoFont.bodyStrong)
+                    .foregroundStyle(LoritoColor.textPrimary)
+                Text(prompt.message)
+                    .font(LoritoFont.body)
+                    .foregroundStyle(LoritoColor.textSecondary)
+                    .fixedSize(horizontal: false, vertical: true)
+                HStack {
+                    Button(prompt.actionTitle) { onPromptAction(prompt) }
+                        .buttonStyle(PrimaryButtonStyle(.ink))
+                        .fixedSize()
+                    Button("Не сейчас") { model.dismissPrompt() }
+                        .font(LoritoFont.bodyStrong)
+                        .foregroundStyle(LoritoColor.textSecondary)
+                        .frame(minHeight: LoritoLayout.minTouchTarget)
+                }
+            }
+            .padding(LoritoSpacing.md)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(LoritoColor.surfaceRaised, in: RoundedRectangle(cornerRadius: LoritoRadius.md, style: .continuous))
+            .accessibilityElement(children: .contain)
+            .accessibilityIdentifier("today.prompt")
+        }
+    }
+
+    /// Prompt actions are handled by the change that registers the prompt.
+    private func onPromptAction(_ prompt: TodayPrompt) {
+        model.dismissPrompt()
     }
 
     @ViewBuilder

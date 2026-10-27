@@ -34,6 +34,11 @@ public enum AnalyticsEvent: Codable, Sendable, Hashable {
     case reminderOpened
     case streakExtended(length: Int)
     case streakLost(previous: Int)
+    // placement-test-and-first-session
+    case placementStarted
+    case placementCompleted(level: CEFRLevel, known: CEFRLevel?, questions: Int)
+    case placementSkipKnownApplied(cards: Int)
+    case firstSessionStarted(newCards: Int)
 
     public var name: String {
         switch self {
@@ -46,13 +51,21 @@ public enum AnalyticsEvent: Codable, Sendable, Hashable {
         case .reminderOpened: return "reminderOpened"
         case .streakExtended: return "streakExtended"
         case .streakLost: return "streakLost"
+        case .placementStarted: return "placementStarted"
+        case .placementCompleted: return "placementCompleted"
+        case .placementSkipKnownApplied: return "placementSkipKnownApplied"
+        case .firstSessionStarted: return "firstSessionStarted"
         }
     }
 
     public var parameters: [String: String] {
         switch self {
         case .onboardingStep(let step): return ["step": step.rawValue]
-        case .onboardingCompleted, .reminderOpened: return [:]
+        case .onboardingCompleted, .reminderOpened, .placementStarted: return [:]
+        case .placementCompleted(let level, let known, let questions):
+            return ["level": level.rawValue, "known": known?.rawValue ?? "none", "questions": "\(questions)"]
+        case .placementSkipKnownApplied(let cards): return ["cards": "\(cards)"]
+        case .firstSessionStarted(let newCards): return ["newCards": "\(newCards)"]
         case .sessionStarted(let due, let new): return ["due": "\(due)", "new": "\(new)"]
         case .sessionCompleted(let items, let pct): return ["items": "\(items)", "firstTryPercent": "\(pct)"]
         case .itemGraded(let kind, let grade, let revealed):

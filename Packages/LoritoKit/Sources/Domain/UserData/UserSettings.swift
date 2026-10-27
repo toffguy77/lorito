@@ -25,6 +25,10 @@ public struct UserSettings: Codable, Sendable, Hashable {
         didSet { desiredRetention = Self.clampRetention(desiredRetention) }
     }
 
+    /// Highest level passed in the placement test (set on accept; nil for a
+    /// manual level choice). Its cards are introduced after higher levels.
+    public var placementKnownLevel: CEFRLevel?
+
     public static let retentionRange: ClosedRange<Double> = 0.80...0.95
 
     public static func clampRetention(_ value: Double) -> Double {
@@ -42,7 +46,8 @@ public struct UserSettings: Codable, Sendable, Hashable {
         spanishVariant: SpanishVariant = .spain,
         speechRate: SpeechRate = .normal,
         playAudioWhenSilent: Bool = false,
-        desiredRetention: Double = 0.9
+        desiredRetention: Double = 0.9,
+        placementKnownLevel: CEFRLevel? = nil
     ) {
         self.targetLevel = targetLevel
         self.selectedThemeIDs = selectedThemeIDs
@@ -54,6 +59,7 @@ public struct UserSettings: Codable, Sendable, Hashable {
         self.speechRate = speechRate
         self.playAudioWhenSilent = playAudioWhenSilent
         self.desiredRetention = Self.clampRetention(desiredRetention)
+        self.placementKnownLevel = placementKnownLevel
     }
 
     public static let `default` = UserSettings()

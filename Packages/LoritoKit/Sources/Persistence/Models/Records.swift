@@ -20,6 +20,8 @@ public final class SettingsRecord {
     public var playAudioWhenSilent: Bool = false
     // fsrs-scheduler
     public var desiredRetention: Double = 0.9
+    // placement-test-and-first-session
+    public var placementKnownLevelRaw: String?
 
     public init(
         targetLevelRaw: String? = nil,
