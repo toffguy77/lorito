@@ -5,6 +5,7 @@ import SwiftUI
 /// tagged `es-ES`), and plain text is Russian (Onest).
 public struct RecallPromptView: View {
     private let markdown: String
+    @Environment(\.spanishSpanActions) private var spanActions
 
     public init(_ markdown: String) {
         self.markdown = markdown
@@ -33,7 +34,14 @@ public struct RecallPromptView: View {
             partial + text(for: run)
         }
         .foregroundStyle(LoritoColor.textPrimary)
+        .tint(LoritoColor.accent)
         .fixedSize(horizontal: false, vertical: true)
+        .environment(\.openURL, OpenURLAction { url in
+            guard let text = SpanishSpans.text(from: url) else { return .systemAction }
+            spanActions.performPrimary(text)
+            return .handled
+        })
+        .spanishSpanMenu(spans: Self.runs(markdown).filter { $0.voice == .spanish }.map(\.text), actions: spanActions)
     }
 
     private func text(for run: (text: String, voice: Voice)) -> Text {
@@ -41,7 +49,9 @@ public struct RecallPromptView: View {
         case .question:
             return Text(run.text).font(LoritoTextStyle.title.font).tracking(LoritoTextStyle.title.tracking)
         case .spanish:
-            return Text(SpanishText.attributed(run.text))
+            var attributed = SpanishText.attributed(run.text)
+            if SpanishSpans.isSpanish(run.text) { attributed.link = SpanishSpans.url(for: run.text) }
+            return Text(attributed)
                 .font(LoritoTextStyle.spanish.sized(32).font)
                 .foregroundStyle(LoritoColor.accent)
         case .plain:

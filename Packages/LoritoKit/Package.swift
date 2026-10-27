@@ -39,7 +39,7 @@ let package = Package(
         // "Plumaje" design tokens, bundled brand fonts, and reusable SwiftUI components.
         .target(
             name: "DesignSystem",
-            dependencies: [.product(name: "MarkdownUI", package: "swift-markdown-ui")],
+            dependencies: ["Domain", .product(name: "MarkdownUI", package: "swift-markdown-ui")],
             resources: [.process("Resources/Fonts")]
         ),
 
@@ -55,7 +55,7 @@ let package = Package(
 
         // Tests
         .testTarget(name: "DomainTests", dependencies: ["Domain"]),
-        .testTarget(name: "DesignSystemTests", dependencies: ["DesignSystem"]),
+        .testTarget(name: "DesignSystemTests", dependencies: ["DesignSystem", "Domain"]),
         .testTarget(name: "ContentTests", dependencies: ["Content"]),
         .testTarget(name: "PersistenceTests", dependencies: ["Persistence"]),
         .testTarget(name: "FeaturesTests", dependencies: ["Features", "Domain", "Content", "DesignSystem", "Persistence"]),

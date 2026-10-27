@@ -61,7 +61,7 @@ struct PracticeAnswerStoreTests {
 
 @Suite("Widget day state")
 struct WidgetDayStateTests {
-    private static let cal = Calendar.utcDay
+    private static let cal = Calendar.learningDay(in: TimeZone(identifier: "UTC")!)
     private static let day = cal.date(from: DateComponents(year: 2026, month: 10, day: 27))!
 
     private static func snap(streak: Int, studied: Bool, remaining: Int = 12) -> WidgetSnapshot {
@@ -75,31 +75,27 @@ struct WidgetDayStateTests {
 
     @Test("Same day: snapshot values as is; streak at risk when not studied")
     func sameDay() {
-        let s = WidgetDayState.make(snapshot: Self.snap(streak: 13, studied: false), now: Self.at(daysLater: 0))
+        let s = WidgetDayState.make(snapshot: Self.snap(streak: 13, studied: false), now: Self.at(daysLater: 0), calendar: Self.cal)
         #expect(s == .init(streak: 13, studiedToday: false, remainingToday: 12, streakAtRisk: true))
-        let studied = WidgetDayState.make(snapshot: Self.snap(streak: 13, studied: true), now: Self.at(daysLater: 0))
+        let studied = WidgetDayState.make(snapshot: Self.snap(streak: 13, studied: true), now: Self.at(daysLater: 0), calendar: Self.cal)
         #expect(!studied.streakAtRisk && studied.studiedToday)
     }
 
     @Test("Next day without the app: not studied, counts unknown, streak kept if studied yesterday")
     func nextDay() {
-        let kept = WidgetDayState.make(snapshot: Self.snap(streak: 13, studied: true), now: Self.at(daysLater: 1))
+        let kept = WidgetDayState.make(snapshot: Self.snap(streak: 13, studied: true), now: Self.at(daysLater: 1), calendar: Self.cal)
         #expect(kept == .init(streak: 13, studiedToday: false, remainingToday: nil, streakAtRisk: true))
-        let broken = WidgetDayState.make(snapshot: Self.snap(streak: 13, studied: false), now: Self.at(daysLater: 1))
+        let broken = WidgetDayState.make(snapshot: Self.snap(streak: 13, studied: false), now: Self.at(daysLater: 1), calendar: Self.cal)
         #expect(broken.streak == 0 && !broken.streakAtRisk)
-        let later = WidgetDayState.make(snapshot: Self.snap(streak: 13, studied: true), now: Self.at(daysLater: 3))
+        let later = WidgetDayState.make(snapshot: Self.snap(streak: 13, studied: true), now: Self.at(daysLater: 3), calendar: Self.cal)
         #expect(later.streak == 0)
     }
 
-    @Test("Next refresh dates: local midnight and UTC day start, both in the future, sorted")
+    @Test("Next refresh date: the next learning-day boundary (local midnight)")
     func refreshDates() {
-        var moscow = Calendar(identifier: .gregorian)
-        moscow.timeZone = TimeZone(identifier: "Europe/Moscow")!
-        let now = Self.at(daysLater: 0, hour: 10)
-        let dates = WidgetDayState.nextRefreshDates(after: now, localCalendar: moscow)
-        #expect(dates.count == 2)
-        #expect(dates.allSatisfy { $0 > now })
-        #expect(dates == dates.sorted())
-        #expect(dates.contains(Self.at(daysLater: 1, hour: 0)))           // next UTC day
+        let moscow = Calendar.learningDay(in: TimeZone(identifier: "Europe/Moscow")!)
+        let now = moscow.date(from: DateComponents(year: 2026, month: 10, day: 27, hour: 10))!
+        let dates = WidgetDayState.nextRefreshDates(after: now, calendar: moscow)
+        #expect(dates == [moscow.date(from: DateComponents(year: 2026, month: 10, day: 28))!])
     }
 }

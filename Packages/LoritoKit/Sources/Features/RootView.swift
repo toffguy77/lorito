@@ -19,9 +19,13 @@ public struct RootView: View {
     @State private var reminders: ReminderService?
     @State private var loadError = false
     private let cloudKitEnabled: Bool
+    private let uiTesting: Bool
 
-    public init(cloudKitEnabled: Bool = false) {
+    /// `uiTesting`: in-memory store and first-run onboarding on every launch, so
+    /// UI tests are independent of each other (launch argument `-lorito-ui-testing`).
+    public init(cloudKitEnabled: Bool = false, uiTesting: Bool = false) {
         self.cloudKitEnabled = cloudKitEnabled
+        self.uiTesting = uiTesting
     }
 
     public var body: some View {
@@ -50,7 +54,8 @@ public struct RootView: View {
             let catalog = try ContentLoader.loadCatalog()
             // Syncs through the user's private CloudKit DB when enabled (and an
             // iCloud account is available); falls back to a local store otherwise.
-            let container = PersistenceController.makeUserContainer(cloudKitEnabled: cloudKitEnabled)
+            if uiTesting { didCompleteOnboarding = false }
+            let container = PersistenceController.makeUserContainer(cloudKitEnabled: cloudKitEnabled, inMemory: uiTesting)
             let store = SwiftDataUserDataStore(container: container)
             // Respect a completion flag already recorded in persisted settings.
             if let settings = try? store.loadSettings(), settings.didCompleteOnboarding {

@@ -69,6 +69,21 @@ items are registered by features («Произнести», «В мои слов
 first: confirm MarkdownUI link styling keeps the Spanish font and that long-press
 works on links inside `Text` (fallback: a sheet listing the spans of the block).
 
+**Spike result (2026-10-27).** MarkdownUI renders links as `AttributedString.link`
+inside `Text`: the theme's `.link` style keeps the Spanish font and colour
+(`UnderlineStyle(nil)` removes the underline) and a view-level `OpenURLAction`
+receives taps — tap = primary action works. `Text` has no per-link gesture API,
+so a per-span long press is not available → the documented fallback is used:
+a long press on the block opens one context menu with a section per Spanish span
+of that block listing the registered items; VoiceOver gets the same items as
+custom actions ("Произнести: el problema"). Emphasis is converted to span links
+before rendering (`SpanishSpans.link`): single-asterisk emphasis with a Latin
+letter; code spans, existing links, bold and nested `***x** y*` are left as is.
+Limitation: MarkdownUI offers no per-run language attribute, so VoiceOver reads
+card-body spans in the block's language; `SpanishText` and the recall prompt set
+`es-ES`. Inside buttons (`AnswerText`, onboarding level rows, widgets) Spanish
+text is not interactive — the button's action wins.
+
 **Parser move.** `CardBodyParser` and `CardBlock`/`CalloutKind` move to Domain;
 DesignSystem keeps the views and re-exports nothing (call sites import Domain).
 

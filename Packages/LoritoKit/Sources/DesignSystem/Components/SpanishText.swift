@@ -16,11 +16,15 @@ public struct SpanishText: View {
     private let text: String
     private let size: Size
     private let color: Color
+    private let interactive: Bool
+    @Environment(\.spanishSpanActions) private var spanActions
 
-    public init(_ text: String, size: Size = .display, color: Color = LoritoColor.accent) {
+    /// `interactive: false` inside buttons, where the button's action wins.
+    public init(_ text: String, size: Size = .display, color: Color = LoritoColor.accent, interactive: Bool = true) {
         self.text = text
         self.size = size
         self.color = color
+        self.interactive = interactive
     }
 
     /// The text tagged with its language (drives VoiceOver pronunciation).
@@ -41,10 +45,18 @@ public struct SpanishText: View {
     }
 
     public var body: some View {
-        Text(Self.attributed(text))
+        let label = Text(Self.attributed(text))
             .font(style.font)
             .foregroundStyle(color)
             .environment(\.locale, Locale(identifier: "es_ES"))
+        if interactive {
+            // Same gesture contract as card-body spans: tap = primary, long press = menu.
+            label
+                .onTapGesture { spanActions.performPrimary(text) }
+                .spanishSpanMenu(spans: [text], actions: spanActions)
+        } else {
+            label
+        }
     }
 }
 
@@ -77,7 +89,7 @@ public struct AnswerText: View {
 
     public var body: some View {
         if Self.isSpanish(text) {
-            SpanishText(text, size: .custom(spanishSize), color: color)
+            SpanishText(text, size: .custom(spanishSize), color: color, interactive: false)
         } else {
             Text(text).font(LoritoFont.body).foregroundStyle(color)
         }

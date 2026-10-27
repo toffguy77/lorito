@@ -92,7 +92,7 @@ public struct StatsView: View {
             .foregroundStyle(LoritoColor.textPrimary)
             ActivityHeatmap(
                 days: zip(model.activity, model.buckets).map { HeatmapDay(day: $0.day, count: $0.count, bucket: $1) },
-                calendar: .utcDay,
+                calendar: .learningDay,
                 cellHeight: isRegular ? 30 : 18
             )
             .accessibilityElement(children: .contain)

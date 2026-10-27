@@ -44,7 +44,7 @@ struct LevelRow: View {
                     .foregroundStyle(codeColor)
                     .frame(width: 52, alignment: .leading)
                 VStack(alignment: .leading, spacing: 2) {
-                    SpanishText(level.samplePhrase, size: .custom(state == .target ? 24 : 21), color: phraseColor)
+                    SpanishText(level.samplePhrase, size: .custom(state == .target ? 24 : 21), color: phraseColor, interactive: false)
                     Text(state == .target ? "\(level.blurb) · цель" : level.blurb)
                         .font(LoritoFont.caption)
                         .foregroundStyle(state == .target ? LoritoColor.onInkSecondary : LoritoColor.textSecondary)

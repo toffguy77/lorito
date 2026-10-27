@@ -2,6 +2,14 @@ import XCTest
 
 // MARK: - Shared UI helpers
 
+/// Launch with a fresh in-memory store and first-run onboarding, so every UI
+/// test starts from the same state regardless of order or earlier runs.
+@MainActor
+func launchFresh(_ app: XCUIApplication) {
+    app.launchArguments += ["-lorito-ui-testing"]
+    app.launch()
+}
+
 /// Dismiss any system alert (notification permission, etc.) that may block the UI.
 @MainActor
 func dismissSystemAlerts(_ app: XCUIApplication) {
@@ -62,7 +70,7 @@ final class ScreenshotUITests: XCTestCase {
         }
         let app = XCUIApplication()
         setupSnapshot(app)
-        app.launch()
+        launchFresh(app)
     }
 
     func testCaptureScreens() {
@@ -135,7 +143,7 @@ final class PracticeFlowUITests: XCTestCase {
 
     func testPracticeFlow() throws {
         let app = XCUIApplication()
-        app.launch()
+        launchFresh(app)
         dismissSystemAlertIfPresent()
 
         // Complete onboarding if this is a fresh install.
@@ -193,7 +201,7 @@ final class PracticeFlowUITests: XCTestCase {
     /// A1-30) and confirms its labels + images render from the bundle.
     func testPictureMatchingRenders() throws {
         let app = XCUIApplication()
-        app.launch()
+        launchFresh(app)
         dismissSystemAlertIfPresent()
         completeOnboardingIfPresent(app)
         dismissSystemAlertIfPresent()
@@ -224,7 +232,7 @@ final class PracticeFlowUITests: XCTestCase {
     /// Opens Settings → «О приложении» and confirms the OpenMoji attribution shows.
     func testAboutScreen() throws {
         let app = XCUIApplication()
-        app.launch()
+        launchFresh(app)
         dismissSystemAlertIfPresent()
         completeOnboardingIfPresent(app)
         dismissSystemAlertIfPresent()
@@ -253,7 +261,7 @@ final class RemindersSettingsUITests: XCTestCase {
 
     func testEnableAddTimeAndPersistAcrossReentry() throws {
         let app = XCUIApplication()
-        app.launch()
+        launchFresh(app)
         dismissSystemAlerts(app)
         completeOnboardingIfPresent(app)   // skip reminders in onboarding; configure here
         dismissSystemAlerts(app)

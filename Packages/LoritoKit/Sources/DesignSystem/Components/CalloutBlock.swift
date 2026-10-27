@@ -1,24 +1,7 @@
 import SwiftUI
+import Domain
 
-/// The four callout kinds used in card bodies.
-public enum CalloutKind: String, CaseIterable, Sendable {
-    case essence      // Суть
-    case keyPoints    // Ключевые моменты
-    case mistakes     // Ошибки
-    case useful       // Полезно
-
-    public var title: String {
-        switch self {
-        case .essence: return "Суть"
-        case .keyPoints: return "Ключевые моменты"
-        case .mistakes: return "Частые ошибки"
-        case .useful: return "Полезно"
-        }
-    }
-
-    /// Суть is the card's key idea and sits on ink; the rest on `surfaceSunken`.
-    var isOnInk: Bool { self == .essence }
-
+extension CalloutKind {
     var titleColor: Color {
         switch self {
         case .essence: return LoritoColor.highlight

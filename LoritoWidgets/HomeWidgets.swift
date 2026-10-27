@@ -86,7 +86,7 @@ struct WordOfDayView: View {
                     .loritoStyle(.label)
                     .foregroundStyle(LoritoColor.dangerText)
                 Spacer()
-                SpanishText(word.spanish, size: .custom(28))
+                SpanishText(word.spanish, size: .custom(28), interactive: false)
                     .minimumScaleFactor(0.6)
                     .lineLimit(2)
                 Text(word.note)

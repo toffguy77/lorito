@@ -26,7 +26,7 @@ private let catalog = ContentCatalog(
     ]
 )
 
-private let today = Calendar.utcDay.date(from: DateComponents(year: 2026, month: 10, day: 27, hour: 12))!
+private let today = Calendar.learningDay(in: TimeZone(identifier: "UTC")!).date(from: DateComponents(year: 2026, month: 10, day: 27, hour: 12))!
 
 @Suite("Progress insights models")
 @MainActor
@@ -52,7 +52,7 @@ struct ProgressInsightsModelTests {
     func weekStrip() {
         let store = MemoryStore()
         store.settings = UserSettings(targetLevel: .a1, selectedThemeIDs: ["a1-1"], dailyNewCardCount: 1)
-        let yesterday = Calendar.utcDay.date(byAdding: .day, value: -1, to: today)!
+        let yesterday = Calendar.learningDay(in: TimeZone(identifier: "UTC")!).date(byAdding: .day, value: -1, to: today)!
         store.events = [StudyEvent(cardID: "A1-01", date: yesterday, grade: "good")]
         let model = TodayModel(store: store, catalog: catalog, today: { today })
         #expect(model.week.count == 7)

@@ -64,7 +64,11 @@ public enum PersistenceController {
     /// `ubiquityIdentityToken`: that reflects iCloud *Drive*, not CloudKit, and is
     /// frequently nil on the Simulator even when signed into iCloud, which would
     /// wrongly drop the app to a local store and never create the CloudKit schema.
-    public static func makeUserContainer(cloudKitEnabled: Bool) -> ModelContainer {
+    /// `inMemory` (UI tests only): a fresh, unsynced store per launch.
+    public static func makeUserContainer(cloudKitEnabled: Bool, inMemory: Bool = false) -> ModelContainer {
+        if inMemory {
+            return try! makeContainer(config: PersistenceConfig(inMemory: true, cloudKitEnabled: false))
+        }
         if cloudKitEnabled {
             if let synced = try? makeContainer(config: PersistenceConfig(cloudKitEnabled: true)) {
                 print("[Lorito] CloudKit sync ENABLED (private DB iCloud.com.toffguy.lorito)")

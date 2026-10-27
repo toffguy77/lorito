@@ -110,9 +110,13 @@ struct StudySessionModelTests {
 
         session.reveal()
         session.grade(.easy)
+        // The Опять card comes back once at the end of the session.
+        #expect(session.currentCard?.id == "A1-01")
+        session.reveal()
+        session.grade(.good)
         #expect(session.isComplete)
         #expect(session.currentCard == nil)
-        #expect(store.events.count == 2)
+        #expect(store.events.count == 3)
     }
 }
 

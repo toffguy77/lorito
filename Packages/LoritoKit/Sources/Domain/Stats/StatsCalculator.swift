@@ -1,15 +1,5 @@
 import Foundation
 
-public extension Calendar {
-    /// The app's day-boundary calendar (UTC gregorian), shared so "today",
-    /// streaks, and "graded today" all agree.
-    static let utcDay: Calendar = {
-        var c = Calendar(identifier: .gregorian)
-        c.timeZone = TimeZone(identifier: "UTC")!
-        return c
-    }()
-}
-
 /// A snapshot of the learner's study habits, derived from the study log.
 public struct StudyStats: Equatable, Sendable {
     public let currentStreak: Int
@@ -36,7 +26,7 @@ public enum StatsCalculator {
     public static func compute(
         events: [StudyEvent],
         today: Date,
-        calendar: Calendar = .utcDay
+        calendar: Calendar = .learningDay
     ) -> StudyStats {
         guard !events.isEmpty else { return .empty }
 
@@ -47,16 +37,18 @@ public enum StatsCalculator {
         let currentStreak = currentStreakLength(dayStarts: dayStarts, today0: today0, calendar: calendar)
         let bestStreak = bestStreakLength(dayStarts: dayStarts, calendar: calendar)
 
-        let studiedToday = events.filter { calendar.isDate($0.date, inSameDayAs: today) }.count
+        // Counts speak about cards; the streak counts any study activity.
+        let cardEvents = events.filter(\.isCard)
+        let studiedToday = cardEvents.filter { calendar.isDate($0.date, inSameDayAs: today) }.count
         let week = calendar.dateInterval(of: .weekOfYear, for: today)
-        let studiedThisWeek = week.map { iv in events.filter { iv.contains($0.date) }.count } ?? 0
+        let studiedThisWeek = week.map { iv in cardEvents.filter { iv.contains($0.date) }.count } ?? 0
 
         return StudyStats(
             currentStreak: currentStreak,
             bestStreak: bestStreak,
             studiedToday: studiedToday,
             studiedThisWeek: studiedThisWeek,
-            studiedAllTime: events.count
+            studiedAllTime: cardEvents.count
         )
     }
 

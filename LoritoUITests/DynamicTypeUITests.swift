@@ -17,7 +17,7 @@ final class DynamicTypeUITests: XCTestCase {
     func testTodayAndSessionAtAX5() {
         let app = XCUIApplication()
         app.launchArguments += ["-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"]
-        app.launch()
+        launchFresh(app)
         dismissSystemAlerts(app)
         completeOnboardingIfPresent(app)
         dismissSystemAlerts(app)

@@ -99,7 +99,8 @@ struct RecallFirstSessionTests {
     func summary() {
         let session = StudySessionModel(store: MemoryStore(), catalog: catalog, queue: ["A1-01", "A1-02", "A1-03"])
         #expect(session.summary == nil)
-        for grade: StudyGrade in [.good, .again, .hard] { session.reveal(); session.grade(grade) }
+        // A1-02 graded Опять returns once at the end; its second grade only logs.
+        for grade: StudyGrade in [.good, .again, .hard, .good] { session.reveal(); session.grade(grade) }
         let summary = session.summary
         #expect(summary?.studied == 3)
         #expect(summary?.firstTryPercent == 33)
@@ -139,5 +140,56 @@ struct TrapOfTheDayTests {
         let store = MemoryStore()
         store.settings = UserSettings(targetLevel: .a1, selectedThemeIDs: ["a1-1"], dailyNewCardCount: 3)
         #expect(TodayModel(store: store, catalog: catalog).trap == nil)
+    }
+}
+
+@Suite("In-session relearn")
+@MainActor
+struct InSessionRelearnTests {
+    private func gradeCurrent(_ s: StudySessionModel, _ g: StudyGrade) { s.reveal(); s.grade(g) }
+
+    @Test("A card graded Опять returns once after the last card, on its front side")
+    func returnsAtTheEnd() {
+        let store = MemoryStore()
+        let s = StudySessionModel(store: store, catalog: catalog, queue: ["A1-01", "A1-02", "A1-03"])
+        gradeCurrent(s, .again)                          // A1-01 → re-queued
+        #expect(s.totalCount == 4)
+        gradeCurrent(s, .good)                           // A1-02
+        gradeCurrent(s, .good)                           // A1-03
+        #expect(s.currentCard?.id == "A1-01")
+        #expect(!s.isRevealed)
+        #expect(!s.isComplete)
+    }
+
+    @Test("Only once: Опять on the re-shown card ends the session; review state unchanged")
+    func onlyOnce() {
+        let store = MemoryStore()
+        let s = StudySessionModel(store: store, catalog: catalog, queue: ["A1-01"])
+        gradeCurrent(s, .again)
+        let stateAfterFirst = store.reviews["A1-01"]
+        #expect(s.currentCard?.id == "A1-01")
+        gradeCurrent(s, .again)
+        #expect(s.isComplete)
+        #expect(store.reviews["A1-01"] == stateAfterFirst)
+        #expect(store.events.filter { $0.cardID == "A1-01" }.count == 2)
+    }
+
+    @Test("Progress counts the re-shown card as an extra step (5/13 → 6/14)")
+    func progress() {
+        let ids = (1...3).map { String(format: "A1-%02d", $0) }
+        let s = StudySessionModel(store: MemoryStore(), catalog: catalog, queue: ids)
+        #expect(s.positionText == "1 / 3")
+        gradeCurrent(s, .again)
+        #expect(s.positionText == "2 / 4")
+        #expect(s.segments.count == 4)
+        #expect(s.segments.first == .missed)
+    }
+
+    @Test("Captions on the re-shown card show the unchanged due date for every grade")
+    func relearnCaptions() {
+        let s = StudySessionModel(store: MemoryStore(), catalog: catalog, queue: ["A1-01"])
+        gradeCurrent(s, .again)                          // Опять → due today
+        s.reveal()
+        #expect(Set(s.captions.values) == ["сегодня"])
     }
 }

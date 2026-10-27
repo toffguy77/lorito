@@ -26,7 +26,7 @@ struct StreakShareCard: View {
                 .font(LoritoTextStyle.bodyStrong.sized(22).font)
                 .foregroundStyle(LoritoColor.onInk)
             Spacer()
-            SpanishText(Self.proverb, size: .custom(26), color: LoritoColor.onInkSecondary)
+            SpanishText(Self.proverb, size: .custom(26), color: LoritoColor.onInkSecondary, interactive: false)
         }
         .padding(36)
         .frame(width: Self.size.width, height: Self.size.height, alignment: .leading)

@@ -2,7 +2,7 @@ import Foundation
 import Testing
 @testable import Domain
 
-private let today = Calendar.utcDay.date(from: DateComponents(year: 2026, month: 10, day: 27, hour: 9))!
+private let today = Calendar.learningDay(in: TimeZone(identifier: "UTC")!).date(from: DateComponents(year: 2026, month: 10, day: 27, hour: 9))!
 
 private func mc(_ id: String, card: String = "A1-07") -> Exercise {
     Exercise(id: id, level: .a1, themeID: "a1-2", card: card, prompt: "Какой артикль? *___ idioma*",
@@ -23,13 +23,13 @@ struct WidgetSnapshotTests {
     @Test("Spec scenario: streak 13, 8 due, 4 new, not studied today")
     func reflectsStats() {
         let s = WidgetSnapshot.make(stats: stats(streak: 13, today: 0), dueToday: 8, newToday: 4,
-                                    trap: nil, trapNote: nil, exercises: [], today: today)
+                                    trap: nil, trapNote: nil, exercises: [], today: today, calendar: Calendar.learningDay(in: TimeZone(identifier: "UTC")!))
         #expect(s.version == WidgetSnapshot.currentVersion)
         #expect(s.currentStreak == 13)
         #expect(s.dueToday == 8 && s.newToday == 4 && s.remainingToday == 12)
         #expect(!s.studiedToday)
         #expect(s.wordOfDay == nil && s.questions.isEmpty)
-        #expect(Calendar.utcDay.isDate(s.day, inSameDayAs: today))
+        #expect(Calendar.learningDay(in: TimeZone(identifier: "UTC")!).isDate(s.day, inSameDayAs: today))
     }
 
     @Test("Studied today once any grade is logged today")
@@ -43,7 +43,7 @@ struct WidgetSnapshotTests {
     func questions() {
         let exercises = (1...6).map { mc(String(format: "A1-EX-%02d", $0)) } + [fill("A1-EX-50")]
         let a = WidgetSnapshot.make(stats: .empty, dueToday: 0, newToday: 0, trap: nil, trapNote: nil,
-                                    exercises: exercises, today: today)
+                                    exercises: exercises, today: today, calendar: Calendar.learningDay(in: TimeZone(identifier: "UTC")!))
         let b = WidgetSnapshot.make(stats: .empty, dueToday: 0, newToday: 0, trap: nil, trapNote: nil,
                                     exercises: exercises.reversed(), today: today)
         #expect(a.questions.count == 3)
@@ -64,7 +64,7 @@ struct WidgetSnapshotTests {
     func wordOfDay() {
         let trap = TrapCandidate(cardID: "A1-07", text: "**Род по переводу**: «проблема» женского рода, но ***el** problema* — мужского.")
         let s = WidgetSnapshot.make(stats: .empty, dueToday: 0, newToday: 0, trap: trap,
-                                    trapNote: "Род существительных", exercises: [], today: today)
+                                    trapNote: "Род существительных", exercises: [], today: today, calendar: Calendar.learningDay(in: TimeZone(identifier: "UTC")!))
         #expect(s.wordOfDay == WidgetSnapshot.WordOfDay(spanish: "el problema", note: "Род существительных", cardID: "A1-07"))
     }
 

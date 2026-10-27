@@ -9,7 +9,7 @@ final class CatalogTabUITests: XCTestCase {
 
     func testCatalogTabNavigates() {
         let app = XCUIApplication()
-        app.launch()
+        launchFresh(app)
         dismissSystemAlerts(app)
         completeOnboardingIfPresent(app)
         dismissSystemAlerts(app)

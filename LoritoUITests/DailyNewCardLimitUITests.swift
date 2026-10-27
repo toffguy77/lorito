@@ -1,16 +1,14 @@
 import XCTest
 
-/// Runs last (ZZ prefix): it consumes the day's only new card, which other
-/// UI tests need for their study-session steps.
 /// Regression for 1.5.0: after the day's new card is graded, Today must show
 /// the all-done state instead of offering another new card.
 @MainActor
-final class ZZDailyNewCardLimitUITests: XCTestCase {
+final class DailyNewCardLimitUITests: XCTestCase {
     override func setUpWithError() throws { continueAfterFailure = false }
 
     func testFinishingTheNewCardShowsAllDone() throws {
         let app = XCUIApplication()
-        app.launch()
+        launchFresh(app)
         dismissSystemAlerts(app)
         completeOnboardingIfPresent(app)
         dismissSystemAlerts(app)

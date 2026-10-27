@@ -2,7 +2,7 @@ import Foundation
 import Testing
 @testable import Domain
 
-private let cal = Calendar.utcDay
+private let cal = Calendar.learningDay(in: TimeZone(identifier: "UTC")!)
 
 private func at(_ y: Int, _ m: Int, _ d: Int, _ h: Int = 12, _ min: Int = 0) -> Date {
     cal.date(from: DateComponents(year: y, month: m, day: d, hour: h, minute: min))!
@@ -18,7 +18,7 @@ private let today = at(2026, 10, 27)
 struct DailyActivityTests {
     @Test("84 entries, oldest first, last is today")
     func lengthAndOrder() {
-        let series = StatsCalculator.dailyActivity(events: [], days: 84, today: today)
+        let series = StatsCalculator.dailyActivity(events: [], days: 84, today: today, calendar: cal)
         #expect(series.count == 84)
         #expect(cal.isDate(series.last!.day, inSameDayAs: today))
         #expect(cal.dateComponents([.day], from: series.first!.day, to: cal.startOfDay(for: today)).day == 83)
@@ -30,7 +30,7 @@ struct DailyActivityTests {
         let events = [graded(today), graded(today), graded(at(2026, 10, 25)),
                       StudyEvent(cardID: "A1-02", date: today, grade: nil),   // not a grade
                       graded(at(2026, 1, 1))]                                  // outside window
-        let series = StatsCalculator.dailyActivity(events: events, days: 84, today: today)
+        let series = StatsCalculator.dailyActivity(events: events, days: 84, today: today, calendar: cal)
         #expect(series[83].count == 2)
         #expect(series[82].count == 0)
         #expect(series[81].count == 1)
@@ -41,10 +41,10 @@ struct DailyActivityTests {
     func midnightBoundary() {
         let lateYesterday = at(2026, 10, 26, 23, 59)
         let events = [graded(lateYesterday)]
-        let series = StatsCalculator.dailyActivity(events: events, days: 7, today: today)
+        let series = StatsCalculator.dailyActivity(events: events, days: 7, today: today, calendar: cal)
         #expect(series[5].count == 1)   // yesterday
         #expect(series[6].count == 0)   // today
-        let stats = StatsCalculator.compute(events: events, today: today)
+        let stats = StatsCalculator.compute(events: events, today: today, calendar: cal)
         #expect(stats.currentStreak == 1)  // the streak also places it yesterday
     }
 }

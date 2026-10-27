@@ -15,17 +15,18 @@ public struct TrapCandidate: Sendable, Hashable {
 public enum DailyTrap {
     /// Prefers candidates the user has studied; index = stableHash(yyyy-MM-dd)
     /// mod count over candidates sorted by card id. Nil when there are none.
-    public static func pick(candidates: [TrapCandidate], studiedIDs: Set<String>, day: Date) -> TrapCandidate? {
+    public static func pick(candidates: [TrapCandidate], studiedIDs: Set<String>, day: Date,
+                            calendar: Calendar = .learningDay) -> TrapCandidate? {
         let studied = candidates.filter { studiedIDs.contains($0.cardID) }
         let pool = (studied.isEmpty ? candidates : studied).sorted { $0.cardID < $1.cardID }
         guard !pool.isEmpty else { return nil }
-        let index = Int(stableHash(dayKey(day)) % UInt64(pool.count))
+        let index = Int(stableHash(dayKey(day, calendar: calendar)) % UInt64(pool.count))
         return pool[index]
     }
 
-    /// "yyyy-MM-dd" in UTC — the same day calendar as the daily plan.
-    static func dayKey(_ day: Date) -> String {
-        let c = Calendar.utcDay.dateComponents([.year, .month, .day], from: day)
+    /// "yyyy-MM-dd" of the learning day — the same day calendar as the daily plan.
+    static func dayKey(_ day: Date, calendar: Calendar = .learningDay) -> String {
+        let c = calendar.dateComponents([.year, .month, .day], from: day)
         return String(format: "%04d-%02d-%02d", c.year ?? 0, c.month ?? 0, c.day ?? 0)
     }
 

@@ -2,7 +2,7 @@ import Testing
 import Foundation
 @testable import Domain
 
-private let cal = Calendar.utcDay
+private let cal = Calendar.learningDay(in: TimeZone(identifier: "UTC")!)
 private func day(_ y: Int, _ m: Int, _ d: Int, _ h: Int = 12) -> Date {
     cal.date(from: DateComponents(year: y, month: m, day: d, hour: h))!
 }

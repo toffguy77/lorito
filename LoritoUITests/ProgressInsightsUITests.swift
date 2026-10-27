@@ -8,7 +8,7 @@ final class ProgressInsightsUITests: XCTestCase {
 
     func testGradingMarksTodayInStripAndHeatmap() throws {
         let app = XCUIApplication()
-        app.launch()
+        launchFresh(app)
         dismissSystemAlerts(app)
         completeOnboardingIfPresent(app)
         dismissSystemAlerts(app)

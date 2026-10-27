@@ -1,3 +1,4 @@
+import Domain
 import SwiftUI
 import MarkdownUI
 
@@ -25,23 +26,33 @@ public struct CardBodyView: View {
         self.tone = tone
     }
 
+    @Environment(\.spanishSpanActions) private var spanActions
+
     public var body: some View {
-        Markdown(markdown)
-            .markdownTheme(.lorito(tone: tone, bodySize: bodySize, spanishSize: spanishSize))
+        Markdown(SpanishSpans.link(markdown))
+            .markdownTheme(MarkdownUI.Theme.lorito(tone: tone, bodySize: bodySize, spanishSize: spanishSize))
+            .tint(tone == .ink ? LoritoColor.highlight : LoritoColor.accent)
             .textSelection(.enabled)
+            // Spanish spans: tap = primary action (no-op until one is registered).
+            .environment(\.openURL, OpenURLAction { url in
+                guard let text = SpanishSpans.text(from: url) else { return .systemAction }
+                spanActions.performPrimary(text)
+                return .handled
+            })
+            .spanishSpanMenu(spans: SpanishSpans.spans(in: markdown), actions: spanActions)
     }
 }
 
-extension Theme {
+extension MarkdownUI.Theme {
     /// The Plumaje Markdown theme.
-    @MainActor static func lorito(tone: CardBodyTone, bodySize: CGFloat, spanishSize: CGFloat) -> Theme {
+    @MainActor static func lorito(tone: CardBodyTone, bodySize: CGFloat, spanishSize: CGFloat) -> MarkdownUI.Theme {
         let text = tone == .ink ? LoritoColor.onInk : LoritoColor.textPrimary
         let secondary = tone == .ink ? LoritoColor.onInkSecondary : LoritoColor.textSecondary
         let spanish = tone == .ink ? LoritoColor.highlight : LoritoColor.accent
         let rule = tone == .ink ? LoritoColor.inkTrack : LoritoColor.separator
         let sunken = tone == .ink ? LoritoColor.inkRaised : LoritoColor.surfaceSunken
 
-        return Theme()
+        return MarkdownUI.Theme()
             .text {
                 FontFamily(.custom(LoritoTextStyle.body.postScriptName))
                 FontSize(bodySize)
@@ -57,7 +68,12 @@ extension Theme {
                 FontFamily(.custom(LoritoTextStyle.bodyStrong.postScriptName))
             }
             .link {
+                // Spanish spans are links: Spanish voice, no underline.
+                FontFamily(.custom(LoritoTextStyle.spanishInline.postScriptName))
+                FontStyle(.normal)
+                FontSize(spanishSize)
                 ForegroundColor(spanish)
+                UnderlineStyle(nil)
             }
             .code {
                 FontFamilyVariant(.monospaced)

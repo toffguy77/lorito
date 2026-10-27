@@ -10,14 +10,17 @@ struct LoritoApp: App {
         FontRegistry.registerAll()
     }
 
+    /// UI tests launch with `-lorito-ui-testing`: in-memory store, onboarding first.
+    private static let uiTesting = CommandLine.arguments.contains("-lorito-ui-testing")
+
     var body: some Scene {
         WindowGroup {
             // `LORITO_CLOUDKIT` is defined only in builds that carry the iCloud
             // entitlement (cloudkit-sync branch). Off elsewhere → local store.
             #if LORITO_CLOUDKIT
-            RootView(cloudKitEnabled: true)
+            RootView(cloudKitEnabled: true, uiTesting: Self.uiTesting)
             #else
-            RootView(cloudKitEnabled: false)
+            RootView(cloudKitEnabled: false, uiTesting: Self.uiTesting)
             #endif
         }
     }

@@ -82,7 +82,7 @@ public struct PracticeAnswerStore {
     public static var shared: PracticeAnswerStore? { AppGroup.defaults.map(PracticeAnswerStore.init(defaults:)) }
 
     private static func key(_ day: Date) -> String {
-        let c = Calendar.utcDay.dateComponents([.year, .month, .day], from: day)
+        let c = Calendar.learningDay.dateComponents([.year, .month, .day], from: day)
         return "\(c.year ?? 0)-\(c.month ?? 0)-\(c.day ?? 0)"
     }
 

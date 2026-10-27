@@ -21,21 +21,21 @@ struct SchedulerTests {
     @Test("Same inputs produce identical output")
     func deterministic() {
         let s = ReviewState(cardID: "X", interval: 10, repetitions: 2, status: .review)
-        let a = SpacedRepetitionScheduler.schedule(state: s, grade: .good, today: today)
-        let b = SpacedRepetitionScheduler.schedule(state: s, grade: .good, today: today)
+        let a = SpacedRepetitionScheduler.schedule(state: s, grade: .good, today: today, calendar: Calendar.learningDay(in: TimeZone(identifier: "UTC")!))
+        let b = SpacedRepetitionScheduler.schedule(state: s, grade: .good, today: today, calendar: Calendar.learningDay(in: TimeZone(identifier: "UTC")!))
         #expect(a == b)
     }
 
     @Test("Grade is recorded as lastGrade")
     func recordsGrade() {
         let s = ReviewState(cardID: "X")
-        #expect(SpacedRepetitionScheduler.schedule(state: s, grade: .easy, today: today).lastGrade == "easy")
+        #expect(SpacedRepetitionScheduler.schedule(state: s, grade: .easy, today: today, calendar: Calendar.learningDay(in: TimeZone(identifier: "UTC")!)).lastGrade == "easy")
     }
 
     @Test("New + good: reps 1, leaves new, short interval")
     func newGood() {
         let s = ReviewState(cardID: "X", status: .new)
-        let r = SpacedRepetitionScheduler.schedule(state: s, grade: .good, today: today)
+        let r = SpacedRepetitionScheduler.schedule(state: s, grade: .good, today: today, calendar: Calendar.learningDay(in: TimeZone(identifier: "UTC")!))
         #expect(r.repetitions == 1)
         #expect(r.status != .new)
         #expect(r.interval >= 1 && r.interval <= 2)
@@ -44,15 +44,15 @@ struct SchedulerTests {
     @Test("New + easy interval exceeds new + good")
     func newEasyLongerThanGood() {
         let s = ReviewState(cardID: "X", status: .new)
-        let good = SpacedRepetitionScheduler.schedule(state: s, grade: .good, today: today)
-        let easy = SpacedRepetitionScheduler.schedule(state: s, grade: .easy, today: today)
+        let good = SpacedRepetitionScheduler.schedule(state: s, grade: .good, today: today, calendar: Calendar.learningDay(in: TimeZone(identifier: "UTC")!))
+        let easy = SpacedRepetitionScheduler.schedule(state: s, grade: .easy, today: today, calendar: Calendar.learningDay(in: TimeZone(identifier: "UTC")!))
         #expect(easy.interval > good.interval)
     }
 
     @Test("New + again enters relearning")
     func newAgain() {
         let s = ReviewState(cardID: "X", status: .new)
-        let r = SpacedRepetitionScheduler.schedule(state: s, grade: .again, today: today)
+        let r = SpacedRepetitionScheduler.schedule(state: s, grade: .again, today: today, calendar: Calendar.learningDay(in: TimeZone(identifier: "UTC")!))
         #expect(r.status == .learning)
         #expect(r.repetitions == 0)
     }
@@ -60,7 +60,7 @@ struct SchedulerTests {
     @Test("Again on a review card resets and lowers ease")
     func againLapses() {
         let s = ReviewState(cardID: "X", easeFactor: 2.5, interval: 20, repetitions: 4, status: .review)
-        let r = SpacedRepetitionScheduler.schedule(state: s, grade: .again, today: today)
+        let r = SpacedRepetitionScheduler.schedule(state: s, grade: .again, today: today, calendar: Calendar.learningDay(in: TimeZone(identifier: "UTC")!))
         #expect(r.repetitions == 0)
         #expect(r.status == .learning)
         #expect(r.easeFactor < 2.5)
@@ -71,7 +71,7 @@ struct SchedulerTests {
     func easeFloor() {
         var s = ReviewState(cardID: "X", easeFactor: 1.4, interval: 5, repetitions: 3, status: .review)
         for _ in 0..<10 {
-            s = SpacedRepetitionScheduler.schedule(state: s, grade: .again, today: today)
+            s = SpacedRepetitionScheduler.schedule(state: s, grade: .again, today: today, calendar: Calendar.learningDay(in: TimeZone(identifier: "UTC")!))
         }
         #expect(s.easeFactor >= 1.3)
     }
@@ -79,7 +79,7 @@ struct SchedulerTests {
     @Test("Learning graduates to review on good")
     func learningGraduates() {
         let s = ReviewState(cardID: "X", interval: 1, repetitions: 1, status: .learning)
-        let r = SpacedRepetitionScheduler.schedule(state: s, grade: .good, today: today)
+        let r = SpacedRepetitionScheduler.schedule(state: s, grade: .good, today: today, calendar: Calendar.learningDay(in: TimeZone(identifier: "UTC")!))
         #expect(r.status == .review)
         #expect(r.repetitions == 2)
     }
@@ -88,14 +88,14 @@ struct SchedulerTests {
     func learningNeverNew() {
         let s = ReviewState(cardID: "X", interval: 1, repetitions: 1, status: .learning)
         for g in Grade.allCases {
-            #expect(SpacedRepetitionScheduler.schedule(state: s, grade: g, today: today).status != .new)
+            #expect(SpacedRepetitionScheduler.schedule(state: s, grade: g, today: today, calendar: Calendar.learningDay(in: TimeZone(identifier: "UTC")!)).status != .new)
         }
     }
 
     @Test("Review + good multiplies interval by ease and increments reps")
     func reviewGood() {
         let s = ReviewState(cardID: "X", easeFactor: 2.5, interval: 10, repetitions: 3, status: .review)
-        let r = SpacedRepetitionScheduler.schedule(state: s, grade: .good, today: today)
+        let r = SpacedRepetitionScheduler.schedule(state: s, grade: .good, today: today, calendar: Calendar.learningDay(in: TimeZone(identifier: "UTC")!))
         #expect(r.interval == 25)              // 10 * 2.5
         #expect(r.repetitions == 4)
         #expect(r.easeFactor == 2.5)           // good does not decrease ease
@@ -105,9 +105,9 @@ struct SchedulerTests {
     @Test("Hard < good interval and lowers ease; easy > good and raises ease")
     func hardEasyVsGood() {
         let s = ReviewState(cardID: "X", easeFactor: 2.5, interval: 10, repetitions: 3, status: .review)
-        let good = SpacedRepetitionScheduler.schedule(state: s, grade: .good, today: today)
-        let hard = SpacedRepetitionScheduler.schedule(state: s, grade: .hard, today: today)
-        let easy = SpacedRepetitionScheduler.schedule(state: s, grade: .easy, today: today)
+        let good = SpacedRepetitionScheduler.schedule(state: s, grade: .good, today: today, calendar: Calendar.learningDay(in: TimeZone(identifier: "UTC")!))
+        let hard = SpacedRepetitionScheduler.schedule(state: s, grade: .hard, today: today, calendar: Calendar.learningDay(in: TimeZone(identifier: "UTC")!))
+        let easy = SpacedRepetitionScheduler.schedule(state: s, grade: .easy, today: today, calendar: Calendar.learningDay(in: TimeZone(identifier: "UTC")!))
         #expect(hard.interval < good.interval)
         #expect(hard.easeFactor < s.easeFactor)
         #expect(easy.interval > good.interval)
@@ -119,22 +119,22 @@ struct SchedulerTests {
         let s = ReviewState(cardID: "X", easeFactor: 2.0, interval: 7, repetitions: 2,
                             dueDate: day(2026, 1, 5), lastGrade: "good", status: .suspended)
         for g in Grade.allCases {
-            #expect(SpacedRepetitionScheduler.schedule(state: s, grade: g, today: today) == s)
+            #expect(SpacedRepetitionScheduler.schedule(state: s, grade: g, today: today, calendar: Calendar.learningDay(in: TimeZone(identifier: "UTC")!)) == s)
         }
     }
 
     @Test("DueDate = today + interval (whole days)")
     func dueDateMath() {
         let s = ReviewState(cardID: "X", easeFactor: 2.5, interval: 10, repetitions: 1, status: .review)
-        let r = SpacedRepetitionScheduler.schedule(state: s, grade: .good, today: today)
+        let r = SpacedRepetitionScheduler.schedule(state: s, grade: .good, today: today, calendar: Calendar.learningDay(in: TimeZone(identifier: "UTC")!))
         #expect(r.dueDate == day(2026, 1, 26))  // Jan 1 + 25
     }
 
     @Test("Clock injection shifts dueDate by the today difference")
     func clockInjection() {
         let s = ReviewState(cardID: "X", easeFactor: 2.5, interval: 10, repetitions: 1, status: .review)
-        let r1 = SpacedRepetitionScheduler.schedule(state: s, grade: .good, today: day(2026, 1, 1))
-        let r2 = SpacedRepetitionScheduler.schedule(state: s, grade: .good, today: day(2026, 1, 8))
+        let r1 = SpacedRepetitionScheduler.schedule(state: s, grade: .good, today: day(2026, 1, 1), calendar: Calendar.learningDay(in: TimeZone(identifier: "UTC")!))
+        let r2 = SpacedRepetitionScheduler.schedule(state: s, grade: .good, today: day(2026, 1, 8), calendar: Calendar.learningDay(in: TimeZone(identifier: "UTC")!))
         #expect(daysBetween(r1.dueDate, r2.dueDate) == 7)
     }
 }

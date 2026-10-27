@@ -73,7 +73,7 @@ public final class TodayModel {
             DailyPlanRequest(cards: catalog.cards, reviews: reviews, settings: settings, today: today, events: events)
         )
         let gradedToday = Set(
-            events.filter { $0.grade != nil && StudyDay.isSameDay($0.date, today) }.map(\.cardID)
+            events.filter { $0.grade != nil && $0.isCard && StudyDay.isSameDay($0.date, today) }.map(\.cardID)
         )
         remaining = plan.queue.filter { !gradedToday.contains($0.cardID) }
         dueRemaining = remaining.filter { $0.kind == .due }.count
@@ -91,7 +91,7 @@ public final class TodayModel {
     private static func weekStrip(events: [StudyEvent], today: Date) -> [WeekDay] {
         let series = StatsCalculator.dailyActivity(events: events, days: 7, today: today)
         return series.enumerated().map { i, entry in
-            let weekday = Calendar.utcDay.component(.weekday, from: entry.day)
+            let weekday = Calendar.learningDay.component(.weekday, from: entry.day)
             return WeekDay(day: entry.day, label: weekdayLabels[weekday - 1],
                            studied: entry.count > 0, isToday: i == series.count - 1)
         }

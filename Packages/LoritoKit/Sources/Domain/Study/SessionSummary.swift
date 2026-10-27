@@ -28,6 +28,8 @@ public struct SessionSummary: Sendable, Equatable {
     public static func make(grades: [SessionGrade], cardsByID: [String: Card], stats: StudyStats) -> SessionSummary {
         var firstGrade: [String: Grade] = [:]
         var order: [String] = []
+        // Only grammar cards are counted (drills have their own summaries).
+        let grades = grades.filter { ItemKind.parse($0.cardID) == .card }
         for g in grades where firstGrade[g.cardID] == nil {
             firstGrade[g.cardID] = g.grade
             order.append(g.cardID)

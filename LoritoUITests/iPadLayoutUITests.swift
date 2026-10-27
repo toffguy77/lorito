@@ -11,7 +11,7 @@ final class iPadLayoutUITests: XCTestCase {
         guard UIDevice.current.userInterfaceIdiom == .pad else { throw XCTSkip("iPad only") }
         XCUIDevice.shared.orientation = .landscapeLeft
         app = XCUIApplication()
-        app.launch()
+        launchFresh(app)
         dismissSystemAlerts(app)
         completeOnboardingIfPresent(app)
         dismissSystemAlerts(app)

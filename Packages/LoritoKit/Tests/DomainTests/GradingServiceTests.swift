@@ -47,3 +47,42 @@ struct GradingServiceTests {
         #expect(try store.review(for: "A1-15")?.interval == 25)
     }
 }
+
+@Suite("First grade per learning day updates memory")
+struct FirstGradePerDayTests {
+    let cal = Calendar.learningDay(in: TimeZone(identifier: "UTC")!)
+    let morning = day(2026, 6, 23).addingTimeInterval(9 * 3600)
+
+    @Test("Later grades the same day are logged but leave the review state unchanged")
+    func sameDay() throws {
+        let store = FakeStore()
+        let grading = GradingService(store: store, calendar: cal)
+        let first = try grading.grade(cardID: "A1-01", grade: .good, today: morning)
+        let second = try grading.grade(cardID: "A1-01", grade: .again, today: morning.addingTimeInterval(3600))
+        #expect(second == first)
+        #expect(store.reviews["A1-01"] == first)
+        #expect(store.events.map(\.grade) == ["good", "again"])
+    }
+
+    @Test("Spec: Хорошо in the session + three correct exercises → state changes once, four events")
+    func sessionThenExercises() throws {
+        let store = FakeStore()
+        let grading = GradingService(store: store, calendar: cal)
+        let afterSession = try grading.grade(cardID: "A1-07", grade: .good, today: morning)
+        for i in 1...3 {
+            _ = try grading.grade(cardID: "A1-07", grade: .good, today: morning.addingTimeInterval(Double(i) * 600))
+        }
+        #expect(store.reviews["A1-07"] == afterSession)
+        #expect(store.events.filter { $0.cardID == "A1-07" }.count == 4)
+    }
+
+    @Test("The next learning day updates again")
+    func nextDay() throws {
+        let store = FakeStore()
+        let grading = GradingService(store: store, calendar: cal)
+        let first = try grading.grade(cardID: "A1-01", grade: .good, today: morning)
+        let next = try grading.grade(cardID: "A1-01", grade: .good, today: morning.addingTimeInterval(86_400))
+        #expect(next != first)
+        #expect(next.repetitions == first.repetitions + 1)
+    }
+}

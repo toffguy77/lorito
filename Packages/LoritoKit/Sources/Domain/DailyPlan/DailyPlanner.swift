@@ -72,6 +72,8 @@ public struct DailyPlanRequest: Sendable {
     public var maxReviewsPerDay: Int
     /// The study log; cards first graded today count against `dailyNewCardCount`.
     public var events: [StudyEvent]
+    /// The learning-day calendar (local time zone; injected for tests).
+    public var calendar: Calendar
 
     public init(
         cards: [Card],
@@ -79,7 +81,8 @@ public struct DailyPlanRequest: Sendable {
         settings: UserSettings,
         today: Date,
         maxReviewsPerDay: Int = DailyPlanner.defaultMaxReviewsPerDay,
-        events: [StudyEvent] = []
+        events: [StudyEvent] = [],
+        calendar: Calendar = .learningDay
     ) {
         self.cards = cards
         self.reviews = reviews
@@ -87,6 +90,7 @@ public struct DailyPlanRequest: Sendable {
         self.today = today
         self.maxReviewsPerDay = maxReviewsPerDay
         self.events = events
+        self.calendar = calendar
     }
 }
 
@@ -146,8 +150,10 @@ public enum DailyPlanner {
         request: DailyPlanRequest,
         reviewsByID: [String: ReviewState]
     ) -> [String] {
+        // Only grammar cards are planned here; other kinds have their own planners
+        // and unknown ids never enter a queue.
         let due = request.reviews
-            .filter { DueSelection.isDue($0, on: request.today) }
+            .filter { $0.kind == .card && DueSelection.isDue($0, on: request.today, calendar: request.calendar) }
             .sorted { lhs, rhs in
                 if lhs.dueDate != rhs.dueDate { return lhs.dueDate < rhs.dueDate }
                 return lhs.cardID < rhs.cardID
@@ -189,8 +195,10 @@ public enum DailyPlanner {
             }
         let scopeExhausted = eligible.isEmpty
 
-        let introducedEarlierToday = IntroductionLedger(events: request.events, day: request.today).count
-        let limit = max(0, settings.dailyNewCardCount - introducedEarlierToday)
+        // Remaining card allowance: dailyNewCardCount minus cards introduced
+        // today, within the combined daily budget.
+        let ledger = IntroductionLedger(events: request.events, day: request.today, calendar: request.calendar)
+        let limit = DailyBudget.standard(settings: settings).allowances(introducedToday: ledger.countsByKind)[.card] ?? 0
         guard limit > 0, !eligible.isEmpty else {
             return ([], scopeExhausted)
         }

@@ -2,7 +2,7 @@ import Foundation
 import Domain
 
 /// What a widget shows at a given moment, derived from the last snapshot.
-/// Uses the app's day boundary (`Calendar.utcDay`) so widgets agree with the
+/// Uses the learning day (`Calendar.learningDay`) so widgets agree with the
 /// app; when the day has moved on since the snapshot, today's counts are
 /// unknown and the streak is kept only if the snapshot day was studied.
 public struct WidgetDayState: Equatable, Sendable {
@@ -20,8 +20,8 @@ public struct WidgetDayState: Equatable, Sendable {
         self.streakAtRisk = streakAtRisk
     }
 
-    public static func make(snapshot: WidgetSnapshot, now: Date) -> WidgetDayState {
-        let cal = Calendar.utcDay
+    public static func make(snapshot: WidgetSnapshot, now: Date, calendar: Calendar = .learningDay) -> WidgetDayState {
+        let cal = calendar
         let days = cal.dateComponents([.day], from: cal.startOfDay(for: snapshot.day), to: cal.startOfDay(for: now)).day ?? 0
         if days <= 0 {
             return WidgetDayState(streak: snapshot.currentStreak, studiedToday: snapshot.studiedToday,
@@ -33,12 +33,10 @@ public struct WidgetDayState: Equatable, Sendable {
         return WidgetDayState(streak: streak, studiedToday: false, remainingToday: nil, streakAtRisk: streak > 0)
     }
 
-    /// Timeline refresh points: the next local midnight and the next app day
-    /// (UTC) start, whichever come first, sorted.
-    public static func nextRefreshDates(after now: Date, localCalendar: Calendar = .current) -> [Date] {
-        let local = localCalendar.nextDate(after: now, matching: DateComponents(hour: 0, minute: 0, second: 0),
-                                           matchingPolicy: .nextTime)
-        let utc = Calendar.utcDay.date(byAdding: .day, value: 1, to: Calendar.utcDay.startOfDay(for: now))
-        return Array(Set([local, utc].compactMap { $0 })).filter { $0 > now }.sorted()
+    /// Timeline refresh point: the next learning-day boundary (local midnight).
+    public static func nextRefreshDates(after now: Date, calendar: Calendar = .learningDay) -> [Date] {
+        let next = calendar.nextDate(after: now, matching: DateComponents(hour: 0, minute: 0, second: 0),
+                                     matchingPolicy: .nextTime)
+        return [next].compactMap { $0 }.filter { $0 > now }
     }
 }

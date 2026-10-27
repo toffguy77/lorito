@@ -1,3 +1,4 @@
+import Domain
 import SwiftUI
 
 /// Developer-facing gallery that renders every design-system component in the

@@ -41,7 +41,7 @@ public extension StatsCalculator {
         events: [StudyEvent],
         days: Int,
         today: Date,
-        calendar: Calendar = .utcDay
+        calendar: Calendar = .learningDay
     ) -> [DailyActivity] {
         guard days > 0 else { return [] }
         let today0 = calendar.startOfDay(for: today)

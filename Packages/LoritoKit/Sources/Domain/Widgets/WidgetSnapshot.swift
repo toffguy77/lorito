@@ -39,7 +39,7 @@ public struct WidgetSnapshot: Codable, Sendable, Equatable {
 
     public let version: Int
     public let generatedAt: Date
-    /// Start of the day (UTC day calendar) the snapshot describes.
+    /// Start of the learning day the snapshot describes.
     public let day: Date
     public let currentStreak: Int
     public let studiedToday: Bool
@@ -73,7 +73,8 @@ public struct WidgetSnapshot: Codable, Sendable, Equatable {
         trap: TrapCandidate?,
         trapNote: String?,
         exercises: [Exercise],
-        today: Date
+        today: Date,
+        calendar: Calendar = .learningDay
     ) -> WidgetSnapshot {
         let word = trap.flatMap { trap in
             spanishPhrase(inMarkdown: trap.text).map {
@@ -82,26 +83,26 @@ public struct WidgetSnapshot: Codable, Sendable, Equatable {
         }
         return WidgetSnapshot(
             generatedAt: today,
-            day: Calendar.utcDay.startOfDay(for: today),
+            day: calendar.startOfDay(for: today),
             currentStreak: stats.currentStreak,
             studiedToday: stats.studiedToday > 0,
             dueToday: dueToday,
             newToday: newToday,
             remainingToday: dueToday + newToday,
             wordOfDay: word,
-            questions: questions(from: exercises, day: today)
+            questions: questions(from: exercises, day: today, calendar: calendar)
         )
     }
 
     /// Up to three multiple-choice questions, a stable window per day over the
     /// exercises sorted by id.
-    static func questions(from exercises: [Exercise], day: Date) -> [Question] {
+    static func questions(from exercises: [Exercise], day: Date, calendar: Calendar = .learningDay) -> [Question] {
         let pool: [Question] = exercises.sorted { $0.id < $1.id }.compactMap { ex in
             guard case let .multipleChoice(options, answer) = ex.kind else { return nil }
             return Question(id: ex.id, prompt: ex.prompt, options: options, answer: answer, cardID: ex.cardID)
         }
         guard !pool.isEmpty else { return [] }
-        let start = Int(DailyTrap.stableHash(DailyTrap.dayKey(day)) % UInt64(pool.count))
+        let start = Int(DailyTrap.stableHash(DailyTrap.dayKey(day, calendar: calendar)) % UInt64(pool.count))
         return (0..<min(maxQuestions, pool.count)).map { pool[(start + $0) % pool.count] }
     }
 

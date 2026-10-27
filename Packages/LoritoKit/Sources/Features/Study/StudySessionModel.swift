@@ -15,7 +15,10 @@ public final class StudySessionModel {
     private let store: UserDataStore
     private let grading: GradingService
     private let catalog: ContentCatalog
-    private let queue: [String]
+    /// The session's cards; a card graded Опять is appended once (relearn).
+    private var queue: [String]
+    /// Cards already re-queued this session (each at most once).
+    private var relearned: Set<String> = []
     /// The session's "today", injected into previews and grading.
     let today: Date
 
@@ -97,28 +100,46 @@ public final class StudySessionModel {
     func makeCatalogModel() -> CatalogModel { CatalogModel(store: store, catalog: catalog) }
 
     /// Interval preview per grade for the current card (read-only).
-    public var captions: [StudyGrade: String] {
-        preview { IntervalPreview.captions(for: $0, today: today) }
-    }
+    public var captions: [StudyGrade: String] { preview(IntervalPreview.format(days:)) }
 
     /// VoiceOver form of the captions ("через 3 дня").
-    public var spokenCaptions: [StudyGrade: String] {
-        preview { IntervalPreview.spokenCaptions(for: $0, today: today) }
-    }
+    public var spokenCaptions: [StudyGrade: String] { preview(IntervalPreview.spoken(days:)) }
 
-    private func preview(_ make: (ReviewState?) -> [Grade: String]) -> [StudyGrade: String] {
+    private func preview(_ format: (Int) -> String) -> [StudyGrade: String] {
         guard let id = currentCard?.id else { return [:] }
         let state = try? store.review(for: id)
-        return Dictionary(uniqueKeysWithValues: make(state).map { ($0.key.studyGrade, $0.value) })
+        // A re-shown card's second grade doesn't reschedule it (first grade per
+        // day), so every button truthfully shows the unchanged due date.
+        if isRelearnPass, let state {
+            let cal = Calendar.learningDay
+            let days = cal.dateComponents([.day], from: cal.startOfDay(for: today),
+                                          to: cal.startOfDay(for: state.dueDate)).day ?? 0
+            let caption = format(max(0, days))
+            return Dictionary(uniqueKeysWithValues: StudyGrade.allCases.map { ($0, caption) })
+        }
+        let intervals = IntervalPreview.intervals(for: state, today: today)
+        return Dictionary(uniqueKeysWithValues: intervals.map { ($0.key.studyGrade, format($0.value)) })
+    }
+
+    /// The current card is the re-shown copy of a card graded Опять earlier.
+    private var isRelearnPass: Bool {
+        guard index < queue.count else { return false }
+        return relearned.contains(queue[index]) && queue[..<index].contains(queue[index])
     }
 
     /// Apply a grade to the current (revealed) card and advance. No-op on the
     /// front side.
     public func grade(_ grade: StudyGrade) {
         guard index < queue.count, isRevealed else { return }
-        _ = try? grading.grade(cardID: queue[index], grade: grade.domain, today: today)
+        let cardID = queue[index]
+        _ = try? grading.grade(cardID: cardID, grade: grade.domain, today: today)
         grades.append(grade)
-        sessionGrades.append(SessionGrade(cardID: queue[index], grade: grade.domain))
+        sessionGrades.append(SessionGrade(cardID: cardID, grade: grade.domain))
+        // In-session relearn: an Опять card comes back once at the end.
+        if grade == .again, !relearned.contains(cardID) {
+            relearned.insert(cardID)
+            queue.append(cardID)
+        }
         index += 1
         isRevealed = false
         if isComplete { summary = makeSummary() }

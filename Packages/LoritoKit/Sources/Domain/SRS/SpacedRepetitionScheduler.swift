@@ -4,14 +4,9 @@ import Foundation
 /// injected "today", returns the next review state. No I/O, no ambient clock.
 public enum SpacedRepetitionScheduler {
 
-    /// A fixed calendar so day math is deterministic regardless of host timezone.
-    private static var calendar: Calendar {
-        var cal = Calendar(identifier: .gregorian)
-        cal.timeZone = TimeZone(identifier: "UTC")!
-        return cal
-    }
-
-    public static func schedule(state: ReviewState, grade: Grade, today: Date) -> ReviewState {
+    /// `calendar` is the learning day (injected for tests).
+    public static func schedule(state: ReviewState, grade: Grade, today: Date,
+                                calendar: Calendar = .learningDay) -> ReviewState {
         // Suspended cards are excluded from scheduling: applying a grade is a no-op.
         guard state.status != .suspended else { return state }
 
@@ -83,14 +78,14 @@ public enum SpacedRepetitionScheduler {
             easeFactor: ease,
             interval: interval,
             repetitions: reps,
-            dueDate: dueDate(from: today, interval: interval),
+            dueDate: dueDate(from: today, interval: interval, calendar: calendar),
             lastGrade: grade.rawValue,
             status: status
         )
     }
 
     /// "today" advanced by `interval` whole days.
-    public static func dueDate(from today: Date, interval: Int) -> Date {
+    public static func dueDate(from today: Date, interval: Int, calendar: Calendar = .learningDay) -> Date {
         let start = calendar.startOfDay(for: today)
         return calendar.date(byAdding: .day, value: interval, to: start) ?? start
     }
