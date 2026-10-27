@@ -10,14 +10,17 @@ public struct SettingsView: View {
     @State private var model: ScopeSelectionModel
     private let reminders: ReminderService?
     private let audio: AudioSettingsModel?
+    private let retention: RetentionSettingsModel?
     private let hasSpanishVoice: Bool
     @Environment(\.loritoUITesting) private var uiTesting
 
     public init(model: ScopeSelectionModel, reminders: ReminderService? = nil,
-                audio: AudioSettingsModel? = nil, hasSpanishVoice: Bool = true) {
+                audio: AudioSettingsModel? = nil, retention: RetentionSettingsModel? = nil,
+                hasSpanishVoice: Bool = true) {
         _model = State(initialValue: model)
         self.reminders = reminders
         self.audio = audio
+        self.retention = retention
         self.hasSpanishVoice = hasSpanishVoice
     }
 
@@ -39,6 +42,8 @@ public struct SettingsView: View {
                     settingsRow("О приложении", systemImage: "info.circle")
                 }
                 .buttonStyle(.plain)
+
+                if let retention { retentionSection(retention) }
 
                 if let audio { soundSection(audio) }
 
@@ -106,6 +111,29 @@ public struct SettingsView: View {
                 .loritoStyle(.label)
                 .foregroundStyle(LoritoColor.textSecondary)
             content()
+        }
+    }
+
+    /// «Повторение»: FSRS desired retention.
+    private func retentionSection(_ retention: RetentionSettingsModel) -> some View {
+        @Bindable var retention = retention
+        return section("Повторение") {
+            VStack(alignment: .leading, spacing: LoritoSpacing.sm) {
+                Text("Целевая запоминаемость")
+                    .font(LoritoFont.bodyStrong)
+                    .foregroundStyle(LoritoColor.textPrimary)
+                Picker("Целевая запоминаемость", selection: $retention.percent) {
+                    ForEach(RetentionSettingsModel.options, id: \.self) { Text("\($0)%").tag($0) }
+                }
+                .pickerStyle(.segmented)
+                .accessibilityIdentifier("retentionPicker")
+                Text("Выше — повторения чаще, но карточки забываются реже. Меняет только будущие интервалы.")
+                    .font(LoritoFont.caption)
+                    .foregroundStyle(LoritoColor.textSecondary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            .padding(LoritoSpacing.md)
+            .background(LoritoColor.surfaceRaised, in: RoundedRectangle(cornerRadius: LoritoRadius.md, style: .continuous))
         }
     }
 

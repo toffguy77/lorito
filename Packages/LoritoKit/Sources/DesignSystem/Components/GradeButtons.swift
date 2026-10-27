@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// The four SM-2 self-grades.
+/// The four self-grades (FSRS ratings 1–4).
 public enum StudyGrade: String, CaseIterable, Sendable {
     case again   // Опять
     case hard    // Трудно
@@ -75,7 +75,7 @@ public struct GradeButtonItem: Equatable, Sendable {
     }
 }
 
-/// A row of the four SM-2 grade buttons, each with an optional caption line
+/// A row of the four grade buttons, each with an optional caption line
 /// (e.g. the interval preview supplied by the study flow).
 public struct GradeButtons: View {
     private let items: [GradeButtonItem]

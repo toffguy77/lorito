@@ -257,7 +257,7 @@ public struct ExerciseSessionView: View {
     @ViewBuilder
     private var actionArea: some View {
         if model.isRevealed {
-            // free-response: self-grade with the four SM-2 buttons (this advances).
+            // free-response: self-grade with the four grade buttons (this advances).
             GradeButtons { grade in model.selfGrade(grade.domain) }
         } else if model.lastCheck != nil {
             primaryButton(model.isLast ? "Готово" : "Продолжить") { model.advance() }

@@ -30,7 +30,7 @@ package `Packages/LoritoKit/` as layered targets:
 
 - **Domain** — pure Swift. Core model (`CEFRLevel`, `Theme`, `Card` incl.
   optional `recall`, `ContentCatalog`), user-data value types +
-  `UserDataStore` protocol, and all pure logic: SM-2 scheduler,
+  `UserDataStore` protocol, and all pure logic: FSRS-6 scheduler (`FSRSScheduler`, lazy `SM2Migration`; SM-2 kept for rollback),
   `DailyPlanner`, `StatsCalculator` (streaks, daily activity, long-term
   memory), `IntervalPreview`, `SessionSummary`, `DailyTrap`, `WidgetSnapshot`.
   MUST NOT import SwiftUI/SwiftData/CloudKit (keeps it testable & portable).

@@ -18,6 +18,8 @@ public final class SettingsRecord {
     public var spanishVariantRaw: String?
     public var speechRateRaw: String?
     public var playAudioWhenSilent: Bool = false
+    // fsrs-scheduler
+    public var desiredRetention: Double = 0.9
 
     public init(
         targetLevelRaw: String? = nil,
@@ -45,6 +47,13 @@ public final class ReviewRecord {
     public var dueDate: Date = Date.distantPast
     public var lastGrade: String?
     public var statusRaw: String = "new"
+    // fsrs-scheduler (optional per the synced-data checklist; an older build
+    // leaves them untouched, which the consistency check detects)
+    public var stability: Double?
+    public var difficulty: Double?
+    public var lastReviewDate: Date?
+    public var schedulerVersion: Int?
+    public var fsrsDueDate: Date?
 
     public init(
         cardID: String = "",

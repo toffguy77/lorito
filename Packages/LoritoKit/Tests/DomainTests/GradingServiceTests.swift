@@ -40,11 +40,27 @@ struct GradingServiceTests {
     @Test("Grading an existing card updates the persisted review")
     func updatesExisting() throws {
         let store = FakeStore()
-        try store.upsertReview(ReviewState(cardID: "A1-15", easeFactor: 2.5, interval: 10, repetitions: 3, status: .review))
+        let sm2 = ReviewState(cardID: "A1-15", easeFactor: 2.5, interval: 10, repetitions: 3, dueDate: today, status: .review)
+        try store.upsertReview(sm2)
         let svc = GradingService(store: store)
         let result = try svc.grade(cardID: "A1-15", grade: .good, today: today)
-        #expect(result.interval == 25)
-        #expect(try store.review(for: "A1-15")?.interval == 25)
+        // FSRS on the migrated SM-2 state (S 10, reviewed 10 days ago).
+        let expected = FSRSScheduler.schedule(state: sm2, grade: .good, today: today)
+        #expect(result == expected && result.schedulerVersion == 2)
+        #expect(try store.review(for: "A1-15") == expected)
+    }
+
+    @Test("Uses the desired retention from settings")
+    func usesRetention() throws {
+        let store = FakeStore()
+        var settings = try store.loadSettings()
+        settings.desiredRetention = 0.95
+        try store.saveSettings(settings)
+        let s = ReviewState(cardID: "A1-15", easeFactor: 2.5, interval: 30, repetitions: 3, dueDate: today, status: .review)
+        try store.upsertReview(s)
+        let result = try GradingService(store: store).grade(cardID: "A1-15", grade: .good, today: today)
+        #expect(result == FSRSScheduler.schedule(state: s, grade: .good, today: today, retention: 0.95))
+        #expect(result.interval < FSRSScheduler.schedule(state: s, grade: .good, today: today, retention: 0.9).interval)
     }
 }
 

@@ -41,7 +41,7 @@ struct IntervalPreviewTests {
     func matchesScheduler(state: ReviewState?) {
         let captions = IntervalPreview.captions(for: state, today: today)
         for grade in Grade.allCases {
-            let next = SpacedRepetitionScheduler.schedule(
+            let next = FSRSScheduler.schedule(
                 state: state ?? ReviewState(cardID: ""), grade: grade, today: today
             )
             #expect(captions[grade] == IntervalPreview.format(days: next.interval), "\(grade)")

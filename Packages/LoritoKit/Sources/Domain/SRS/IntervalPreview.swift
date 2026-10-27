@@ -1,25 +1,29 @@
 import Foundation
 
 /// Previews, per grade, when a card would next be due — by running the real
-/// `SpacedRepetitionScheduler` on the current state without persisting
-/// anything. Pure and deterministic.
+/// `FSRSScheduler` on the current state without persisting anything. Pure and
+/// deterministic. At the maximum interval two grades may share a caption.
 public enum IntervalPreview {
     /// Display caption per grade for a card in `state` (`nil` = never studied).
-    public static func captions(for state: ReviewState?, today: Date) -> [Grade: String] {
-        intervals(for: state, today: today).mapValues(format(days:))
+    public static func captions(for state: ReviewState?, today: Date, retention: Double = 0.9,
+                                calendar: Calendar = .learningDay) -> [Grade: String] {
+        intervals(for: state, today: today, retention: retention, calendar: calendar).mapValues(format(days:))
     }
 
     /// VoiceOver caption per grade ("через 3 дня", "сегодня").
-    public static func spokenCaptions(for state: ReviewState?, today: Date) -> [Grade: String] {
-        intervals(for: state, today: today).mapValues(spoken(days:))
+    public static func spokenCaptions(for state: ReviewState?, today: Date, retention: Double = 0.9,
+                                      calendar: Calendar = .learningDay) -> [Grade: String] {
+        intervals(for: state, today: today, retention: retention, calendar: calendar).mapValues(spoken(days:))
     }
 
     /// Next interval in days per grade.
-    public static func intervals(for state: ReviewState?, today: Date) -> [Grade: Int] {
+    public static func intervals(for state: ReviewState?, today: Date, retention: Double = 0.9,
+                                 calendar: Calendar = .learningDay) -> [Grade: Int] {
         let current = state ?? ReviewState(cardID: "")
         var out: [Grade: Int] = [:]
         for grade in Grade.allCases {
-            out[grade] = SpacedRepetitionScheduler.schedule(state: current, grade: grade, today: today).interval
+            out[grade] = FSRSScheduler.schedule(state: current, grade: grade, today: today,
+                                                retention: retention, calendar: calendar).interval
         }
         return out
     }

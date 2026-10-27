@@ -3,7 +3,7 @@ import Domain
 import DesignSystem
 
 extension StudyGrade {
-    /// The design-system grade maps 1:1 to the Domain SM-2 grade (same cases).
+    /// The design-system grade maps 1:1 to the Domain grade (same cases).
     var domain: Grade { Grade(rawValue: rawValue) ?? .good }
 }
 

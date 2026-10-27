@@ -22,6 +22,8 @@ public final class StudySessionModel {
     private var relearned: Set<String> = []
     /// The session's "today", injected into previews and grading.
     let today: Date
+    /// Desired retention for the caption preview (grading reads it itself).
+    private let retention: Double
 
     public private(set) var index = 0
     /// Whether the current card's answer and grade buttons are shown.
@@ -41,6 +43,7 @@ public final class StudySessionModel {
         self.catalog = catalog
         self.queue = queue
         self.today = today
+        self.retention = (try? store.loadSettings().desiredRetention) ?? 0.9
     }
 
     public var currentCard: Card? {
@@ -120,7 +123,7 @@ public final class StudySessionModel {
             let caption = format(max(0, days))
             return Dictionary(uniqueKeysWithValues: StudyGrade.allCases.map { ($0, caption) })
         }
-        let intervals = IntervalPreview.intervals(for: state, today: today)
+        let intervals = IntervalPreview.intervals(for: state, today: today, retention: retention)
         return Dictionary(uniqueKeysWithValues: intervals.map { ($0.key.studyGrade, format($0.value)) })
     }
 

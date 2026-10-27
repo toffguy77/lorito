@@ -8,8 +8,8 @@ public enum ReviewStatus: String, Codable, Sendable, CaseIterable {
     case suspended
 }
 
-/// Per-card spaced-repetition state. The SM-2 algorithm (a later change) reads
-/// and updates these fields; this change only defines and persists them.
+/// Per-card spaced-repetition state. `FSRSScheduler` reads and updates it;
+/// the SM-2 fields (`easeFactor` …) stay for migration and rollback.
 public struct ReviewState: Codable, Sendable, Hashable, Identifiable {
     public var cardID: String
     public var easeFactor: Double
@@ -18,6 +18,19 @@ public struct ReviewState: Codable, Sendable, Hashable, Identifiable {
     public var dueDate: Date
     public var lastGrade: String?
     public var status: ReviewStatus
+    // FSRS memory state (fsrs-scheduler); absent for never-reviewed and
+    // not-yet-migrated SM-2 cards.
+    /// Days until retrievability falls to 90 %.
+    public var stability: Double?
+    /// 1 (easy) … 10 (hard).
+    public var difficulty: Double?
+    /// Learning day of the last memory-updating grade.
+    public var lastReviewDate: Date?
+    /// `FSRSScheduler.version` when FSRS wrote this state.
+    public var schedulerVersion: Int?
+    /// The due date FSRS computed; differs from `dueDate` after an older
+    /// (SM-2) build rescheduled the card on another device.
+    public var fsrsDueDate: Date?
 
     public var id: String { cardID }
 
@@ -28,7 +41,12 @@ public struct ReviewState: Codable, Sendable, Hashable, Identifiable {
         repetitions: Int = 0,
         dueDate: Date = .distantPast,
         lastGrade: String? = nil,
-        status: ReviewStatus = .new
+        status: ReviewStatus = .new,
+        stability: Double? = nil,
+        difficulty: Double? = nil,
+        lastReviewDate: Date? = nil,
+        schedulerVersion: Int? = nil,
+        fsrsDueDate: Date? = nil
     ) {
         self.cardID = cardID
         self.easeFactor = easeFactor
@@ -37,5 +55,10 @@ public struct ReviewState: Codable, Sendable, Hashable, Identifiable {
         self.dueDate = dueDate
         self.lastGrade = lastGrade
         self.status = status
+        self.stability = stability
+        self.difficulty = difficulty
+        self.lastReviewDate = lastReviewDate
+        self.schedulerVersion = schedulerVersion
+        self.fsrsDueDate = fsrsDueDate
     }
 }

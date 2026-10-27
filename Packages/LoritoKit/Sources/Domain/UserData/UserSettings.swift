@@ -20,6 +20,17 @@ public struct UserSettings: Codable, Sendable, Hashable {
     public var speechRate: SpeechRate
     /// Speak even when the Ring/Silent switch is on (spanish-audio).
     public var playAudioWhenSilent: Bool
+    /// Target recall probability for FSRS intervals, 0.80–0.95 (fsrs-scheduler).
+    public var desiredRetention: Double {
+        didSet { desiredRetention = Self.clampRetention(desiredRetention) }
+    }
+
+    public static let retentionRange: ClosedRange<Double> = 0.80...0.95
+
+    public static func clampRetention(_ value: Double) -> Double {
+        guard value.isFinite else { return 0.9 }
+        return min(max(value, retentionRange.lowerBound), retentionRange.upperBound)
+    }
 
     public init(
         targetLevel: CEFRLevel? = nil,
@@ -30,7 +41,8 @@ public struct UserSettings: Codable, Sendable, Hashable {
         didCompleteOnboarding: Bool = false,
         spanishVariant: SpanishVariant = .spain,
         speechRate: SpeechRate = .normal,
-        playAudioWhenSilent: Bool = false
+        playAudioWhenSilent: Bool = false,
+        desiredRetention: Double = 0.9
     ) {
         self.targetLevel = targetLevel
         self.selectedThemeIDs = selectedThemeIDs
@@ -41,6 +53,7 @@ public struct UserSettings: Codable, Sendable, Hashable {
         self.spanishVariant = spanishVariant
         self.speechRate = speechRate
         self.playAudioWhenSilent = playAudioWhenSilent
+        self.desiredRetention = Self.clampRetention(desiredRetention)
     }
 
     public static let `default` = UserSettings()

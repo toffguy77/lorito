@@ -30,7 +30,8 @@ public final class SwiftDataUserDataStore: UserDataStore {
             didCompleteOnboarding: r.didCompleteOnboarding,
             spanishVariant: r.spanishVariantRaw.flatMap(SpanishVariant.init(rawValue:)) ?? .spain,
             speechRate: r.speechRateRaw.flatMap(SpeechRate.init(rawValue:)) ?? .normal,
-            playAudioWhenSilent: r.playAudioWhenSilent
+            playAudioWhenSilent: r.playAudioWhenSilent,
+            desiredRetention: r.desiredRetention
         )
     }
 
@@ -49,6 +50,7 @@ public final class SwiftDataUserDataStore: UserDataStore {
         record.spanishVariantRaw = settings.spanishVariant.rawValue
         record.speechRateRaw = settings.speechRate.rawValue
         record.playAudioWhenSilent = settings.playAudioWhenSilent
+        record.desiredRetention = settings.desiredRetention
         try context.save()
     }
 
@@ -74,6 +76,11 @@ public final class SwiftDataUserDataStore: UserDataStore {
         record.dueDate = review.dueDate
         record.lastGrade = review.lastGrade
         record.statusRaw = review.status.rawValue
+        record.stability = review.stability
+        record.difficulty = review.difficulty
+        record.lastReviewDate = review.lastReviewDate
+        record.schedulerVersion = review.schedulerVersion
+        record.fsrsDueDate = review.fsrsDueDate
         try context.save()
     }
 
@@ -130,7 +137,12 @@ public final class SwiftDataUserDataStore: UserDataStore {
             repetitions: r.repetitions,
             dueDate: r.dueDate,
             lastGrade: r.lastGrade,
-            status: ReviewStatus(rawValue: r.statusRaw) ?? .new
+            status: ReviewStatus(rawValue: r.statusRaw) ?? .new,
+            stability: r.stability,
+            difficulty: r.difficulty,
+            lastReviewDate: r.lastReviewDate,
+            schedulerVersion: r.schedulerVersion,
+            fsrsDueDate: r.fsrsDueDate
         )
     }
 }

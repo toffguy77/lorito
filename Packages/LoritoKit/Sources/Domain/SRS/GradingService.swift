@@ -25,7 +25,9 @@ public struct GradingService {
         }
         var result = current
         if !gradedEarlierToday {
-            result = SpacedRepetitionScheduler.schedule(state: current, grade: grade, today: today, calendar: calendar)
+            let retention = (try? store.loadSettings().desiredRetention) ?? 0.9
+            result = FSRSScheduler.schedule(state: current, grade: grade, today: today,
+                                            retention: retention, calendar: calendar)
             try store.upsertReview(result)
         }
         try store.appendEvent(StudyEvent(cardID: cardID, date: today, grade: grade.rawValue))

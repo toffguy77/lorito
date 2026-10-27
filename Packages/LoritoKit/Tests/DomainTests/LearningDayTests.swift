@@ -39,9 +39,9 @@ struct LearningDayTests {
     @Test("Scheduler places due dates at local midnight + interval days")
     func schedulerLocal() {
         let now = Self.local(Self.buenosAires, 2026, 10, 27, 22)
-        let next = SpacedRepetitionScheduler.schedule(state: ReviewState(cardID: "A1-01"), grade: .good,
-                                                      today: now, calendar: Self.buenosAires)
-        #expect(next.dueDate == Self.local(Self.buenosAires, 2026, 10, 28, 0))
+        let next = FSRSScheduler.schedule(state: ReviewState(cardID: "A1-01"), grade: .good,
+                                          today: now, calendar: Self.buenosAires)
+        #expect(next.dueDate == Self.local(Self.buenosAires, 2026, 10, 27 + next.interval, 0))
     }
 
     @Test("DST transition day is still one learning day")

@@ -3,10 +3,10 @@ import Observation
 import Domain
 
 /// Walks a queue of exercises one at a time. For auto-checkable types, submitting
-/// checks the answer, records an attempt, and applies the resulting SM-2 grade to
+/// checks the answer, records an attempt, and applies the resulting grade to
 /// the card (via `ExercisePracticeService`), then shows feedback. `free-response`
 /// is self-assessed: submitting reveals the reference and the user grades it with
-/// the four SM-2 buttons. Practice always feeds the card's existing `ReviewState`.
+/// the four grade buttons. Practice always feeds the card's existing `ReviewState`.
 @MainActor
 @Observable
 public final class ExerciseSessionModel: Identifiable {

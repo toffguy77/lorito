@@ -104,7 +104,30 @@ struct SyncedSettingsRoundTripTests {
         s.spanishVariant = .latinAmerica                                // spanish-audio
         s.speechRate = .slow
         s.playAudioWhenSilent = true
+        s.desiredRetention = 0.85                                       // fsrs-scheduler
         #expect(try Self.roundTrip(s) == s)
+    }
+
+    @Test("Every review field round-trips, FSRS memory included")
+    func reviewRoundTrip() throws {
+        let container = try PersistenceController.makeContainer(config: .init(inMemory: true))
+        let due = Date(timeIntervalSinceReferenceDate: 800_000_000)
+        let r = ReviewState(cardID: "A1-07", easeFactor: 2.3, interval: 12, repetitions: 4, dueDate: due,
+                            lastGrade: "good", status: .review, stability: 12.4, difficulty: 6.2,
+                            lastReviewDate: due.addingTimeInterval(-12 * 86_400), schedulerVersion: 2, fsrsDueDate: due)
+        try SwiftDataUserDataStore(container: container).upsertReview(r)
+        #expect(try SwiftDataUserDataStore(container: container).review(for: "A1-07") == r)
+    }
+
+    @Test("A review saved without FSRS fields loads with no memory state")
+    func oldReviewRecord() throws {
+        let container = try PersistenceController.makeContainer(config: .init(inMemory: true))
+        let context = ModelContext(container)
+        context.insert(ReviewRecord(cardID: "A1-01", interval: 5, repetitions: 2, statusRaw: "review"))
+        try context.save()
+        let loaded = try #require(try SwiftDataUserDataStore(container: container).review(for: "A1-01"))
+        #expect(loaded.stability == nil && loaded.difficulty == nil && loaded.schedulerVersion == nil)
+        #expect(loaded.interval == 5 && loaded.status == .review)
     }
 
     @Test("A record saved without newer fields loads with their defaults")
@@ -118,5 +141,6 @@ struct SyncedSettingsRoundTripTests {
         #expect(loaded.dailyNewCardCount == UserSettings.default.dailyNewCardCount)
         #expect(loaded.didCompleteOnboarding == false)
         #expect(loaded.spanishVariant == .spain && loaded.speechRate == .normal && !loaded.playAudioWhenSilent)
+        #expect(loaded.desiredRetention == 0.9)
     }
 }

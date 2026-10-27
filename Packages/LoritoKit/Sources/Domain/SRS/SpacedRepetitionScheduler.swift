@@ -1,5 +1,6 @@
 import Foundation
 
+/// Former (SM-2) scheduler, kept unused for rollback — `FSRSScheduler` is live.
 /// Pure, deterministic SM-2 variant. Given a review state, a grade, and an
 /// injected "today", returns the next review state. No I/O, no ambient clock.
 public enum SpacedRepetitionScheduler {
