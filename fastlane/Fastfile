@@ -40,6 +40,15 @@ platform :ios do
     )
     profile_name = lane_context[SharedValues::SIGH_NAME]
     UI.message("Using profile: #{profile_name}")
+    # The widget extension (LoritoWidgets) is signed with its own profile.
+    get_provisioning_profile(
+      api_key: key,
+      app_identifier: "com.toffguy.lorito.widgets",
+      output_path: "build",
+      filename: "lorito_widgets_appstore.mobileprovision",
+    )
+    widgets_profile_name = lane_context[SharedValues::SIGH_NAME]
+    UI.message("Using widgets profile: #{widgets_profile_name}")
     build_app(
       project: "Lorito.xcodeproj",
       scheme: "Lorito",
@@ -52,7 +61,10 @@ platform :ios do
       export_options: {
         signingStyle: "manual",
         teamID: "3GWRDGA8B7",
-        provisioningProfiles: { "com.toffguy.lorito" => profile_name },
+        provisioningProfiles: {
+          "com.toffguy.lorito" => profile_name,
+          "com.toffguy.lorito.widgets" => widgets_profile_name,
+        },
       },
     )
   end
