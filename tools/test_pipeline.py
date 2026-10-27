@@ -517,5 +517,70 @@ class ConjugationValidationTests(unittest.TestCase):
         self.assertFalse(out.exists())
 
 
+# --- listening-and-pronunciation ---------------------------------------------
+
+class ListeningExerciseTests(unittest.TestCase):
+    def setUp(self) -> None:
+        self.tmp = tempfile.TemporaryDirectory()
+        os.environ["LORITO_CONTENT_DIR"] = self.tmp.name
+        self.root = Path(self.tmp.name)
+        write_content(self.root, [card("A1-01", 1)], THEME)
+
+    def tearDown(self) -> None:
+        os.environ.pop("LORITO_CONTENT_DIR", None)
+        os.environ.pop("LORITO_BUNDLE_PATH", None)
+        self.tmp.cleanup()
+
+    def errors(self, *exercises) -> list[str]:
+        for ex in exercises:
+            write_exercise(self.root, ex)
+        return validate.validate()
+
+    def test_clean_listening_types_pass(self):
+        errs = self.errors(
+            exercise("A1-EX-10", "listen-choose", audio="¿Dónde está el baño?", options=["туалет", "кухня"], answer="туалет"),
+            exercise("A1-EX-11", "dictation", audio="Me llamo Ana.", accept=["me llamo ana"]),
+            exercise("A1-EX-12", "speak", answer="Buenos días", accept=["buen día"]),
+        )
+        self.assertEqual(errs, [])
+
+    def test_required_fields(self):
+        errs = self.errors(exercise("A1-EX-10", "listen-choose", options=["a", "b"], answer="a"),
+                           exercise("A1-EX-11", "dictation"),
+                           exercise("A1-EX-12", "speak"))
+        self.assertTrue(any("A1-EX-10" in e and "audio" in e for e in errs), errs)
+        self.assertTrue(any("A1-EX-11" in e and "audio" in e for e in errs), errs)
+        self.assertTrue(any("A1-EX-12" in e and "answer" in e for e in errs), errs)
+
+    def test_listen_choose_answer_among_options(self):
+        errs = self.errors(exercise("A1-EX-10", "listen-choose", audio="Hola.", options=["a", "b"], answer="c"))
+        self.assertTrue(any("A1-EX-10" in e and "not among options" in e for e in errs), errs)
+
+    def test_one_line_and_length_limits(self):
+        d = self.root / "A1" / "exercises"
+        d.mkdir(parents=True, exist_ok=True)
+        # A quoted scalar with an escaped line break (frontmatter values are one line).
+        (d / "A1-EX-13.md").write_text(
+            '---\nid: A1-EX-13\nlevel: A1\ntheme: a1-1\ncard: A1-01\ntype: listen-choose\n'
+            'audio: "uno\\ndos"\noptions: ["a", "b"]\nanswer: a\n---\nPrompt?\n', encoding="utf-8")
+        errs = self.errors(exercise("A1-EX-11", "dictation", audio="a" * 121),
+                           exercise("A1-EX-12", "speak", answer="b" * 81))
+        self.assertTrue(any("A1-EX-11" in e and "120" in e for e in errs), errs)
+        self.assertTrue(any("A1-EX-12" in e and "80" in e for e in errs), errs)
+        self.assertTrue(any("A1-EX-13" in e and "one line" in e for e in errs), errs)
+
+    def test_unknown_type_still_rejected(self):
+        errs = self.errors(exercise("A1-EX-14", "karaoke", audio="x"))
+        self.assertTrue(any("unknown type" in e for e in errs), errs)
+
+    def test_bundle_carries_audio_fields(self):
+        write_exercise(self.root, exercise("A1-EX-11", "dictation", audio="Me llamo Ana.", accept=["me llamo ana"]))
+        out = self.root / "content.json"
+        os.environ["LORITO_BUNDLE_PATH"] = str(out)
+        self.assertEqual(compile_mod.main(), 0)
+        ex = json.loads(out.read_text(encoding="utf-8"))["exercises"][0]
+        self.assertEqual((ex["type"], ex["audio"], ex["accept"]), ("dictation", "Me llamo Ana.", ["me llamo ana"]))
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

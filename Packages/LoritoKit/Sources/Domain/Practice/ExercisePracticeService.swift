@@ -34,6 +34,15 @@ public struct ExercisePracticeService {
         return Outcome(check: check, review: review)
     }
 
+    /// Record an attempt without touching the card's review (a `speak` miss or a
+    /// self-assessed Опять: a recogniser error must not lapse the card).
+    public func recordAttemptOnly(_ exercise: Exercise, grade: Grade, transcript: String? = nil, today: Date) throws {
+        try store.appendAttempt(ExerciseAttempt(
+            exerciseID: exercise.id, cardID: exercise.cardID, date: today,
+            correct: false, grade: grade.rawValue, transcript: transcript
+        ))
+    }
+
     /// Submit a self-assessed (`free-response`) result: the user picked the grade.
     /// Records an attempt (correct when the grade is passing) and applies it.
     @discardableResult

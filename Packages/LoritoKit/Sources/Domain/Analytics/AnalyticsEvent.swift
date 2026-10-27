@@ -8,6 +8,7 @@ public enum OnboardingStepName: String, Codable, Sendable, CaseIterable {
 /// Exercise types as analytics values (no content).
 public enum ExerciseTypeName: String, Codable, Sendable, CaseIterable {
     case multipleChoice, fillInTheBlank, matching, wordOrder, pictureMatching, freeResponse
+    case listenChoose, dictation, speak
 
     public init(_ kind: ExerciseKind) {
         switch kind {
@@ -17,6 +18,9 @@ public enum ExerciseTypeName: String, Codable, Sendable, CaseIterable {
         case .wordOrder: self = .wordOrder
         case .pictureMatching: self = .pictureMatching
         case .freeResponse: self = .freeResponse
+        case .listenChoose: self = .listenChoose
+        case .dictation: self = .dictation
+        case .speak: self = .speak
         }
     }
 }

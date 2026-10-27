@@ -76,10 +76,19 @@ public final class CatalogModel {
     }
 
     /// A fresh practice session for a card's exercises (nil when it has none).
-    public func makeExerciseSession(forCard cardID: String) -> ExerciseSessionModel? {
-        let exercises = catalog.exercises(forCard: cardID)
+    /// Listening types need a Spanish voice; `speak` uses on-device recognition when available.
+    public func makeExerciseSession(forCard cardID: String, hasSpanishVoice: Bool = true) -> ExerciseSessionModel? {
+        var exercises = catalog.exercises(forCard: cardID)
+        // UI testing only: `-lorito-practice-types listen-choose,dictation` limits the session.
+        let args = CommandLine.arguments
+        if args.contains("-lorito-ui-testing"), let i = args.firstIndex(of: "-lorito-practice-types"), i + 1 < args.count {
+            let types = Set(args[i + 1].split(separator: ",").map(String.init))
+            exercises = exercises.filter { types.contains($0.kind.typeName) }
+        }
         guard !exercises.isEmpty else { return nil }
-        return ExerciseSessionModel(store: store, exercises: exercises)
+        let session = ExerciseSessionModel(store: store, exercises: exercises, recognizer: SystemSpeechRecognizer(),
+                                           hasSpanishVoice: hasSpanishVoice)
+        return session.count > 0 ? session : nil
     }
 
     // MARK: Status

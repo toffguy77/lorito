@@ -113,6 +113,8 @@ public final class AttemptRecord {
     public var date: Date = Date.distantPast
     public var correct: Bool = false
     public var grade: String?
+    // listening-and-pronunciation
+    public var transcript: String?
 
     public init(
         attemptID: UUID = UUID(),
@@ -120,7 +122,8 @@ public final class AttemptRecord {
         cardID: String = "",
         date: Date = .distantPast,
         correct: Bool = false,
-        grade: String? = nil
+        grade: String? = nil,
+        transcript: String? = nil
     ) {
         self.attemptID = attemptID
         self.exerciseID = exerciseID
@@ -128,6 +131,7 @@ public final class AttemptRecord {
         self.date = date
         self.correct = correct
         self.grade = grade
+        self.transcript = transcript
     }
 }
 

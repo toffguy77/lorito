@@ -37,6 +37,8 @@ targets:
         CFBundleShortVersionString: "$(MARKETING_VERSION)"
         CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
         ITSAppUsesNonExemptEncryption: false
+        NSMicrophoneUsageDescription: "Lorito слушает, как вы произносите фразу в упражнении «Скажите вслух», и сравнит её с образцом. Запись не сохраняется и никуда не отправляется."
+        NSSpeechRecognitionUsageDescription: "Распознавание речи идёт только на устройстве: так Lorito проверяет произношение в упражнениях «Скажите вслух»."
         UILaunchScreen: {}
         UIApplicationSceneManifest:
           UIApplicationSupportsMultipleScenes: false

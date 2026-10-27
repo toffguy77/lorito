@@ -114,13 +114,22 @@ as JSON; otherwise it is a quoted/plain scalar string):
 | `word-order` | auto | `tokens` (JSON array) + `answer` (target sentence) + optional `accept` (JSON array) |
 | `picture-matching` | auto | `options` (JSON array of `{"image":…,"label":…}`, ≥2) — `image` names a bundled asset |
 | `free-response` | self-assessed | `answer` (reference string) + optional `accept` (JSON array) |
+| `listen-choose` | auto | `audio` (Spanish text spoken by the device voice, one line) + `options` (JSON array, ≥2) + `answer` (must be in `options`) |
+| `dictation` | auto | `audio` (Spanish text spoken and typed back, one line, ≤ 120 characters) + optional `accept` (JSON array) |
+| `speak` | auto with on-device recognition, else self-assessed | `answer` (Spanish target phrase, one line, ≤ 80 characters) + optional `accept` (JSON array) |
 
 **Answer matching (auto types).** `fill-in-the-blank` and `word-order` compare
 the user's input to the expected answer(s) under a **normalized** match:
 case-folded, diacritics stripped (`á`→`a`, `ñ`→`n`), surrounding whitespace
 trimmed, inner whitespace collapsed. `multiple-choice`/`matching`/`picture-matching`
 compare selected identity. `free-response` is **self-assessed**: the reference is
-revealed and the user grades themselves with the four SM-2 buttons.
+revealed and the user grades themselves with the four grade buttons.
+
+**Listening and speaking.** No audio files ship: `audio` is synthesised by the
+device's Spanish voice. `dictation` is compared after lower-casing, trimming,
+collapsing whitespace and stripping punctuation (incl. `¿ ¡`); an accent-only
+difference is «почти» (Трудно). `speak` compares the recogniser's transcripts
+with `answer`/`accept` ignoring diacritics; recognition runs on device only.
 
 ### Example (multiple-choice)
 

@@ -16,6 +16,8 @@ public struct SettingsView: View {
     private let pro: PurchaseService?
     private let hasSpanishVoice: Bool
     @Environment(\.loritoUITesting) private var uiTesting
+    /// Re-renders the device-local audio exercise toggles.
+    @State private var audioPrefsTick = 0
 
     public init(model: ScopeSelectionModel, reminders: ReminderService? = nil,
                 audio: AudioSettingsModel? = nil, retention: RetentionSettingsModel? = nil,
@@ -206,8 +208,20 @@ public struct SettingsView: View {
                         .foregroundStyle(LoritoColor.textPrimary)
                 }
                 .tint(LoritoColor.accent)
+                Toggle(isOn: Binding(get: { AudioExercisePreferences.shared.listeningEnabled },
+                                     set: { AudioExercisePreferences.shared.listeningEnabled = $0; audioPrefsTick += 1 })) {
+                    Text("Упражнения на слух").font(LoritoFont.bodyStrong).foregroundStyle(LoritoColor.textPrimary)
+                }
+                .tint(LoritoColor.accent)
+                .id(audioPrefsTick)
+                Toggle(isOn: Binding(get: { AudioExercisePreferences.shared.speakingEnabled },
+                                     set: { AudioExercisePreferences.shared.speakingEnabled = $0; audioPrefsTick += 1 })) {
+                    Text("Упражнения на произношение").font(LoritoFont.bodyStrong).foregroundStyle(LoritoColor.textPrimary)
+                }
+                .tint(LoritoColor.accent)
+                .id(audioPrefsTick)
                 if !hasSpanishVoice {
-                    Text("На устройстве нет испанского голоса. Добавьте его: Настройки → Универсальный доступ → Устный контент → Голоса → Испанский.")
+                    Text("На устройстве нет испанского голоса, поэтому упражнения на слух скрыты. Добавьте голос: Настройки → Универсальный доступ → Устный контент → Голоса → Испанский.")
                         .font(LoritoFont.caption)
                         .foregroundStyle(LoritoColor.dangerText)
                 }

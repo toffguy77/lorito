@@ -105,6 +105,33 @@ def _validate_exercise_type(ex: lib.Exercise) -> list[str]:
         # Asset-file existence is checked in validate_exercises (needs the filesystem).
     elif ex.type == "free-response":
         errs += _missing(d, "answer")
+    elif ex.type == "listen-choose":
+        errs += _missing(d, "audio", "options", "answer")
+        errs += _one_line(d, "audio")
+        opts = d.get("options")
+        if isinstance(opts, list) and len(opts) < 2:
+            errs.append("'options' needs at least 2 entries")
+        if isinstance(opts, list) and "answer" in d and d["answer"] not in opts:
+            errs.append(f"answer '{d.get('answer')}' is not among options")
+    elif ex.type == "dictation":
+        errs += _missing(d, "audio")
+        errs += _one_line(d, "audio", lib.DICTATION_MAX_LEN)
+    elif ex.type == "speak":
+        errs += _missing(d, "answer")
+        errs += _one_line(d, "answer", lib.SPEAK_MAX_LEN)
+    return errs
+
+
+def _one_line(d: dict, key: str, max_len: int | None = None) -> list[str]:
+    text = d.get(key)
+    if not isinstance(text, str):
+        return []
+    errs = []
+    # Frontmatter values are single lines; a literal "\n" is an attempted break.
+    if "\n" in text.strip() or "\\n" in text:
+        errs.append(f"'{key}' must be one line")
+    if max_len is not None and len(text) > max_len:
+        errs.append(f"'{key}' is {len(text)} characters, max {max_len}")
     return errs
 
 

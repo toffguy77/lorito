@@ -65,7 +65,7 @@ public final class SystemSpeechService: NSObject, SpeechService {
         }
         let utterance = AVSpeechUtterance(string: text)
         utterance.voice = voice
-        utterance.rate = AVSpeechUtteranceDefaultSpeechRate * Float(s.speechRate.multiplier)
+        utterance.rate = AVSpeechUtteranceDefaultSpeechRate * Float(s.speechRate.multiplier * context.rateFactor)
         speakingText = text
         synthesizer.speak(utterance)
     }

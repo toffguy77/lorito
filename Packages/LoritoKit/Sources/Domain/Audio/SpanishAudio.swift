@@ -85,6 +85,11 @@ public enum PlaybackContext: Sendable {
     case content
     /// Listening exercises: meaningless when silent.
     case listeningExercise
+    /// Listening exercises, slow replay (listening-and-pronunciation).
+    case listeningSlow
+
+    /// Extra rate factor on top of the user's speech rate.
+    public var rateFactor: Double { self == .listeningSlow ? 0.7 : 1 }
 }
 
 /// Audio-session category to use (mapped to AVAudioSession in Features).
@@ -101,7 +106,7 @@ public enum AudioSessionPolicy {
     public static func category(for context: PlaybackContext, playWhenSilent: Bool) -> AudioSessionCategory {
         switch context {
         case .content: return playWhenSilent ? .playbackDuckingOthers : .ambient
-        case .listeningExercise: return .playback
+        case .listeningExercise, .listeningSlow: return .playback
         }
     }
 }

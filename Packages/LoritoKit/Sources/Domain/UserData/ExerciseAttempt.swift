@@ -9,6 +9,8 @@ public struct ExerciseAttempt: Codable, Sendable, Hashable, Identifiable {
     public var date: Date
     public var correct: Bool
     public var grade: String?
+    /// Recogniser transcript of a `speak` attempt (listening-and-pronunciation).
+    public var transcript: String?
 
     public init(
         id: UUID = UUID(),
@@ -16,7 +18,8 @@ public struct ExerciseAttempt: Codable, Sendable, Hashable, Identifiable {
         cardID: String,
         date: Date,
         correct: Bool,
-        grade: String? = nil
+        grade: String? = nil,
+        transcript: String? = nil
     ) {
         self.id = id
         self.exerciseID = exerciseID
@@ -24,5 +27,6 @@ public struct ExerciseAttempt: Codable, Sendable, Hashable, Identifiable {
         self.date = date
         self.correct = correct
         self.grade = grade
+        self.transcript = transcript
     }
 }

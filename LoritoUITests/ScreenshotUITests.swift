@@ -62,9 +62,12 @@ func completeOnboardingIfPresent(_ app: XCUIApplication, level: String = "A1") {
 func closeFirstSessionIfOpen(_ app: XCUIApplication) {
     // Wait for the session itself: on iPad the sidebar's «Сегодня» stays in the
     // hierarchy behind the session cover, so it can't end the wait.
-    guard app.buttons["Показать ответ"].waitForExistence(timeout: 8) else { return }
-    if app.buttons["Закрыть"].exists { app.buttons["Закрыть"].tap() }
-    _ = app.staticTexts["¡Hola!"].waitForExistence(timeout: 5)
+    // A cover that appears late is caught by the second pass.
+    for timeout in [8.0, 2.0] {
+        guard app.buttons["Показать ответ"].waitForExistence(timeout: timeout) else { continue }
+        if app.buttons["Закрыть"].exists { app.buttons["Закрыть"].tap() }
+        _ = app.staticTexts["¡Hola!"].waitForExistence(timeout: 5)
+    }
 }
 
 /// Resolve a tab by label. On iPhone the floating tab bar exposes each

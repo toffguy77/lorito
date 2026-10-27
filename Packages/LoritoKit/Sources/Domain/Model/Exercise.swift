@@ -33,6 +33,10 @@ public enum ExerciseKind: Sendable, Hashable {
     case wordOrder(tokens: [String], answer: String, accept: [String])
     case pictureMatching(options: [PictureOption])
     case freeResponse(answer: String, accept: [String])
+    // listening-and-pronunciation: `audio` is spoken by the device's Spanish voice.
+    case listenChoose(audio: String, options: [String], answer: String)
+    case dictation(audio: String, accept: [String])
+    case speak(answer: String, accept: [String])
 
     /// The wire `type` string used in the content bundle.
     public var typeName: String {
@@ -43,13 +47,31 @@ public enum ExerciseKind: Sendable, Hashable {
         case .wordOrder: return "word-order"
         case .pictureMatching: return "picture-matching"
         case .freeResponse: return "free-response"
+        case .listenChoose: return "listen-choose"
+        case .dictation: return "dictation"
+        case .speak: return "speak"
         }
     }
 
-    /// True when the engine decides correctness; false for self-assessed types.
-    public var isAutoChecked: Bool {
-        if case .freeResponse = self { return false }
-        return true
+    /// True when the engine decides correctness; false for self-assessed types
+    /// (`speak` without on-device recognition counts as self-assessed).
+    public var isAutoChecked: Bool { isAutoChecked(speechRecognitionAvailable: false) }
+
+    /// `speak` is auto-checked only when on-device recognition is available.
+    public func isAutoChecked(speechRecognitionAvailable: Bool) -> Bool {
+        switch self {
+        case .freeResponse: return false
+        case .speak: return speechRecognitionAvailable
+        default: return true
+        }
+    }
+
+    /// The Spanish text to play (listening types).
+    public var audioText: String? {
+        switch self {
+        case .listenChoose(let audio, _, _), .dictation(let audio, _): return audio
+        default: return nil
+        }
     }
 }
 
@@ -86,7 +108,7 @@ public struct Exercise: Codable, Sendable, Identifiable, Hashable {
 
     private enum CodingKeys: String, CodingKey {
         case id, level, themeID, card, type, prompt, explanation
-        case options, answer, accept, pairs, tokens
+        case options, answer, accept, pairs, tokens, audio
     }
 
     public enum DecodingError: Error, Equatable {
@@ -124,6 +146,13 @@ public struct Exercise: Codable, Sendable, Identifiable, Hashable {
         case "free-response":
             kind = .freeResponse(answer: try c.decode(String.self, forKey: .answer),
                                  accept: try strings(.accept))
+        case "listen-choose":
+            kind = .listenChoose(audio: try c.decode(String.self, forKey: .audio), options: try strings(.options),
+                                 answer: try c.decode(String.self, forKey: .answer))
+        case "dictation":
+            kind = .dictation(audio: try c.decode(String.self, forKey: .audio), accept: try strings(.accept))
+        case "speak":
+            kind = .speak(answer: try c.decode(String.self, forKey: .answer), accept: try strings(.accept))
         default:
             throw DecodingError.unknownType(type)
         }
@@ -153,8 +182,15 @@ public struct Exercise: Codable, Sendable, Identifiable, Hashable {
             try c.encode(accept, forKey: .accept)
         case let .pictureMatching(options):
             try c.encode(options, forKey: .options)
-        case let .freeResponse(answer, accept):
+        case let .freeResponse(answer, accept), let .speak(answer, accept):
             try c.encode(answer, forKey: .answer)
+            try c.encode(accept, forKey: .accept)
+        case let .listenChoose(audio, options, answer):
+            try c.encode(audio, forKey: .audio)
+            try c.encode(options, forKey: .options)
+            try c.encode(answer, forKey: .answer)
+        case let .dictation(audio, accept):
+            try c.encode(audio, forKey: .audio)
             try c.encode(accept, forKey: .accept)
         }
     }

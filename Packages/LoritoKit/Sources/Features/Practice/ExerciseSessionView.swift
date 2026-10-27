@@ -11,6 +11,8 @@ public struct ExerciseSessionView: View {
     @State private var model: ExerciseSessionModel
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.spanishSpanActions) private var spanActions
+    @Environment(\.speechService) private var speech
+    @State private var showPermissionExplanation = false
     let onClose: () -> Void
 
     public init(model: ExerciseSessionModel, onClose: @escaping () -> Void) {
@@ -77,7 +79,15 @@ public struct ExerciseSessionView: View {
 
     @ViewBuilder
     private func inputSection(_ exercise: Exercise) -> some View {
-        if model.isMultipleChoice {
+        if model.isListenChoose {
+            listeningControls
+            optionButtons
+        } else if model.isDictation {
+            listeningControls
+            textInput
+        } else if model.isSpeak {
+            speakInput
+        } else if model.isMultipleChoice {
             optionButtons
         } else if model.isTextInput {
             textInput
@@ -114,6 +124,93 @@ public struct ExerciseSessionView: View {
             }
         }
         .padding(.top, LoritoSpacing.sm)
+    }
+
+    /// Play / replay / slow replay of the hidden `audio` text, and «Не могу слушать сейчас».
+    private var listeningControls: some View {
+        VStack(alignment: .leading, spacing: LoritoSpacing.sm) {
+            HStack(spacing: LoritoSpacing.sm) {
+                Button { play(.listeningExercise) } label: {
+                    Label("Слушать", systemImage: "play.fill").font(LoritoFont.bodyStrong)
+                }
+                .accessibilityIdentifier("listen.play")
+                Button { play(.listeningSlow) } label: {
+                    Label("Медленно", systemImage: "tortoise.fill").font(LoritoFont.bodyStrong)
+                }
+                .accessibilityIdentifier("listen.slow")
+            }
+            .buttonStyle(PrimaryButtonStyle(.outline))
+            if !model.isResolved {
+                Button("Не могу слушать сейчас") { model.skipListening() }
+                    .font(LoritoFont.caption)
+                    .foregroundStyle(LoritoColor.onInkSecondary)
+                    .frame(minHeight: LoritoLayout.minTouchTarget)
+                    .accessibilityIdentifier("listen.skip")
+            }
+            // The spoken text appears only after submission.
+            if model.isResolved, let audio = model.audioText {
+                AnswerText(audio, color: LoritoColor.onInk, interaction: .standalone)
+                    .accessibilityIdentifier("listen.revealed")
+            }
+        }
+        .padding(.top, LoritoSpacing.sm)
+        .onAppear { if !model.isResolved { play(.listeningExercise) } }
+    }
+
+    private func play(_ context: PlaybackContext) {
+        guard let text = model.audioText else { return }
+        speech?.speak(text, context: context)
+    }
+
+    /// `speak`: say the phrase; auto mode records and checks on device, otherwise
+    /// the user plays the reference and grades themselves.
+    private var speakInput: some View {
+        VStack(alignment: .leading, spacing: LoritoSpacing.sm) {
+            Text("Скажите вслух:").font(LoritoFont.caption).foregroundStyle(LoritoColor.onInkSecondary)
+            AnswerText(model.speakTarget, color: LoritoColor.onInk, interaction: .standalone)
+            if model.speakIsAuto, !model.isResolved {
+                Button {
+                    if model.isRecording { model.stopRecording() } else { Task { await model.recordSpeech() } }
+                } label: {
+                    Label(model.isRecording ? "Стоп" : "Записать", systemImage: model.isRecording ? "stop.fill" : "mic.fill")
+                        .font(LoritoFont.bodyStrong)
+                }
+                .buttonStyle(PrimaryButtonStyle(.outline))
+                .accessibilityIdentifier("speak.record")
+                if model.isRecording, let level = model.recognizer?.level {
+                    ProgressView(value: Double(level)).tint(LoritoColor.highlight).accessibilityHidden(true)
+                }
+                if let transcript = model.transcript {
+                    Text("Распознано: \(transcript)").font(LoritoFont.caption).foregroundStyle(LoritoColor.onInkSecondary)
+                    Text("Не совпало — попробуйте ещё раз.").font(LoritoFont.caption).foregroundStyle(LoritoColor.onInkSecondary)
+                }
+            }
+            if model.isResolved || !model.speakIsAuto {
+                Button {
+                    speech?.speak(model.speakTarget, context: .content)
+                } label: {
+                    Label("Послушать образец", systemImage: "speaker.wave.2.fill").font(LoritoFont.bodyStrong)
+                }
+                .buttonStyle(PrimaryButtonStyle(.outline))
+            }
+            if !model.isResolved {
+                Button("Не могу говорить сейчас") { model.skipSpeaking() }
+                    .font(LoritoFont.caption)
+                    .foregroundStyle(LoritoColor.onInkSecondary)
+                    .frame(minHeight: LoritoLayout.minTouchTarget)
+                    .accessibilityIdentifier("speak.skip")
+            }
+        }
+        .padding(.top, LoritoSpacing.sm)
+        .onAppear { if model.needsSpeechPermission { showPermissionExplanation = true } }
+        .sheet(isPresented: $showPermissionExplanation) {
+            SpeechPermissionExplanation {
+                showPermissionExplanation = false
+                Task { await model.requestSpeechPermission() }
+            } onLater: {
+                showPermissionExplanation = false
+            }
+        }
     }
 
     private var textInput: some View {
@@ -223,12 +320,21 @@ public struct ExerciseSessionView: View {
                   systemImage: check.isCorrect ? "checkmark.circle.fill" : "xmark.circle.fill")
                 .loritoStyle(.heading)
                 .foregroundStyle(check.isCorrect ? LoritoColor.onHighlight : LoritoColor.dangerText)
+            if check.isAlmost {
+                Text("Почти: проверьте ударения").font(LoritoFont.bodyStrong).foregroundStyle(foreground)
+            }
             if !check.isCorrect {
                 HStack(alignment: .firstTextBaseline, spacing: LoritoSpacing.xs) {
                     Text("Правильный ответ:").font(LoritoFont.body).foregroundStyle(foreground)
                     AnswerText(check.correctAnswer, color: LoritoColor.accent, interaction: .standalone)
                 }
                 .accessibilityElement(children: .combine)
+                if let diff = check.wordDiff, !diff.isEmpty {
+                    Text(diff.map { "\($0.typed.isEmpty ? "—" : $0.typed) → \($0.expected.isEmpty ? "—" : $0.expected)" }
+                            .joined(separator: ", "))
+                        .font(LoritoFont.caption)
+                        .foregroundStyle(foreground)
+                }
             }
             if !exercise.explanation.isEmpty { CardContentView(exercise.explanation) }
         }
@@ -257,12 +363,12 @@ public struct ExerciseSessionView: View {
     @ViewBuilder
     private var actionArea: some View {
         if model.isRevealed {
-            // free-response: self-grade with the four grade buttons (this advances).
+            // free-response / self-assessed speak: self-grade (this advances).
             GradeButtons { grade in model.selfGrade(grade.domain) }
         } else if model.lastCheck != nil {
             primaryButton(model.isLast ? "Готово" : "Продолжить") { model.advance() }
         } else {
-            primaryButton("Проверить", enabled: model.canSubmit) { model.submit() }
+            primaryButton(model.isSpeak ? "Сравнить с образцом" : "Проверить", enabled: model.canSubmit) { model.submit() }
         }
     }
 
@@ -322,5 +428,26 @@ private struct ChipRow: View {
             }
             .padding(.vertical, 2)
         }
+    }
+}
+
+/// One screen before the first microphone / speech prompt.
+private struct SpeechPermissionExplanation: View {
+    let onContinue: () -> Void
+    let onLater: () -> Void
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: LoritoSpacing.md) {
+            Image(systemName: "mic.circle").font(.system(size: 44)).foregroundStyle(LoritoColor.accent)
+                .accessibilityHidden(true)
+            Text("Проверка произношения").loritoStyle(.heading).foregroundStyle(LoritoColor.textPrimary)
+            Text("Lorito послушает, как вы произносите фразу, и сравнит с образцом. Распознавание идёт только на этом устройстве — запись никуда не отправляется. Нужен доступ к микрофону и распознаванию речи.")
+                .font(LoritoFont.body).foregroundStyle(LoritoColor.textSecondary)
+                .fixedSize(horizontal: false, vertical: true)
+            PrimaryButton("Продолжить", variant: .ink, action: onContinue)
+            Button("Не сейчас", action: onLater).frame(minHeight: LoritoLayout.minTouchTarget)
+        }
+        .padding(LoritoSpacing.screenGutter)
+        .presentationDetents([.medium])
     }
 }

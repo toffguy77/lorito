@@ -20,7 +20,13 @@ EXERCISE_TYPES = [
     "word-order",
     "picture-matching",
     "free-response",
+    "listen-choose",
+    "dictation",
+    "speak",
 ]
+# listening-and-pronunciation limits (characters).
+DICTATION_MAX_LEN = 120
+SPEAK_MAX_LEN = 80
 EXPLANATION_MARKER_RE = re.compile(
     r"^(>\s*\*\*Объяснение\*\*|#{1,6}\s*Объяснение)\s*$", re.MULTILINE
 )

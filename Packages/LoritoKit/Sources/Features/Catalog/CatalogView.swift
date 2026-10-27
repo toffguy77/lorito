@@ -306,6 +306,7 @@ struct CardReaderView: View {
     let card: Card
     @State private var practiceSession: ExerciseSessionModel?
     @State private var drill: ConjugationDrillModel?
+    @Environment(\.speechService) private var speech
     @Environment(\.practiceSessionDidEnd) private var practiceSessionDidEnd
 
     private var exerciseCount: Int { model.exercises(forCard: card.id).count }
@@ -322,7 +323,8 @@ struct CardReaderView: View {
 
                 if exerciseCount > 0 {
                     PrimaryButton("Практика · \(exerciseCount)", variant: .ink) {
-                        practiceSession = model.makeExerciseSession(forCard: card.id)
+                        practiceSession = model.makeExerciseSession(forCard: card.id,
+                                                                    hasSpanishVoice: speech?.hasSpanishVoice ?? false)
                     }
                     .padding(.top, LoritoSpacing.sm)
                 }

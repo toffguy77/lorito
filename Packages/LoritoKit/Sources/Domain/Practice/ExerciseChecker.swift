@@ -10,6 +10,18 @@ public enum ExerciseAnswer: Sendable, Equatable {
     case ordering([String])
     /// A mapping of left→right (matching) or label→image (picture-matching).
     case matches([String: String])
+    /// Speech recogniser output: the best transcript first, then alternatives (speak).
+    case transcripts([String])
+}
+
+/// One differing word between the expected and the typed text.
+public struct WordDiff: Sendable, Equatable {
+    public let expected: String
+    public let typed: String
+    public init(expected: String, typed: String) {
+        self.expected = expected
+        self.typed = typed
+    }
 }
 
 /// The outcome of checking an auto-checkable answer.
@@ -19,11 +31,17 @@ public struct ExerciseCheck: Sendable, Equatable {
     public let grade: Grade
     /// A human-readable form of the correct answer, for feedback.
     public let correctAnswer: String
+    /// Accent-only difference (dictation): «почти», graded Трудно.
+    public let isAlmost: Bool
+    /// Word-level differences (dictation), when not exact.
+    public let wordDiff: [WordDiff]?
 
-    public init(isCorrect: Bool, grade: Grade, correctAnswer: String) {
+    public init(isCorrect: Bool, grade: Grade, correctAnswer: String, isAlmost: Bool = false, wordDiff: [WordDiff]? = nil) {
         self.isCorrect = isCorrect
         self.grade = grade
         self.correctAnswer = correctAnswer
+        self.isAlmost = isAlmost
+        self.wordDiff = wordDiff
     }
 }
 
@@ -90,6 +108,50 @@ public enum ExerciseChecker {
         case .freeResponse:
             // Self-assessed: correctness comes from the user's own grade, not this method.
             throw CheckError.notAutoCheckable
+
+        case let .listenChoose(_, _, correct):
+            guard case let .option(chosen) = answer else { throw CheckError.answerMismatch }
+            let ok = chosen == correct
+            return ExerciseCheck(isCorrect: ok, grade: ok ? passingGrade : .again, correctAnswer: correct)
+
+        case let .dictation(audio, accept):
+            guard case let .text(typed) = answer else { throw CheckError.answerMismatch }
+            let t = dictationNormal(typed)
+            let targets = [audio] + accept
+            if targets.contains(where: { dictationNormal($0) == t }) {
+                return ExerciseCheck(isCorrect: true, grade: passingGrade, correctAnswer: audio)
+            }
+            let diff = wordDiff(expected: dictationNormal(audio), typed: t)
+            if targets.contains(where: { fold(dictationNormal($0)) == fold(t) }) {
+                return ExerciseCheck(isCorrect: false, grade: .hard, correctAnswer: audio, isAlmost: true, wordDiff: diff)
+            }
+            return ExerciseCheck(isCorrect: false, grade: .again, correctAnswer: audio, wordDiff: diff)
+
+        case let .speak(expected, accept):
+            guard case let .transcripts(heard) = answer else { throw CheckError.answerMismatch }
+            let targets = Set(([expected] + accept).map { fold(dictationNormal($0)) })
+            let ok = heard.prefix(5).contains { targets.contains(fold(dictationNormal($0))) }
+            return ExerciseCheck(isCorrect: ok, grade: ok ? passingGrade : .again, correctAnswer: expected)
+        }
+    }
+
+    /// Dictation normal form: lower-cased, punctuation (incl. ¿ ¡) removed,
+    /// whitespace collapsed and trimmed. Accents are kept (they are spelling).
+    public static func dictationNormal(_ s: String) -> String {
+        let noPunct = s.lowercased().unicodeScalars.map { CharacterSet.punctuationCharacters.contains($0) || CharacterSet.symbols.contains($0) ? " " : String($0) }.joined()
+        return noPunct.split(whereSeparator: { $0.isWhitespace }).joined(separator: " ")
+    }
+
+    static func fold(_ s: String) -> String {
+        s.folding(options: [.diacriticInsensitive], locale: Locale(identifier: "es"))
+    }
+
+    /// Position-wise word differences (extra words on either side included).
+    static func wordDiff(expected: String, typed: String) -> [WordDiff] {
+        let e = expected.split(separator: " ").map(String.init), t = typed.split(separator: " ").map(String.init)
+        return (0..<max(e.count, t.count)).compactMap { i in
+            let a = i < e.count ? e[i] : "", b = i < t.count ? t[i] : ""
+            return a == b ? nil : WordDiff(expected: a, typed: b)
         }
     }
 

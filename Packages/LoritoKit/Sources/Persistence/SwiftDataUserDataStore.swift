@@ -145,7 +145,8 @@ public final class SwiftDataUserDataStore: UserDataStore {
             cardID: attempt.cardID,
             date: attempt.date,
             correct: attempt.correct,
-            grade: attempt.grade
+            grade: attempt.grade,
+            transcript: attempt.transcript
         ))
         try context.save()
     }
@@ -154,7 +155,7 @@ public final class SwiftDataUserDataStore: UserDataStore {
         try context.fetch(FetchDescriptor<AttemptRecord>()).map {
             ExerciseAttempt(
                 id: $0.attemptID, exerciseID: $0.exerciseID, cardID: $0.cardID,
-                date: $0.date, correct: $0.correct, grade: $0.grade
+                date: $0.date, correct: $0.correct, grade: $0.grade, transcript: $0.transcript
             )
         }
     }
