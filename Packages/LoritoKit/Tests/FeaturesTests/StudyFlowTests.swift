@@ -74,6 +74,24 @@ struct TodayModelTests {
     }
 }
 
+@Suite("Daily new-card limit across replans")
+@MainActor
+struct DailyNewCardLimitTests {
+    @Test("Bug repro: limit 1 → grade the day's new card → Today is all-done, not a fresh new card")
+    func allDoneAfterTheNewCard() throws {
+        let store = FlowStore()
+        store.settings = UserSettings(targetLevel: .a1, selectedThemeIDs: ["a1-1"], dailyNewCardCount: 1)
+        let model = TodayModel(store: store, catalog: catalog)
+        #expect(model.sessionQueue() == ["A1-01"])
+
+        _ = try GradingService(store: store).grade(cardID: "A1-01", grade: .good, today: Date())
+        model.refresh()
+        #expect(!model.hasWork)
+        #expect(model.isAllDone)
+        #expect(model.newRemaining == 0)
+    }
+}
+
 @Suite("Study session model")
 @MainActor
 struct StudySessionModelTests {

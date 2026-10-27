@@ -131,7 +131,7 @@ public final class ReminderService {
         let cal = calendar
         let countsForDay: (Date) -> DayCounts = { day in
             let plan = DailyPlanner.composePlan(
-                DailyPlanRequest(cards: cards, reviews: reviews, settings: settings, today: day)
+                DailyPlanRequest(cards: cards, reviews: reviews, settings: settings, today: day, events: events)
             )
             return DayCounts(due: plan.counts.dueCount, new: plan.counts.newCount)
         }
