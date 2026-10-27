@@ -70,19 +70,23 @@ public struct DailyPlanRequest: Sendable {
     public var today: Date
     /// Maximum due cards admitted to a single day; overflow is deferred.
     public var maxReviewsPerDay: Int
+    /// The study log; cards first graded today count against `dailyNewCardCount`.
+    public var events: [StudyEvent]
 
     public init(
         cards: [Card],
         reviews: [ReviewState],
         settings: UserSettings,
         today: Date,
-        maxReviewsPerDay: Int = DailyPlanner.defaultMaxReviewsPerDay
+        maxReviewsPerDay: Int = DailyPlanner.defaultMaxReviewsPerDay,
+        events: [StudyEvent] = []
     ) {
         self.cards = cards
         self.reviews = reviews
         self.settings = settings
         self.today = today
         self.maxReviewsPerDay = maxReviewsPerDay
+        self.events = events
     }
 }
 
@@ -155,7 +159,8 @@ public enum DailyPlanner {
     // MARK: - New selection
 
     /// Eligible new cards, introduced in ascending `order` (then `id`) while
-    /// respecting `related` prerequisites and the `dailyNewCardCount` limit.
+    /// respecting `related` prerequisites and the remaining daily allowance:
+    /// `dailyNewCardCount` minus cards already introduced today.
     /// Returns the introduced ids in queue order plus whether the new-card
     /// scope is exhausted (no eligible new cards remain in the selection).
     private static func selectNew(
@@ -184,7 +189,8 @@ public enum DailyPlanner {
             }
         let scopeExhausted = eligible.isEmpty
 
-        let limit = max(0, settings.dailyNewCardCount)
+        let introducedEarlierToday = IntroductionLedger(events: request.events, day: request.today).count
+        let limit = max(0, settings.dailyNewCardCount - introducedEarlierToday)
         guard limit > 0, !eligible.isEmpty else {
             return ([], scopeExhausted)
         }
