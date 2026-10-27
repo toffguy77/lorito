@@ -78,6 +78,7 @@ rendered specially by the app:
 Tables (GFM) are supported. The card `title` is stored in frontmatter, so the
 body SHOULD NOT repeat it as a top-level `#` heading.
 
+
 ## Practice exercises
 
 Practical exercises live alongside cards, one file per exercise:
@@ -243,3 +244,23 @@ optional `> **Объяснение**` block:
 CCSE items come from `tools/import_ccse.py` (see `content/exams/ccse/SOURCE.md`)
 and are also spaced-repetition items `ccse:<item-id>` capped by the
 `ccseDailyNewLimit` setting inside the shared daily budget.
+
+## Vocabulary decks (`content/vocabulary/`, CC BY-SA 4.0)
+
+Derived from FrequencyWords (see `content/vocabulary/LICENSE`); kept as a
+separate dataset — nothing else is generated from the list.
+
+`decks.json`: `[{id, level, title_ru, order}]` (`order` unique per level).
+`<deck-id>.json`: `[{id, es, pos, article?, gender?, plural?, forms?, ru,
+example_es, example_ru, rank}]`:
+
+| Field | Meaning |
+|---|---|
+| `id` | lemma slug, unique across all decks (review item `word:<id>`) |
+| `pos` | `noun`, `verb`, `adj`, `adv`, `pron`, `prep`, `conj`, `num`, `det`, `interj`, `phrase` |
+| `article`, `gender` | required for nouns: `el` / `la`; `m`, `f` or `mf` (either article accepted) |
+| `forms` | inflected forms used for lookup («В мои слова» on a card) |
+| `rank` | FrequencyWords position of the lemma (positive integer) |
+
+`tools/enrich.py --vocab <deck-id>` prints a drafting prompt for translations
+and examples (LLM integration point); drafts are reviewed by a human.

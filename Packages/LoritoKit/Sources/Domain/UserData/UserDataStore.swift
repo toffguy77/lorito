@@ -27,6 +27,13 @@ public protocol UserDataStore: AnyObject {
     func upsertMockAttempt(_ attempt: MockAttempt) throws
     func allMockAttempts() throws -> [MockAttempt]
     func deleteMockAttempt(_ id: UUID) throws
+
+    // Personal words (vocabulary-decks).
+    func savePersonalWord(_ word: PersonalWord) throws
+    func allPersonalWords() throws -> [PersonalWord]
+    func deletePersonalWord(_ id: UUID) throws
+    /// Removes an item's review state (study events stay for statistics).
+    func deleteReview(for itemID: String) throws
 }
 
 public extension UserDataStore {
@@ -37,4 +44,8 @@ public extension UserDataStore {
     func upsertMockAttempt(_ attempt: MockAttempt) throws {}
     func allMockAttempts() throws -> [MockAttempt] { [] }
     func deleteMockAttempt(_ id: UUID) throws {}
+    func savePersonalWord(_ word: PersonalWord) throws {}
+    func allPersonalWords() throws -> [PersonalWord] { [] }
+    func deletePersonalWord(_ id: UUID) throws {}
+    func deleteReview(for itemID: String) throws {}
 }

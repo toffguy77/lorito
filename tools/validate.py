@@ -15,6 +15,7 @@ from pathlib import Path
 
 import conjugate
 import exams
+import vocab
 import lib
 
 
@@ -73,23 +74,28 @@ def _missing(data: dict, *keys: str) -> list[str]:
 
 
 def _validate_exercise_type(ex: lib.Exercise) -> list[str]:
-    d, errs = ex.data, []
-    if ex.type == "multiple-choice":
+    return validate_exercise_data(ex.type, ex.data)
+
+
+def validate_exercise_data(ex_type: str, d: dict) -> list[str]:
+    """Type-schema errors of an exercise's type-specific fields."""
+    errs: list[str] = []
+    if ex_type == "multiple-choice":
         errs += _missing(d, "options", "answer")
         opts = d.get("options")
         if isinstance(opts, list) and len(opts) < 2:
             errs.append("'options' needs at least 2 entries")
         if isinstance(opts, list) and "answer" in d and d["answer"] not in opts:
             errs.append(f"answer '{d.get('answer')}' is not among options")
-    elif ex.type == "fill-in-the-blank":
+    elif ex_type == "fill-in-the-blank":
         errs += _missing(d, "answer")
-    elif ex.type == "matching":
+    elif ex_type == "matching":
         pairs = d.get("pairs")
         if not isinstance(pairs, list) or len(pairs) < 2:
             errs.append("'pairs' needs at least 2 {left,right} entries")
         elif any(not isinstance(pr, dict) or "left" not in pr or "right" not in pr for pr in pairs):
             errs.append("each pair needs 'left' and 'right'")
-    elif ex.type == "word-order":
+    elif ex_type == "word-order":
         errs += _missing(d, "tokens", "answer")
         toks, ans = d.get("tokens"), d.get("answer")
         if isinstance(toks, list) and isinstance(ans, str):
@@ -97,16 +103,16 @@ def _validate_exercise_type(ex: lib.Exercise) -> list[str]:
             ans_norm = sorted(lib.normalize_answer(w) for w in ans.split())
             if tok_norm != ans_norm:
                 errs.append("tokens cannot be arranged into answer")
-    elif ex.type == "picture-matching":
+    elif ex_type == "picture-matching":
         opts = d.get("options")
         if not isinstance(opts, list) or len(opts) < 2:
             errs.append("'options' needs at least 2 {image,label} entries")
         elif any(not isinstance(o, dict) or "image" not in o or "label" not in o for o in opts):
             errs.append("each option needs 'image' and 'label'")
         # Asset-file existence is checked in validate_exercises (needs the filesystem).
-    elif ex.type == "free-response":
+    elif ex_type == "free-response":
         errs += _missing(d, "answer")
-    elif ex.type == "listen-choose":
+    elif ex_type == "listen-choose":
         errs += _missing(d, "audio", "options", "answer")
         errs += _one_line(d, "audio")
         opts = d.get("options")
@@ -114,10 +120,10 @@ def _validate_exercise_type(ex: lib.Exercise) -> list[str]:
             errs.append("'options' needs at least 2 entries")
         if isinstance(opts, list) and "answer" in d and d["answer"] not in opts:
             errs.append(f"answer '{d.get('answer')}' is not among options")
-    elif ex.type == "dictation":
+    elif ex_type == "dictation":
         errs += _missing(d, "audio")
         errs += _one_line(d, "audio", lib.DICTATION_MAX_LEN)
-    elif ex.type == "speak":
+    elif ex_type == "speak":
         errs += _missing(d, "answer")
         errs += _one_line(d, "answer", lib.SPEAK_MAX_LEN)
     return errs
@@ -222,6 +228,10 @@ def validate() -> list[str]:
 
     # Exam path (content/exams/), when present.
     errors.extend(exams.validate_exams(set(card_level)))
+
+    # Vocabulary decks (content/vocabulary/), when present.
+    errors.extend(vocab.validate_vocabulary())
+
     return errors
 
 

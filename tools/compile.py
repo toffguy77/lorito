@@ -17,6 +17,7 @@ from pathlib import Path
 
 import conjugate
 import exams
+import vocab
 import lib
 import validate
 
@@ -76,6 +77,9 @@ def main() -> int:
     exam_content = exams.bundle()
     if exam_content is not None:
         catalog["exams"] = exam_content
+    vocabulary = vocab.bundle()
+    if vocabulary is not None:
+        catalog["vocabulary"] = vocabulary
     out = bundle_path()
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(

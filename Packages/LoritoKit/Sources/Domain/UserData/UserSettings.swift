@@ -53,6 +53,13 @@ public struct UserSettings: Codable, Sendable, Hashable {
     /// New CCSE questions per day within the shared budget (exam-path; 0 = off).
     public var ccseDailyNewLimit: Int = 5
 
+    /// Vocabulary (vocabulary-decks): new words per day (0 = off), selected decks
+    /// (empty = all) and the personal deck (bundled word ids or `p-<uuid>`).
+    public var dailyNewWordCount: Int = 0
+    public var selectedDeckIDs: [String] = []
+    public var personalWordIDs: [String] = []
+    public static let wordsDefaultWhenEnabled = 5
+
     public static let conjugationDefaultWhenEnabled = 3
     public static let conjugationRange = 0...20
 

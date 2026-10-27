@@ -36,6 +36,24 @@ func launchSeeded(_ app: XCUIApplication, _ seed: String) {
     }
 }
 
+/// Tap the Settings tab until Settings is showing (a tap during a cover's
+/// dismissal animation can be lost).
+@MainActor
+func openSettingsTab(_ app: XCUIApplication) {
+    for _ in 0..<4 {
+        tabButton(app, "Настройки").tap()
+        if app.navigationBars["Настройки"].waitForExistence(timeout: 3) { return }
+    }
+}
+
+/// Scroll up until `element` exists and is hittable (clear of the floating tab bar).
+@MainActor
+func scrollToHittable(_ app: XCUIApplication, _ element: XCUIElement, maxSwipes: Int = 8) {
+    for _ in 0..<maxSwipes where !(element.exists && element.isHittable) { app.swipeUp() }
+    // One more nudge if it's still near the bottom edge (tab bar overlap).
+    if element.exists, element.frame.maxY > app.frame.maxY - 110 { app.swipeUp() }
+}
+
 /// Dismiss any system alert (notification permission, etc.) that may block the UI.
 @MainActor
 func dismissSystemAlerts(_ app: XCUIApplication) {
@@ -295,6 +313,8 @@ final class PracticeFlowUITests: XCTestCase {
 
         XCTAssertTrue(app.staticTexts["OpenMoji"].waitForExistence(timeout: 10), "OpenMoji credit not shown")
         XCTAssertTrue(app.staticTexts["CC BY-SA 4.0"].exists, "OpenMoji license not shown")
+        // vocabulary-decks: FrequencyWords credit (source + CC BY-SA 4.0).
+        XCTAssertTrue(app.staticTexts["FrequencyWords"].exists, "FrequencyWords credit not shown")
         sleep(6)   // window for an external screenshot
     }
 }

@@ -115,6 +115,19 @@ public struct DemoSeed: Sendable {
         return seed
     }
 
+    /// vocabulary UI test: words on, «casa» in the personal deck, passed on two days → production.
+    public static func wordsProduction(today: Date, calendar: Calendar = .learningDay) -> DemoSeed {
+        var settings = UserSettings(targetLevel: .a1, didCompleteOnboarding: true)
+        settings.dailyNewWordCount = 5
+        settings.personalWordIDs = ["casa"]
+        let start = calendar.startOfDay(for: today)
+        let events = [-3, -1].map {
+            StudyEvent(cardID: "word:casa", date: calendar.date(byAdding: .hour, value: 10 + $0 * 24, to: start) ?? start,
+                       grade: Grade.good.rawValue)
+        }
+        return DemoSeed(settings: settings, reviews: [], events: events)
+    }
+
     /// Writes the seed into an (empty, in-memory) store.
     public func apply(to store: UserDataStore) throws {
         try store.saveSettings(settings)

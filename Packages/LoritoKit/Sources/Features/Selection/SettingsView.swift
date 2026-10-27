@@ -14,6 +14,7 @@ public struct SettingsView: View {
     private let goals: GoalSettingsModel?
     private let conjugation: ConjugationSettingsModel?
     private let pro: PurchaseService?
+    private let vocabulary: VocabularyModel?
     private let hasSpanishVoice: Bool
     @Environment(\.loritoUITesting) private var uiTesting
     /// Re-renders the device-local audio exercise toggles.
@@ -22,8 +23,9 @@ public struct SettingsView: View {
     public init(model: ScopeSelectionModel, reminders: ReminderService? = nil,
                 audio: AudioSettingsModel? = nil, retention: RetentionSettingsModel? = nil,
                 goals: GoalSettingsModel? = nil, conjugation: ConjugationSettingsModel? = nil,
-                pro: PurchaseService? = nil, hasSpanishVoice: Bool = true) {
+                pro: PurchaseService? = nil, vocabulary: VocabularyModel? = nil, hasSpanishVoice: Bool = true) {
         self.goals = goals
+        self.vocabulary = vocabulary
         self.pro = pro
         self.conjugation = conjugation
         _model = State(initialValue: model)
@@ -66,6 +68,8 @@ public struct SettingsView: View {
                 if let retention { retentionSection(retention) }
 
                 if let conjugation { conjugationSection(conjugation) }
+
+                if let vocabulary { wordsSection(vocabulary) }
 
                 if let audio { soundSection(audio) }
 
@@ -133,6 +137,33 @@ public struct SettingsView: View {
                 .loritoStyle(.label)
                 .foregroundStyle(LoritoColor.textSecondary)
             content()
+        }
+    }
+
+    /// «Слова»: on/off (enabling sets 5), quota 0–20, decks.
+    private func wordsSection(_ vocabulary: VocabularyModel) -> some View {
+        @Bindable var vocabulary = vocabulary
+        return section("Слова") {
+            VStack(alignment: .leading, spacing: LoritoSpacing.sm) {
+                Toggle(isOn: Binding(get: { vocabulary.isEnabled }, set: { vocabulary.setEnabled($0) })) {
+                    Text("Учить слова").font(LoritoFont.bodyStrong).foregroundStyle(LoritoColor.textPrimary)
+                }
+                .tint(LoritoColor.accent)
+                .accessibilityIdentifier("wordsToggle")
+                if vocabulary.isEnabled {
+                    Stepper(value: $vocabulary.quota, in: 1...20) {
+                        Text("Новых слов в день: \(vocabulary.quota)").font(LoritoFont.body).foregroundStyle(LoritoColor.textPrimary)
+                    }
+                }
+                NavigationLink {
+                    DecksView(model: vocabulary)
+                } label: {
+                    Label("Колоды и мои слова", systemImage: "rectangle.stack").font(LoritoFont.bodyStrong)
+                }
+                .accessibilityIdentifier("words.decks")
+            }
+            .padding(LoritoSpacing.md)
+            .background(LoritoColor.surfaceRaised, in: RoundedRectangle(cornerRadius: LoritoRadius.md, style: .continuous))
         }
     }
 

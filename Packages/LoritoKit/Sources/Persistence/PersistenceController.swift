@@ -37,6 +37,7 @@ public enum PersistenceController {
         AttemptRecord.self,
         TrapPracticeRecord.self,
         MockAttemptRecord.self,
+        PersonalWordRecord.self,
     ]
 
     public static let schema = Schema(modelTypes)

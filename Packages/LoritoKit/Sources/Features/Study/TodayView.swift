@@ -15,6 +15,7 @@ public struct TodayView: View {
     @State private var recapImage: Image?
     @State private var exams: ExamsModel?
     @State private var ccseDrill: CCSEDrillModel?
+    @State private var wordSession: WordSessionModel?
     @Environment(PurchaseService.self) private var purchases: PurchaseService?
     private let catalog: ContentCatalog
     private let store: UserDataStore
@@ -43,6 +44,7 @@ public struct TodayView: View {
         }
         .background(LoritoColor.surface.ignoresSafeArea())
         .onAppear {
+            model.beginVisit()
             model.refresh()
             model.markShownOnAppear()
         }
@@ -64,6 +66,9 @@ public struct TodayView: View {
                 drill = nil
                 trapCard = catalog.card(id: id)
             }) { drill = nil }
+        }
+        .focusModeCover(item: $wordSession, onDismiss: { model.refresh() }) { w in
+            WordSessionView(model: w) { wordSession = nil }
         }
         .focusModeCover(item: $ccseDrill, onDismiss: { model.refresh() }) { d in
             CCSEDrillView(model: d) { ccseDrill = nil }
@@ -181,10 +186,7 @@ public struct TodayView: View {
                     Button(prompt.actionTitle) { onPromptAction(prompt) }
                         .buttonStyle(PrimaryButtonStyle(.ink))
                         .fixedSize()
-                    Button("Не сейчас") { model.dismissPrompt() }
-                        .font(LoritoFont.bodyStrong)
-                        .foregroundStyle(LoritoColor.textSecondary)
-                        .frame(minHeight: LoritoLayout.minTouchTarget)
+                    notNowButton
                 }
             }
             .padding(LoritoSpacing.md)
@@ -195,9 +197,20 @@ public struct TodayView: View {
         }
     }
 
+    private var notNowButton: some View {
+        Button("Не сейчас") { model.dismissPrompt() }
+            .font(LoritoFont.bodyStrong)
+            .foregroundStyle(LoritoColor.textSecondary)
+            .frame(minHeight: LoritoLayout.minTouchTarget)
+    }
+
     /// Prompt actions are handled by the change that registers the prompt.
     private func onPromptAction(_ prompt: TodayPrompt) {
         model.dismissPrompt()
+        if prompt.id == TodayModel.wordsPrompt.id {
+            VocabularyModel(store: store, catalog: catalog).setEnabled(true)
+            model.refresh()
+        }
         if prompt.id == TodayModel.goalPrompt.id {
             goalModel = GoalSettingsModel(store: store, catalog: catalog)
         }
@@ -269,6 +282,21 @@ public struct TodayView: View {
     /// Exam path entry when the goal has an exam date (exam-path-dele-ccse).
     @ViewBuilder
     private var examEntry: some View {
+        if !model.wordItems.isEmpty {
+            Button { wordSession = WordSessionModel.make(VocabularyModel(store: store, catalog: catalog), items: model.wordItems) } label: {
+                HStack(spacing: LoritoSpacing.sm) {
+                    Image(systemName: "text.book.closed").foregroundStyle(LoritoColor.accent).accessibilityHidden(true)
+                    Text("Слова · \(model.wordItems.count)").font(LoritoFont.bodyStrong).foregroundStyle(LoritoColor.textPrimary)
+                    Spacer()
+                }
+                .padding(LoritoSpacing.md)
+                .frame(minHeight: LoritoLayout.minTouchTarget)
+                .background(LoritoColor.surfaceRaised, in: RoundedRectangle(cornerRadius: LoritoRadius.md, style: .continuous))
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+            .accessibilityIdentifier("today.words")
+        }
         if model.ccseCount > 0 {
             Button { ccseDrill = model.makeCCSEDrill() } label: {
                 HStack(spacing: LoritoSpacing.sm) {

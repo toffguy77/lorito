@@ -677,5 +677,74 @@ class ExamPipelineTests(unittest.TestCase):
         self.assertTrue(items["ccse-1099"]["retired"])
 
 
+# --- vocabulary-decks ----------------------------------------------------------
+
+import vocab  # noqa: E402
+
+
+def word(wid: str, rank: int, **kw) -> dict:
+    w = {"id": wid, "es": wid, "pos": "noun", "article": "la", "gender": "f", "ru": "перевод",
+         "example_es": f"La {wid} es grande.", "example_ru": "Пример.", "rank": rank}
+    w.update(kw)
+    return {k: v for k, v in w.items() if v is not None}
+
+
+class VocabularyPipelineTests(unittest.TestCase):
+    def setUp(self) -> None:
+        self.tmp = tempfile.TemporaryDirectory()
+        os.environ["LORITO_CONTENT_DIR"] = self.tmp.name
+        self.root = Path(self.tmp.name)
+        write_content(self.root, [card("A1-01", 1)], THEME)
+        self.dir = self.root / "vocabulary"
+        self.dir.mkdir()
+        (self.dir / "LICENSE").write_text("CC BY-SA 4.0", encoding="utf-8")
+        self.decks = [{"id": "a1-casa", "level": "A1", "title_ru": "Дом", "order": 1}]
+
+    def tearDown(self) -> None:
+        os.environ.pop("LORITO_CONTENT_DIR", None)
+        os.environ.pop("LORITO_BUNDLE_PATH", None)
+        self.tmp.cleanup()
+
+    def write(self, decks, words: dict[str, list]):
+        (self.dir / "decks.json").write_text(json.dumps(decks, ensure_ascii=False), encoding="utf-8")
+        for deck_id, ws in words.items():
+            (self.dir / f"{deck_id}.json").write_text(json.dumps(ws, ensure_ascii=False), encoding="utf-8")
+        return validate.validate()
+
+    def test_clean_vocabulary_passes_and_compiles(self):
+        self.assertEqual(self.write(self.decks, {"a1-casa": [word("casa", 10), word("comer", 20, pos="verb", article=None, gender=None)]}), [])
+        out = self.root / "content.json"
+        os.environ["LORITO_BUNDLE_PATH"] = str(out)
+        self.assertEqual(compile_mod.main(), 0)
+        v = json.loads(out.read_text(encoding="utf-8"))["vocabulary"]
+        self.assertEqual(v["decks"][0]["id"], "a1-casa")
+        self.assertEqual([w["id"] for w in v["decks"][0]["words"]], ["casa", "comer"])
+
+    def test_deck_registry(self):
+        errs = self.write(self.decks + [dict(self.decks[0])], {"a1-casa": [word("casa", 10)]})
+        self.assertTrue(any("duplicate deck" in e for e in errs), errs)
+        errs = self.write(self.decks + [{"id": "a1-x", "level": "A1", "title_ru": "X", "order": 1}], {"a1-casa": [word("casa", 10)], "a1-x": []})
+        self.assertTrue(any("order" in e for e in errs), errs)
+        errs = self.write(self.decks, {"a1-casa": [word("casa", 10)], "a1-zzz": [word("mesa", 11)]})
+        self.assertTrue(any("a1-zzz" in e for e in errs), errs)
+
+    def test_words(self):
+        errs = self.write(self.decks, {"a1-casa": [word("casa", 10), word("casa", 11)]})
+        self.assertTrue(any("duplicate word" in e and "casa" in e for e in errs), errs)
+        errs = self.write(self.decks, {"a1-casa": [word("casa", 10, ru=None)]})
+        self.assertTrue(any("casa" in e and "ru" in e for e in errs), errs)
+        errs = self.write(self.decks, {"a1-casa": [word("casa", 10, article=None)]})
+        self.assertTrue(any("casa" in e and "article" in e for e in errs), errs)
+        errs = self.write(self.decks, {"a1-casa": [word("casa", 10, gender="x")]})
+        self.assertTrue(any("casa" in e and "gender" in e for e in errs), errs)
+        errs = self.write(self.decks, {"a1-casa": [word("casa", 0)]})
+        self.assertTrue(any("casa" in e and "rank" in e for e in errs), errs)
+
+    def test_missing_license(self):
+        (self.dir / "LICENSE").unlink()
+        errs = self.write(self.decks, {"a1-casa": [word("casa", 10)]})
+        self.assertTrue(any("LICENSE" in e for e in errs), errs)
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

@@ -53,6 +53,9 @@ public final class SwiftDataUserDataStore: UserDataStore {
         settings.dailyConjugationCount = r.dailyConjugationCount
         settings.lastRecapWeek = r.lastRecapWeek
         settings.ccseDailyNewLimit = r.ccseDailyNewLimit
+        settings.dailyNewWordCount = r.dailyNewWordCount
+        settings.selectedDeckIDs = r.selectedDeckIDs
+        settings.personalWordIDs = r.personalWordIDs
         // Union with this device's mirror (an incoming sync may have dropped levels).
         settings.celebratedLevelsRaw = Self.nonEmpty(CelebratedLevels.merge(r.celebratedLevels, mirroredCelebrated))
         return settings
@@ -86,6 +89,9 @@ public final class SwiftDataUserDataStore: UserDataStore {
         record.dailyConjugationCount = settings.dailyConjugationCount
         record.lastRecapWeek = settings.lastRecapWeek
         record.ccseDailyNewLimit = settings.ccseDailyNewLimit
+        record.dailyNewWordCount = settings.dailyNewWordCount
+        record.selectedDeckIDs = settings.selectedDeckIDs
+        record.personalWordIDs = settings.personalWordIDs
         // Celebrated levels only grow: union of stored, incoming and mirrored values.
         let celebrated = CelebratedLevels.merge(CelebratedLevels.merge(record.celebratedLevels, settings.celebratedLevelsRaw),
                                                 mirroredCelebrated)
@@ -215,6 +221,39 @@ public final class SwiftDataUserDataStore: UserDataStore {
     public func deleteMockAttempt(_ id: UUID) throws {
         let records = try context.fetch(FetchDescriptor<MockAttemptRecord>(predicate: #Predicate { $0.attemptID == id }))
         records.forEach(context.delete)
+        try context.save()
+    }
+
+    // MARK: Personal words (vocabulary-decks)
+
+    public func savePersonalWord(_ w: PersonalWord) throws {
+        let id = w.id
+        let existing = try context.fetch(FetchDescriptor<PersonalWordRecord>(predicate: #Predicate { $0.wordID == id })).first
+        let r = existing ?? {
+            let new = PersonalWordRecord(wordID: w.id)
+            context.insert(new)
+            return new
+        }()
+        r.es = w.es
+        r.ru = w.ru
+        r.sourceCardID = w.sourceCardID
+        r.createdAt = w.createdAt
+        try context.save()
+    }
+
+    public func allPersonalWords() throws -> [PersonalWord] {
+        try context.fetch(FetchDescriptor<PersonalWordRecord>()).map {
+            PersonalWord(id: $0.wordID, es: $0.es, ru: $0.ru, sourceCardID: $0.sourceCardID, createdAt: $0.createdAt)
+        }
+    }
+
+    public func deletePersonalWord(_ id: UUID) throws {
+        try context.fetch(FetchDescriptor<PersonalWordRecord>(predicate: #Predicate { $0.wordID == id })).forEach(context.delete)
+        try context.save()
+    }
+
+    public func deleteReview(for itemID: String) throws {
+        if let r = try fetchRecord(cardID: itemID) { context.delete(r) }
         try context.save()
     }
 

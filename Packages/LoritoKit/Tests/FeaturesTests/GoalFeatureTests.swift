@@ -87,7 +87,10 @@ struct GoalFeatureTests {
         #expect(today.prompt?.id == "goal")
         today.dismissPrompt()
         today.refresh()
-        #expect(today.prompt == nil)
+        #expect(today.prompt == nil)                       // one prompt per visit
         #expect(try store.loadSettings().levelGoal == nil)
+        today.beginVisit()
+        today.refresh()
+        #expect(today.prompt?.id != "goal")
     }
 }

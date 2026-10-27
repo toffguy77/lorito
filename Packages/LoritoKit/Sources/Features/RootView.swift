@@ -86,6 +86,10 @@ public struct RootView: View {
             // UI tests: no device-local mirror, so nothing leaks between launches.
             let store = SwiftDataUserDataStore(container: container, localMirror: uiTesting ? nil : .standard)
             if demoData { try DemoSeed.make(catalog: catalog, today: Date()).apply(to: store) }
+            if uiTesting, CommandLine.arguments.contains("-lorito-seed-words-production") {
+                try DemoSeed.wordsProduction(today: Date()).apply(to: store)
+                didCompleteOnboarding = true
+            }
             if uiTesting, CommandLine.arguments.contains("-lorito-seed-expired-mock") {
                 try DemoSeed.expiredMock(today: Date()).apply(to: store)
                 didCompleteOnboarding = true

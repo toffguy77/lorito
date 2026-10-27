@@ -38,6 +38,10 @@ public final class SettingsRecord {
     public var celebratedLevels: String?
     // exam-path-dele-ccse
     public var ccseDailyNewLimit: Int = 5
+    // vocabulary-decks
+    public var dailyNewWordCount: Int = 0
+    public var selectedDeckIDs: [String] = []
+    public var personalWordIDs: [String] = []
 
     public init(
         targetLevelRaw: String? = nil,
@@ -173,5 +177,24 @@ public final class MockAttemptRecord {
 
     public init(attemptID: UUID = UUID()) {
         self.attemptID = attemptID
+    }
+}
+
+/// A word saved by the user outside the bundled decks (vocabulary-decks).
+@Model
+public final class PersonalWordRecord {
+    public var wordID: UUID = UUID()
+    public var es: String = ""
+    public var ru: String?
+    public var sourceCardID: String?
+    public var createdAt: Date = Date.distantPast
+
+    public init(wordID: UUID = UUID(), es: String = "", ru: String? = nil, sourceCardID: String? = nil,
+                createdAt: Date = .distantPast) {
+        self.wordID = wordID
+        self.es = es
+        self.ru = ru
+        self.sourceCardID = sourceCardID
+        self.createdAt = createdAt
     }
 }

@@ -73,13 +73,19 @@ public struct SpanishSpanAction: Identifiable, @unchecked Sendable {
     /// The tap action (one primary at most; the first registered wins).
     public let isPrimary: Bool
     public let perform: @MainActor (String) -> Void
+    /// Optional follow-up UI: when it returns a view, the menu presents it as a
+    /// sheet from where the span was long-pressed (works inside full-screen
+    /// sessions), instead of calling `perform`. The closure argument dismisses it.
+    public let sheet: (@MainActor (String, @escaping @MainActor () -> Void) -> AnyView?)?
 
     public init(id: String, title: String, systemImage: String, isPrimary: Bool = false,
+                sheet: (@MainActor (String, @escaping @MainActor () -> Void) -> AnyView?)? = nil,
                 perform: @escaping @MainActor (String) -> Void) {
         self.id = id
         self.title = title
         self.systemImage = systemImage
         self.isPrimary = isPrimary
+        self.sheet = sheet
         self.perform = perform
     }
 }
@@ -121,9 +127,24 @@ public extension View {
     }
 }
 
+private struct PresentedSpanSheet: Identifiable {
+    let id = UUID()
+    let view: AnyView
+}
+
 private struct SpanishSpanMenu: ViewModifier {
     let spans: [String]
     let actions: SpanishSpanActions
+    @State private var presented: PresentedSpanSheet?
+
+    @MainActor
+    private func run(_ item: SpanishSpanAction, _ span: String) {
+        if let make = item.sheet, let view = make(span, { presented = nil }) {
+            presented = PresentedSpanSheet(view: view)
+        } else {
+            item.perform(span)
+        }
+    }
 
     func body(content: Content) -> some View {
         if spans.isEmpty || actions.menuItems.isEmpty {
@@ -134,15 +155,16 @@ private struct SpanishSpanMenu: ViewModifier {
                     ForEach(spans, id: \.self) { span in
                         Section(span) {
                             ForEach(actions.menuItems) { item in
-                                Button(item.title, systemImage: item.systemImage) { item.perform(span) }
+                                Button(item.title, systemImage: item.systemImage) { run(item, span) }
                             }
                         }
                     }
                 }
+                .sheet(item: $presented) { $0.view }
                 .accessibilityActions {
                     ForEach(spans, id: \.self) { span in
                         ForEach(actions.menuItems) { item in
-                            Button("\(item.title): \(span)") { item.perform(span) }
+                            Button("\(item.title): \(span)") { run(item, span) }
                         }
                     }
                 }

@@ -20,6 +20,7 @@ public struct DailyBudget: Sendable, Equatable {
     public static func standard(settings: UserSettings) -> DailyBudget {
         DailyBudget(quotas: [.card: max(0, settings.dailyNewCardCount),
                              .conjugation: max(0, settings.dailyConjugationCount),
+                             .word: max(0, settings.dailyNewWordCount),
                              .ccse: max(0, settings.ccseDailyNewLimit)])
     }
 

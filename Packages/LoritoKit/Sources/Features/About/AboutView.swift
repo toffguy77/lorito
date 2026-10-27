@@ -26,6 +26,18 @@ public struct LicenseEntry: Identifiable, Sendable, Hashable {
             url: "https://openmoji.org"
         ),
         LicenseEntry(
+            name: "FrequencyWords",
+            license: "CC BY-SA 4.0",
+            detail: "Частотный список испанских слов (Hermit Dave, OpenSubtitles). На нём основаны колоды слов (словарь Lorito распространяется по CC BY-SA 4.0) и порядок глаголов в тренажёре спряжений.",
+            url: "https://github.com/hermitdave/FrequencyWords"
+        ),
+        LicenseEntry(
+            name: "TelemetryDeck SDK",
+            license: "MIT",
+            detail: "Анонимная статистика использования (только с вашего согласия).",
+            url: "https://github.com/TelemetryDeck/SwiftSDK"
+        ),
+        LicenseEntry(
             name: "MarkdownUI",
             license: "MIT",
             detail: "Рендеринг Markdown в карточках и упражнениях.",

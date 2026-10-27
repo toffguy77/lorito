@@ -28,6 +28,8 @@ public struct AdaptiveRootView: View {
     @State private var conjugationSettings: ConjugationSettingsModel
     /// Lorito Pro entitlements (resolved at launch and on every transaction update).
     @State private var purchases = PurchaseService()
+    /// Words (vocabulary-decks): «В мои слова» and the personal deck.
+    @State private var vocabulary: VocabularyModel
     @Environment(\.speechService) private var speech
     @SceneStorage("lorito.catalogSelection") private var storedCatalogSelection = ""
     @Environment(\.horizontalSizeClass) private var sizeClass
@@ -47,6 +49,7 @@ public struct AdaptiveRootView: View {
         _retentionSettings = State(initialValue: RetentionSettingsModel(store: store))
         _goalSettings = State(initialValue: GoalSettingsModel(store: store, catalog: catalog))
         _conjugationSettings = State(initialValue: ConjugationSettingsModel(store: store))
+        _vocabulary = State(initialValue: VocabularyModel(store: store, catalog: catalog))
     }
 
     private static let tabs: [FloatingTabItem<AppNavigation.Destination>] =
@@ -61,7 +64,6 @@ public struct AdaptiveRootView: View {
             }
         }
         .tint(LoritoColor.accent)
-        .environment(purchases)
         .focusModeCover(item: sessionBinding, onDismiss: {
             refreshPath()
             publishWidgets()
@@ -128,6 +130,9 @@ public struct AdaptiveRootView: View {
             storedCatalogSelection = stored
         }
         .onChange(of: navigation.destination) { _, _ in refreshPath() }
+        // Last, so presented sessions inherit them too.
+        .environment(purchases)
+        .modifier(SaveWordAction(enabled: catalog.vocabulary != nil, vocabulary: vocabulary))
     }
 
     /// The first session after onboarding opens on its first card instead of
@@ -163,7 +168,7 @@ public struct AdaptiveRootView: View {
             NavigationStack {
                 SettingsView(model: scopeModel, reminders: reminders, audio: audioSettings,
                              retention: retentionSettings, goals: goalSettings, conjugation: conjugationSettings,
-                             pro: purchases,
+                             pro: purchases, vocabulary: catalog.vocabulary != nil ? vocabulary : nil,
                              hasSpanishVoice: speech != nil)
             }
         }
@@ -280,4 +285,28 @@ private extension View {
 extension EnvironmentValues {
     /// Called when an exercise (practice) session closes — a widget refresh trigger.
     @Entry var practiceSessionDidEnd: @MainActor () -> Void = {}
+}
+
+/// «В мои слова» in the Spanish-span menu (vocabulary-decks): a bundled word is
+/// saved at once; an unknown one opens the translation sheet where it was pressed.
+private struct SaveWordAction: ViewModifier {
+    let enabled: Bool
+    let vocabulary: VocabularyModel
+
+    func body(content: Content) -> some View {
+        if enabled {
+            content.spanishSpanAction(SpanishSpanAction(
+                id: "save-word", title: "В мои слова", systemImage: "text.badge.plus",
+                sheet: { text, dismiss in
+                    guard case .unknown(let t) = vocabulary.save(text) else { return nil }
+                    return AnyView(UnknownWordSheet(text: t, onSave: { ru in
+                        vocabulary.saveUnknown(t, ru: ru)
+                        dismiss()
+                    }, onCancel: dismiss))
+                },
+                perform: { _ in }))
+        } else {
+            content
+        }
+    }
 }

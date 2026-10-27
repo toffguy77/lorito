@@ -113,6 +113,9 @@ struct SyncedSettingsRoundTripTests {
         s.lastRecapWeek = "2026-W43"                                    // weekly-recap-and-milestones
         s.celebratedLevels = [.a1, .a2]
         s.ccseDailyNewLimit = 0                                         // exam-path-dele-ccse
+        s.dailyNewWordCount = 7                                         // vocabulary-decks
+        s.selectedDeckIDs = ["a1-casa"]
+        s.personalWordIDs = ["casa", "p-123"]
         s.exam = ExamGoal(kind: .ccse, date: Date(timeIntervalSinceReferenceDate: 821_000_000), done: true)
         #expect(try Self.roundTrip(s) == s)
     }
@@ -156,6 +159,7 @@ struct SyncedSettingsRoundTripTests {
         #expect(loaded.dailyConjugationCount == 0)
         #expect(loaded.lastRecapWeek == nil && loaded.celebratedLevels.isEmpty)
         #expect(loaded.ccseDailyNewLimit == 5)
+        #expect(loaded.dailyNewWordCount == 0 && loaded.selectedDeckIDs.isEmpty && loaded.personalWordIDs.isEmpty)
     }
 }
 
@@ -218,5 +222,24 @@ struct MockAttemptRoundTripTests {
         #expect(try SwiftDataUserDataStore(container: container, localMirror: nil).allMockAttempts() == [a])
         try store.deleteMockAttempt(a.id)
         #expect(try store.allMockAttempts().isEmpty)
+    }
+}
+
+@Suite("Personal words (vocabulary-decks)")
+struct PersonalWordStoreTests {
+    @Test("Round trip; deleting removes the word and its review state, keeps study events")
+    func roundTripAndDelete() throws {
+        let container = try PersistenceController.makeContainer(config: .init(inMemory: true))
+        let store = SwiftDataUserDataStore(container: container, localMirror: nil)
+        let w = PersonalWord(es: "madrugar", ru: "рано вставать", sourceCardID: "A2-29",
+                             createdAt: Date(timeIntervalSinceReferenceDate: 800_000_000))
+        try store.savePersonalWord(w)
+        #expect(try SwiftDataUserDataStore(container: container, localMirror: nil).allPersonalWords() == [w])
+        try store.upsertReview(ReviewState(cardID: w.itemID, interval: 2, status: .review))
+        try store.appendEvent(StudyEvent(cardID: w.itemID, date: Date(), grade: "good"))
+        try store.deletePersonalWord(w.id)
+        try store.deleteReview(for: w.itemID)
+        #expect(try store.allPersonalWords().isEmpty && store.review(for: w.itemID) == nil)
+        #expect(try store.allEvents().count == 1)
     }
 }

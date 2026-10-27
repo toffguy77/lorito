@@ -30,11 +30,18 @@ public final class TodayModel {
     /// Open prompts in priority order; registered by `study-goal` and
     /// `regional-variants`.
     public var promptCandidates: [TodayPrompt] = [] {
-        didSet { prompt = promptSlot.prompt(candidates: promptCandidates, events: (try? store.allEvents()) ?? []) }
+        didSet {
+            prompt = promptHandledThisVisit ? nil
+                : promptSlot.prompt(candidates: promptCandidates, events: (try? store.allEvents()) ?? [])
+        }
     }
     private let promptSlot: TodayPromptSlot
+    /// One prompt per visit: after a dismissal the next candidate waits for the next visit.
+    private var promptHandledThisVisit = false
     /// The goal has an exam date (study-goal) → Today offers the exam path.
     public private(set) var hasExamGoal = false
+    /// Words planned today (vocabulary-decks).
+    public private(set) var wordItems: [String] = []
     /// CCSE questions planned today (exam-path-dele-ccse).
     public private(set) var ccseCount = 0
     /// Weekly recap of the completed Monday–Sunday week, shown once from Monday.
@@ -94,6 +101,11 @@ public final class TodayModel {
         "\(dueRemaining) на повторение + \(newRemaining) новых"
     }
 
+    public static let wordsPrompt = TodayPrompt(
+        id: "words", title: "Учить слова?",
+        message: "Пять частотных слов в день с повторением — вместе с правилами, в общем лимите новых.",
+        actionTitle: "Включить")
+
     public static let goalPrompt = TodayPrompt(
         id: "goal", title: "Есть дедлайн?",
         message: "Экзамен, переезд или просто дата — поставьте цель, и Lorito подстроит темп новых карточек.",
@@ -125,7 +137,13 @@ public final class TodayModel {
     public func dismissPrompt() {
         guard let prompt else { return }
         promptSlot.dismiss(prompt.id)
+        promptHandledThisVisit = true
         self.prompt = nil
+    }
+
+    /// Today appeared: a new visit may show the next open prompt.
+    public func beginVisit() {
+        promptHandledThisVisit = false
     }
 
     func makeCCSEDrill() -> CCSEDrillModel? { CCSEDrillModel.today(store: store, catalog: catalog, today: now()) }
@@ -179,7 +197,11 @@ public final class TodayModel {
                                       keepShowing: shownEndStates)
         shownEndStates.formUnion(goalLines.filter(\.isEndState).map(\.id))
         // «Есть дедлайн?» until the user sets a goal or dismisses it.
-        promptCandidates = settings.levelGoal == nil && settings.exam == nil ? [Self.goalPrompt] : []
+        var prompts: [TodayPrompt] = []
+        if settings.levelGoal == nil && settings.exam == nil { prompts.append(Self.goalPrompt) }
+        if catalog.vocabulary != nil, settings.dailyNewWordCount == 0 { prompts.append(Self.wordsPrompt) }
+        wordItems = catalog.vocabulary == nil ? [] : VocabularyModel(store: store, catalog: catalog, today: now).todayItems(today: today)
+        promptCandidates = prompts
     }
 
     private static let weekdayLabels = ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"]  // Calendar weekday 1…7

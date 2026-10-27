@@ -13,6 +13,7 @@ Usage:
     python3 tools/enrich.py --template                # print the enrichment template/prompt
     python3 tools/enrich.py --recall <CARD_ID|LEVEL>  # print recall-prompt drafting context + draft
     python3 tools/enrich.py --set-recall <CARD_ID> "<text>"   # write a reviewed recall prompt
+    python3 tools/enrich.py --vocab <DECK_ID>         # print a drafting prompt for the deck's words
 """
 from __future__ import annotations
 
@@ -112,8 +113,31 @@ def set_recall(card_id: str, text: str) -> int:
     return 0
 
 
+VOCAB_TEMPLATE = """Draft vocabulary entries (Russian learners of Spanish). For each word give:
+ru — a short Russian translation; example_es — one natural A1/A2 sentence using the
+word; example_ru — its Russian translation. Nouns: keep `article` and `gender`.
+Return JSON entries with the same id. Drafts are reviewed by a human (CC BY-SA 4.0)."""
+
+
+def draft_vocab(deck_id: str) -> int:
+    """LLM integration point for vocabulary drafts: prints the prompt and the
+    entries still missing a translation or example (passthrough by default)."""
+    import json
+    path = lib.content_dir() / "vocabulary" / f"{deck_id}.json"
+    if not path.exists():
+        print(f"deck not found: {deck_id}", file=sys.stderr)
+        return 1
+    words = json.loads(path.read_text(encoding="utf-8"))
+    todo = [w for w in words if not (w.get("ru") and w.get("example_es") and w.get("example_ru"))]
+    print(VOCAB_TEMPLATE)
+    print(json.dumps(todo or words, ensure_ascii=False, indent=1))
+    return 0
+
+
 def main() -> int:
     args = sys.argv[1:]
+    if len(args) == 2 and args[0] == "--vocab":
+        return draft_vocab(args[1])
     if args == ["--template"]:
         print(TEMPLATE)
         return 0
