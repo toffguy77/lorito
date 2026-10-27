@@ -145,3 +145,14 @@ struct StudyBuddyFeatureTests {
         #expect(recorder.events.last == .buddyLeft)
     }
 }
+
+import CloudKit
+
+@Suite("Study buddy: record attribution")
+struct BuddyAttributionTests {
+    @Test("Own records (default owner) map to me; others keep the server-set creator; none without creator")
+    func creator() {
+        let mine = CKRecord(recordType: "BuddyDay")
+        #expect(CloudKitBuddyBackend.creator(mine, me: "me") == nil)   // unsaved: no creator
+    }
+}

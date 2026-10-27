@@ -130,25 +130,36 @@ public final class CloudKitBuddyBackend: BuddyBackend {
         }
         let keep = Set(days.map(\.recordName))
         let (existing, _) = try await fetchRecords(db, zone)
-        let stale = existing.filter { $0.recordType == "BuddyDay" && ($0["owner"] as? String) == owner
+        let stale = existing.filter { $0.recordType == "BuddyDay" && Self.creator($0, me: owner) == owner
             && !keep.contains($0.recordID.recordName) }.map(\.recordID)
         _ = try await db.modifyRecords(saving: records, deleting: stale, savePolicy: .changedKeys)
     }
 
     public func fetch() async throws -> (days: [BuddyDay], nudges: [BuddyNudge]) {
         guard let (db, zone) = try await pairZone() else { return ([], []) }
+        let me = try await currentUser()
         let (records, _) = try await fetchRecords(db, zone)
+        // Both partners can write the zone: trust a record only when the server-set
+        // creator matches the claimed author and the name is `<author>:<day>`.
         let days = records.filter { $0.recordType == "BuddyDay" }.compactMap { r -> BuddyDay? in
-            guard let owner = r["owner"] as? String, let day = r["day"] as? String else { return nil }
+            guard let owner = r["owner"] as? String, let day = r["day"] as? String,
+                  Self.creator(r, me: me) == owner, r.recordID.recordName == "\(owner):\(day)" else { return nil }
             return BuddyDay(owner: owner, day: day, studied: (r["studied"] as? Int ?? 0) != 0,
                             gradedCount: r["gradedCount"] as? Int ?? 0, currentStreak: r["currentStreak"] as? Int ?? 0,
                             displayName: r["displayName"] as? String ?? "")
         }
         let nudges = records.filter { $0.recordType == "BuddyNudge" }.compactMap { r -> BuddyNudge? in
-            guard let from = r["from"] as? String, let day = r["day"] as? String else { return nil }
+            guard let from = r["from"] as? String, let day = r["day"] as? String,
+                  Self.creator(r, me: me) == from, r.recordID.recordName == "\(from):\(day)" else { return nil }
             return BuddyNudge(from: from, day: day)
         }
         return (days, nudges)
+    }
+
+    /// The record's author as set by the server (own records report the default owner name).
+    nonisolated static func creator(_ record: CKRecord, me: String) -> String? {
+        guard let name = record.creatorUserRecordID?.recordName else { return nil }
+        return name == CKCurrentUserDefaultName ? me : name
     }
 
     /// Every record of the zone (no query index needed).
