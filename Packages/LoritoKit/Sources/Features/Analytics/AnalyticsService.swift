@@ -54,6 +54,7 @@ public final class AnalyticsService: AnalyticsRecording {
         self.writer = QueueFileWriter(url: queueURL)
         let consent = defaults?.string(forKey: AnalyticsConsent.key).flatMap(AnalyticsConsent.init(rawValue:))
         self.consent = consent
+        sink.setDeliveryEnabled(consent == .granted)
         if consent == .denied {
             // Opted out on this device: never resurrect a saved queue.
             if let queueURL { try? FileManager.default.removeItem(at: queueURL) }
@@ -89,6 +90,7 @@ public final class AnalyticsService: AnalyticsRecording {
     private func setConsent(_ granted: Bool, defaults: UserDefaults) {
         consent = granted ? .granted : .denied
         defaults.set(consent?.rawValue, forKey: AnalyticsConsent.key)
+        sink.setDeliveryEnabled(granted)   // synchronous: an in-flight flush stops delivering now
         if !granted {
             // Purge now: drop the queue, cancel pending writes, delete the file
             // synchronously, and tear down the provider.

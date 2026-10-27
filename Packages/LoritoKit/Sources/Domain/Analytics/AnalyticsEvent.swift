@@ -101,11 +101,16 @@ public struct AnalyticsRecord: Codable, Sendable, Hashable {
 /// concrete sink; tests and previews use a recording or no-op sink.
 public protocol AnalyticsSink: Sendable {
     func send(_ batch: [AnalyticsRecord]) async throws
-    /// Opt-out: tear down any provider state (no further sends follow).
+    /// Consent gate inside the sink, set synchronously by the service: while
+    /// disabled, `send` delivers nothing and starts no provider (closes the
+    /// race between an in-flight flush and an opt-out).
+    func setDeliveryEnabled(_ enabled: Bool)
+    /// Opt-out: tear down any provider state.
     func stop() async
 }
 
 public extension AnalyticsSink {
+    func setDeliveryEnabled(_ enabled: Bool) {}
     func stop() async {}
 }
 

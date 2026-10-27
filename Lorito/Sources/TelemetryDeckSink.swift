@@ -12,34 +12,42 @@ final class TelemetryDeckSink: AnalyticsSink, @unchecked Sendable {
     private let appID: String
     private let lock = NSLock()
     private var started = false
+    /// Consent gate, flipped synchronously by `AnalyticsService`; off until set.
+    private var deliveryEnabled = false
 
     init(appID: String) {
         self.appID = appID
     }
 
+    func setDeliveryEnabled(_ enabled: Bool) {
+        lock.withLock { deliveryEnabled = enabled }
+    }
+
     func send(_ batch: [AnalyticsRecord]) async throws {
-        startIfNeeded()
         for record in batch {
-            TelemetryDeck.signal(record.name, parameters: record.parameters)
+            // Check consent, start the SDK and signal under one lock, per record.
+            let delivered = lock.withLock { () -> Bool in
+                guard deliveryEnabled else { return false }
+                if !started {
+                    let config = TelemetryDeck.Config(appID: appID)
+                    config.sendNewSessionBeganSignal = false   // only Lorito's own events
+                    config.sessionStatsEnabled = false
+                    TelemetryDeck.initialize(config: config)
+                    started = true
+                }
+                TelemetryDeck.signal(record.name, parameters: record.parameters)
+                return true
+            }
+            if !delivered { return }
         }
     }
 
     func stop() async {
         lock.withLock {
+            deliveryEnabled = false
             guard started else { return }
             TelemetryDeck.terminate()
             started = false
-        }
-    }
-
-    private func startIfNeeded() {
-        lock.withLock {
-            guard !started else { return }
-            let config = TelemetryDeck.Config(appID: appID)
-            config.sendNewSessionBeganSignal = false   // only Lorito's own events
-            config.sessionStatsEnabled = false
-            TelemetryDeck.initialize(config: config)
-            started = true
         }
     }
 }

@@ -196,3 +196,28 @@ struct AnalyticsPrivacyTests {
         #expect(await sink.sent == 0)
     }
 }
+
+@Suite("Analytics sink consent gate")
+@MainActor
+struct AnalyticsSinkGateTests {
+    private final class GateSink: AnalyticsSink, @unchecked Sendable {
+        let lock = NSLock()
+        var enabled = false
+        var history: [Bool] = []
+        func setDeliveryEnabled(_ e: Bool) { lock.withLock { enabled = e; history.append(e) } }
+        func send(_ batch: [AnalyticsRecord]) async throws {}
+    }
+
+    @Test("The service gates the sink synchronously: off until granted, off at opt-out, on at opt-in")
+    func gate() {
+        let sink = GateSink()
+        let service = AnalyticsService(sink: sink, defaults: freshDefaults(), queueURL: nil)
+        #expect(!sink.enabled)                       // consent not yet resolved
+        service.resolveConsentOnFirstLaunch()
+        #expect(sink.enabled)
+        service.setEnabled(false)
+        #expect(!sink.enabled)                       // before any async stop runs
+        service.setEnabled(true)
+        #expect(sink.enabled)
+    }
+}
