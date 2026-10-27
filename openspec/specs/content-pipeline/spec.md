@@ -61,7 +61,6 @@ The pipeline SHALL provide an **informational** coverage report that lists, for 
 - **WHEN** the coverage report runs over content where some cards have no exercises
 - **THEN** the command exits zero and neither `validate` nor `compile` is affected by the missing coverage
 
-
 ### Requirement: Exercise integrity validation
 The validation command SHALL fail (non-zero exit) if any exercise violates the content-model: duplicate exercise ids; unknown level or theme; an unresolved `card` reference; a `card` whose level differs from the exercise's level; an unknown `type`; a missing type-specific field; (for `multiple-choice`) an `answer` not present in `options`; (for `word-order`) `tokens` that cannot form the `answer`; or (for `picture-matching`) an `image` asset absent from the content sources.
 
@@ -91,3 +90,19 @@ The compilation command SHALL include all valid exercises in the single bundled 
 #### Scenario: Invalid exercise blocks the bundle
 - **WHEN** exercise validation fails during compilation
 - **THEN** no bundle is produced and the command exits non-zero
+
+### Requirement: Recall prompt validation
+The content validation step SHALL accept the optional `recall` card field and SHALL fail with a non-zero exit when a `recall` value is not a string, is empty after trimming, spans more than one line, or exceeds 200 characters. The compile step SHALL write `recall` into the compiled bundle only for cards that declare it.
+
+#### Scenario: Valid recall passes
+- **WHEN** a card declares a one-line `recall` of 60 characters
+- **THEN** validation passes and the compiled bundle contains the prompt for that card
+
+#### Scenario: Overlong recall fails
+- **WHEN** a card declares a `recall` longer than 200 characters
+- **THEN** validation fails with a message naming the card id
+
+#### Scenario: Missing recall is fine
+- **WHEN** no card declares `recall`
+- **THEN** validation passes and the compiled bundle has no `recall` keys
+

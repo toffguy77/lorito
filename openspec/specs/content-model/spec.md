@@ -64,7 +64,6 @@ Every card SHOULD have at least one practice exercise so learners can actively d
 - **WHEN** an exercise exists
 - **THEN** its `card` field resolves to a card of the same level and the exercise tests that card's grammar point
 
-
 ### Requirement: Exercise file format
 Each practical exercise SHALL be stored as a single UTF-8 Markdown file containing YAML frontmatter followed by a Markdown body. Files SHALL be located at `content/<LEVEL>/exercises/<id>.md`, where `<LEVEL>` is one of `A1`, `A2`, `B1`, `B2`, `C1`, `C2`. The Markdown body SHALL hold the exercise prompt and an explanation shown after the answer is checked or revealed.
 
@@ -127,3 +126,15 @@ Where the material suits it, a level's exercise set SHALL include variety beyond
 #### Scenario: Picture-matching assets resolve at runtime
 - **WHEN** a `picture-matching` exercise's image is referenced by the app
 - **THEN** the bundled asset resolves from the app's resource bundle and renders
+
+### Requirement: Optional recall prompt on cards
+A card MAY declare a `recall` field in its front matter: a single-line Markdown string of at most 200 characters that poses the question the card answers (e.g. `recall: "**¿el или la?** *problema, mano, canción, agua*"`). The compiled bundle SHALL carry the field when present, and the `Card` domain type SHALL expose it as an optional value. Cards without the field SHALL remain valid.
+
+#### Scenario: Card with recall prompt
+- **WHEN** a card declares `recall` in its front matter and the content is compiled
+- **THEN** the loaded `Card` exposes that prompt text
+
+#### Scenario: Card without recall prompt
+- **WHEN** a card has no `recall` field
+- **THEN** the card loads successfully and its recall prompt is absent
+
