@@ -47,8 +47,6 @@ platform :ios do
       output_path: "build",
       filename: "lorito_widgets_appstore.mobileprovision",
     )
-    widgets_profile_name = lane_context[SharedValues::SIGH_NAME]
-    UI.message("Using widgets profile: #{widgets_profile_name}")
     build_app(
       project: "Lorito.xcodeproj",
       scheme: "Lorito",
@@ -63,7 +61,7 @@ platform :ios do
         teamID: "3GWRDGA8B7",
         provisioningProfiles: {
           "com.toffguy.lorito" => profile_name,
-          "com.toffguy.lorito.widgets" => widgets_profile_name,
+          "com.toffguy.lorito.widgets" => "com.toffguy.lorito.widgets AppStore",
         },
       },
     )
@@ -119,7 +117,7 @@ platform :ios do
     deliver(
       api_key: asc_api_key,
       submit_for_review: true,
-      automatic_release: true,
+      automatic_release: false,  # release manually (coordinated with featuring)
       force: true,
       skip_binary_upload: true,
       overwrite_screenshots: true,
@@ -133,7 +131,7 @@ platform :ios do
     deliver(
       api_key: asc_api_key,
       submit_for_review: true,
-      automatic_release: true,
+      automatic_release: false,  # release manually (coordinated with featuring)
       force: true,
       skip_binary_upload: true,
       overwrite_screenshots: true,

@@ -9,7 +9,7 @@ Growth & Marketing. Тексты и картинки — в [`marketing.md`](mar
 Как сейчас устроен релиз: push тега `v*` → GitHub Actions `release.yml` →
 `fastlane ci_release`: скриншоты на симуляторах «Lorito iPhone» / «Lorito iPad»,
 сборка, TestFlight, `deliver` (метаданные из `fastlane/metadata`, скриншоты,
-отправка на ревью, **автоматический выпуск после одобрения**).
+отправка на ревью; выпуск после одобрения — вручную в ASC).
 
 ## Порядок и сроки
 
@@ -58,9 +58,9 @@ Growth & Marketing. Тексты и картинки — в [`marketing.md`](mar
    `review_information/notes.txt` текстами из `marketing.md` §1.
    В старом описании неверно «прогресс хранится на вашем устройстве» — с 1.3
    есть синхронизация через iCloud.
-3. **Автоматический выпуск.** В `ci_release` стоит `automatic_release: true`.
-   Если хотите выпустить точно в дату из номинации на фичеринг — поменяйте на
-   `false` и выпускайте кнопкой «Release This Version» в ASC.
+3. **Выпуск вручную.** В `ci_release` и `submit` стоит `automatic_release: false`:
+   после одобрения версия ждёт кнопки «Release This Version» в ASC — выпускать в
+   дату из номинации на фичеринг.
 4. Скриншоты: CI переснимет их сам. Новый набор: 8 кадров на iPhone 6.9" и
    8 на iPad 13" в альбомной ориентации (локально уже лежат в
    `fastlane/screenshots/ru`). С апреля 2027 понадобятся ещё скриншоты iPhone Duo.
