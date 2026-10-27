@@ -52,7 +52,7 @@ Growth & Marketing. Тексты и картинки — в [`marketing.md`](mar
 ## 2. Версия и метаданные в репозитории
 
 1. `project.yml`: `MARKETING_VERSION` → `2.0.0` **у обоих** таргетов
-   (`Lorito` и `LoritoWidgets` — должны совпадать), `CURRENT_PROJECT_VERSION` → `10`.
+   (`Lorito` и `LoritoWidgets` — должны совпадать), `CURRENT_PROJECT_VERSION` → `11` (1.5.1 уходит со сборкой 10).
 2. `fastlane/metadata/ru/`: заменить `subtitle.txt`, `keywords.txt`,
    `promotional_text.txt`, `description.txt`, `release_notes.txt` и
    `review_information/notes.txt` текстами из `marketing.md` §1.
