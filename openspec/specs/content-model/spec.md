@@ -76,7 +76,7 @@ Each practical exercise SHALL be stored as a single UTF-8 Markdown file containi
 - **THEN** the file resides under `content/A1/exercises/`
 
 ### Requirement: Exercise frontmatter schema
-Exercise frontmatter SHALL include the common fields: `id` (string, unique across all exercises), `level` (one of the six levels), `theme` (kebab-case string present in the level's theme registry), `card` (an existing card id of the same level), and `type` (one of `multiple-choice`, `fill-in-the-blank`, `matching`, `word-order`, `picture-matching`, `free-response`). Type-specific fields SHALL be:
+Exercise frontmatter SHALL include the common fields: `id` (string, unique across all exercises), `level` (one of the six levels), `theme` (kebab-case string present in the level's theme registry), `card` (an existing card id of the same level), and `type` (one of `multiple-choice`, `fill-in-the-blank`, `matching`, `word-order`, `picture-matching`, `free-response`, `listen-choose`, `dictation`, `speak`). Type-specific fields SHALL be:
 
 - `multiple-choice`: `options` (list of ≥2 strings) and `answer` (the exact correct option, which MUST appear in `options`).
 - `fill-in-the-blank`: `answer` (expected string) and optional `accept` (list of additional accepted strings).
@@ -84,6 +84,9 @@ Exercise frontmatter SHALL include the common fields: `id` (string, unique acros
 - `word-order`: `tokens` (list of strings) and `answer` (the target sentence); optional `accept` (additional accepted orderings). The multiset of `tokens` MUST be able to form `answer`.
 - `picture-matching`: `options` (list of `{image, label}` objects, ≥2) where each `image` names an asset bundled with the content.
 - `free-response`: `answer` (reference string) and optional `accept` (list of accepted strings); self-assessed, so no auto-correctness is derived.
+- `listen-choose`: `audio` (Spanish text to be spoken, one line), `options` (list of ≥2 strings) and `answer` (MUST appear in `options`).
+- `dictation`: `audio` (Spanish text to be spoken and typed back, one line, at most 120 characters) and optional `accept` (list of additional accepted strings).
+- `speak`: `answer` (Spanish target phrase, one line, at most 80 characters) and optional `accept` (list of accepted strings).
 
 #### Scenario: Required fields present
 - **WHEN** an exercise omits a required field for its type
@@ -104,6 +107,14 @@ Exercise frontmatter SHALL include the common fields: `id` (string, unique acros
 #### Scenario: Unknown type rejected
 - **WHEN** an exercise declares a `type` not in the supported set
 - **THEN** validation fails and reports the unknown type
+
+#### Scenario: Listen-choose answer among options
+- **WHEN** a `listen-choose` exercise declares an `answer` not present in its `options`
+- **THEN** validation fails and reports the mismatch
+
+#### Scenario: Overlong dictation rejected
+- **WHEN** a `dictation` exercise's `audio` exceeds 120 characters
+- **THEN** validation fails and names the exercise
 
 ### Requirement: Documented exercise schema
 The repository `content/schema.md` SHALL document the exercise file location, the common and type-specific frontmatter fields for every supported type, the auto-checkable vs self-assessed distinction, and the answer-matching (normalization) rules.
