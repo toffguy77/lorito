@@ -24,6 +24,10 @@ public enum ExerciseTypeName: String, Codable, Sendable, CaseIterable {
 /// The closed, anonymous product-event taxonomy. Payloads are enums, ints and
 /// bools only — never item ids, text or personal data. New events are added
 /// only by an ADDED requirement in the `product-analytics` capability.
+public enum PaywallEntry: String, Codable, Sendable { case settings, examPath }
+public enum PurchaseFailure: String, Codable, Sendable { case cancelled, pending, error, unavailable }
+public enum RestoreOutcome: String, Codable, Sendable { case restored, nothingToRestore, failed }
+
 public enum AnalyticsEvent: Codable, Sendable, Hashable {
     case onboardingStep(OnboardingStepName)
     case onboardingCompleted
@@ -39,6 +43,12 @@ public enum AnalyticsEvent: Codable, Sendable, Hashable {
     case placementCompleted(level: CEFRLevel, known: CEFRLevel?, questions: Int)
     case placementSkipKnownApplied(cards: Int)
     case firstSessionStarted(newCards: Int)
+    // lorito-pro (no prices, Apple IDs or personal data)
+    case paywallShown(entry: PaywallEntry)
+    case purchaseStarted(productID: String)
+    case purchaseCompleted(productID: String)
+    case purchaseFailed(productID: String, reason: PurchaseFailure)
+    case restore(outcome: RestoreOutcome)
 
     public var name: String {
         switch self {
@@ -55,6 +65,11 @@ public enum AnalyticsEvent: Codable, Sendable, Hashable {
         case .placementCompleted: return "placementCompleted"
         case .placementSkipKnownApplied: return "placementSkipKnownApplied"
         case .firstSessionStarted: return "firstSessionStarted"
+        case .paywallShown: return "paywall_shown"
+        case .purchaseStarted: return "purchase_started"
+        case .purchaseCompleted: return "purchase_completed"
+        case .purchaseFailed: return "purchase_failed"
+        case .restore: return "restore"
         }
     }
 
@@ -66,6 +81,10 @@ public enum AnalyticsEvent: Codable, Sendable, Hashable {
             return ["level": level.rawValue, "known": known?.rawValue ?? "none", "questions": "\(questions)"]
         case .placementSkipKnownApplied(let cards): return ["cards": "\(cards)"]
         case .firstSessionStarted(let newCards): return ["newCards": "\(newCards)"]
+        case .paywallShown(let entry): return ["entry": entry.rawValue]
+        case .purchaseStarted(let id), .purchaseCompleted(let id): return ["product": id]
+        case .purchaseFailed(let id, let reason): return ["product": id, "reason": reason.rawValue]
+        case .restore(let outcome): return ["outcome": outcome.rawValue]
         case .sessionStarted(let due, let new): return ["due": "\(due)", "new": "\(new)"]
         case .sessionCompleted(let items, let pct): return ["items": "\(items)", "firstTryPercent": "\(pct)"]
         case .itemGraded(let kind, let grade, let revealed):

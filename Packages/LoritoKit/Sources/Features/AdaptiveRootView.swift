@@ -26,6 +26,8 @@ public struct AdaptiveRootView: View {
     @State private var retentionSettings: RetentionSettingsModel
     @State private var goalSettings: GoalSettingsModel
     @State private var conjugationSettings: ConjugationSettingsModel
+    /// Lorito Pro entitlements (resolved at launch and on every transaction update).
+    @State private var purchases = PurchaseService()
     @Environment(\.speechService) private var speech
     @SceneStorage("lorito.catalogSelection") private var storedCatalogSelection = ""
     @Environment(\.horizontalSizeClass) private var sizeClass
@@ -75,6 +77,7 @@ public struct AdaptiveRootView: View {
             UNUserNotificationCenter.current().delegate = delegate
             navigation.restoreCatalogSelection(storedCatalogSelection, in: catalog)
             startFirstSessionIfNeeded()
+            Task { await purchases.start() }
             refreshPath()
             publishWidgets()
             AnalyticsService.shared.checkStreakOnLaunch(currentStreak())
@@ -159,6 +162,7 @@ public struct AdaptiveRootView: View {
             NavigationStack {
                 SettingsView(model: scopeModel, reminders: reminders, audio: audioSettings,
                              retention: retentionSettings, goals: goalSettings, conjugation: conjugationSettings,
+                             pro: purchases,
                              hasSpanishVoice: speech != nil)
             }
         }

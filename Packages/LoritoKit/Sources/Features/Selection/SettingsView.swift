@@ -13,14 +13,16 @@ public struct SettingsView: View {
     private let retention: RetentionSettingsModel?
     private let goals: GoalSettingsModel?
     private let conjugation: ConjugationSettingsModel?
+    private let pro: PurchaseService?
     private let hasSpanishVoice: Bool
     @Environment(\.loritoUITesting) private var uiTesting
 
     public init(model: ScopeSelectionModel, reminders: ReminderService? = nil,
                 audio: AudioSettingsModel? = nil, retention: RetentionSettingsModel? = nil,
                 goals: GoalSettingsModel? = nil, conjugation: ConjugationSettingsModel? = nil,
-                hasSpanishVoice: Bool = true) {
+                pro: PurchaseService? = nil, hasSpanishVoice: Bool = true) {
         self.goals = goals
+        self.pro = pro
         self.conjugation = conjugation
         _model = State(initialValue: model)
         self.reminders = reminders
@@ -56,6 +58,8 @@ public struct SettingsView: View {
                     settingsRow("О приложении", systemImage: "info.circle")
                 }
                 .buttonStyle(.plain)
+
+                if let pro { section("Lorito Pro") { ProSettingsSection(service: pro) } }
 
                 if let retention { retentionSection(retention) }
 

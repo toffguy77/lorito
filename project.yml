@@ -135,6 +135,7 @@ schemes:
         LoritoUITests: [test]
     run:
       config: Debug
+      storeKitConfiguration: Lorito/Lorito.storekit
     test:
       config: Debug
       targets:
