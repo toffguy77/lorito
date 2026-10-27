@@ -79,6 +79,8 @@ platform :ios do
 
   desc "CI: import signing assets, build, upload to TestFlight (no review submission)"
   lane :ci_beta do
+    # TestFlight also uses the production CloudKit schema — warn loudly.
+    sh("bash", "../tools/cloudkit_schema_check.sh", "--warn")
     setup_ci
     import_certificate(
       certificate_path: "fastlane/certificate.p12",
@@ -97,6 +99,8 @@ platform :ios do
 
   desc "CI: import signing assets, build, upload to TestFlight, submit for review"
   lane :ci_release do
+    # CloudKit release gate: production must have every development field.
+    sh("bash", "../tools/cloudkit_schema_check.sh")
     setup_ci
     import_certificate(
       certificate_path: "fastlane/certificate.p12",
@@ -128,6 +132,8 @@ platform :ios do
 
   desc "Deliver metadata + screenshots and submit the version for review"
   lane :submit do
+    # CloudKit release gate: production must have every development field.
+    sh("bash", "../tools/cloudkit_schema_check.sh")
     deliver(
       api_key: asc_api_key,
       submit_for_review: true,

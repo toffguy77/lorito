@@ -1,0 +1,17 @@
+DEFINE SCHEMA
+
+    RECORD TYPE CD_SettingsRecord (
+        "___createTime"         TIMESTAMP,
+        "___modTime"            TIMESTAMP,
+        "___recordID"           REFERENCE QUERYABLE,
+        CD_dailyNewCardCount    INT64 QUERYABLE,
+        CD_entityName           STRING,
+        CD_targetLevelRaw       STRING,
+        GRANT WRITE TO "_creator"
+    );
+
+    RECORD TYPE Users (
+        "___createTime"         TIMESTAMP,
+        roles                   LIST<INT64>,
+        GRANT WRITE TO "_creator"
+    );

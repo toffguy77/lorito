@@ -1,5 +1,6 @@
 import Foundation
 import SwiftData
+import CoreData
 
 /// Configuration for the user-data store.
 public struct PersistenceConfig: Sendable {
@@ -27,12 +28,16 @@ public struct PersistenceConfig: Sendable {
 }
 
 public enum PersistenceController {
-    public static let schema = Schema([
+    /// Every synced `@Model` type. New synced records are added here (and to
+    /// `cloudkit/schema.ckdb` — see the synced-data checklist in CLAUDE.md).
+    static let modelTypes: [any PersistentModel.Type] = [
         SettingsRecord.self,
         ReviewRecord.self,
         EventRecord.self,
         AttemptRecord.self,
-    ])
+    ]
+
+    public static let schema = Schema(modelTypes)
 
     public static func makeContainer(config: PersistenceConfig = .default) throws -> ModelContainer {
         let cloudKit: ModelConfiguration.CloudKitDatabase = config.cloudKitEnabled
@@ -70,6 +75,9 @@ public enum PersistenceController {
             return try! makeContainer(config: PersistenceConfig(inMemory: true, cloudKitEnabled: false))
         }
         if cloudKitEnabled {
+            #if DEBUG
+            if CommandLine.arguments.contains("-LoritoInitCloudKitSchema") { initializeCloudKitSchema() }
+            #endif
             if let synced = try? makeContainer(config: PersistenceConfig(cloudKitEnabled: true)) {
                 print("[Lorito] CloudKit sync ENABLED (private DB iCloud.com.toffguy.lorito)")
                 return synced
@@ -82,4 +90,35 @@ public enum PersistenceController {
         // unrecoverable and should crash loudly.
         return try! makeContainer(config: PersistenceConfig(cloudKitEnabled: false))
     }
+
+    #if DEBUG
+    /// Debug-only (`-LoritoInitCloudKitSchema`): create every record type and
+    /// field of the current model in the CloudKit **development** environment,
+    /// so `cktool export-schema` sees new synced fields. Runs before SwiftData
+    /// opens the store, on the same file. Never compiled into Release builds.
+    static func initializeCloudKitSchema(containerID: String = PersistenceConfig.default.cloudKitContainerID) {
+        let url = ModelConfiguration(schema: schema, groupContainer: .none).url
+        guard let model = NSManagedObjectModel.makeManagedObjectModel(for: modelTypes) else {
+            print("[Lorito] initializeCloudKitSchema: could not build the managed object model")
+            return
+        }
+        let description = NSPersistentStoreDescription(url: url)
+        description.cloudKitContainerOptions = NSPersistentCloudKitContainerOptions(containerIdentifier: containerID)
+        description.shouldAddStoreAsynchronously = false
+        let container = NSPersistentCloudKitContainer(name: "Lorito", managedObjectModel: model)
+        container.persistentStoreDescriptions = [description]
+        container.loadPersistentStores { _, error in
+            if let error { print("[Lorito] initializeCloudKitSchema: load failed: \(error)") }
+        }
+        do {
+            try container.initializeCloudKitSchema()
+            print("[Lorito] CloudKit development schema initialized")
+        } catch {
+            print("[Lorito] initializeCloudKitSchema failed: \(error)")
+        }
+        for store in container.persistentStoreCoordinator.persistentStores {
+            try? container.persistentStoreCoordinator.remove(store)
+        }
+    }
+    #endif
 }

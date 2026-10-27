@@ -1,0 +1,26 @@
+DEFINE SCHEMA
+
+    RECORD TYPE CD_SettingsRecord (
+        "___createTime"         TIMESTAMP,
+        "___modTime"            TIMESTAMP,
+        "___recordID"           REFERENCE QUERYABLE,
+        CD_dailyNewCardCount    INT64,
+        CD_entityName           STRING,
+        CD_studyGoalLevelRaw    STRING,
+        CD_targetLevelRaw       STRING,
+        GRANT WRITE TO "_creator",
+        GRANT CREATE TO "_icloud",
+        GRANT READ TO "_world"
+    );
+
+    RECORD TYPE CD_StudyGoalRecord (
+        "___createTime"         TIMESTAMP,
+        CD_targetDate           TIMESTAMP,
+        GRANT WRITE TO "_creator"
+    );
+
+    RECORD TYPE Users (
+        "___createTime"         TIMESTAMP,
+        roles                   LIST<INT64>,
+        GRANT WRITE TO "_creator"
+    );

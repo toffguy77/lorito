@@ -4,17 +4,21 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-**Lorito** (App Store: "Lorito Español") — an iOS app for learning Spanish via
-spaced repetition. UI in Russian. Offline bundled content; per-user progress
-syncs through the user's private CloudKit database (no custom backend).
-Bundle id `com.toffguy.lorito`; CloudKit container `iCloud.com.toffguy.lorito`.
+**Lorito** (App Store: "Lorito Español") — an iOS/iPadOS app for learning
+Spanish via spaced repetition. UI in Russian. Offline bundled content; per-user
+progress syncs through the user's private CloudKit database (no custom backend).
+Bundle id `com.toffguy.lorito`; CloudKit container `iCloud.com.toffguy.lorito`;
+widget extension `com.toffguy.lorito.widgets`; App Group `group.com.toffguy.lorito`.
+
+Visual identity is **Plumaje** (parrot palette, ¡ ¿ as brand glyphs, two type
+voices). Design sources live in `design/` — read `design/README.md` first.
 
 ## Development methodology: OpenSpec
 
-All development goes through **OpenSpec** (`openspec/`), not ad-hoc edits. The
-path to a launchable MVP is six changes: `bootstrap-foundation` (this), then
-`srs-engine`, `daily-plan`, `onboarding-and-selection`, `study-flow`,
-`reminders`.
+All development goes through **OpenSpec** (`openspec/`), not ad-hoc edits.
+Current behavior is in `openspec/specs/`; shipped changes are in
+`openspec/changes/archive/`. Each change: propose → apply (tasks.md top to
+bottom, TDD where tasks say "failing tests") → validate → archive.
 
 - Propose a change: `/opsx:propose` · Implement: `/opsx:apply <change>` · Archive: `/opsx:archive`
 - Inspect: `openspec list` · `openspec show <change>` · `openspec validate <change> --strict`
@@ -24,18 +28,33 @@ path to a launchable MVP is six changes: `bootstrap-foundation` (this), then
 The Xcode app target (`Lorito/`) is thin; all logic lives in the local Swift
 package `Packages/LoritoKit/` as layered targets:
 
-- **Domain** — pure Swift. Core model (`CEFRLevel`, `Theme`, `Card`,
-  `ContentCatalog`) and user-data value types + `UserDataStore` protocol.
+- **Domain** — pure Swift. Core model (`CEFRLevel`, `Theme`, `Card` incl.
+  optional `recall`, `ContentCatalog`), user-data value types +
+  `UserDataStore` protocol, and all pure logic: SM-2 scheduler,
+  `DailyPlanner`, `StatsCalculator` (streaks, daily activity, long-term
+  memory), `IntervalPreview`, `SessionSummary`, `DailyTrap`, `WidgetSnapshot`.
   MUST NOT import SwiftUI/SwiftData/CloudKit (keeps it testable & portable).
 - **Content** — loads the compiled `content.json` bundle (`ContentLoader`).
 - **Persistence** — SwiftData `@Model` records + `SwiftDataUserDataStore`
   implementing `Domain.UserDataStore`; `PersistenceController` builds the
-  `ModelContainer` (CloudKit behind a flag).
-- **DesignSystem** — "Modern Calm" tokens (`LoritoColor/Font/Spacing/Radius`)
-  and components (chip, day-progress, callout, grade buttons, card, Markdown
-  body via MarkdownUI) + `ComponentGalleryView`.
-- **Features** — SwiftUI screens (currently `RootView`; real screens land in
-  later changes). Depends inward on all of the above.
+  `ModelContainer`.
+- **DesignSystem** — Plumaje tokens (`LoritoColor`, `LoritoTextStyle`/
+  `LoritoFont`, `LoritoSpacing/Radius/Elevation/Layout`), bundled fonts +
+  `FontRegistry`, components (`PrimaryButton`, `FloatingTabBar`, `Sidebar`,
+  `PlanHeroCard`, `GradeButtons`, `SessionProgressBar`, `SpanishText`,
+  `RecallPromptView`, `ActivityHeatmap`, `BalancedColumnsLayout`, callouts,
+  card body via MarkdownUI…) + `ComponentGalleryView`.
+- **WidgetSupport** — shared by the app and the widget extension: App Group
+  snapshot store, widget practice answers, `WidgetDayState`, Live Activity
+  attributes. No SwiftData.
+- **Features** — SwiftUI screens. `AdaptiveRootView` switches compact (iPhone,
+  floating bottom bar) / regular (iPad, sidebar-adaptable tabs) by size class;
+  `AppNavigation` (above the switch) holds destination, catalog selection and
+  the open study session so resizes never reset them.
+
+Outside the package: `Lorito/` (app target), `LoritoWidgets/` (WidgetKit
+extension: Home/Lock Screen widgets, interactive practice widget, session
+Live Activity — reads only the App Group snapshot), `LoritoUITests/`.
 
 Dependency direction points inward toward Domain.
 
@@ -51,6 +70,20 @@ xcodebuild -project Lorito.xcodeproj -scheme Lorito \
 
 Regenerate the project after adding files only if you change `project.yml`;
 Swift package sources are globbed automatically.
+
+UI tests run on iPhone and iPad (iPad-only tests skip on iPhone):
+
+```bash
+xcodebuild -project Lorito.xcodeproj -scheme Lorito \
+  -destination 'platform=iOS Simulator,name=iPhone 17 Pro' test
+xcodebuild -project Lorito.xcodeproj -scheme Lorito \
+  -destination 'platform=iOS Simulator,name=iPad Pro 13' test
+```
+
+UI tests launch through `launchFresh(app)` (`-lorito-ui-testing`: in-memory
+store, onboarding first), so they're order-independent.
+Screenshots: `fastlane snapshot` (Snapfile: "Lorito iPhone", "Lorito iPad";
+iPad in landscape). Never run two test runs against the same simulator at once.
 
 ### Package build & tests
 
@@ -68,6 +101,8 @@ seeded from the Obsidian vault. See `content/schema.md`.
 ```bash
 python3 tools/migrate.py [VAULT_DIR]   # seed/refresh content/ from the vault
 python3 tools/enrich.py <CARD_ID>      # enrichment step (LLM integration point; passthrough by default)
+python3 tools/enrich.py --recall <ID|LEVEL>          # recall-prompt drafting context (+ draft)
+python3 tools/enrich.py --set-recall <ID> "<text>"   # write a validated recall prompt
 python3 tools/validate.py              # integrity checks (non-zero exit on failure)
 python3 tools/compile.py               # validate, then write content.json into the Content bundle
 python3 tools/test_pipeline.py         # pipeline unit tests
@@ -76,22 +111,86 @@ python3 tools/test_pipeline.py         # pipeline unit tests
 After editing content, run `tools/compile.py` to refresh
 `Packages/LoritoKit/Sources/Content/Resources/content.json`.
 
-## Key decisions (foundation)
+## Key decisions
 
 - **XcodeGen** generates the `.xcodeproj` from `project.yml` (git-friendly).
 - **Local SPM package** for layered, CLI-testable modules; the pure Domain is
   tested via `swift test` without a simulator.
 - **Content pipeline in Python (stdlib)** — no external dependencies.
 - **MarkdownUI** renders card bodies (tables + callout blockquotes).
-- **SwiftData + CloudKit**: `PersistenceConfig.cloudKitEnabled` is **off** by
-  default (local-first). Enabling iCloud sync needs an Apple Developer team:
-  add `Lorito/Lorito.entitlements` to the target in `project.yml`
-  (`CODE_SIGN_ENTITLEMENTS`), enable the iCloud/CloudKit capability, sign, and
-  set `cloudKitEnabled = true`. Container: `iCloud.com.toffguy.lorito`.
+- **SwiftData + CloudKit**: the app target sets `LORITO_CLOUDKIT`, so
+  `RootView(cloudKitEnabled: true)` syncs via the private DB
+  (`iCloud.com.toffguy.lorito`); without an iCloud account it falls back to a
+  local store. Don't change the `@Model` records or the CloudKit schema
+  casually — production schema is deployed.
+- **Store location is pinned to the app container** (`groupContainer: .none`).
+  With the App Group entitlement SwiftData would otherwise move the store into
+  the group container and orphan existing users' data.
+- **Widgets read only `widget-snapshot.json`** in the App Group (written by
+  `WidgetSnapshotPublisher` on launch, foreground, and session end). The
+  extension never opens the user-data store; widget answers never touch SRS.
+- **Learning day = local calendar day** (`Calendar.learningDay`, device time
+  zone, local midnight) for due dates, the daily plan, streaks, "today" counts,
+  trap of the day and widgets. Pass an explicit calendar in tests
+  (`Calendar.learningDay(in: UTC)`).
+- **Review items carry their kind in the id** (`ItemKind.parse`: `A1-07` card,
+  `conj:`, `word:`, `ccse:`); card counts/planners use `.card` only. New items
+  per day are capped by `IntroductionLedger` + `DailyBudget`; only the first
+  grade of an item per learning day updates its `ReviewState`.
+- **Fonts** ship in `DesignSystem/Resources/Fonts` and are registered at
+  launch (`FontRegistry.registerAll()`, also in the widget bundle).
+- **Hardware keys**: Space and 1–4 use SwiftUI `keyboardShortcut`; Return and
+  Esc go through `hardwareKeyCommands` (UIKit, priority over the iPadOS focus
+  system). XCUITest can't deliver Return/Esc on the simulator — verify on device.
+
+## Synced data checklist (cloudkit-sync)
+
+Every field or record added to the synced store:
+
+1. Optional or **inline-defaulted** `@Model` property (CloudKit refuses
+   non-optional fields without defaults). Composite values → scalar fields.
+   Never rename or remove a stored field; renames keep the stored name via
+   `@Attribute(originalName:)`. New `@Model` types go in
+   `PersistenceController.modelTypes`.
+2. Mapped **both ways** in `SwiftDataUserDataStore` (record ↔ Domain value).
+3. A store **round-trip test** (`SyncedSettingsRoundTripTests` for settings),
+   plus "old record loads with defaults".
+4. **Export the development schema** and commit it in the same change:
+   run a Debug build with `-LoritoInitCloudKitSchema` (iCloud signed in), then
+   `xcrun cktool export-schema --team-id 3GWRDGA8B7 --container-id iCloud.com.toffguy.lorito --environment development --output-file cloudkit/schema.ckdb`.
+5. **Before the release** the owner presses «Deploy Schema Changes» in CloudKit
+   Console; `tools/cloudkit_schema_check.sh` (run by `ci_release` / `submit`)
+   must pass.
 
 ## Conventions
 
 - Design-system call sites use **semantic tokens only** — never raw
-  `Color(hex:)`/literals outside `Sources/DesignSystem/Tokens/`.
+  `Color(hex:)`/literals outside `Sources/DesignSystem/Tokens/`
+  (`rg 'Color\(hex' Packages/LoritoKit/Sources --glob '!**/Tokens/**'` must be
+  empty). Token values come only from `design/brand/tokens.json`; tests parse
+  it and check ≥ 4.5:1 contrast for text pairings.
+- **Two type voices**: Russian UI in Onest/Unbounded; Spanish text only via
+  `SpanishText` / `LoritoFont.spanish*` (Instrument Serif has no Cyrillic).
+  Exercise answers that may be Russian use `AnswerText`. Markdown `*emphasis*`
+  in card bodies is the Spanish marker.
+- **Dynamic Type**: styles use `Font.custom(_:size:relativeTo:)`; wide
+  Unbounded titles get `.loritoTitleFit()`. Check AX5 on Today and the session.
+- **Focus mode**: study and exercise sessions render on `ink` in both themes,
+  full screen.
+- No emoji as iconography — SF Symbols or the ¡ ¿ marks.
+- Mockup numbers in `design/mockups/*.dc.html` are demo data; screens use real
+  data. The spec wins over the mockup.
+- Static helpers on SwiftUI `View`s that tests call must be `nonisolated`
+  (otherwise the test run traps with signal 5).
 - Card `id` format: `^[A-C][12]-\d{2}$` (e.g. `A1-07`). Themes are
   `<level-lowercased>-<n>` and group a contiguous run of cards by `order`.
+
+## graphify
+
+This project has a graphify knowledge graph at graphify-out/.
+
+Rules:
+- Before answering architecture or codebase questions, read graphify-out/GRAPH_REPORT.md for god nodes and community structure
+- If graphify-out/wiki/index.md exists, navigate it instead of reading raw files
+- For cross-module "how does X relate to Y" questions, prefer `graphify query "<question>"`, `graphify path "<A>" "<B>"`, or `graphify explain "<concept>"` over grep — these traverse the graph's EXTRACTED + INFERRED edges instead of scanning files
+- After modifying code files in this session, run `graphify update .` to keep the graph current (AST-only, no API cost)

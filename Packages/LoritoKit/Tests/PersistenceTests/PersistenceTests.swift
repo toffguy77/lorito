@@ -79,3 +79,40 @@ struct PersistenceTests {
         #expect(attempts.contains { $0.exerciseID == "A1-EX-06" && !$0.correct })
     }
 }
+
+/// Synced-data convention: every settings field survives save → load through
+/// the SwiftData store, and records without a newer field load with defaults.
+/// New synced settings fields add a line to `settingsRoundTrip`.
+@Suite("Synced settings round trip")
+struct SyncedSettingsRoundTripTests {
+    /// Save `settings` through a fresh store and load them back.
+    static func roundTrip(_ settings: UserSettings) throws -> UserSettings {
+        let container = try PersistenceController.makeContainer(config: .init(inMemory: true))
+        let store = SwiftDataUserDataStore(container: container)
+        try store.saveSettings(settings)
+        return try SwiftDataUserDataStore(container: container).loadSettings()
+    }
+
+    @Test("Every settings field round-trips")
+    func settingsRoundTrip() throws {
+        var s = UserSettings.default
+        s.targetLevel = .b2
+        s.selectedThemeIDs = ["b2-1", "a1-3"]
+        s.dailyNewCardCount = 4
+        s.didCompleteOnboarding = true
+        s.reminderConfig = ReminderConfig(enabled: true, times: [ReminderTime(hour: 8, minute: 30)])
+        #expect(try Self.roundTrip(s) == s)
+    }
+
+    @Test("A record saved without newer fields loads with their defaults")
+    func oldRecordDefaults() throws {
+        let container = try PersistenceController.makeContainer(config: .init(inMemory: true))
+        let context = ModelContext(container)
+        context.insert(SettingsRecord(targetLevelRaw: "A1"))   // only what an old version wrote
+        try context.save()
+        let loaded = try SwiftDataUserDataStore(container: container).loadSettings()
+        #expect(loaded.targetLevel == .a1)
+        #expect(loaded.dailyNewCardCount == UserSettings.default.dailyNewCardCount)
+        #expect(loaded.didCompleteOnboarding == false)
+    }
+}
