@@ -224,3 +224,28 @@ struct ReminderPlannerStreakTests {
         #expect(reqs.contains { cal.isDate($0.fireDate, inSameDayAs: dateTime(2026, 6, 26)) })
     }
 }
+
+@Suite("Reminder freeze line (streak-protection)")
+struct ReminderFreezeLineTests {
+    let cal = utcCalendar()
+    func plan(frozen: Bool) -> [ReminderRequest] {
+        let now = dateTime(2026, 6, 24, 7)
+        let requests = ReminderPlanner.requests(
+            times: [ReminderTime(hour: 9, minute: 0), ReminderTime(hour: 20, minute: 0)],
+            now: now, calendar: cal, counts: { _ in DayCounts(due: 3, new: 1) })
+        return ReminderPlanner.addingFreezeLine(to: requests, frozenYesterday: frozen, now: now, calendar: cal)
+    }
+
+    @Test("Spec: yesterday frozen → 09:00 body has the line, 20:00 doesn't, nor later days")
+    func added() {
+        let r = plan(frozen: true)
+        let withLine = r.filter { $0.body.contains(ReminderPlanner.freezeLine) }
+        #expect(withLine.count == 1)
+        #expect(withLine.first?.fireDate == dateTime(2026, 6, 24, 9))
+    }
+
+    @Test("Spec: not frozen → no body has the line")
+    func none() {
+        #expect(!plan(frozen: false).contains { $0.body.contains(ReminderPlanner.freezeLine) })
+    }
+}

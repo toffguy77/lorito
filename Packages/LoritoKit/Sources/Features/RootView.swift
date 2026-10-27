@@ -74,10 +74,15 @@ public struct RootView: View {
                 FirstSessionBoostStore.shared.clear()
                 TodayPromptSlot().reset()
                 TodayGoalBuilder().reset()
+                StreakBannerLedger().reset()
             }
             let container = PersistenceController.makeUserContainer(cloudKitEnabled: cloudKitEnabled, inMemory: uiTesting)
             let store = SwiftDataUserDataStore(container: container)
             if demoData { try DemoSeed.make(catalog: catalog, today: Date()).apply(to: store) }
+            if uiTesting, CommandLine.arguments.contains("-lorito-seed-frozen-yesterday") {
+                try DemoSeed.frozenYesterday(catalog: catalog, today: Date()).apply(to: store)
+                didCompleteOnboarding = true
+            }
             // Respect a completion flag already recorded in persisted settings.
             if let settings = try? store.loadSettings(), settings.didCompleteOnboarding {
                 didCompleteOnboarding = true

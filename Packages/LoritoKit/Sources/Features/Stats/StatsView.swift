@@ -155,6 +155,13 @@ public struct StatsView: View {
                 .minimumScaleFactor(0.6)
             Text(dayWord(model.stats.currentStreak))
                 .font(LoritoFont.bodyStrong)
+            HStack(spacing: LoritoSpacing.xxs) {
+                Image(systemName: "snowflake")
+                    .accessibilityHidden(true)
+                Text("заморозки: \(model.freezes) из \(StreakConstants.maxFreezes)")
+            }
+            .font(LoritoFont.caption)
+            .padding(.top, LoritoSpacing.xxs)
         }
         .foregroundStyle(LoritoColor.ink)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
@@ -162,7 +169,8 @@ public struct StatsView: View {
         .frame(minHeight: 140)
         .background(LoritoColor.danger, in: RoundedRectangle(cornerRadius: LoritoRadius.lg, style: .continuous))
         .accessibilityElement(children: .combine)
-        .accessibilityLabel("Текущая серия: \(model.stats.currentStreak) \(dayWord(model.stats.currentStreak))")
+        .accessibilityLabel("Текущая серия: \(model.stats.currentStreak) \(dayWord(model.stats.currentStreak)), заморозки: \(model.freezes) из \(StreakConstants.maxFreezes)")
+        .accessibilityIdentifier("stats.streak")
     }
 
     private func statTile(_ title: String, _ value: Int) -> some View {

@@ -130,6 +130,23 @@ public enum ReminderPlanner {
         return Array(result.prefix(ReminderConstants.maxPendingReminders))
     }
 
+    /// streak-protection: the line added to the first reminder of the day after a frozen day.
+    public static let freezeLine = "Заморозка спасла вашу серию"
+
+    /// Separate composition step: when yesterday was frozen, append
+    /// `freezeLine` to the body of today's first reminder only.
+    public static func addingFreezeLine(to requests: [ReminderRequest], frozenYesterday: Bool, now: Date,
+                                        calendar: Calendar) -> [ReminderRequest] {
+        guard frozenYesterday,
+              let first = requests.filter({ calendar.isDate($0.fireDate, inSameDayAs: now) })
+                  .min(by: { $0.fireDate < $1.fireDate }) else { return requests }
+        return requests.map { r in
+            guard r.id == first.id else { return r }
+            return ReminderRequest(id: r.id, fireDate: r.fireDate, title: r.title,
+                                   body: r.body + "\n" + freezeLine, route: r.route)
+        }
+    }
+
     /// Russian body reflecting the day's counts, weaving in the active streak.
     /// When counts are empty and a streak is passed, produces a "save your streak"
     /// nudge instead of a counts phrase.

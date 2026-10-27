@@ -30,12 +30,10 @@ public enum StatsCalculator {
     ) -> StudyStats {
         guard !events.isEmpty else { return .empty }
 
-        let today0 = calendar.startOfDay(for: today)
-        // Distinct study days as day-offsets from today (0 = today, 1 = yesterday…).
-        let dayStarts = Set(events.map { calendar.startOfDay(for: $0.date) })
-
-        let currentStreak = currentStreakLength(dayStarts: dayStarts, today0: today0, calendar: calendar)
-        let bestStreak = bestStreakLength(dayStarts: dayStarts, calendar: calendar)
+        // Streaks replay the log with freezes and revival (streak-protection).
+        let streak = streak(events: events, today: today, calendar: calendar)
+        let currentStreak = streak.current
+        let bestStreak = streak.best
 
         // Counts speak about cards; the streak counts any study activity.
         let cardEvents = events.filter(\.isCard)
@@ -50,42 +48,5 @@ public enum StatsCalculator {
             studiedThisWeek: studiedThisWeek,
             studiedAllTime: cardEvents.count
         )
-    }
-
-    /// Consecutive study days ending at today (if studied) or yesterday.
-    private static func currentStreakLength(dayStarts: Set<Date>, today0: Date, calendar: Calendar) -> Int {
-        let yesterday = calendar.date(byAdding: .day, value: -1, to: today0)!
-        var anchor: Date
-        if dayStarts.contains(today0) {
-            anchor = today0
-        } else if dayStarts.contains(yesterday) {
-            anchor = yesterday
-        } else {
-            return 0
-        }
-        var count = 0
-        var day = anchor
-        while dayStarts.contains(day) {
-            count += 1
-            day = calendar.date(byAdding: .day, value: -1, to: day)!
-        }
-        return count
-    }
-
-    /// Longest run of consecutive study days anywhere in the history.
-    private static func bestStreakLength(dayStarts: Set<Date>, calendar: Calendar) -> Int {
-        let sorted = dayStarts.sorted()
-        var best = 0, run = 0
-        var prev: Date?
-        for day in sorted {
-            if let p = prev, calendar.date(byAdding: .day, value: 1, to: p) == day {
-                run += 1
-            } else {
-                run = 1
-            }
-            best = max(best, run)
-            prev = day
-        }
-        return best
     }
 }

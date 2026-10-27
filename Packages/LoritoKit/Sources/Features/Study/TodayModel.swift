@@ -33,6 +33,9 @@ public final class TodayModel {
         didSet { prompt = promptSlot.prompt(candidates: promptCandidates, events: (try? store.allEvents()) ?? []) }
     }
     private let promptSlot: TodayPromptSlot
+    /// Streak-protection banner (freeze used / revival in progress).
+    public private(set) var streakBanner: StreakBanner?
+    private let streakLedger: StreakBannerLedger
     /// Goal card lines (study-goal).
     public private(set) var goalLines: [TodayGoalLine] = []
     private let goalBuilder: TodayGoalBuilder
@@ -53,7 +56,8 @@ public final class TodayModel {
     /// `today` is a clock so tests can pin the date; defaults to now.
     public init(store: UserDataStore, catalog: ContentCatalog, today: @escaping () -> Date = { Date() },
                 boosts: FirstSessionBoostStore = .shared, prompts: TodayPromptSlot = TodayPromptSlot(),
-                goals: TodayGoalBuilder = TodayGoalBuilder()) {
+                goals: TodayGoalBuilder = TodayGoalBuilder(), streak: StreakBannerLedger = StreakBannerLedger()) {
+        self.streakLedger = streak
         self.promptSlot = prompts
         self.goalBuilder = goals
         self.store = store
@@ -82,6 +86,12 @@ public final class TodayModel {
         id: "goal", title: "Есть дедлайн?",
         message: "Экзамен, переезд или просто дата — поставьте цель, и Lorito подстроит темп новых карточек.",
         actionTitle: "Поставить цель")
+
+    /// Today appeared: a freeze banner and goal end states now count as seen (shown once).
+    public func markShownOnAppear() {
+        if streakBanner == .frozen { streakLedger.markFrozenShown(today: now()) }
+        goalBuilder.markSeen(goalLines.filter(\.isEndState).map(\.id))
+    }
 
     /// "Не сейчас" on the prompt: never offered again; the slot stays empty this visit.
     public func dismissPrompt() {
@@ -119,6 +129,7 @@ public final class TodayModel {
         let rows = StatsCalculator.longTermMemory(reviews: reviews, catalog: catalog, levels: levels)
         memory = (rows.reduce(0) { $0 + $1.longTerm }, rows.reduce(0) { $0 + $1.total })
         trap = Self.pickTrap(settings: settings, reviews: reviews, catalog: catalog, today: today)
+        streakBanner = streakLedger.banner(events: events, today: today, keepFrozen: streakBanner == .frozen)
         goalLines = goalBuilder.lines(settings: settings, cards: catalog.cards, reviews: reviews, today: today,
                                       keepShowing: shownEndStates)
         shownEndStates.formUnion(goalLines.filter(\.isEndState).map(\.id))

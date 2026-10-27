@@ -52,6 +52,20 @@ public struct DemoSeed: Sendable {
         return DemoSeed(settings: settings, reviews: reviews, events: events)
     }
 
+    /// streak-protection UI test: 10 studied days ending the day before
+    /// yesterday, yesterday missed (frozen by the freeze those days earned).
+    public static func frozenYesterday(catalog: ContentCatalog, today: Date, calendar: Calendar = .learningDay) -> DemoSeed {
+        let start = calendar.startOfDay(for: today)
+        let card = catalog.cards.first?.id ?? "A1-01"
+        let events = (2...11).map { offset in
+            StudyEvent(cardID: card, date: calendar.date(byAdding: .hour, value: 19 - offset * 24, to: start) ?? start,
+                       grade: Grade.good.rawValue)
+        }
+        let review = ReviewState(cardID: card, interval: 30, repetitions: 5,
+                                 dueDate: calendar.date(byAdding: .day, value: 20, to: start) ?? start, status: .review)
+        return DemoSeed(settings: UserSettings(targetLevel: .a1, didCompleteOnboarding: true), reviews: [review], events: events)
+    }
+
     /// Writes the seed into an (empty, in-memory) store.
     public func apply(to store: UserDataStore) throws {
         try store.saveSettings(settings)

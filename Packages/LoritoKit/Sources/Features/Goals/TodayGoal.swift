@@ -26,8 +26,7 @@ public struct TodayGoalBuilder: @unchecked Sendable {
     /// `keepShowing`: end-state ids already shown during this visit.
     public func lines(settings: UserSettings, cards: [Card], reviews: [ReviewState], today: Date,
                       keepShowing: Set<String>, calendar: Calendar = .learningDay) -> [TodayGoalLine] {
-        let stored = Set(defaults.stringArray(forKey: Self.seenKey) ?? [])
-        var seen = stored
+        let seen = Set(defaults.stringArray(forKey: Self.seenKey) ?? [])
         var out: [TodayGoalLine] = []
         if let goal = settings.levelGoal {
             let state = GoalPacing.evaluate(goal, cards: cards, reviews: reviews, selectedThemeIDs: settings.selectedThemeIDs,
@@ -49,7 +48,6 @@ public struct TodayGoalBuilder: @unchecked Sendable {
                                              detail: state == .achieved ? "Цель достигнута — все карточки уровня начаты"
                                                                         : "Срок прошёл — можно поставить новую цель",
                                              isEndState: true))
-                    seen.insert(id)
                 }
             }
         }
@@ -63,14 +61,19 @@ public struct TodayGoalBuilder: @unchecked Sendable {
                 let id = "exam:\(exam.kind.rawValue):\(Int(exam.date.timeIntervalSince1970))"
                 if !seen.contains(id) || keepShowing.contains(id) {
                     out.append(TodayGoalLine(id: id, title: title, detail: "Экзамен позади. ¡Enhorabuena!", isEndState: true))
-                    seen.insert(id)
                 }
             }
         }
-        // Write only on change: a UserDefaults write re-renders views that use
-        // @AppStorage, which rebuild Today — writing every time would loop.
-        if seen != stored { defaults.set(Array(seen).sorted(), forKey: Self.seenKey) }
         return out
+    }
+
+    /// Called when Today actually appears — not from `refresh`, which also runs
+    /// for throwaway model instances. Writes only on change: a UserDefaults
+    /// write re-renders views that use @AppStorage, which rebuild Today.
+    public func markSeen(_ ids: [String]) {
+        let stored = Set(defaults.stringArray(forKey: Self.seenKey) ?? [])
+        let seen = stored.union(ids)
+        if seen != stored { defaults.set(Array(seen).sorted(), forKey: Self.seenKey) }
     }
 
     /// "осталось 1 день / 2 дня / 5 дней"

@@ -36,7 +36,10 @@ public struct TodayView: View {
             .padding(.bottom, LoritoSpacing.xl)
         }
         .background(LoritoColor.surface.ignoresSafeArea())
-        .onAppear { model.refresh() }
+        .onAppear {
+            model.refresh()
+            model.markShownOnAppear()
+        }
         // Return starts the session while "Начать" is shown and enabled.
         .hardwareKeyCommands(model.hasWork && navigation.session == nil
                              ? [HardwareKeyCommand(.return, title: "Начать", action: startSession)] : [])
@@ -74,6 +77,7 @@ public struct TodayView: View {
             header
             planOrState
             WeekStrip(days: model.week)
+            streakBannerView
             goalCard
             promptCard
             trap
@@ -95,6 +99,7 @@ public struct TodayView: View {
                         .padding(.horizontal, LoritoSpacing.md)
                         .padding(.vertical, LoritoSpacing.sm)
                         .background(LoritoColor.surfaceRaised, in: RoundedRectangle(cornerRadius: LoritoRadius.lg, style: .continuous))
+                    streakBannerView
                     goalCard
                     promptCard
                     trap
@@ -155,6 +160,32 @@ public struct TodayView: View {
         model.dismissPrompt()
         if prompt.id == TodayModel.goalPrompt.id {
             goalModel = GoalSettingsModel(store: store, catalog: catalog)
+        }
+    }
+
+    /// streak-protection: a freeze saved the streak / a revival is in progress.
+    @ViewBuilder
+    private var streakBannerView: some View {
+        if let banner = model.streakBanner {
+            HStack(alignment: .top, spacing: LoritoSpacing.sm) {
+                Image(systemName: banner == .frozen ? "snowflake" : "flame")
+                    .foregroundStyle(LoritoColor.accent)
+                    .accessibilityHidden(true)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(banner.title)
+                        .font(LoritoFont.bodyStrong)
+                        .foregroundStyle(LoritoColor.textPrimary)
+                    Text(banner.detail)
+                        .font(LoritoFont.caption)
+                        .foregroundStyle(LoritoColor.textSecondary)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+            }
+            .padding(LoritoSpacing.md)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(LoritoColor.surfaceRaised, in: RoundedRectangle(cornerRadius: LoritoRadius.md, style: .continuous))
+            .accessibilityElement(children: .combine)
+            .accessibilityIdentifier("today.streakBanner")
         }
     }
 

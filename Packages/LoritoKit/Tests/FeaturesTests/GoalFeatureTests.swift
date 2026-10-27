@@ -63,6 +63,7 @@ struct GoalFeatureTests {
         let all = catalog.cards(in: .a1).map { ReviewState(cardID: $0.id, status: .review) }
         let first = builder.lines(settings: settings, cards: catalog.cards, reviews: all, today: now, keepShowing: [])
         #expect(first.first?.isEndState == true)
+        builder.markSeen(first.filter(\.isEndState).map(\.id))
         let later = builder.lines(settings: settings, cards: catalog.cards, reviews: all, today: now, keepShowing: [])
         #expect(!later.contains { $0.isEndState })
     }

@@ -13,6 +13,8 @@ public final class StatsModel {
     private let fixedToday: Date?
 
     public private(set) var stats: StudyStats = .empty
+    /// Streak freezes held (streak-protection).
+    public private(set) var freezes = 0
     /// The last 84 days, oldest first.
     public private(set) var activity: [DailyActivity] = []
     /// Intensity bucket (0–3) per `activity` entry.
@@ -39,6 +41,7 @@ public final class StatsModel {
         let settings = (try? store.loadSettings()) ?? .default
 
         stats = StatsCalculator.compute(events: events, today: today)
+        freezes = StatsCalculator.streak(events: events, today: today).freezes
         activity = StatsCalculator.dailyActivity(events: events, days: StatsConstants.heatmapDays, today: today)
         buckets = StatsCalculator.buckets(for: activity.map(\.count))
         windowTotal = activity.reduce(0) { $0 + $1.count }

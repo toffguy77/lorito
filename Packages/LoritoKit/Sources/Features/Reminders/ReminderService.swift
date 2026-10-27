@@ -151,9 +151,12 @@ public final class ReminderService {
             )
         }
 
-        let requests = ReminderPlanner.requests(
+        let planned = ReminderPlanner.requests(
             times: cfg.times, now: now, calendar: cal, counts: countsForDay, streak: streakForDay
         )
+        // streak-protection: today's first reminder mentions a freeze used yesterday.
+        let frozen = StatsCalculator.streak(events: events, today: now, calendar: cal).frozenYesterday
+        let requests = ReminderPlanner.addingFreezeLine(to: planned, frozenYesterday: frozen, now: now, calendar: cal)
         await scheduler.schedule(requests)
     }
 }

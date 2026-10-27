@@ -81,9 +81,12 @@ public struct AdaptiveRootView: View {
         .onChange(of: scenePhase) { _, phase in
             // Foreground / day-rollover trigger.
             if phase == .active {
-                publishWidgets()
-                Task { await AnalyticsService.shared.flush() }
-                Task { await reminders.reschedule() }
+                Task {
+                    await ForegroundRefresh.run(
+                        publishWidgets: publishWidgets,
+                        flushAnalytics: { await AnalyticsService.shared.flush() },
+                        rescheduleReminders: { await reminders.reschedule() })
+                }
             }
         }
         // Live Activity follows the open study session.
