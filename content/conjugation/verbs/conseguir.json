@@ -1,0 +1,48 @@
+{
+  "infinitive": "conseguir",
+  "rank": 560,
+  "ru": "добиваться, доставать",
+  "model": "ir",
+  "forms": {
+    "presente": [
+      "consigo",
+      "consigues",
+      "consigue",
+      "conseguimos",
+      "conseguís",
+      "consiguen"
+    ],
+    "preterito-indefinido": [
+      "conseguí",
+      "conseguiste",
+      "consiguió",
+      "conseguimos",
+      "conseguisteis",
+      "consiguieron"
+    ],
+    "presente-subjuntivo": [
+      "consiga",
+      "consigas",
+      "consiga",
+      "consigamos",
+      "consigáis",
+      "consigan"
+    ],
+    "imperfecto-subjuntivo": [
+      "consiguiera",
+      "consiguieras",
+      "consiguiera",
+      "consiguiéramos",
+      "consiguierais",
+      "consiguieran"
+    ],
+    "futuro-subjuntivo": [
+      "consiguiere",
+      "consiguieres",
+      "consiguiere",
+      "consiguiéremos",
+      "consiguiereis",
+      "consiguieren"
+    ]
+  }
+}

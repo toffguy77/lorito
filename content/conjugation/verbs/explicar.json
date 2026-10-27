@@ -1,0 +1,24 @@
+{
+  "infinitive": "explicar",
+  "rank": 1982,
+  "ru": "объяснять",
+  "model": "ar",
+  "forms": {
+    "preterito-indefinido": [
+      "expliqué",
+      "explicaste",
+      "explicó",
+      "explicamos",
+      "explicasteis",
+      "explicaron"
+    ],
+    "presente-subjuntivo": [
+      "explique",
+      "expliques",
+      "explique",
+      "expliquemos",
+      "expliquéis",
+      "expliquen"
+    ]
+  }
+}

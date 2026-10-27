@@ -1,0 +1,48 @@
+{
+  "infinitive": "sentir",
+  "rank": 798,
+  "ru": "чувствовать",
+  "model": "ir",
+  "forms": {
+    "presente": [
+      "siento",
+      "sientes",
+      "siente",
+      "sentimos",
+      "sentís",
+      "sienten"
+    ],
+    "preterito-indefinido": [
+      "sentí",
+      "sentiste",
+      "sintió",
+      "sentimos",
+      "sentisteis",
+      "sintieron"
+    ],
+    "presente-subjuntivo": [
+      "sienta",
+      "sientas",
+      "sienta",
+      "sintamos",
+      "sintáis",
+      "sientan"
+    ],
+    "imperfecto-subjuntivo": [
+      "sintiera",
+      "sintieras",
+      "sintiera",
+      "sintiéramos",
+      "sintierais",
+      "sintieran"
+    ],
+    "futuro-subjuntivo": [
+      "sintiere",
+      "sintieres",
+      "sintiere",
+      "sintiéremos",
+      "sintiereis",
+      "sintieren"
+    ]
+  }
+}

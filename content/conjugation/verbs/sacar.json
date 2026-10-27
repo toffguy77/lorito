@@ -1,0 +1,24 @@
+{
+  "infinitive": "sacar",
+  "rank": 1066,
+  "ru": "вынимать, доставать",
+  "model": "ar",
+  "forms": {
+    "preterito-indefinido": [
+      "saqué",
+      "sacaste",
+      "sacó",
+      "sacamos",
+      "sacasteis",
+      "sacaron"
+    ],
+    "presente-subjuntivo": [
+      "saque",
+      "saques",
+      "saque",
+      "saquemos",
+      "saquéis",
+      "saquen"
+    ]
+  }
+}

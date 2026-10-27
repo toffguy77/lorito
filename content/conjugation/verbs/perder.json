@@ -1,0 +1,24 @@
+{
+  "infinitive": "perder",
+  "rank": 653,
+  "ru": "терять",
+  "model": "er",
+  "forms": {
+    "presente": [
+      "pierdo",
+      "pierdes",
+      "pierde",
+      "perdemos",
+      "perdéis",
+      "pierden"
+    ],
+    "presente-subjuntivo": [
+      "pierda",
+      "pierdas",
+      "pierda",
+      "perdamos",
+      "perdáis",
+      "pierdan"
+    ]
+  }
+}

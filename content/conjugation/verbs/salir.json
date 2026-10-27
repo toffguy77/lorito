@@ -1,0 +1,40 @@
+{
+  "infinitive": "salir",
+  "rank": 265,
+  "ru": "выходить",
+  "model": "ir",
+  "forms": {
+    "presente": [
+      "salgo",
+      "sales",
+      "sale",
+      "salimos",
+      "salís",
+      "salen"
+    ],
+    "futuro-simple": [
+      "saldré",
+      "saldrás",
+      "saldrá",
+      "saldremos",
+      "saldréis",
+      "saldrán"
+    ],
+    "condicional-simple": [
+      "saldría",
+      "saldrías",
+      "saldría",
+      "saldríamos",
+      "saldríais",
+      "saldrían"
+    ],
+    "presente-subjuntivo": [
+      "salga",
+      "salgas",
+      "salga",
+      "salgamos",
+      "salgáis",
+      "salgan"
+    ]
+  }
+}

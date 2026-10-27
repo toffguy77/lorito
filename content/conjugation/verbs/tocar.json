@@ -1,0 +1,24 @@
+{
+  "infinitive": "tocar",
+  "rank": 1262,
+  "ru": "трогать, играть (на инструменте)",
+  "model": "ar",
+  "forms": {
+    "preterito-indefinido": [
+      "toqué",
+      "tocaste",
+      "tocó",
+      "tocamos",
+      "tocasteis",
+      "tocaron"
+    ],
+    "presente-subjuntivo": [
+      "toque",
+      "toques",
+      "toque",
+      "toquemos",
+      "toquéis",
+      "toquen"
+    ]
+  }
+}

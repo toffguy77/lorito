@@ -1,0 +1,64 @@
+{
+  "infinitive": "tener",
+  "rank": 169,
+  "ru": "иметь",
+  "model": "er",
+  "forms": {
+    "presente": [
+      "tengo",
+      "tienes",
+      "tiene",
+      "tenemos",
+      "tenéis",
+      "tienen"
+    ],
+    "preterito-indefinido": [
+      "tuve",
+      "tuviste",
+      "tuvo",
+      "tuvimos",
+      "tuvisteis",
+      "tuvieron"
+    ],
+    "futuro-simple": [
+      "tendré",
+      "tendrás",
+      "tendrá",
+      "tendremos",
+      "tendréis",
+      "tendrán"
+    ],
+    "condicional-simple": [
+      "tendría",
+      "tendrías",
+      "tendría",
+      "tendríamos",
+      "tendríais",
+      "tendrían"
+    ],
+    "presente-subjuntivo": [
+      "tenga",
+      "tengas",
+      "tenga",
+      "tengamos",
+      "tengáis",
+      "tengan"
+    ],
+    "imperfecto-subjuntivo": [
+      "tuviera",
+      "tuvieras",
+      "tuviera",
+      "tuviéramos",
+      "tuvierais",
+      "tuvieran"
+    ],
+    "futuro-subjuntivo": [
+      "tuviere",
+      "tuvieres",
+      "tuviere",
+      "tuviéremos",
+      "tuviereis",
+      "tuvieren"
+    ]
+  }
+}

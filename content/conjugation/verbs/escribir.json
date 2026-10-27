@@ -1,0 +1,56 @@
+{
+  "infinitive": "escribir",
+  "rank": 1178,
+  "ru": "писать",
+  "model": "ir",
+  "forms": {
+    "preterito-perfecto": [
+      "he escrito",
+      "has escrito",
+      "ha escrito",
+      "hemos escrito",
+      "habéis escrito",
+      "han escrito"
+    ],
+    "pluscuamperfecto": [
+      "había escrito",
+      "habías escrito",
+      "había escrito",
+      "habíamos escrito",
+      "habíais escrito",
+      "habían escrito"
+    ],
+    "futuro-perfecto": [
+      "habré escrito",
+      "habrás escrito",
+      "habrá escrito",
+      "habremos escrito",
+      "habréis escrito",
+      "habrán escrito"
+    ],
+    "condicional-perfecto": [
+      "habría escrito",
+      "habrías escrito",
+      "habría escrito",
+      "habríamos escrito",
+      "habríais escrito",
+      "habrían escrito"
+    ],
+    "perfecto-subjuntivo": [
+      "haya escrito",
+      "hayas escrito",
+      "haya escrito",
+      "hayamos escrito",
+      "hayáis escrito",
+      "hayan escrito"
+    ],
+    "pluscuamperfecto-subjuntivo": [
+      "hubiera escrito",
+      "hubieras escrito",
+      "hubiera escrito",
+      "hubiéramos escrito",
+      "hubierais escrito",
+      "hubieran escrito"
+    ]
+  }
+}

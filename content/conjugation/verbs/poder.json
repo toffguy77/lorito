@@ -1,0 +1,64 @@
+{
+  "infinitive": "poder",
+  "rank": 362,
+  "ru": "мочь",
+  "model": "er",
+  "forms": {
+    "presente": [
+      "puedo",
+      "puedes",
+      "puede",
+      "podemos",
+      "podéis",
+      "pueden"
+    ],
+    "preterito-indefinido": [
+      "pude",
+      "pudiste",
+      "pudo",
+      "pudimos",
+      "pudisteis",
+      "pudieron"
+    ],
+    "futuro-simple": [
+      "podré",
+      "podrás",
+      "podrá",
+      "podremos",
+      "podréis",
+      "podrán"
+    ],
+    "condicional-simple": [
+      "podría",
+      "podrías",
+      "podría",
+      "podríamos",
+      "podríais",
+      "podrían"
+    ],
+    "presente-subjuntivo": [
+      "pueda",
+      "puedas",
+      "pueda",
+      "podamos",
+      "podáis",
+      "puedan"
+    ],
+    "imperfecto-subjuntivo": [
+      "pudiera",
+      "pudieras",
+      "pudiera",
+      "pudiéramos",
+      "pudierais",
+      "pudieran"
+    ],
+    "futuro-subjuntivo": [
+      "pudiere",
+      "pudieres",
+      "pudiere",
+      "pudiéremos",
+      "pudiereis",
+      "pudieren"
+    ]
+  }
+}

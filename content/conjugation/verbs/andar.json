@@ -1,0 +1,32 @@
+{
+  "infinitive": "andar",
+  "rank": 2449,
+  "ru": "ходить",
+  "model": "ar",
+  "forms": {
+    "preterito-indefinido": [
+      "anduve",
+      "anduviste",
+      "anduvo",
+      "anduvimos",
+      "anduvisteis",
+      "anduvieron"
+    ],
+    "imperfecto-subjuntivo": [
+      "anduviera",
+      "anduvieras",
+      "anduviera",
+      "anduviéramos",
+      "anduvierais",
+      "anduvieran"
+    ],
+    "futuro-subjuntivo": [
+      "anduviere",
+      "anduvieres",
+      "anduviere",
+      "anduviéremos",
+      "anduviereis",
+      "anduvieren"
+    ]
+  }
+}

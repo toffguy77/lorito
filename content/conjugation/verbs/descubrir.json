@@ -1,0 +1,56 @@
+{
+  "infinitive": "descubrir",
+  "rank": 2044,
+  "ru": "открывать, обнаруживать",
+  "model": "ir",
+  "forms": {
+    "preterito-perfecto": [
+      "he descubierto",
+      "has descubierto",
+      "ha descubierto",
+      "hemos descubierto",
+      "habéis descubierto",
+      "han descubierto"
+    ],
+    "pluscuamperfecto": [
+      "había descubierto",
+      "habías descubierto",
+      "había descubierto",
+      "habíamos descubierto",
+      "habíais descubierto",
+      "habían descubierto"
+    ],
+    "futuro-perfecto": [
+      "habré descubierto",
+      "habrás descubierto",
+      "habrá descubierto",
+      "habremos descubierto",
+      "habréis descubierto",
+      "habrán descubierto"
+    ],
+    "condicional-perfecto": [
+      "habría descubierto",
+      "habrías descubierto",
+      "habría descubierto",
+      "habríamos descubierto",
+      "habríais descubierto",
+      "habrían descubierto"
+    ],
+    "perfecto-subjuntivo": [
+      "haya descubierto",
+      "hayas descubierto",
+      "haya descubierto",
+      "hayamos descubierto",
+      "hayáis descubierto",
+      "hayan descubierto"
+    ],
+    "pluscuamperfecto-subjuntivo": [
+      "hubiera descubierto",
+      "hubieras descubierto",
+      "hubiera descubierto",
+      "hubiéramos descubierto",
+      "hubierais descubierto",
+      "hubieran descubierto"
+    ]
+  }
+}

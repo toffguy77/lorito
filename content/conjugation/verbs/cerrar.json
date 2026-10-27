@@ -1,0 +1,24 @@
+{
+  "infinitive": "cerrar",
+  "rank": 1798,
+  "ru": "закрывать",
+  "model": "ar",
+  "forms": {
+    "presente": [
+      "cierro",
+      "cierras",
+      "cierra",
+      "cerramos",
+      "cerráis",
+      "cierran"
+    ],
+    "presente-subjuntivo": [
+      "cierre",
+      "cierres",
+      "cierre",
+      "cerremos",
+      "cerréis",
+      "cierren"
+    ]
+  }
+}

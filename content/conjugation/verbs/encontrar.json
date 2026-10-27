@@ -1,0 +1,24 @@
+{
+  "infinitive": "encontrar",
+  "rank": 372,
+  "ru": "находить",
+  "model": "ar",
+  "forms": {
+    "presente": [
+      "encuentro",
+      "encuentras",
+      "encuentra",
+      "encontramos",
+      "encontráis",
+      "encuentran"
+    ],
+    "presente-subjuntivo": [
+      "encuentre",
+      "encuentres",
+      "encuentre",
+      "encontremos",
+      "encontréis",
+      "encuentren"
+    ]
+  }
+}

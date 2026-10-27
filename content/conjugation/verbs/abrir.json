@@ -1,0 +1,56 @@
+{
+  "infinitive": "abrir",
+  "rank": 1261,
+  "ru": "открывать",
+  "model": "ir",
+  "forms": {
+    "preterito-perfecto": [
+      "he abierto",
+      "has abierto",
+      "ha abierto",
+      "hemos abierto",
+      "habéis abierto",
+      "han abierto"
+    ],
+    "pluscuamperfecto": [
+      "había abierto",
+      "habías abierto",
+      "había abierto",
+      "habíamos abierto",
+      "habíais abierto",
+      "habían abierto"
+    ],
+    "futuro-perfecto": [
+      "habré abierto",
+      "habrás abierto",
+      "habrá abierto",
+      "habremos abierto",
+      "habréis abierto",
+      "habrán abierto"
+    ],
+    "condicional-perfecto": [
+      "habría abierto",
+      "habrías abierto",
+      "habría abierto",
+      "habríamos abierto",
+      "habríais abierto",
+      "habrían abierto"
+    ],
+    "perfecto-subjuntivo": [
+      "haya abierto",
+      "hayas abierto",
+      "haya abierto",
+      "hayamos abierto",
+      "hayáis abierto",
+      "hayan abierto"
+    ],
+    "pluscuamperfecto-subjuntivo": [
+      "hubiera abierto",
+      "hubieras abierto",
+      "hubiera abierto",
+      "hubiéramos abierto",
+      "hubierais abierto",
+      "hubieran abierto"
+    ]
+  }
+}

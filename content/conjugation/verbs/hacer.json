@@ -1,0 +1,120 @@
+{
+  "infinitive": "hacer",
+  "rank": 68,
+  "ru": "делать",
+  "model": "irregular",
+  "forms": {
+    "presente": [
+      "hago",
+      "haces",
+      "hace",
+      "hacemos",
+      "hacéis",
+      "hacen"
+    ],
+    "preterito-perfecto": [
+      "he hecho",
+      "has hecho",
+      "ha hecho",
+      "hemos hecho",
+      "habéis hecho",
+      "han hecho"
+    ],
+    "preterito-indefinido": [
+      "hice",
+      "hiciste",
+      "hizo",
+      "hicimos",
+      "hicisteis",
+      "hicieron"
+    ],
+    "preterito-imperfecto": [
+      "hacía",
+      "hacías",
+      "hacía",
+      "hacíamos",
+      "hacíais",
+      "hacían"
+    ],
+    "futuro-simple": [
+      "haré",
+      "harás",
+      "hará",
+      "haremos",
+      "haréis",
+      "harán"
+    ],
+    "condicional-simple": [
+      "haría",
+      "harías",
+      "haría",
+      "haríamos",
+      "haríais",
+      "harían"
+    ],
+    "presente-subjuntivo": [
+      "haga",
+      "hagas",
+      "haga",
+      "hagamos",
+      "hagáis",
+      "hagan"
+    ],
+    "imperfecto-subjuntivo": [
+      "hiciera",
+      "hicieras",
+      "hiciera",
+      "hiciéramos",
+      "hicierais",
+      "hicieran"
+    ],
+    "pluscuamperfecto": [
+      "había hecho",
+      "habías hecho",
+      "había hecho",
+      "habíamos hecho",
+      "habíais hecho",
+      "habían hecho"
+    ],
+    "futuro-perfecto": [
+      "habré hecho",
+      "habrás hecho",
+      "habrá hecho",
+      "habremos hecho",
+      "habréis hecho",
+      "habrán hecho"
+    ],
+    "condicional-perfecto": [
+      "habría hecho",
+      "habrías hecho",
+      "habría hecho",
+      "habríamos hecho",
+      "habríais hecho",
+      "habrían hecho"
+    ],
+    "perfecto-subjuntivo": [
+      "haya hecho",
+      "hayas hecho",
+      "haya hecho",
+      "hayamos hecho",
+      "hayáis hecho",
+      "hayan hecho"
+    ],
+    "pluscuamperfecto-subjuntivo": [
+      "hubiera hecho",
+      "hubieras hecho",
+      "hubiera hecho",
+      "hubiéramos hecho",
+      "hubierais hecho",
+      "hubieran hecho"
+    ],
+    "futuro-subjuntivo": [
+      "hiciere",
+      "hicieres",
+      "hiciere",
+      "hiciéremos",
+      "hiciereis",
+      "hicieren"
+    ]
+  }
+}

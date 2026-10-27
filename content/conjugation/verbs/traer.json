@@ -1,0 +1,120 @@
+{
+  "infinitive": "traer",
+  "rank": 1297,
+  "ru": "приносить",
+  "model": "irregular",
+  "forms": {
+    "presente": [
+      "traigo",
+      "traes",
+      "trae",
+      "traemos",
+      "traéis",
+      "traen"
+    ],
+    "preterito-perfecto": [
+      "he traído",
+      "has traído",
+      "ha traído",
+      "hemos traído",
+      "habéis traído",
+      "han traído"
+    ],
+    "preterito-indefinido": [
+      "traje",
+      "trajiste",
+      "trajo",
+      "trajimos",
+      "trajisteis",
+      "trajeron"
+    ],
+    "preterito-imperfecto": [
+      "traía",
+      "traías",
+      "traía",
+      "traíamos",
+      "traíais",
+      "traían"
+    ],
+    "futuro-simple": [
+      "traeré",
+      "traerás",
+      "traerá",
+      "traeremos",
+      "traeréis",
+      "traerán"
+    ],
+    "condicional-simple": [
+      "traería",
+      "traerías",
+      "traería",
+      "traeríamos",
+      "traeríais",
+      "traerían"
+    ],
+    "presente-subjuntivo": [
+      "traiga",
+      "traigas",
+      "traiga",
+      "traigamos",
+      "traigáis",
+      "traigan"
+    ],
+    "imperfecto-subjuntivo": [
+      "trajera",
+      "trajeras",
+      "trajera",
+      "trajéramos",
+      "trajerais",
+      "trajeran"
+    ],
+    "pluscuamperfecto": [
+      "había traído",
+      "habías traído",
+      "había traído",
+      "habíamos traído",
+      "habíais traído",
+      "habían traído"
+    ],
+    "futuro-perfecto": [
+      "habré traído",
+      "habrás traído",
+      "habrá traído",
+      "habremos traído",
+      "habréis traído",
+      "habrán traído"
+    ],
+    "condicional-perfecto": [
+      "habría traído",
+      "habrías traído",
+      "habría traído",
+      "habríamos traído",
+      "habríais traído",
+      "habrían traído"
+    ],
+    "perfecto-subjuntivo": [
+      "haya traído",
+      "hayas traído",
+      "haya traído",
+      "hayamos traído",
+      "hayáis traído",
+      "hayan traído"
+    ],
+    "pluscuamperfecto-subjuntivo": [
+      "hubiera traído",
+      "hubieras traído",
+      "hubiera traído",
+      "hubiéramos traído",
+      "hubierais traído",
+      "hubieran traído"
+    ],
+    "futuro-subjuntivo": [
+      "trajere",
+      "trajeres",
+      "trajere",
+      "trajéremos",
+      "trajereis",
+      "trajeren"
+    ]
+  }
+}

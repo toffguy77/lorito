@@ -1,0 +1,32 @@
+{
+  "infinitive": "empezar",
+  "rank": 619,
+  "ru": "начинать",
+  "model": "ar",
+  "forms": {
+    "presente": [
+      "empiezo",
+      "empiezas",
+      "empieza",
+      "empezamos",
+      "empezáis",
+      "empiezan"
+    ],
+    "preterito-indefinido": [
+      "empecé",
+      "empezaste",
+      "empezó",
+      "empezamos",
+      "empezasteis",
+      "empezaron"
+    ],
+    "presente-subjuntivo": [
+      "empiece",
+      "empieces",
+      "empiece",
+      "empecemos",
+      "empecéis",
+      "empiecen"
+    ]
+  }
+}

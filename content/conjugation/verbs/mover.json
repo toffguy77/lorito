@@ -1,0 +1,24 @@
+{
+  "infinitive": "mover",
+  "rank": 2626,
+  "ru": "двигать",
+  "model": "er",
+  "forms": {
+    "presente": [
+      "muevo",
+      "mueves",
+      "mueve",
+      "movemos",
+      "movéis",
+      "mueven"
+    ],
+    "presente-subjuntivo": [
+      "mueva",
+      "muevas",
+      "mueva",
+      "movamos",
+      "mováis",
+      "muevan"
+    ]
+  }
+}

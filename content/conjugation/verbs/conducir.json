@@ -1,0 +1,48 @@
+{
+  "infinitive": "conducir",
+  "rank": 1719,
+  "ru": "водить (машину)",
+  "model": "ir",
+  "forms": {
+    "presente": [
+      "conduzco",
+      "conduces",
+      "conduce",
+      "conducimos",
+      "conducís",
+      "conducen"
+    ],
+    "preterito-indefinido": [
+      "conduje",
+      "condujiste",
+      "condujo",
+      "condujimos",
+      "condujisteis",
+      "condujeron"
+    ],
+    "presente-subjuntivo": [
+      "conduzca",
+      "conduzcas",
+      "conduzca",
+      "conduzcamos",
+      "conduzcáis",
+      "conduzcan"
+    ],
+    "imperfecto-subjuntivo": [
+      "condujera",
+      "condujeras",
+      "condujera",
+      "condujéramos",
+      "condujerais",
+      "condujeran"
+    ],
+    "futuro-subjuntivo": [
+      "condujere",
+      "condujeres",
+      "condujere",
+      "condujéremos",
+      "condujereis",
+      "condujeren"
+    ]
+  }
+}

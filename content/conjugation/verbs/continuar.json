@@ -1,0 +1,24 @@
+{
+  "infinitive": "continuar",
+  "rank": 1987,
+  "ru": "продолжать",
+  "model": "ar",
+  "forms": {
+    "presente": [
+      "continúo",
+      "continúas",
+      "continúa",
+      "continuamos",
+      "continuáis",
+      "continúan"
+    ],
+    "presente-subjuntivo": [
+      "continúe",
+      "continúes",
+      "continúe",
+      "continuemos",
+      "continuéis",
+      "continúen"
+    ]
+  }
+}

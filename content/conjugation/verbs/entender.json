@@ -1,0 +1,24 @@
+{
+  "infinitive": "entender",
+  "rank": 1064,
+  "ru": "понимать",
+  "model": "er",
+  "forms": {
+    "presente": [
+      "entiendo",
+      "entiendes",
+      "entiende",
+      "entendemos",
+      "entendéis",
+      "entienden"
+    ],
+    "presente-subjuntivo": [
+      "entienda",
+      "entiendas",
+      "entienda",
+      "entendamos",
+      "entendáis",
+      "entiendan"
+    ]
+  }
+}

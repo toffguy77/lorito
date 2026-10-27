@@ -1,0 +1,120 @@
+{
+  "infinitive": "caer",
+  "rank": 1493,
+  "ru": "падать",
+  "model": "irregular",
+  "forms": {
+    "presente": [
+      "caigo",
+      "caes",
+      "cae",
+      "caemos",
+      "caéis",
+      "caen"
+    ],
+    "preterito-perfecto": [
+      "he caído",
+      "has caído",
+      "ha caído",
+      "hemos caído",
+      "habéis caído",
+      "han caído"
+    ],
+    "preterito-indefinido": [
+      "caí",
+      "caíste",
+      "cayó",
+      "caímos",
+      "caísteis",
+      "cayeron"
+    ],
+    "preterito-imperfecto": [
+      "caía",
+      "caías",
+      "caía",
+      "caíamos",
+      "caíais",
+      "caían"
+    ],
+    "futuro-simple": [
+      "caeré",
+      "caerás",
+      "caerá",
+      "caeremos",
+      "caeréis",
+      "caerán"
+    ],
+    "condicional-simple": [
+      "caería",
+      "caerías",
+      "caería",
+      "caeríamos",
+      "caeríais",
+      "caerían"
+    ],
+    "presente-subjuntivo": [
+      "caiga",
+      "caigas",
+      "caiga",
+      "caigamos",
+      "caigáis",
+      "caigan"
+    ],
+    "imperfecto-subjuntivo": [
+      "cayera",
+      "cayeras",
+      "cayera",
+      "cayéramos",
+      "cayerais",
+      "cayeran"
+    ],
+    "pluscuamperfecto": [
+      "había caído",
+      "habías caído",
+      "había caído",
+      "habíamos caído",
+      "habíais caído",
+      "habían caído"
+    ],
+    "futuro-perfecto": [
+      "habré caído",
+      "habrás caído",
+      "habrá caído",
+      "habremos caído",
+      "habréis caído",
+      "habrán caído"
+    ],
+    "condicional-perfecto": [
+      "habría caído",
+      "habrías caído",
+      "habría caído",
+      "habríamos caído",
+      "habríais caído",
+      "habrían caído"
+    ],
+    "perfecto-subjuntivo": [
+      "haya caído",
+      "hayas caído",
+      "haya caído",
+      "hayamos caído",
+      "hayáis caído",
+      "hayan caído"
+    ],
+    "pluscuamperfecto-subjuntivo": [
+      "hubiera caído",
+      "hubieras caído",
+      "hubiera caído",
+      "hubiéramos caído",
+      "hubierais caído",
+      "hubieran caído"
+    ],
+    "futuro-subjuntivo": [
+      "cayere",
+      "cayeres",
+      "cayere",
+      "cayéremos",
+      "cayereis",
+      "cayeren"
+    ]
+  }
+}

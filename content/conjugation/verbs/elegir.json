@@ -1,0 +1,48 @@
+{
+  "infinitive": "elegir",
+  "rank": 1895,
+  "ru": "выбирать",
+  "model": "ir",
+  "forms": {
+    "presente": [
+      "elijo",
+      "eliges",
+      "elige",
+      "elegimos",
+      "elegís",
+      "eligen"
+    ],
+    "preterito-indefinido": [
+      "elegí",
+      "elegiste",
+      "eligió",
+      "elegimos",
+      "elegisteis",
+      "eligieron"
+    ],
+    "presente-subjuntivo": [
+      "elija",
+      "elijas",
+      "elija",
+      "elijamos",
+      "elijáis",
+      "elijan"
+    ],
+    "imperfecto-subjuntivo": [
+      "eligiera",
+      "eligieras",
+      "eligiera",
+      "eligiéramos",
+      "eligierais",
+      "eligieran"
+    ],
+    "futuro-subjuntivo": [
+      "eligiere",
+      "eligieres",
+      "eligiere",
+      "eligiéremos",
+      "eligiereis",
+      "eligieren"
+    ]
+  }
+}

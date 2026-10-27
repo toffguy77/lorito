@@ -1,0 +1,48 @@
+{
+  "infinitive": "pedir",
+  "rank": 1146,
+  "ru": "просить",
+  "model": "ir",
+  "forms": {
+    "presente": [
+      "pido",
+      "pides",
+      "pide",
+      "pedimos",
+      "pedís",
+      "piden"
+    ],
+    "preterito-indefinido": [
+      "pedí",
+      "pediste",
+      "pidió",
+      "pedimos",
+      "pedisteis",
+      "pidieron"
+    ],
+    "presente-subjuntivo": [
+      "pida",
+      "pidas",
+      "pida",
+      "pidamos",
+      "pidáis",
+      "pidan"
+    ],
+    "imperfecto-subjuntivo": [
+      "pidiera",
+      "pidieras",
+      "pidiera",
+      "pidiéramos",
+      "pidierais",
+      "pidieran"
+    ],
+    "futuro-subjuntivo": [
+      "pidiere",
+      "pidieres",
+      "pidiere",
+      "pidiéremos",
+      "pidiereis",
+      "pidieren"
+    ]
+  }
+}

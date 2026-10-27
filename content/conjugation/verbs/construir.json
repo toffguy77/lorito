@@ -1,0 +1,48 @@
+{
+  "infinitive": "construir",
+  "rank": 2252,
+  "ru": "строить",
+  "model": "ir",
+  "forms": {
+    "presente": [
+      "construyo",
+      "construyes",
+      "construye",
+      "construimos",
+      "construís",
+      "construyen"
+    ],
+    "preterito-indefinido": [
+      "construí",
+      "construiste",
+      "construyó",
+      "construimos",
+      "construisteis",
+      "construyeron"
+    ],
+    "presente-subjuntivo": [
+      "construya",
+      "construyas",
+      "construya",
+      "construyamos",
+      "construyáis",
+      "construyan"
+    ],
+    "imperfecto-subjuntivo": [
+      "construyera",
+      "construyeras",
+      "construyera",
+      "construyéramos",
+      "construyerais",
+      "construyeran"
+    ],
+    "futuro-subjuntivo": [
+      "construyere",
+      "construyeres",
+      "construyere",
+      "construyéremos",
+      "construyereis",
+      "construyeren"
+    ]
+  }
+}

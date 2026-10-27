@@ -1,0 +1,120 @@
+{
+  "infinitive": "poner",
+  "rank": 606,
+  "ru": "класть, ставить",
+  "model": "irregular",
+  "forms": {
+    "presente": [
+      "pongo",
+      "pones",
+      "pone",
+      "ponemos",
+      "ponéis",
+      "ponen"
+    ],
+    "preterito-perfecto": [
+      "he puesto",
+      "has puesto",
+      "ha puesto",
+      "hemos puesto",
+      "habéis puesto",
+      "han puesto"
+    ],
+    "preterito-indefinido": [
+      "puse",
+      "pusiste",
+      "puso",
+      "pusimos",
+      "pusisteis",
+      "pusieron"
+    ],
+    "preterito-imperfecto": [
+      "ponía",
+      "ponías",
+      "ponía",
+      "poníamos",
+      "poníais",
+      "ponían"
+    ],
+    "futuro-simple": [
+      "pondré",
+      "pondrás",
+      "pondrá",
+      "pondremos",
+      "pondréis",
+      "pondrán"
+    ],
+    "condicional-simple": [
+      "pondría",
+      "pondrías",
+      "pondría",
+      "pondríamos",
+      "pondríais",
+      "pondrían"
+    ],
+    "presente-subjuntivo": [
+      "ponga",
+      "pongas",
+      "ponga",
+      "pongamos",
+      "pongáis",
+      "pongan"
+    ],
+    "imperfecto-subjuntivo": [
+      "pusiera",
+      "pusieras",
+      "pusiera",
+      "pusiéramos",
+      "pusierais",
+      "pusieran"
+    ],
+    "pluscuamperfecto": [
+      "había puesto",
+      "habías puesto",
+      "había puesto",
+      "habíamos puesto",
+      "habíais puesto",
+      "habían puesto"
+    ],
+    "futuro-perfecto": [
+      "habré puesto",
+      "habrás puesto",
+      "habrá puesto",
+      "habremos puesto",
+      "habréis puesto",
+      "habrán puesto"
+    ],
+    "condicional-perfecto": [
+      "habría puesto",
+      "habrías puesto",
+      "habría puesto",
+      "habríamos puesto",
+      "habríais puesto",
+      "habrían puesto"
+    ],
+    "perfecto-subjuntivo": [
+      "haya puesto",
+      "hayas puesto",
+      "haya puesto",
+      "hayamos puesto",
+      "hayáis puesto",
+      "hayan puesto"
+    ],
+    "pluscuamperfecto-subjuntivo": [
+      "hubiera puesto",
+      "hubieras puesto",
+      "hubiera puesto",
+      "hubiéramos puesto",
+      "hubierais puesto",
+      "hubieran puesto"
+    ],
+    "futuro-subjuntivo": [
+      "pusiere",
+      "pusieres",
+      "pusiere",
+      "pusiéremos",
+      "pusiereis",
+      "pusieren"
+    ]
+  }
+}

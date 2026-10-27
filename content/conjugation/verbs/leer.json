@@ -1,0 +1,80 @@
+{
+  "infinitive": "leer",
+  "rank": 1171,
+  "ru": "читать",
+  "model": "er",
+  "forms": {
+    "preterito-perfecto": [
+      "he leído",
+      "has leído",
+      "ha leído",
+      "hemos leído",
+      "habéis leído",
+      "han leído"
+    ],
+    "preterito-indefinido": [
+      "leí",
+      "leíste",
+      "leyó",
+      "leímos",
+      "leísteis",
+      "leyeron"
+    ],
+    "imperfecto-subjuntivo": [
+      "leyera",
+      "leyeras",
+      "leyera",
+      "leyéramos",
+      "leyerais",
+      "leyeran"
+    ],
+    "pluscuamperfecto": [
+      "había leído",
+      "habías leído",
+      "había leído",
+      "habíamos leído",
+      "habíais leído",
+      "habían leído"
+    ],
+    "futuro-perfecto": [
+      "habré leído",
+      "habrás leído",
+      "habrá leído",
+      "habremos leído",
+      "habréis leído",
+      "habrán leído"
+    ],
+    "condicional-perfecto": [
+      "habría leído",
+      "habrías leído",
+      "habría leído",
+      "habríamos leído",
+      "habríais leído",
+      "habrían leído"
+    ],
+    "perfecto-subjuntivo": [
+      "haya leído",
+      "hayas leído",
+      "haya leído",
+      "hayamos leído",
+      "hayáis leído",
+      "hayan leído"
+    ],
+    "pluscuamperfecto-subjuntivo": [
+      "hubiera leído",
+      "hubieras leído",
+      "hubiera leído",
+      "hubiéramos leído",
+      "hubierais leído",
+      "hubieran leído"
+    ],
+    "futuro-subjuntivo": [
+      "leyere",
+      "leyeres",
+      "leyere",
+      "leyéremos",
+      "leyereis",
+      "leyeren"
+    ]
+  }
+}

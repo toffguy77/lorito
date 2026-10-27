@@ -1,0 +1,48 @@
+{
+  "infinitive": "seguir",
+  "rank": 512,
+  "ru": "следовать, продолжать",
+  "model": "ir",
+  "forms": {
+    "presente": [
+      "sigo",
+      "sigues",
+      "sigue",
+      "seguimos",
+      "seguís",
+      "siguen"
+    ],
+    "preterito-indefinido": [
+      "seguí",
+      "seguiste",
+      "siguió",
+      "seguimos",
+      "seguisteis",
+      "siguieron"
+    ],
+    "presente-subjuntivo": [
+      "siga",
+      "sigas",
+      "siga",
+      "sigamos",
+      "sigáis",
+      "sigan"
+    ],
+    "imperfecto-subjuntivo": [
+      "siguiera",
+      "siguieras",
+      "siguiera",
+      "siguiéramos",
+      "siguierais",
+      "siguieran"
+    ],
+    "futuro-subjuntivo": [
+      "siguiere",
+      "siguieres",
+      "siguiere",
+      "siguiéremos",
+      "siguiereis",
+      "siguieren"
+    ]
+  }
+}

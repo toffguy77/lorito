@@ -1,0 +1,72 @@
+{
+  "infinitive": "volver",
+  "rank": 301,
+  "ru": "возвращаться",
+  "model": "er",
+  "forms": {
+    "presente": [
+      "vuelvo",
+      "vuelves",
+      "vuelve",
+      "volvemos",
+      "volvéis",
+      "vuelven"
+    ],
+    "preterito-perfecto": [
+      "he vuelto",
+      "has vuelto",
+      "ha vuelto",
+      "hemos vuelto",
+      "habéis vuelto",
+      "han vuelto"
+    ],
+    "presente-subjuntivo": [
+      "vuelva",
+      "vuelvas",
+      "vuelva",
+      "volvamos",
+      "volváis",
+      "vuelvan"
+    ],
+    "pluscuamperfecto": [
+      "había vuelto",
+      "habías vuelto",
+      "había vuelto",
+      "habíamos vuelto",
+      "habíais vuelto",
+      "habían vuelto"
+    ],
+    "futuro-perfecto": [
+      "habré vuelto",
+      "habrás vuelto",
+      "habrá vuelto",
+      "habremos vuelto",
+      "habréis vuelto",
+      "habrán vuelto"
+    ],
+    "condicional-perfecto": [
+      "habría vuelto",
+      "habrías vuelto",
+      "habría vuelto",
+      "habríamos vuelto",
+      "habríais vuelto",
+      "habrían vuelto"
+    ],
+    "perfecto-subjuntivo": [
+      "haya vuelto",
+      "hayas vuelto",
+      "haya vuelto",
+      "hayamos vuelto",
+      "hayáis vuelto",
+      "hayan vuelto"
+    ],
+    "pluscuamperfecto-subjuntivo": [
+      "hubiera vuelto",
+      "hubieras vuelto",
+      "hubiera vuelto",
+      "hubiéramos vuelto",
+      "hubierais vuelto",
+      "hubieran vuelto"
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "infinitive": "pensar",
+  "rank": 423,
+  "ru": "думать",
+  "model": "ar",
+  "forms": {
+    "presente": [
+      "pienso",
+      "piensas",
+      "piensa",
+      "pensamos",
+      "pensáis",
+      "piensan"
+    ],
+    "presente-subjuntivo": [
+      "piense",
+      "pienses",
+      "piense",
+      "pensemos",
+      "penséis",
+      "piensen"
+    ]
+  }
+}

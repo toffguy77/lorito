@@ -1,0 +1,32 @@
+{
+  "infinitive": "jugar",
+  "rank": 639,
+  "ru": "играть",
+  "model": "ar",
+  "forms": {
+    "presente": [
+      "juego",
+      "juegas",
+      "juega",
+      "jugamos",
+      "jugáis",
+      "juegan"
+    ],
+    "preterito-indefinido": [
+      "jugué",
+      "jugaste",
+      "jugó",
+      "jugamos",
+      "jugasteis",
+      "jugaron"
+    ],
+    "presente-subjuntivo": [
+      "juegue",
+      "juegues",
+      "juegue",
+      "juguemos",
+      "juguéis",
+      "jueguen"
+    ]
+  }
+}

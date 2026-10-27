@@ -1,0 +1,120 @@
+{
+  "infinitive": "oír",
+  "rank": 1079,
+  "ru": "слышать",
+  "model": "irregular",
+  "forms": {
+    "presente": [
+      "oigo",
+      "oyes",
+      "oye",
+      "oímos",
+      "oís",
+      "oyen"
+    ],
+    "preterito-perfecto": [
+      "he oído",
+      "has oído",
+      "ha oído",
+      "hemos oído",
+      "habéis oído",
+      "han oído"
+    ],
+    "preterito-indefinido": [
+      "oí",
+      "oíste",
+      "oyó",
+      "oímos",
+      "oísteis",
+      "oyeron"
+    ],
+    "preterito-imperfecto": [
+      "oía",
+      "oías",
+      "oía",
+      "oíamos",
+      "oíais",
+      "oían"
+    ],
+    "futuro-simple": [
+      "oiré",
+      "oirás",
+      "oirá",
+      "oiremos",
+      "oiréis",
+      "oirán"
+    ],
+    "condicional-simple": [
+      "oiría",
+      "oirías",
+      "oiría",
+      "oiríamos",
+      "oiríais",
+      "oirían"
+    ],
+    "presente-subjuntivo": [
+      "oiga",
+      "oigas",
+      "oiga",
+      "oigamos",
+      "oigáis",
+      "oigan"
+    ],
+    "imperfecto-subjuntivo": [
+      "oyera",
+      "oyeras",
+      "oyera",
+      "oyéramos",
+      "oyerais",
+      "oyeran"
+    ],
+    "pluscuamperfecto": [
+      "había oído",
+      "habías oído",
+      "había oído",
+      "habíamos oído",
+      "habíais oído",
+      "habían oído"
+    ],
+    "futuro-perfecto": [
+      "habré oído",
+      "habrás oído",
+      "habrá oído",
+      "habremos oído",
+      "habréis oído",
+      "habrán oído"
+    ],
+    "condicional-perfecto": [
+      "habría oído",
+      "habrías oído",
+      "habría oído",
+      "habríamos oído",
+      "habríais oído",
+      "habrían oído"
+    ],
+    "perfecto-subjuntivo": [
+      "haya oído",
+      "hayas oído",
+      "haya oído",
+      "hayamos oído",
+      "hayáis oído",
+      "hayan oído"
+    ],
+    "pluscuamperfecto-subjuntivo": [
+      "hubiera oído",
+      "hubieras oído",
+      "hubiera oído",
+      "hubiéramos oído",
+      "hubierais oído",
+      "hubieran oído"
+    ],
+    "futuro-subjuntivo": [
+      "oyere",
+      "oyeres",
+      "oyere",
+      "oyéremos",
+      "oyereis",
+      "oyeren"
+    ]
+  }
+}

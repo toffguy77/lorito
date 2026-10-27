@@ -1,0 +1,24 @@
+{
+  "infinitive": "recordar",
+  "rank": 1383,
+  "ru": "помнить",
+  "model": "ar",
+  "forms": {
+    "presente": [
+      "recuerdo",
+      "recuerdas",
+      "recuerda",
+      "recordamos",
+      "recordáis",
+      "recuerdan"
+    ],
+    "presente-subjuntivo": [
+      "recuerde",
+      "recuerdes",
+      "recuerde",
+      "recordemos",
+      "recordéis",
+      "recuerden"
+    ]
+  }
+}

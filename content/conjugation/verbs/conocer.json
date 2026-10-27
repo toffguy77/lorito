@@ -1,0 +1,24 @@
+{
+  "infinitive": "conocer",
+  "rank": 1039,
+  "ru": "знать, быть знакомым",
+  "model": "er",
+  "forms": {
+    "presente": [
+      "conozco",
+      "conoces",
+      "conoce",
+      "conocemos",
+      "conocéis",
+      "conocen"
+    ],
+    "presente-subjuntivo": [
+      "conozca",
+      "conozcas",
+      "conozca",
+      "conozcamos",
+      "conozcáis",
+      "conozcan"
+    ]
+  }
+}

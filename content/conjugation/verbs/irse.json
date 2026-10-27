@@ -1,0 +1,121 @@
+{
+  "infinitive": "irse",
+  "rank": 1111,
+  "ru": "уходить, уезжать",
+  "model": "irregular",
+  "forms": {
+    "presente": [
+      "voy",
+      "vas",
+      "va",
+      "vamos",
+      "vais",
+      "van"
+    ],
+    "preterito-perfecto": [
+      "he ído",
+      "has ído",
+      "ha ído",
+      "hemos ído",
+      "habéis ído",
+      "han ído"
+    ],
+    "preterito-indefinido": [
+      "fui",
+      "fuiste",
+      "fue",
+      "fuimos",
+      "fuisteis",
+      "fueron"
+    ],
+    "preterito-imperfecto": [
+      "iba",
+      "ibas",
+      "iba",
+      "íbamos",
+      "ibais",
+      "iban"
+    ],
+    "futuro-simple": [
+      "iré",
+      "irás",
+      "irá",
+      "iremos",
+      "iréis",
+      "irán"
+    ],
+    "condicional-simple": [
+      "iría",
+      "irías",
+      "iría",
+      "iríamos",
+      "iríais",
+      "irían"
+    ],
+    "presente-subjuntivo": [
+      "vaya",
+      "vayas",
+      "vaya",
+      "vayamos",
+      "vayáis",
+      "vayan"
+    ],
+    "imperfecto-subjuntivo": [
+      "fuera",
+      "fueras",
+      "fuera",
+      "fuéramos",
+      "fuerais",
+      "fueran"
+    ],
+    "pluscuamperfecto": [
+      "había ído",
+      "habías ído",
+      "había ído",
+      "habíamos ído",
+      "habíais ído",
+      "habían ído"
+    ],
+    "futuro-perfecto": [
+      "habré ído",
+      "habrás ído",
+      "habrá ído",
+      "habremos ído",
+      "habréis ído",
+      "habrán ído"
+    ],
+    "condicional-perfecto": [
+      "habría ído",
+      "habrías ído",
+      "habría ído",
+      "habríamos ído",
+      "habríais ído",
+      "habrían ído"
+    ],
+    "perfecto-subjuntivo": [
+      "haya ído",
+      "hayas ído",
+      "haya ído",
+      "hayamos ído",
+      "hayáis ído",
+      "hayan ído"
+    ],
+    "pluscuamperfecto-subjuntivo": [
+      "hubiera ído",
+      "hubieras ído",
+      "hubiera ído",
+      "hubiéramos ído",
+      "hubierais ído",
+      "hubieran ído"
+    ],
+    "futuro-subjuntivo": [
+      "fuere",
+      "fueres",
+      "fuere",
+      "fuéremos",
+      "fuereis",
+      "fueren"
+    ]
+  },
+  "reflexive": true
+}

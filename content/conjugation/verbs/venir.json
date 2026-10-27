@@ -1,0 +1,64 @@
+{
+  "infinitive": "venir",
+  "rank": 339,
+  "ru": "приходить",
+  "model": "ir",
+  "forms": {
+    "presente": [
+      "vengo",
+      "vienes",
+      "viene",
+      "venimos",
+      "venís",
+      "vienen"
+    ],
+    "preterito-indefinido": [
+      "vine",
+      "viniste",
+      "vino",
+      "vinimos",
+      "vinisteis",
+      "vinieron"
+    ],
+    "futuro-simple": [
+      "vendré",
+      "vendrás",
+      "vendrá",
+      "vendremos",
+      "vendréis",
+      "vendrán"
+    ],
+    "condicional-simple": [
+      "vendría",
+      "vendrías",
+      "vendría",
+      "vendríamos",
+      "vendríais",
+      "vendrían"
+    ],
+    "presente-subjuntivo": [
+      "venga",
+      "vengas",
+      "venga",
+      "vengamos",
+      "vengáis",
+      "vengan"
+    ],
+    "imperfecto-subjuntivo": [
+      "viniera",
+      "vinieras",
+      "viniera",
+      "viniéramos",
+      "vinierais",
+      "vinieran"
+    ],
+    "futuro-subjuntivo": [
+      "viniere",
+      "vinieres",
+      "viniere",
+      "viniéremos",
+      "viniereis",
+      "vinieren"
+    ]
+  }
+}

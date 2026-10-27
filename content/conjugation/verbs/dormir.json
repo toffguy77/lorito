@@ -1,0 +1,48 @@
+{
+  "infinitive": "dormir",
+  "rank": 557,
+  "ru": "спать",
+  "model": "ir",
+  "forms": {
+    "presente": [
+      "duermo",
+      "duermes",
+      "duerme",
+      "dormimos",
+      "dormís",
+      "duermen"
+    ],
+    "preterito-indefinido": [
+      "dormí",
+      "dormiste",
+      "durmió",
+      "dormimos",
+      "dormisteis",
+      "durmieron"
+    ],
+    "presente-subjuntivo": [
+      "duerma",
+      "duermas",
+      "duerma",
+      "durmamos",
+      "durmáis",
+      "duerman"
+    ],
+    "imperfecto-subjuntivo": [
+      "durmiera",
+      "durmieras",
+      "durmiera",
+      "durmiéramos",
+      "durmierais",
+      "durmieran"
+    ],
+    "futuro-subjuntivo": [
+      "durmiere",
+      "durmieres",
+      "durmiere",
+      "durmiéremos",
+      "durmiereis",
+      "durmieren"
+    ]
+  }
+}

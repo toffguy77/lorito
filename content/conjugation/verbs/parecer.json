@@ -1,0 +1,24 @@
+{
+  "infinitive": "parecer",
+  "rank": 1211,
+  "ru": "казаться",
+  "model": "er",
+  "forms": {
+    "presente": [
+      "parezco",
+      "pareces",
+      "parece",
+      "parecemos",
+      "parecéis",
+      "parecen"
+    ],
+    "presente-subjuntivo": [
+      "parezca",
+      "parezcas",
+      "parezca",
+      "parezcamos",
+      "parezcáis",
+      "parezcan"
+    ]
+  }
+}

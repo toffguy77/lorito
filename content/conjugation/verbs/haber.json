@@ -1,0 +1,64 @@
+{
+  "infinitive": "haber",
+  "rank": 210,
+  "ru": "иметь (вспомогательный)",
+  "model": "er",
+  "forms": {
+    "presente": [
+      "he",
+      "has",
+      "ha",
+      "hemos",
+      "habéis",
+      "han"
+    ],
+    "preterito-indefinido": [
+      "hube",
+      "hubiste",
+      "hubo",
+      "hubimos",
+      "hubisteis",
+      "hubieron"
+    ],
+    "futuro-simple": [
+      "habré",
+      "habrás",
+      "habrá",
+      "habremos",
+      "habréis",
+      "habrán"
+    ],
+    "condicional-simple": [
+      "habría",
+      "habrías",
+      "habría",
+      "habríamos",
+      "habríais",
+      "habrían"
+    ],
+    "presente-subjuntivo": [
+      "haya",
+      "hayas",
+      "haya",
+      "hayamos",
+      "hayáis",
+      "hayan"
+    ],
+    "imperfecto-subjuntivo": [
+      "hubiera",
+      "hubieras",
+      "hubiera",
+      "hubiéramos",
+      "hubierais",
+      "hubieran"
+    ],
+    "futuro-subjuntivo": [
+      "hubiere",
+      "hubieres",
+      "hubiere",
+      "hubiéremos",
+      "hubiereis",
+      "hubieren"
+    ]
+  }
+}

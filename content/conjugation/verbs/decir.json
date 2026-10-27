@@ -1,0 +1,120 @@
+{
+  "infinitive": "decir",
+  "rank": 111,
+  "ru": "говорить, сказать",
+  "model": "irregular",
+  "forms": {
+    "presente": [
+      "digo",
+      "dices",
+      "dice",
+      "decimos",
+      "decís",
+      "dicen"
+    ],
+    "preterito-perfecto": [
+      "he dicho",
+      "has dicho",
+      "ha dicho",
+      "hemos dicho",
+      "habéis dicho",
+      "han dicho"
+    ],
+    "preterito-indefinido": [
+      "dije",
+      "dijiste",
+      "dijo",
+      "dijimos",
+      "dijisteis",
+      "dijeron"
+    ],
+    "preterito-imperfecto": [
+      "decía",
+      "decías",
+      "decía",
+      "decíamos",
+      "decíais",
+      "decían"
+    ],
+    "futuro-simple": [
+      "diré",
+      "dirás",
+      "dirá",
+      "diremos",
+      "diréis",
+      "dirán"
+    ],
+    "condicional-simple": [
+      "diría",
+      "dirías",
+      "diría",
+      "diríamos",
+      "diríais",
+      "dirían"
+    ],
+    "presente-subjuntivo": [
+      "diga",
+      "digas",
+      "diga",
+      "digamos",
+      "digáis",
+      "digan"
+    ],
+    "imperfecto-subjuntivo": [
+      "dijera",
+      "dijeras",
+      "dijera",
+      "dijéramos",
+      "dijerais",
+      "dijeran"
+    ],
+    "pluscuamperfecto": [
+      "había dicho",
+      "habías dicho",
+      "había dicho",
+      "habíamos dicho",
+      "habíais dicho",
+      "habían dicho"
+    ],
+    "futuro-perfecto": [
+      "habré dicho",
+      "habrás dicho",
+      "habrá dicho",
+      "habremos dicho",
+      "habréis dicho",
+      "habrán dicho"
+    ],
+    "condicional-perfecto": [
+      "habría dicho",
+      "habrías dicho",
+      "habría dicho",
+      "habríamos dicho",
+      "habríais dicho",
+      "habrían dicho"
+    ],
+    "perfecto-subjuntivo": [
+      "haya dicho",
+      "hayas dicho",
+      "haya dicho",
+      "hayamos dicho",
+      "hayáis dicho",
+      "hayan dicho"
+    ],
+    "pluscuamperfecto-subjuntivo": [
+      "hubiera dicho",
+      "hubieras dicho",
+      "hubiera dicho",
+      "hubiéramos dicho",
+      "hubierais dicho",
+      "hubieran dicho"
+    ],
+    "futuro-subjuntivo": [
+      "dijere",
+      "dijeres",
+      "dijere",
+      "dijéremos",
+      "dijereis",
+      "dijeren"
+    ]
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "infinitive": "querer",
+  "rank": 1557,
+  "ru": "хотеть, любить",
+  "model": "er",
+  "forms": {
+    "presente": [
+      "quiero",
+      "quieres",
+      "quiere",
+      "queremos",
+      "queréis",
+      "quieren"
+    ],
+    "preterito-indefinido": [
+      "quise",
+      "quisiste",
+      "quiso",
+      "quisimos",
+      "quisisteis",
+      "quisieron"
+    ],
+    "futuro-simple": [
+      "querré",
+      "querrás",
+      "querrá",
+      "querremos",
+      "querréis",
+      "querrán"
+    ],
+    "condicional-simple": [
+      "querría",
+      "querrías",
+      "querría",
+      "querríamos",
+      "querríais",
+      "querrían"
+    ],
+    "presente-subjuntivo": [
+      "quiera",
+      "quieras",
+      "quiera",
+      "queramos",
+      "queráis",
+      "quieran"
+    ],
+    "imperfecto-subjuntivo": [
+      "quisiera",
+      "quisieras",
+      "quisiera",
+      "quisiéramos",
+      "quisierais",
+      "quisieran"
+    ],
+    "futuro-subjuntivo": [
+      "quisiere",
+      "quisieres",
+      "quisiere",
+      "quisiéremos",
+      "quisiereis",
+      "quisieren"
+    ]
+  }
+}

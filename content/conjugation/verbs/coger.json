@@ -1,0 +1,24 @@
+{
+  "infinitive": "coger",
+  "rank": 1564,
+  "ru": "брать, ловить",
+  "model": "er",
+  "forms": {
+    "presente": [
+      "cojo",
+      "coges",
+      "coge",
+      "cogemos",
+      "cogéis",
+      "cogen"
+    ],
+    "presente-subjuntivo": [
+      "coja",
+      "cojas",
+      "coja",
+      "cojamos",
+      "cojáis",
+      "cojan"
+    ]
+  }
+}

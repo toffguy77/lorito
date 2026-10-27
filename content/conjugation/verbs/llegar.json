@@ -1,0 +1,24 @@
+{
+  "infinitive": "llegar",
+  "rank": 400,
+  "ru": "прибывать, приходить",
+  "model": "ar",
+  "forms": {
+    "preterito-indefinido": [
+      "llegué",
+      "llegaste",
+      "llegó",
+      "llegamos",
+      "llegasteis",
+      "llegaron"
+    ],
+    "presente-subjuntivo": [
+      "llegue",
+      "llegues",
+      "llegue",
+      "lleguemos",
+      "lleguéis",
+      "lleguen"
+    ]
+  }
+}

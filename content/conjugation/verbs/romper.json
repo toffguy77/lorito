@@ -1,0 +1,56 @@
+{
+  "infinitive": "romper",
+  "rank": 1826,
+  "ru": "ломать",
+  "model": "er",
+  "forms": {
+    "preterito-perfecto": [
+      "he roto",
+      "has roto",
+      "ha roto",
+      "hemos roto",
+      "habéis roto",
+      "han roto"
+    ],
+    "pluscuamperfecto": [
+      "había roto",
+      "habías roto",
+      "había roto",
+      "habíamos roto",
+      "habíais roto",
+      "habían roto"
+    ],
+    "futuro-perfecto": [
+      "habré roto",
+      "habrás roto",
+      "habrá roto",
+      "habremos roto",
+      "habréis roto",
+      "habrán roto"
+    ],
+    "condicional-perfecto": [
+      "habría roto",
+      "habrías roto",
+      "habría roto",
+      "habríamos roto",
+      "habríais roto",
+      "habrían roto"
+    ],
+    "perfecto-subjuntivo": [
+      "haya roto",
+      "hayas roto",
+      "haya roto",
+      "hayamos roto",
+      "hayáis roto",
+      "hayan roto"
+    ],
+    "pluscuamperfecto-subjuntivo": [
+      "hubiera roto",
+      "hubieras roto",
+      "hubiera roto",
+      "hubiéramos roto",
+      "hubierais roto",
+      "hubieran roto"
+    ]
+  }
+}

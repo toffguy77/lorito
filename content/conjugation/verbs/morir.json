@@ -1,0 +1,120 @@
+{
+  "infinitive": "morir",
+  "rank": 484,
+  "ru": "умирать",
+  "model": "irregular",
+  "forms": {
+    "presente": [
+      "muero",
+      "mueres",
+      "muere",
+      "morimos",
+      "morís",
+      "mueren"
+    ],
+    "preterito-perfecto": [
+      "he muerto",
+      "has muerto",
+      "ha muerto",
+      "hemos muerto",
+      "habéis muerto",
+      "han muerto"
+    ],
+    "preterito-indefinido": [
+      "morí",
+      "moriste",
+      "murió",
+      "morimos",
+      "moristeis",
+      "murieron"
+    ],
+    "preterito-imperfecto": [
+      "moría",
+      "morías",
+      "moría",
+      "moríamos",
+      "moríais",
+      "morían"
+    ],
+    "futuro-simple": [
+      "moriré",
+      "morirás",
+      "morirá",
+      "moriremos",
+      "moriréis",
+      "morirán"
+    ],
+    "condicional-simple": [
+      "moriría",
+      "morirías",
+      "moriría",
+      "moriríamos",
+      "moriríais",
+      "morirían"
+    ],
+    "presente-subjuntivo": [
+      "muera",
+      "mueras",
+      "muera",
+      "muramos",
+      "muráis",
+      "mueran"
+    ],
+    "imperfecto-subjuntivo": [
+      "muriera",
+      "murieras",
+      "muriera",
+      "muriéramos",
+      "murierais",
+      "murieran"
+    ],
+    "pluscuamperfecto": [
+      "había muerto",
+      "habías muerto",
+      "había muerto",
+      "habíamos muerto",
+      "habíais muerto",
+      "habían muerto"
+    ],
+    "futuro-perfecto": [
+      "habré muerto",
+      "habrás muerto",
+      "habrá muerto",
+      "habremos muerto",
+      "habréis muerto",
+      "habrán muerto"
+    ],
+    "condicional-perfecto": [
+      "habría muerto",
+      "habrías muerto",
+      "habría muerto",
+      "habríamos muerto",
+      "habríais muerto",
+      "habrían muerto"
+    ],
+    "perfecto-subjuntivo": [
+      "haya muerto",
+      "hayas muerto",
+      "haya muerto",
+      "hayamos muerto",
+      "hayáis muerto",
+      "hayan muerto"
+    ],
+    "pluscuamperfecto-subjuntivo": [
+      "hubiera muerto",
+      "hubieras muerto",
+      "hubiera muerto",
+      "hubiéramos muerto",
+      "hubierais muerto",
+      "hubieran muerto"
+    ],
+    "futuro-subjuntivo": [
+      "muriere",
+      "murieres",
+      "muriere",
+      "muriéremos",
+      "muriereis",
+      "murieren"
+    ]
+  }
+}

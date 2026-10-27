@@ -1,0 +1,24 @@
+{
+  "infinitive": "buscar",
+  "rank": 635,
+  "ru": "искать",
+  "model": "ar",
+  "forms": {
+    "preterito-indefinido": [
+      "busqué",
+      "buscaste",
+      "buscó",
+      "buscamos",
+      "buscasteis",
+      "buscaron"
+    ],
+    "presente-subjuntivo": [
+      "busque",
+      "busques",
+      "busque",
+      "busquemos",
+      "busquéis",
+      "busquen"
+    ]
+  }
+}

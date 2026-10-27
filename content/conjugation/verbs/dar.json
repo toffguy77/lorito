@@ -1,0 +1,48 @@
+{
+  "infinitive": "dar",
+  "rank": 453,
+  "ru": "давать",
+  "model": "ar",
+  "forms": {
+    "presente": [
+      "doy",
+      "das",
+      "da",
+      "damos",
+      "dais",
+      "dan"
+    ],
+    "preterito-indefinido": [
+      "di",
+      "diste",
+      "dio",
+      "dimos",
+      "disteis",
+      "dieron"
+    ],
+    "presente-subjuntivo": [
+      "dé",
+      "des",
+      "dé",
+      "demos",
+      "deis",
+      "den"
+    ],
+    "imperfecto-subjuntivo": [
+      "diera",
+      "dieras",
+      "diera",
+      "diéramos",
+      "dierais",
+      "dieran"
+    ],
+    "futuro-subjuntivo": [
+      "diere",
+      "dieres",
+      "diere",
+      "diéremos",
+      "diereis",
+      "dieren"
+    ]
+  }
+}

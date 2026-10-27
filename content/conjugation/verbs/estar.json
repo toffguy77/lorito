@@ -1,0 +1,48 @@
+{
+  "infinitive": "estar",
+  "rank": 131,
+  "ru": "находиться, быть",
+  "model": "ar",
+  "forms": {
+    "presente": [
+      "estoy",
+      "estás",
+      "está",
+      "estamos",
+      "estáis",
+      "están"
+    ],
+    "preterito-indefinido": [
+      "estuve",
+      "estuviste",
+      "estuvo",
+      "estuvimos",
+      "estuvisteis",
+      "estuvieron"
+    ],
+    "presente-subjuntivo": [
+      "esté",
+      "estés",
+      "esté",
+      "estemos",
+      "estéis",
+      "estén"
+    ],
+    "imperfecto-subjuntivo": [
+      "estuviera",
+      "estuvieras",
+      "estuviera",
+      "estuviéramos",
+      "estuvierais",
+      "estuvieran"
+    ],
+    "futuro-subjuntivo": [
+      "estuviere",
+      "estuvieres",
+      "estuviere",
+      "estuviéremos",
+      "estuviereis",
+      "estuvieren"
+    ]
+  }
+}

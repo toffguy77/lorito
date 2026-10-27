@@ -1,0 +1,80 @@
+{
+  "infinitive": "creer",
+  "rank": 497,
+  "ru": "верить, считать",
+  "model": "er",
+  "forms": {
+    "preterito-perfecto": [
+      "he creído",
+      "has creído",
+      "ha creído",
+      "hemos creído",
+      "habéis creído",
+      "han creído"
+    ],
+    "preterito-indefinido": [
+      "creí",
+      "creíste",
+      "creyó",
+      "creímos",
+      "creísteis",
+      "creyeron"
+    ],
+    "imperfecto-subjuntivo": [
+      "creyera",
+      "creyeras",
+      "creyera",
+      "creyéramos",
+      "creyerais",
+      "creyeran"
+    ],
+    "pluscuamperfecto": [
+      "había creído",
+      "habías creído",
+      "había creído",
+      "habíamos creído",
+      "habíais creído",
+      "habían creído"
+    ],
+    "futuro-perfecto": [
+      "habré creído",
+      "habrás creído",
+      "habrá creído",
+      "habremos creído",
+      "habréis creído",
+      "habrán creído"
+    ],
+    "condicional-perfecto": [
+      "habría creído",
+      "habrías creído",
+      "habría creído",
+      "habríamos creído",
+      "habríais creído",
+      "habrían creído"
+    ],
+    "perfecto-subjuntivo": [
+      "haya creído",
+      "hayas creído",
+      "haya creído",
+      "hayamos creído",
+      "hayáis creído",
+      "hayan creído"
+    ],
+    "pluscuamperfecto-subjuntivo": [
+      "hubiera creído",
+      "hubieras creído",
+      "hubiera creído",
+      "hubiéramos creído",
+      "hubierais creído",
+      "hubieran creído"
+    ],
+    "futuro-subjuntivo": [
+      "creyere",
+      "creyeres",
+      "creyere",
+      "creyéremos",
+      "creyereis",
+      "creyeren"
+    ]
+  }
+}

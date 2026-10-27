@@ -1,0 +1,24 @@
+{
+  "infinitive": "contar",
+  "rank": 1264,
+  "ru": "считать, рассказывать",
+  "model": "ar",
+  "forms": {
+    "presente": [
+      "cuento",
+      "cuentas",
+      "cuenta",
+      "contamos",
+      "contáis",
+      "cuentan"
+    ],
+    "presente-subjuntivo": [
+      "cuente",
+      "cuentes",
+      "cuente",
+      "contemos",
+      "contéis",
+      "cuenten"
+    ]
+  }
+}

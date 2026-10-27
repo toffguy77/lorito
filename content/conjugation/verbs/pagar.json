@@ -1,0 +1,24 @@
+{
+  "infinitive": "pagar",
+  "rank": 775,
+  "ru": "платить",
+  "model": "ar",
+  "forms": {
+    "preterito-indefinido": [
+      "pagué",
+      "pagaste",
+      "pagó",
+      "pagamos",
+      "pagasteis",
+      "pagaron"
+    ],
+    "presente-subjuntivo": [
+      "pague",
+      "pagues",
+      "pague",
+      "paguemos",
+      "paguéis",
+      "paguen"
+    ]
+  }
+}

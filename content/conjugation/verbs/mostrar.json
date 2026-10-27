@@ -1,0 +1,24 @@
+{
+  "infinitive": "mostrar",
+  "rank": 2353,
+  "ru": "показывать",
+  "model": "ar",
+  "forms": {
+    "presente": [
+      "muestro",
+      "muestras",
+      "muestra",
+      "mostramos",
+      "mostráis",
+      "muestran"
+    ],
+    "presente-subjuntivo": [
+      "muestre",
+      "muestres",
+      "muestre",
+      "mostremos",
+      "mostréis",
+      "muestren"
+    ]
+  }
+}

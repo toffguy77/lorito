@@ -1,0 +1,120 @@
+{
+  "infinitive": "ver",
+  "rank": 120,
+  "ru": "видеть",
+  "model": "irregular",
+  "forms": {
+    "presente": [
+      "veo",
+      "ves",
+      "ve",
+      "vemos",
+      "veis",
+      "ven"
+    ],
+    "preterito-perfecto": [
+      "he visto",
+      "has visto",
+      "ha visto",
+      "hemos visto",
+      "habéis visto",
+      "han visto"
+    ],
+    "preterito-indefinido": [
+      "vi",
+      "viste",
+      "vio",
+      "vimos",
+      "visteis",
+      "vieron"
+    ],
+    "preterito-imperfecto": [
+      "veía",
+      "veías",
+      "veía",
+      "veíamos",
+      "veíais",
+      "veían"
+    ],
+    "futuro-simple": [
+      "veré",
+      "verás",
+      "verá",
+      "veremos",
+      "veréis",
+      "verán"
+    ],
+    "condicional-simple": [
+      "vería",
+      "verías",
+      "vería",
+      "veríamos",
+      "veríais",
+      "verían"
+    ],
+    "presente-subjuntivo": [
+      "vea",
+      "veas",
+      "vea",
+      "veamos",
+      "veáis",
+      "vean"
+    ],
+    "imperfecto-subjuntivo": [
+      "viera",
+      "vieras",
+      "viera",
+      "viéramos",
+      "vierais",
+      "vieran"
+    ],
+    "pluscuamperfecto": [
+      "había visto",
+      "habías visto",
+      "había visto",
+      "habíamos visto",
+      "habíais visto",
+      "habían visto"
+    ],
+    "futuro-perfecto": [
+      "habré visto",
+      "habrás visto",
+      "habrá visto",
+      "habremos visto",
+      "habréis visto",
+      "habrán visto"
+    ],
+    "condicional-perfecto": [
+      "habría visto",
+      "habrías visto",
+      "habría visto",
+      "habríamos visto",
+      "habríais visto",
+      "habrían visto"
+    ],
+    "perfecto-subjuntivo": [
+      "haya visto",
+      "hayas visto",
+      "haya visto",
+      "hayamos visto",
+      "hayáis visto",
+      "hayan visto"
+    ],
+    "pluscuamperfecto-subjuntivo": [
+      "hubiera visto",
+      "hubieras visto",
+      "hubiera visto",
+      "hubiéramos visto",
+      "hubierais visto",
+      "hubieran visto"
+    ],
+    "futuro-subjuntivo": [
+      "viere",
+      "vieres",
+      "viere",
+      "viéremos",
+      "viereis",
+      "vieren"
+    ]
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "infinitive": "saber",
+  "rank": 236,
+  "ru": "знать",
+  "model": "er",
+  "forms": {
+    "presente": [
+      "sé",
+      "sabes",
+      "sabe",
+      "sabemos",
+      "sabéis",
+      "saben"
+    ],
+    "preterito-indefinido": [
+      "supe",
+      "supiste",
+      "supo",
+      "supimos",
+      "supisteis",
+      "supieron"
+    ],
+    "futuro-simple": [
+      "sabré",
+      "sabrás",
+      "sabrá",
+      "sabremos",
+      "sabréis",
+      "sabrán"
+    ],
+    "condicional-simple": [
+      "sabría",
+      "sabrías",
+      "sabría",
+      "sabríamos",
+      "sabríais",
+      "sabrían"
+    ],
+    "presente-subjuntivo": [
+      "sepa",
+      "sepas",
+      "sepa",
+      "sepamos",
+      "sepáis",
+      "sepan"
+    ],
+    "imperfecto-subjuntivo": [
+      "supiera",
+      "supieras",
+      "supiera",
+      "supiéramos",
+      "supierais",
+      "supieran"
+    ],
+    "futuro-subjuntivo": [
+      "supiere",
+      "supieres",
+      "supiere",
+      "supiéremos",
+      "supiereis",
+      "supieren"
+    ]
+  }
+}

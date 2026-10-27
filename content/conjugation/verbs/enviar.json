@@ -1,0 +1,24 @@
+{
+  "infinitive": "enviar",
+  "rank": 1942,
+  "ru": "отправлять",
+  "model": "ar",
+  "forms": {
+    "presente": [
+      "envío",
+      "envías",
+      "envía",
+      "enviamos",
+      "enviáis",
+      "envían"
+    ],
+    "presente-subjuntivo": [
+      "envíe",
+      "envíes",
+      "envíe",
+      "enviemos",
+      "enviéis",
+      "envíen"
+    ]
+  }
+}
