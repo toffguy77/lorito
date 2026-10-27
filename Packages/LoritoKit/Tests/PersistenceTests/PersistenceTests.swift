@@ -106,6 +106,10 @@ struct SyncedSettingsRoundTripTests {
         s.playAudioWhenSilent = true
         s.desiredRetention = 0.85                                       // fsrs-scheduler
         s.placementKnownLevel = .a2                                     // placement-test
+        s.levelGoal = LevelGoal(targetLevel: .b1, targetDate: Date(timeIntervalSinceReferenceDate: 820_000_000),
+                                startDate: Date(timeIntervalSinceReferenceDate: 810_000_000), startIntroduced: 12,
+                                state: .active)                         // study-goal
+        s.exam = ExamGoal(kind: .ccse, date: Date(timeIntervalSinceReferenceDate: 821_000_000), done: true)
         #expect(try Self.roundTrip(s) == s)
     }
 
@@ -144,5 +148,6 @@ struct SyncedSettingsRoundTripTests {
         #expect(loaded.spanishVariant == .spain && loaded.speechRate == .normal && !loaded.playAudioWhenSilent)
         #expect(loaded.desiredRetention == 0.9)
         #expect(loaded.placementKnownLevel == nil)
+        #expect(loaded.levelGoal == nil && loaded.exam == nil)
     }
 }

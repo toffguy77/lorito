@@ -9,6 +9,7 @@ import DesignSystem
 public struct TodayView: View {
     @State private var model: TodayModel
     @State private var trapCard: Card?
+    @State private var goalModel: GoalSettingsModel?
     private let catalog: ContentCatalog
     private let store: UserDataStore
     private let navigation: AppNavigation
@@ -40,6 +41,16 @@ public struct TodayView: View {
         .hardwareKeyCommands(model.hasWork && navigation.session == nil
                              ? [HardwareKeyCommand(.return, title: "Начать", action: startSession)] : [])
         .onChange(of: navigation.sessionEndCount) { _, _ in model.refresh() }
+        .sheet(item: $goalModel, onDismiss: { model.refresh() }) { goals in
+            NavigationStack {
+                GoalSettingsView(model: goals)
+                    .toolbar {
+                        ToolbarItem(placement: .confirmationAction) {
+                            Button("Готово") { goalModel = nil }
+                        }
+                    }
+            }
+        }
         .sheet(item: $trapCard, onDismiss: { model.refresh() }) { card in
             NavigationStack {
                 CardReaderView(model: CatalogModel(store: store, catalog: catalog), card: card)
@@ -63,6 +74,7 @@ public struct TodayView: View {
             header
             planOrState
             WeekStrip(days: model.week)
+            goalCard
             promptCard
             trap
         }
@@ -83,6 +95,7 @@ public struct TodayView: View {
                         .padding(.horizontal, LoritoSpacing.md)
                         .padding(.vertical, LoritoSpacing.sm)
                         .background(LoritoColor.surfaceRaised, in: RoundedRectangle(cornerRadius: LoritoRadius.lg, style: .continuous))
+                    goalCard
                     promptCard
                     trap
                     memorySummary
@@ -140,6 +153,39 @@ public struct TodayView: View {
     /// Prompt actions are handled by the change that registers the prompt.
     private func onPromptAction(_ prompt: TodayPrompt) {
         model.dismissPrompt()
+        if prompt.id == TodayModel.goalPrompt.id {
+            goalModel = GoalSettingsModel(store: store, catalog: catalog)
+        }
+    }
+
+    /// Level goal / exam countdown (study-goal).
+    @ViewBuilder
+    private var goalCard: some View {
+        if !model.goalLines.isEmpty {
+            VStack(alignment: .leading, spacing: LoritoSpacing.sm) {
+                ForEach(model.goalLines) { line in
+                    HStack(alignment: .top, spacing: LoritoSpacing.sm) {
+                        Image(systemName: line.isEndState ? "checkmark.seal" : "flag")
+                            .foregroundStyle(LoritoColor.accent)
+                            .accessibilityHidden(true)
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text(line.title)
+                                .font(LoritoFont.bodyStrong)
+                                .foregroundStyle(LoritoColor.textPrimary)
+                            Text(line.detail)
+                                .font(LoritoFont.caption)
+                                .foregroundStyle(LoritoColor.textSecondary)
+                                .fixedSize(horizontal: false, vertical: true)
+                        }
+                    }
+                    .accessibilityElement(children: .combine)
+                    .accessibilityIdentifier("today.goal.\(line.id.prefix(while: { $0 != ":" }))")
+                }
+            }
+            .padding(LoritoSpacing.md)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(LoritoColor.surfaceRaised, in: RoundedRectangle(cornerRadius: LoritoRadius.md, style: .continuous))
+        }
     }
 
     @ViewBuilder

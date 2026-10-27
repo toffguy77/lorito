@@ -28,6 +28,15 @@ public struct UserSettings: Codable, Sendable, Hashable {
     /// Highest level passed in the placement test (set on accept; nil for a
     /// manual level choice). Its cards are introduced after higher levels.
     public var placementKnownLevel: CEFRLevel?
+    /// Optional level goal and exam date (study-goal), stored as scalars.
+    public var goalTargetLevel: CEFRLevel?
+    public var goalTargetDate: Date?
+    public var goalStartDate: Date?
+    public var goalStartIntroduced: Int?
+    public var goalState: GoalState?
+    public var examKind: ExamKind?
+    public var examDate: Date?
+    public var examDone: Bool?
 
     public static let retentionRange: ClosedRange<Double> = 0.80...0.95
 
@@ -63,4 +72,33 @@ public struct UserSettings: Codable, Sendable, Hashable {
     }
 
     public static let `default` = UserSettings()
+
+    /// The level goal assembled from its scalar fields (nil = none).
+    public var levelGoal: LevelGoal? {
+        get {
+            guard let level = goalTargetLevel, let date = goalTargetDate else { return nil }
+            return LevelGoal(targetLevel: level, targetDate: date, startDate: goalStartDate ?? date,
+                             startIntroduced: goalStartIntroduced ?? 0, state: goalState ?? .active)
+        }
+        set {
+            goalTargetLevel = newValue?.targetLevel
+            goalTargetDate = newValue?.targetDate
+            goalStartDate = newValue?.startDate
+            goalStartIntroduced = newValue?.startIntroduced
+            goalState = newValue?.state
+        }
+    }
+
+    /// The exam date assembled from its scalar fields (nil = none).
+    public var exam: ExamGoal? {
+        get {
+            guard let kind = examKind, let date = examDate else { return nil }
+            return ExamGoal(kind: kind, date: date, done: examDone ?? false)
+        }
+        set {
+            examKind = newValue?.kind
+            examDate = newValue?.date
+            examDone = newValue?.done
+        }
+    }
 }

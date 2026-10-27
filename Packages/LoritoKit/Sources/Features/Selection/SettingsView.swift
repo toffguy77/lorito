@@ -11,12 +11,14 @@ public struct SettingsView: View {
     private let reminders: ReminderService?
     private let audio: AudioSettingsModel?
     private let retention: RetentionSettingsModel?
+    private let goals: GoalSettingsModel?
     private let hasSpanishVoice: Bool
     @Environment(\.loritoUITesting) private var uiTesting
 
     public init(model: ScopeSelectionModel, reminders: ReminderService? = nil,
                 audio: AudioSettingsModel? = nil, retention: RetentionSettingsModel? = nil,
-                hasSpanishVoice: Bool = true) {
+                goals: GoalSettingsModel? = nil, hasSpanishVoice: Bool = true) {
+        self.goals = goals
         _model = State(initialValue: model)
         self.reminders = reminders
         self.audio = audio
@@ -32,6 +34,15 @@ public struct SettingsView: View {
                         RemindersView(service: reminders)
                     } label: {
                         settingsRow("Напоминания", systemImage: "bell")
+                    }
+                    .buttonStyle(.plain)
+                }
+
+                if let goals {
+                    NavigationLink {
+                        GoalSettingsView(model: goals)
+                    } label: {
+                        settingsRow("Цель", systemImage: "flag")
                     }
                     .buttonStyle(.plain)
                 }

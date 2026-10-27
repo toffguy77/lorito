@@ -21,7 +21,7 @@ public final class SwiftDataUserDataStore: UserDataStore {
         guard let r = try context.fetch(FetchDescriptor<SettingsRecord>()).first else {
             return .default
         }
-        return UserSettings(
+        var settings = UserSettings(
             targetLevel: r.targetLevelRaw.flatMap(CEFRLevel.init(rawValue:)),
             selectedThemeIDs: r.selectedThemeIDs,
             dailyNewCardCount: r.dailyNewCardCount,
@@ -34,6 +34,15 @@ public final class SwiftDataUserDataStore: UserDataStore {
             desiredRetention: r.desiredRetention,
             placementKnownLevel: r.placementKnownLevelRaw.flatMap(CEFRLevel.init(rawValue:))
         )
+        settings.goalTargetLevel = r.goalTargetLevelRaw.flatMap(CEFRLevel.init(rawValue:))
+        settings.goalTargetDate = r.goalTargetDate
+        settings.goalStartDate = r.goalStartDate
+        settings.goalStartIntroduced = r.goalStartIntroduced
+        settings.goalState = r.goalStateRaw.flatMap(GoalState.init(rawValue:))
+        settings.examKind = r.examKindRaw.flatMap(ExamKind.init(rawValue:))
+        settings.examDate = r.examDate
+        settings.examDone = r.examDone
+        return settings
     }
 
     public func saveSettings(_ settings: UserSettings) throws {
@@ -53,6 +62,14 @@ public final class SwiftDataUserDataStore: UserDataStore {
         record.playAudioWhenSilent = settings.playAudioWhenSilent
         record.desiredRetention = settings.desiredRetention
         record.placementKnownLevelRaw = settings.placementKnownLevel?.rawValue
+        record.goalTargetLevelRaw = settings.goalTargetLevel?.rawValue
+        record.goalTargetDate = settings.goalTargetDate
+        record.goalStartDate = settings.goalStartDate
+        record.goalStartIntroduced = settings.goalStartIntroduced
+        record.goalStateRaw = settings.goalState?.rawValue
+        record.examKindRaw = settings.examKind?.rawValue
+        record.examDate = settings.examDate
+        record.examDone = settings.examDone
         try context.save()
     }
 

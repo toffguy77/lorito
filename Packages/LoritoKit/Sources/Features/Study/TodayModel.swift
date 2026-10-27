@@ -33,6 +33,11 @@ public final class TodayModel {
         didSet { prompt = promptSlot.prompt(candidates: promptCandidates, events: (try? store.allEvents()) ?? []) }
     }
     private let promptSlot: TodayPromptSlot
+    /// Goal card lines (study-goal).
+    public private(set) var goalLines: [TodayGoalLine] = []
+    private let goalBuilder: TodayGoalBuilder
+    /// End states shown during this model's lifetime keep showing until it goes away.
+    private var shownEndStates: Set<String> = []
     /// Long-term memory across the included levels (regular-width dashboard).
     public private(set) var memory: (longTerm: Int, total: Int) = (0, 0)
 
@@ -47,8 +52,10 @@ public final class TodayModel {
 
     /// `today` is a clock so tests can pin the date; defaults to now.
     public init(store: UserDataStore, catalog: ContentCatalog, today: @escaping () -> Date = { Date() },
-                boosts: FirstSessionBoostStore = .shared, prompts: TodayPromptSlot = TodayPromptSlot()) {
+                boosts: FirstSessionBoostStore = .shared, prompts: TodayPromptSlot = TodayPromptSlot(),
+                goals: TodayGoalBuilder = TodayGoalBuilder()) {
         self.promptSlot = prompts
+        self.goalBuilder = goals
         self.store = store
         self.catalog = catalog
         self.now = today
@@ -71,6 +78,11 @@ public final class TodayModel {
         "\(dueRemaining) на повторение + \(newRemaining) новых"
     }
 
+    public static let goalPrompt = TodayPrompt(
+        id: "goal", title: "Есть дедлайн?",
+        message: "Экзамен, переезд или просто дата — поставьте цель, и Lorito подстроит темп новых карточек.",
+        actionTitle: "Поставить цель")
+
     /// "Не сейчас" on the prompt: never offered again; the slot stays empty this visit.
     public func dismissPrompt() {
         guard let prompt else { return }
@@ -88,8 +100,11 @@ public final class TodayModel {
         let events = (try? store.allEvents()) ?? []
         let today = now()
 
+        // An active level goal can raise the day's new-card count (study-goal).
+        let planSettings = GoalPacing.planSettings(settings, goal: settings.levelGoal, cards: catalog.cards,
+                                                   reviews: reviews, today: today)
         let plan = DailyPlanner.composePlan(
-            DailyPlanRequest(cards: catalog.cards, reviews: reviews, settings: settings, today: today, events: events,
+            DailyPlanRequest(cards: catalog.cards, reviews: reviews, settings: planSettings, today: today, events: events,
                              firstSession: boosts.current(today: today))
         )
         let gradedToday = Set(
@@ -104,7 +119,11 @@ public final class TodayModel {
         let rows = StatsCalculator.longTermMemory(reviews: reviews, catalog: catalog, levels: levels)
         memory = (rows.reduce(0) { $0 + $1.longTerm }, rows.reduce(0) { $0 + $1.total })
         trap = Self.pickTrap(settings: settings, reviews: reviews, catalog: catalog, today: today)
-        prompt = promptSlot.prompt(candidates: promptCandidates, events: events)
+        goalLines = goalBuilder.lines(settings: settings, cards: catalog.cards, reviews: reviews, today: today,
+                                      keepShowing: shownEndStates)
+        shownEndStates.formUnion(goalLines.filter(\.isEndState).map(\.id))
+        // «Есть дедлайн?» until the user sets a goal or dismisses it.
+        promptCandidates = settings.levelGoal == nil && settings.exam == nil ? [Self.goalPrompt] : []
     }
 
     private static let weekdayLabels = ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"]  // Calendar weekday 1…7

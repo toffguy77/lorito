@@ -72,6 +72,8 @@ public struct RootView: View {
             if uiTesting {
                 didCompleteOnboarding = false
                 FirstSessionBoostStore.shared.clear()
+                TodayPromptSlot().reset()
+                TodayGoalBuilder().reset()
             }
             let container = PersistenceController.makeUserContainer(cloudKitEnabled: cloudKitEnabled, inMemory: uiTesting)
             let store = SwiftDataUserDataStore(container: container)

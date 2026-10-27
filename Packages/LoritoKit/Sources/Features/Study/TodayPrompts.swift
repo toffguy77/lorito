@@ -35,6 +35,9 @@ public struct TodayPromptSlot: @unchecked Sendable {
         return candidates.first { !dismissed.contains($0.id) }
     }
 
+    /// UI testing: forget dismissals so every launch starts fresh.
+    public func reset() { defaults.removeObject(forKey: Self.dismissedKey) }
+
     public func dismiss(_ id: String) {
         var dismissed = defaults.stringArray(forKey: Self.dismissedKey) ?? []
         if !dismissed.contains(id) { dismissed.append(id) }

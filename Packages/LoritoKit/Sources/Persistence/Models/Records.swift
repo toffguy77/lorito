@@ -22,6 +22,15 @@ public final class SettingsRecord {
     public var desiredRetention: Double = 0.9
     // placement-test-and-first-session
     public var placementKnownLevelRaw: String?
+    // study-goal
+    public var goalTargetLevelRaw: String?
+    public var goalTargetDate: Date?
+    public var goalStartDate: Date?
+    public var goalStartIntroduced: Int?
+    public var goalStateRaw: String?
+    public var examKindRaw: String?
+    public var examDate: Date?
+    public var examDone: Bool?
 
     public init(
         targetLevelRaw: String? = nil,
