@@ -12,6 +12,7 @@ import Features
 final class ActionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        CrashReporting.start(.lensAction)
         FontRegistry.registerAll()
         view.backgroundColor = UIColor(LoritoColor.surface)
         Task { @MainActor in show(await sharedText()) }
@@ -30,7 +31,15 @@ final class ActionViewController: UIViewController {
     }
 
     private func show(_ text: String) {
-        guard let catalog = try? ContentLoader.loadCatalog(), let lens = LensModel.bundledCatalog() else {
+        let catalog: ContentCatalog
+        do {
+            catalog = try ContentLoader.loadCatalog()
+        } catch {
+            ErrorReports.report(error, area: .contentLoad)
+            close()
+            return
+        }
+        guard let lens = LensModel.bundledCatalog() else {
             close()
             return
         }

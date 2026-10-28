@@ -7,6 +7,7 @@ import DesignSystem
 @main
 struct LoritoWidgetsBundle: WidgetBundle {
     init() {
+        CrashReporting.start(.widgets)
         // Brand fonts ship in the DesignSystem bundle; styles fall back to the
         // system font if registration fails.
         FontRegistry.registerAll()

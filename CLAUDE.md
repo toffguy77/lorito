@@ -137,8 +137,10 @@ After editing content, run `tools/compile.py` to refresh
   `conj:`, `word:`, `ccse:`); card counts/planners use `.card` only. New items
   per day are capped by `IntroductionLedger` + `DailyBudget`; only the first
   grade of an item per learning day updates its `ReviewState`.
-- **Crash reporting (Sentry)** lives in the app target only
-  (`Lorito/Sources/CrashReporting.swift`). The package reports non-fatal errors
+- **Crash reporting (Sentry)** lives outside the package, in
+  `Shared/CrashReporting.swift`, compiled into the app and both extensions
+  (tag `component`: app / widgets / lensAction; extensions report under the app's
+  release, without hang tracking or sessions). The package reports non-fatal errors
   through `ErrorReports.report(_:area:)` in Domain: a closed `ErrorArea` set,
   domain and code only, never messages. The DSN comes from `SENTRY_DSN` in
   `Config.local.xcconfig`, written **without** `https://`. Reporting is off in UI

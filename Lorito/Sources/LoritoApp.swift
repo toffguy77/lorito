@@ -12,7 +12,7 @@ struct LoritoApp: App {
 
     init() {
         // First, so launch-time crashes are caught too.
-        CrashReporting.start(uiTesting: Self.uiTesting)
+        CrashReporting.start(.app, uiTesting: Self.uiTesting)
         // Bundled brand fonts live in the DesignSystem package bundle, which
         // `UIAppFonts` can't see — register them before the first view renders.
         FontRegistry.registerAll()

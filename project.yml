@@ -21,6 +21,7 @@ targets:
     platform: iOS
     sources:
       - path: Lorito/Sources
+      - path: Shared
       - path: Lorito/Assets.xcassets
     configFiles:
       Debug: Lorito/Config.xcconfig
@@ -94,7 +95,13 @@ targets:
         excludes:
           - "*.entitlements"
           - Info.plist
+      - path: Shared
+    configFiles:
+      Debug: Lorito/Config.xcconfig
+      Release: Lorito/Config.xcconfig
     dependencies:
+      - package: Sentry
+        product: Sentry
       - package: LoritoKit
         product: Domain
       - package: LoritoKit
@@ -109,6 +116,7 @@ targets:
       path: LoritoWidgets/Info.plist
       properties:
         CFBundleDisplayName: Lorito
+        SentryDSN: "$(SENTRY_DSN)"
         CFBundleShortVersionString: "$(MARKETING_VERSION)"
         CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
         NSExtension:
@@ -134,7 +142,13 @@ targets:
       - path: LoritoLensAction
         excludes:
           - Info.plist
+      - path: Shared
+    configFiles:
+      Debug: Lorito/Config.xcconfig
+      Release: Lorito/Config.xcconfig
     dependencies:
+      - package: Sentry
+        product: Sentry
       - package: LoritoKit
         product: Features
       - sdk: UIKit.framework
@@ -143,6 +157,7 @@ targets:
       path: LoritoLensAction/Info.plist
       properties:
         CFBundleDisplayName: Разобрать в Lorito
+        SentryDSN: "$(SENTRY_DSN)"
         CFBundleShortVersionString: "$(MARKETING_VERSION)"
         CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
         NSExtension:
