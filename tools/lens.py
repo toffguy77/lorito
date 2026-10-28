@@ -4,6 +4,9 @@
 Layout (content/lens/):
   rules/<id>.json   {id, title_ru, cards: [...], pattern: [step…], requires: [ctx…],
                      examples: {positive: [...], negative: [...]}}
+                    or a phrase list: {id, title_ru, cards, phrases: [{text, ru,
+                     example}], examples: {negative}} — expanded into one rule
+                     per phrase (`a|b` alternatives, `~lemma` for inflecting words)
   lemmas.tsv        form<TAB>lemma lines (# comments); the compiled table adds
                     every single-word form of the conjugation data
   sets.json         named surface sets: a list of forms; {"tense": <id>} (all
@@ -26,6 +29,7 @@ from __future__ import annotations
 
 import json
 import re
+import unicodedata
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -147,9 +151,37 @@ def lens_dir() -> Path:
     return lib.content_dir() / "lens"
 
 
-def load_rules() -> list[dict]:
+def load_raw_rules() -> list[dict]:
     d = lens_dir() / "rules"
     return [json.loads(p.read_text(encoding="utf-8")) for p in sorted(d.glob("*.json"))] if d.exists() else []
+
+
+def _slug(text: str) -> str:
+    folded = "".join(c for c in unicodedata.normalize("NFD", text.lower()) if unicodedata.category(c) != "Mn")
+    return re.sub(r"[^a-z0-9]+", "-", folded.replace("~", "")).strip("-")
+
+
+def expand_phrases(r: dict) -> list[dict]:
+    """A phrase-list rule (`phrases: [{text, ru, example}]`) becomes one rule per
+    phrase: each word a surface step (`a|b` alternatives), `~lemma` for a word
+    that inflects. The phrase's `ru` is its title; its example is the positive
+    example; the list's negatives apply to every phrase."""
+    if "phrases" not in r:
+        return [r]
+    out = []
+    for p in r.get("phrases") or []:
+        text = str(p.get("text", ""))
+        steps = [{"lemma": [w[1:]]} if w.startswith("~") else {"surface": w.split("|")} for w in text.lower().split()]
+        out.append({"id": f"{r.get('id')}-{_slug(text)}", "title_ru": p.get("ru") or r.get("title_ru"),
+                    "cards": r.get("cards"), "pattern": steps, "requires": r.get("requires") or [],
+                    "examples": {"positive": [p["example"]] if p.get("example") else [],
+                                 "negative": (r.get("examples") or {}).get("negative") or []},
+                    "phrase_of": r.get("id")})
+    return out
+
+
+def load_rules() -> list[dict]:
+    return [x for r in load_raw_rules() for x in expand_phrases(r)]
 
 
 def _conjugation():
@@ -256,6 +288,17 @@ def validate_lens(card_ids: set[str]) -> list[str]:
         return [f"lens: failed to load ({e})"]
     lemmas = set(table.values())
     errors += validate_coverage(card_ids, rules)
+    for raw in load_raw_rules():
+        if "phrases" not in raw:
+            continue
+        rid = raw.get("id", "?")
+        if "pattern" in raw:
+            errors.append(f"lens: {rid}: a phrase-list rule has phrases instead of a pattern")
+        phrases = raw.get("phrases") or []
+        if len(phrases) < MIN_POSITIVE:
+            errors.append(f"lens: {rid}: a phrase-list rule needs ≥ {MIN_POSITIVE} phrases")
+        errors += [f"lens: {rid}: phrase {i + 1} needs text, ru and example"
+                   for i, p in enumerate(phrases) if not (p.get("text") and p.get("ru") and p.get("example"))]
     seen: set[str] = set()
     for r in rules:
         rid = r.get("id", "?")
@@ -283,8 +326,9 @@ def validate_lens(card_ids: set[str]) -> list[str]:
         errors += rule_errors
         ex = r.get("examples") or {}
         pos, neg = ex.get("positive") or [], ex.get("negative") or []
-        if len(pos) < MIN_POSITIVE or len(neg) < MIN_NEGATIVE:
-            errors.append(f"lens: {rid}: examples need ≥ {MIN_POSITIVE} positive and ≥ {MIN_NEGATIVE} negative")
+        min_pos = 1 if r.get("phrase_of") else MIN_POSITIVE
+        if len(pos) < min_pos or len(neg) < MIN_NEGATIVE:
+            errors.append(f"lens: {rid}: examples need ≥ {min_pos} positive and ≥ {MIN_NEGATIVE} negative")
         if rule_errors:
             continue
         for text in pos:
@@ -300,7 +344,8 @@ def bundle() -> dict | None:
     """lens.json: rules (by id), the lemma table and the expanded sets; None without content."""
     if not lens_dir().exists():
         return None
-    rules, table, sets = sorted(load_rules(), key=lambda r: r["id"]), lemma_table(), load_sets()
+    rules = sorted(({k: v for k, v in r.items() if k != "phrase_of"} for r in load_rules()), key=lambda r: r["id"])
+    table, sets = lemma_table(), load_sets()
     # Every example analysed with all rules: the app's matcher must reproduce these exactly.
     texts = sorted({t for r in rules for k in ("positive", "negative") for t in r["examples"][k]})
     crosscheck = [{"text": t, "tokens": [tok.lower for tok in tokenize(t)],

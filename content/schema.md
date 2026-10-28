@@ -343,6 +343,24 @@ vengas» but not «Espero el autobús».
 keep the longest span, then the more specific rule (more predicates), then the
 lower id. **Tokens:** words are letter runs; `.` `!` `?` `…` end a sentence.
 
+### Phrase-list rules
+
+For a card that teaches a closed list of expressions (idioms, proverbs, set
+phrases), a rule file may list `phrases` instead of `pattern`:
+
+```json
+{"id": "refranes", "title_ru": "Пословица", "cards": ["C1-17"],
+ "phrases": [{"text": "más vale tarde que nunca", "ru": "лучше поздно, чем никогда",
+              "example": "Llegó a las diez, pero más vale tarde que nunca."}],
+ "examples": {"negative": ["Más vale ir temprano.", "…"]}}
+```
+
+The pipeline expands it into one rule per phrase, id `<id>-<phrase slug>`: each
+word is a surface step (`mi|tu|su` for alternatives), `~word` a lemma step for a
+word that inflects (`~echar de menos`). The phrase's `ru` is the highlight title,
+its `example` the positive example (it must match); the list's negatives apply
+to every phrase. At least 3 phrases; no `pattern` next to `phrases`.
+
 ### `lemmas.tsv` and `sets.json`
 
 `lemmas.tsv` maps `form<TAB>lemma` (`#` comments) for words rules reference

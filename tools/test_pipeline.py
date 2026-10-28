@@ -971,6 +971,46 @@ class LensPipelineTests(unittest.TestCase):
         errs = self.write(lens_rule(examples={"positive": ["Espero que vengas."], "negative": []}))
         self.assertTrue(any("examples" in e for e in errs), errs)
 
+    def phrases(self, **kw):
+        r = {"id": "refranes", "title_ru": "Пословица", "cards": ["A1-01"],
+             "phrases": [{"text": "más vale tarde que nunca", "ru": "лучше поздно, чем никогда",
+                          "example": "Llegó a las diez, pero más vale tarde que nunca."},
+                         {"text": "~querer es poder", "ru": "где хотение, там и умение",
+                          "example": "Quiero aprender, y querer es poder."},
+                         {"text": "en boca cerrada no entran moscas", "ru": "молчание — золото",
+                          "example": "Calla: en boca cerrada no entran moscas."}],
+             "examples": {"negative": ["Más vale ir temprano.", "Quiero poder."]}}
+        r.update(kw)
+        return r
+
+    def test_phrase_list_rule_expands_into_rules(self):
+        self.assertEqual(self.write(self.phrases()), [])
+        rules = {r["id"]: r for r in lens.load_rules()}
+        self.assertEqual(sorted(rules), ["refranes-en-boca-cerrada-no-entran-moscas",
+                                         "refranes-mas-vale-tarde-que-nunca", "refranes-querer-es-poder"])
+        r = rules["refranes-querer-es-poder"]
+        self.assertEqual(r["title_ru"], "где хотение, там и умение")
+        self.assertEqual(r["pattern"], [{"lemma": ["querer"]}, {"surface": ["es"]}, {"surface": ["poder"]}])
+        self.assertEqual(r["cards"], ["A1-01"])
+        out = self.root / "content.json"
+        os.environ["LORITO_BUNDLE_PATH"] = str(out)
+        self.assertEqual(compile_mod.main(), 0)
+        b = json.loads((self.root / "lens.json").read_text(encoding="utf-8"))
+        self.assertEqual(len(b["rules"]), 3)
+        self.assertNotIn("phrase_of", b["rules"][0])
+
+    def test_phrase_list_rule_checks(self):
+        few = self.phrases()
+        few["phrases"] = few["phrases"][:2]
+        self.assertTrue(any("refranes" in e and "3 phrases" in e for e in self.write(few)))
+        bad = self.phrases()
+        bad["phrases"][0] = dict(bad["phrases"][0], example="Más vale ir temprano.")
+        self.assertTrue(any("mas-vale-tarde" in e and "positive" in e for e in self.write(bad)))
+        neg = self.phrases(examples={"negative": ["Más vale tarde que nunca."]})
+        self.assertTrue(any("refranes" in e for e in self.write(neg)))
+        both = self.phrases(pattern=[{"surface": ["que"]}])
+        self.assertTrue(any("refranes" in e and "pattern" in e for e in self.write(both)))
+
 
 class LensCoverageAndSetsTests(unittest.TestCase):
     def setUp(self) -> None:
