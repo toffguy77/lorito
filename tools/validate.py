@@ -203,6 +203,8 @@ def validate() -> list[str]:
                 errors.append(f"{c.id}: unresolved related '{r}'")
         errors.extend(validate_recall(c))
         errors.extend(f"{c.id}: {e}" for e in variants.check_markup(c.body))
+        if c.id not in variants.REFERENCE_CARDS:
+            errors.extend(f"{c.id}: {e}" for e in variants.check_coverage(c.body))
 
     # per-level: unique order + theme contiguity
     by_level: dict[str, list[lib.Card]] = {}

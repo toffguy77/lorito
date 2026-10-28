@@ -791,6 +791,24 @@ class VariantMarkupTests(unittest.TestCase):
         self.assertIn("\n:::\n", out)
         self.assertIn("{es: coche | am: carro}", out)
 
+    def test_vosotros_table_needs_am_and_rio_notes(self):
+        table = "| лицо | форма |\n|---|---|\n| yo | hablo |\n| vosotros/as | habláis |\n"
+        errs = variants.check_coverage(table)
+        self.assertTrue(any("am" in e and "rio" in e for e in errs), errs)
+        self.assertEqual(variants.check_coverage(table + "\n:::variant am rio\nТолько узнавать.\n:::\n"), [])
+        self.assertTrue(any("rio" in e for e in variants.check_coverage(table + "\n:::variant am\nx\n:::\n")))
+        # A table inside a Spain-only block, or prose mentioning vosotros, needs nothing.
+        self.assertEqual(variants.check_coverage(":::variant es\n" + table + ":::\n"), [])
+        self.assertEqual(variants.check_coverage("В Испании говорят *vosotros*.\n"), [])
+        header = "| yo | tú | nosotros | vosotros | ellos |\n|---|---|---|---|---|\n| quiero | quieres | queremos | queréis | quieren |\n"
+        self.assertTrue(variants.check_coverage(header))
+        self.assertEqual(variants.check_coverage("| Кастильский | *vosotros*, leísmo |\n"), [])
+
+    def test_coger_in_examples_needs_a_variant(self):
+        self.assertTrue(any("coger" in e for e in variants.check_coverage("- *Cogí el autobús.*\n")))
+        self.assertEqual(variants.check_coverage(":::variant es\n- *Cogí el autobús.*\n:::\n"), [])
+        self.assertEqual(variants.check_coverage("- {es: Cogí el autobús. | am: Tomé el autobús.}\n"), [])
+
     def test_exercise_variants_and_only(self):
         mc = {"options": ["vosotros", "ustedes"], "answer": "vosotros",
               "variants": {"am": {"answer": "ustedes"}}, "only": ["es", "am"]}

@@ -57,6 +57,49 @@ def check_markup(body: str) -> list[str]:
     return errors
 
 
+# A table cell that is just the person (row label or column header): «vosotros/as», «**vosotros** (вы)».
+# Cards that compare the variants themselves: vosotros and coger are their subject.
+REFERENCE_CARDS = {"C1-18"}
+
+_VOSOTROS_CELL = re.compile(r"^\**\s*vosotr[oa]s(/as)?\s*\**\s*(\([^)]*\))?\s*$", re.IGNORECASE)
+_ITALIC = re.compile(r"(?<!\*)\*([^*\n]+)\*(?!\*)")
+_COGER = re.compile(r"\b(coger|cojo|coges|coge|cogemos|cogen|cogí|cogiste|cogió|cogimos|cogieron|coja|cojas|cojan|cogido|cogiendo|cogía)\b", re.IGNORECASE)
+
+
+def check_coverage(body: str) -> list[str]:
+    """Variant coverage a card must have (errors when missing):
+    - a conjugation table with a vosotros row (outside a Spain-only block) needs
+      notes for Latin America and the Rioplatense variant (blocks covering am and rio);
+    - an example sentence with *coger* (vulgar in much of Latin America) must sit in
+      a Spain block or an inline alternative."""
+    errors: list[str] = []
+    block: list[str] | None = None
+    covered: set[str] = set()
+    vosotros_line: int | None = None
+    for n, raw in enumerate(body.splitlines(), 1):
+        line = raw.strip()
+        if m := _BLOCK_OPEN.match(line):
+            block = m.group(1).split()
+            covered |= set(block)
+            continue
+        if _BLOCK_CLOSE.match(line):
+            block = None
+            continue
+        if block is not None and "am" not in block and "rio" not in block:
+            continue  # Spain-only text
+        if vosotros_line is None and line.startswith("|") and any(
+                _VOSOTROS_CELL.match(cell.strip()) for cell in line.strip("|").split("|")):
+            vosotros_line = n
+        text = _INLINE.sub("", raw)
+        for span in _ITALIC.findall(text):
+            if len(span.split()) >= 2 and _COGER.search(span):
+                errors.append(f"line {n}: example with «coger» needs a Spain block or an inline alternative")
+    missing = [c for c in ("am", "rio") if c not in covered]
+    if vosotros_line is not None and missing:
+        errors.append(f"line {vosotros_line}: table with a vosotros row needs variant notes for am and rio (missing: {', '.join(missing)})")
+    return errors
+
+
 def parse_inline(group: str) -> list[tuple[str, str]]:
     """`{es: coche | am: carro}` → [("es", "coche"), ("am", "carro")]."""
     out = []
