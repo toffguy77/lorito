@@ -1,0 +1,407 @@
+[
+ {
+  "id": "entonces",
+  "es": "entonces",
+  "pos": "adv",
+  "ru": "тогда; значит",
+  "example_es": "Entonces, ¿vienes o no?",
+  "example_ru": "Так ты идёшь или нет?",
+  "rank": 87
+ },
+ {
+  "id": "solo",
+  "es": "solo",
+  "pos": "adv",
+  "ru": "только",
+  "example_es": "Solo tengo diez euros.",
+  "example_ru": "У меня только десять евро.",
+  "rank": 89
+ },
+ {
+  "id": "luego",
+  "es": "luego",
+  "pos": "adv",
+  "ru": "потом; позже",
+  "example_es": "Luego te llamo.",
+  "example_ru": "Я тебе потом позвоню.",
+  "rank": 197
+ },
+ {
+  "id": "pues",
+  "es": "pues",
+  "pos": "conj",
+  "ru": "ну; ведь, раз так",
+  "example_es": "Pues no sé qué decir.",
+  "example_ru": "Ну, не знаю, что сказать.",
+  "rank": 296
+ },
+ {
+  "id": "aún",
+  "es": "aún",
+  "pos": "adv",
+  "ru": "ещё, всё ещё",
+  "example_es": "Aún no he comido.",
+  "example_ru": "Я ещё не ел.",
+  "rank": 223
+ },
+ {
+  "id": "realmente",
+  "es": "realmente",
+  "pos": "adv",
+  "ru": "действительно, на самом деле",
+  "example_es": "Es realmente difícil.",
+  "example_ru": "Это действительно трудно.",
+  "rank": 221
+ },
+ {
+  "id": "mientras",
+  "es": "mientras",
+  "pos": "conj",
+  "ru": "пока, в то время как",
+  "example_es": "Leo mientras como.",
+  "example_ru": "Я читаю, пока ем.",
+  "rank": 284
+ },
+ {
+  "id": "casi",
+  "es": "casi",
+  "pos": "adv",
+  "ru": "почти",
+  "example_es": "Son casi las diez.",
+  "example_ru": "Уже почти десять.",
+  "rank": 320
+ },
+ {
+  "id": "a-veces",
+  "es": "a veces",
+  "pos": "phrase",
+  "ru": "иногда",
+  "example_es": "A veces voy al cine solo.",
+  "example_ru": "Иногда я хожу в кино один.",
+  "rank": 4
+ },
+ {
+  "id": "por-supuesto",
+  "es": "por supuesto",
+  "pos": "phrase",
+  "ru": "конечно, разумеется",
+  "example_es": "¡Por supuesto que puedes venir!",
+  "example_ru": "Конечно, ты можешь прийти!",
+  "rank": 12
+ },
+ {
+  "id": "de-hecho",
+  "es": "de hecho",
+  "pos": "phrase",
+  "ru": "на самом деле, фактически",
+  "example_es": "De hecho, ya lo sabía.",
+  "example_ru": "Вообще-то я это уже знал.",
+  "rank": 1
+ },
+ {
+  "id": "en-realidad",
+  "es": "en realidad",
+  "pos": "phrase",
+  "ru": "на самом деле",
+  "example_es": "En realidad, no me gusta el café.",
+  "example_ru": "На самом деле я не люблю кофе.",
+  "rank": 9
+ },
+ {
+  "id": "incluso",
+  "es": "incluso",
+  "pos": "adv",
+  "ru": "даже",
+  "example_es": "Trabaja incluso los domingos.",
+  "example_ru": "Он работает даже по воскресеньям.",
+  "rank": 401
+ },
+ {
+  "id": "aunque",
+  "es": "aunque",
+  "pos": "conj",
+  "ru": "хотя",
+  "example_es": "Salgo aunque llueve.",
+  "example_ru": "Я выйду, хотя идёт дождь.",
+  "rank": 405
+ },
+ {
+  "id": "además",
+  "es": "además",
+  "pos": "adv",
+  "ru": "кроме того, к тому же",
+  "example_es": "Es barato y además está cerca.",
+  "example_ru": "Это дёшево и к тому же рядом.",
+  "rank": 541
+ },
+ {
+  "id": "anoche",
+  "es": "anoche",
+  "pos": "adv",
+  "ru": "вчера вечером, прошлой ночью",
+  "example_es": "Anoche dormí muy mal.",
+  "example_ru": "Этой ночью я спал очень плохо.",
+  "rank": 580
+ },
+ {
+  "id": "sino",
+  "es": "sino",
+  "pos": "conj",
+  "ru": "а (после отрицания)",
+  "example_es": "No es azul, sino verde.",
+  "example_ru": "Он не синий, а зелёный.",
+  "rank": 701
+ },
+ {
+  "id": "sin-embargo",
+  "es": "sin embargo",
+  "pos": "phrase",
+  "ru": "однако",
+  "example_es": "Es caro; sin embargo, lo compro.",
+  "example_ru": "Это дорого, однако я это куплю.",
+  "rank": 115
+ },
+ {
+  "id": "ni",
+  "es": "ni",
+  "pos": "conj",
+  "ru": "ни; и не",
+  "example_es": "No tengo tiempo ni dinero.",
+  "example_ru": "У меня нет ни времени, ни денег.",
+  "rank": 132
+ },
+ {
+  "id": "ni-siquiera",
+  "es": "ni siquiera",
+  "pos": "phrase",
+  "ru": "даже не",
+  "example_es": "Ni siquiera me llamó.",
+  "example_ru": "Он даже не позвонил мне.",
+  "rank": 132
+ },
+ {
+  "id": "por-eso",
+  "es": "por eso",
+  "pos": "phrase",
+  "ru": "поэтому",
+  "example_es": "Estaba cansado, por eso me acosté.",
+  "example_ru": "Я устал, поэтому лёг спать.",
+  "rank": 12
+ },
+ {
+  "id": "por-ejemplo",
+  "es": "por ejemplo",
+  "pos": "phrase",
+  "ru": "например",
+  "example_es": "Me gusta la fruta, por ejemplo, las uvas.",
+  "example_ru": "Я люблю фрукты, например виноград.",
+  "rank": 12
+ },
+ {
+  "id": "así-que",
+  "es": "así que",
+  "pos": "phrase",
+  "ru": "так что",
+  "example_es": "Llueve, así que me quedo en casa.",
+  "example_ru": "Идёт дождь, так что я останусь дома.",
+  "rank": 46
+ },
+ {
+  "id": "tal-vez",
+  "es": "tal vez",
+  "pos": "phrase",
+  "ru": "может быть, возможно",
+  "example_es": "Tal vez nos vemos mañana.",
+  "example_ru": "Может быть, увидимся завтра.",
+  "rank": 158
+ },
+ {
+  "id": "finalmente",
+  "es": "finalmente",
+  "pos": "adv",
+  "ru": "наконец, в итоге",
+  "example_es": "Finalmente encontré las llaves.",
+  "example_ru": "В итоге я нашёл ключи.",
+  "rank": 1055
+ },
+ {
+  "id": "enseguida",
+  "es": "enseguida",
+  "pos": "adv",
+  "ru": "сразу, сейчас же",
+  "example_es": "Enseguida vuelvo.",
+  "example_ru": "Я сейчас вернусь.",
+  "rank": 1029
+ },
+ {
+  "id": "apenas",
+  "es": "apenas",
+  "pos": "adv",
+  "ru": "едва, почти не",
+  "example_es": "Apenas tengo tiempo libre.",
+  "example_ru": "У меня почти нет свободного времени.",
+  "rank": 1073
+ },
+ {
+  "id": "al-final",
+  "es": "al final",
+  "pos": "phrase",
+  "ru": "в конце; в конце концов",
+  "example_es": "Al final no fuimos a la fiesta.",
+  "example_ru": "В конце концов мы не пошли на вечеринку.",
+  "rank": 35
+ },
+ {
+  "id": "al-principio",
+  "es": "al principio",
+  "pos": "phrase",
+  "ru": "сначала, вначале",
+  "example_es": "Al principio no entendía nada.",
+  "example_ru": "Сначала я ничего не понимал.",
+  "rank": 35
+ },
+ {
+  "id": "en-cambio",
+  "es": "en cambio",
+  "pos": "phrase",
+  "ru": "зато; а вот",
+  "example_es": "Yo trabajo; él, en cambio, descansa.",
+  "example_ru": "Я работаю, а он отдыхает.",
+  "rank": 9
+ },
+ {
+  "id": "por-fin",
+  "es": "por fin",
+  "pos": "phrase",
+  "ru": "наконец-то",
+  "example_es": "¡Por fin es viernes!",
+  "example_ru": "Наконец-то пятница!",
+  "rank": 12
+ },
+ {
+  "id": "o-sea",
+  "es": "o sea",
+  "pos": "phrase",
+  "ru": "то есть; короче говоря",
+  "example_es": "Vuelvo el lunes, o sea, en tres días.",
+  "example_ru": "Я вернусь в понедельник, то есть через три дня.",
+  "rank": 61
+ },
+ {
+  "id": "ojalá",
+  "es": "ojalá",
+  "pos": "interj",
+  "ru": "хоть бы, надеюсь",
+  "example_es": "¡Ojalá haga sol mañana!",
+  "example_ru": "Хоть бы завтра было солнечно!",
+  "rank": 1280
+ },
+ {
+  "id": "de-repente",
+  "es": "de repente",
+  "pos": "phrase",
+  "ru": "вдруг, внезапно",
+  "example_es": "De repente se apagó la luz.",
+  "example_ru": "Вдруг погас свет.",
+  "rank": 1
+ },
+ {
+  "id": "a-menudo",
+  "es": "a menudo",
+  "pos": "phrase",
+  "ru": "часто",
+  "example_es": "Vemos a los abuelos a menudo.",
+  "example_ru": "Мы часто видимся с бабушкой и дедушкой.",
+  "rank": 4
+ },
+ {
+  "id": "normalmente",
+  "es": "normalmente",
+  "pos": "adv",
+  "ru": "обычно",
+  "example_es": "Normalmente ceno a las ocho.",
+  "example_ru": "Обычно я ужинаю в восемь.",
+  "rank": 1903
+ },
+ {
+  "id": "otra-vez",
+  "es": "otra vez",
+  "pos": "phrase",
+  "ru": "снова, ещё раз",
+  "example_es": "¿Puedes repetirlo otra vez?",
+  "example_ru": "Можешь повторить ещё раз?",
+  "rank": 140
+ },
+ {
+  "id": "últimamente",
+  "es": "últimamente",
+  "pos": "adv",
+  "ru": "в последнее время",
+  "example_es": "Últimamente duermo poco.",
+  "example_ru": "В последнее время я мало сплю.",
+  "rank": 1780
+ },
+ {
+  "id": "por-cierto",
+  "es": "por cierto",
+  "pos": "phrase",
+  "ru": "кстати",
+  "example_es": "Por cierto, ¿qué tal tu madre?",
+  "example_ru": "Кстати, как твоя мама?",
+  "rank": 12
+ },
+ {
+  "id": "de-vez-en-cuando",
+  "es": "de vez en cuando",
+  "pos": "phrase",
+  "ru": "время от времени",
+  "example_es": "De vez en cuando voy al teatro.",
+  "example_ru": "Время от времени я хожу в театр.",
+  "rank": 1
+ },
+ {
+  "id": "cada-vez-más",
+  "es": "cada vez más",
+  "pos": "phrase",
+  "ru": "всё больше, всё более",
+  "example_es": "Hace cada vez más calor.",
+  "example_ru": "Становится всё жарче.",
+  "rank": 227
+ },
+ {
+  "id": "sobre-todo",
+  "es": "sobre todo",
+  "pos": "phrase",
+  "ru": "особенно, прежде всего",
+  "example_es": "Me gusta la fruta, sobre todo las fresas.",
+  "example_ru": "Я люблю фрукты, особенно клубнику.",
+  "rank": 113
+ },
+ {
+  "id": "al-menos",
+  "es": "al menos",
+  "pos": "phrase",
+  "ru": "по крайней мере, хотя бы",
+  "example_es": "Al menos llama a tu madre.",
+  "example_ru": "Хотя бы позвони маме.",
+  "rank": 35
+ },
+ {
+  "id": "de-todos-modos",
+  "es": "de todos modos",
+  "pos": "phrase",
+  "ru": "всё равно, в любом случае",
+  "example_es": "Llueve, pero salgo de todos modos.",
+  "example_ru": "Идёт дождь, но я всё равно выйду.",
+  "rank": 1
+ },
+ {
+  "id": "mientras-tanto",
+  "es": "mientras tanto",
+  "pos": "phrase",
+  "ru": "тем временем, пока что",
+  "example_es": "Mientras tanto, yo preparo la cena.",
+  "example_ru": "А я пока приготовлю ужин.",
+  "rank": 284
+ }
+]

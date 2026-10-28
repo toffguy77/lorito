@@ -1,0 +1,690 @@
+[
+ {
+  "id": "alto",
+  "es": "alto",
+  "pos": "adj",
+  "ru": "высокий",
+  "example_es": "Mi hermano es muy alto.",
+  "example_ru": "Мой брат очень высокий.",
+  "rank": 525,
+  "forms": [
+   "alta",
+   "altos",
+   "altas"
+  ]
+ },
+ {
+  "id": "bajo",
+  "es": "bajo",
+  "pos": "adj",
+  "ru": "низкий; невысокий",
+  "example_es": "Mi madre es baja y delgada.",
+  "example_ru": "Моя мама невысокая и стройная.",
+  "rank": 380,
+  "forms": [
+   "baja",
+   "bajos",
+   "bajas"
+  ]
+ },
+ {
+  "id": "gordo",
+  "es": "gordo",
+  "pos": "adj",
+  "ru": "толстый",
+  "example_es": "El gato está muy gordo.",
+  "example_ru": "Кот очень толстый.",
+  "rank": 2045,
+  "forms": [
+   "gorda",
+   "gordos",
+   "gordas"
+  ]
+ },
+ {
+  "id": "delgado",
+  "es": "delgado",
+  "pos": "adj",
+  "ru": "худой, стройный",
+  "example_es": "Mi hermana es alta y delgada.",
+  "example_ru": "Моя сестра высокая и стройная.",
+  "rank": 6532,
+  "forms": [
+   "delgada",
+   "delgados",
+   "delgadas"
+  ]
+ },
+ {
+  "id": "guapo",
+  "es": "guapo",
+  "pos": "adj",
+  "ru": "красивый (о человеке)",
+  "example_es": "Tu novio es muy guapo.",
+  "example_ru": "Твой парень очень красивый.",
+  "rank": 1986,
+  "forms": [
+   "guapa",
+   "guapos",
+   "guapas"
+  ]
+ },
+ {
+  "id": "feo",
+  "es": "feo",
+  "pos": "adj",
+  "ru": "некрасивый, уродливый",
+  "example_es": "Este edificio es bastante feo.",
+  "example_ru": "Это здание довольно уродливое.",
+  "rank": 2907,
+  "forms": [
+   "fea",
+   "feos",
+   "feas"
+  ]
+ },
+ {
+  "id": "bonito",
+  "es": "bonito",
+  "pos": "adj",
+  "ru": "красивый, симпатичный",
+  "example_es": "¡Qué casa tan bonita!",
+  "example_ru": "Какой красивый дом!",
+  "rank": 805,
+  "forms": [
+   "bonita",
+   "bonitos",
+   "bonitas"
+  ]
+ },
+ {
+  "id": "largo",
+  "es": "largo",
+  "pos": "adj",
+  "ru": "длинный",
+  "example_es": "La película es muy larga.",
+  "example_ru": "Фильм очень длинный.",
+  "rank": 709,
+  "forms": [
+   "larga",
+   "largos",
+   "largas"
+  ]
+ },
+ {
+  "id": "corto",
+  "es": "corto",
+  "pos": "adj",
+  "ru": "короткий",
+  "example_es": "Tengo el pelo corto.",
+  "example_ru": "У меня короткие волосы.",
+  "rank": 2224,
+  "forms": [
+   "corta",
+   "cortos",
+   "cortas"
+  ]
+ },
+ {
+  "id": "rápido",
+  "es": "rápido",
+  "pos": "adj",
+  "ru": "быстрый",
+  "example_es": "Este tren es muy rápido.",
+  "example_ru": "Этот поезд очень быстрый.",
+  "rank": 311,
+  "forms": [
+   "rápida",
+   "rápidos",
+   "rápidas"
+  ]
+ },
+ {
+  "id": "lento",
+  "es": "lento",
+  "pos": "adj",
+  "ru": "медленный",
+  "example_es": "El autobús es demasiado lento.",
+  "example_ru": "Автобус слишком медленный.",
+  "rank": 3076,
+  "forms": [
+   "lenta",
+   "lentos",
+   "lentas"
+  ]
+ },
+ {
+  "id": "fuerte",
+  "es": "fuerte",
+  "pos": "adj",
+  "ru": "сильный, крепкий",
+  "example_es": "Mi padre es muy fuerte.",
+  "example_ru": "Мой папа очень сильный.",
+  "rank": 465,
+  "forms": [
+   "fuertes"
+  ]
+ },
+ {
+  "id": "débil",
+  "es": "débil",
+  "pos": "adj",
+  "ru": "слабый",
+  "example_es": "Hoy me siento débil.",
+  "example_ru": "Сегодня я чувствую слабость.",
+  "rank": 1954,
+  "forms": [
+   "débiles"
+  ]
+ },
+ {
+  "id": "rubio",
+  "es": "rubio",
+  "pos": "adj",
+  "ru": "светловолосый, блондин",
+  "example_es": "Su hija es rubia.",
+  "example_ru": "Его дочь — блондинка.",
+  "rank": 6658,
+  "forms": [
+   "rubia",
+   "rubios",
+   "rubias"
+  ]
+ },
+ {
+  "id": "moreno",
+  "es": "moreno",
+  "pos": "adj",
+  "ru": "темноволосый; смуглый",
+  "example_es": "Mi amigo es alto y moreno.",
+  "example_ru": "Мой друг высокий и темноволосый.",
+  "rank": 10497,
+  "forms": [
+   "morena",
+   "morenos",
+   "morenas"
+  ]
+ },
+ {
+  "id": "caliente",
+  "es": "caliente",
+  "pos": "adj",
+  "ru": "горячий",
+  "example_es": "El café está muy caliente.",
+  "example_ru": "Кофе очень горячий.",
+  "rank": 1098,
+  "forms": [
+   "calientes"
+  ]
+ },
+ {
+  "id": "inteligente",
+  "es": "inteligente",
+  "pos": "adj",
+  "ru": "умный",
+  "example_es": "Tu hermana es muy inteligente.",
+  "example_ru": "Твоя сестра очень умная.",
+  "rank": 1019,
+  "forms": [
+   "inteligentes"
+  ]
+ },
+ {
+  "id": "tonto",
+  "es": "tonto",
+  "pos": "adj",
+  "ru": "глупый",
+  "example_es": "No es una pregunta tonta.",
+  "example_ru": "Это не глупый вопрос.",
+  "rank": 825,
+  "forms": [
+   "tonta",
+   "tontos",
+   "tontas"
+  ]
+ },
+ {
+  "id": "amable",
+  "es": "amable",
+  "pos": "adj",
+  "ru": "любезный, добрый",
+  "example_es": "La profesora es muy amable.",
+  "example_ru": "Учительница очень любезная.",
+  "rank": 919,
+  "forms": [
+   "amables"
+  ]
+ },
+ {
+  "id": "feliz",
+  "es": "feliz",
+  "pos": "adj",
+  "ru": "счастливый",
+  "example_es": "Estoy muy feliz hoy.",
+  "example_ru": "Я сегодня очень счастлив.",
+  "rank": 338,
+  "forms": [
+   "felices"
+  ]
+ },
+ {
+  "id": "alegre",
+  "es": "alegre",
+  "pos": "adj",
+  "ru": "весёлый, жизнерадостный",
+  "example_es": "Mi abuela es una mujer alegre.",
+  "example_ru": "Моя бабушка — весёлая женщина.",
+  "rank": 3822,
+  "forms": [
+   "alegres"
+  ]
+ },
+ {
+  "id": "serio",
+  "es": "serio",
+  "pos": "adj",
+  "ru": "серьёзный",
+  "example_es": "El jefe es un hombre serio.",
+  "example_ru": "Начальник — серьёзный человек.",
+  "rank": 239,
+  "forms": [
+   "seria",
+   "serios",
+   "serias"
+  ]
+ },
+ {
+  "id": "tranquilo",
+  "es": "tranquilo",
+  "pos": "adj",
+  "ru": "спокойный, тихий",
+  "example_es": "Vivo en un barrio tranquilo.",
+  "example_ru": "Я живу в тихом районе.",
+  "rank": 804,
+  "forms": [
+   "tranquila",
+   "tranquilos",
+   "tranquilas"
+  ]
+ },
+ {
+  "id": "trabajador",
+  "es": "trabajador",
+  "pos": "adj",
+  "ru": "трудолюбивый",
+  "example_es": "Mi vecina es muy trabajadora.",
+  "example_ru": "Моя соседка очень трудолюбивая.",
+  "rank": 6038,
+  "forms": [
+   "trabajadora",
+   "trabajadores",
+   "trabajadoras"
+  ]
+ },
+ {
+  "id": "hermoso",
+  "es": "hermoso",
+  "pos": "adj",
+  "ru": "прекрасный, красивый",
+  "example_es": "Es un día hermoso.",
+  "example_ru": "Прекрасный день.",
+  "rank": 1069,
+  "forms": [
+   "hermosa",
+   "hermosos",
+   "hermosas"
+  ]
+ },
+ {
+  "id": "mejor",
+  "es": "mejor",
+  "pos": "adj",
+  "ru": "лучше; лучший",
+  "example_es": "Este libro es mejor.",
+  "example_ru": "Эта книга лучше.",
+  "rank": 108,
+  "forms": [
+   "mejores"
+  ]
+ },
+ {
+  "id": "peor",
+  "es": "peor",
+  "pos": "adj",
+  "ru": "хуже; худший",
+  "example_es": "Hoy el tiempo está peor.",
+  "example_ru": "Сегодня погода хуже.",
+  "rank": 568,
+  "forms": [
+   "peores"
+  ]
+ },
+ {
+  "id": "sucio",
+  "es": "sucio",
+  "pos": "adj",
+  "ru": "грязный",
+  "example_es": "Mis zapatos están sucios.",
+  "example_ru": "Мои ботинки грязные.",
+  "rank": 2164,
+  "forms": [
+   "sucia",
+   "sucios",
+   "sucias"
+  ]
+ },
+ {
+  "id": "lleno",
+  "es": "lleno",
+  "pos": "adj",
+  "ru": "полный, заполненный",
+  "example_es": "El vaso está lleno.",
+  "example_ru": "Стакан полный.",
+  "rank": 1173,
+  "forms": [
+   "llena",
+   "llenos",
+   "llenas"
+  ]
+ },
+ {
+  "id": "vacío",
+  "es": "vacío",
+  "pos": "adj",
+  "ru": "пустой",
+  "example_es": "La calle está vacía.",
+  "example_ru": "Улица пустая.",
+  "rank": 2247,
+  "forms": [
+   "vacía",
+   "vacíos",
+   "vacías"
+  ]
+ },
+ {
+  "id": "abierto",
+  "es": "abierto",
+  "pos": "adj",
+  "ru": "открытый",
+  "example_es": "La tienda está abierta.",
+  "example_ru": "Магазин открыт.",
+  "rank": 1714,
+  "forms": [
+   "abierta",
+   "abiertos",
+   "abiertas"
+  ]
+ },
+ {
+  "id": "cerrado",
+  "es": "cerrado",
+  "pos": "adj",
+  "ru": "закрытый",
+  "example_es": "El museo está cerrado hoy.",
+  "example_ru": "Музей сегодня закрыт.",
+  "rank": 1914,
+  "forms": [
+   "cerrada",
+   "cerrados",
+   "cerradas"
+  ]
+ },
+ {
+  "id": "pesado",
+  "es": "pesado",
+  "pos": "adj",
+  "ru": "тяжёлый",
+  "example_es": "Esta bolsa es muy pesada.",
+  "example_ru": "Эта сумка очень тяжёлая.",
+  "rank": 3373,
+  "forms": [
+   "pesada",
+   "pesados",
+   "pesadas"
+  ]
+ },
+ {
+  "id": "normal",
+  "es": "normal",
+  "pos": "adj",
+  "ru": "обычный, нормальный",
+  "example_es": "Es un día normal.",
+  "example_ru": "Обычный день.",
+  "rank": 837,
+  "forms": [
+   "normales"
+  ]
+ },
+ {
+  "id": "especial",
+  "es": "especial",
+  "pos": "adj",
+  "ru": "особенный, особый",
+  "example_es": "Hoy es un día especial.",
+  "example_ru": "Сегодня особенный день.",
+  "rank": 615,
+  "forms": [
+   "especiales"
+  ]
+ },
+ {
+  "id": "diferente",
+  "es": "diferente",
+  "pos": "adj",
+  "ru": "другой, разный",
+  "example_es": "Somos muy diferentes.",
+  "example_ru": "Мы очень разные.",
+  "rank": 694,
+  "forms": [
+   "diferentes"
+  ]
+ },
+ {
+  "id": "igual",
+  "es": "igual",
+  "pos": "adj",
+  "ru": "одинаковый, такой же",
+  "example_es": "Las dos camisas son iguales.",
+  "example_ru": "Обе рубашки одинаковые.",
+  "rank": 425,
+  "forms": [
+   "iguales"
+  ]
+ },
+ {
+  "id": "perfecto",
+  "es": "perfecto",
+  "pos": "adj",
+  "ru": "идеальный, отличный",
+  "example_es": "¡Perfecto, nos vemos mañana!",
+  "example_ru": "Отлично, увидимся завтра!",
+  "rank": 667,
+  "forms": [
+   "perfecta",
+   "perfectos",
+   "perfectas"
+  ]
+ },
+ {
+  "id": "interesante",
+  "es": "interesante",
+  "pos": "adj",
+  "ru": "интересный",
+  "example_es": "Es un libro muy interesante.",
+  "example_ru": "Это очень интересная книга.",
+  "rank": 886,
+  "forms": [
+   "interesantes"
+  ]
+ },
+ {
+  "id": "raro",
+  "es": "raro",
+  "pos": "adj",
+  "ru": "странный; редкий",
+  "example_es": "Es un nombre muy raro.",
+  "example_ru": "Это очень странное имя.",
+  "rank": 658,
+  "forms": [
+   "rara",
+   "raros",
+   "raras"
+  ]
+ },
+ {
+  "id": "famoso",
+  "es": "famoso",
+  "pos": "adj",
+  "ru": "знаменитый, известный",
+  "example_es": "Es un actor famoso.",
+  "example_ru": "Это известный актёр.",
+  "rank": 2258,
+  "forms": [
+   "famosa",
+   "famosos",
+   "famosas"
+  ]
+ },
+ {
+  "id": "pobre",
+  "es": "pobre",
+  "pos": "adj",
+  "ru": "бедный",
+  "example_es": "Es un país pobre.",
+  "example_ru": "Это бедная страна.",
+  "rank": 756,
+  "forms": [
+   "pobres"
+  ]
+ },
+ {
+  "id": "antiguo",
+  "es": "antiguo",
+  "pos": "adj",
+  "ru": "старинный, древний",
+  "example_es": "Vivo en un edificio antiguo.",
+  "example_ru": "Я живу в старинном здании.",
+  "rank": 2013,
+  "forms": [
+   "antigua",
+   "antiguos",
+   "antiguas"
+  ]
+ },
+ {
+  "id": "moderno",
+  "es": "moderno",
+  "pos": "adj",
+  "ru": "современный",
+  "example_es": "Mi oficina es muy moderna.",
+  "example_ru": "Мой офис очень современный.",
+  "rank": 5874,
+  "forms": [
+   "moderna",
+   "modernos",
+   "modernas"
+  ]
+ },
+ {
+  "id": "español",
+  "es": "español",
+  "pos": "adj",
+  "ru": "испанский; испанец",
+  "example_es": "Mi amiga es española.",
+  "example_ru": "Моя подруга — испанка.",
+  "rank": 3233,
+  "forms": [
+   "española",
+   "españoles",
+   "españolas"
+  ]
+ },
+ {
+  "id": "ruso",
+  "es": "ruso",
+  "pos": "adj",
+  "ru": "русский",
+  "example_es": "Mi marido es ruso.",
+  "example_ru": "Мой муж — русский.",
+  "rank": 3533,
+  "forms": [
+   "rusa",
+   "rusos",
+   "rusas"
+  ]
+ },
+ {
+  "id": "inglés",
+  "es": "inglés",
+  "pos": "adj",
+  "ru": "английский; англичанин",
+  "example_es": "Hablo un poco de inglés.",
+  "example_ru": "Я немного говорю по-английски.",
+  "rank": 1432,
+  "forms": [
+   "inglesa",
+   "ingleses",
+   "inglesas"
+  ]
+ },
+ {
+  "id": "francés",
+  "es": "francés",
+  "pos": "adj",
+  "ru": "французский; француз",
+  "example_es": "Me gusta el queso francés.",
+  "example_ru": "Мне нравится французский сыр.",
+  "rank": 2101,
+  "forms": [
+   "francesa",
+   "franceses",
+   "francesas"
+  ]
+ },
+ {
+  "id": "alemán",
+  "es": "alemán",
+  "pos": "adj",
+  "ru": "немецкий; немец",
+  "example_es": "Tengo un coche alemán.",
+  "example_ru": "У меня немецкая машина.",
+  "rank": 2671,
+  "forms": [
+   "alemana",
+   "alemanes",
+   "alemanas"
+  ]
+ },
+ {
+  "id": "americano",
+  "es": "americano",
+  "pos": "adj",
+  "ru": "американский; американец",
+  "example_es": "Mi profesor es americano.",
+  "example_ru": "Мой преподаватель — американец.",
+  "rank": 2182,
+  "forms": [
+   "americana",
+   "americanos",
+   "americanas"
+  ]
+ },
+ {
+  "id": "bastante",
+  "es": "bastante",
+  "pos": "adv",
+  "ru": "довольно, достаточно",
+  "example_es": "El hotel es bastante caro.",
+  "example_ru": "Отель довольно дорогой.",
+  "rank": 385
+ },
+ {
+  "id": "demasiado",
+  "es": "demasiado",
+  "pos": "adv",
+  "ru": "слишком",
+  "example_es": "Hablas demasiado rápido.",
+  "example_ru": "Ты говоришь слишком быстро.",
+  "rank": 249
+ }
+]

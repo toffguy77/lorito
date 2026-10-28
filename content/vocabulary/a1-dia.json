@@ -346,5 +346,168 @@
   "example_es": "Es muy tarde.",
   "example_ru": "Уже очень поздно.",
   "rank": 243
+ },
+ {
+  "id": "viernes",
+  "es": "viernes",
+  "pos": "noun",
+  "ru": "пятница",
+  "example_es": "El viernes vamos al cine.",
+  "example_ru": "В пятницу мы идём в кино.",
+  "rank": 1726,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "viernes"
+  ]
+ },
+ {
+  "id": "sábado",
+  "es": "sábado",
+  "pos": "noun",
+  "ru": "суббота",
+  "example_es": "Los sábados duermo mucho.",
+  "example_ru": "По субботам я много сплю.",
+  "rank": 2039,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "sábados"
+  ]
+ },
+ {
+  "id": "fecha",
+  "es": "fecha",
+  "pos": "noun",
+  "ru": "дата, число",
+  "example_es": "¿Qué fecha es hoy?",
+  "example_ru": "Какое сегодня число?",
+  "rank": 2275,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "fechas"
+  ]
+ },
+ {
+  "id": "jueves",
+  "es": "jueves",
+  "pos": "noun",
+  "ru": "четверг",
+  "example_es": "El jueves trabajo en casa.",
+  "example_ru": "В четверг я работаю из дома.",
+  "rank": 2882,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "jueves"
+  ]
+ },
+ {
+  "id": "martes",
+  "es": "martes",
+  "pos": "noun",
+  "ru": "вторник",
+  "example_es": "El martes tengo clase de español.",
+  "example_ru": "Во вторник у меня урок испанского.",
+  "rank": 2906,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "martes"
+  ]
+ },
+ {
+  "id": "rato",
+  "es": "rato",
+  "pos": "noun",
+  "ru": "время, некоторое время; минутка",
+  "example_es": "Espera un rato, por favor.",
+  "example_ru": "Подожди немного, пожалуйста.",
+  "rank": 979,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "ratos"
+  ]
+ },
+ {
+  "id": "miércoles",
+  "es": "miércoles",
+  "pos": "noun",
+  "ru": "среда",
+  "example_es": "Nos vemos el miércoles.",
+  "example_ru": "Увидимся в среду.",
+  "rank": 3632,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "miércoles"
+  ]
+ },
+ {
+  "id": "mediodía",
+  "es": "mediodía",
+  "pos": "noun",
+  "ru": "полдень",
+  "example_es": "Comemos a mediodía.",
+  "example_ru": "Мы обедаем в полдень.",
+  "rank": 4125,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "mediodías"
+  ]
+ },
+ {
+  "id": "cenar",
+  "es": "cenar",
+  "pos": "verb",
+  "ru": "ужинать",
+  "example_es": "Cenamos a las nueve.",
+  "example_ru": "Мы ужинаем в девять.",
+  "rank": 1100
+ },
+ {
+  "id": "levantarse",
+  "es": "levantarse",
+  "pos": "verb",
+  "ru": "вставать",
+  "example_es": "Me levanto a las siete.",
+  "example_ru": "Я встаю в семь.",
+  "rank": 6129,
+  "forms": [
+   "levanto",
+   "levantas",
+   "levanta"
+  ]
+ },
+ {
+  "id": "acostarse",
+  "es": "acostarse",
+  "pos": "verb",
+  "ru": "ложиться спать",
+  "example_es": "Me acuesto a las once.",
+  "example_ru": "Я ложусь спать в одиннадцать.",
+  "rank": 6834,
+  "forms": [
+   "acuesto",
+   "acuestas",
+   "acuesta"
+  ]
+ },
+ {
+  "id": "despertarse",
+  "es": "despertarse",
+  "pos": "verb",
+  "ru": "просыпаться",
+  "example_es": "Me despierto muy temprano.",
+  "example_ru": "Я просыпаюсь очень рано.",
+  "rank": 16012,
+  "forms": [
+   "despierto",
+   "despiertas",
+   "despierta"
+  ]
  }
 ]

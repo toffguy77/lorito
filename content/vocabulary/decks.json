@@ -76,5 +76,59 @@
   "level": "A2",
   "title_ru": "Мнения и чувства",
   "order": 6
+ },
+ {
+  "id": "a1-descripciones",
+  "level": "A1",
+  "title_ru": "Какой? Описания",
+  "order": 8
+ },
+ {
+  "id": "a1-ropa",
+  "level": "A1",
+  "title_ru": "Одежда и цвета",
+  "order": 9
+ },
+ {
+  "id": "a1-naturaleza",
+  "level": "A1",
+  "title_ru": "Погода и природа",
+  "order": 10
+ },
+ {
+  "id": "a1-numeros",
+  "level": "A1",
+  "title_ru": "Числа и количество",
+  "order": 11
+ },
+ {
+  "id": "a2-compras",
+  "level": "A2",
+  "title_ru": "Покупки и деньги",
+  "order": 7
+ },
+ {
+  "id": "a2-tecnologia",
+  "level": "A2",
+  "title_ru": "Связь и техника",
+  "order": 8
+ },
+ {
+  "id": "a2-caracter",
+  "level": "A2",
+  "title_ru": "Характер и внешность",
+  "order": 9
+ },
+ {
+  "id": "a2-verbos",
+  "level": "A2",
+  "title_ru": "Глаголы A2",
+  "order": 10
+ },
+ {
+  "id": "a2-conectores",
+  "level": "A2",
+  "title_ru": "Связки и наречия",
+  "order": 11
  }
 ]

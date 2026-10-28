@@ -1,0 +1,599 @@
+[
+ {
+  "id": "conseguir",
+  "es": "conseguir",
+  "pos": "verb",
+  "ru": "добиваться, получать",
+  "example_es": "Por fin conseguí el trabajo.",
+  "example_ru": "Наконец-то я получил эту работу.",
+  "rank": 560,
+  "forms": [
+   "consigo",
+   "consigue",
+   "consiguió",
+   "conseguí"
+  ]
+ },
+ {
+  "id": "cambiar",
+  "es": "cambiar",
+  "pos": "verb",
+  "ru": "менять; меняться",
+  "example_es": "Quiero cambiar de trabajo.",
+  "example_ru": "Я хочу сменить работу.",
+  "rank": 699
+ },
+ {
+  "id": "sacar",
+  "es": "sacar",
+  "pos": "verb",
+  "ru": "вынимать, доставать",
+  "example_es": "Saca el dinero del bolso.",
+  "example_ru": "Достань деньги из сумки.",
+  "rank": 1066,
+  "forms": [
+   "saqué"
+  ]
+ },
+ {
+  "id": "tocar",
+  "es": "tocar",
+  "pos": "verb",
+  "ru": "трогать; играть (на инструменте)",
+  "example_es": "Mi hermano toca la guitarra.",
+  "example_ru": "Мой брат играет на гитаре.",
+  "rank": 1262,
+  "forms": [
+   "toqué"
+  ]
+ },
+ {
+  "id": "irse",
+  "es": "irse",
+  "pos": "verb",
+  "ru": "уходить, уезжать",
+  "example_es": "Me voy a casa.",
+  "example_ru": "Я пойду домой.",
+  "rank": 1111,
+  "forms": [
+   "voy",
+   "vas",
+   "va",
+   "fue",
+   "fui"
+  ]
+ },
+ {
+  "id": "pedir",
+  "es": "pedir",
+  "pos": "verb",
+  "ru": "просить; заказывать",
+  "example_es": "Voy a pedir una pizza.",
+  "example_ru": "Я закажу пиццу.",
+  "rank": 1146,
+  "forms": [
+   "pido",
+   "pide",
+   "pidió",
+   "pedí"
+  ]
+ },
+ {
+  "id": "contar",
+  "es": "contar",
+  "pos": "verb",
+  "ru": "считать; рассказывать",
+  "example_es": "Te cuento un secreto.",
+  "example_ru": "Расскажу тебе секрет.",
+  "rank": 1264,
+  "forms": [
+   "cuento",
+   "cuentas",
+   "cuenta",
+   "contó"
+  ]
+ },
+ {
+  "id": "recordar",
+  "es": "recordar",
+  "pos": "verb",
+  "ru": "помнить; напоминать",
+  "example_es": "No recuerdo su nombre.",
+  "example_ru": "Я не помню, как его зовут.",
+  "rank": 1383,
+  "forms": [
+   "recuerdo",
+   "recuerdas",
+   "recuerda"
+  ]
+ },
+ {
+  "id": "parecer",
+  "es": "parecer",
+  "pos": "verb",
+  "ru": "казаться",
+  "example_es": "Parece muy simpático.",
+  "example_ru": "Он кажется очень милым.",
+  "rank": 1211,
+  "forms": [
+   "parezco",
+   "parece",
+   "pareció"
+  ]
+ },
+ {
+  "id": "intentar",
+  "es": "intentar",
+  "pos": "verb",
+  "ru": "пытаться, пробовать",
+  "example_es": "Intento hablar solo en español.",
+  "example_ru": "Я стараюсь говорить только по-испански.",
+  "rank": 1347
+ },
+ {
+  "id": "quedarse",
+  "es": "quedarse",
+  "pos": "verb",
+  "ru": "оставаться",
+  "example_es": "Hoy me quedo en casa.",
+  "example_ru": "Сегодня я остаюсь дома.",
+  "rank": 1448,
+  "forms": [
+   "quedo",
+   "queda",
+   "quedó"
+  ]
+ },
+ {
+  "id": "caminar",
+  "es": "caminar",
+  "pos": "verb",
+  "ru": "ходить пешком, гулять",
+  "example_es": "Camino al trabajo todos los días.",
+  "example_ru": "Каждый день я хожу на работу пешком.",
+  "rank": 1560
+ },
+ {
+  "id": "caer",
+  "es": "caer",
+  "pos": "verb",
+  "ru": "падать",
+  "example_es": "Se cayó de la bicicleta.",
+  "example_ru": "Он упал с велосипеда.",
+  "rank": 1493,
+  "forms": [
+   "caigo",
+   "cae",
+   "cayó",
+   "caí"
+  ]
+ },
+ {
+  "id": "probar",
+  "es": "probar",
+  "pos": "verb",
+  "ru": "пробовать; примерять",
+  "example_es": "¿Quieres probar la sopa?",
+  "example_ru": "Хочешь попробовать суп?",
+  "rank": 1295,
+  "forms": [
+   "pruebo",
+   "prueba",
+   "probé"
+  ]
+ },
+ {
+  "id": "correr",
+  "es": "correr",
+  "pos": "verb",
+  "ru": "бегать, бежать",
+  "example_es": "Corro en el parque por la mañana.",
+  "example_ru": "По утрам я бегаю в парке.",
+  "rank": 1339
+ },
+ {
+  "id": "subir",
+  "es": "subir",
+  "pos": "verb",
+  "ru": "подниматься; повышаться",
+  "example_es": "Subimos a pie al tercer piso.",
+  "example_ru": "Мы поднялись пешком на третий этаж.",
+  "rank": 1484
+ },
+ {
+  "id": "bajar",
+  "es": "bajar",
+  "pos": "verb",
+  "ru": "спускаться; снижаться",
+  "example_es": "Bajo del autobús en la plaza.",
+  "example_ru": "Я выхожу из автобуса на площади.",
+  "rank": 1612
+ },
+ {
+  "id": "recibir",
+  "es": "recibir",
+  "pos": "verb",
+  "ru": "получать",
+  "example_es": "Recibí tu mensaje ayer.",
+  "example_ru": "Я получил твоё сообщение вчера.",
+  "rank": 1753
+ },
+ {
+  "id": "olvidar",
+  "es": "olvidar",
+  "pos": "verb",
+  "ru": "забывать",
+  "example_es": "No olvides el pasaporte.",
+  "example_ru": "Не забудь паспорт.",
+  "rank": 2071
+ },
+ {
+  "id": "cuidar",
+  "es": "cuidar",
+  "pos": "verb",
+  "ru": "заботиться, ухаживать",
+  "example_es": "Mi abuela cuida a los niños.",
+  "example_ru": "Бабушка присматривает за детьми.",
+  "rank": 1703
+ },
+ {
+  "id": "enviar",
+  "es": "enviar",
+  "pos": "verb",
+  "ru": "отправлять",
+  "example_es": "Te envío la foto ahora.",
+  "example_ru": "Сейчас отправлю тебе фото.",
+  "rank": 1942,
+  "forms": [
+   "envío",
+   "envía",
+   "envié"
+  ]
+ },
+ {
+  "id": "elegir",
+  "es": "elegir",
+  "pos": "verb",
+  "ru": "выбирать",
+  "example_es": "Elige el color que te gusta.",
+  "example_ru": "Выбери цвет, который тебе нравится.",
+  "rank": 1895,
+  "forms": [
+   "elijo",
+   "elige",
+   "eligió"
+  ]
+ },
+ {
+  "id": "explicar",
+  "es": "explicar",
+  "pos": "verb",
+  "ru": "объяснять",
+  "example_es": "¿Me puedes explicar esta palabra?",
+  "example_ru": "Можешь объяснить мне это слово?",
+  "rank": 1982,
+  "forms": [
+   "expliqué"
+  ]
+ },
+ {
+  "id": "sentarse",
+  "es": "sentarse",
+  "pos": "verb",
+  "ru": "садиться",
+  "example_es": "Siéntate aquí, por favor.",
+  "example_ru": "Садись сюда, пожалуйста.",
+  "rank": 3401,
+  "forms": [
+   "siento",
+   "sienta",
+   "siéntate",
+   "sentó"
+  ]
+ },
+ {
+  "id": "romper",
+  "es": "romper",
+  "pos": "verb",
+  "ru": "ломать, разбивать",
+  "example_es": "El niño rompió un vaso.",
+  "example_ru": "Мальчик разбил стакан.",
+  "rank": 1826,
+  "forms": [
+   "roto",
+   "rompió"
+  ]
+ },
+ {
+  "id": "decidir",
+  "es": "decidir",
+  "pos": "verb",
+  "ru": "решать",
+  "example_es": "Decidimos ir a la playa.",
+  "example_ru": "Мы решили поехать на пляж.",
+  "rank": 2560
+ },
+ {
+  "id": "devolver",
+  "es": "devolver",
+  "pos": "verb",
+  "ru": "возвращать (вещь)",
+  "example_es": "Te devuelvo el libro mañana.",
+  "example_ru": "Верну тебе книгу завтра.",
+  "rank": 3949,
+  "forms": [
+   "devuelvo",
+   "devuelve",
+   "devolví",
+   "devuelto"
+  ]
+ },
+ {
+  "id": "contestar",
+  "es": "contestar",
+  "pos": "verb",
+  "ru": "отвечать",
+  "example_es": "No contesta el teléfono.",
+  "example_ru": "Он не отвечает на звонки.",
+  "rank": 3777
+ },
+ {
+  "id": "darse-cuenta",
+  "es": "darse cuenta",
+  "pos": "phrase",
+  "ru": "понимать, замечать",
+  "example_es": "No me di cuenta de la hora.",
+  "example_ru": "Я не заметил, сколько времени.",
+  "rank": 4030,
+  "forms": [
+   "di cuenta",
+   "dio cuenta",
+   "doy cuenta",
+   "da cuenta"
+  ]
+ },
+ {
+  "id": "acordarse",
+  "es": "acordarse",
+  "pos": "verb",
+  "ru": "помнить, вспоминать",
+  "example_es": "¿Te acuerdas de mí?",
+  "example_ru": "Ты меня помнишь?",
+  "rank": 29916,
+  "forms": [
+   "acuerdo",
+   "acuerdas",
+   "acuerda",
+   "acordé"
+  ]
+ },
+ {
+  "id": "ducharse",
+  "es": "ducharse",
+  "pos": "verb",
+  "ru": "принимать душ",
+  "example_es": "Me ducho antes de desayunar.",
+  "example_ru": "Я принимаю душ перед завтраком.",
+  "rank": 32282,
+  "forms": [
+   "ducho",
+   "ducha",
+   "duchó"
+  ]
+ },
+ {
+  "id": "acabar",
+  "es": "acabar",
+  "pos": "verb",
+  "ru": "заканчивать; только что (acabar de)",
+  "example_es": "Acabo de llegar a casa.",
+  "example_ru": "Я только что пришёл домой.",
+  "rank": 1435
+ },
+ {
+  "id": "servir",
+  "es": "servir",
+  "pos": "verb",
+  "ru": "служить; подавать; годиться",
+  "example_es": "Esta caja no sirve para nada.",
+  "example_ru": "Эта коробка ни на что не годится.",
+  "rank": 2751,
+  "forms": [
+   "sirvo",
+   "sirve",
+   "sirvió"
+  ]
+ },
+ {
+  "id": "morir",
+  "es": "morir",
+  "pos": "verb",
+  "ru": "умирать",
+  "example_es": "Su abuelo murió el año pasado.",
+  "example_ru": "Его дедушка умер в прошлом году.",
+  "rank": 484,
+  "forms": [
+   "muere",
+   "murió",
+   "muerto"
+  ]
+ },
+ {
+  "id": "mostrar",
+  "es": "mostrar",
+  "pos": "verb",
+  "ru": "показывать",
+  "example_es": "Te muestro las fotos del viaje.",
+  "example_ru": "Покажу тебе фото из поездки.",
+  "rank": 2353,
+  "forms": [
+   "muestro",
+   "muestra",
+   "mostré"
+  ]
+ },
+ {
+  "id": "responder",
+  "es": "responder",
+  "pos": "verb",
+  "ru": "отвечать",
+  "example_es": "Respondió a todas las preguntas.",
+  "example_ru": "Он ответил на все вопросы.",
+  "rank": 2246
+ },
+ {
+  "id": "aceptar",
+  "es": "aceptar",
+  "pos": "verb",
+  "ru": "принимать, соглашаться",
+  "example_es": "Acepto tu invitación con gusto.",
+  "example_ru": "С удовольствием принимаю твоё приглашение.",
+  "rank": 1720
+ },
+ {
+  "id": "permitir",
+  "es": "permitir",
+  "pos": "verb",
+  "ru": "разрешать, позволять",
+  "example_es": "Aquí no permiten fumar.",
+  "example_ru": "Здесь не разрешают курить.",
+  "rank": 2599
+ },
+ {
+  "id": "casarse",
+  "es": "casarse",
+  "pos": "verb",
+  "ru": "жениться; выходить замуж",
+  "example_es": "Se casaron el año pasado.",
+  "example_ru": "Они поженились в прошлом году.",
+  "rank": 2168,
+  "forms": [
+   "casó",
+   "casaron"
+  ]
+ },
+ {
+  "id": "compartir",
+  "es": "compartir",
+  "pos": "verb",
+  "ru": "делиться; делить",
+  "example_es": "Comparto el piso con dos amigos.",
+  "example_ru": "Я снимаю квартиру с двумя друзьями.",
+  "rank": 2137
+ },
+ {
+  "id": "mover",
+  "es": "mover",
+  "pos": "verb",
+  "ru": "двигать, передвигать",
+  "example_es": "¿Me ayudas a mover el sofá?",
+  "example_ru": "Поможешь мне передвинуть диван?",
+  "rank": 2626,
+  "forms": [
+   "muevo",
+   "mueve",
+   "movió"
+  ]
+ },
+ {
+  "id": "crecer",
+  "es": "crecer",
+  "pos": "verb",
+  "ru": "расти",
+  "example_es": "Los niños crecen muy rápido.",
+  "example_ru": "Дети растут очень быстро.",
+  "rank": 3068,
+  "forms": [
+   "crezco",
+   "crece",
+   "creció"
+  ]
+ },
+ {
+  "id": "importar",
+  "es": "importar",
+  "pos": "verb",
+  "ru": "быть важным; импортировать",
+  "example_es": "No me importa el precio.",
+  "example_ru": "Мне не важна цена.",
+  "rank": 3519
+ },
+ {
+  "id": "ofrecer",
+  "es": "ofrecer",
+  "pos": "verb",
+  "ru": "предлагать",
+  "example_es": "Me ofrecieron un trabajo nuevo.",
+  "example_ru": "Мне предложили новую работу.",
+  "rank": 4238,
+  "forms": [
+   "ofrezco",
+   "ofrece",
+   "ofreció"
+  ]
+ },
+ {
+  "id": "faltar",
+  "es": "faltar",
+  "pos": "verb",
+  "ru": "не хватать; отсутствовать",
+  "example_es": "Me falta un euro.",
+  "example_ru": "Мне не хватает одного евро.",
+  "rank": 10400
+ },
+ {
+  "id": "nacer",
+  "es": "nacer",
+  "pos": "verb",
+  "ru": "рождаться",
+  "example_es": "Nací en una ciudad pequeña.",
+  "example_ru": "Я родился в маленьком городе.",
+  "rank": 5851,
+  "forms": [
+   "nazco",
+   "nació",
+   "nací"
+  ]
+ },
+ {
+  "id": "repetir",
+  "es": "repetir",
+  "pos": "verb",
+  "ru": "повторять",
+  "example_es": "¿Puede repetir, por favor?",
+  "example_ru": "Повторите, пожалуйста.",
+  "rank": 5482,
+  "forms": [
+   "repito",
+   "repite",
+   "repitió"
+  ]
+ },
+ {
+  "id": "tratar",
+  "es": "tratar",
+  "pos": "verb",
+  "ru": "обращаться (с кем-то); пытаться (tratar de)",
+  "example_es": "Trato de comer menos azúcar.",
+  "example_ru": "Я стараюсь есть меньше сахара.",
+  "rank": 1210
+ },
+ {
+  "id": "mandar",
+  "es": "mandar",
+  "pos": "verb",
+  "ru": "посылать; приказывать",
+  "example_es": "Te mando un mensaje luego.",
+  "example_ru": "Я пришлю тебе сообщение позже.",
+  "rank": 3878
+ },
+ {
+  "id": "ocurrir",
+  "es": "ocurrir",
+  "pos": "verb",
+  "ru": "случаться, происходить",
+  "example_es": "¿Qué ocurrió en la calle?",
+  "example_ru": "Что случилось на улице?",
+  "rank": 3389
+ }
+]

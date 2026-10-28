@@ -245,5 +245,336 @@
    "rotos",
    "rotas"
   ]
+ },
+ {
+  "id": "grifo",
+  "es": "grifo",
+  "pos": "noun",
+  "ru": "кран (водопроводный)",
+  "example_es": "El grifo de la cocina gotea.",
+  "example_ru": "Кран на кухне подтекает.",
+  "rank": 12225,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "grifos"
+  ]
+ },
+ {
+  "id": "ruido",
+  "es": "ruido",
+  "pos": "noun",
+  "ru": "шум",
+  "example_es": "Los vecinos hacen mucho ruido.",
+  "example_ru": "Соседи очень шумят.",
+  "rank": 1527,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "ruidos"
+  ]
+ },
+ {
+  "id": "arreglar",
+  "es": "arreglar",
+  "pos": "verb",
+  "ru": "чинить; приводить в порядок",
+  "example_es": "Tengo que arreglar la lavadora.",
+  "example_ru": "Мне нужно починить стиральную машину.",
+  "rank": 1583
+ },
+ {
+  "id": "polvo",
+  "es": "polvo",
+  "pos": "noun",
+  "ru": "пыль",
+  "example_es": "Hay mucho polvo en los muebles.",
+  "example_ru": "На мебели много пыли.",
+  "rank": 1921,
+  "article": "el",
+  "gender": "m"
+ },
+ {
+  "id": "dueño",
+  "es": "dueño",
+  "pos": "noun",
+  "ru": "хозяин, владелец",
+  "example_es": "El dueño del piso vive en el mismo edificio.",
+  "example_ru": "Хозяин квартиры живёт в том же доме.",
+  "rank": 1845,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "dueña",
+   "dueños",
+   "dueñas"
+  ]
+ },
+ {
+  "id": "aspiradora",
+  "es": "aspiradora",
+  "pos": "noun",
+  "ru": "пылесос",
+  "example_es": "Paso la aspiradora los sábados.",
+  "example_ru": "По субботам я пылесошу.",
+  "rank": 13634,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "aspiradoras"
+  ]
+ },
+ {
+  "id": "recoger",
+  "es": "recoger",
+  "pos": "verb",
+  "ru": "убирать; забирать",
+  "example_es": "Después de cenar recogemos la mesa.",
+  "example_ru": "После ужина мы убираем со стола.",
+  "rank": 2124,
+  "forms": [
+   "recojo",
+   "recoges",
+   "recoge"
+  ]
+ },
+ {
+  "id": "planchar",
+  "es": "planchar",
+  "pos": "verb",
+  "ru": "гладить (утюгом)",
+  "example_es": "Odio planchar las camisas.",
+  "example_ru": "Терпеть не могу гладить рубашки.",
+  "rank": 22444
+ },
+ {
+  "id": "balcón",
+  "es": "balcón",
+  "pos": "noun",
+  "ru": "балкон",
+  "example_es": "Tenemos plantas en el balcón.",
+  "example_ru": "У нас на балконе растения.",
+  "rank": 7844,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "balcones"
+  ]
+ },
+ {
+  "id": "manta",
+  "es": "manta",
+  "pos": "noun",
+  "ru": "одеяло, плед",
+  "example_es": "Hace frío, necesito una manta.",
+  "example_ru": "Холодно, мне нужен плед.",
+  "rank": 5779,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "mantas"
+  ]
+ },
+ {
+  "id": "pasillo",
+  "es": "pasillo",
+  "pos": "noun",
+  "ru": "коридор",
+  "example_es": "El baño está al final del pasillo.",
+  "example_ru": "Ванная в конце коридора.",
+  "rank": 2730,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "pasillos"
+  ]
+ },
+ {
+  "id": "garaje",
+  "es": "garaje",
+  "pos": "noun",
+  "ru": "гараж",
+  "example_es": "Dejo el coche en el garaje.",
+  "example_ru": "Я оставляю машину в гараже.",
+  "rank": 3602,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "garajes"
+  ]
+ },
+ {
+  "id": "ducha",
+  "es": "ducha",
+  "pos": "noun",
+  "ru": "душ",
+  "example_es": "Me doy una ducha por la mañana.",
+  "example_ru": "Утром я принимаю душ.",
+  "rank": 2822,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "duchas"
+  ]
+ },
+ {
+  "id": "tejado",
+  "es": "tejado",
+  "pos": "noun",
+  "ru": "крыша",
+  "example_es": "Hay un gato en el tejado.",
+  "example_ru": "На крыше сидит кот.",
+  "rank": 6233,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "tejados"
+  ]
+ },
+ {
+  "id": "sótano",
+  "es": "sótano",
+  "pos": "noun",
+  "ru": "подвал",
+  "example_es": "Guardamos las bicis en el sótano.",
+  "example_ru": "Мы храним велосипеды в подвале.",
+  "rank": 2633,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "sótanos"
+  ]
+ },
+ {
+  "id": "alfombra",
+  "es": "alfombra",
+  "pos": "noun",
+  "ru": "ковёр",
+  "example_es": "Hay una alfombra roja en el salón.",
+  "example_ru": "В гостиной лежит красный ковёр.",
+  "rank": 4452,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "alfombras"
+  ]
+ },
+ {
+  "id": "horno",
+  "es": "horno",
+  "pos": "noun",
+  "ru": "духовка",
+  "example_es": "El pollo está en el horno.",
+  "example_ru": "Курица в духовке.",
+  "rank": 4770,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "hornos"
+  ]
+ },
+ {
+  "id": "bañera",
+  "es": "bañera",
+  "pos": "noun",
+  "ru": "ванна",
+  "example_es": "Prefiero la ducha a la bañera.",
+  "example_ru": "Я предпочитаю душ ванне.",
+  "rank": 5672,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "bañeras"
+  ]
+ },
+ {
+  "id": "cajón",
+  "es": "cajón",
+  "pos": "noun",
+  "ru": "ящик (выдвижной)",
+  "example_es": "Los cuchillos están en el primer cajón.",
+  "example_ru": "Ножи лежат в первом ящике.",
+  "rank": 5197,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "cajones"
+  ]
+ },
+ {
+  "id": "almohada",
+  "es": "almohada",
+  "pos": "noun",
+  "ru": "подушка",
+  "example_es": "Necesito otra almohada para dormir bien.",
+  "example_ru": "Чтобы хорошо спать, мне нужна ещё одна подушка.",
+  "rank": 5647,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "almohadas"
+  ]
+ },
+ {
+  "id": "lámpara",
+  "es": "lámpara",
+  "pos": "noun",
+  "ru": "лампа",
+  "example_es": "Enciende la lámpara, por favor.",
+  "example_ru": "Включи лампу, пожалуйста.",
+  "rank": 5817,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "lámparas"
+  ]
+ },
+ {
+  "id": "ordenar",
+  "es": "ordenar",
+  "pos": "verb",
+  "ru": "убирать, наводить порядок",
+  "example_es": "Tengo que ordenar mi habitación.",
+  "example_ru": "Мне нужно убраться в своей комнате.",
+  "rank": 6618
+ },
+ {
+  "id": "sillón",
+  "es": "sillón",
+  "pos": "noun",
+  "ru": "кресло",
+  "example_es": "Mi abuelo duerme en el sillón.",
+  "example_ru": "Мой дедушка спит в кресле.",
+  "rank": 8986,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "sillones"
+  ]
+ },
+ {
+  "id": "cortina",
+  "es": "cortina",
+  "pos": "noun",
+  "ru": "занавеска, штора",
+  "example_es": "Abre las cortinas, hace sol.",
+  "example_ru": "Открой шторы, на улице солнце.",
+  "rank": 8274,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "cortinas"
+  ]
+ },
+ {
+  "id": "microondas",
+  "es": "microondas",
+  "pos": "noun",
+  "ru": "микроволновка",
+  "example_es": "Calienta la leche en el microondas.",
+  "example_ru": "Подогрей молоко в микроволновке.",
+  "rank": 10470,
+  "article": "el",
+  "gender": "m"
  }
 ]

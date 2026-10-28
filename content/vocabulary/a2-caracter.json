@@ -1,0 +1,628 @@
+[
+ {
+  "id": "carácter",
+  "es": "carácter",
+  "pos": "noun",
+  "ru": "характер",
+  "example_es": "Mi hermano tiene muy buen carácter.",
+  "example_ru": "У моего брата очень хороший характер.",
+  "rank": 3817,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "caracteres"
+  ]
+ },
+ {
+  "id": "personalidad",
+  "es": "personalidad",
+  "pos": "noun",
+  "ru": "личность, характер",
+  "example_es": "Tiene una personalidad muy fuerte.",
+  "example_ru": "У неё очень сильный характер.",
+  "rank": 3702,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "personalidades"
+  ]
+ },
+ {
+  "id": "curioso",
+  "es": "curioso",
+  "pos": "adj",
+  "ru": "любопытный; странный",
+  "example_es": "Los niños son muy curiosos.",
+  "example_ru": "Дети очень любопытные.",
+  "rank": 3032,
+  "forms": [
+   "curiosa",
+   "curiosos",
+   "curiosas"
+  ]
+ },
+ {
+  "id": "educado",
+  "es": "educado",
+  "pos": "adj",
+  "ru": "вежливый, воспитанный",
+  "example_es": "Tus hijos son muy educados.",
+  "example_ru": "Твои дети очень вежливые.",
+  "rank": 7074,
+  "forms": [
+   "educada",
+   "educados",
+   "educadas"
+  ]
+ },
+ {
+  "id": "agradable",
+  "es": "agradable",
+  "pos": "adj",
+  "ru": "приятный",
+  "example_es": "Es una persona muy agradable.",
+  "example_ru": "Это очень приятный человек.",
+  "rank": 1031,
+  "forms": [
+   "agradables"
+  ]
+ },
+ {
+  "id": "callado",
+  "es": "callado",
+  "pos": "adj",
+  "ru": "молчаливый, тихий",
+  "example_es": "Hoy estás muy callado. ¿Qué te pasa?",
+  "example_ru": "Ты сегодня очень молчаливый. Что с тобой?",
+  "rank": 5128,
+  "forms": [
+   "callada",
+   "callados",
+   "calladas"
+  ]
+ },
+ {
+  "id": "gracioso",
+  "es": "gracioso",
+  "pos": "adj",
+  "ru": "смешной, забавный",
+  "example_es": "Tu amiga es muy graciosa.",
+  "example_ru": "Твоя подруга очень забавная.",
+  "rank": 938,
+  "forms": [
+   "graciosa",
+   "graciosos",
+   "graciosas"
+  ]
+ },
+ {
+  "id": "tímido",
+  "es": "tímido",
+  "pos": "adj",
+  "ru": "застенчивый, робкий",
+  "example_es": "De niño era muy tímido.",
+  "example_ru": "В детстве я был очень застенчивым.",
+  "rank": 6296,
+  "forms": [
+   "tímida",
+   "tímidos",
+   "tímidas"
+  ]
+ },
+ {
+  "id": "ordenado",
+  "es": "ordenado",
+  "pos": "adj",
+  "ru": "аккуратный, организованный",
+  "example_es": "Mi compañero de piso es muy ordenado.",
+  "example_ru": "Мой сосед по квартире очень аккуратный.",
+  "rank": 5869,
+  "forms": [
+   "ordenada",
+   "ordenados",
+   "ordenadas"
+  ]
+ },
+ {
+  "id": "listo",
+  "es": "listo",
+  "pos": "adj",
+  "ru": "умный, сообразительный; готовый (estar listo)",
+  "example_es": "Ese niño es muy listo.",
+  "example_ru": "Этот мальчик очень сообразительный.",
+  "rank": 446,
+  "forms": [
+   "lista",
+   "listos",
+   "listas"
+  ]
+ },
+ {
+  "id": "puntual",
+  "es": "puntual",
+  "pos": "adj",
+  "ru": "пунктуальный",
+  "example_es": "Ana es muy puntual, siempre llega antes.",
+  "example_ru": "Ана очень пунктуальная, всегда приходит раньше.",
+  "rank": 11635,
+  "forms": [
+   "puntuales"
+  ]
+ },
+ {
+  "id": "optimista",
+  "es": "optimista",
+  "pos": "adj",
+  "ru": "оптимистичный; оптимист",
+  "example_es": "Soy optimista, todo va a salir bien.",
+  "example_ru": "Я оптимист, всё будет хорошо.",
+  "rank": 8888,
+  "forms": [
+   "optimistas"
+  ]
+ },
+ {
+  "id": "perezoso",
+  "es": "perezoso",
+  "pos": "adj",
+  "ru": "ленивый",
+  "example_es": "Los domingos soy muy perezoso.",
+  "example_ru": "По воскресеньям я очень ленивый.",
+  "rank": 13236,
+  "forms": [
+   "perezosa",
+   "perezosos",
+   "perezosas"
+  ]
+ },
+ {
+  "id": "generoso",
+  "es": "generoso",
+  "pos": "adj",
+  "ru": "щедрый",
+  "example_es": "Mi abuelo es muy generoso.",
+  "example_ru": "Мой дедушка очень щедрый.",
+  "rank": 4806,
+  "forms": [
+   "generosa",
+   "generosos",
+   "generosas"
+  ]
+ },
+ {
+  "id": "egoísta",
+  "es": "egoísta",
+  "pos": "adj",
+  "ru": "эгоистичный; эгоист",
+  "example_es": "No seas egoísta y comparte.",
+  "example_ru": "Не будь эгоистом, поделись.",
+  "rank": 3785,
+  "forms": [
+   "egoístas"
+  ]
+ },
+ {
+  "id": "honesto",
+  "es": "honesto",
+  "pos": "adj",
+  "ru": "честный",
+  "example_es": "Busco una persona honesta.",
+  "example_ru": "Я ищу честного человека.",
+  "rank": 2411,
+  "forms": [
+   "honesta",
+   "honestos",
+   "honestas"
+  ]
+ },
+ {
+  "id": "sincero",
+  "es": "sincero",
+  "pos": "adj",
+  "ru": "искренний",
+  "example_es": "Voy a ser sincero contigo.",
+  "example_ru": "Буду с тобой откровенен.",
+  "rank": 3382,
+  "forms": [
+   "sincera",
+   "sinceros",
+   "sinceras"
+  ]
+ },
+ {
+  "id": "mentiroso",
+  "es": "mentiroso",
+  "pos": "adj",
+  "ru": "лживый; лжец, врун",
+  "example_es": "No le creo, es un mentiroso.",
+  "example_ru": "Я ему не верю, он врун.",
+  "rank": 2587,
+  "forms": [
+   "mentirosa",
+   "mentirosos",
+   "mentirosas"
+  ]
+ },
+ {
+  "id": "celoso",
+  "es": "celoso",
+  "pos": "adj",
+  "ru": "ревнивый",
+  "example_es": "Su novio es muy celoso.",
+  "example_ru": "Её парень очень ревнивый.",
+  "rank": 3253,
+  "forms": [
+   "celosa",
+   "celosos",
+   "celosas"
+  ]
+ },
+ {
+  "id": "valiente",
+  "es": "valiente",
+  "pos": "adj",
+  "ru": "смелый, храбрый",
+  "example_es": "Mi hermana pequeña es muy valiente.",
+  "example_ru": "Моя младшая сестра очень смелая.",
+  "rank": 1968,
+  "forms": [
+   "valientes"
+  ]
+ },
+ {
+  "id": "responsable",
+  "es": "responsable",
+  "pos": "adj",
+  "ru": "ответственный",
+  "example_es": "Es un estudiante muy responsable.",
+  "example_ru": "Он очень ответственный студент.",
+  "rank": 1514,
+  "forms": [
+   "responsables"
+  ]
+ },
+ {
+  "id": "parecerse",
+  "es": "parecerse",
+  "pos": "verb",
+  "ru": "быть похожим",
+  "example_es": "Te pareces mucho a tu madre.",
+  "example_ru": "Ты очень похож на маму.",
+  "rank": 18756,
+  "forms": [
+   "parezco",
+   "pareces",
+   "parece",
+   "parecen"
+  ]
+ },
+ {
+  "id": "cariñoso",
+  "es": "cariñoso",
+  "pos": "adj",
+  "ru": "ласковый, нежный",
+  "example_es": "Mi perro es muy cariñoso.",
+  "example_ru": "Моя собака очень ласковая.",
+  "rank": 12173,
+  "forms": [
+   "cariñosa",
+   "cariñosos",
+   "cariñosas"
+  ]
+ },
+ {
+  "id": "aspecto",
+  "es": "aspecto",
+  "pos": "noun",
+  "ru": "внешность, вид",
+  "example_es": "Tiene aspecto de estar cansado.",
+  "example_ru": "У него усталый вид.",
+  "rank": 1935,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "aspectos"
+  ]
+ },
+ {
+  "id": "altura",
+  "es": "altura",
+  "pos": "noun",
+  "ru": "рост; высота",
+  "example_es": "¿Qué altura tiene tu hermano?",
+  "example_ru": "Какого роста твой брат?",
+  "rank": 2779,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "alturas"
+  ]
+ },
+ {
+  "id": "cara",
+  "es": "cara",
+  "pos": "noun",
+  "ru": "лицо",
+  "example_es": "Tiene una cara muy simpática.",
+  "example_ru": "У него очень приятное лицо.",
+  "rank": 378,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "caras"
+  ]
+ },
+ {
+  "id": "peso",
+  "es": "peso",
+  "pos": "noun",
+  "ru": "вес",
+  "example_es": "Tengo que perder un poco de peso.",
+  "example_ru": "Мне надо немного сбросить вес.",
+  "rank": 1800,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "pesos"
+  ]
+ },
+ {
+  "id": "sonrisa",
+  "es": "sonrisa",
+  "pos": "noun",
+  "ru": "улыбка",
+  "example_es": "Tu hermana tiene una sonrisa preciosa.",
+  "example_ru": "У твоей сестры чудесная улыбка.",
+  "rank": 2479,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "sonrisas"
+  ]
+ },
+ {
+  "id": "pelo",
+  "es": "pelo",
+  "pos": "noun",
+  "ru": "волосы",
+  "example_es": "Tiene el pelo largo y negro.",
+  "example_ru": "У неё длинные чёрные волосы.",
+  "rank": 785,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "pelos"
+  ]
+ },
+ {
+  "id": "atractivo",
+  "es": "atractivo",
+  "pos": "adj",
+  "ru": "привлекательный",
+  "example_es": "Es un hombre muy atractivo.",
+  "example_ru": "Он очень привлекательный мужчина.",
+  "rank": 3650,
+  "forms": [
+   "atractiva",
+   "atractivos",
+   "atractivas"
+  ]
+ },
+ {
+  "id": "loco",
+  "es": "loco",
+  "pos": "adj",
+  "ru": "сумасшедший; без ума (от)",
+  "example_es": "Está loco por su novia.",
+  "example_ru": "Он без ума от своей девушки.",
+  "rank": 426,
+  "forms": [
+   "loca",
+   "locos",
+   "locas"
+  ]
+ },
+ {
+  "id": "rizado",
+  "es": "rizado",
+  "pos": "adj",
+  "ru": "кудрявый, вьющийся",
+  "example_es": "Tengo el pelo rizado.",
+  "example_ru": "У меня кудрявые волосы.",
+  "rank": 21237,
+  "forms": [
+   "rizada",
+   "rizados",
+   "rizadas"
+  ]
+ },
+ {
+  "id": "calvo",
+  "es": "calvo",
+  "pos": "adj",
+  "ru": "лысый",
+  "example_es": "Mi tío está calvo.",
+  "example_ru": "Мой дядя лысый.",
+  "rank": 8680,
+  "forms": [
+   "calva",
+   "calvos",
+   "calvas"
+  ]
+ },
+ {
+  "id": "barba",
+  "es": "barba",
+  "pos": "noun",
+  "ru": "борода",
+  "example_es": "Mi hermano lleva barba.",
+  "example_ru": "Мой брат носит бороду.",
+  "rank": 4131,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "barbas"
+  ]
+ },
+ {
+  "id": "bigote",
+  "es": "bigote",
+  "pos": "noun",
+  "ru": "усы",
+  "example_es": "Mi abuelo tenía bigote.",
+  "example_ru": "У моего дедушки были усы.",
+  "rank": 5706,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "bigotes"
+  ]
+ },
+ {
+  "id": "llevarse-bien",
+  "es": "llevarse bien",
+  "pos": "phrase",
+  "ru": "ладить, хорошо относиться друг к другу",
+  "example_es": "Me llevo bien con mis compañeros.",
+  "example_ru": "Я хорошо лажу с коллегами.",
+  "rank": 5185,
+  "forms": [
+   "llevo bien",
+   "lleva bien",
+   "llevamos bien",
+   "llevan bien"
+  ]
+ },
+ {
+  "id": "pareja",
+  "es": "pareja",
+  "pos": "noun",
+  "ru": "пара; партнёр, спутник жизни",
+  "example_es": "Vivo con mi pareja en el centro.",
+  "example_ru": "Я живу с партнёром в центре.",
+  "rank": 1330,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "parejas"
+  ]
+ },
+ {
+  "id": "relación",
+  "es": "relación",
+  "pos": "noun",
+  "ru": "отношения; связь",
+  "example_es": "Tengo buena relación con mis padres.",
+  "example_ru": "У меня хорошие отношения с родителями.",
+  "rank": 791,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "relaciones"
+  ]
+ },
+ {
+  "id": "pelirrojo",
+  "es": "pelirrojo",
+  "pos": "adj",
+  "ru": "рыжий",
+  "example_es": "Su hija es pelirroja, como su abuela.",
+  "example_ru": "Её дочь рыжая, как бабушка.",
+  "rank": 18398,
+  "forms": [
+   "pelirroja",
+   "pelirrojos",
+   "pelirrojas"
+  ]
+ },
+ {
+  "id": "confianza",
+  "es": "confianza",
+  "pos": "noun",
+  "ru": "доверие",
+  "example_es": "Tengo mucha confianza en ella.",
+  "example_ru": "Я ей очень доверяю.",
+  "rank": 1409,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "confianzas"
+  ]
+ },
+ {
+  "id": "cariño",
+  "es": "cariño",
+  "pos": "noun",
+  "ru": "нежность, любовь; дорогой (обращение)",
+  "example_es": "Les tengo mucho cariño a mis vecinos.",
+  "example_ru": "Я очень люблю своих соседей.",
+  "rank": 276,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "cariños"
+  ]
+ },
+ {
+  "id": "conocido",
+  "es": "conocido",
+  "pos": "noun",
+  "ru": "знакомый",
+  "example_es": "No es mi amigo, es un conocido.",
+  "example_ru": "Он мне не друг, а знакомый.",
+  "rank": 997,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "conocida",
+   "conocidos",
+   "conocidas"
+  ]
+ },
+ {
+  "id": "soltero",
+  "es": "soltero",
+  "pos": "adj",
+  "ru": "холостой, незамужняя",
+  "example_es": "¿Estás casado o soltero?",
+  "example_ru": "Ты женат или холост?",
+  "rank": 3938,
+  "forms": [
+   "soltera",
+   "solteros",
+   "solteras"
+  ]
+ },
+ {
+  "id": "enamorarse",
+  "es": "enamorarse",
+  "pos": "verb",
+  "ru": "влюбляться, влюбиться",
+  "example_es": "Es fácil enamorarse de esta ciudad.",
+  "example_ru": "В этот город легко влюбиться.",
+  "rank": 12379
+ },
+ {
+  "id": "discutir",
+  "es": "discutir",
+  "pos": "verb",
+  "ru": "спорить; ссориться",
+  "example_es": "Mis padres casi nunca discuten.",
+  "example_ru": "Мои родители почти никогда не ссорятся.",
+  "rank": 2112
+ },
+ {
+  "id": "confiar",
+  "es": "confiar",
+  "pos": "verb",
+  "ru": "доверять",
+  "example_es": "Puedes confiar en mí.",
+  "example_ru": "Ты можешь мне доверять.",
+  "rank": 1202,
+  "forms": [
+   "confío",
+   "confías",
+   "confía"
+  ]
+ }
+]

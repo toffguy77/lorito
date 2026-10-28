@@ -1,0 +1,573 @@
+[
+ {
+  "id": "uno",
+  "es": "uno",
+  "pos": "num",
+  "ru": "один",
+  "example_es": "Solo tengo uno.",
+  "example_ru": "У меня только один.",
+  "rank": 135,
+  "forms": [
+   "un",
+   "una"
+  ]
+ },
+ {
+  "id": "dos",
+  "es": "dos",
+  "pos": "num",
+  "ru": "два",
+  "example_es": "Tengo dos hijos.",
+  "example_ru": "У меня двое детей.",
+  "rank": 96
+ },
+ {
+  "id": "más",
+  "es": "más",
+  "pos": "adv",
+  "ru": "больше; ещё",
+  "example_es": "Quiero más pan.",
+  "example_ru": "Я хочу ещё хлеба.",
+  "rank": 36
+ },
+ {
+  "id": "tres",
+  "es": "tres",
+  "pos": "num",
+  "ru": "три",
+  "example_es": "Son las tres.",
+  "example_ru": "Сейчас три часа.",
+  "rank": 202
+ },
+ {
+  "id": "menos",
+  "es": "menos",
+  "pos": "adv",
+  "ru": "меньше; без (о времени)",
+  "example_es": "Son las tres menos diez.",
+  "example_ru": "Сейчас без десяти три.",
+  "rank": 190
+ },
+ {
+  "id": "cada",
+  "es": "cada",
+  "pos": "det",
+  "ru": "каждый",
+  "example_es": "Estudio español cada día.",
+  "example_ru": "Я учу испанский каждый день.",
+  "rank": 227
+ },
+ {
+  "id": "doble",
+  "es": "doble",
+  "pos": "adj",
+  "ru": "двойной; вдвое больше",
+  "example_es": "Quiero una habitación doble.",
+  "example_ru": "Мне нужен двухместный номер.",
+  "rank": 1317,
+  "forms": [
+   "dobles"
+  ]
+ },
+ {
+  "id": "cuánto",
+  "es": "cuánto",
+  "pos": "pron",
+  "ru": "сколько",
+  "example_es": "¿Cuánto cuesta?",
+  "example_ru": "Сколько стоит?",
+  "rank": 343,
+  "forms": [
+   "cuánta",
+   "cuántos",
+   "cuántas"
+  ]
+ },
+ {
+  "id": "cinco",
+  "es": "cinco",
+  "pos": "num",
+  "ru": "пять",
+  "example_es": "Trabajo cinco días a la semana.",
+  "example_ru": "Я работаю пять дней в неделю.",
+  "rank": 374
+ },
+ {
+  "id": "millón",
+  "es": "millón",
+  "pos": "noun",
+  "ru": "миллион",
+  "example_es": "La ciudad tiene un millón de habitantes.",
+  "example_ru": "В городе миллион жителей.",
+  "rank": 1550,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "millones"
+  ]
+ },
+ {
+  "id": "cuatro",
+  "es": "cuatro",
+  "pos": "num",
+  "ru": "четыре",
+  "example_es": "Mi casa tiene cuatro ventanas.",
+  "example_ru": "В моём доме четыре окна.",
+  "rank": 411
+ },
+ {
+  "id": "número",
+  "es": "número",
+  "pos": "noun",
+  "ru": "номер; число",
+  "example_es": "¿Cuál es tu número de teléfono?",
+  "example_ru": "Какой у тебя номер телефона?",
+  "rank": 458,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "números"
+  ]
+ },
+ {
+  "id": "par",
+  "es": "par",
+  "pos": "noun",
+  "ru": "пара",
+  "example_es": "Vuelvo en un par de minutos.",
+  "example_ru": "Я вернусь через пару минут.",
+  "rank": 509,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "pares"
+  ]
+ },
+ {
+  "id": "medio",
+  "es": "medio",
+  "pos": "adj",
+  "ru": "половина; средний",
+  "example_es": "Son las dos y media.",
+  "example_ru": "Сейчас половина третьего.",
+  "rank": 516,
+  "forms": [
+   "media",
+   "medios",
+   "medias"
+  ]
+ },
+ {
+  "id": "seis",
+  "es": "seis",
+  "pos": "num",
+  "ru": "шесть",
+  "example_es": "Me levanto a las seis.",
+  "example_ru": "Я встаю в шесть.",
+  "rank": 528
+ },
+ {
+  "id": "diez",
+  "es": "diez",
+  "pos": "num",
+  "ru": "десять",
+  "example_es": "Son diez euros.",
+  "example_ru": "С вас десять евро.",
+  "rank": 594
+ },
+ {
+  "id": "mil",
+  "es": "mil",
+  "pos": "num",
+  "ru": "тысяча",
+  "example_es": "El viaje cuesta mil euros.",
+  "example_ru": "Поездка стоит тысячу евро.",
+  "rank": 716,
+  "forms": [
+   "miles"
+  ]
+ },
+ {
+  "id": "mitad",
+  "es": "mitad",
+  "pos": "noun",
+  "ru": "половина",
+  "example_es": "Quiero la mitad del pastel.",
+  "example_ru": "Я хочу половину торта.",
+  "rank": 783,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "mitades"
+  ]
+ },
+ {
+  "id": "siete",
+  "es": "siete",
+  "pos": "num",
+  "ru": "семь",
+  "example_es": "La semana tiene siete días.",
+  "example_ru": "В неделе семь дней.",
+  "rank": 844
+ },
+ {
+  "id": "ocho",
+  "es": "ocho",
+  "pos": "num",
+  "ru": "восемь",
+  "example_es": "Las clases empiezan a las ocho.",
+  "example_ru": "Занятия начинаются в восемь.",
+  "rank": 928
+ },
+ {
+  "id": "nueve",
+  "es": "nueve",
+  "pos": "num",
+  "ru": "девять",
+  "example_es": "Mi hija tiene nueve años.",
+  "example_ru": "Моей дочери девять лет.",
+  "rank": 1288
+ },
+ {
+  "id": "varios",
+  "es": "varios",
+  "pos": "det",
+  "ru": "несколько, разные",
+  "example_es": "Tengo varios amigos aquí.",
+  "example_ru": "У меня здесь несколько друзей.",
+  "rank": 1859,
+  "forms": [
+   "varias"
+  ]
+ },
+ {
+  "id": "cien",
+  "es": "cien",
+  "pos": "num",
+  "ru": "сто",
+  "example_es": "Hay cien personas en la fiesta.",
+  "example_ru": "На празднике сто человек.",
+  "rank": 1899,
+  "forms": [
+   "ciento"
+  ]
+ },
+ {
+  "id": "cero",
+  "es": "cero",
+  "pos": "num",
+  "ru": "ноль",
+  "example_es": "Mi número empieza por cero.",
+  "example_ru": "Мой номер начинается с нуля.",
+  "rank": 2310
+ },
+ {
+  "id": "veinte",
+  "es": "veinte",
+  "pos": "num",
+  "ru": "двадцать",
+  "example_es": "Espero veinte minutos.",
+  "example_ru": "Я жду двадцать минут.",
+  "rank": 2499
+ },
+ {
+  "id": "doce",
+  "es": "doce",
+  "pos": "num",
+  "ru": "двенадцать",
+  "example_es": "Un año tiene doce meses.",
+  "example_ru": "В году двенадцать месяцев.",
+  "rank": 2827
+ },
+ {
+  "id": "treinta",
+  "es": "treinta",
+  "pos": "num",
+  "ru": "тридцать",
+  "example_es": "Mi madre tiene treinta y cinco años.",
+  "example_ru": "Моей маме тридцать пять лет.",
+  "rank": 3276
+ },
+ {
+  "id": "quince",
+  "es": "quince",
+  "pos": "num",
+  "ru": "пятнадцать",
+  "example_es": "Llego en quince minutos.",
+  "example_ru": "Я приеду через пятнадцать минут.",
+  "rank": 3660
+ },
+ {
+  "id": "cincuenta",
+  "es": "cincuenta",
+  "pos": "num",
+  "ru": "пятьдесят",
+  "example_es": "Mi padre tiene cincuenta años.",
+  "example_ru": "Моему отцу пятьдесят лет.",
+  "rank": 3987
+ },
+ {
+  "id": "once",
+  "es": "once",
+  "pos": "num",
+  "ru": "одиннадцать",
+  "example_es": "El museo abre a las once.",
+  "example_ru": "Музей открывается в одиннадцать.",
+  "rank": 4019
+ },
+ {
+  "id": "docena",
+  "es": "docena",
+  "pos": "noun",
+  "ru": "дюжина, десяток",
+  "example_es": "Compro una docena de huevos.",
+  "example_ru": "Я покупаю десяток яиц.",
+  "rank": 4168,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "docenas"
+  ]
+ },
+ {
+  "id": "cuarenta",
+  "es": "cuarenta",
+  "pos": "num",
+  "ru": "сорок",
+  "example_es": "El libro cuesta cuarenta euros.",
+  "example_ru": "Книга стоит сорок евро.",
+  "rank": 4782
+ },
+ {
+  "id": "sesenta",
+  "es": "sesenta",
+  "pos": "num",
+  "ru": "шестьдесят",
+  "example_es": "Una hora tiene sesenta minutos.",
+  "example_ru": "В часе шестьдесят минут.",
+  "rank": 7843
+ },
+ {
+  "id": "trece",
+  "es": "trece",
+  "pos": "num",
+  "ru": "тринадцать",
+  "example_es": "Mi hermano tiene trece años.",
+  "example_ru": "Моему брату тринадцать лет.",
+  "rank": 7996
+ },
+ {
+  "id": "catorce",
+  "es": "catorce",
+  "pos": "num",
+  "ru": "четырнадцать",
+  "example_es": "Vivo en el piso catorce.",
+  "example_ru": "Я живу на четырнадцатом этаже.",
+  "rank": 8734
+ },
+ {
+  "id": "ochenta",
+  "es": "ochenta",
+  "pos": "num",
+  "ru": "восемьдесят",
+  "example_es": "El hotel tiene ochenta habitaciones.",
+  "example_ru": "В отеле восемьдесят номеров.",
+  "rank": 9460
+ },
+ {
+  "id": "setenta",
+  "es": "setenta",
+  "pos": "num",
+  "ru": "семьдесят",
+  "example_es": "Mi abuelo tiene setenta años.",
+  "example_ru": "Моему дедушке семьдесят лет.",
+  "rank": 9872
+ },
+ {
+  "id": "noventa",
+  "es": "noventa",
+  "pos": "num",
+  "ru": "девяносто",
+  "example_es": "Son noventa euros en total.",
+  "example_ru": "Всего девяносто евро.",
+  "rank": 10789
+ },
+ {
+  "id": "dieciséis",
+  "es": "dieciséis",
+  "pos": "num",
+  "ru": "шестнадцать",
+  "example_es": "Hay dieciséis estudiantes en la clase.",
+  "example_ru": "В классе шестнадцать учеников.",
+  "rank": 10755
+ },
+ {
+  "id": "dieciocho",
+  "es": "dieciocho",
+  "pos": "num",
+  "ru": "восемнадцать",
+  "example_es": "Ya tengo dieciocho años.",
+  "example_ru": "Мне уже восемнадцать.",
+  "rank": 11515
+ },
+ {
+  "id": "diecisiete",
+  "es": "diecisiete",
+  "pos": "num",
+  "ru": "семнадцать",
+  "example_es": "Mi prima tiene diecisiete años.",
+  "example_ru": "Моей двоюродной сестре семнадцать лет.",
+  "rank": 12632
+ },
+ {
+  "id": "diecinueve",
+  "es": "diecinueve",
+  "pos": "num",
+  "ru": "девятнадцать",
+  "example_es": "El autobús diecinueve va al centro.",
+  "example_ru": "Девятнадцатый автобус идёт в центр.",
+  "rank": 18421
+ },
+ {
+  "id": "primero",
+  "es": "primero",
+  "pos": "adj",
+  "ru": "первый",
+  "example_es": "Es mi primer día de trabajo.",
+  "example_ru": "Это мой первый рабочий день.",
+  "rank": 324,
+  "forms": [
+   "primer",
+   "primera",
+   "primeros",
+   "primeras"
+  ]
+ },
+ {
+  "id": "segundo",
+  "es": "segundo",
+  "pos": "adj",
+  "ru": "второй",
+  "example_es": "Es la segunda calle a la derecha.",
+  "example_ru": "Это вторая улица направо.",
+  "rank": 480,
+  "forms": [
+   "segunda",
+   "segundos",
+   "segundas"
+  ]
+ },
+ {
+  "id": "cuarto",
+  "es": "cuarto",
+  "pos": "adj",
+  "ru": "четвёртый; четверть",
+  "example_es": "Vivo en el cuarto piso.",
+  "example_ru": "Я живу на четвёртом этаже.",
+  "rank": 628,
+  "forms": [
+   "cuarta",
+   "cuartos",
+   "cuartas"
+  ]
+ },
+ {
+  "id": "tercero",
+  "es": "tercero",
+  "pos": "adj",
+  "ru": "третий",
+  "example_es": "Es la tercera vez.",
+  "example_ru": "Это уже третий раз.",
+  "rank": 4763,
+  "forms": [
+   "tercer",
+   "tercera",
+   "terceros",
+   "terceras"
+  ]
+ },
+ {
+  "id": "quinto",
+  "es": "quinto",
+  "pos": "adj",
+  "ru": "пятый",
+  "example_es": "Es el quinto día del viaje.",
+  "example_ru": "Это пятый день поездки.",
+  "rank": 5079,
+  "forms": [
+   "quinta",
+   "quintos",
+   "quintas"
+  ]
+ },
+ {
+  "id": "sexto",
+  "es": "sexto",
+  "pos": "adj",
+  "ru": "шестой",
+  "example_es": "Mi oficina está en el sexto piso.",
+  "example_ru": "Мой офис на шестом этаже.",
+  "rank": 6707,
+  "forms": [
+   "sexta",
+   "sextos",
+   "sextas"
+  ]
+ },
+ {
+  "id": "séptimo",
+  "es": "séptimo",
+  "pos": "adj",
+  "ru": "седьмой",
+  "example_es": "Julio es el séptimo mes del año.",
+  "example_ru": "Июль — седьмой месяц года.",
+  "rank": 8317,
+  "forms": [
+   "séptima",
+   "séptimos",
+   "séptimas"
+  ]
+ },
+ {
+  "id": "octavo",
+  "es": "octavo",
+  "pos": "adj",
+  "ru": "восьмой",
+  "example_es": "Hoy es su octavo cumpleaños.",
+  "example_ru": "Сегодня ему исполняется восемь лет.",
+  "rank": 10399,
+  "forms": [
+   "octava",
+   "octavos",
+   "octavas"
+  ]
+ },
+ {
+  "id": "décimo",
+  "es": "décimo",
+  "pos": "adj",
+  "ru": "десятый",
+  "example_es": "Hoy es el décimo día del curso.",
+  "example_ru": "Сегодня десятый день курса.",
+  "rank": 12649,
+  "forms": [
+   "décima",
+   "décimos",
+   "décimas"
+  ]
+ },
+ {
+  "id": "noveno",
+  "es": "noveno",
+  "pos": "adj",
+  "ru": "девятый",
+  "example_es": "Es la novena vez que llamo.",
+  "example_ru": "Я звоню уже в девятый раз.",
+  "rank": 13462,
+  "forms": [
+   "novena",
+   "novenos",
+   "novenas"
+  ]
+ }
+]

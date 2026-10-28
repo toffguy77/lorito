@@ -1,0 +1,696 @@
+[
+ {
+  "id": "camisa",
+  "es": "camisa",
+  "pos": "noun",
+  "ru": "рубашка",
+  "example_es": "Llevo una camisa blanca.",
+  "example_ru": "На мне белая рубашка.",
+  "rank": 2116,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "camisas"
+  ]
+ },
+ {
+  "id": "camiseta",
+  "es": "camiseta",
+  "pos": "noun",
+  "ru": "футболка, майка",
+  "example_es": "Esta camiseta es muy cómoda.",
+  "example_ru": "Эта футболка очень удобная.",
+  "rank": 3926,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "camisetas"
+  ]
+ },
+ {
+  "id": "pantalón",
+  "es": "pantalón",
+  "pos": "noun",
+  "ru": "брюки, штаны",
+  "example_es": "Busco un pantalón negro.",
+  "example_ru": "Я ищу чёрные брюки.",
+  "rank": 9783,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "pantalones"
+  ]
+ },
+ {
+  "id": "falda",
+  "es": "falda",
+  "pos": "noun",
+  "ru": "юбка",
+  "example_es": "Me gusta tu falda roja.",
+  "example_ru": "Мне нравится твоя красная юбка.",
+  "rank": 6436,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "faldas"
+  ]
+ },
+ {
+  "id": "vestido",
+  "es": "vestido",
+  "pos": "noun",
+  "ru": "платье",
+  "example_es": "Es un vestido muy bonito.",
+  "example_ru": "Это очень красивое платье.",
+  "rank": 1018,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "vestidos"
+  ]
+ },
+ {
+  "id": "chaqueta",
+  "es": "chaqueta",
+  "pos": "noun",
+  "ru": "куртка; пиджак",
+  "example_es": "Ponte la chaqueta, hace frío.",
+  "example_ru": "Надень куртку, холодно.",
+  "rank": 2451,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "chaquetas"
+  ]
+ },
+ {
+  "id": "abrigo",
+  "es": "abrigo",
+  "pos": "noun",
+  "ru": "пальто",
+  "example_es": "Necesito un abrigo para el invierno.",
+  "example_ru": "Мне нужно пальто на зиму.",
+  "rank": 2475,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "abrigos"
+  ]
+ },
+ {
+  "id": "jersey",
+  "es": "jersey",
+  "pos": "noun",
+  "ru": "свитер",
+  "example_es": "Llevo un jersey de lana.",
+  "example_ru": "На мне шерстяной свитер.",
+  "rank": 3895,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "jerséis"
+  ]
+ },
+ {
+  "id": "zapato",
+  "es": "zapato",
+  "pos": "noun",
+  "ru": "ботинок, туфля",
+  "example_es": "Estos zapatos son nuevos.",
+  "example_ru": "Эти туфли новые.",
+  "rank": 4628,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "zapatos"
+  ]
+ },
+ {
+  "id": "zapatilla",
+  "es": "zapatilla",
+  "pos": "noun",
+  "ru": "кроссовка; тапочка",
+  "example_es": "Llevo zapatillas para correr.",
+  "example_ru": "Я в кроссовках для бега.",
+  "rank": 25779,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "zapatillas"
+  ]
+ },
+ {
+  "id": "bota",
+  "es": "bota",
+  "pos": "noun",
+  "ru": "сапог, ботинок",
+  "example_es": "En invierno llevo botas.",
+  "example_ru": "Зимой я ношу сапоги.",
+  "rank": 10785,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "botas"
+  ]
+ },
+ {
+  "id": "calcetín",
+  "es": "calcetín",
+  "pos": "noun",
+  "ru": "носок",
+  "example_es": "No encuentro mis calcetines.",
+  "example_ru": "Не могу найти свои носки.",
+  "rank": 16249,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "calcetines"
+  ]
+ },
+ {
+  "id": "sombrero",
+  "es": "sombrero",
+  "pos": "noun",
+  "ru": "шляпа",
+  "example_es": "Mi abuelo lleva sombrero.",
+  "example_ru": "Мой дедушка носит шляпу.",
+  "rank": 1866,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "sombreros"
+  ]
+ },
+ {
+  "id": "gorra",
+  "es": "gorra",
+  "pos": "noun",
+  "ru": "кепка, бейсболка",
+  "example_es": "Mi hijo siempre lleva gorra.",
+  "example_ru": "Мой сын всегда ходит в кепке.",
+  "rank": 6624,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "gorras"
+  ]
+ },
+ {
+  "id": "bufanda",
+  "es": "bufanda",
+  "pos": "noun",
+  "ru": "шарф",
+  "example_es": "Hace frío, ponte la bufanda.",
+  "example_ru": "Холодно, надень шарф.",
+  "rank": 10312,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "bufandas"
+  ]
+ },
+ {
+  "id": "guante",
+  "es": "guante",
+  "pos": "noun",
+  "ru": "перчатка",
+  "example_es": "Estos guantes son de lana.",
+  "example_ru": "Эти перчатки шерстяные.",
+  "rank": 7812,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "guantes"
+  ]
+ },
+ {
+  "id": "gafas",
+  "es": "gafas",
+  "pos": "noun",
+  "ru": "очки",
+  "example_es": "No veo bien sin gafas.",
+  "example_ru": "Без очков я плохо вижу.",
+  "rank": 3673,
+  "article": "las",
+  "gender": "f"
+ },
+ {
+  "id": "bolso",
+  "es": "bolso",
+  "pos": "noun",
+  "ru": "сумка (дамская)",
+  "example_es": "Mi bolso es marrón.",
+  "example_ru": "Моя сумка коричневая.",
+  "rank": 2358,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "bolsos"
+  ]
+ },
+ {
+  "id": "cinturón",
+  "es": "cinturón",
+  "pos": "noun",
+  "ru": "ремень, пояс",
+  "example_es": "Necesito un cinturón negro.",
+  "example_ru": "Мне нужен чёрный ремень.",
+  "rank": 3416,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "cinturones"
+  ]
+ },
+ {
+  "id": "corbata",
+  "es": "corbata",
+  "pos": "noun",
+  "ru": "галстук",
+  "example_es": "Mi padre lleva corbata al trabajo.",
+  "example_ru": "Мой папа ходит на работу в галстуке.",
+  "rank": 4381,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "corbatas"
+  ]
+ },
+ {
+  "id": "traje",
+  "es": "traje",
+  "pos": "noun",
+  "ru": "костюм",
+  "example_es": "Para la boda llevo traje.",
+  "example_ru": "На свадьбу я надену костюм.",
+  "rank": 842,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "trajes"
+  ]
+ },
+ {
+  "id": "pijama",
+  "es": "pijama",
+  "pos": "noun",
+  "ru": "пижама",
+  "example_es": "Los niños ya llevan el pijama.",
+  "example_ru": "Дети уже в пижамах.",
+  "rank": 9401,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "pijamas"
+  ]
+ },
+ {
+  "id": "vaqueros",
+  "es": "vaqueros",
+  "pos": "noun",
+  "ru": "джинсы",
+  "example_es": "Siempre llevo vaqueros.",
+  "example_ru": "Я всегда ношу джинсы.",
+  "rank": 7092,
+  "article": "los",
+  "gender": "m"
+ },
+ {
+  "id": "bolsillo",
+  "es": "bolsillo",
+  "pos": "noun",
+  "ru": "карман",
+  "example_es": "Las llaves están en mi bolsillo.",
+  "example_ru": "Ключи у меня в кармане.",
+  "rank": 2435,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "bolsillos"
+  ]
+ },
+ {
+  "id": "anillo",
+  "es": "anillo",
+  "pos": "noun",
+  "ru": "кольцо",
+  "example_es": "Es un anillo de oro.",
+  "example_ru": "Это золотое кольцо.",
+  "rank": 1505,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "anillos"
+  ]
+ },
+ {
+  "id": "collar",
+  "es": "collar",
+  "pos": "noun",
+  "ru": "ожерелье; ошейник",
+  "example_es": "Mi madre lleva un collar precioso.",
+  "example_ru": "На маме красивое ожерелье.",
+  "rank": 3262,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "collares"
+  ]
+ },
+ {
+  "id": "paraguas",
+  "es": "paraguas",
+  "pos": "noun",
+  "ru": "зонт",
+  "example_es": "Llueve, ¿tienes paraguas?",
+  "example_ru": "Идёт дождь, у тебя есть зонт?",
+  "rank": 8706,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "paraguas"
+  ]
+ },
+ {
+  "id": "mochila",
+  "es": "mochila",
+  "pos": "noun",
+  "ru": "рюкзак",
+  "example_es": "Mi mochila es muy pesada.",
+  "example_ru": "Мой рюкзак очень тяжёлый.",
+  "rank": 5422,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "mochilas"
+  ]
+ },
+ {
+  "id": "color",
+  "es": "color",
+  "pos": "noun",
+  "ru": "цвет",
+  "example_es": "¿De qué color es tu coche?",
+  "example_ru": "Какого цвета твоя машина?",
+  "rank": 1207,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "colores"
+  ]
+ },
+ {
+  "id": "rojo",
+  "es": "rojo",
+  "pos": "adj",
+  "ru": "красный",
+  "example_es": "Quiero el vestido rojo.",
+  "example_ru": "Я хочу красное платье.",
+  "rank": 1313,
+  "forms": [
+   "roja",
+   "rojos",
+   "rojas"
+  ]
+ },
+ {
+  "id": "azul",
+  "es": "azul",
+  "pos": "adj",
+  "ru": "синий, голубой",
+  "example_es": "Tengo los ojos azules.",
+  "example_ru": "У меня голубые глаза.",
+  "rank": 1244,
+  "forms": [
+   "azules"
+  ]
+ },
+ {
+  "id": "verde",
+  "es": "verde",
+  "pos": "adj",
+  "ru": "зелёный",
+  "example_es": "Me gusta la camiseta verde.",
+  "example_ru": "Мне нравится зелёная футболка.",
+  "rank": 1611,
+  "forms": [
+   "verdes"
+  ]
+ },
+ {
+  "id": "amarillo",
+  "es": "amarillo",
+  "pos": "adj",
+  "ru": "жёлтый",
+  "example_es": "Llevo una falda amarilla.",
+  "example_ru": "На мне жёлтая юбка.",
+  "rank": 4254,
+  "forms": [
+   "amarilla",
+   "amarillos",
+   "amarillas"
+  ]
+ },
+ {
+  "id": "blanco",
+  "es": "blanco",
+  "pos": "adj",
+  "ru": "белый",
+  "example_es": "Quiero una camisa blanca.",
+  "example_ru": "Я хочу белую рубашку.",
+  "rank": 850,
+  "forms": [
+   "blanca",
+   "blancos",
+   "blancas"
+  ]
+ },
+ {
+  "id": "negro",
+  "es": "negro",
+  "pos": "adj",
+  "ru": "чёрный",
+  "example_es": "Me gustan los zapatos negros.",
+  "example_ru": "Мне нравятся чёрные туфли.",
+  "rank": 739,
+  "forms": [
+   "negra",
+   "negros",
+   "negras"
+  ]
+ },
+ {
+  "id": "gris",
+  "es": "gris",
+  "pos": "adj",
+  "ru": "серый",
+  "example_es": "Tengo un abrigo gris.",
+  "example_ru": "У меня серое пальто.",
+  "rank": 4398,
+  "forms": [
+   "grises"
+  ]
+ },
+ {
+  "id": "rosa",
+  "es": "rosa",
+  "pos": "adj",
+  "ru": "розовый",
+  "example_es": "Mi hija quiere una mochila rosa.",
+  "example_ru": "Моя дочь хочет розовый рюкзак.",
+  "rank": 2131
+ },
+ {
+  "id": "naranja",
+  "es": "naranja",
+  "pos": "adj",
+  "ru": "оранжевый",
+  "example_es": "Llevo una camiseta naranja.",
+  "example_ru": "На мне оранжевая футболка.",
+  "rank": 4068
+ },
+ {
+  "id": "marrón",
+  "es": "marrón",
+  "pos": "adj",
+  "ru": "коричневый",
+  "example_es": "Busco unas botas marrones.",
+  "example_ru": "Я ищу коричневые сапоги.",
+  "rank": 6305,
+  "forms": [
+   "marrones"
+  ]
+ },
+ {
+  "id": "morado",
+  "es": "morado",
+  "pos": "adj",
+  "ru": "фиолетовый",
+  "example_es": "Su color favorito es el morado.",
+  "example_ru": "Её любимый цвет — фиолетовый.",
+  "rank": 13115,
+  "forms": [
+   "morada",
+   "morados",
+   "moradas"
+  ]
+ },
+ {
+  "id": "claro",
+  "es": "claro",
+  "pos": "adj",
+  "ru": "светлый; ясный",
+  "example_es": "Prefiero un azul más claro.",
+  "example_ru": "Я предпочитаю голубой посветлее.",
+  "rank": 166,
+  "forms": [
+   "clara",
+   "claros",
+   "claras"
+  ]
+ },
+ {
+  "id": "oscuro",
+  "es": "oscuro",
+  "pos": "adj",
+  "ru": "тёмный",
+  "example_es": "Llevo un traje gris oscuro.",
+  "example_ru": "На мне тёмно-серый костюм.",
+  "rank": 1766,
+  "forms": [
+   "oscura",
+   "oscuros",
+   "oscuras"
+  ]
+ },
+ {
+  "id": "llevar",
+  "es": "llevar",
+  "pos": "verb",
+  "ru": "носить (одежду); нести",
+  "example_es": "Hoy llevo un vestido nuevo.",
+  "example_ru": "Сегодня на мне новое платье.",
+  "rank": 602
+ },
+ {
+  "id": "ponerse",
+  "es": "ponerse",
+  "pos": "verb",
+  "ru": "надевать, надеть",
+  "example_es": "Me pongo el abrigo y salgo.",
+  "example_ru": "Я надеваю пальто и выхожу.",
+  "rank": 2768,
+  "forms": [
+   "pongo",
+   "pone",
+   "puso",
+   "puesto"
+  ]
+ },
+ {
+  "id": "probarse",
+  "es": "probarse",
+  "pos": "verb",
+  "ru": "примерять, примерить",
+  "example_es": "¿Puedo probarme estos pantalones?",
+  "example_ru": "Можно примерить эти брюки?",
+  "rank": 27148,
+  "forms": [
+   "pruebo",
+   "prueba",
+   "probarme"
+  ]
+ },
+ {
+  "id": "quitarse",
+  "es": "quitarse",
+  "pos": "verb",
+  "ru": "снимать, снять (с себя)",
+  "example_es": "Puedes quitarte los zapatos aquí.",
+  "example_ru": "Здесь можно снять обувь.",
+  "rank": 10310
+ },
+ {
+  "id": "vestirse",
+  "es": "vestirse",
+  "pos": "verb",
+  "ru": "одеваться, одеться",
+  "example_es": "Me visto y desayuno.",
+  "example_ru": "Я одеваюсь и завтракаю.",
+  "rank": 11638,
+  "forms": [
+   "visto",
+   "viste",
+   "vistió",
+   "vístete"
+  ]
+ },
+ {
+  "id": "talla",
+  "es": "talla",
+  "pos": "noun",
+  "ru": "размер (одежды)",
+  "example_es": "¿Tiene una talla más grande?",
+  "example_ru": "У вас есть размер побольше?",
+  "rank": 5623,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "tallas"
+  ]
+ },
+ {
+  "id": "moda",
+  "es": "moda",
+  "pos": "noun",
+  "ru": "мода",
+  "example_es": "Esta falda está de moda.",
+  "example_ru": "Эта юбка сейчас в моде.",
+  "rank": 2519,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "modas"
+  ]
+ },
+ {
+  "id": "algodón",
+  "es": "algodón",
+  "pos": "noun",
+  "ru": "хлопок",
+  "example_es": "Es una camiseta de algodón.",
+  "example_ru": "Это хлопковая футболка.",
+  "rank": 6706,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "algodones"
+  ]
+ },
+ {
+  "id": "cómodo",
+  "es": "cómodo",
+  "pos": "adj",
+  "ru": "удобный",
+  "example_es": "Estos zapatos son muy cómodos.",
+  "example_ru": "Эти туфли очень удобные.",
+  "rank": 2807,
+  "forms": [
+   "cómoda",
+   "cómodos",
+   "cómodas"
+  ]
+ },
+ {
+  "id": "elegante",
+  "es": "elegante",
+  "pos": "adj",
+  "ru": "элегантный",
+  "example_es": "Hoy estás muy elegante.",
+  "example_ru": "Сегодня ты очень элегантно выглядишь.",
+  "rank": 2992,
+  "forms": [
+   "elegantes"
+  ]
+ }
+]

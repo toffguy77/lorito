@@ -329,5 +329,262 @@
   "example_es": "Necesito descansar.",
   "example_ru": "Мне нужно отдохнуть.",
   "rank": 1937
+ },
+ {
+  "id": "barco",
+  "es": "barco",
+  "pos": "noun",
+  "ru": "корабль, лодка",
+  "example_es": "Vamos a la isla en barco.",
+  "example_ru": "Мы поедем на остров на корабле.",
+  "rank": 849,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "barcos"
+  ]
+ },
+ {
+  "id": "destino",
+  "es": "destino",
+  "pos": "noun",
+  "ru": "пункт назначения; судьба",
+  "example_es": "¿Cuál es el destino del vuelo?",
+  "example_ru": "Куда летит этот рейс?",
+  "rank": 1107,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "destinos"
+  ]
+ },
+ {
+  "id": "salida",
+  "es": "salida",
+  "pos": "noun",
+  "ru": "выход; отправление",
+  "example_es": "La salida del tren es a las ocho.",
+  "example_ru": "Поезд отправляется в восемь.",
+  "rank": 1200,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "salidas"
+  ]
+ },
+ {
+  "id": "tarjeta-de-embarque",
+  "es": "tarjeta de embarque",
+  "pos": "phrase",
+  "ru": "посадочный талон",
+  "example_es": "Aquí tiene su tarjeta de embarque.",
+  "example_ru": "Вот ваш посадочный талон.",
+  "rank": 1336
+ },
+ {
+  "id": "pasajero",
+  "es": "pasajero",
+  "pos": "noun",
+  "ru": "пассажир",
+  "example_es": "Los pasajeros esperan en la puerta de embarque.",
+  "example_ru": "Пассажиры ждут у выхода на посадку.",
+  "rank": 8265,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "pasajera",
+   "pasajeros",
+   "pasajeras"
+  ]
+ },
+ {
+  "id": "asiento",
+  "es": "asiento",
+  "pos": "noun",
+  "ru": "место, сиденье",
+  "example_es": "Prefiero un asiento junto a la ventana.",
+  "example_ru": "Я предпочитаю место у окна.",
+  "rank": 1568,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "asientos"
+  ]
+ },
+ {
+  "id": "temporada",
+  "es": "temporada",
+  "pos": "noun",
+  "ru": "сезон",
+  "example_es": "En temporada alta los hoteles son caros.",
+  "example_ru": "В высокий сезон отели дорогие.",
+  "rank": 2095,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "temporadas"
+  ]
+ },
+ {
+  "id": "catedral",
+  "es": "catedral",
+  "pos": "noun",
+  "ru": "собор",
+  "example_es": "La catedral está en la plaza mayor.",
+  "example_ru": "Собор находится на главной площади.",
+  "rank": 11727,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "catedrales"
+  ]
+ },
+ {
+  "id": "crucero",
+  "es": "crucero",
+  "pos": "noun",
+  "ru": "круиз",
+  "example_es": "Hicimos un crucero por el Mediterráneo.",
+  "example_ru": "Мы ходили в круиз по Средиземному морю.",
+  "rank": 6775,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "cruceros"
+  ]
+ },
+ {
+  "id": "castillo",
+  "es": "castillo",
+  "pos": "noun",
+  "ru": "замок",
+  "example_es": "Visitamos un castillo medieval.",
+  "example_ru": "Мы посетили средневековый замок.",
+  "rank": 2395,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "castillos"
+  ]
+ },
+ {
+  "id": "frontera",
+  "es": "frontera",
+  "pos": "noun",
+  "ru": "граница",
+  "example_es": "Pasamos la frontera en autobús.",
+  "example_ru": "Мы пересекли границу на автобусе.",
+  "rank": 2677,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "fronteras"
+  ]
+ },
+ {
+  "id": "ruta",
+  "es": "ruta",
+  "pos": "noun",
+  "ru": "маршрут",
+  "example_es": "Esta ruta es muy bonita en primavera.",
+  "example_ru": "Этот маршрут очень красивый весной.",
+  "rank": 2736,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "rutas"
+  ]
+ },
+ {
+  "id": "puerto",
+  "es": "puerto",
+  "pos": "noun",
+  "ru": "порт",
+  "example_es": "El barco sale del puerto a las diez.",
+  "example_ru": "Корабль отходит из порта в десять.",
+  "rank": 2953,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "puertos"
+  ]
+ },
+ {
+  "id": "extranjero",
+  "es": "extranjero",
+  "pos": "adj",
+  "ru": "иностранный; иностранец",
+  "example_es": "Hay muchos turistas extranjeros en la ciudad.",
+  "example_ru": "В городе много иностранных туристов.",
+  "rank": 3070,
+  "forms": [
+   "extranjera",
+   "extranjeros",
+   "extranjeras"
+  ]
+ },
+ {
+  "id": "guía",
+  "es": "guía",
+  "pos": "noun",
+  "ru": "гид, экскурсовод; путеводитель",
+  "example_es": "La guía nos explica la historia del museo.",
+  "example_ru": "Гид рассказывает нам историю музея.",
+  "rank": 3177,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "guías"
+  ]
+ },
+ {
+  "id": "llegada",
+  "es": "llegada",
+  "pos": "noun",
+  "ru": "прибытие",
+  "example_es": "La llegada del vuelo es a las cinco.",
+  "example_ru": "Рейс прибывает в пять.",
+  "rank": 3885,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "llegadas"
+  ]
+ },
+ {
+  "id": "despegar",
+  "es": "despegar",
+  "pos": "verb",
+  "ru": "взлетать",
+  "example_es": "El avión despega con media hora de retraso.",
+  "example_ru": "Самолёт взлетает с опозданием на полчаса.",
+  "rank": 8689
+ },
+ {
+  "id": "aterrizar",
+  "es": "aterrizar",
+  "pos": "verb",
+  "ru": "приземляться",
+  "example_es": "El avión aterriza en Madrid a las tres.",
+  "example_ru": "Самолёт приземляется в Мадриде в три.",
+  "rank": 5709
+ },
+ {
+  "id": "recorrer",
+  "es": "recorrer",
+  "pos": "verb",
+  "ru": "объезжать, обходить",
+  "example_es": "Queremos recorrer el país en coche.",
+  "example_ru": "Мы хотим объездить страну на машине.",
+  "rank": 8790
+ },
+ {
+  "id": "ida-y-vuelta",
+  "es": "ida y vuelta",
+  "pos": "phrase",
+  "ru": "туда и обратно",
+  "example_es": "Quiero un billete de ida y vuelta.",
+  "example_ru": "Мне нужен билет туда и обратно.",
+  "rank": 6048
  }
 ]

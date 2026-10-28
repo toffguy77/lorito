@@ -241,5 +241,331 @@
   "example_es": "Quizás vaya mañana.",
   "example_ru": "Может быть, пойду завтра.",
   "rank": 328
+ },
+ {
+  "id": "de-acuerdo",
+  "es": "de acuerdo",
+  "pos": "phrase",
+  "ru": "согласен; ладно",
+  "example_es": "Estoy de acuerdo contigo.",
+  "example_ru": "Я с тобой согласен.",
+  "rank": 1
+ },
+ {
+  "id": "esperanza",
+  "es": "esperanza",
+  "pos": "noun",
+  "ru": "надежда",
+  "example_es": "Nunca pierdas la esperanza.",
+  "example_ru": "Никогда не теряй надежду.",
+  "rank": 1252,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "esperanzas"
+  ]
+ },
+ {
+  "id": "amor",
+  "es": "amor",
+  "pos": "noun",
+  "ru": "любовь",
+  "example_es": "El amor es lo más importante.",
+  "example_ru": "Любовь — самое главное.",
+  "rank": 250,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "amores"
+  ]
+ },
+ {
+  "id": "cierto",
+  "es": "cierto",
+  "pos": "adj",
+  "ru": "верный, правдивый; некоторый",
+  "example_es": "¿Es cierto que te vas a casar?",
+  "example_ru": "Это правда, что ты женишься?",
+  "rank": 246,
+  "forms": [
+   "cierta",
+   "ciertos",
+   "ciertas"
+  ]
+ },
+ {
+  "id": "felicidad",
+  "es": "felicidad",
+  "pos": "noun",
+  "ru": "счастье",
+  "example_es": "Te deseo mucha felicidad.",
+  "example_ru": "Желаю тебе большого счастья.",
+  "rank": 1861,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "felicidades"
+  ]
+ },
+ {
+  "id": "culpa",
+  "es": "culpa",
+  "pos": "noun",
+  "ru": "вина",
+  "example_es": "No es culpa tuya.",
+  "example_ru": "Это не твоя вина.",
+  "rank": 461,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "culpas"
+  ]
+ },
+ {
+  "id": "genial",
+  "es": "genial",
+  "pos": "adj",
+  "ru": "классный, отличный",
+  "example_es": "¡Tu idea es genial!",
+  "example_ru": "Твоя идея — просто класс!",
+  "rank": 292,
+  "forms": [
+   "geniales"
+  ]
+ },
+ {
+  "id": "increíble",
+  "es": "increíble",
+  "pos": "adj",
+  "ru": "невероятный",
+  "example_es": "El concierto fue increíble.",
+  "example_ru": "Концерт был невероятный.",
+  "rank": 610,
+  "forms": [
+   "increíbles"
+  ]
+ },
+ {
+  "id": "sentir",
+  "es": "sentir",
+  "pos": "verb",
+  "ru": "чувствовать; сожалеть",
+  "example_es": "Lo siento mucho.",
+  "example_ru": "Мне очень жаль.",
+  "rank": 798,
+  "forms": [
+   "siento",
+   "sientes",
+   "siente",
+   "sintió"
+  ]
+ },
+ {
+  "id": "pena",
+  "es": "pena",
+  "pos": "noun",
+  "ru": "жалость; грусть",
+  "example_es": "¡Qué pena que no puedes venir!",
+  "example_ru": "Как жаль, что ты не можешь прийти!",
+  "rank": 710,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "penas"
+  ]
+ },
+ {
+  "id": "horrible",
+  "es": "horrible",
+  "pos": "adj",
+  "ru": "ужасный",
+  "example_es": "Hace un tiempo horrible.",
+  "example_ru": "Погода ужасная.",
+  "rank": 892,
+  "forms": [
+   "horribles"
+  ]
+ },
+ {
+  "id": "duda",
+  "es": "duda",
+  "pos": "noun",
+  "ru": "сомнение",
+  "example_es": "Si tienes alguna duda, pregúntame.",
+  "example_ru": "Если есть вопросы, спроси меня.",
+  "rank": 1037,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "dudas"
+  ]
+ },
+ {
+  "id": "terrible",
+  "es": "terrible",
+  "pos": "adj",
+  "ru": "ужасный, страшный",
+  "example_es": "Fue un día terrible.",
+  "example_ru": "Это был ужасный день.",
+  "rank": 916,
+  "forms": [
+   "terribles"
+  ]
+ },
+ {
+  "id": "preocupado",
+  "es": "preocupado",
+  "pos": "adj",
+  "ru": "обеспокоенный",
+  "example_es": "Estoy preocupado por mi madre.",
+  "example_ru": "Я беспокоюсь за маму.",
+  "rank": 1487,
+  "forms": [
+   "preocupada",
+   "preocupados",
+   "preocupadas"
+  ]
+ },
+ {
+  "id": "alegría",
+  "es": "alegría",
+  "pos": "noun",
+  "ru": "радость",
+  "example_es": "¡Qué alegría verte!",
+  "example_ru": "Как я рад тебя видеть!",
+  "rank": 2328,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "alegrías"
+  ]
+ },
+ {
+  "id": "llorar",
+  "es": "llorar",
+  "pos": "verb",
+  "ru": "плакать",
+  "example_es": "El bebé llora toda la noche.",
+  "example_ru": "Ребёнок плачет всю ночь.",
+  "rank": 1595
+ },
+ {
+  "id": "vergüenza",
+  "es": "vergüenza",
+  "pos": "noun",
+  "ru": "стыд, смущение",
+  "example_es": "Me da vergüenza hablar en público.",
+  "example_ru": "Мне стыдно выступать на публике.",
+  "rank": 1698,
+  "article": "la",
+  "gender": "f"
+ },
+ {
+  "id": "enfadado",
+  "es": "enfadado",
+  "pos": "adj",
+  "ru": "сердитый, рассерженный",
+  "example_es": "¿Estás enfadado conmigo?",
+  "example_ru": "Ты на меня сердишься?",
+  "rank": 2777,
+  "forms": [
+   "enfadada",
+   "enfadados",
+   "enfadadas"
+  ]
+ },
+ {
+  "id": "tristeza",
+  "es": "tristeza",
+  "pos": "noun",
+  "ru": "грусть, печаль",
+  "example_es": "Sentí mucha tristeza al irme.",
+  "example_ru": "Мне было очень грустно уезжать.",
+  "rank": 5094,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "tristezas"
+  ]
+ },
+ {
+  "id": "enamorado",
+  "es": "enamorado",
+  "pos": "adj",
+  "ru": "влюблённый",
+  "example_es": "Está enamorado de su compañera.",
+  "example_ru": "Он влюблён в свою коллегу.",
+  "rank": 1756,
+  "forms": [
+   "enamorada",
+   "enamorados",
+   "enamoradas"
+  ]
+ },
+ {
+  "id": "asustado",
+  "es": "asustado",
+  "pos": "adj",
+  "ru": "испуганный",
+  "example_es": "El niño está asustado por la tormenta.",
+  "example_ru": "Ребёнок напуган грозой.",
+  "rank": 2015,
+  "forms": [
+   "asustada",
+   "asustados",
+   "asustadas"
+  ]
+ },
+ {
+  "id": "reír",
+  "es": "reír",
+  "pos": "verb",
+  "ru": "смеяться",
+  "example_es": "Nos reímos mucho con sus historias.",
+  "example_ru": "Мы много смеёмся над его историями.",
+  "rank": 3669,
+  "forms": [
+   "río",
+   "ríe",
+   "ríen",
+   "rió"
+  ]
+ },
+ {
+  "id": "sorprendido",
+  "es": "sorprendido",
+  "pos": "adj",
+  "ru": "удивлённый",
+  "example_es": "Estoy sorprendido con la noticia.",
+  "example_ru": "Я удивлён этой новостью.",
+  "rank": 3711,
+  "forms": [
+   "sorprendida",
+   "sorprendidos",
+   "sorprendidas"
+  ]
+ },
+ {
+  "id": "molestar",
+  "es": "molestar",
+  "pos": "verb",
+  "ru": "мешать, беспокоить; раздражать",
+  "example_es": "¿Te molesta la música?",
+  "example_ru": "Тебе мешает музыка?",
+  "rank": 4396
+ },
+ {
+  "id": "harto",
+  "es": "harto",
+  "pos": "adj",
+  "ru": "сытый по горло (кем-л./чем-л.)",
+  "example_es": "Estoy harto de este ruido.",
+  "example_ru": "Мне надоел этот шум.",
+  "rank": 3239,
+  "forms": [
+   "harta",
+   "hartos",
+   "hartas"
+  ]
  }
 ]

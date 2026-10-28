@@ -282,5 +282,339 @@
    "sanos",
    "sanas"
   ]
+ },
+ {
+  "id": "corazón",
+  "es": "corazón",
+  "pos": "noun",
+  "ru": "сердце",
+  "example_es": "El corazón es un músculo.",
+  "example_ru": "Сердце — это мышца.",
+  "rank": 355,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "corazones"
+  ]
+ },
+ {
+  "id": "alergia",
+  "es": "alergia",
+  "pos": "noun",
+  "ru": "аллергия",
+  "example_es": "Tengo alergia a los gatos.",
+  "example_ru": "У меня аллергия на кошек.",
+  "rank": 12466,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "alergias"
+  ]
+ },
+ {
+  "id": "accidente",
+  "es": "accidente",
+  "pos": "noun",
+  "ru": "авария, несчастный случай",
+  "example_es": "Tuvo un accidente de coche.",
+  "example_ru": "Он попал в автомобильную аварию.",
+  "rank": 800,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "accidentes"
+  ]
+ },
+ {
+  "id": "paciente",
+  "es": "paciente",
+  "pos": "noun",
+  "ru": "пациент, пациентка",
+  "example_es": "El médico tiene muchos pacientes hoy.",
+  "example_ru": "Сегодня у врача много пациентов.",
+  "rank": 1214,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "pacientes"
+  ]
+ },
+ {
+  "id": "cuello",
+  "es": "cuello",
+  "pos": "noun",
+  "ru": "шея",
+  "example_es": "Me duele el cuello.",
+  "example_ru": "У меня болит шея.",
+  "rank": 1321,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "cuellos"
+  ]
+ },
+ {
+  "id": "brazo",
+  "es": "brazo",
+  "pos": "noun",
+  "ru": "рука (от плеча до кисти)",
+  "example_es": "Me rompí el brazo jugando al fútbol.",
+  "example_ru": "Я сломал руку, играя в футбол.",
+  "rank": 1378,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "brazos"
+  ]
+ },
+ {
+  "id": "enfermedad",
+  "es": "enfermedad",
+  "pos": "noun",
+  "ru": "болезнь",
+  "example_es": "Es una enfermedad muy rara.",
+  "example_ru": "Это очень редкая болезнь.",
+  "rank": 1607,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "enfermedades"
+  ]
+ },
+ {
+  "id": "pierna",
+  "es": "pierna",
+  "pos": "noun",
+  "ru": "нога",
+  "example_es": "Tengo la pierna rota.",
+  "example_ru": "У меня сломана нога.",
+  "rank": 1676,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "piernas"
+  ]
+ },
+ {
+  "id": "herida",
+  "es": "herida",
+  "pos": "noun",
+  "ru": "рана",
+  "example_es": "Tienes una herida en la mano.",
+  "example_ru": "У тебя рана на руке.",
+  "rank": 1759,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "heridas"
+  ]
+ },
+ {
+  "id": "grave",
+  "es": "grave",
+  "pos": "adj",
+  "ru": "серьёзный, тяжёлый",
+  "example_es": "No es nada grave, solo un resfriado.",
+  "example_ru": "Ничего серьёзного, просто простуда.",
+  "rank": 1771,
+  "forms": [
+   "graves"
+  ]
+ },
+ {
+  "id": "medicina",
+  "es": "medicina",
+  "pos": "noun",
+  "ru": "лекарство; медицина",
+  "example_es": "Toma esta medicina dos veces al día.",
+  "example_ru": "Принимай это лекарство два раза в день.",
+  "rank": 1838,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "medicinas"
+  ]
+ },
+ {
+  "id": "dedo",
+  "es": "dedo",
+  "pos": "noun",
+  "ru": "палец",
+  "example_es": "Me corté el dedo con un cuchillo.",
+  "example_ru": "Я порезал палец ножом.",
+  "rank": 1889,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "dedos"
+  ]
+ },
+ {
+  "id": "pecho",
+  "es": "pecho",
+  "pos": "noun",
+  "ru": "грудь",
+  "example_es": "Siento un dolor en el pecho.",
+  "example_ru": "Я чувствую боль в груди.",
+  "rank": 1970,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "pechos"
+  ]
+ },
+ {
+  "id": "respirar",
+  "es": "respirar",
+  "pos": "verb",
+  "ru": "дышать",
+  "example_es": "Respira despacio y tranquilo.",
+  "example_ru": "Дыши медленно и спокойно.",
+  "rank": 2364
+ },
+ {
+  "id": "ambulancia",
+  "es": "ambulancia",
+  "pos": "noun",
+  "ru": "скорая помощь",
+  "example_es": "¡Llamen a una ambulancia, por favor!",
+  "example_ru": "Вызовите скорую, пожалуйста!",
+  "rank": 2580,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "ambulancias"
+  ]
+ },
+ {
+  "id": "garganta",
+  "es": "garganta",
+  "pos": "noun",
+  "ru": "горло",
+  "example_es": "Tengo dolor de garganta.",
+  "example_ru": "У меня болит горло.",
+  "rank": 2887,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "gargantas"
+  ]
+ },
+ {
+  "id": "enfermero",
+  "es": "enfermero",
+  "pos": "noun",
+  "ru": "медбрат, медсестра",
+  "example_es": "La enfermera me toma la temperatura.",
+  "example_ru": "Медсестра измеряет мне температуру.",
+  "rank": 13584,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "enfermera",
+   "enfermeros",
+   "enfermeras"
+  ]
+ },
+ {
+  "id": "receta",
+  "es": "receta",
+  "pos": "noun",
+  "ru": "рецепт",
+  "example_es": "Necesitas una receta para este medicamento.",
+  "example_ru": "Для этого лекарства нужен рецепт.",
+  "rank": 4599,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "recetas"
+  ]
+ },
+ {
+  "id": "rodilla",
+  "es": "rodilla",
+  "pos": "noun",
+  "ru": "колено",
+  "example_es": "Me duele la rodilla al correr.",
+  "example_ru": "У меня болит колено, когда я бегаю.",
+  "rank": 5318,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "rodillas"
+  ]
+ },
+ {
+  "id": "urgencias",
+  "es": "urgencias",
+  "pos": "noun",
+  "ru": "отделение неотложной помощи",
+  "example_es": "Fuimos a urgencias por la noche.",
+  "example_ru": "Ночью мы поехали в травмпункт.",
+  "rank": 5554,
+  "article": "las",
+  "gender": "f"
+ },
+ {
+  "id": "curar",
+  "es": "curar",
+  "pos": "verb",
+  "ru": "лечить, вылечивать",
+  "example_es": "Este medicamento cura la infección.",
+  "example_ru": "Это лекарство лечит инфекцию.",
+  "rank": 5653
+ },
+ {
+  "id": "diente",
+  "es": "diente",
+  "pos": "noun",
+  "ru": "зуб",
+  "example_es": "Me lavo los dientes después de comer.",
+  "example_ru": "Я чищу зубы после еды.",
+  "rank": 5809,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "dientes"
+  ]
+ },
+ {
+  "id": "dentista",
+  "es": "dentista",
+  "pos": "noun",
+  "ru": "стоматолог, зубной врач",
+  "example_es": "Tengo cita con el dentista el lunes.",
+  "example_ru": "В понедельник я записан к стоматологу.",
+  "rank": 5783,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "dentistas"
+  ]
+ },
+ {
+  "id": "gripe",
+  "es": "gripe",
+  "pos": "noun",
+  "ru": "грипп",
+  "example_es": "Estoy en casa con gripe.",
+  "example_ru": "Я сижу дома с гриппом.",
+  "rank": 6481,
+  "article": "la",
+  "gender": "f"
+ },
+ {
+  "id": "tos",
+  "es": "tos",
+  "pos": "noun",
+  "ru": "кашель",
+  "example_es": "Tengo tos y un poco de fiebre.",
+  "example_ru": "У меня кашель и небольшая температура.",
+  "rank": 9618,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "toses"
+  ]
  }
 ]

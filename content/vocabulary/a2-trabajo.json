@@ -164,7 +164,7 @@
   "article": "el",
   "gender": "m",
   "forms": [
-   "examenes"
+   "exámenes"
   ]
  },
  {
@@ -322,6 +322,312 @@
    "ocupada",
    "ocupados",
    "ocupadas"
+  ]
+ },
+ {
+  "id": "puesto",
+  "es": "puesto",
+  "pos": "noun",
+  "ru": "должность, место",
+  "example_es": "Busco un puesto de recepcionista.",
+  "example_ru": "Я ищу место администратора.",
+  "rank": 625,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "puestos"
+  ]
+ },
+ {
+  "id": "biblioteca",
+  "es": "biblioteca",
+  "pos": "noun",
+  "ru": "библиотека",
+  "example_es": "Estudio en la biblioteca de la universidad.",
+  "example_ru": "Я занимаюсь в университетской библиотеке.",
+  "rank": 2948,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "bibliotecas"
+  ]
+ },
+ {
+  "id": "beca",
+  "es": "beca",
+  "pos": "noun",
+  "ru": "стипендия, грант",
+  "example_es": "Tengo una beca para estudiar en Chile.",
+  "example_ru": "У меня стипендия на учёбу в Чили.",
+  "rank": 5927,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "becas"
+  ]
+ },
+ {
+  "id": "negocio",
+  "es": "negocio",
+  "pos": "noun",
+  "ru": "бизнес, дело",
+  "example_es": "Mi tío tiene un negocio familiar.",
+  "example_ru": "У моего дяди семейный бизнес.",
+  "rank": 757,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "negocios"
+  ]
+ },
+ {
+  "id": "carrera",
+  "es": "carrera",
+  "pos": "noun",
+  "ru": "учёба в вузе, специальность; карьера",
+  "example_es": "Estudio la carrera de Medicina.",
+  "example_ru": "Я учусь на медицинском.",
+  "rank": 862,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "carreras"
+  ]
+ },
+ {
+  "id": "director",
+  "es": "director",
+  "pos": "noun",
+  "ru": "директор, руководитель",
+  "example_es": "La directora de la escuela es muy simpática.",
+  "example_ru": "Директор школы очень приятная.",
+  "rank": 967,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "directora",
+   "directores",
+   "directoras"
+  ]
+ },
+ {
+  "id": "éxito",
+  "es": "éxito",
+  "pos": "noun",
+  "ru": "успех",
+  "example_es": "La reunión fue un éxito.",
+  "example_ru": "Встреча прошла успешно.",
+  "rank": 1138,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "éxitos"
+  ]
+ },
+ {
+  "id": "colegio",
+  "es": "colegio",
+  "pos": "noun",
+  "ru": "школа",
+  "example_es": "¿A qué colegio va tu hija?",
+  "example_ru": "В какую школу ходит твоя дочь?",
+  "rank": 1539,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "colegios"
+  ]
+ },
+ {
+  "id": "empleo",
+  "es": "empleo",
+  "pos": "noun",
+  "ru": "работа, занятость",
+  "example_es": "Es difícil encontrar empleo en mi ciudad.",
+  "example_ru": "В моём городе трудно найти работу.",
+  "rank": 2337,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "empleos"
+  ]
+ },
+ {
+  "id": "tarea",
+  "es": "tarea",
+  "pos": "noun",
+  "ru": "задание, задача",
+  "example_es": "Tengo muchas tareas esta semana.",
+  "example_ru": "На этой неделе у меня много задач.",
+  "rank": 2242,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "tareas"
+  ]
+ },
+ {
+  "id": "firmar",
+  "es": "firmar",
+  "pos": "verb",
+  "ru": "подписывать",
+  "example_es": "Mañana firmo el contrato.",
+  "example_ru": "Завтра я подписываю договор.",
+  "rank": 2816
+ },
+ {
+  "id": "título",
+  "es": "título",
+  "pos": "noun",
+  "ru": "диплом; заголовок",
+  "example_es": "Tiene un título de ingeniero.",
+  "example_ru": "У него диплом инженера.",
+  "rank": 2975,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "títulos"
+  ]
+ },
+ {
+  "id": "profesión",
+  "es": "profesión",
+  "pos": "noun",
+  "ru": "профессия",
+  "example_es": "¿Cuál es tu profesión?",
+  "example_ru": "Кто ты по профессии?",
+  "rank": 4783,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "profesiones"
+  ]
+ },
+ {
+  "id": "empleado",
+  "es": "empleado",
+  "pos": "noun",
+  "ru": "служащий, сотрудник",
+  "example_es": "La empresa tiene cien empleados.",
+  "example_ru": "В компании сто сотрудников.",
+  "rank": 3859,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "empleada",
+   "empleados",
+   "empleadas"
+  ]
+ },
+ {
+  "id": "abogado",
+  "es": "abogado",
+  "pos": "noun",
+  "ru": "юрист, адвокат",
+  "example_es": "Mi hermana trabaja de abogada.",
+  "example_ru": "Моя сестра работает юристом.",
+  "rank": 768,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "abogada",
+   "abogados",
+   "abogadas"
+  ]
+ },
+ {
+  "id": "deberes",
+  "es": "deberes",
+  "pos": "noun",
+  "ru": "домашнее задание",
+  "example_es": "Los niños hacen los deberes después de comer.",
+  "example_ru": "Дети делают уроки после обеда.",
+  "rank": 4869,
+  "article": "los",
+  "gender": "m"
+ },
+ {
+  "id": "contratar",
+  "es": "contratar",
+  "pos": "verb",
+  "ru": "нанимать",
+  "example_es": "La empresa va a contratar a dos personas.",
+  "example_ru": "Компания собирается нанять двух человек.",
+  "rank": 5035
+ },
+ {
+  "id": "informe",
+  "es": "informe",
+  "pos": "noun",
+  "ru": "отчёт, доклад",
+  "example_es": "Tengo que terminar el informe hoy.",
+  "example_ru": "Мне нужно закончить отчёт сегодня.",
+  "rank": 1257,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "informes"
+  ]
+ },
+ {
+  "id": "secretario",
+  "es": "secretario",
+  "pos": "noun",
+  "ru": "секретарь",
+  "example_es": "La secretaria organiza las reuniones del jefe.",
+  "example_ru": "Секретарь организует встречи начальника.",
+  "rank": 3709,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "secretaria",
+   "secretarios",
+   "secretarias"
+  ]
+ },
+ {
+  "id": "despedir",
+  "es": "despedir",
+  "pos": "verb",
+  "ru": "увольнять; провожать",
+  "example_es": "Despidieron a tres empleados.",
+  "example_ru": "Уволили трёх сотрудников.",
+  "rank": 6245,
+  "forms": [
+   "despido",
+   "despide",
+   "despidió",
+   "despidieron"
+  ]
+ },
+ {
+  "id": "alumno",
+  "es": "alumno",
+  "pos": "noun",
+  "ru": "ученик, студент",
+  "example_es": "En mi clase hay veinte alumnos.",
+  "example_ru": "В моём классе двадцать учеников.",
+  "rank": 8085,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "alumna",
+   "alumnos",
+   "alumnas"
+  ]
+ },
+ {
+  "id": "aprobar",
+  "es": "aprobar",
+  "pos": "verb",
+  "ru": "сдать (экзамен); одобрять",
+  "example_es": "¡He aprobado el examen!",
+  "example_ru": "Я сдал экзамен!",
+  "rank": 10943,
+  "forms": [
+   "apruebo",
+   "apruebas",
+   "aprueba"
   ]
  }
 ]

@@ -372,7 +372,7 @@
   "example_ru": "Это молодая учительница.",
   "rank": 506,
   "forms": [
-   "jovenes"
+   "jóvenes"
   ]
  },
  {
@@ -413,6 +413,180 @@
    "simpática",
    "simpáticos",
    "simpáticas"
+  ]
+ },
+ {
+  "id": "mamá",
+  "es": "mamá",
+  "pos": "noun",
+  "ru": "мама",
+  "example_es": "Mi mamá cocina muy bien.",
+  "example_ru": "Моя мама очень хорошо готовит.",
+  "rank": 196,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "mamás"
+  ]
+ },
+ {
+  "id": "papá",
+  "es": "papá",
+  "pos": "noun",
+  "ru": "папа",
+  "example_es": "Mi papá trabaja en un banco.",
+  "example_ru": "Мой папа работает в банке.",
+  "rank": 198,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "papás"
+  ]
+ },
+ {
+  "id": "marido",
+  "es": "marido",
+  "pos": "noun",
+  "ru": "муж",
+  "example_es": "Su marido es médico.",
+  "example_ru": "Её муж — врач.",
+  "rank": 562,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "maridos"
+  ]
+ },
+ {
+  "id": "esposa",
+  "es": "esposa",
+  "pos": "noun",
+  "ru": "жена, супруга",
+  "example_es": "Te presento a mi esposa.",
+  "example_ru": "Знакомься, это моя жена.",
+  "rank": 364,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "esposas"
+  ]
+ },
+ {
+  "id": "tío",
+  "es": "tío",
+  "pos": "noun",
+  "ru": "дядя",
+  "example_es": "Mi tío vive en el campo.",
+  "example_ru": "Мой дядя живёт в деревне.",
+  "rank": 334,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "tíos"
+  ]
+ },
+ {
+  "id": "tía",
+  "es": "tía",
+  "pos": "noun",
+  "ru": "тётя",
+  "example_es": "Mi tía tiene tres hijos.",
+  "example_ru": "У моей тёти трое детей.",
+  "rank": 995,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "tías"
+  ]
+ },
+ {
+  "id": "edad",
+  "es": "edad",
+  "pos": "noun",
+  "ru": "возраст",
+  "example_es": "¿Qué edad tiene tu hijo?",
+  "example_ru": "Сколько лет твоему сыну?",
+  "rank": 736,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "edades"
+  ]
+ },
+ {
+  "id": "novia",
+  "es": "novia",
+  "pos": "noun",
+  "ru": "девушка (подруга); невеста",
+  "example_es": "Mi novia habla tres idiomas.",
+  "example_ru": "Моя девушка говорит на трёх языках.",
+  "rank": 720,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "novias"
+  ]
+ },
+ {
+  "id": "compañero",
+  "es": "compañero",
+  "pos": "noun",
+  "ru": "товарищ; коллега, одноклассник",
+  "example_es": "Mi compañero de clase es muy amable.",
+  "example_ru": "Мой одноклассник очень вежливый.",
+  "rank": 1101,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "compañeros",
+   "compañera",
+   "compañeras"
+  ]
+ },
+ {
+  "id": "primo",
+  "es": "primo",
+  "pos": "noun",
+  "ru": "двоюродный брат",
+  "example_es": "Mi primo tiene diez años.",
+  "example_ru": "Моему двоюродному брату десять лет.",
+  "rank": 1991,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "primos",
+   "prima",
+   "primas"
+  ]
+ },
+ {
+  "id": "apellido",
+  "es": "apellido",
+  "pos": "noun",
+  "ru": "фамилия",
+  "example_es": "¿Cuál es tu apellido?",
+  "example_ru": "Какая у тебя фамилия?",
+  "rank": 3430,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "apellidos"
+  ]
+ },
+ {
+  "id": "nieto",
+  "es": "nieto",
+  "pos": "noun",
+  "ru": "внук",
+  "example_es": "La abuela juega con su nieto.",
+  "example_ru": "Бабушка играет с внуком.",
+  "rank": 4625,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "nietos",
+   "nieta",
+   "nietas"
   ]
  }
 ]

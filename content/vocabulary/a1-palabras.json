@@ -234,6 +234,7 @@
   "example_ru": "Это хорошая книга.",
   "rank": 50,
   "forms": [
+   "buen",
    "buena",
    "buenos",
    "buenas"
@@ -276,5 +277,137 @@
   "forms": [
    "difíciles"
   ]
+ },
+ {
+  "id": "de",
+  "es": "de",
+  "pos": "prep",
+  "ru": "из; от; (принадлежность)",
+  "example_es": "Es el coche de mi padre.",
+  "example_ru": "Это машина моего отца.",
+  "rank": 1
+ },
+ {
+  "id": "y",
+  "es": "y",
+  "pos": "conj",
+  "ru": "и",
+  "example_es": "Tengo un hermano y una hermana.",
+  "example_ru": "У меня есть брат и сестра.",
+  "rank": 7
+ },
+ {
+  "id": "en",
+  "es": "en",
+  "pos": "prep",
+  "ru": "в; на",
+  "example_es": "Mi madre está en casa.",
+  "example_ru": "Моя мама дома.",
+  "rank": 9
+ },
+ {
+  "id": "qué",
+  "es": "qué",
+  "pos": "pron",
+  "ru": "что; какой",
+  "example_es": "¿Qué haces?",
+  "example_ru": "Что ты делаешь?",
+  "rank": 13
+ },
+ {
+  "id": "yo",
+  "es": "yo",
+  "pos": "pron",
+  "ru": "я",
+  "example_es": "Yo hablo un poco de español.",
+  "example_ru": "Я немного говорю по-испански.",
+  "rank": 30
+ },
+ {
+  "id": "él",
+  "es": "él",
+  "pos": "pron",
+  "ru": "он",
+  "example_es": "Él es mi hermano.",
+  "example_ru": "Он мой брат.",
+  "rank": 52
+ },
+ {
+  "id": "tú",
+  "es": "tú",
+  "pos": "pron",
+  "ru": "ты",
+  "example_es": "¿Tú también vives aquí?",
+  "example_ru": "Ты тоже здесь живёшь?",
+  "rank": 56
+ },
+ {
+  "id": "cómo",
+  "es": "cómo",
+  "pos": "adv",
+  "ru": "как",
+  "example_es": "¿Cómo te llamas?",
+  "example_ru": "Как тебя зовут?",
+  "rank": 59
+ },
+ {
+  "id": "o",
+  "es": "o",
+  "pos": "conj",
+  "ru": "или",
+  "example_es": "¿Té o café?",
+  "example_ru": "Чай или кофе?",
+  "rank": 61
+ },
+ {
+  "id": "ella",
+  "es": "ella",
+  "pos": "pron",
+  "ru": "она",
+  "example_es": "Ella trabaja en un hotel.",
+  "example_ru": "Она работает в отеле.",
+  "rank": 66
+ },
+ {
+  "id": "usted",
+  "es": "usted",
+  "pos": "pron",
+  "ru": "вы (вежливое)",
+  "example_es": "¿Cómo está usted?",
+  "example_ru": "Как вы поживаете?",
+  "rank": 86,
+  "forms": [
+   "ustedes"
+  ]
+ },
+ {
+  "id": "quién",
+  "es": "quién",
+  "pos": "pron",
+  "ru": "кто",
+  "example_es": "¿Quién es ese chico?",
+  "example_ru": "Кто этот парень?",
+  "rank": 93,
+  "forms": [
+   "quiénes"
+  ]
+ },
+ {
+  "id": "dónde",
+  "es": "dónde",
+  "pos": "adv",
+  "ru": "где",
+  "example_es": "¿Dónde vives?",
+  "example_ru": "Где ты живёшь?",
+  "rank": 99
+ },
+ {
+  "id": "cuándo",
+  "es": "cuándo",
+  "pos": "adv",
+  "ru": "когда",
+  "example_es": "¿Cuándo es tu cumpleaños?",
+  "example_ru": "Когда у тебя день рождения?",
+  "rank": 394
  }
 ]

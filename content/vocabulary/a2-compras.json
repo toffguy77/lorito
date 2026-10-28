@@ -1,0 +1,615 @@
+[
+ {
+  "id": "tarjeta",
+  "es": "tarjeta",
+  "pos": "noun",
+  "ru": "карта (банковская)",
+  "example_es": "¿Puedo pagar con tarjeta?",
+  "example_ru": "Можно расплатиться картой?",
+  "rank": 1336,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "tarjetas"
+  ]
+ },
+ {
+  "id": "efectivo",
+  "es": "efectivo",
+  "pos": "noun",
+  "ru": "наличные",
+  "example_es": "Solo aceptan pago en efectivo.",
+  "example_ru": "Здесь принимают только наличные.",
+  "rank": 2203,
+  "article": "el",
+  "gender": "m"
+ },
+ {
+  "id": "cambio",
+  "es": "cambio",
+  "pos": "noun",
+  "ru": "сдача; обмен",
+  "example_es": "Aquí tiene su cambio, señora.",
+  "example_ru": "Вот ваша сдача, сеньора.",
+  "rank": 640,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "cambios"
+  ]
+ },
+ {
+  "id": "moneda",
+  "es": "moneda",
+  "pos": "noun",
+  "ru": "монета; валюта",
+  "example_es": "No tengo monedas para el café.",
+  "example_ru": "У меня нет мелочи на кофе.",
+  "rank": 3717,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "monedas"
+  ]
+ },
+ {
+  "id": "compra",
+  "es": "compra",
+  "pos": "noun",
+  "ru": "покупка",
+  "example_es": "Hago la compra los sábados.",
+  "example_ru": "Я хожу за продуктами по субботам.",
+  "rank": 2593,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "compras"
+  ]
+ },
+ {
+  "id": "ir-de-compras",
+  "es": "ir de compras",
+  "pos": "phrase",
+  "ru": "ходить по магазинам",
+  "example_es": "Me encanta ir de compras con mi hermana.",
+  "example_ru": "Обожаю ходить по магазинам с сестрой.",
+  "rank": 128
+ },
+ {
+  "id": "vender",
+  "es": "vender",
+  "pos": "verb",
+  "ru": "продавать",
+  "example_es": "En esta tienda venden ropa de niños.",
+  "example_ru": "В этом магазине продают детскую одежду.",
+  "rank": 1522
+ },
+ {
+  "id": "vendedor",
+  "es": "vendedor",
+  "pos": "noun",
+  "ru": "продавец",
+  "example_es": "La vendedora me ayudó mucho.",
+  "example_ru": "Продавщица мне очень помогла.",
+  "rank": 4438,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "vendedora",
+   "vendedores",
+   "vendedoras"
+  ]
+ },
+ {
+  "id": "supermercado",
+  "es": "supermercado",
+  "pos": "noun",
+  "ru": "супермаркет",
+  "example_es": "El supermercado cierra a las diez.",
+  "example_ru": "Супермаркет закрывается в десять.",
+  "rank": 6786,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "supermercados"
+  ]
+ },
+ {
+  "id": "dependiente",
+  "es": "dependiente",
+  "pos": "noun",
+  "ru": "продавец (в магазине)",
+  "example_es": "La dependienta me trajo otra talla.",
+  "example_ru": "Продавщица принесла мне другой размер.",
+  "rank": 18018,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "dependienta",
+   "dependientes",
+   "dependientas"
+  ]
+ },
+ {
+  "id": "cola",
+  "es": "cola",
+  "pos": "noun",
+  "ru": "очередь",
+  "example_es": "Hay mucha cola en la caja.",
+  "example_ru": "На кассе большая очередь.",
+  "rank": 2440,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "colas"
+  ]
+ },
+ {
+  "id": "carrito",
+  "es": "carrito",
+  "pos": "noun",
+  "ru": "тележка (в магазине)",
+  "example_es": "Necesito un carrito para todo esto.",
+  "example_ru": "Мне нужна тележка для всего этого.",
+  "rank": 11244,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "carritos"
+  ]
+ },
+ {
+  "id": "producto",
+  "es": "producto",
+  "pos": "noun",
+  "ru": "товар, продукт",
+  "example_es": "Estos productos son muy buenos.",
+  "example_ru": "Эти товары очень хорошие.",
+  "rank": 3670,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "productos"
+  ]
+ },
+ {
+  "id": "marca",
+  "es": "marca",
+  "pos": "noun",
+  "ru": "марка, бренд",
+  "example_es": "¿De qué marca es tu bolso?",
+  "example_ru": "Какой марки твоя сумка?",
+  "rank": 1835,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "marcas"
+  ]
+ },
+ {
+  "id": "calidad",
+  "es": "calidad",
+  "pos": "noun",
+  "ru": "качество",
+  "example_es": "Es caro, pero de buena calidad.",
+  "example_ru": "Дорого, но хорошего качества.",
+  "rank": 3409,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "calidades"
+  ]
+ },
+ {
+  "id": "centro-comercial",
+  "es": "centro comercial",
+  "pos": "phrase",
+  "ru": "торговый центр",
+  "example_es": "El sábado fuimos al centro comercial.",
+  "example_ru": "В субботу мы ходили в торговый центр.",
+  "rank": 820
+ },
+ {
+  "id": "tamaño",
+  "es": "tamaño",
+  "pos": "noun",
+  "ru": "размер, величина",
+  "example_es": "Quiero una caja de tamaño mediano.",
+  "example_ru": "Мне нужна коробка среднего размера.",
+  "rank": 2053,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "tamaños"
+  ]
+ },
+ {
+  "id": "cantidad",
+  "es": "cantidad",
+  "pos": "noun",
+  "ru": "количество; сумма",
+  "example_es": "¿Qué cantidad necesita usted?",
+  "example_ru": "Какое количество вам нужно?",
+  "rank": 1590,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "cantidades"
+  ]
+ },
+ {
+  "id": "kilo",
+  "es": "kilo",
+  "pos": "noun",
+  "ru": "килограмм, кило",
+  "example_es": "Deme un kilo de tomates, por favor.",
+  "example_ru": "Дайте килограмм помидоров, пожалуйста.",
+  "rank": 8832,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "kilos"
+  ]
+ },
+ {
+  "id": "oferta",
+  "es": "oferta",
+  "pos": "noun",
+  "ru": "спецпредложение, акция",
+  "example_es": "Hoy los zapatos están en oferta.",
+  "example_ru": "Сегодня обувь продаётся по акции.",
+  "rank": 1746,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "ofertas"
+  ]
+ },
+ {
+  "id": "descuento",
+  "es": "descuento",
+  "pos": "noun",
+  "ru": "скидка",
+  "example_es": "Hay un descuento del veinte por ciento.",
+  "example_ru": "Есть скидка двадцать процентов.",
+  "rank": 7103,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "descuentos"
+  ]
+ },
+ {
+  "id": "rebajas",
+  "es": "rebajas",
+  "pos": "noun",
+  "ru": "распродажа, скидки",
+  "example_es": "En enero empiezan las rebajas.",
+  "example_ru": "В январе начинаются распродажи.",
+  "rank": 24342,
+  "article": "las",
+  "gender": "f",
+  "forms": [
+   "rebaja"
+  ]
+ },
+ {
+  "id": "gratis",
+  "es": "gratis",
+  "pos": "adv",
+  "ru": "бесплатно",
+  "example_es": "La segunda bebida es gratis.",
+  "example_ru": "Второй напиток бесплатно.",
+  "rank": 1831
+ },
+ {
+  "id": "total",
+  "es": "total",
+  "pos": "noun",
+  "ru": "итог, общая сумма",
+  "example_es": "¿Cuánto es el total?",
+  "example_ru": "Сколько всего?",
+  "rank": 1623,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "totales"
+  ]
+ },
+ {
+  "id": "recibo",
+  "es": "recibo",
+  "pos": "noun",
+  "ru": "чек, квитанция",
+  "example_es": "Guarde el recibo, por favor.",
+  "example_ru": "Сохраните чек, пожалуйста.",
+  "rank": 3635,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "recibos"
+  ]
+ },
+ {
+  "id": "factura",
+  "es": "factura",
+  "pos": "noun",
+  "ru": "счёт (документ), квитанция",
+  "example_es": "Tengo que pagar la factura de la luz.",
+  "example_ru": "Мне надо оплатить счёт за свет.",
+  "rank": 6141,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "facturas"
+  ]
+ },
+ {
+  "id": "pago",
+  "es": "pago",
+  "pos": "noun",
+  "ru": "оплата, платёж",
+  "example_es": "El pago se hace en línea.",
+  "example_ru": "Оплата производится онлайн.",
+  "rank": 1902,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "pagos"
+  ]
+ },
+ {
+  "id": "devolución",
+  "es": "devolución",
+  "pos": "noun",
+  "ru": "возврат (товара, денег)",
+  "example_es": "Puede hacer la devolución en quince días.",
+  "example_ru": "Вернуть товар можно в течение пятнадцати дней.",
+  "rank": 21391,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "devoluciones"
+  ]
+ },
+ {
+  "id": "gastar",
+  "es": "gastar",
+  "pos": "verb",
+  "ru": "тратить",
+  "example_es": "Gasto mucho dinero en ropa.",
+  "example_ru": "Я трачу много денег на одежду.",
+  "rank": 4902
+ },
+ {
+  "id": "ahorrar",
+  "es": "ahorrar",
+  "pos": "verb",
+  "ru": "копить; экономить",
+  "example_es": "Ahorro para comprar un coche.",
+  "example_ru": "Я коплю на машину.",
+  "rank": 7279
+ },
+ {
+  "id": "prestar",
+  "es": "prestar",
+  "pos": "verb",
+  "ru": "одалживать, давать в долг",
+  "example_es": "¿Me prestas diez euros?",
+  "example_ru": "Одолжишь мне десять евро?",
+  "rank": 7892
+ },
+ {
+  "id": "gasto",
+  "es": "gasto",
+  "pos": "noun",
+  "ru": "расход, трата",
+  "example_es": "Este mes tengo muchos gastos.",
+  "example_ru": "В этом месяце у меня много расходов.",
+  "rank": 10985,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "gastos"
+  ]
+ },
+ {
+  "id": "ahorros",
+  "es": "ahorros",
+  "pos": "noun",
+  "ru": "сбережения",
+  "example_es": "Gasté todos mis ahorros en el viaje.",
+  "example_ru": "Я потратил все сбережения на поездку.",
+  "rank": 7650,
+  "article": "los",
+  "gender": "m",
+  "forms": [
+   "ahorro"
+  ]
+ },
+ {
+  "id": "cartera",
+  "es": "cartera",
+  "pos": "noun",
+  "ru": "бумажник, кошелёк",
+  "example_es": "Perdí la cartera en el metro.",
+  "example_ru": "Я потерял бумажник в метро.",
+  "rank": 3517,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "carteras"
+  ]
+ },
+ {
+  "id": "cajero",
+  "es": "cajero",
+  "pos": "noun",
+  "ru": "банкомат; кассир",
+  "example_es": "¿Hay un cajero cerca de aquí?",
+  "example_ru": "Здесь поблизости есть банкомат?",
+  "rank": 9530,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "cajera",
+   "cajeros",
+   "cajeras"
+  ]
+ },
+ {
+  "id": "transferencia",
+  "es": "transferencia",
+  "pos": "noun",
+  "ru": "перевод (денежный)",
+  "example_es": "Te hago una transferencia mañana.",
+  "example_ru": "Я завтра сделаю тебе перевод.",
+  "rank": 6573,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "transferencias"
+  ]
+ },
+ {
+  "id": "préstamo",
+  "es": "préstamo",
+  "pos": "noun",
+  "ru": "кредит, заём",
+  "example_es": "Pedimos un préstamo al banco.",
+  "example_ru": "Мы взяли кредит в банке.",
+  "rank": 4771,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "préstamos"
+  ]
+ },
+ {
+  "id": "deuda",
+  "es": "deuda",
+  "pos": "noun",
+  "ru": "долг",
+  "example_es": "Por fin no tengo deudas.",
+  "example_ru": "Наконец-то у меня нет долгов.",
+  "rank": 3129,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "deudas"
+  ]
+ },
+ {
+  "id": "dólar",
+  "es": "dólar",
+  "pos": "noun",
+  "ru": "доллар",
+  "example_es": "Cuesta cincuenta dólares.",
+  "example_ru": "Это стоит пятьдесят долларов.",
+  "rank": 4288,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "dólares"
+  ]
+ },
+ {
+  "id": "propina",
+  "es": "propina",
+  "pos": "noun",
+  "ru": "чаевые",
+  "example_es": "Dejamos una propina al camarero.",
+  "example_ru": "Мы оставили официанту чаевые.",
+  "rank": 7241,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "propinas"
+  ]
+ },
+ {
+  "id": "pedido",
+  "es": "pedido",
+  "pos": "noun",
+  "ru": "заказ",
+  "example_es": "Mi pedido llega el lunes.",
+  "example_ru": "Мой заказ придёт в понедельник.",
+  "rank": 1361,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "pedidos"
+  ]
+ },
+ {
+  "id": "envío",
+  "es": "envío",
+  "pos": "noun",
+  "ru": "доставка, отправка",
+  "example_es": "El envío es gratis.",
+  "example_ru": "Доставка бесплатная.",
+  "rank": 5189,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "envíos"
+  ]
+ },
+ {
+  "id": "garantía",
+  "es": "garantía",
+  "pos": "noun",
+  "ru": "гарантия",
+  "example_es": "La lavadora tiene dos años de garantía.",
+  "example_ru": "У стиральной машины гарантия два года.",
+  "rank": 6574,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "garantías"
+  ]
+ },
+ {
+  "id": "valer",
+  "es": "valer",
+  "pos": "verb",
+  "ru": "стоить",
+  "example_es": "¿Cuánto vale esta camiseta?",
+  "example_ru": "Сколько стоит эта футболка?",
+  "rank": 9644,
+  "forms": [
+   "vale",
+   "valen",
+   "valgo",
+   "valió"
+  ]
+ },
+ {
+  "id": "panadería",
+  "es": "panadería",
+  "pos": "noun",
+  "ru": "булочная, пекарня",
+  "example_es": "Compro el pan en la panadería.",
+  "example_ru": "Я покупаю хлеб в булочной.",
+  "rank": 13368,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "panaderías"
+  ]
+ },
+ {
+  "id": "librería",
+  "es": "librería",
+  "pos": "noun",
+  "ru": "книжный магазин",
+  "example_es": "Hay una librería nueva en mi calle.",
+  "example_ru": "На моей улице новый книжный магазин.",
+  "rank": 10128,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "librerías"
+  ]
+ }
+]

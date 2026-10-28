@@ -1,0 +1,735 @@
+[
+ {
+  "id": "sol",
+  "es": "sol",
+  "pos": "noun",
+  "ru": "солнце",
+  "example_es": "Hoy hace mucho sol.",
+  "example_ru": "Сегодня очень солнечно.",
+  "rank": 824,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "soles"
+  ]
+ },
+ {
+  "id": "lluvia",
+  "es": "lluvia",
+  "pos": "noun",
+  "ru": "дождь",
+  "example_es": "No me gusta la lluvia.",
+  "example_ru": "Я не люблю дождь.",
+  "rank": 2173,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "lluvias"
+  ]
+ },
+ {
+  "id": "llover",
+  "es": "llover",
+  "pos": "verb",
+  "ru": "идти (о дожде)",
+  "example_es": "Hoy llueve mucho.",
+  "example_ru": "Сегодня сильный дождь.",
+  "rank": 7868,
+  "forms": [
+   "llueve",
+   "llovió",
+   "lloviendo",
+   "lloverá"
+  ]
+ },
+ {
+  "id": "nieve",
+  "es": "nieve",
+  "pos": "noun",
+  "ru": "снег",
+  "example_es": "Los niños juegan en la nieve.",
+  "example_ru": "Дети играют в снегу.",
+  "rank": 2273,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "nieves"
+  ]
+ },
+ {
+  "id": "nevar",
+  "es": "nevar",
+  "pos": "verb",
+  "ru": "идти (о снеге)",
+  "example_es": "En invierno nieva mucho aquí.",
+  "example_ru": "Здесь зимой много снега.",
+  "rank": 27995,
+  "forms": [
+   "nieva",
+   "nevó",
+   "nevando"
+  ]
+ },
+ {
+  "id": "viento",
+  "es": "viento",
+  "pos": "noun",
+  "ru": "ветер",
+  "example_es": "Hoy hace mucho viento.",
+  "example_ru": "Сегодня очень ветрено.",
+  "rank": 1658,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "vientos"
+  ]
+ },
+ {
+  "id": "nube",
+  "es": "nube",
+  "pos": "noun",
+  "ru": "облако, туча",
+  "example_es": "Hay muchas nubes en el cielo.",
+  "example_ru": "На небе много облаков.",
+  "rank": 5250,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "nubes"
+  ]
+ },
+ {
+  "id": "calor",
+  "es": "calor",
+  "pos": "noun",
+  "ru": "жара, тепло",
+  "example_es": "En verano hace mucho calor.",
+  "example_ru": "Летом очень жарко.",
+  "rank": 1369,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "calores"
+  ]
+ },
+ {
+  "id": "frío",
+  "es": "frío",
+  "pos": "adj",
+  "ru": "холодный; холод",
+  "example_es": "Hoy hace mucho frío.",
+  "example_ru": "Сегодня очень холодно.",
+  "rank": 1044,
+  "forms": [
+   "fría",
+   "fríos",
+   "frías"
+  ]
+ },
+ {
+  "id": "cielo",
+  "es": "cielo",
+  "pos": "noun",
+  "ru": "небо",
+  "example_es": "El cielo está azul.",
+  "example_ru": "Небо голубое.",
+  "rank": 623,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "cielos"
+  ]
+ },
+ {
+  "id": "primavera",
+  "es": "primavera",
+  "pos": "noun",
+  "ru": "весна",
+  "example_es": "En primavera hay muchas flores.",
+  "example_ru": "Весной много цветов.",
+  "rank": 2900,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "primaveras"
+  ]
+ },
+ {
+  "id": "otoño",
+  "es": "otoño",
+  "pos": "noun",
+  "ru": "осень",
+  "example_es": "Me gusta el otoño.",
+  "example_ru": "Я люблю осень.",
+  "rank": 5113,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "otoños"
+  ]
+ },
+ {
+  "id": "temperatura",
+  "es": "temperatura",
+  "pos": "noun",
+  "ru": "температура",
+  "example_es": "La temperatura es muy alta hoy.",
+  "example_ru": "Сегодня очень высокая температура.",
+  "rank": 3569,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "temperaturas"
+  ]
+ },
+ {
+  "id": "grado",
+  "es": "grado",
+  "pos": "noun",
+  "ru": "градус",
+  "example_es": "Hoy estamos a treinta grados.",
+  "example_ru": "Сегодня тридцать градусов.",
+  "rank": 2545,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "grados"
+  ]
+ },
+ {
+  "id": "tormenta",
+  "es": "tormenta",
+  "pos": "noun",
+  "ru": "гроза, буря",
+  "example_es": "Esta noche hay tormenta.",
+  "example_ru": "Сегодня ночью будет гроза.",
+  "rank": 2151,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "tormentas"
+  ]
+ },
+ {
+  "id": "hielo",
+  "es": "hielo",
+  "pos": "noun",
+  "ru": "лёд",
+  "example_es": "Hay hielo en la calle.",
+  "example_ru": "На улице гололёд.",
+  "rank": 1553,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "hielos"
+  ]
+ },
+ {
+  "id": "clima",
+  "es": "clima",
+  "pos": "noun",
+  "ru": "климат",
+  "example_es": "Me gusta el clima de aquí.",
+  "example_ru": "Мне нравится здешний климат.",
+  "rank": 3814,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "climas"
+  ]
+ },
+ {
+  "id": "nublado",
+  "es": "nublado",
+  "pos": "adj",
+  "ru": "облачный, пасмурный",
+  "example_es": "Hoy está nublado.",
+  "example_ru": "Сегодня пасмурно.",
+  "rank": 19931,
+  "forms": [
+   "nublada",
+   "nublados",
+   "nubladas"
+  ]
+ },
+ {
+  "id": "seco",
+  "es": "seco",
+  "pos": "adj",
+  "ru": "сухой",
+  "example_es": "El aire aquí es muy seco.",
+  "example_ru": "Воздух здесь очень сухой.",
+  "rank": 4361,
+  "forms": [
+   "seca",
+   "secos",
+   "secas"
+  ]
+ },
+ {
+  "id": "naturaleza",
+  "es": "naturaleza",
+  "pos": "noun",
+  "ru": "природа",
+  "example_es": "Me encanta la naturaleza.",
+  "example_ru": "Я обожаю природу.",
+  "rank": 1577,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "naturalezas"
+  ]
+ },
+ {
+  "id": "árbol",
+  "es": "árbol",
+  "pos": "noun",
+  "ru": "дерево",
+  "example_es": "Hay un árbol grande en el jardín.",
+  "example_ru": "В саду растёт большое дерево.",
+  "rank": 1517,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "árboles"
+  ]
+ },
+ {
+  "id": "flor",
+  "es": "flor",
+  "pos": "noun",
+  "ru": "цветок",
+  "example_es": "Te compro unas flores.",
+  "example_ru": "Я куплю тебе цветы.",
+  "rank": 3172,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "flores"
+  ]
+ },
+ {
+  "id": "río",
+  "es": "río",
+  "pos": "noun",
+  "ru": "река",
+  "example_es": "Paseamos cerca del río.",
+  "example_ru": "Мы гуляем у реки.",
+  "rank": 1259,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "ríos"
+  ]
+ },
+ {
+  "id": "lago",
+  "es": "lago",
+  "pos": "noun",
+  "ru": "озеро",
+  "example_es": "El lago está muy frío.",
+  "example_ru": "Озеро очень холодное.",
+  "rank": 2191,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "lagos"
+  ]
+ },
+ {
+  "id": "bosque",
+  "es": "bosque",
+  "pos": "noun",
+  "ru": "лес",
+  "example_es": "Vamos al bosque el domingo.",
+  "example_ru": "В воскресенье мы едем в лес.",
+  "rank": 1385,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "bosques"
+  ]
+ },
+ {
+  "id": "campo",
+  "es": "campo",
+  "pos": "noun",
+  "ru": "деревня, сельская местность; поле",
+  "example_es": "Mis abuelos viven en el campo.",
+  "example_ru": "Мои бабушка с дедушкой живут за городом.",
+  "rank": 760,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "campos"
+  ]
+ },
+ {
+  "id": "tierra",
+  "es": "tierra",
+  "pos": "noun",
+  "ru": "земля",
+  "example_es": "La tierra está mojada.",
+  "example_ru": "Земля мокрая.",
+  "rank": 421,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "tierras"
+  ]
+ },
+ {
+  "id": "piedra",
+  "es": "piedra",
+  "pos": "noun",
+  "ru": "камень",
+  "example_es": "La casa es de piedra.",
+  "example_ru": "Дом из камня.",
+  "rank": 1781,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "piedras"
+  ]
+ },
+ {
+  "id": "planta",
+  "es": "planta",
+  "pos": "noun",
+  "ru": "растение",
+  "example_es": "Tengo muchas plantas en casa.",
+  "example_ru": "У меня дома много растений.",
+  "rank": 2372,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "plantas"
+  ]
+ },
+ {
+  "id": "hoja",
+  "es": "hoja",
+  "pos": "noun",
+  "ru": "лист",
+  "example_es": "En otoño caen las hojas.",
+  "example_ru": "Осенью падают листья.",
+  "rank": 4154,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "hojas"
+  ]
+ },
+ {
+  "id": "aire",
+  "es": "aire",
+  "pos": "noun",
+  "ru": "воздух",
+  "example_es": "Aquí el aire es muy limpio.",
+  "example_ru": "Здесь очень чистый воздух.",
+  "rank": 742,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "aires"
+  ]
+ },
+ {
+  "id": "fuego",
+  "es": "fuego",
+  "pos": "noun",
+  "ru": "огонь",
+  "example_es": "No toques el fuego.",
+  "example_ru": "Не трогай огонь.",
+  "rank": 603,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "fuegos"
+  ]
+ },
+ {
+  "id": "luna",
+  "es": "luna",
+  "pos": "noun",
+  "ru": "луна",
+  "example_es": "Esta noche hay luna llena.",
+  "example_ru": "Сегодня полнолуние.",
+  "rank": 1042,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "lunas"
+  ]
+ },
+ {
+  "id": "estrella",
+  "es": "estrella",
+  "pos": "noun",
+  "ru": "звезда",
+  "example_es": "Hay muchas estrellas en el cielo.",
+  "example_ru": "На небе много звёзд.",
+  "rank": 1183,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "estrellas"
+  ]
+ },
+ {
+  "id": "costa",
+  "es": "costa",
+  "pos": "noun",
+  "ru": "побережье",
+  "example_es": "Vivimos en la costa.",
+  "example_ru": "Мы живём на побережье.",
+  "rank": 1911,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "costas"
+  ]
+ },
+ {
+  "id": "desierto",
+  "es": "desierto",
+  "pos": "noun",
+  "ru": "пустыня",
+  "example_es": "En el desierto hace mucho calor.",
+  "example_ru": "В пустыне очень жарко.",
+  "rank": 2702,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "desiertos"
+  ]
+ },
+ {
+  "id": "arena",
+  "es": "arena",
+  "pos": "noun",
+  "ru": "песок",
+  "example_es": "La arena de la playa está caliente.",
+  "example_ru": "Песок на пляже горячий.",
+  "rank": 2615,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "arenas"
+  ]
+ },
+ {
+  "id": "animal",
+  "es": "animal",
+  "pos": "noun",
+  "ru": "животное",
+  "example_es": "¿Te gustan los animales?",
+  "example_ru": "Ты любишь животных?",
+  "rank": 1722,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "animales"
+  ]
+ },
+ {
+  "id": "perro",
+  "es": "perro",
+  "pos": "noun",
+  "ru": "собака, пёс",
+  "example_es": "Tengo un perro pequeño.",
+  "example_ru": "У меня маленькая собака.",
+  "rank": 622,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "perros",
+   "perra",
+   "perras"
+  ]
+ },
+ {
+  "id": "gato",
+  "es": "gato",
+  "pos": "noun",
+  "ru": "кот, кошка",
+  "example_es": "Mi gato duerme mucho.",
+  "example_ru": "Мой кот много спит.",
+  "rank": 1531,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "gatos",
+   "gata",
+   "gatas"
+  ]
+ },
+ {
+  "id": "pájaro",
+  "es": "pájaro",
+  "pos": "noun",
+  "ru": "птица",
+  "example_es": "Hay un pájaro en la ventana.",
+  "example_ru": "На окне сидит птица.",
+  "rank": 2821,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "pájaros"
+  ]
+ },
+ {
+  "id": "caballo",
+  "es": "caballo",
+  "pos": "noun",
+  "ru": "лошадь, конь",
+  "example_es": "Mi hija monta a caballo.",
+  "example_ru": "Моя дочь катается на лошади.",
+  "rank": 1021,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "caballos"
+  ]
+ },
+ {
+  "id": "vaca",
+  "es": "vaca",
+  "pos": "noun",
+  "ru": "корова",
+  "example_es": "Hay vacas en el campo.",
+  "example_ru": "В поле пасутся коровы.",
+  "rank": 3424,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "vacas"
+  ]
+ },
+ {
+  "id": "pez",
+  "es": "pez",
+  "pos": "noun",
+  "ru": "рыба (живая)",
+  "example_es": "Hay peces en el río.",
+  "example_ru": "В реке водится рыба.",
+  "rank": 2724,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "peces"
+  ]
+ },
+ {
+  "id": "cerdo",
+  "es": "cerdo",
+  "pos": "noun",
+  "ru": "свинья",
+  "example_es": "En la granja hay cerdos.",
+  "example_ru": "На ферме есть свиньи.",
+  "rank": 1768,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "cerdos"
+  ]
+ },
+ {
+  "id": "ratón",
+  "es": "ratón",
+  "pos": "noun",
+  "ru": "мышь",
+  "example_es": "Hay un ratón en la cocina.",
+  "example_ru": "На кухне мышь.",
+  "rank": 4969,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "ratones"
+  ]
+ },
+ {
+  "id": "oso",
+  "es": "oso",
+  "pos": "noun",
+  "ru": "медведь",
+  "example_es": "En este bosque hay osos.",
+  "example_ru": "В этом лесу водятся медведи.",
+  "rank": 2719,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "osos"
+  ]
+ },
+ {
+  "id": "león",
+  "es": "león",
+  "pos": "noun",
+  "ru": "лев",
+  "example_es": "El león es un animal fuerte.",
+  "example_ru": "Лев — сильное животное.",
+  "rank": 3604,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "leones"
+  ]
+ },
+ {
+  "id": "mono",
+  "es": "mono",
+  "pos": "noun",
+  "ru": "обезьяна",
+  "example_es": "Los niños miran los monos.",
+  "example_ru": "Дети смотрят на обезьян.",
+  "rank": 2379,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "monos"
+  ]
+ },
+ {
+  "id": "conejo",
+  "es": "conejo",
+  "pos": "noun",
+  "ru": "кролик",
+  "example_es": "Mi hermana tiene un conejo.",
+  "example_ru": "У моей сестры есть кролик.",
+  "rank": 3979,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "conejos"
+  ]
+ },
+ {
+  "id": "serpiente",
+  "es": "serpiente",
+  "pos": "noun",
+  "ru": "змея",
+  "example_es": "Tengo miedo de las serpientes.",
+  "example_ru": "Я боюсь змей.",
+  "rank": 3347,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "serpientes"
+  ]
+ },
+ {
+  "id": "pato",
+  "es": "pato",
+  "pos": "noun",
+  "ru": "утка",
+  "example_es": "Hay patos en el lago.",
+  "example_ru": "На озере утки.",
+  "rank": 5026,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "patos"
+  ]
+ }
+]

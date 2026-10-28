@@ -268,5 +268,168 @@
   "example_es": "Los niños juegan fuera.",
   "example_ru": "Дети играют на улице.",
   "rank": 639
+ },
+ {
+  "id": "pasar",
+  "es": "pasar",
+  "pos": "verb",
+  "ru": "проходить; проводить (время); случаться",
+  "example_es": "Paso el fin de semana en casa.",
+  "example_ru": "Я провожу выходные дома.",
+  "rank": 323
+ },
+ {
+  "id": "dejar",
+  "es": "dejar",
+  "pos": "verb",
+  "ru": "оставлять; позволять",
+  "example_es": "Dejo el coche en la calle.",
+  "example_ru": "Я оставляю машину на улице.",
+  "rank": 347
+ },
+ {
+  "id": "encontrar",
+  "es": "encontrar",
+  "pos": "verb",
+  "ru": "находить; встречать",
+  "example_es": "No encuentro mis llaves.",
+  "example_ru": "Не могу найти ключи.",
+  "rank": 372,
+  "forms": [
+   "encuentro",
+   "encuentras",
+   "encuentra"
+  ]
+ },
+ {
+  "id": "tomar",
+  "es": "tomar",
+  "pos": "verb",
+  "ru": "брать; пить; садиться (на транспорт)",
+  "example_es": "Tomo un café por la mañana.",
+  "example_ru": "Утром я пью кофе.",
+  "rank": 387
+ },
+ {
+  "id": "entrar",
+  "es": "entrar",
+  "pos": "verb",
+  "ru": "входить",
+  "example_es": "Puedes entrar, la puerta está abierta.",
+  "example_ru": "Можешь войти, дверь открыта.",
+  "rank": 438
+ },
+ {
+  "id": "seguir",
+  "es": "seguir",
+  "pos": "verb",
+  "ru": "продолжать; следовать, идти за",
+  "example_es": "Sigo estudiando español.",
+  "example_ru": "Я продолжаю учить испанский.",
+  "rank": 512,
+  "forms": [
+   "sigo",
+   "sigues",
+   "sigue",
+   "siguió"
+  ]
+ },
+ {
+  "id": "haber",
+  "es": "haber",
+  "pos": "verb",
+  "ru": "иметься, быть (hay — есть); вспомогательный глагол",
+  "example_es": "Hay un banco cerca de aquí.",
+  "example_ru": "Рядом есть банк.",
+  "rank": 210,
+  "forms": [
+   "hay",
+   "he",
+   "ha",
+   "había",
+   "hubo"
+  ]
+ },
+ {
+  "id": "poner",
+  "es": "poner",
+  "pos": "verb",
+  "ru": "класть, ставить; включать",
+  "example_es": "Pongo las llaves en la mesa.",
+  "example_ru": "Я кладу ключи на стол.",
+  "rank": 606,
+  "forms": [
+   "pongo",
+   "pones",
+   "pone",
+   "puso",
+   "puesto"
+  ]
+ },
+ {
+  "id": "usar",
+  "es": "usar",
+  "pos": "verb",
+  "ru": "использовать, пользоваться",
+  "example_es": "Uso el ordenador para trabajar.",
+  "example_ru": "Я пользуюсь компьютером для работы.",
+  "rank": 666
+ },
+ {
+  "id": "escuchar",
+  "es": "escuchar",
+  "pos": "verb",
+  "ru": "слушать",
+  "example_es": "Escucho música en el tren.",
+  "example_ru": "Я слушаю музыку в поезде.",
+  "rank": 888
+ },
+ {
+  "id": "mirar",
+  "es": "mirar",
+  "pos": "verb",
+  "ru": "смотреть",
+  "example_es": "Mira, ahí está el autobús.",
+  "example_ru": "Смотри, вон автобус.",
+  "rank": 1065
+ },
+ {
+  "id": "oír",
+  "es": "oír",
+  "pos": "verb",
+  "ru": "слышать",
+  "example_es": "No te oigo bien.",
+  "example_ru": "Я тебя плохо слышу.",
+  "rank": 1079,
+  "forms": [
+   "oigo",
+   "oyes",
+   "oye",
+   "oyó"
+  ]
+ },
+ {
+  "id": "traer",
+  "es": "traer",
+  "pos": "verb",
+  "ru": "приносить",
+  "example_es": "¿Me traes un vaso de agua?",
+  "example_ru": "Принесёшь мне стакан воды?",
+  "rank": 1297,
+  "forms": [
+   "traigo",
+   "traes",
+   "trae",
+   "trajo"
+  ]
+ },
+ {
+  "id": "preguntar",
+  "es": "preguntar",
+  "pos": "verb",
+  "ru": "спрашивать",
+  "example_es": "Voy a preguntar al profesor.",
+  "example_ru": "Я спрошу у преподавателя.",
+  "rank": 1507
  }
 ]

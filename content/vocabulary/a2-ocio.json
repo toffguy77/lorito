@@ -253,5 +253,318 @@
    "divertidos",
    "divertidas"
   ]
+ },
+ {
+  "id": "aficionado",
+  "es": "aficionado",
+  "pos": "noun",
+  "ru": "любитель, болельщик",
+  "example_es": "Soy un gran aficionado al cine.",
+  "example_ru": "Я большой любитель кино.",
+  "rank": 9286,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "aficionada",
+   "aficionados",
+   "aficionadas"
+  ]
+ },
+ {
+  "id": "bar",
+  "es": "bar",
+  "pos": "noun",
+  "ru": "бар, кафе",
+  "example_es": "Quedamos en el bar de la esquina.",
+  "example_ru": "Встретимся в баре на углу.",
+  "rank": 1024,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "bares"
+  ]
+ },
+ {
+  "id": "novela",
+  "es": "novela",
+  "pos": "noun",
+  "ru": "роман",
+  "example_es": "Estoy leyendo una novela muy buena.",
+  "example_ru": "Я читаю очень хороший роман.",
+  "rank": 4210,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "novelas"
+  ]
+ },
+ {
+  "id": "entrada",
+  "es": "entrada",
+  "pos": "noun",
+  "ru": "билет (на мероприятие); вход",
+  "example_es": "Ya tengo las entradas para el concierto.",
+  "example_ru": "У меня уже есть билеты на концерт.",
+  "rank": 1316,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "entradas"
+  ]
+ },
+ {
+  "id": "copa",
+  "es": "copa",
+  "pos": "noun",
+  "ru": "бокал; кубок",
+  "example_es": "¿Tomamos una copa después del trabajo?",
+  "example_ru": "Выпьем по бокальчику после работы?",
+  "rank": 1464,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "copas"
+  ]
+ },
+ {
+  "id": "espectáculo",
+  "es": "espectáculo",
+  "pos": "noun",
+  "ru": "шоу, зрелище",
+  "example_es": "El espectáculo empieza a las nueve.",
+  "example_ru": "Шоу начинается в девять.",
+  "rank": 1683,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "espectáculos"
+  ]
+ },
+ {
+  "id": "teatro",
+  "es": "teatro",
+  "pos": "noun",
+  "ru": "театр",
+  "example_es": "Esta noche vamos al teatro.",
+  "example_ru": "Сегодня вечером мы идём в театр.",
+  "rank": 1880,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "teatros"
+  ]
+ },
+ {
+  "id": "pelota",
+  "es": "pelota",
+  "pos": "noun",
+  "ru": "мяч",
+  "example_es": "Los niños juegan con la pelota en el parque.",
+  "example_ru": "Дети играют с мячом в парке.",
+  "rank": 2447,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "pelotas"
+  ]
+ },
+ {
+  "id": "invitado",
+  "es": "invitado",
+  "pos": "noun",
+  "ru": "гость",
+  "example_es": "Tenemos diez invitados para la cena.",
+  "example_ru": "На ужин у нас десять гостей.",
+  "rank": 2056,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "invitada",
+   "invitados",
+   "invitadas"
+  ]
+ },
+ {
+  "id": "arte",
+  "es": "arte",
+  "pos": "noun",
+  "ru": "искусство",
+  "example_es": "Me interesa mucho el arte moderno.",
+  "example_ru": "Меня очень интересует современное искусство.",
+  "rank": 1217,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "artes"
+  ]
+ },
+ {
+  "id": "club",
+  "es": "club",
+  "pos": "noun",
+  "ru": "клуб",
+  "example_es": "Soy socio de un club de tenis.",
+  "example_ru": "Я член теннисного клуба.",
+  "rank": 908,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "clubes"
+  ]
+ },
+ {
+  "id": "nadar",
+  "es": "nadar",
+  "pos": "verb",
+  "ru": "плавать",
+  "example_es": "En verano nado en la piscina.",
+  "example_ru": "Летом я плаваю в бассейне.",
+  "rank": 3141
+ },
+ {
+  "id": "piscina",
+  "es": "piscina",
+  "pos": "noun",
+  "ru": "бассейн",
+  "example_es": "La piscina abre a las diez.",
+  "example_ru": "Бассейн открывается в десять.",
+  "rank": 2680,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "piscinas"
+  ]
+ },
+ {
+  "id": "celebrar",
+  "es": "celebrar",
+  "pos": "verb",
+  "ru": "праздновать",
+  "example_es": "Vamos a celebrar tu cumpleaños en casa.",
+  "example_ru": "Мы отпразднуем твой день рождения дома.",
+  "rank": 2943
+ },
+ {
+  "id": "jugador",
+  "es": "jugador",
+  "pos": "noun",
+  "ru": "игрок",
+  "example_es": "Es el mejor jugador del equipo.",
+  "example_ru": "Он лучший игрок команды.",
+  "rank": 2930,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "jugadora",
+   "jugadores",
+   "jugadoras"
+  ]
+ },
+ {
+  "id": "pasear",
+  "es": "pasear",
+  "pos": "verb",
+  "ru": "гулять",
+  "example_es": "Me gusta pasear por la playa.",
+  "example_ru": "Я люблю гулять по пляжу.",
+  "rank": 5019
+ },
+ {
+  "id": "gimnasio",
+  "es": "gimnasio",
+  "pos": "noun",
+  "ru": "спортзал",
+  "example_es": "Voy al gimnasio tres veces por semana.",
+  "example_ru": "Я хожу в спортзал три раза в неделю.",
+  "rank": 3596,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "gimnasios"
+  ]
+ },
+ {
+  "id": "guitarra",
+  "es": "guitarra",
+  "pos": "noun",
+  "ru": "гитара",
+  "example_es": "Quiero aprender a tocar la guitarra.",
+  "example_ru": "Я хочу научиться играть на гитаре.",
+  "rank": 3832,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "guitarras"
+  ]
+ },
+ {
+  "id": "exposición",
+  "es": "exposición",
+  "pos": "noun",
+  "ru": "выставка",
+  "example_es": "Hay una exposición de fotos en el museo.",
+  "example_ru": "В музее проходит фотовыставка.",
+  "rank": 4846,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "exposiciones"
+  ]
+ },
+ {
+  "id": "tenis",
+  "es": "tenis",
+  "pos": "noun",
+  "ru": "теннис",
+  "example_es": "¿Juegas al tenis los sábados?",
+  "example_ru": "Ты играешь в теннис по субботам?",
+  "rank": 5300,
+  "article": "el",
+  "gender": "m"
+ },
+ {
+  "id": "entrenar",
+  "es": "entrenar",
+  "pos": "verb",
+  "ru": "тренироваться",
+  "example_es": "El equipo entrena todos los martes.",
+  "example_ru": "Команда тренируется каждый вторник.",
+  "rank": 6190
+ },
+ {
+  "id": "charlar",
+  "es": "charlar",
+  "pos": "verb",
+  "ru": "болтать, беседовать",
+  "example_es": "Nos gusta charlar en una cafetería.",
+  "example_ru": "Мы любим поболтать в кафе.",
+  "rank": 7096
+ },
+ {
+  "id": "pintar",
+  "es": "pintar",
+  "pos": "verb",
+  "ru": "рисовать (красками); красить",
+  "example_es": "Los sábados pinto paisajes.",
+  "example_ru": "По субботам я рисую пейзажи.",
+  "rank": 4948
+ },
+ {
+  "id": "dibujar",
+  "es": "dibujar",
+  "pos": "verb",
+  "ru": "рисовать (карандашом)",
+  "example_es": "Mi hija dibuja muy bien.",
+  "example_ru": "Моя дочь очень хорошо рисует.",
+  "rank": 8640
+ },
+ {
+  "id": "tiempo-libre",
+  "es": "tiempo libre",
+  "pos": "phrase",
+  "ru": "свободное время",
+  "example_es": "¿Qué haces en tu tiempo libre?",
+  "example_ru": "Чем ты занимаешься в свободное время?",
+  "rank": 95
  }
 ]

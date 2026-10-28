@@ -362,5 +362,168 @@
   "forms": [
    "playas"
   ]
+ },
+ {
+  "id": "escuela",
+  "es": "escuela",
+  "pos": "noun",
+  "ru": "школа",
+  "example_es": "Los niños van a la escuela.",
+  "example_ru": "Дети идут в школу.",
+  "rank": 463,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "escuelas"
+  ]
+ },
+ {
+  "id": "centro",
+  "es": "centro",
+  "pos": "noun",
+  "ru": "центр",
+  "example_es": "Vivo en el centro de la ciudad.",
+  "example_ru": "Я живу в центре города.",
+  "rank": 820,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "centros"
+  ]
+ },
+ {
+  "id": "iglesia",
+  "es": "iglesia",
+  "pos": "noun",
+  "ru": "церковь",
+  "example_es": "La iglesia está en la plaza.",
+  "example_ru": "Церковь находится на площади.",
+  "rank": 1000,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "iglesias"
+  ]
+ },
+ {
+  "id": "edificio",
+  "es": "edificio",
+  "pos": "noun",
+  "ru": "здание",
+  "example_es": "Ese edificio es un museo.",
+  "example_ru": "Это здание — музей.",
+  "rank": 1038,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "edificios"
+  ]
+ },
+ {
+  "id": "taxi",
+  "es": "taxi",
+  "pos": "noun",
+  "ru": "такси",
+  "example_es": "Vamos al aeropuerto en taxi.",
+  "example_ru": "Мы едем в аэропорт на такси.",
+  "rank": 1504,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "taxis"
+  ]
+ },
+ {
+  "id": "puente",
+  "es": "puente",
+  "pos": "noun",
+  "ru": "мост",
+  "example_es": "Cruzamos el puente a pie.",
+  "example_ru": "Мы переходим мост пешком.",
+  "rank": 1670,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "puentes"
+  ]
+ },
+ {
+  "id": "tráfico",
+  "es": "tráfico",
+  "pos": "noun",
+  "ru": "движение (транспорта), пробки",
+  "example_es": "Hay mucho tráfico en el centro.",
+  "example_ru": "В центре сильное движение.",
+  "rank": 2600,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "tráficos"
+  ]
+ },
+ {
+  "id": "esquina",
+  "es": "esquina",
+  "pos": "noun",
+  "ru": "угол (улицы)",
+  "example_es": "La farmacia está en la esquina.",
+  "example_ru": "Аптека на углу.",
+  "rank": 2147,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "esquinas"
+  ]
+ },
+ {
+  "id": "barrio",
+  "es": "barrio",
+  "pos": "noun",
+  "ru": "район, квартал",
+  "example_es": "Mi barrio es muy tranquilo.",
+  "example_ru": "Мой район очень спокойный.",
+  "rank": 2329,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "barrios"
+  ]
+ },
+ {
+  "id": "parada",
+  "es": "parada",
+  "pos": "noun",
+  "ru": "остановка",
+  "example_es": "¿Dónde está la parada del autobús?",
+  "example_ru": "Где автобусная остановка?",
+  "rank": 2567,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "paradas"
+  ]
+ },
+ {
+  "id": "cruzar",
+  "es": "cruzar",
+  "pos": "verb",
+  "ru": "переходить, пересекать",
+  "example_es": "Cruza la calle con cuidado.",
+  "example_ru": "Переходи улицу осторожно.",
+  "rank": 3175
+ },
+ {
+  "id": "bicicleta",
+  "es": "bicicleta",
+  "pos": "noun",
+  "ru": "велосипед",
+  "example_es": "Voy al trabajo en bicicleta.",
+  "example_ru": "Я езжу на работу на велосипеде.",
+  "rank": 3371,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "bicicletas"
+  ]
  }
 ]

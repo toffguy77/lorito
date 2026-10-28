@@ -1,0 +1,606 @@
+[
+ {
+  "id": "celular",
+  "es": "celular",
+  "pos": "noun",
+  "ru": "мобильный телефон (в Испании — móvil)",
+  "example_es": "Te llamo al celular más tarde.",
+  "example_ru": "Я позвоню тебе на мобильный позже.",
+  "rank": 2492,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "celulares"
+  ]
+ },
+ {
+  "id": "mensaje",
+  "es": "mensaje",
+  "pos": "noun",
+  "ru": "сообщение",
+  "example_es": "Te mando un mensaje esta noche.",
+  "example_ru": "Я напишу тебе сегодня вечером.",
+  "rank": 691,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "mensajes"
+  ]
+ },
+ {
+  "id": "llamada",
+  "es": "llamada",
+  "pos": "noun",
+  "ru": "звонок",
+  "example_es": "Tengo tres llamadas perdidas.",
+  "example_ru": "У меня три пропущенных звонка.",
+  "rank": 644,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "llamadas"
+  ]
+ },
+ {
+  "id": "internet",
+  "es": "internet",
+  "pos": "noun",
+  "ru": "интернет",
+  "example_es": "Busco la información en internet.",
+  "example_ru": "Я ищу информацию в интернете.",
+  "rank": 2003,
+  "article": "el",
+  "gender": "m"
+ },
+ {
+  "id": "red",
+  "es": "red",
+  "pos": "noun",
+  "ru": "сеть",
+  "example_es": "No hay red en esta casa.",
+  "example_ru": "В этом доме нет сети.",
+  "rank": 1498,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "redes"
+  ]
+ },
+ {
+  "id": "conexión",
+  "es": "conexión",
+  "pos": "noun",
+  "ru": "подключение, связь",
+  "example_es": "La conexión es muy lenta hoy.",
+  "example_ru": "Сегодня очень медленное соединение.",
+  "rank": 2161,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "conexiones"
+  ]
+ },
+ {
+  "id": "señal",
+  "es": "señal",
+  "pos": "noun",
+  "ru": "сигнал; знак",
+  "example_es": "Aquí el celular no tiene señal.",
+  "example_ru": "Здесь у мобильного нет сигнала.",
+  "rank": 1008,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "señales"
+  ]
+ },
+ {
+  "id": "página",
+  "es": "página",
+  "pos": "noun",
+  "ru": "страница",
+  "example_es": "Abre la página del museo.",
+  "example_ru": "Открой страницу музея.",
+  "rank": 2381,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "páginas"
+  ]
+ },
+ {
+  "id": "web",
+  "es": "web",
+  "pos": "noun",
+  "ru": "сайт, веб",
+  "example_es": "Puedes reservar en la web del hotel.",
+  "example_ru": "Можно забронировать на сайте отеля.",
+  "rank": 3989,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "webs"
+  ]
+ },
+ {
+  "id": "enlace",
+  "es": "enlace",
+  "pos": "noun",
+  "ru": "ссылка",
+  "example_es": "Te envío el enlace por mensaje.",
+  "example_ru": "Я пришлю тебе ссылку сообщением.",
+  "rank": 7028,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "enlaces"
+  ]
+ },
+ {
+  "id": "aplicación",
+  "es": "aplicación",
+  "pos": "noun",
+  "ru": "приложение",
+  "example_es": "Esta aplicación es muy útil.",
+  "example_ru": "Это приложение очень полезное.",
+  "rank": 8057,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "aplicaciones"
+  ]
+ },
+ {
+  "id": "programa",
+  "es": "programa",
+  "pos": "noun",
+  "ru": "программа; передача",
+  "example_es": "Necesito un programa para editar fotos.",
+  "example_ru": "Мне нужна программа для обработки фото.",
+  "rank": 861,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "programas"
+  ]
+ },
+ {
+  "id": "usuario",
+  "es": "usuario",
+  "pos": "noun",
+  "ru": "пользователь",
+  "example_es": "Escribe tu nombre de usuario.",
+  "example_ru": "Введи своё имя пользователя.",
+  "rank": 14725,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "usuaria",
+   "usuarios",
+   "usuarias"
+  ]
+ },
+ {
+  "id": "contraseña",
+  "es": "contraseña",
+  "pos": "noun",
+  "ru": "пароль",
+  "example_es": "Olvidé mi contraseña otra vez.",
+  "example_ru": "Я опять забыл пароль.",
+  "rank": 6125,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "contraseñas"
+  ]
+ },
+ {
+  "id": "archivo",
+  "es": "archivo",
+  "pos": "noun",
+  "ru": "файл; архив",
+  "example_es": "Guarda el archivo en la carpeta.",
+  "example_ru": "Сохрани файл в папке.",
+  "rank": 2781,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "archivos"
+  ]
+ },
+ {
+  "id": "video",
+  "es": "video",
+  "pos": "noun",
+  "ru": "видео (в Испании — vídeo)",
+  "example_es": "Mira este video, es muy divertido.",
+  "example_ru": "Посмотри это видео, оно очень смешное.",
+  "rank": 1877,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "videos",
+   "vídeo",
+   "vídeos"
+  ]
+ },
+ {
+  "id": "cámara",
+  "es": "cámara",
+  "pos": "noun",
+  "ru": "камера, фотоаппарат",
+  "example_es": "La cámara de mi celular es muy buena.",
+  "example_ru": "Камера в моём телефоне очень хорошая.",
+  "rank": 914,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "cámaras"
+  ]
+ },
+ {
+  "id": "pantalla",
+  "es": "pantalla",
+  "pos": "noun",
+  "ru": "экран",
+  "example_es": "La pantalla está rota.",
+  "example_ru": "Экран разбит.",
+  "rank": 3152,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "pantallas"
+  ]
+ },
+ {
+  "id": "teclado",
+  "es": "teclado",
+  "pos": "noun",
+  "ru": "клавиатура",
+  "example_es": "Este teclado no tiene la letra ñ.",
+  "example_ru": "На этой клавиатуре нет буквы ñ.",
+  "rank": 15149,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "teclados"
+  ]
+ },
+ {
+  "id": "botón",
+  "es": "botón",
+  "pos": "noun",
+  "ru": "кнопка; пуговица",
+  "example_es": "Pulsa el botón verde.",
+  "example_ru": "Нажми зелёную кнопку.",
+  "rank": 3298,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "botones"
+  ]
+ },
+ {
+  "id": "batería",
+  "es": "batería",
+  "pos": "noun",
+  "ru": "аккумулятор, батарея",
+  "example_es": "Me queda poca batería.",
+  "example_ru": "У меня почти села батарея.",
+  "rank": 4069,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "baterías"
+  ]
+ },
+ {
+  "id": "cargador",
+  "es": "cargador",
+  "pos": "noun",
+  "ru": "зарядное устройство",
+  "example_es": "¿Me prestas tu cargador?",
+  "example_ru": "Одолжишь мне зарядку?",
+  "rank": 13752,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "cargadores"
+  ]
+ },
+ {
+  "id": "pila",
+  "es": "pila",
+  "pos": "noun",
+  "ru": "батарейка",
+  "example_es": "El control necesita pilas nuevas.",
+  "example_ru": "Пульту нужны новые батарейки.",
+  "rank": 6081,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "pilas"
+  ]
+ },
+ {
+  "id": "cable",
+  "es": "cable",
+  "pos": "noun",
+  "ru": "провод, кабель",
+  "example_es": "No encuentro el cable del cargador.",
+  "example_ru": "Не могу найти провод от зарядки.",
+  "rank": 3212,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "cables"
+  ]
+ },
+ {
+  "id": "auriculares",
+  "es": "auriculares",
+  "pos": "noun",
+  "ru": "наушники",
+  "example_es": "Siempre escucho música con auriculares.",
+  "example_ru": "Я всегда слушаю музыку в наушниках.",
+  "rank": 16484,
+  "article": "los",
+  "gender": "m",
+  "forms": [
+   "auricular"
+  ]
+ },
+ {
+  "id": "radio",
+  "es": "radio",
+  "pos": "noun",
+  "ru": "радио",
+  "example_es": "Escucho la radio en el coche.",
+  "example_ru": "Я слушаю радио в машине.",
+  "rank": 1151,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "radios"
+  ]
+ },
+ {
+  "id": "aparato",
+  "es": "aparato",
+  "pos": "noun",
+  "ru": "прибор, устройство",
+  "example_es": "Este aparato no funciona bien.",
+  "example_ru": "Этот прибор плохо работает.",
+  "rank": 5323,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "aparatos"
+  ]
+ },
+ {
+  "id": "tecnología",
+  "es": "tecnología",
+  "pos": "noun",
+  "ru": "техника, технологии",
+  "example_es": "Mi abuelo no entiende la tecnología.",
+  "example_ru": "Мой дедушка не разбирается в технике.",
+  "rank": 2262,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "tecnologías"
+  ]
+ },
+ {
+  "id": "digital",
+  "es": "digital",
+  "pos": "adj",
+  "ru": "цифровой",
+  "example_es": "Ahora todo es digital.",
+  "example_ru": "Сейчас всё цифровое.",
+  "rank": 7897,
+  "forms": [
+   "digitales"
+  ]
+ },
+ {
+  "id": "electrónico",
+  "es": "electrónico",
+  "pos": "adj",
+  "ru": "электронный",
+  "example_es": "Te mando un correo electrónico.",
+  "example_ru": "Я отправлю тебе электронное письмо.",
+  "rank": 6899,
+  "forms": [
+   "electrónica",
+   "electrónicos",
+   "electrónicas"
+  ]
+ },
+ {
+  "id": "en-línea",
+  "es": "en línea",
+  "pos": "phrase",
+  "ru": "онлайн, в сети",
+  "example_es": "Pagué la cuenta en línea.",
+  "example_ru": "Я оплатил счёт онлайн.",
+  "rank": 9
+ },
+ {
+  "id": "funcionar",
+  "es": "funcionar",
+  "pos": "verb",
+  "ru": "работать (о технике)",
+  "example_es": "La impresora no funciona.",
+  "example_ru": "Принтер не работает.",
+  "rank": 1989
+ },
+ {
+  "id": "impresora",
+  "es": "impresora",
+  "pos": "noun",
+  "ru": "принтер",
+  "example_es": "La impresora no tiene papel.",
+  "example_ru": "В принтере нет бумаги.",
+  "rank": 18374,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "impresoras"
+  ]
+ },
+ {
+  "id": "descargar",
+  "es": "descargar",
+  "pos": "verb",
+  "ru": "скачивать, загружать",
+  "example_es": "Descarga la aplicación gratis.",
+  "example_ru": "Скачай приложение бесплатно.",
+  "rank": 11255
+ },
+ {
+  "id": "cargar",
+  "es": "cargar",
+  "pos": "verb",
+  "ru": "заряжать; загружать",
+  "example_es": "Tengo que cargar el celular.",
+  "example_ru": "Мне надо зарядить телефон.",
+  "rank": 4487,
+  "forms": [
+   "cargué"
+  ]
+ },
+ {
+  "id": "conectar",
+  "es": "conectar",
+  "pos": "verb",
+  "ru": "подключать",
+  "example_es": "No puedo conectar el teclado.",
+  "example_ru": "Я не могу подключить клавиатуру.",
+  "rank": 7443
+ },
+ {
+  "id": "guardar",
+  "es": "guardar",
+  "pos": "verb",
+  "ru": "сохранять; хранить",
+  "example_es": "No olvides guardar el documento.",
+  "example_ru": "Не забудь сохранить документ.",
+  "rank": 3092
+ },
+ {
+  "id": "borrar",
+  "es": "borrar",
+  "pos": "verb",
+  "ru": "удалять, стирать",
+  "example_es": "Borré las fotos sin querer.",
+  "example_ru": "Я случайно удалил фотографии.",
+  "rank": 6348
+ },
+ {
+  "id": "imprimir",
+  "es": "imprimir",
+  "pos": "verb",
+  "ru": "печатать, распечатывать",
+  "example_es": "Necesito imprimir el billete.",
+  "example_ru": "Мне нужно распечатать билет.",
+  "rank": 14587,
+  "forms": [
+   "impreso"
+  ]
+ },
+ {
+  "id": "grabar",
+  "es": "grabar",
+  "pos": "verb",
+  "ru": "записывать (видео, звук)",
+  "example_es": "Grabé un video del concierto.",
+  "example_ru": "Я записал видео с концерта.",
+  "rank": 5346
+ },
+ {
+  "id": "carta",
+  "es": "carta",
+  "pos": "noun",
+  "ru": "письмо; меню",
+  "example_es": "Recibí una carta de mi abuela.",
+  "example_ru": "Я получил письмо от бабушки.",
+  "rank": 832,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "cartas"
+  ]
+ },
+ {
+  "id": "sello",
+  "es": "sello",
+  "pos": "noun",
+  "ru": "почтовая марка; печать",
+  "example_es": "Necesito un sello para esta carta.",
+  "example_ru": "Мне нужна марка для этого письма.",
+  "rank": 5243,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "sellos"
+  ]
+ },
+ {
+  "id": "paquete",
+  "es": "paquete",
+  "pos": "noun",
+  "ru": "посылка; пачка",
+  "example_es": "Ha llegado un paquete para ti.",
+  "example_ru": "Тебе пришла посылка.",
+  "rank": 2389,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "paquetes"
+  ]
+ },
+ {
+  "id": "cartero",
+  "es": "cartero",
+  "pos": "noun",
+  "ru": "почтальон",
+  "example_es": "El cartero viene por la mañana.",
+  "example_ru": "Почтальон приходит утром.",
+  "rank": 9466,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "carteros"
+  ]
+ },
+ {
+  "id": "buzón",
+  "es": "buzón",
+  "pos": "noun",
+  "ru": "почтовый ящик",
+  "example_es": "Hay una carta en el buzón.",
+  "example_ru": "В почтовом ящике письмо.",
+  "rank": 7391,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "buzones"
+  ]
+ },
+ {
+  "id": "contacto",
+  "es": "contacto",
+  "pos": "noun",
+  "ru": "контакт; связь",
+  "example_es": "Guarda mi número en tus contactos.",
+  "example_ru": "Сохрани мой номер в контактах.",
+  "rank": 949,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "contactos"
+  ]
+ }
+]

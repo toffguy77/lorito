@@ -218,7 +218,7 @@
   "example_ru": "Я хочу стакан воды.",
   "rank": 358,
   "article": "el",
-  "gender": "m",
+  "gender": "f",
   "forms": [
    "aguas"
   ]
@@ -415,6 +415,174 @@
    "limpia",
    "limpios",
    "limpias"
+  ]
+ },
+ {
+  "id": "dormitorio",
+  "es": "dormitorio",
+  "pos": "noun",
+  "ru": "спальня",
+  "example_es": "El dormitorio tiene una cama grande.",
+  "example_ru": "В спальне большая кровать.",
+  "rank": 3445,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "dormitorios"
+  ]
+ },
+ {
+  "id": "salón",
+  "es": "salón",
+  "pos": "noun",
+  "ru": "гостиная",
+  "example_es": "Vemos la televisión en el salón.",
+  "example_ru": "Мы смотрим телевизор в гостиной.",
+  "rank": 2163,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "salones"
+  ]
+ },
+ {
+  "id": "suelo",
+  "es": "suelo",
+  "pos": "noun",
+  "ru": "пол; земля",
+  "example_es": "El libro está en el suelo.",
+  "example_ru": "Книга лежит на полу.",
+  "rank": 893,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "suelos"
+  ]
+ },
+ {
+  "id": "caja",
+  "es": "caja",
+  "pos": "noun",
+  "ru": "коробка, ящик; касса",
+  "example_es": "Los libros están en una caja.",
+  "example_ru": "Книги лежат в коробке.",
+  "rank": 803,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "cajas"
+  ]
+ },
+ {
+  "id": "dirección",
+  "es": "dirección",
+  "pos": "noun",
+  "ru": "адрес; направление",
+  "example_es": "¿Cuál es tu dirección?",
+  "example_ru": "Какой у тебя адрес?",
+  "rank": 843,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "direcciones"
+  ]
+ },
+ {
+  "id": "papel",
+  "es": "papel",
+  "pos": "noun",
+  "ru": "бумага",
+  "example_es": "Necesito papel y un lápiz.",
+  "example_ru": "Мне нужны бумага и карандаш.",
+  "rank": 935,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "papeles"
+  ]
+ },
+ {
+  "id": "pared",
+  "es": "pared",
+  "pos": "noun",
+  "ru": "стена",
+  "example_es": "Hay una foto en la pared.",
+  "example_ru": "На стене висит фотография.",
+  "rank": 1574,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "paredes"
+  ]
+ },
+ {
+  "id": "techo",
+  "es": "techo",
+  "pos": "noun",
+  "ru": "потолок; крыша",
+  "example_es": "El techo de la cocina es muy alto.",
+  "example_ru": "Потолок на кухне очень высокий.",
+  "rank": 2103,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "techos"
+  ]
+ },
+ {
+  "id": "taza",
+  "es": "taza",
+  "pos": "noun",
+  "ru": "чашка",
+  "example_es": "¿Quieres una taza de café?",
+  "example_ru": "Хочешь чашку кофе?",
+  "rank": 2443,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "tazas"
+  ]
+ },
+ {
+  "id": "espejo",
+  "es": "espejo",
+  "pos": "noun",
+  "ru": "зеркало",
+  "example_es": "Hay un espejo en el baño.",
+  "example_ru": "В ванной есть зеркало.",
+  "rank": 2621,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "espejos"
+  ]
+ },
+ {
+  "id": "escalera",
+  "es": "escalera",
+  "pos": "noun",
+  "ru": "лестница",
+  "example_es": "Subo por la escalera.",
+  "example_ru": "Я поднимаюсь по лестнице.",
+  "rank": 3053,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "escaleras"
+  ]
+ },
+ {
+  "id": "cuadro",
+  "es": "cuadro",
+  "pos": "noun",
+  "ru": "картина",
+  "example_es": "Me gusta el cuadro del salón.",
+  "example_ru": "Мне нравится картина в гостиной.",
+  "rank": 3364,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "cuadros"
   ]
  }
 ]

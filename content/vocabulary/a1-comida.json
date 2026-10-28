@@ -375,7 +375,7 @@
   "example_ru": "Я голоден.",
   "rank": 826,
   "article": "el",
-  "gender": "m",
+  "gender": "f",
   "forms": [
    "hambres"
   ]
@@ -392,6 +392,174 @@
   "gender": "f",
   "forms": [
    "sedes"
+  ]
+ },
+ {
+  "id": "té",
+  "es": "té",
+  "pos": "noun",
+  "ru": "чай",
+  "example_es": "Un té con leche, por favor.",
+  "example_ru": "Чай с молоком, пожалуйста.",
+  "rank": 1127,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "tés"
+  ]
+ },
+ {
+  "id": "botella",
+  "es": "botella",
+  "pos": "noun",
+  "ru": "бутылка",
+  "example_es": "Una botella de agua, por favor.",
+  "example_ru": "Бутылку воды, пожалуйста.",
+  "rank": 1657,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "botellas"
+  ]
+ },
+ {
+  "id": "pollo",
+  "es": "pollo",
+  "pos": "noun",
+  "ru": "курица (мясо)",
+  "example_es": "El pollo está muy rico.",
+  "example_ru": "Курица очень вкусная.",
+  "rank": 1858,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "pollos"
+  ]
+ },
+ {
+  "id": "almuerzo",
+  "es": "almuerzo",
+  "pos": "noun",
+  "ru": "обед",
+  "example_es": "El almuerzo es a las dos.",
+  "example_ru": "Обед в два часа.",
+  "rank": 1898,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "almuerzos"
+  ]
+ },
+ {
+  "id": "plato",
+  "es": "plato",
+  "pos": "noun",
+  "ru": "тарелка; блюдо",
+  "example_es": "Este plato es muy rico.",
+  "example_ru": "Это блюдо очень вкусное.",
+  "rank": 2257,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "platos"
+  ]
+ },
+ {
+  "id": "azúcar",
+  "es": "azúcar",
+  "pos": "noun",
+  "ru": "сахар",
+  "example_es": "¿Tomas el café con azúcar?",
+  "example_ru": "Ты пьёшь кофе с сахаром?",
+  "rank": 2630,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "azúcares"
+  ]
+ },
+ {
+  "id": "sopa",
+  "es": "sopa",
+  "pos": "noun",
+  "ru": "суп",
+  "example_es": "La sopa está muy caliente.",
+  "example_ru": "Суп очень горячий.",
+  "rank": 2648,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "sopas"
+  ]
+ },
+ {
+  "id": "chocolate",
+  "es": "chocolate",
+  "pos": "noun",
+  "ru": "шоколад",
+  "example_es": "Me gusta mucho el chocolate.",
+  "example_ru": "Я очень люблю шоколад.",
+  "rank": 2154,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "chocolates"
+  ]
+ },
+ {
+  "id": "arroz",
+  "es": "arroz",
+  "pos": "noun",
+  "ru": "рис",
+  "example_es": "Hoy comemos arroz con pollo.",
+  "example_ru": "Сегодня у нас рис с курицей.",
+  "rank": 3494,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "arroces"
+  ]
+ },
+ {
+  "id": "ensalada",
+  "es": "ensalada",
+  "pos": "noun",
+  "ru": "салат",
+  "example_es": "Una ensalada, por favor.",
+  "example_ru": "Салат, пожалуйста.",
+  "rank": 4192,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "ensaladas"
+  ]
+ },
+ {
+  "id": "tomate",
+  "es": "tomate",
+  "pos": "noun",
+  "ru": "помидор",
+  "example_es": "Compro tomates en el mercado.",
+  "example_ru": "Я покупаю помидоры на рынке.",
+  "rank": 6660,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "tomates"
+  ]
+ },
+ {
+  "id": "verdura",
+  "es": "verdura",
+  "pos": "noun",
+  "ru": "овощи; зелень",
+  "example_es": "Como mucha verdura.",
+  "example_ru": "Я ем много овощей.",
+  "rank": 24570,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "verduras"
   ]
  }
 ]
