@@ -1,0 +1,598 @@
+[
+ {
+  "id": "echar-en-falta",
+  "es": "echar en falta",
+  "pos": "phrase",
+  "ru": "не хватать (кого-то, чего-то); замечать отсутствие",
+  "example_es": "Echo en falta las tardes de lectura en el pueblo.",
+  "example_ru": "Мне не хватает вечеров за чтением в деревне.",
+  "rank": 1677,
+  "forms": [
+   "echo en falta",
+   "echa en falta",
+   "echó en falta",
+   "echamos en falta"
+  ]
+ },
+ {
+  "id": "poner-de-manifiesto",
+  "es": "poner de manifiesto",
+  "pos": "phrase",
+  "ru": "выявлять, обнаруживать",
+  "example_es": "El informe pone de manifiesto graves fallos de seguridad.",
+  "example_ru": "Доклад выявляет серьёзные недостатки в системе безопасности.",
+  "rank": 13713,
+  "forms": [
+   "pone de manifiesto",
+   "puso de manifiesto",
+   "ponen de manifiesto",
+   "pusieron de manifiesto"
+  ]
+ },
+ {
+  "id": "tener-presente",
+  "es": "tener presente",
+  "pos": "phrase",
+  "ru": "помнить, учитывать",
+  "example_es": "Hay que tener presente que el plazo termina el viernes.",
+  "example_ru": "Нужно помнить, что срок истекает в пятницу.",
+  "rank": 1742,
+  "forms": [
+   "tiene presente",
+   "tengo presente",
+   "ten presente",
+   "tengan presente"
+  ]
+ },
+ {
+  "id": "dar-por-sentado",
+  "es": "dar por sentado",
+  "pos": "phrase",
+  "ru": "считать само собой разумеющимся",
+  "example_es": "No des por sentado que todos están de acuerdo.",
+  "example_ru": "Не думай, что все само собой согласны.",
+  "rank": 1584,
+  "forms": [
+   "da por sentado",
+   "doy por sentado",
+   "des por sentado",
+   "dio por sentado",
+   "dimos por sentado"
+  ]
+ },
+ {
+  "id": "llevar-a-cabo",
+  "es": "llevar a cabo",
+  "pos": "phrase",
+  "ru": "осуществлять, проводить",
+  "example_es": "La reforma se llevó a cabo en apenas dos años.",
+  "example_ru": "Реформа была проведена всего за два года.",
+  "rank": 1526,
+  "forms": [
+   "lleva a cabo",
+   "llevó a cabo",
+   "llevan a cabo",
+   "llevaron a cabo"
+  ]
+ },
+ {
+  "id": "sacar-a-la-luz",
+  "es": "sacar a la luz",
+  "pos": "phrase",
+  "ru": "предать огласке, обнародовать",
+  "example_es": "Un periodista sacó a la luz el escándalo.",
+  "example_ru": "Журналист предал скандал огласке.",
+  "rank": 1066,
+  "forms": [
+   "saca a la luz",
+   "sacó a la luz",
+   "sacaron a la luz"
+  ]
+ },
+ {
+  "id": "salir-a-la-luz",
+  "es": "salir a la luz",
+  "pos": "phrase",
+  "ru": "выйти наружу, стать известным",
+  "example_es": "Con el tiempo, la verdad siempre acaba saliendo a la luz.",
+  "example_ru": "Со временем правда всегда выходит наружу.",
+  "rank": 551,
+  "forms": [
+   "sale a la luz",
+   "salió a la luz",
+   "saliendo a la luz",
+   "salieron a la luz"
+  ]
+ },
+ {
+  "id": "en-aras-de",
+  "es": "en aras de",
+  "pos": "phrase",
+  "ru": "ради, во имя",
+  "example_es": "Renunció a varios puntos en aras de un acuerdo.",
+  "example_ru": "Он отказался от ряда пунктов ради соглашения.",
+  "rank": 18572
+ },
+ {
+  "id": "a-tenor-de",
+  "es": "a tenor de",
+  "pos": "phrase",
+  "ru": "судя по; в соответствии с",
+  "example_es": "A tenor de los resultados, la campaña ha funcionado.",
+  "example_ru": "Судя по результатам, кампания сработала.",
+  "rank": 27653
+ },
+ {
+  "id": "de-antemano",
+  "es": "de antemano",
+  "pos": "phrase",
+  "ru": "заранее",
+  "example_es": "Te agradezco de antemano tu ayuda.",
+  "example_ru": "Заранее благодарю за помощь.",
+  "rank": 17389
+ },
+ {
+  "id": "a-grandes-rasgos",
+  "es": "a grandes rasgos",
+  "pos": "phrase",
+  "ru": "в общих чертах",
+  "example_es": "Te explico a grandes rasgos cómo funciona el sistema.",
+  "example_ru": "Объясню тебе в общих чертах, как работает система.",
+  "rank": 13732
+ },
+ {
+  "id": "a-ciencia-cierta",
+  "es": "a ciencia cierta",
+  "pos": "phrase",
+  "ru": "наверняка, достоверно",
+  "example_es": "Nadie sabe a ciencia cierta qué ocurrió aquella noche.",
+  "example_ru": "Никто достоверно не знает, что случилось той ночью.",
+  "rank": 2410
+ },
+ {
+  "id": "a-todas-luces",
+  "es": "a todas luces",
+  "pos": "phrase",
+  "ru": "совершенно очевидно",
+  "example_es": "La medida es a todas luces insuficiente.",
+  "example_ru": "Эта мера совершенно очевидно недостаточна.",
+  "rank": 1370
+ },
+ {
+  "id": "poner-en-tela-de-juicio",
+  "es": "poner en tela de juicio",
+  "pos": "phrase",
+  "ru": "ставить под сомнение",
+  "example_es": "Nadie pone en tela de juicio su honestidad.",
+  "example_ru": "Никто не ставит под сомнение его честность.",
+  "rank": 6760,
+  "forms": [
+   "pone en tela de juicio",
+   "puso en tela de juicio",
+   "ponen en tela de juicio"
+  ]
+ },
+ {
+  "id": "hacer-hincapié-en",
+  "es": "hacer hincapié en",
+  "pos": "phrase",
+  "ru": "делать акцент на, подчёркивать",
+  "example_es": "El profesor hizo hincapié en la importancia de la práctica.",
+  "example_ru": "Преподаватель сделал акцент на важности практики.",
+  "rank": 35528,
+  "forms": [
+   "hace hincapié en",
+   "hizo hincapié en",
+   "hacen hincapié en",
+   "hago hincapié en"
+  ]
+ },
+ {
+  "id": "dar-cabida-a",
+  "es": "dar cabida a",
+  "pos": "phrase",
+  "ru": "давать место, вмещать",
+  "example_es": "El nuevo auditorio da cabida a dos mil personas.",
+  "example_ru": "Новый зал вмещает две тысячи человек.",
+  "rank": 34204,
+  "forms": [
+   "da cabida a",
+   "dio cabida a",
+   "dan cabida a"
+  ]
+ },
+ {
+  "id": "salir-al-paso-de",
+  "es": "salir al paso de",
+  "pos": "phrase",
+  "ru": "пресекать; опровергать",
+  "example_es": "El ministro salió al paso de los rumores.",
+  "example_ru": "Министр опроверг слухи.",
+  "rank": 575,
+  "forms": [
+   "sale al paso de",
+   "salió al paso de",
+   "salieron al paso de"
+  ]
+ },
+ {
+  "id": "dar-pie-a",
+  "es": "dar pie a",
+  "pos": "phrase",
+  "ru": "давать повод к",
+  "example_es": "Sus declaraciones dieron pie a todo tipo de especulaciones.",
+  "example_ru": "Его заявления дали повод для самых разных домыслов.",
+  "rank": 738,
+  "forms": [
+   "da pie a",
+   "dio pie a",
+   "dan pie a",
+   "dieron pie a"
+  ]
+ },
+ {
+  "id": "estar-al-tanto-de",
+  "es": "estar al tanto de",
+  "pos": "phrase",
+  "ru": "быть в курсе",
+  "example_es": "¿Estás al tanto de los cambios en el horario?",
+  "example_ru": "Ты в курсе изменений в расписании?",
+  "rank": 235,
+  "forms": [
+   "está al tanto de",
+   "estoy al tanto de",
+   "estás al tanto de",
+   "están al tanto de"
+  ]
+ },
+ {
+  "id": "poner-en-marcha",
+  "es": "poner en marcha",
+  "pos": "phrase",
+  "ru": "запускать, приводить в действие",
+  "example_es": "El ayuntamiento pondrá en marcha un nuevo servicio de bicicletas.",
+  "example_ru": "Мэрия запустит новый сервис велопроката.",
+  "rank": 1298,
+  "forms": [
+   "pone en marcha",
+   "puso en marcha",
+   "pondrá en marcha",
+   "pusieron en marcha"
+  ]
+ },
+ {
+  "id": "a-medio-plazo",
+  "es": "a medio plazo",
+  "pos": "phrase",
+  "ru": "в среднесрочной перспективе",
+  "example_es": "A medio plazo, la inversión resultará rentable.",
+  "example_ru": "В среднесрочной перспективе инвестиции окупятся.",
+  "rank": 4406
+ },
+ {
+  "id": "cabe-destacar",
+  "es": "cabe destacar",
+  "pos": "phrase",
+  "ru": "стоит отметить",
+  "example_es": "Cabe destacar el papel de los voluntarios en la organización.",
+  "example_ru": "Стоит отметить роль волонтёров в организации.",
+  "rank": 22491
+ },
+ {
+  "id": "huelga-decir",
+  "es": "huelga decir",
+  "pos": "phrase",
+  "ru": "излишне говорить, само собой",
+  "example_es": "Huelga decir que la reunión es confidencial.",
+  "example_ru": "Само собой разумеется, встреча конфиденциальна.",
+  "rank": 5122
+ },
+ {
+  "id": "dicho-sea-de-paso",
+  "es": "dicho sea de paso",
+  "pos": "phrase",
+  "ru": "кстати говоря, между прочим",
+  "example_es": "El hotel, dicho sea de paso, era carísimo.",
+  "example_ru": "Отель, между прочим, был очень дорогим.",
+  "rank": 575
+ },
+ {
+  "id": "en-lo-que-respecta-a",
+  "es": "en lo que respecta a",
+  "pos": "phrase",
+  "ru": "что касается",
+  "example_es": "En lo que respecta a los plazos, no habrá cambios.",
+  "example_ru": "Что касается сроков, изменений не будет.",
+  "rank": 8620
+ },
+ {
+  "id": "en-lo-sucesivo",
+  "es": "en lo sucesivo",
+  "pos": "phrase",
+  "ru": "впредь, в дальнейшем",
+  "example_es": "En lo sucesivo, las solicitudes se presentarán por internet.",
+  "example_ru": "Впредь заявки будут подаваться через интернет.",
+  "rank": 10
+ },
+ {
+  "id": "con-creces",
+  "es": "con creces",
+  "pos": "phrase",
+  "ru": "с лихвой",
+  "example_es": "El equipo superó con creces las expectativas.",
+  "example_ru": "Команда с лихвой превзошла ожидания.",
+  "rank": 20670
+ },
+ {
+  "id": "a-duras-penas",
+  "es": "a duras penas",
+  "pos": "phrase",
+  "ru": "с большим трудом, еле-еле",
+  "example_es": "A duras penas consiguió terminar la carrera.",
+  "example_ru": "Он еле-еле сумел закончить забег.",
+  "rank": 7730
+ },
+ {
+  "id": "a-la-par",
+  "es": "a la par",
+  "pos": "phrase",
+  "ru": "наравне; одновременно",
+  "example_es": "Los salarios no han crecido a la par que los precios.",
+  "example_ru": "Зарплаты не росли наравне с ценами.",
+  "rank": 509
+ },
+ {
+  "id": "de-cara-a",
+  "es": "de cara a",
+  "pos": "phrase",
+  "ru": "в преддверии; с прицелом на",
+  "example_es": "El partido prepara su programa de cara a las elecciones.",
+  "example_ru": "Партия готовит программу к выборам.",
+  "rank": 378
+ },
+ {
+  "id": "en-pro-de",
+  "es": "en pro de",
+  "pos": "phrase",
+  "ru": "в пользу, за",
+  "example_es": "Lleva años luchando en pro de los derechos humanos.",
+  "example_ru": "Он много лет борется за права человека.",
+  "rank": 10598
+ },
+ {
+  "id": "en-detrimento-de",
+  "es": "en detrimento de",
+  "pos": "phrase",
+  "ru": "в ущерб",
+  "example_es": "Se priorizó la rapidez en detrimento de la calidad.",
+  "example_ru": "Скорость поставили во главу угла в ущерб качеству.",
+  "rank": 9
+ },
+ {
+  "id": "a-expensas-de",
+  "es": "a expensas de",
+  "pos": "phrase",
+  "ru": "за счёт",
+  "example_es": "Vive a expensas de sus padres desde hace años.",
+  "example_ru": "Он уже много лет живёт за счёт родителей.",
+  "rank": 22715
+ },
+ {
+  "id": "en-consonancia-con",
+  "es": "en consonancia con",
+  "pos": "phrase",
+  "ru": "в соответствии с, в согласии с",
+  "example_es": "Las medidas están en consonancia con las normas europeas.",
+  "example_ru": "Меры соответствуют европейским нормам.",
+  "rank": 19
+ },
+ {
+  "id": "al-hilo-de",
+  "es": "al hilo de",
+  "pos": "phrase",
+  "ru": "в связи с, по поводу",
+  "example_es": "Al hilo de lo que comentabas, tengo una pregunta.",
+  "example_ru": "В связи с тем, что ты говорил, у меня есть вопрос.",
+  "rank": 5938
+ },
+ {
+  "id": "cuando-menos",
+  "es": "cuando menos",
+  "pos": "phrase",
+  "ru": "по меньшей мере",
+  "example_es": "Su comportamiento fue, cuando menos, sorprendente.",
+  "example_ru": "Его поведение было, по меньшей мере, удивительным.",
+  "rank": 190
+ },
+ {
+  "id": "quedar-en-evidencia",
+  "es": "quedar en evidencia",
+  "pos": "phrase",
+  "ru": "оказаться в неловком положении; обнаружиться",
+  "example_es": "El ministro quedó en evidencia ante toda la prensa.",
+  "example_ru": "Министр оказался в неловком положении перед всей прессой.",
+  "rank": 1652,
+  "forms": [
+   "queda en evidencia",
+   "quedó en evidencia",
+   "quedaron en evidencia"
+  ]
+ },
+ {
+  "id": "salir-airoso",
+  "es": "salir airoso",
+  "pos": "phrase",
+  "ru": "выйти с честью, успешно справиться",
+  "example_es": "Salió airosa de una entrevista muy difícil.",
+  "example_ru": "Она с честью вышла из очень трудного собеседования.",
+  "rank": 265,
+  "forms": [
+   "sale airoso",
+   "salió airoso",
+   "salió airosa",
+   "salieron airosos"
+  ]
+ },
+ {
+  "id": "correr-a-cargo-de",
+  "es": "correr a cargo de",
+  "pos": "phrase",
+  "ru": "быть на ком-то (о расходах, организации)",
+  "example_es": "Los gastos del viaje corren a cargo de la empresa.",
+  "example_ru": "Расходы на поездку берёт на себя компания.",
+  "rank": 1339,
+  "forms": [
+   "corre a cargo de",
+   "corren a cargo de",
+   "corrió a cargo de"
+  ]
+ },
+ {
+  "id": "estar-en-juego",
+  "es": "estar en juego",
+  "pos": "phrase",
+  "ru": "быть на кону",
+  "example_es": "Está en juego el futuro de cientos de trabajadores.",
+  "example_ru": "На кону будущее сотен работников.",
+  "rank": 433,
+  "forms": [
+   "está en juego",
+   "están en juego",
+   "estaba en juego"
+  ]
+ },
+ {
+  "id": "caer-en-saco-roto",
+  "es": "caer en saco roto",
+  "pos": "phrase",
+  "ru": "пропасть даром, остаться без внимания",
+  "example_es": "Espero que mis consejos no caigan en saco roto.",
+  "example_ru": "Надеюсь, мои советы не пропадут даром.",
+  "rank": 2786,
+  "forms": [
+   "cae en saco roto",
+   "caigan en saco roto",
+   "cayó en saco roto"
+  ]
+ },
+ {
+  "id": "no-dar-abasto",
+  "es": "no dar abasto",
+  "pos": "phrase",
+  "ru": "не справляться, не успевать",
+  "example_es": "Con tantos pedidos, no damos abasto.",
+  "example_ru": "При таком количестве заказов мы не справляемся.",
+  "rank": 46138,
+  "forms": [
+   "no da abasto",
+   "no doy abasto",
+   "no damos abasto",
+   "no dan abasto"
+  ]
+ },
+ {
+  "id": "pasar-por-alto",
+  "es": "pasar por alto",
+  "pos": "phrase",
+  "ru": "упускать из виду; закрывать глаза на",
+  "example_es": "No podemos pasar por alto un error tan grave.",
+  "example_ru": "Мы не можем закрыть глаза на такую серьёзную ошибку.",
+  "rank": 525,
+  "forms": [
+   "pasa por alto",
+   "pasó por alto",
+   "pasamos por alto"
+  ]
+ },
+ {
+  "id": "a-efectos-de",
+  "es": "a efectos de",
+  "pos": "phrase",
+  "ru": "в целях, для (целей)",
+  "example_es": "A efectos de la ley, se le considera residente en España.",
+  "example_ru": "С точки зрения закона он считается резидентом Испании.",
+  "rank": 3492
+ },
+ {
+  "id": "a-título-personal",
+  "es": "a título personal",
+  "pos": "phrase",
+  "ru": "в личном качестве, от себя лично",
+  "example_es": "Habló a título personal, no en nombre del partido.",
+  "example_ru": "Он говорил от себя лично, а не от имени партии.",
+  "rank": 2975
+ },
+ {
+  "id": "sin-lugar-a-dudas",
+  "es": "sin lugar a dudas",
+  "pos": "phrase",
+  "ru": "несомненно",
+  "example_es": "Es, sin lugar a dudas, su mejor novela.",
+  "example_ru": "Это, несомненно, его лучший роман.",
+  "rank": 2835
+ },
+ {
+  "id": "en-la-medida-de-lo-posible",
+  "es": "en la medida de lo posible",
+  "pos": "phrase",
+  "ru": "по мере возможности",
+  "example_es": "Intentaremos, en la medida de lo posible, reducir los costes.",
+  "example_ru": "Мы постараемся по мере возможности сократить расходы.",
+  "rank": 3110
+ },
+ {
+  "id": "a-lo-sumo",
+  "es": "a lo sumo",
+  "pos": "phrase",
+  "ru": "самое большее",
+  "example_es": "El trayecto dura, a lo sumo, veinte minutos.",
+  "example_ru": "Дорога занимает самое большее двадцать минут.",
+  "rank": 11636
+ },
+ {
+  "id": "en-el-marco-de",
+  "es": "en el marco de",
+  "pos": "phrase",
+  "ru": "в рамках",
+  "example_es": "El acuerdo se firmó en el marco de la cumbre europea.",
+  "example_ru": "Соглашение было подписано в рамках европейского саммита.",
+  "rank": 3265
+ },
+ {
+  "id": "a-la-luz-de",
+  "es": "a la luz de",
+  "pos": "phrase",
+  "ru": "в свете, с учётом",
+  "example_es": "A la luz de los nuevos datos, hay que revisar el plan.",
+  "example_ru": "В свете новых данных план нужно пересмотреть.",
+  "rank": 551
+ },
+ {
+  "id": "hacer-frente-a",
+  "es": "hacer frente a",
+  "pos": "phrase",
+  "ru": "противостоять, справляться с",
+  "example_es": "El país tiene que hacer frente a una grave crisis energética.",
+  "example_ru": "Стране приходится справляться с тяжёлым энергетическим кризисом.",
+  "rank": 680,
+  "forms": [
+   "hace frente a",
+   "hizo frente a",
+   "hacen frente a"
+  ]
+ },
+ {
+  "id": "dar-lugar-a",
+  "es": "dar lugar a",
+  "pos": "phrase",
+  "ru": "приводить к, вызывать",
+  "example_es": "La falta de información dio lugar a muchos malentendidos.",
+  "example_ru": "Нехватка информации привела ко многим недоразумениям.",
+  "rank": 453,
+  "forms": [
+   "da lugar a",
+   "dio lugar a",
+   "dan lugar a"
+  ]
+ }
+]

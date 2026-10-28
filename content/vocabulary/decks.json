@@ -130,5 +130,221 @@
   "level": "A2",
   "title_ru": "Связки и наречия",
   "order": 11
+ },
+ {
+  "id": "b1-trabajo",
+  "level": "B1",
+  "title_ru": "Работа и офис",
+  "order": 1
+ },
+ {
+  "id": "b1-estudios",
+  "level": "B1",
+  "title_ru": "Учёба и образование",
+  "order": 2
+ },
+ {
+  "id": "b1-salud",
+  "level": "B1",
+  "title_ru": "Здоровье и тело",
+  "order": 3
+ },
+ {
+  "id": "b1-emociones",
+  "level": "B1",
+  "title_ru": "Чувства и отношения",
+  "order": 4
+ },
+ {
+  "id": "b1-viajes",
+  "level": "B1",
+  "title_ru": "Путешествия и транспорт",
+  "order": 5
+ },
+ {
+  "id": "b1-sociedad",
+  "level": "B1",
+  "title_ru": "Общество и новости",
+  "order": 6
+ },
+ {
+  "id": "b1-medio-ambiente",
+  "level": "B1",
+  "title_ru": "Природа и экология",
+  "order": 7
+ },
+ {
+  "id": "b1-cultura",
+  "level": "B1",
+  "title_ru": "Культура и досуг",
+  "order": 8
+ },
+ {
+  "id": "b1-verbos",
+  "level": "B1",
+  "title_ru": "Глаголы B1",
+  "order": 9
+ },
+ {
+  "id": "b1-conectores",
+  "level": "B1",
+  "title_ru": "Связки и наречия B1",
+  "order": 10
+ },
+ {
+  "id": "b2-economia",
+  "level": "B2",
+  "title_ru": "Экономика и деньги",
+  "order": 1
+ },
+ {
+  "id": "b2-politica",
+  "level": "B2",
+  "title_ru": "Политика и государство",
+  "order": 2
+ },
+ {
+  "id": "b2-ciencia",
+  "level": "B2",
+  "title_ru": "Наука и технологии",
+  "order": 3
+ },
+ {
+  "id": "b2-medios",
+  "level": "B2",
+  "title_ru": "СМИ и интернет",
+  "order": 4
+ },
+ {
+  "id": "b2-derecho",
+  "level": "B2",
+  "title_ru": "Закон и права",
+  "order": 5
+ },
+ {
+  "id": "b2-arte",
+  "level": "B2",
+  "title_ru": "Искусство и литература",
+  "order": 6
+ },
+ {
+  "id": "b2-psicologia",
+  "level": "B2",
+  "title_ru": "Психология и характер",
+  "order": 7
+ },
+ {
+  "id": "b2-empresa",
+  "level": "B2",
+  "title_ru": "Бизнес и карьера",
+  "order": 8
+ },
+ {
+  "id": "b2-verbos",
+  "level": "B2",
+  "title_ru": "Глаголы B2",
+  "order": 9
+ },
+ {
+  "id": "b2-conectores",
+  "level": "B2",
+  "title_ru": "Связки и аргументация",
+  "order": 10
+ },
+ {
+  "id": "c1-academico",
+  "level": "C1",
+  "title_ru": "Академический язык",
+  "order": 1
+ },
+ {
+  "id": "c1-abstracto",
+  "level": "C1",
+  "title_ru": "Абстрактные понятия",
+  "order": 2
+ },
+ {
+  "id": "c1-finanzas",
+  "level": "C1",
+  "title_ru": "Финансы и управление",
+  "order": 3
+ },
+ {
+  "id": "c1-sociedad",
+  "level": "C1",
+  "title_ru": "Социальные вопросы",
+  "order": 4
+ },
+ {
+  "id": "c1-medicina",
+  "level": "C1",
+  "title_ru": "Медицина",
+  "order": 5
+ },
+ {
+  "id": "c1-verbos",
+  "level": "C1",
+  "title_ru": "Глаголы C1",
+  "order": 6
+ },
+ {
+  "id": "c1-matices",
+  "level": "C1",
+  "title_ru": "Оценки и оттенки",
+  "order": 7
+ },
+ {
+  "id": "c1-expresiones",
+  "level": "C1",
+  "title_ru": "Устойчивые выражения C1",
+  "order": 8
+ },
+ {
+  "id": "c2-literario",
+  "level": "C2",
+  "title_ru": "Литературный язык",
+  "order": 1
+ },
+ {
+  "id": "c2-juridico",
+  "level": "C2",
+  "title_ru": "Юридический язык",
+  "order": 2
+ },
+ {
+  "id": "c2-pensamiento",
+  "level": "C2",
+  "title_ru": "Философия и мышление",
+  "order": 3
+ },
+ {
+  "id": "c2-ciencia",
+  "level": "C2",
+  "title_ru": "Наука: термины",
+  "order": 4
+ },
+ {
+  "id": "c2-sinonimos",
+  "level": "C2",
+  "title_ru": "Тонкие синонимы",
+  "order": 5
+ },
+ {
+  "id": "c2-verbos",
+  "level": "C2",
+  "title_ru": "Глаголы C2",
+  "order": 6
+ },
+ {
+  "id": "c2-cultismos",
+  "level": "C2",
+  "title_ru": "Книжная лексика",
+  "order": 7
+ },
+ {
+  "id": "c2-expresiones",
+  "level": "C2",
+  "title_ru": "Идиомы и фразеология C2",
+  "order": 8
  }
 ]

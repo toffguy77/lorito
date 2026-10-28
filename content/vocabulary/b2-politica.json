@@ -1,0 +1,728 @@
+[
+ {
+  "id": "estado",
+  "es": "estado",
+  "pos": "noun",
+  "ru": "государство; состояние",
+  "example_es": "El Estado debe garantizar la educación de todos los niños.",
+  "example_ru": "Государство должно гарантировать образование всем детям.",
+  "rank": 170,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "estados"
+  ]
+ },
+ {
+  "id": "política",
+  "es": "política",
+  "pos": "noun",
+  "ru": "политика",
+  "example_es": "A mi padre le interesa mucho la política internacional.",
+  "example_ru": "Моего отца очень интересует международная политика.",
+  "rank": 1602,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "políticas"
+  ]
+ },
+ {
+  "id": "político",
+  "es": "político",
+  "pos": "noun",
+  "ru": "политик; политический",
+  "example_es": "Los políticos prometen mucho durante la campaña.",
+  "example_ru": "Во время кампании политики много обещают.",
+  "rank": 3917,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "políticos",
+   "política",
+   "políticas"
+  ]
+ },
+ {
+  "id": "campaña",
+  "es": "campaña",
+  "pos": "noun",
+  "ru": "кампания",
+  "example_es": "La campaña electoral empieza oficialmente mañana.",
+  "example_ru": "Предвыборная кампания официально начинается завтра.",
+  "rank": 2366,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "campañas"
+  ]
+ },
+ {
+  "id": "ministerio",
+  "es": "ministerio",
+  "pos": "noun",
+  "ru": "министерство",
+  "example_es": "Trabaja como asesor en el Ministerio de Educación.",
+  "example_ru": "Он работает советником в министерстве образования.",
+  "rank": 4939,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "ministerios"
+  ]
+ },
+ {
+  "id": "parlamento",
+  "es": "parlamento",
+  "pos": "noun",
+  "ru": "парламент",
+  "example_es": "El parlamento aprobó la reforma por amplia mayoría.",
+  "example_ru": "Парламент одобрил реформу подавляющим большинством голосов.",
+  "rank": 8082,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "parlamentos"
+  ]
+ },
+ {
+  "id": "diputado",
+  "es": "diputado",
+  "pos": "noun",
+  "ru": "депутат",
+  "example_es": "Los diputados votaron en contra de la propuesta del Gobierno.",
+  "example_ru": "Депутаты проголосовали против предложения правительства.",
+  "rank": 11086,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "diputados",
+   "diputada",
+   "diputadas"
+  ]
+ },
+ {
+  "id": "senado",
+  "es": "senado",
+  "pos": "noun",
+  "ru": "сенат",
+  "example_es": "El proyecto de ley todavía tiene que pasar por el Senado.",
+  "example_ru": "Законопроект ещё должен пройти через сенат.",
+  "rank": 6635,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "senados"
+  ]
+ },
+ {
+  "id": "gobernar",
+  "es": "gobernar",
+  "pos": "verb",
+  "ru": "управлять, править",
+  "example_es": "Ese partido gobierna la región desde hace veinte años.",
+  "example_ru": "Эта партия управляет регионом уже двадцать лет.",
+  "rank": 9905,
+  "forms": [
+   "gobierno",
+   "gobierna",
+   "gobiernan",
+   "gobierne"
+  ]
+ },
+ {
+  "id": "oposición",
+  "es": "oposición",
+  "pos": "noun",
+  "ru": "оппозиция; противодействие",
+  "example_es": "La oposición criticó duramente los nuevos presupuestos.",
+  "example_ru": "Оппозиция резко раскритиковала новый бюджет.",
+  "rank": 9504,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "oposiciones"
+  ]
+ },
+ {
+  "id": "minoría",
+  "es": "minoría",
+  "pos": "noun",
+  "ru": "меньшинство",
+  "example_es": "Los derechos de las minorías deben estar protegidos por la ley.",
+  "example_ru": "Права меньшинств должны быть защищены законом.",
+  "rank": 17840,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "minorías"
+  ]
+ },
+ {
+  "id": "democracia",
+  "es": "democracia",
+  "pos": "noun",
+  "ru": "демократия",
+  "example_es": "La libertad de expresión es esencial en una democracia.",
+  "example_ru": "Свобода слова необходима в демократическом обществе.",
+  "rank": 5919,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "democracias"
+  ]
+ },
+ {
+  "id": "dictadura",
+  "es": "dictadura",
+  "pos": "noun",
+  "ru": "диктатура",
+  "example_es": "El país vivió casi cuarenta años bajo una dictadura.",
+  "example_ru": "Страна почти сорок лет жила при диктатуре.",
+  "rank": 18102,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "dictaduras"
+  ]
+ },
+ {
+  "id": "régimen",
+  "es": "régimen",
+  "pos": "noun",
+  "ru": "режим, строй",
+  "example_es": "El régimen encarceló a muchos opositores y periodistas.",
+  "example_ru": "Режим бросил в тюрьму многих оппозиционеров и журналистов.",
+  "rank": 8694,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "regímenes"
+  ]
+ },
+ {
+  "id": "república",
+  "es": "república",
+  "pos": "noun",
+  "ru": "республика",
+  "example_es": "Tras la revolución, el país se convirtió en una república.",
+  "example_ru": "После революции страна стала республикой.",
+  "rank": 5290,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "repúblicas"
+  ]
+ },
+ {
+  "id": "monarquía",
+  "es": "monarquía",
+  "pos": "noun",
+  "ru": "монархия",
+  "example_es": "En una monarquía parlamentaria, el rey apenas tiene poder real.",
+  "example_ru": "В парламентской монархии у короля почти нет реальной власти.",
+  "rank": 20788,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "monarquías"
+  ]
+ },
+ {
+  "id": "constitución",
+  "es": "constitución",
+  "pos": "noun",
+  "ru": "конституция",
+  "example_es": "La Constitución reconoce la igualdad de todos ante la ley.",
+  "example_ru": "Конституция признаёт равенство всех перед законом.",
+  "rank": 8047,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "constituciones"
+  ]
+ },
+ {
+  "id": "nación",
+  "es": "nación",
+  "pos": "noun",
+  "ru": "нация; государство",
+  "example_es": "Representantes de muchas naciones asistieron a la reunión.",
+  "example_ru": "На встрече присутствовали представители многих государств.",
+  "rank": 2934,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "naciones"
+  ]
+ },
+ {
+  "id": "independencia",
+  "es": "independencia",
+  "pos": "noun",
+  "ru": "независимость",
+  "example_es": "El país celebra hoy doscientos años de independencia.",
+  "example_ru": "Сегодня страна празднует двести лет независимости.",
+  "rank": 7549,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "independencias"
+  ]
+ },
+ {
+  "id": "conservador",
+  "es": "conservador",
+  "pos": "adj",
+  "ru": "консервативный; консерватор",
+  "example_es": "Es un partido muy conservador en temas sociales.",
+  "example_ru": "Это очень консервативная партия в социальных вопросах.",
+  "rank": 13912,
+  "forms": [
+   "conservadora",
+   "conservadores",
+   "conservadoras"
+  ]
+ },
+ {
+  "id": "liberal",
+  "es": "liberal",
+  "pos": "adj",
+  "ru": "либеральный; либерал",
+  "example_es": "Los sectores más liberales defienden una menor intervención del Estado.",
+  "example_ru": "Наиболее либеральные круги выступают за меньшее вмешательство государства.",
+  "rank": 12897,
+  "forms": [
+   "liberales"
+  ]
+ },
+ {
+  "id": "reforma",
+  "es": "reforma",
+  "pos": "noun",
+  "ru": "реформа",
+  "example_es": "La reforma educativa generó un intenso debate en el país.",
+  "example_ru": "Образовательная реформа вызвала в стране бурные споры.",
+  "rank": 12387,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "reformas"
+  ]
+ },
+ {
+  "id": "líder",
+  "es": "líder",
+  "pos": "noun",
+  "ru": "лидер",
+  "example_es": "La líder del partido anunció su retirada de la vida política.",
+  "example_ru": "Лидер партии объявила об уходе из политики.",
+  "rank": 1770,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "líderes"
+  ]
+ },
+ {
+  "id": "dimisión",
+  "es": "dimisión",
+  "pos": "noun",
+  "ru": "отставка",
+  "example_es": "La oposición exige la dimisión inmediata del alcalde.",
+  "example_ru": "Оппозиция требует немедленной отставки мэра.",
+  "rank": 17481,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "dimisiones"
+  ]
+ },
+ {
+  "id": "mandato",
+  "es": "mandato",
+  "pos": "noun",
+  "ru": "срок полномочий; мандат",
+  "example_es": "Durante su mandato se construyeron tres hospitales nuevos.",
+  "example_ru": "За время его правления построили три новые больницы.",
+  "rank": 12817,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "mandatos"
+  ]
+ },
+ {
+  "id": "coalición",
+  "es": "coalición",
+  "pos": "noun",
+  "ru": "коалиция",
+  "example_es": "Los dos partidos formaron una coalición para gobernar.",
+  "example_ru": "Две партии сформировали коалицию, чтобы управлять страной.",
+  "rank": 18368,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "coaliciones"
+  ]
+ },
+ {
+  "id": "debate",
+  "es": "debate",
+  "pos": "noun",
+  "ru": "дебаты; обсуждение",
+  "example_es": "Millones de personas vieron el debate entre los candidatos.",
+  "example_ru": "Миллионы людей смотрели дебаты между кандидатами.",
+  "rank": 5771,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "debates"
+  ]
+ },
+ {
+  "id": "discurso",
+  "es": "discurso",
+  "pos": "noun",
+  "ru": "речь",
+  "example_es": "El presidente pronunció un discurso muy emotivo.",
+  "example_ru": "Президент произнёс очень эмоциональную речь.",
+  "rank": 2196,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "discursos"
+  ]
+ },
+ {
+  "id": "propuesta",
+  "es": "propuesta",
+  "pos": "noun",
+  "ru": "предложение",
+  "example_es": "La propuesta fue rechazada por la mayoría de los diputados.",
+  "example_ru": "Предложение было отвергнуто большинством депутатов.",
+  "rank": 3950,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "propuestas"
+  ]
+ },
+ {
+  "id": "medida",
+  "es": "medida",
+  "pos": "noun",
+  "ru": "мера; размер",
+  "example_es": "El Gobierno tomará nuevas medidas para reducir el paro.",
+  "example_ru": "Правительство примет новые меры по снижению безработицы.",
+  "rank": 3110,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "medidas"
+  ]
+ },
+ {
+  "id": "embajada",
+  "es": "embajada",
+  "pos": "noun",
+  "ru": "посольство",
+  "example_es": "Para pedir el visado hay que ir a la embajada.",
+  "example_ru": "Чтобы получить визу, нужно обратиться в посольство.",
+  "rank": 5294,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "embajadas"
+  ]
+ },
+ {
+  "id": "embajador",
+  "es": "embajador",
+  "pos": "noun",
+  "ru": "посол",
+  "example_es": "El embajador fue llamado a consultas tras la crisis.",
+  "example_ru": "После кризиса посла отозвали для консультаций.",
+  "rank": 4500,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "embajadores",
+   "embajadora",
+   "embajadoras"
+  ]
+ },
+ {
+  "id": "diplomático",
+  "es": "diplomático",
+  "pos": "adj",
+  "ru": "дипломатический; дипломат",
+  "example_es": "Los dos países rompieron relaciones diplomáticas.",
+  "example_ru": "Две страны разорвали дипломатические отношения.",
+  "rank": 11550,
+  "forms": [
+   "diplomática",
+   "diplomáticos",
+   "diplomáticas"
+  ]
+ },
+ {
+  "id": "tratado",
+  "es": "tratado",
+  "pos": "noun",
+  "ru": "договор; трактат",
+  "example_es": "Los dos Estados firmaron un tratado de paz.",
+  "example_ru": "Два государства подписали мирный договор.",
+  "rank": 2584,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "tratados"
+  ]
+ },
+ {
+  "id": "conflicto",
+  "es": "conflicto",
+  "pos": "noun",
+  "ru": "конфликт",
+  "example_es": "El conflicto armado ha obligado a miles de familias a huir.",
+  "example_ru": "Вооружённый конфликт вынудил тысячи семей бежать.",
+  "rank": 5133,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "conflictos"
+  ]
+ },
+ {
+  "id": "corrupción",
+  "es": "corrupción",
+  "pos": "noun",
+  "ru": "коррупция",
+  "example_es": "La corrupción es una de las principales preocupaciones de los ciudadanos.",
+  "example_ru": "Коррупция — одна из главных забот граждан.",
+  "rank": 7630,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "corrupciones"
+  ]
+ },
+ {
+  "id": "escándalo",
+  "es": "escándalo",
+  "pos": "noun",
+  "ru": "скандал",
+  "example_es": "El escándalo salió a la luz gracias a la prensa.",
+  "example_ru": "Скандал вскрылся благодаря прессе.",
+  "rank": 3741,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "escándalos"
+  ]
+ },
+ {
+  "id": "golpe-de-estado",
+  "es": "golpe de Estado",
+  "pos": "phrase",
+  "ru": "государственный переворот",
+  "example_es": "El ejército intentó dar un golpe de Estado en los años setenta.",
+  "example_ru": "В семидесятые годы армия пыталась совершить государственный переворот.",
+  "rank": 1283
+ },
+ {
+  "id": "revolución",
+  "es": "revolución",
+  "pos": "noun",
+  "ru": "революция",
+  "example_es": "La revolución cambió por completo la vida del país.",
+  "example_ru": "Революция полностью изменила жизнь страны.",
+  "rank": 3336,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "revoluciones"
+  ]
+ },
+ {
+  "id": "autoridad",
+  "es": "autoridad",
+  "pos": "noun",
+  "ru": "власть, орган власти; авторитет",
+  "example_es": "Las autoridades recomiendan no salir de casa durante la tormenta.",
+  "example_ru": "Власти рекомендуют не выходить из дома во время бури.",
+  "rank": 3059,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "autoridades"
+  ]
+ },
+ {
+  "id": "burocracia",
+  "es": "burocracia",
+  "pos": "noun",
+  "ru": "бюрократия",
+  "example_es": "La burocracia hace que cualquier trámite dure meses.",
+  "example_ru": "Из-за бюрократии любое оформление тянется месяцами.",
+  "rank": 18777,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "burocracias"
+  ]
+ },
+ {
+  "id": "electoral",
+  "es": "electoral",
+  "pos": "adj",
+  "ru": "избирательный, предвыборный",
+  "example_es": "El partido presentó su programa electoral en la capital.",
+  "example_ru": "Партия представила свою предвыборную программу в столице.",
+  "rank": 14208,
+  "forms": [
+   "electorales"
+  ]
+ },
+ {
+  "id": "ideología",
+  "es": "ideología",
+  "pos": "noun",
+  "ru": "идеология",
+  "example_es": "Su ideología política ha cambiado con los años.",
+  "example_ru": "С годами его политические взгляды изменились.",
+  "rank": 20002,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "ideologías"
+  ]
+ },
+ {
+  "id": "propaganda",
+  "es": "propaganda",
+  "pos": "noun",
+  "ru": "пропаганда; агитация",
+  "example_es": "El régimen controlaba la propaganda en la radio y la televisión.",
+  "example_ru": "Режим контролировал пропаганду на радио и телевидении.",
+  "rank": 9625,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "propagandas"
+  ]
+ },
+ {
+  "id": "alianza",
+  "es": "alianza",
+  "pos": "noun",
+  "ru": "союз, альянс",
+  "example_es": "Los dos partidos firmaron una alianza antes de las elecciones.",
+  "example_ru": "Перед выборами две партии заключили союз.",
+  "rank": 3826,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "alianzas"
+  ]
+ },
+ {
+  "id": "cumbre",
+  "es": "cumbre",
+  "pos": "noun",
+  "ru": "саммит; вершина",
+  "example_es": "Los líderes europeos se reunirán en una cumbre sobre energía.",
+  "example_ru": "Европейские лидеры соберутся на саммит по энергетике.",
+  "rank": 10163,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "cumbres"
+  ]
+ },
+ {
+  "id": "senador",
+  "es": "senador",
+  "pos": "noun",
+  "ru": "сенатор",
+  "example_es": "El senador votó en contra de su propio partido.",
+  "example_ru": "Сенатор проголосовал против собственной партии.",
+  "rank": 2864,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "senadores",
+   "senadora",
+   "senadoras"
+  ]
+ },
+ {
+  "id": "poderoso",
+  "es": "poderoso",
+  "pos": "adj",
+  "ru": "могущественный, влиятельный",
+  "example_es": "Es uno de los hombres más poderosos del país.",
+  "example_ru": "Это один из самых влиятельных людей в стране.",
+  "rank": 2851,
+  "forms": [
+   "poderosa",
+   "poderosos",
+   "poderosas"
+  ]
+ },
+ {
+  "id": "apoyo",
+  "es": "apoyo",
+  "pos": "noun",
+  "ru": "поддержка",
+  "example_es": "El proyecto cuenta con el apoyo de casi todos los partidos.",
+  "example_ru": "Проект пользуется поддержкой почти всех партий.",
+  "rank": 1665,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "apoyos"
+  ]
+ },
+ {
+  "id": "derrota",
+  "es": "derrota",
+  "pos": "noun",
+  "ru": "поражение",
+  "example_es": "Tras la derrota electoral, el líder del partido presentó su dimisión.",
+  "example_ru": "После поражения на выборах лидер партии подал в отставку.",
+  "rank": 6316,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "derrotas"
+  ]
+ },
+ {
+  "id": "exilio",
+  "es": "exilio",
+  "pos": "noun",
+  "ru": "изгнание, эмиграция",
+  "example_es": "Muchos escritores tuvieron que marchar al exilio durante la dictadura.",
+  "example_ru": "Во время диктатуры многим писателям пришлось эмигрировать.",
+  "rank": 10228,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "exilios"
+  ]
+ },
+ {
+  "id": "gubernamental",
+  "es": "gubernamental",
+  "pos": "adj",
+  "ru": "правительственный",
+  "example_es": "La medida forma parte de un nuevo programa gubernamental.",
+  "example_ru": "Эта мера входит в новую правительственную программу.",
+  "rank": 18199,
+  "forms": [
+   "gubernamentales"
+  ]
+ }
+]

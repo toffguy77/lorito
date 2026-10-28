@@ -1,0 +1,678 @@
+[
+ {
+  "id": "diagnosticar",
+  "es": "diagnosticar",
+  "pos": "verb",
+  "ru": "ставить диагноз",
+  "example_es": "Le diagnosticaron la enfermedad cuando tenía treinta años.",
+  "example_ru": "Болезнь ему диагностировали в тридцать лет.",
+  "rank": 31412
+ },
+ {
+  "id": "pronóstico",
+  "es": "pronóstico",
+  "pos": "noun",
+  "ru": "прогноз",
+  "example_es": "Los médicos dicen que el pronóstico es favorable.",
+  "example_ru": "Врачи говорят, что прогноз благоприятный.",
+  "rank": 14656,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "pronósticos"
+  ]
+ },
+ {
+  "id": "patología",
+  "es": "patología",
+  "pos": "noun",
+  "ru": "патология; заболевание",
+  "example_es": "Es un tratamiento eficaz para varias patologías respiratorias.",
+  "example_ru": "Это эффективное лечение ряда заболеваний дыхательных путей.",
+  "rank": 21801,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "patologías"
+  ]
+ },
+ {
+  "id": "crónico",
+  "es": "crónico",
+  "pos": "adj",
+  "ru": "хронический",
+  "example_es": "Padece una enfermedad crónica desde la infancia.",
+  "example_ru": "Он с детства страдает хроническим заболеванием.",
+  "rank": 27805,
+  "forms": [
+   "crónica",
+   "crónicos",
+   "crónicas"
+  ]
+ },
+ {
+  "id": "agudo",
+  "es": "agudo",
+  "pos": "adj",
+  "ru": "острый",
+  "example_es": "Ingresó en urgencias con un dolor agudo en el pecho.",
+  "example_ru": "Он поступил в неотложку с острой болью в груди.",
+  "rank": 12197,
+  "forms": [
+   "aguda",
+   "agudos",
+   "agudas"
+  ]
+ },
+ {
+  "id": "inflamación",
+  "es": "inflamación",
+  "pos": "noun",
+  "ru": "воспаление",
+  "example_es": "El hielo ayuda a reducir la inflamación de la rodilla.",
+  "example_ru": "Лёд помогает уменьшить воспаление колена.",
+  "rank": 17699,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "inflamaciones"
+  ]
+ },
+ {
+  "id": "lesión",
+  "es": "lesión",
+  "pos": "noun",
+  "ru": "травма; повреждение",
+  "example_es": "El jugador estará un mes de baja por una lesión muscular.",
+  "example_ru": "Игрок пропустит месяц из-за мышечной травмы.",
+  "rank": 7923,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "lesiones"
+  ]
+ },
+ {
+  "id": "fractura",
+  "es": "fractura",
+  "pos": "noun",
+  "ru": "перелом",
+  "example_es": "La radiografía mostró una fractura en la muñeca.",
+  "example_ru": "Рентген показал перелом запястья.",
+  "rank": 7809,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "fracturas"
+  ]
+ },
+ {
+  "id": "hemorragia",
+  "es": "hemorragia",
+  "pos": "noun",
+  "ru": "кровотечение",
+  "example_es": "Llegó al hospital con una hemorragia interna.",
+  "example_ru": "Он поступил в больницу с внутренним кровотечением.",
+  "rank": 5690,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "hemorragias"
+  ]
+ },
+ {
+  "id": "tumor",
+  "es": "tumor",
+  "pos": "noun",
+  "ru": "опухоль",
+  "example_es": "Por suerte, el tumor era pequeño y se pudo extirpar.",
+  "example_ru": "К счастью, опухоль была маленькой, и её удалось удалить.",
+  "rank": 5718,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "tumores"
+  ]
+ },
+ {
+  "id": "metástasis",
+  "es": "metástasis",
+  "pos": "noun",
+  "ru": "метастаз; метастазирование",
+  "example_es": "Detectaron el cáncer antes de que hubiera metástasis.",
+  "example_ru": "Рак обнаружили до того, как появились метастазы.",
+  "rank": 39360,
+  "article": "la",
+  "gender": "f"
+ },
+ {
+  "id": "quimioterapia",
+  "es": "quimioterapia",
+  "pos": "noun",
+  "ru": "химиотерапия",
+  "example_es": "Después de la operación tuvo que recibir quimioterapia.",
+  "example_ru": "После операции ей пришлось пройти химиотерапию.",
+  "rank": 15707,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "quimioterapias"
+  ]
+ },
+ {
+  "id": "cirugía",
+  "es": "cirugía",
+  "pos": "noun",
+  "ru": "хирургия; операция",
+  "example_es": "Se recupera bien de una cirugía de corazón.",
+  "example_ru": "Он хорошо восстанавливается после операции на сердце.",
+  "rank": 2339,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "cirugías"
+  ]
+ },
+ {
+  "id": "intervención",
+  "es": "intervención",
+  "pos": "noun",
+  "ru": "операция; вмешательство",
+  "example_es": "La intervención quirúrgica duró más de cuatro horas.",
+  "example_ru": "Хирургическая операция длилась более четырёх часов.",
+  "rank": 8153,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "intervenciones"
+  ]
+ },
+ {
+  "id": "anestesia",
+  "es": "anestesia",
+  "pos": "noun",
+  "ru": "анестезия, наркоз",
+  "example_es": "La operan con anestesia local, no general.",
+  "example_ru": "Её оперируют под местной, а не общей анестезией.",
+  "rank": 11869,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "anestesias"
+  ]
+ },
+ {
+  "id": "quirófano",
+  "es": "quirófano",
+  "pos": "noun",
+  "ru": "операционная",
+  "example_es": "El paciente ya ha salido del quirófano.",
+  "example_ru": "Пациента уже вывезли из операционной.",
+  "rank": 6040,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "quirófanos"
+  ]
+ },
+ {
+  "id": "alta",
+  "es": "alta",
+  "pos": "noun",
+  "ru": "выписка (из больницы)",
+  "example_es": "Le darán el alta mañana si no tiene fiebre.",
+  "example_ru": "Если не будет температуры, его выпишут завтра.",
+  "rank": 1181,
+  "article": "el",
+  "gender": "f",
+  "forms": [
+   "altas"
+  ]
+ },
+ {
+  "id": "dosis",
+  "es": "dosis",
+  "pos": "noun",
+  "ru": "доза",
+  "example_es": "No superes la dosis recomendada por el médico.",
+  "example_ru": "Не превышай дозу, рекомендованную врачом.",
+  "rank": 4483,
+  "article": "la",
+  "gender": "f"
+ },
+ {
+  "id": "fármaco",
+  "es": "fármaco",
+  "pos": "noun",
+  "ru": "лекарственный препарат",
+  "example_es": "Este fármaco puede causar somnolencia.",
+  "example_ru": "Этот препарат может вызывать сонливость.",
+  "rank": 33194,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "fármacos"
+  ]
+ },
+ {
+  "id": "analgésico",
+  "es": "analgésico",
+  "pos": "noun",
+  "ru": "обезболивающее",
+  "example_es": "Tómate un analgésico si el dolor no se te pasa.",
+  "example_ru": "Прими обезболивающее, если боль не пройдёт.",
+  "rank": 33680,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "analgésicos"
+  ]
+ },
+ {
+  "id": "antibiótico",
+  "es": "antibiótico",
+  "pos": "noun",
+  "ru": "антибиотик",
+  "example_es": "Los antibióticos no sirven contra los virus.",
+  "example_ru": "Антибиотики не действуют на вирусы.",
+  "rank": 33159,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "antibióticos"
+  ]
+ },
+ {
+  "id": "contagio",
+  "es": "contagio",
+  "pos": "noun",
+  "ru": "заражение",
+  "example_es": "Lavarse las manos reduce el riesgo de contagio.",
+  "example_ru": "Мытьё рук снижает риск заражения.",
+  "rank": 28782,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "contagios"
+  ]
+ },
+ {
+  "id": "contagioso",
+  "es": "contagioso",
+  "pos": "adj",
+  "ru": "заразный",
+  "example_es": "Es una enfermedad muy contagiosa entre niños.",
+  "example_ru": "Эта болезнь очень заразна среди детей.",
+  "rank": 14860,
+  "forms": [
+   "contagiosa",
+   "contagiosos",
+   "contagiosas"
+  ]
+ },
+ {
+  "id": "epidemia",
+  "es": "epidemia",
+  "pos": "noun",
+  "ru": "эпидемия",
+  "example_es": "La epidemia de gripe ha colapsado los hospitales.",
+  "example_ru": "Эпидемия гриппа парализовала больницы.",
+  "rank": 10935,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "epidemias"
+  ]
+ },
+ {
+  "id": "pandemia",
+  "es": "pandemia",
+  "pos": "noun",
+  "ru": "пандемия",
+  "example_es": "La pandemia cambió nuestra forma de trabajar.",
+  "example_ru": "Пандемия изменила наш способ работать.",
+  "rank": 42887,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "pandemias"
+  ]
+ },
+ {
+  "id": "inmune",
+  "es": "inmune",
+  "pos": "adj",
+  "ru": "невосприимчивый, иммунный",
+  "example_es": "Después de pasar la enfermedad, quedas inmune durante años.",
+  "example_ru": "Переболев, ты остаёшься невосприимчивым на годы.",
+  "rank": 12961,
+  "forms": [
+   "inmunes"
+  ]
+ },
+ {
+  "id": "hipertensión",
+  "es": "hipertensión",
+  "pos": "noun",
+  "ru": "гипертония",
+  "example_es": "La hipertensión no suele dar síntomas al principio.",
+  "example_ru": "Гипертония поначалу обычно протекает бессимптомно.",
+  "rank": 32665,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "hipertensiones"
+  ]
+ },
+ {
+  "id": "diabetes",
+  "es": "diabetes",
+  "pos": "noun",
+  "ru": "диабет",
+  "example_es": "Controla su diabetes con dieta y ejercicio.",
+  "example_ru": "Он контролирует диабет диетой и упражнениями.",
+  "rank": 12854,
+  "article": "la",
+  "gender": "f"
+ },
+ {
+  "id": "infarto",
+  "es": "infarto",
+  "pos": "noun",
+  "ru": "инфаркт",
+  "example_es": "Sufrió un infarto mientras corría.",
+  "example_ru": "У него случился инфаркт во время пробежки.",
+  "rank": 7111,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "infartos"
+  ]
+ },
+ {
+  "id": "ictus",
+  "es": "ictus",
+  "pos": "noun",
+  "ru": "инсульт",
+  "example_es": "Un ictus requiere atención médica inmediata.",
+  "example_ru": "Инсульт требует немедленной медицинской помощи.",
+  "rank": 49999,
+  "article": "el",
+  "gender": "m"
+ },
+ {
+  "id": "ecografía",
+  "es": "ecografía",
+  "pos": "noun",
+  "ru": "УЗИ",
+  "example_es": "En la ecografía ya se ve el corazón del bebé.",
+  "example_ru": "На УЗИ уже видно сердце малыша.",
+  "rank": 20801,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "ecografías"
+  ]
+ },
+ {
+  "id": "náusea",
+  "es": "náusea",
+  "pos": "noun",
+  "ru": "тошнота",
+  "example_es": "El medicamento puede producir náuseas y mareos.",
+  "example_ru": "Лекарство может вызывать тошноту и головокружение.",
+  "rank": 41787,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "náuseas"
+  ]
+ },
+ {
+  "id": "cicatriz",
+  "es": "cicatriz",
+  "pos": "noun",
+  "ru": "шрам, рубец",
+  "example_es": "Le quedó una pequeña cicatriz en la frente.",
+  "example_ru": "У него остался небольшой шрам на лбу.",
+  "rank": 6347,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "cicatrices"
+  ]
+ },
+ {
+  "id": "historial",
+  "es": "historial",
+  "pos": "noun",
+  "ru": "история (болезни); послужной список",
+  "example_es": "La doctora revisó mi historial clínico.",
+  "example_ru": "Врач просмотрела мою медицинскую карту.",
+  "rank": 4338,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "historiales"
+  ]
+ },
+ {
+  "id": "rehabilitación",
+  "es": "rehabilitación",
+  "pos": "noun",
+  "ru": "реабилитация",
+  "example_es": "Tras el accidente necesitó meses de rehabilitación.",
+  "example_ru": "После аварии ему понадобились месяцы реабилитации.",
+  "rank": 5649,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "rehabilitaciones"
+  ]
+ },
+ {
+  "id": "recaída",
+  "es": "recaída",
+  "pos": "noun",
+  "ru": "рецидив; повторное заболевание",
+  "example_es": "Dejó el tratamiento y sufrió una recaída.",
+  "example_ru": "Он бросил лечение, и у него случился рецидив.",
+  "rank": 24240,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "recaídas"
+  ]
+ },
+ {
+  "id": "secuela",
+  "es": "secuela",
+  "pos": "noun",
+  "ru": "последствие (болезни, травмы)",
+  "example_es": "El accidente no le dejó secuelas graves.",
+  "example_ru": "Авария не оставила у него серьёзных последствий.",
+  "rank": 25312,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "secuelas"
+  ]
+ },
+ {
+  "id": "transfusión",
+  "es": "transfusión",
+  "pos": "noun",
+  "ru": "переливание (крови)",
+  "example_es": "Necesitó una transfusión de sangre urgente.",
+  "example_ru": "Ему срочно понадобилось переливание крови.",
+  "rank": 18306,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "transfusiones"
+  ]
+ },
+ {
+  "id": "trasplante",
+  "es": "trasplante",
+  "pos": "noun",
+  "ru": "пересадка, трансплантация",
+  "example_es": "Lleva dos años esperando un trasplante de riñón.",
+  "example_ru": "Он два года ждёт пересадки почки.",
+  "rank": 12289,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "trasplantes"
+  ]
+ },
+ {
+  "id": "donante",
+  "es": "donante",
+  "pos": "noun",
+  "ru": "донор",
+  "example_es": "Se hizo donante de órganos hace años.",
+  "example_ru": "Он стал донором органов много лет назад.",
+  "rank": 8373,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "donantes"
+  ]
+ },
+ {
+  "id": "pediatra",
+  "es": "pediatra",
+  "pos": "noun",
+  "ru": "педиатр",
+  "example_es": "Llevamos al niño al pediatra cada seis meses.",
+  "example_ru": "Мы водим ребёнка к педиатру раз в полгода.",
+  "rank": 20651,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "pediatras"
+  ]
+ },
+ {
+  "id": "dolencia",
+  "es": "dolencia",
+  "pos": "noun",
+  "ru": "недуг, болезнь",
+  "example_es": "Sufre una dolencia cardíaca desde hace años.",
+  "example_ru": "Он много лет страдает болезнью сердца.",
+  "rank": 33591,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "dolencias"
+  ]
+ },
+ {
+  "id": "benigno",
+  "es": "benigno",
+  "pos": "adj",
+  "ru": "доброкачественный; мягкий",
+  "example_es": "Afortunadamente, el quiste era benigno.",
+  "example_ru": "К счастью, киста оказалась доброкачественной.",
+  "rank": 29364,
+  "forms": [
+   "benigna",
+   "benignos",
+   "benignas"
+  ]
+ },
+ {
+  "id": "maligno",
+  "es": "maligno",
+  "pos": "adj",
+  "ru": "злокачественный",
+  "example_es": "Los análisis confirmaron que el tumor era maligno.",
+  "example_ru": "Анализы подтвердили, что опухоль злокачественная.",
+  "rank": 10905,
+  "forms": [
+   "maligna",
+   "malignos",
+   "malignas"
+  ]
+ },
+ {
+  "id": "hereditario",
+  "es": "hereditario",
+  "pos": "adj",
+  "ru": "наследственный",
+  "example_es": "Es una enfermedad hereditaria poco frecuente.",
+  "example_ru": "Это редкое наследственное заболевание.",
+  "rank": 32906,
+  "forms": [
+   "hereditaria",
+   "hereditarios",
+   "hereditarias"
+  ]
+ },
+ {
+  "id": "vacunar",
+  "es": "vacunar",
+  "pos": "verb",
+  "ru": "делать прививку, вакцинировать",
+  "example_es": "Este otoño vacunarán a todos los mayores de sesenta años.",
+  "example_ru": "Этой осенью привьют всех старше шестидесяти лет.",
+  "rank": 49999
+ },
+ {
+  "id": "paliativo",
+  "es": "paliativo",
+  "pos": "adj",
+  "ru": "паллиативный",
+  "example_es": "Pasó sus últimas semanas en una unidad de cuidados paliativos.",
+  "example_ru": "Последние недели он провёл в отделении паллиативной помощи.",
+  "rank": 49999,
+  "forms": [
+   "paliativa",
+   "paliativos",
+   "paliativas"
+  ]
+ },
+ {
+  "id": "afección",
+  "es": "afección",
+  "pos": "noun",
+  "ru": "заболевание, поражение",
+  "example_es": "Padece una afección respiratoria leve.",
+  "example_ru": "У него лёгкое заболевание дыхательных путей.",
+  "rank": 29864,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "afecciones"
+  ]
+ },
+ {
+  "id": "órgano",
+  "es": "órgano",
+  "pos": "noun",
+  "ru": "орган",
+  "example_es": "El hígado es un órgano capaz de regenerarse.",
+  "example_ru": "Печень — орган, способный к регенерации.",
+  "rank": 10388,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "órganos"
+  ]
+ },
+ {
+  "id": "convalecencia",
+  "es": "convalecencia",
+  "pos": "noun",
+  "ru": "выздоровление, период восстановления",
+  "example_es": "Pasó la convalecencia en casa de sus padres.",
+  "example_ru": "Период восстановления он провёл у родителей.",
+  "rank": 49999,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "convalecencias"
+  ]
+ }
+]

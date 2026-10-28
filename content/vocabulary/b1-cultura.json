@@ -1,0 +1,708 @@
+[
+ {
+  "id": "cultura",
+  "es": "cultura",
+  "pos": "noun",
+  "ru": "культура",
+  "example_es": "Me interesa mucho la cultura de otros países.",
+  "example_ru": "Меня очень интересует культура других стран.",
+  "rank": 3335,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "culturas"
+  ]
+ },
+ {
+  "id": "cultural",
+  "es": "cultural",
+  "pos": "adj",
+  "ru": "культурный",
+  "example_es": "La ciudad tiene una vida cultural muy rica.",
+  "example_ru": "В городе очень насыщенная культурная жизнь.",
+  "rank": 9101,
+  "forms": [
+   "culturales"
+  ]
+ },
+ {
+  "id": "tradición",
+  "es": "tradición",
+  "pos": "noun",
+  "ru": "традиция",
+  "example_es": "Comer uvas en Nochevieja es una tradición española.",
+  "example_ru": "Есть виноград в новогоднюю ночь — испанская традиция.",
+  "rank": 3997,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "tradiciones"
+  ]
+ },
+ {
+  "id": "tradicional",
+  "es": "tradicional",
+  "pos": "adj",
+  "ru": "традиционный",
+  "example_es": "En la boda bailaron un baile tradicional.",
+  "example_ru": "На свадьбе танцевали традиционный танец.",
+  "rank": 6378,
+  "forms": [
+   "tradicionales"
+  ]
+ },
+ {
+  "id": "costumbre",
+  "es": "costumbre",
+  "pos": "noun",
+  "ru": "обычай; привычка",
+  "example_es": "En mi país tenemos la costumbre de cenar tarde.",
+  "example_ru": "У нас в стране принято ужинать поздно.",
+  "rank": 3588,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "costumbres"
+  ]
+ },
+ {
+  "id": "festival",
+  "es": "festival",
+  "pos": "noun",
+  "ru": "фестиваль",
+  "example_es": "Este verano vamos a un festival de música.",
+  "example_ru": "Этим летом мы едем на музыкальный фестиваль.",
+  "rank": 4217,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "festivales"
+  ]
+ },
+ {
+  "id": "feria",
+  "es": "feria",
+  "pos": "noun",
+  "ru": "ярмарка; праздник с гуляньями",
+  "example_es": "En abril se celebra la feria del libro.",
+  "example_ru": "В апреле проходит книжная ярмарка.",
+  "rank": 5042,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "ferias"
+  ]
+ },
+ {
+  "id": "desfile",
+  "es": "desfile",
+  "pos": "noun",
+  "ru": "парад; шествие; показ (мод)",
+  "example_es": "Los niños vieron el desfile desde el balcón.",
+  "example_ru": "Дети смотрели парад с балкона.",
+  "rank": 5190,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "desfiles"
+  ]
+ },
+ {
+  "id": "disfraz",
+  "es": "disfraz",
+  "pos": "noun",
+  "ru": "маскарадный костюм",
+  "example_es": "¿De qué vas a llevar el disfraz este año?",
+  "example_ru": "Каким будет твой маскарадный костюм в этом году?",
+  "rank": 4724,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "disfraces"
+  ]
+ },
+ {
+  "id": "carnaval",
+  "es": "carnaval",
+  "pos": "noun",
+  "ru": "карнавал",
+  "example_es": "El carnaval de esta ciudad es muy famoso.",
+  "example_ru": "Карнавал в этом городе очень знаменит.",
+  "rank": 10744,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "carnavales"
+  ]
+ },
+ {
+  "id": "actuación",
+  "es": "actuación",
+  "pos": "noun",
+  "ru": "выступление; игра (актёра)",
+  "example_es": "La actuación del grupo duró casi dos horas.",
+  "example_ru": "Выступление группы длилось почти два часа.",
+  "rank": 3237,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "actuaciones"
+  ]
+ },
+ {
+  "id": "escenario",
+  "es": "escenario",
+  "pos": "noun",
+  "ru": "сцена",
+  "example_es": "La cantante salió al escenario a las diez.",
+  "example_ru": "Певица вышла на сцену в десять.",
+  "rank": 1931,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "escenarios"
+  ]
+ },
+ {
+  "id": "actor",
+  "es": "actor",
+  "pos": "noun",
+  "ru": "актёр",
+  "example_es": "Ese actor ha hecho muchas películas de acción.",
+  "example_ru": "Этот актёр снялся во многих боевиках.",
+  "rank": 2828,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "actores",
+   "actriz",
+   "actrices"
+  ]
+ },
+ {
+  "id": "cantante",
+  "es": "cantante",
+  "pos": "noun",
+  "ru": "певец; певица",
+  "example_es": "Mi cantante favorita da un concierto mañana.",
+  "example_ru": "Моя любимая певица завтра даёт концерт.",
+  "rank": 3955,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "cantantes"
+  ]
+ },
+ {
+  "id": "artista",
+  "es": "artista",
+  "pos": "noun",
+  "ru": "художник; артист",
+  "example_es": "El artista explicó el sentido de sus cuadros.",
+  "example_ru": "Художник объяснил смысл своих картин.",
+  "rank": 2213,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "artistas"
+  ]
+ },
+ {
+  "id": "escritor",
+  "es": "escritor",
+  "pos": "noun",
+  "ru": "писатель",
+  "example_es": "Es la escritora más leída del país.",
+  "example_ru": "Это самая читаемая писательница в стране.",
+  "rank": 3633,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "escritores",
+   "escritora",
+   "escritoras"
+  ]
+ },
+ {
+  "id": "pintura",
+  "es": "pintura",
+  "pos": "noun",
+  "ru": "живопись; картина; краска",
+  "example_es": "Me encanta la pintura del siglo diecinueve.",
+  "example_ru": "Я обожаю живопись девятнадцатого века.",
+  "rank": 2220,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "pinturas"
+  ]
+ },
+ {
+  "id": "músico",
+  "es": "músico",
+  "pos": "noun",
+  "ru": "музыкант",
+  "example_es": "En la plaza había un músico tocando la guitarra.",
+  "example_ru": "На площади музыкант играл на гитаре.",
+  "rank": 6852,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "músicos"
+  ]
+ },
+ {
+  "id": "coro",
+  "es": "coro",
+  "pos": "noun",
+  "ru": "хор",
+  "example_es": "Mi madre canta en el coro del barrio.",
+  "example_ru": "Моя мама поёт в районном хоре.",
+  "rank": 5553,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "coros"
+  ]
+ },
+ {
+  "id": "ópera",
+  "es": "ópera",
+  "pos": "noun",
+  "ru": "опера",
+  "example_es": "Nunca he ido a la ópera, pero me gustaría.",
+  "example_ru": "Я никогда не был в опере, но хотел бы сходить.",
+  "rank": 5829,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "óperas"
+  ]
+ },
+ {
+  "id": "taquilla",
+  "es": "taquilla",
+  "pos": "noun",
+  "ru": "касса (билетная)",
+  "example_es": "Compramos las entradas en {es: la taquilla | rio: la boletería} del teatro.",
+  "example_ru": "Мы купили билеты в кассе театра.",
+  "rank": 10683,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "taquillas"
+  ],
+  "variants": {
+   "rio": "la boletería"
+  }
+ },
+ {
+  "id": "espectador",
+  "es": "espectador",
+  "pos": "noun",
+  "ru": "зритель",
+  "example_es": "Más de mil espectadores vieron el partido en el estadio.",
+  "example_ru": "Больше тысячи зрителей смотрели матч на стадионе.",
+  "rank": 18526,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "espectadores",
+   "espectadora",
+   "espectadoras"
+  ]
+ },
+ {
+  "id": "aplauso",
+  "es": "aplauso",
+  "pos": "noun",
+  "ru": "аплодисменты",
+  "example_es": "El público dio un gran aplauso a los actores.",
+  "example_ru": "Публика громко аплодировала актёрам.",
+  "rank": 6663,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "aplausos"
+  ]
+ },
+ {
+  "id": "estreno",
+  "es": "estreno",
+  "pos": "noun",
+  "ru": "премьера",
+  "example_es": "El estreno de la película es el viernes.",
+  "example_ru": "Премьера фильма в пятницу.",
+  "rank": 8259,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "estrenos"
+  ]
+ },
+ {
+  "id": "serie",
+  "es": "serie",
+  "pos": "noun",
+  "ru": "сериал; серия",
+  "example_es": "Estoy viendo una serie española muy buena.",
+  "example_ru": "Я смотрю очень хороший испанский сериал.",
+  "rank": 1649,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "series"
+  ]
+ },
+ {
+  "id": "disco",
+  "es": "disco",
+  "pos": "noun",
+  "ru": "альбом; пластинка, диск",
+  "example_es": "El grupo acaba de sacar un disco nuevo.",
+  "example_ru": "Группа только что выпустила новый альбом.",
+  "rank": 2187,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "discos"
+  ]
+ },
+ {
+  "id": "documental",
+  "es": "documental",
+  "pos": "noun",
+  "ru": "документальный фильм",
+  "example_es": "Vimos un documental sobre la vida de los pingüinos.",
+  "example_ru": "Мы посмотрели документальный фильм о жизни пингвинов.",
+  "rank": 8111,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "documentales"
+  ]
+ },
+ {
+  "id": "banda",
+  "es": "banda",
+  "pos": "noun",
+  "ru": "группа (музыкальная); банда",
+  "example_es": "Mi hermano toca la batería en una banda de rock.",
+  "example_ru": "Мой брат играет на барабанах в рок-группе.",
+  "rank": 1228,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "bandas"
+  ]
+ },
+ {
+  "id": "orquesta",
+  "es": "orquesta",
+  "pos": "noun",
+  "ru": "оркестр",
+  "example_es": "La orquesta tocó música clásica en el parque.",
+  "example_ru": "Оркестр играл классическую музыку в парке.",
+  "rank": 7318,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "orquestas"
+  ]
+ },
+ {
+  "id": "instrumento",
+  "es": "instrumento",
+  "pos": "noun",
+  "ru": "инструмент (музыкальный)",
+  "example_es": "¿Sabes tocar algún instrumento?",
+  "example_ru": "Ты умеешь играть на каком-нибудь инструменте?",
+  "rank": 6734,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "instrumentos"
+  ]
+ },
+ {
+  "id": "piano",
+  "es": "piano",
+  "pos": "noun",
+  "ru": "фортепиано, пианино",
+  "example_es": "Mi hija aprende a tocar el piano.",
+  "example_ru": "Моя дочь учится играть на пианино.",
+  "rank": 3149,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "pianos"
+  ]
+ },
+ {
+  "id": "violín",
+  "es": "violín",
+  "pos": "noun",
+  "ru": "скрипка",
+  "example_es": "Toca el violín en la orquesta de la universidad.",
+  "example_ru": "Он играет на скрипке в университетском оркестре.",
+  "rank": 7997,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "violines"
+  ]
+ },
+ {
+  "id": "ritmo",
+  "es": "ritmo",
+  "pos": "noun",
+  "ru": "ритм; темп",
+  "example_es": "Esta canción tiene un ritmo muy alegre.",
+  "example_ru": "У этой песни очень весёлый ритм.",
+  "rank": 2373,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "ritmos"
+  ]
+ },
+ {
+  "id": "baile",
+  "es": "baile",
+  "pos": "noun",
+  "ru": "танец; танцы",
+  "example_es": "El flamenco es un baile muy expresivo.",
+  "example_ru": "Фламенко — очень выразительный танец.",
+  "rank": 1046,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "bailes"
+  ]
+ },
+ {
+  "id": "bailarín",
+  "es": "bailarín",
+  "pos": "noun",
+  "ru": "танцор",
+  "example_es": "Los bailarines ensayan todos los días.",
+  "example_ru": "Танцоры репетируют каждый день.",
+  "rank": 9129,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "bailarines",
+   "bailarina",
+   "bailarinas"
+  ]
+ },
+ {
+  "id": "cuento",
+  "es": "cuento",
+  "pos": "noun",
+  "ru": "сказка; рассказ",
+  "example_es": "Mi madre me leía un cuento antes de dormir.",
+  "example_ru": "Мама читала мне сказку перед сном.",
+  "rank": 1930,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "cuentos"
+  ]
+ },
+ {
+  "id": "tambor",
+  "es": "tambor",
+  "pos": "noun",
+  "ru": "барабан",
+  "example_es": "Los niños tocaban el tambor en el desfile.",
+  "example_ru": "Дети играли на барабанах на параде.",
+  "rank": 10363,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "tambores"
+  ]
+ },
+ {
+  "id": "dibujo",
+  "es": "dibujo",
+  "pos": "noun",
+  "ru": "рисунок; рисование",
+  "example_es": "A mi hijo le encantan las clases de dibujo.",
+  "example_ru": "Мой сын обожает уроки рисования.",
+  "rank": 4896,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "dibujos"
+  ]
+ },
+ {
+  "id": "payaso",
+  "es": "payaso",
+  "pos": "noun",
+  "ru": "клоун",
+  "example_es": "El payaso hizo reír a todos los niños.",
+  "example_ru": "Клоун рассмешил всех детей.",
+  "rank": 3912,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "payasos",
+   "payasa",
+   "payasas"
+  ]
+ },
+ {
+  "id": "entretenimiento",
+  "es": "entretenimiento",
+  "pos": "noun",
+  "ru": "развлечение",
+  "example_es": "La televisión es su único entretenimiento.",
+  "example_ru": "Телевизор — его единственное развлечение.",
+  "rank": 7338,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "entretenimientos"
+  ]
+ },
+ {
+  "id": "ocio",
+  "es": "ocio",
+  "pos": "noun",
+  "ru": "досуг, свободное время",
+  "example_es": "La ciudad ofrece muchas opciones de ocio.",
+  "example_ru": "Город предлагает много вариантов досуга.",
+  "rank": 25575,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "ocios"
+  ]
+ },
+ {
+  "id": "pasatiempo",
+  "es": "pasatiempo",
+  "pos": "noun",
+  "ru": "хобби, занятие на досуге",
+  "example_es": "Su pasatiempo favorito es hacer crucigramas.",
+  "example_ru": "Его любимое занятие — разгадывать кроссворды.",
+  "rank": 11650,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "pasatiempos"
+  ]
+ },
+ {
+  "id": "ajedrez",
+  "es": "ajedrez",
+  "pos": "noun",
+  "ru": "шахматы",
+  "example_es": "Los domingos juego al ajedrez con mi abuelo.",
+  "example_ru": "По воскресеньям я играю в шахматы с дедушкой.",
+  "rank": 5912,
+  "article": "el",
+  "gender": "m"
+ },
+ {
+  "id": "videojuego",
+  "es": "videojuego",
+  "pos": "noun",
+  "ru": "видеоигра",
+  "example_es": "Mi hijo pasa demasiadas horas con los videojuegos.",
+  "example_ru": "Мой сын проводит слишком много времени за видеоиграми.",
+  "rank": 18928,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "videojuegos"
+  ]
+ },
+ {
+  "id": "fotografía",
+  "es": "fotografía",
+  "pos": "noun",
+  "ru": "фотография",
+  "example_es": "Hago un curso de fotografía los martes.",
+  "example_ru": "По вторникам я хожу на курсы фотографии.",
+  "rank": 3098,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "fotografías"
+  ]
+ },
+ {
+  "id": "colección",
+  "es": "colección",
+  "pos": "noun",
+  "ru": "коллекция",
+  "example_es": "Tiene una colección enorme de discos antiguos.",
+  "example_ru": "У него огромная коллекция старых пластинок.",
+  "rank": 3858,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "colecciones"
+  ]
+ },
+ {
+  "id": "lectura",
+  "es": "lectura",
+  "pos": "noun",
+  "ru": "чтение",
+  "example_es": "La lectura es mi forma favorita de relajarme.",
+  "example_ru": "Чтение — мой любимый способ расслабиться.",
+  "rank": 4291,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "lecturas"
+  ]
+ },
+ {
+  "id": "atracción",
+  "es": "atracción",
+  "pos": "noun",
+  "ru": "аттракцион; притяжение",
+  "example_es": "La montaña rusa es la atracción más popular del parque.",
+  "example_ru": "Американские горки — самый популярный аттракцион парка.",
+  "rank": 7255,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "atracciones"
+  ]
+ },
+ {
+  "id": "campamento",
+  "es": "campamento",
+  "pos": "noun",
+  "ru": "лагерь (летний, туристический)",
+  "example_es": "Este verano los niños van a un campamento en la montaña.",
+  "example_ru": "Этим летом дети едут в лагерь в горах.",
+  "rank": 1936,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "campamentos"
+  ]
+ },
+ {
+  "id": "circo",
+  "es": "circo",
+  "pos": "noun",
+  "ru": "цирк",
+  "example_es": "Llevamos a los niños al circo por su cumpleaños.",
+  "example_ru": "На день рождения мы сводили детей в цирк.",
+  "rank": 4029,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "circos"
+  ]
+ }
+]

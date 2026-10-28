@@ -1,0 +1,698 @@
+[
+ {
+  "id": "ciencia",
+  "es": "ciencia",
+  "pos": "noun",
+  "ru": "наука",
+  "example_es": "La ciencia avanza más rápido que nunca.",
+  "example_ru": "Наука развивается быстрее, чем когда-либо.",
+  "rank": 2159,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "ciencias"
+  ]
+ },
+ {
+  "id": "científico",
+  "es": "científico",
+  "pos": "noun",
+  "ru": "учёный; научный",
+  "example_es": "Un grupo de científicos ha descubierto una nueva especie de rana.",
+  "example_ru": "Группа учёных открыла новый вид лягушки.",
+  "rank": 3609,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "científicos",
+   "científica",
+   "científicas"
+  ]
+ },
+ {
+  "id": "experimento",
+  "es": "experimento",
+  "pos": "noun",
+  "ru": "эксперимент, опыт",
+  "example_es": "El experimento se repitió tres veces con el mismo resultado.",
+  "example_ru": "Эксперимент повторили три раза с тем же результатом.",
+  "rank": 3943,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "experimentos"
+  ]
+ },
+ {
+  "id": "laboratorio",
+  "es": "laboratorio",
+  "pos": "noun",
+  "ru": "лаборатория",
+  "example_es": "Las muestras se analizan en un laboratorio especializado.",
+  "example_ru": "Образцы анализируют в специализированной лаборатории.",
+  "rank": 1460,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "laboratorios"
+  ]
+ },
+ {
+  "id": "teoría",
+  "es": "teoría",
+  "pos": "noun",
+  "ru": "теория",
+  "example_es": "En teoría el plan es perfecto, pero en la práctica no funciona.",
+  "example_ru": "В теории план идеален, но на практике не работает.",
+  "rank": 1928,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "teorías"
+  ]
+ },
+ {
+  "id": "descubrimiento",
+  "es": "descubrimiento",
+  "pos": "noun",
+  "ru": "открытие",
+  "example_es": "El descubrimiento de la penicilina salvó millones de vidas.",
+  "example_ru": "Открытие пенициллина спасло миллионы жизней.",
+  "rank": 5790,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "descubrimientos"
+  ]
+ },
+ {
+  "id": "invento",
+  "es": "invento",
+  "pos": "noun",
+  "ru": "изобретение",
+  "example_es": "La imprenta fue uno de los grandes inventos de la historia.",
+  "example_ru": "Книгопечатание стало одним из великих изобретений в истории.",
+  "rank": 8566,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "inventos"
+  ]
+ },
+ {
+  "id": "inventar",
+  "es": "inventar",
+  "pos": "verb",
+  "ru": "изобретать; выдумывать",
+  "example_es": "¿Sabes quién inventó el teléfono?",
+  "example_ru": "Ты знаешь, кто изобрёл телефон?",
+  "rank": 7865
+ },
+ {
+  "id": "avance",
+  "es": "avance",
+  "pos": "noun",
+  "ru": "прогресс, достижение; продвижение",
+  "example_es": "Este tratamiento supone un gran avance en la lucha contra el cáncer.",
+  "example_ru": "Это лечение — большой шаг вперёд в борьбе с раком.",
+  "rank": 5715,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "avances"
+  ]
+ },
+ {
+  "id": "progreso",
+  "es": "progreso",
+  "pos": "noun",
+  "ru": "прогресс",
+  "example_es": "El progreso tecnológico ha cambiado nuestra forma de trabajar.",
+  "example_ru": "Технический прогресс изменил то, как мы работаем.",
+  "rank": 4190,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "progresos"
+  ]
+ },
+ {
+  "id": "innovación",
+  "es": "innovación",
+  "pos": "noun",
+  "ru": "инновация, нововведение",
+  "example_es": "La empresa invierte mucho en innovación y desarrollo.",
+  "example_ru": "Компания много вкладывает в инновации и разработки.",
+  "rank": 24108,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "innovaciones"
+  ]
+ },
+ {
+  "id": "desarrollo",
+  "es": "desarrollo",
+  "pos": "noun",
+  "ru": "развитие; разработка",
+  "example_es": "El desarrollo de la nueva vacuna llevó casi dos años.",
+  "example_ru": "Разработка новой вакцины заняла почти два года.",
+  "rank": 4701,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "desarrollos"
+  ]
+ },
+ {
+  "id": "método",
+  "es": "método",
+  "pos": "noun",
+  "ru": "метод, способ",
+  "example_es": "Usaron un método nuevo para medir la contaminación del aire.",
+  "example_ru": "Для измерения загрязнения воздуха применили новый метод.",
+  "rank": 5007,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "métodos"
+  ]
+ },
+ {
+  "id": "analizar",
+  "es": "analizar",
+  "pos": "verb",
+  "ru": "анализировать",
+  "example_es": "Los expertos analizaron los datos durante varias semanas.",
+  "example_ru": "Эксперты несколько недель анализировали данные.",
+  "rank": 8255
+ },
+ {
+  "id": "dato",
+  "es": "dato",
+  "pos": "noun",
+  "ru": "факт; данные (мн.)",
+  "example_es": "Según los últimos datos, la temperatura media sigue subiendo.",
+  "example_ru": "По последним данным, средняя температура продолжает расти.",
+  "rank": 10906,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "datos"
+  ]
+ },
+ {
+  "id": "evidencia",
+  "es": "evidencia",
+  "pos": "noun",
+  "ru": "доказательство; очевидность",
+  "example_es": "No hay evidencias científicas de que ese producto funcione.",
+  "example_ru": "Нет научных доказательств того, что этот продукт действует.",
+  "rank": 1652,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "evidencias"
+  ]
+ },
+ {
+  "id": "demostrar",
+  "es": "demostrar",
+  "pos": "verb",
+  "ru": "доказывать; демонстрировать",
+  "example_es": "El estudio demuestra que dormir poco afecta a la memoria.",
+  "example_ru": "Исследование доказывает, что недосып влияет на память.",
+  "rank": 2991,
+  "forms": [
+   "demuestra",
+   "demuestran",
+   "demostró",
+   "demuestre"
+  ]
+ },
+ {
+  "id": "medir",
+  "es": "medir",
+  "pos": "verb",
+  "ru": "измерять",
+  "example_es": "Este aparato mide la presión del aire.",
+  "example_ru": "Этот прибор измеряет давление воздуха.",
+  "rank": 10467,
+  "forms": [
+   "mido",
+   "mide",
+   "miden",
+   "midió",
+   "midieron"
+  ]
+ },
+ {
+  "id": "cálculo",
+  "es": "cálculo",
+  "pos": "noun",
+  "ru": "расчёт, вычисление",
+  "example_es": "Según mis cálculos, llegaremos antes de las ocho.",
+  "example_ru": "По моим расчётам, мы приедем до восьми.",
+  "rank": 10864,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "cálculos"
+  ]
+ },
+ {
+  "id": "calcular",
+  "es": "calcular",
+  "pos": "verb",
+  "ru": "вычислять, рассчитывать",
+  "example_es": "El programa calcula la ruta más corta en segundos.",
+  "example_ru": "Программа за секунды рассчитывает кратчайший маршрут.",
+  "rank": 13398
+ },
+ {
+  "id": "fórmula",
+  "es": "fórmula",
+  "pos": "noun",
+  "ru": "формула",
+  "example_es": "Aprendimos la fórmula para calcular el área de un círculo.",
+  "example_ru": "Мы выучили формулу для вычисления площади круга.",
+  "rank": 6727,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "fórmulas"
+  ]
+ },
+ {
+  "id": "física",
+  "es": "física",
+  "pos": "noun",
+  "ru": "физика",
+  "example_es": "Estudió física en la universidad y ahora trabaja en un observatorio.",
+  "example_ru": "Она изучала физику в университете, а теперь работает в обсерватории.",
+  "rank": 3116,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "físicas"
+  ]
+ },
+ {
+  "id": "química",
+  "es": "química",
+  "pos": "noun",
+  "ru": "химия",
+  "example_es": "La química explica por qué el hierro se oxida.",
+  "example_ru": "Химия объясняет, почему железо ржавеет.",
+  "rank": 4727,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "químicas"
+  ]
+ },
+ {
+  "id": "biología",
+  "es": "biología",
+  "pos": "noun",
+  "ru": "биология",
+  "example_es": "Siempre le gustó la biología marina.",
+  "example_ru": "Ему всегда нравилась морская биология.",
+  "rank": 9933,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "biologías"
+  ]
+ },
+ {
+  "id": "gen",
+  "es": "gen",
+  "pos": "noun",
+  "ru": "ген",
+  "example_es": "Los científicos han identificado el gen responsable de la enfermedad.",
+  "example_ru": "Учёные определили ген, ответственный за болезнь.",
+  "rank": 11661,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "genes"
+  ]
+ },
+ {
+  "id": "genético",
+  "es": "genético",
+  "pos": "adj",
+  "ru": "генетический",
+  "example_es": "Algunas enfermedades tienen un origen genético.",
+  "example_ru": "Некоторые болезни имеют генетическое происхождение.",
+  "rank": 11477,
+  "forms": [
+   "genética",
+   "genéticos",
+   "genéticas"
+  ]
+ },
+ {
+  "id": "célula",
+  "es": "célula",
+  "pos": "noun",
+  "ru": "клетка",
+  "example_es": "El cuerpo humano tiene billones de células.",
+  "example_ru": "В человеческом теле триллионы клеток.",
+  "rank": 8462,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "células"
+  ]
+ },
+ {
+  "id": "átomo",
+  "es": "átomo",
+  "pos": "noun",
+  "ru": "атом",
+  "example_es": "Una molécula de agua tiene tres átomos.",
+  "example_ru": "Молекула воды состоит из трёх атомов.",
+  "rank": 17837,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "átomos"
+  ]
+ },
+ {
+  "id": "nuclear",
+  "es": "nuclear",
+  "pos": "adj",
+  "ru": "ядерный",
+  "example_es": "El país quiere cerrar sus centrales nucleares antes de 2035.",
+  "example_ru": "Страна хочет закрыть свои атомные электростанции до 2035 года.",
+  "rank": 3813,
+  "forms": [
+   "nucleares"
+  ]
+ },
+ {
+  "id": "radiación",
+  "es": "radiación",
+  "pos": "noun",
+  "ru": "излучение, радиация",
+  "example_es": "La radiación del sol puede dañar la piel.",
+  "example_ru": "Солнечное излучение может повредить кожу.",
+  "rank": 4987,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "radiaciones"
+  ]
+ },
+ {
+  "id": "electricidad",
+  "es": "electricidad",
+  "pos": "noun",
+  "ru": "электричество",
+  "example_es": "La tormenta dejó a todo el barrio sin electricidad.",
+  "example_ru": "Из-за грозы весь район остался без электричества.",
+  "rank": 4001,
+  "article": "la",
+  "gender": "f"
+ },
+ {
+  "id": "robot",
+  "es": "robot",
+  "pos": "noun",
+  "ru": "робот",
+  "example_es": "En esta fábrica los robots hacen casi todo el trabajo.",
+  "example_ru": "На этом заводе почти всю работу выполняют роботы.",
+  "rank": 3991,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "robots"
+  ]
+ },
+ {
+  "id": "inteligencia-artificial",
+  "es": "inteligencia artificial",
+  "pos": "phrase",
+  "ru": "искусственный интеллект",
+  "example_es": "La inteligencia artificial ya se usa para detectar enfermedades.",
+  "example_ru": "Искусственный интеллект уже применяется для выявления болезней.",
+  "rank": 8096
+ },
+ {
+  "id": "algoritmo",
+  "es": "algoritmo",
+  "pos": "noun",
+  "ru": "алгоритм",
+  "example_es": "Un algoritmo decide qué noticias aparecen primero.",
+  "example_ru": "Алгоритм решает, какие новости появятся первыми.",
+  "rank": 16680,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "algoritmos"
+  ]
+ },
+ {
+  "id": "dispositivo",
+  "es": "dispositivo",
+  "pos": "noun",
+  "ru": "устройство",
+  "example_es": "Puedes usar la aplicación en cualquier dispositivo móvil.",
+  "example_ru": "Приложением можно пользоваться на любом мобильном устройстве.",
+  "rank": 3806,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "dispositivos"
+  ]
+ },
+ {
+  "id": "satélite",
+  "es": "satélite",
+  "pos": "noun",
+  "ru": "спутник",
+  "example_es": "El satélite envía imágenes de la Tierra cada pocos minutos.",
+  "example_ru": "Спутник каждые несколько минут присылает снимки Земли.",
+  "rank": 5423,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "satélites"
+  ]
+ },
+ {
+  "id": "órbita",
+  "es": "órbita",
+  "pos": "noun",
+  "ru": "орбита",
+  "example_es": "La nave entró en órbita alrededor de la Luna.",
+  "example_ru": "Корабль вышел на орбиту вокруг Луны.",
+  "rank": 6937,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "órbitas"
+  ]
+ },
+ {
+  "id": "telescopio",
+  "es": "telescopio",
+  "pos": "noun",
+  "ru": "телескоп",
+  "example_es": "Con este telescopio se pueden ver los anillos de Saturno.",
+  "example_ru": "В этот телескоп можно увидеть кольца Сатурна.",
+  "rank": 12272,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "telescopios"
+  ]
+ },
+ {
+  "id": "microscopio",
+  "es": "microscopio",
+  "pos": "noun",
+  "ru": "микроскоп",
+  "example_es": "Las bacterias solo se pueden ver con un microscopio.",
+  "example_ru": "Бактерии можно увидеть только в микроскоп.",
+  "rank": 15932,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "microscopios"
+  ]
+ },
+ {
+  "id": "bacteria",
+  "es": "bacteria",
+  "pos": "noun",
+  "ru": "бактерия",
+  "example_es": "Algunas bacterias son necesarias para la digestión.",
+  "example_ru": "Некоторые бактерии необходимы для пищеварения.",
+  "rank": 17144,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "bacterias"
+  ]
+ },
+ {
+  "id": "evolución",
+  "es": "evolución",
+  "pos": "noun",
+  "ru": "эволюция; развитие",
+  "example_es": "La teoría de la evolución explica el origen de las especies.",
+  "example_ru": "Теория эволюции объясняет происхождение видов.",
+  "rank": 7471,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "evoluciones"
+  ]
+ },
+ {
+  "id": "gravedad",
+  "es": "gravedad",
+  "pos": "noun",
+  "ru": "гравитация; серьёзность",
+  "example_es": "En la Luna la gravedad es seis veces menor que en la Tierra.",
+  "example_ru": "На Луне сила тяжести в шесть раз меньше, чем на Земле.",
+  "rank": 4418,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "gravedades"
+  ]
+ },
+ {
+  "id": "materia",
+  "es": "materia",
+  "pos": "noun",
+  "ru": "материя, вещество; предмет",
+  "example_es": "La materia está formada por átomos.",
+  "example_ru": "Материя состоит из атомов.",
+  "rank": 4319,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "materias"
+  ]
+ },
+ {
+  "id": "sustancia",
+  "es": "sustancia",
+  "pos": "noun",
+  "ru": "вещество",
+  "example_es": "Este producto contiene sustancias tóxicas.",
+  "example_ru": "Этот продукт содержит токсичные вещества.",
+  "rank": 8500,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "sustancias"
+  ]
+ },
+ {
+  "id": "reacción",
+  "es": "reacción",
+  "pos": "noun",
+  "ru": "реакция",
+  "example_es": "La mezcla de estos dos líquidos provoca una reacción química.",
+  "example_ru": "Смешивание этих двух жидкостей вызывает химическую реакцию.",
+  "rank": 3240,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "reacciones"
+  ]
+ },
+ {
+  "id": "ingeniero",
+  "es": "ingeniero",
+  "pos": "noun",
+  "ru": "инженер",
+  "example_es": "Mi hermana es ingeniera de telecomunicaciones.",
+  "example_ru": "Моя сестра — инженер по телекоммуникациям.",
+  "rank": 4746,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "ingenieros",
+   "ingeniera",
+   "ingenieras"
+  ]
+ },
+ {
+  "id": "ingeniería",
+  "es": "ingeniería",
+  "pos": "noun",
+  "ru": "инженерное дело",
+  "example_es": "Quiere estudiar ingeniería informática.",
+  "example_ru": "Он хочет изучать программную инженерию.",
+  "rank": 7039,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "ingenierías"
+  ]
+ },
+ {
+  "id": "técnico",
+  "es": "técnico",
+  "pos": "adj",
+  "ru": "технический; техник",
+  "example_es": "El vuelo se retrasó por un problema técnico.",
+  "example_ru": "Рейс задержали из-за технической неполадки.",
+  "rank": 5731,
+  "forms": [
+   "técnica",
+   "técnicos",
+   "técnicas"
+  ]
+ },
+ {
+  "id": "mecanismo",
+  "es": "mecanismo",
+  "pos": "noun",
+  "ru": "механизм",
+  "example_es": "Todavía no entendemos bien el mecanismo de esta enfermedad.",
+  "example_ru": "Мы до сих пор плохо понимаем механизм этой болезни.",
+  "rank": 8563,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "mecanismos"
+  ]
+ },
+ {
+  "id": "sensor",
+  "es": "sensor",
+  "pos": "noun",
+  "ru": "датчик",
+  "example_es": "El sensor detecta el humo y activa la alarma.",
+  "example_ru": "Датчик обнаруживает дым и включает сигнализацию.",
+  "rank": 15902,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "sensores"
+  ]
+ },
+ {
+  "id": "observación",
+  "es": "observación",
+  "pos": "noun",
+  "ru": "наблюдение; замечание",
+  "example_es": "La observación de las estrellas exige mucha paciencia.",
+  "example_ru": "Наблюдение за звёздами требует большого терпения.",
+  "rank": 6050,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "observaciones"
+  ]
+ }
+]

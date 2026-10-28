@@ -1,0 +1,660 @@
+[
+ {
+  "id": "afrontar",
+  "es": "afrontar",
+  "pos": "verb",
+  "ru": "справляться (с), смотреть в лицо",
+  "example_es": "Tenemos que afrontar el problema en lugar de ignorarlo.",
+  "example_ru": "Нужно решать проблему, а не закрывать на неё глаза.",
+  "rank": 9794
+ },
+ {
+  "id": "amenazar",
+  "es": "amenazar",
+  "pos": "verb",
+  "ru": "угрожать",
+  "example_es": "Los trabajadores amenazan con ir a la huelga.",
+  "example_ru": "Работники грозят забастовкой.",
+  "rank": 14278
+ },
+ {
+  "id": "aportar",
+  "es": "aportar",
+  "pos": "verb",
+  "ru": "вносить (вклад), привносить",
+  "example_es": "Cada miembro del equipo aporta ideas distintas.",
+  "example_ru": "Каждый член команды привносит свои идеи.",
+  "rank": 18838
+ },
+ {
+  "id": "apostar",
+  "es": "apostar",
+  "pos": "verb",
+  "ru": "делать ставку (на); держать пари",
+  "example_es": "El gobierno apuesta por las energías renovables.",
+  "example_ru": "Правительство делает ставку на возобновляемую энергетику.",
+  "rank": 4213,
+  "forms": [
+   "apuesta",
+   "apuestan",
+   "apuesto"
+  ]
+ },
+ {
+  "id": "asumir",
+  "es": "asumir",
+  "pos": "verb",
+  "ru": "брать на себя; признавать",
+  "example_es": "Asumió la responsabilidad de los errores del equipo.",
+  "example_ru": "Он взял на себя ответственность за ошибки команды.",
+  "rank": 4933
+ },
+ {
+  "id": "comprometerse",
+  "es": "comprometerse",
+  "pos": "verb",
+  "ru": "брать обязательство, обещать",
+  "example_es": "Se comprometió a terminar el informe antes del viernes.",
+  "example_ru": "Он пообещал закончить отчёт до пятницы.",
+  "rank": 16640,
+  "forms": [
+   "comprometió",
+   "comprometo"
+  ]
+ },
+ {
+  "id": "comprobar",
+  "es": "comprobar",
+  "pos": "verb",
+  "ru": "проверять, убеждаться",
+  "example_es": "Comprueba que la puerta está cerrada antes de salir.",
+  "example_ru": "Перед выходом проверь, что дверь закрыта.",
+  "rank": 3523,
+  "forms": [
+   "compruebo",
+   "comprueba",
+   "comprueban"
+  ]
+ },
+ {
+  "id": "contribuir",
+  "es": "contribuir",
+  "pos": "verb",
+  "ru": "способствовать; вносить вклад",
+  "example_es": "El turismo contribuye mucho a la economía local.",
+  "example_ru": "Туризм вносит большой вклад в местную экономику.",
+  "rank": 14710,
+  "forms": [
+   "contribuye",
+   "contribuyen",
+   "contribuyó"
+  ]
+ },
+ {
+  "id": "cuestionar",
+  "es": "cuestionar",
+  "pos": "verb",
+  "ru": "ставить под сомнение",
+  "example_es": "Muchos expertos cuestionan la eficacia de la medida.",
+  "example_ru": "Многие эксперты сомневаются в эффективности этой меры.",
+  "rank": 12646
+ },
+ {
+  "id": "destacar",
+  "es": "destacar",
+  "pos": "verb",
+  "ru": "выделяться; подчёркивать",
+  "example_es": "Destaca por su enorme capacidad de trabajo.",
+  "example_ru": "Он выделяется огромной работоспособностью.",
+  "rank": 22491
+ },
+ {
+  "id": "disminuir",
+  "es": "disminuir",
+  "pos": "verb",
+  "ru": "уменьшаться; уменьшать",
+  "example_es": "El número de accidentes ha disminuido este año.",
+  "example_ru": "В этом году число аварий уменьшилось.",
+  "rank": 18605,
+  "forms": [
+   "disminuye",
+   "disminuyen",
+   "disminuyó"
+  ]
+ },
+ {
+  "id": "elaborar",
+  "es": "elaborar",
+  "pos": "verb",
+  "ru": "разрабатывать, составлять; изготавливать",
+  "example_es": "El equipo elaboró un plan muy detallado.",
+  "example_ru": "Команда разработала очень подробный план.",
+  "rank": 23948
+ },
+ {
+  "id": "enfrentarse",
+  "es": "enfrentarse",
+  "pos": "verb",
+  "ru": "сталкиваться (с); противостоять",
+  "example_es": "El país se enfrenta a una grave crisis.",
+  "example_ru": "Страна столкнулась с серьёзным кризисом.",
+  "rank": 4982,
+  "forms": [
+   "enfrenta",
+   "enfrentó"
+  ]
+ },
+ {
+  "id": "garantizar",
+  "es": "garantizar",
+  "pos": "verb",
+  "ru": "гарантировать, обеспечивать",
+  "example_es": "Nadie puede garantizar el éxito del proyecto.",
+  "example_ru": "Никто не может гарантировать успех проекта.",
+  "rank": 8812
+ },
+ {
+  "id": "implicar",
+  "es": "implicar",
+  "pos": "verb",
+  "ru": "означать, влечь за собой; вовлекать",
+  "example_es": "Aceptar el puesto implica viajar mucho.",
+  "example_ru": "Согласиться на эту должность — значит много ездить.",
+  "rank": 28734
+ },
+ {
+  "id": "impulsar",
+  "es": "impulsar",
+  "pos": "verb",
+  "ru": "продвигать, стимулировать",
+  "example_es": "El ayuntamiento quiere impulsar el comercio local.",
+  "example_ru": "Мэрия хочет поддержать местную торговлю.",
+  "rank": 27801
+ },
+ {
+  "id": "influir",
+  "es": "influir",
+  "pos": "verb",
+  "ru": "влиять",
+  "example_es": "La familia influye mucho en nuestras decisiones.",
+  "example_ru": "Семья сильно влияет на наши решения.",
+  "rank": 19206,
+  "forms": [
+   "influye",
+   "influyen",
+   "influyó"
+  ]
+ },
+ {
+  "id": "involucrar",
+  "es": "involucrar",
+  "pos": "verb",
+  "ru": "вовлекать, привлекать",
+  "example_es": "Es importante involucrar a los padres en la educación.",
+  "example_ru": "Важно вовлекать родителей в процесс обучения.",
+  "rank": 16540
+ },
+ {
+  "id": "prescindir",
+  "es": "prescindir",
+  "pos": "verb",
+  "ru": "обходиться без; отказываться от",
+  "example_es": "No podemos prescindir de su experiencia.",
+  "example_ru": "Мы не можем обойтись без его опыта.",
+  "rank": 17555
+ },
+ {
+  "id": "prevenir",
+  "es": "prevenir",
+  "pos": "verb",
+  "ru": "предотвращать; предупреждать",
+  "example_es": "Es mejor prevenir los incendios que apagarlos.",
+  "example_ru": "Пожары лучше предотвращать, чем тушить.",
+  "rank": 9202,
+  "forms": [
+   "prevengo",
+   "previene",
+   "previno"
+  ]
+ },
+ {
+  "id": "promover",
+  "es": "promover",
+  "pos": "verb",
+  "ru": "продвигать, способствовать",
+  "example_es": "La campaña promueve el uso del transporte público.",
+  "example_ru": "Кампания призывает пользоваться общественным транспортом.",
+  "rank": 17688,
+  "forms": [
+   "promueve",
+   "promueven"
+  ]
+ },
+ {
+  "id": "reclamar",
+  "es": "reclamar",
+  "pos": "verb",
+  "ru": "требовать; предъявлять претензию",
+  "example_es": "Los vecinos reclaman más zonas verdes en el barrio.",
+  "example_ru": "Жители требуют больше зелёных зон в районе.",
+  "rank": 10090
+ },
+ {
+  "id": "recurrir",
+  "es": "recurrir",
+  "pos": "verb",
+  "ru": "прибегать (к), обращаться (к)",
+  "example_es": "Cuando tiene problemas, recurre siempre a su hermano.",
+  "example_ru": "Когда у него проблемы, он всегда обращается к брату.",
+  "rank": 11532
+ },
+ {
+  "id": "reforzar",
+  "es": "reforzar",
+  "pos": "verb",
+  "ru": "усиливать, укреплять",
+  "example_es": "Han reforzado la seguridad en el aeropuerto.",
+  "example_ru": "В аэропорту усилили меры безопасности.",
+  "rank": 18516,
+  "forms": [
+   "refuerza",
+   "refuerzan",
+   "refuerzo"
+  ]
+ },
+ {
+  "id": "sostener",
+  "es": "sostener",
+  "pos": "verb",
+  "ru": "утверждать; держать, поддерживать",
+  "example_es": "El autor sostiene que la crisis era previsible.",
+  "example_ru": "Автор утверждает, что кризис можно было предвидеть.",
+  "rank": 7605,
+  "forms": [
+   "sostiene",
+   "sostuvo",
+   "sostengo"
+  ]
+ },
+ {
+  "id": "sustituir",
+  "es": "sustituir",
+  "pos": "verb",
+  "ru": "заменять",
+  "example_es": "Las máquinas no pueden sustituir a los profesores.",
+  "example_ru": "Машины не могут заменить учителей.",
+  "rank": 16629,
+  "forms": [
+   "sustituye",
+   "sustituyen",
+   "sustituyó"
+  ]
+ },
+ {
+  "id": "transmitir",
+  "es": "transmitir",
+  "pos": "verb",
+  "ru": "передавать; транслировать",
+  "example_es": "Supo transmitir su pasión a sus alumnos.",
+  "example_ru": "Он сумел передать свою увлечённость ученикам.",
+  "rank": 10327
+ },
+ {
+  "id": "valorar",
+  "es": "valorar",
+  "pos": "verb",
+  "ru": "ценить; оценивать",
+  "example_es": "Valoro mucho tu sinceridad.",
+  "example_ru": "Я очень ценю твою искренность.",
+  "rank": 23935
+ },
+ {
+  "id": "arriesgar",
+  "es": "arriesgar",
+  "pos": "verb",
+  "ru": "рисковать",
+  "example_es": "No quiero arriesgar todo mi dinero en ese negocio.",
+  "example_ru": "Я не хочу рисковать всеми деньгами в этом деле.",
+  "rank": 7177
+ },
+ {
+  "id": "pertenecer",
+  "es": "pertenecer",
+  "pos": "verb",
+  "ru": "принадлежать",
+  "example_es": "Este terreno pertenece a mi familia desde hace siglos.",
+  "example_ru": "Эта земля принадлежит моей семье уже много веков.",
+  "rank": 14112,
+  "forms": [
+   "pertenezco",
+   "pertenezca"
+  ]
+ },
+ {
+  "id": "prever",
+  "es": "prever",
+  "pos": "verb",
+  "ru": "предвидеть, предусматривать",
+  "example_es": "Nadie previó las consecuencias de la crisis.",
+  "example_ru": "Никто не предвидел последствий кризиса.",
+  "rank": 26210,
+  "forms": [
+   "preveo",
+   "prevé",
+   "previó",
+   "previsto"
+  ]
+ },
+ {
+  "id": "surgir",
+  "es": "surgir",
+  "pos": "verb",
+  "ru": "возникать, появляться",
+  "example_es": "Surgieron varios problemas durante el viaje.",
+  "example_ru": "Во время поездки возникло несколько проблем.",
+  "rank": 17365,
+  "forms": [
+   "surjo",
+   "surja"
+  ]
+ },
+ {
+  "id": "tender",
+  "es": "tender",
+  "pos": "verb",
+  "ru": "иметь склонность; развешивать (бельё)",
+  "example_es": "Los jóvenes tienden a cambiar de trabajo con frecuencia.",
+  "example_ru": "Молодые люди склонны часто менять работу.",
+  "rank": 23837,
+  "forms": [
+   "tiende",
+   "tienden",
+   "tiendo"
+  ]
+ },
+ {
+  "id": "adquirir",
+  "es": "adquirir",
+  "pos": "verb",
+  "ru": "приобретать",
+  "example_es": "Con los años adquirió mucha experiencia.",
+  "example_ru": "С годами он приобрёл большой опыт.",
+  "rank": 14427,
+  "forms": [
+   "adquiere",
+   "adquieren",
+   "adquiero"
+  ]
+ },
+ {
+  "id": "acudir",
+  "es": "acudir",
+  "pos": "verb",
+  "ru": "приходить, являться; обращаться (к)",
+  "example_es": "Miles de personas acudieron a la manifestación.",
+  "example_ru": "На демонстрацию пришли тысячи людей.",
+  "rank": 9726
+ },
+ {
+  "id": "advertir",
+  "es": "advertir",
+  "pos": "verb",
+  "ru": "предупреждать; замечать",
+  "example_es": "Te advierto que el camino es peligroso.",
+  "example_ru": "Предупреждаю: дорога опасная.",
+  "rank": 15512,
+  "forms": [
+   "advierto",
+   "advierte",
+   "advirtió"
+  ]
+ },
+ {
+  "id": "ampliar",
+  "es": "ampliar",
+  "pos": "verb",
+  "ru": "расширять, увеличивать",
+  "example_es": "Quieren ampliar la oferta de cursos en línea.",
+  "example_ru": "Они хотят расширить выбор онлайн-курсов.",
+  "rank": 13657,
+  "forms": [
+   "amplío",
+   "amplía"
+  ]
+ },
+ {
+  "id": "descartar",
+  "es": "descartar",
+  "pos": "verb",
+  "ru": "исключать, отбрасывать",
+  "example_es": "La policía no descarta ninguna hipótesis.",
+  "example_ru": "Полиция не исключает ни одной версии.",
+  "rank": 12710
+ },
+ {
+  "id": "imponer",
+  "es": "imponer",
+  "pos": "verb",
+  "ru": "навязывать; вводить (налог, правило)",
+  "example_es": "No intentes imponer tu opinión a los demás.",
+  "example_ru": "Не пытайся навязывать своё мнение другим.",
+  "rank": 17032,
+  "forms": [
+   "impongo",
+   "impuso",
+   "impuesto"
+  ]
+ },
+ {
+  "id": "justificar",
+  "es": "justificar",
+  "pos": "verb",
+  "ru": "оправдывать, обосновывать",
+  "example_es": "Nada justifica la violencia.",
+  "example_ru": "Ничто не оправдывает насилие.",
+  "rank": 11590
+ },
+ {
+  "id": "percibir",
+  "es": "percibir",
+  "pos": "verb",
+  "ru": "воспринимать, ощущать; получать (доход)",
+  "example_es": "Los niños perciben enseguida la tensión en casa.",
+  "example_ru": "Дети сразу чувствуют напряжение в доме.",
+  "rank": 20458
+ },
+ {
+  "id": "pretender",
+  "es": "pretender",
+  "pos": "verb",
+  "ru": "намереваться, стремиться (не «претендовать»)",
+  "example_es": "¿Qué pretendes conseguir con esa actitud?",
+  "example_ru": "Чего ты добиваешься таким поведением?",
+  "rank": 9552
+ },
+ {
+  "id": "provocar",
+  "es": "provocar",
+  "pos": "verb",
+  "ru": "вызывать, провоцировать",
+  "example_es": "La tormenta provocó cortes de luz en toda la zona.",
+  "example_ru": "Гроза вызвала отключения электричества во всём районе.",
+  "rank": 7775
+ },
+ {
+  "id": "reflejar",
+  "es": "reflejar",
+  "pos": "verb",
+  "ru": "отражать",
+  "example_es": "La encuesta refleja el descontento de la población.",
+  "example_ru": "Опрос отражает недовольство населения.",
+  "rank": 28897
+ },
+ {
+  "id": "revelar",
+  "es": "revelar",
+  "pos": "verb",
+  "ru": "раскрывать, обнаруживать; проявлять (плёнку)",
+  "example_es": "El estudio revela datos preocupantes.",
+  "example_ru": "Исследование выявило тревожные данные.",
+  "rank": 6748
+ },
+ {
+  "id": "señalar",
+  "es": "señalar",
+  "pos": "verb",
+  "ru": "указывать, отмечать",
+  "example_es": "El informe señala varios errores graves.",
+  "example_ru": "В отчёте указано на несколько серьёзных ошибок.",
+  "rank": 11284
+ },
+ {
+  "id": "deshacerse",
+  "es": "deshacerse",
+  "pos": "verb",
+  "ru": "избавляться",
+  "example_es": "Por fin me deshice de los muebles viejos.",
+  "example_ru": "Наконец я избавился от старой мебели.",
+  "rank": 9633,
+  "forms": [
+   "deshice",
+   "deshizo",
+   "deshecho"
+  ]
+ },
+ {
+  "id": "ignorar",
+  "es": "ignorar",
+  "pos": "verb",
+  "ru": "игнорировать; не знать",
+  "example_es": "Ignoró todos los consejos de sus amigos.",
+  "example_ru": "Он пропустил мимо ушей все советы друзей.",
+  "rank": 7353
+ },
+ {
+  "id": "avanzar",
+  "es": "avanzar",
+  "pos": "verb",
+  "ru": "продвигаться, двигаться вперёд",
+  "example_es": "Las negociaciones avanzan muy despacio.",
+  "example_ru": "Переговоры продвигаются очень медленно.",
+  "rank": 5976
+ },
+ {
+  "id": "detectar",
+  "es": "detectar",
+  "pos": "verb",
+  "ru": "обнаруживать, выявлять",
+  "example_es": "Los médicos detectaron el problema a tiempo.",
+  "example_ru": "Врачи вовремя выявили проблему.",
+  "rank": 10508
+ },
+ {
+  "id": "aprovechar",
+  "es": "aprovechar",
+  "pos": "verb",
+  "ru": "использовать, пользоваться (случаем)",
+  "example_es": "Aprovecha el buen tiempo para salir a pasear.",
+  "example_ru": "Воспользуйся хорошей погодой, чтобы погулять.",
+  "rank": 6435
+ },
+ {
+  "id": "ocultar",
+  "es": "ocultar",
+  "pos": "verb",
+  "ru": "скрывать, прятать",
+  "example_es": "El gobierno ocultó los datos durante meses.",
+  "example_ru": "Правительство месяцами скрывало данные.",
+  "rank": 3999
+ },
+ {
+  "id": "persuadir",
+  "es": "persuadir",
+  "pos": "verb",
+  "ru": "убеждать, уговаривать",
+  "example_es": "Intentó persuadirla de que aceptara la oferta.",
+  "example_ru": "Он пытался уговорить её принять предложение.",
+  "rank": 19370
+ },
+ {
+  "id": "presionar",
+  "es": "presionar",
+  "pos": "verb",
+  "ru": "давить, оказывать давление; нажимать",
+  "example_es": "Sus padres lo presionan para que estudie medicina.",
+  "example_ru": "Родители давят на него, чтобы он поступал на медицинский.",
+  "rank": 9650
+ },
+ {
+  "id": "retomar",
+  "es": "retomar",
+  "pos": "verb",
+  "ru": "возобновлять, возвращаться (к)",
+  "example_es": "Después del verano retomaremos las clases de baile.",
+  "example_ru": "После лета мы возобновим занятия танцами.",
+  "rank": 17439
+ },
+ {
+  "id": "ceder",
+  "es": "ceder",
+  "pos": "verb",
+  "ru": "уступать; поддаваться",
+  "example_es": "Al final tuvo que ceder ante la presión de los vecinos.",
+  "example_ru": "В итоге ему пришлось уступить давлению соседей.",
+  "rank": 9883
+ },
+ {
+  "id": "compensar",
+  "es": "compensar",
+  "pos": "verb",
+  "ru": "компенсировать; окупаться, стоить того",
+  "example_es": "No compensa ir en coche, tardas más que en metro.",
+  "example_ru": "На машине ехать невыгодно, на метро быстрее.",
+  "rank": 10260
+ },
+ {
+  "id": "fracasar",
+  "es": "fracasar",
+  "pos": "verb",
+  "ru": "терпеть неудачу, проваливаться",
+  "example_es": "El primer intento fracasó por falta de dinero.",
+  "example_ru": "Первая попытка провалилась из-за нехватки денег.",
+  "rank": 15554
+ },
+ {
+  "id": "generar",
+  "es": "generar",
+  "pos": "verb",
+  "ru": "порождать, создавать",
+  "example_es": "La nueva fábrica generará cientos de empleos.",
+  "example_ru": "Новая фабрика создаст сотни рабочих мест.",
+  "rank": 12857
+ },
+ {
+  "id": "exagerar",
+  "es": "exagerar",
+  "pos": "verb",
+  "ru": "преувеличивать",
+  "example_es": "No exageres, no fue para tanto.",
+  "example_ru": "Не преувеличивай, всё было не так страшно.",
+  "rank": 17540
+ },
+ {
+  "id": "desafiar",
+  "es": "desafiar",
+  "pos": "verb",
+  "ru": "бросать вызов; не подчиняться",
+  "example_es": "Los jóvenes desafiaron la prohibición y salieron a la calle.",
+  "example_ru": "Молодёжь нарушила запрет и вышла на улицы.",
+  "rank": 13993
+ },
+ {
+  "id": "reflexionar",
+  "es": "reflexionar",
+  "pos": "verb",
+  "ru": "размышлять, обдумывать",
+  "example_es": "Necesito reflexionar antes de tomar una decisión.",
+  "example_ru": "Мне нужно всё обдумать, прежде чем принять решение.",
+  "rank": 13148
+ }
+]

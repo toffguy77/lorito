@@ -1,0 +1,389 @@
+[
+ {
+  "id": "no-obstante",
+  "es": "no obstante",
+  "pos": "phrase",
+  "ru": "однако, тем не менее",
+  "example_es": "El plan es arriesgado; no obstante, vale la pena intentarlo.",
+  "example_ru": "План рискованный, однако попробовать стоит.",
+  "rank": 9692
+ },
+ {
+  "id": "por-consiguiente",
+  "es": "por consiguiente",
+  "pos": "phrase",
+  "ru": "следовательно, поэтому",
+  "example_es": "Los costes han subido y, por consiguiente, también los precios.",
+  "example_ru": "Издержки выросли, а следовательно, выросли и цены.",
+  "rank": 22364
+ },
+ {
+  "id": "en-consecuencia",
+  "es": "en consecuencia",
+  "pos": "phrase",
+  "ru": "в результате, соответственно",
+  "example_es": "No presentó los documentos y, en consecuencia, perdió la beca.",
+  "example_ru": "Он не подал документы и в результате лишился стипендии.",
+  "rank": 8395
+ },
+ {
+  "id": "así-pues",
+  "es": "así pues",
+  "pos": "phrase",
+  "ru": "итак, таким образом",
+  "example_es": "Así pues, la propuesta queda aprobada por mayoría.",
+  "example_ru": "Итак, предложение принято большинством голосов.",
+  "rank": 296
+ },
+ {
+  "id": "dado-que",
+  "es": "dado que",
+  "pos": "phrase",
+  "ru": "поскольку, учитывая что",
+  "example_es": "Dado que nadie se opone, empezaremos mañana.",
+  "example_ru": "Поскольку никто не возражает, начнём завтра.",
+  "rank": 566
+ },
+ {
+  "id": "si-bien",
+  "es": "si bien",
+  "pos": "phrase",
+  "ru": "хотя, пусть и",
+  "example_es": "Si bien el método funciona, todavía resulta muy caro.",
+  "example_ru": "Хотя метод работает, он по-прежнему обходится очень дорого.",
+  "rank": 26
+ },
+ {
+  "id": "por-el-contrario",
+  "es": "por el contrario",
+  "pos": "phrase",
+  "ru": "напротив, наоборот",
+  "example_es": "El norte es lluvioso; el sur, por el contrario, es muy seco.",
+  "example_ru": "Север дождливый, а юг, напротив, очень засушливый.",
+  "rank": 1482
+ },
+ {
+  "id": "con-respecto-a",
+  "es": "con respecto a",
+  "pos": "phrase",
+  "ru": "относительно, по поводу",
+  "example_es": "Con respecto a tu pregunta, te responderé por correo.",
+  "example_ru": "По поводу твоего вопроса — отвечу по почте.",
+  "rank": 1166
+ },
+ {
+  "id": "asimismo",
+  "es": "asimismo",
+  "pos": "adv",
+  "ru": "также, кроме того",
+  "example_es": "El informe analiza los costes; asimismo, propone varias soluciones.",
+  "example_ru": "В отчёте анализируются затраты; кроме того, в нём предлагается несколько решений.",
+  "rank": 39423
+ },
+ {
+  "id": "esto-es",
+  "es": "esto es",
+  "pos": "phrase",
+  "ru": "то есть",
+  "example_es": "Llegaremos en dos semanas, esto es, a principios de mayo.",
+  "example_ru": "Мы приедем через две недели, то есть в начале мая.",
+  "rank": 38
+ },
+ {
+  "id": "en-otras-palabras",
+  "es": "en otras palabras",
+  "pos": "phrase",
+  "ru": "другими словами",
+  "example_es": "En otras palabras, el proyecto no tiene futuro.",
+  "example_ru": "Другими словами, у проекта нет будущего.",
+  "rank": 656
+ },
+ {
+  "id": "en-definitiva",
+  "es": "en definitiva",
+  "pos": "phrase",
+  "ru": "в конечном счёте, словом",
+  "example_es": "En definitiva, fue una decisión acertada.",
+  "example_ru": "Словом, это было правильное решение.",
+  "rank": 9147
+ },
+ {
+  "id": "en-conclusión",
+  "es": "en conclusión",
+  "pos": "phrase",
+  "ru": "в заключение, итак",
+  "example_es": "En conclusión, los datos confirman nuestra hipótesis.",
+  "example_ru": "Итак, данные подтверждают нашу гипотезу.",
+  "rank": 5193
+ },
+ {
+  "id": "a-fin-de-cuentas",
+  "es": "a fin de cuentas",
+  "pos": "phrase",
+  "ru": "в конце концов, в итоге",
+  "example_es": "A fin de cuentas, lo importante es que todos estén bien.",
+  "example_ru": "В конце концов, главное, что все в порядке.",
+  "rank": 1503
+ },
+ {
+  "id": "al-fin-y-al-cabo",
+  "es": "al fin y al cabo",
+  "pos": "phrase",
+  "ru": "в конце концов, всё-таки",
+  "example_es": "No te enfades con él; al fin y al cabo, es tu hermano.",
+  "example_ru": "Не сердись на него: в конце концов, он твой брат.",
+  "rank": 1526
+ },
+ {
+  "id": "con-tal-de-que",
+  "es": "con tal de que",
+  "pos": "phrase",
+  "ru": "лишь бы, при условии что",
+  "example_es": "Te lo presto con tal de que me lo devuelvas mañana.",
+  "example_ru": "Одолжу тебе, лишь бы ты вернул завтра.",
+  "rank": 158
+ },
+ {
+  "id": "siempre-y-cuando",
+  "es": "siempre y cuando",
+  "pos": "phrase",
+  "ru": "при условии, что",
+  "example_es": "Puedes salir, siempre y cuando vuelvas antes de las diez.",
+  "example_ru": "Можешь пойти погулять при условии, что вернёшься до десяти.",
+  "rank": 125
+ },
+ {
+  "id": "a-no-ser-que",
+  "es": "a no ser que",
+  "pos": "phrase",
+  "ru": "если только не",
+  "example_es": "Iremos a la playa, a no ser que llueva.",
+  "example_ru": "Мы поедем на пляж, если только не пойдёт дождь.",
+  "rank": 63
+ },
+ {
+  "id": "salvo-que",
+  "es": "salvo que",
+  "pos": "phrase",
+  "ru": "если только не; разве что",
+  "example_es": "La reunión será el lunes, salvo que haya cambios.",
+  "example_ru": "Встреча будет в понедельник, если ничего не изменится.",
+  "rank": 821
+ },
+ {
+  "id": "en-caso-de-que",
+  "es": "en caso de que",
+  "pos": "phrase",
+  "ru": "в случае если",
+  "example_es": "En caso de que necesites ayuda, llámame.",
+  "example_ru": "Если понадобится помощь, звони.",
+  "rank": 288
+ },
+ {
+  "id": "de-modo-que",
+  "es": "de modo que",
+  "pos": "phrase",
+  "ru": "так что; так, чтобы",
+  "example_es": "Ya es tarde, de modo que me voy a casa.",
+  "example_ru": "Уже поздно, так что я пойду домой.",
+  "rank": 669
+ },
+ {
+  "id": "a-medida-que",
+  "es": "a medida que",
+  "pos": "phrase",
+  "ru": "по мере того как",
+  "example_es": "A medida que pasaban los días, se sentía más tranquila.",
+  "example_ru": "По мере того как шли дни, она чувствовала себя спокойнее.",
+  "rank": 3110
+ },
+ {
+  "id": "a-menos-que",
+  "es": "a menos que",
+  "pos": "phrase",
+  "ru": "если только не",
+  "example_es": "No lo haré a menos que me lo pidas tú.",
+  "example_ru": "Я этого не сделаю, если только ты сам меня не попросишь.",
+  "rank": 190
+ },
+ {
+  "id": "no-solo",
+  "es": "no solo",
+  "pos": "phrase",
+  "ru": "не только (… но и)",
+  "example_es": "No solo habla inglés, sino también chino.",
+  "example_ru": "Он говорит не только по-английски, но и по-китайски.",
+  "rank": 89
+ },
+ {
+  "id": "así-como",
+  "es": "así como",
+  "pos": "phrase",
+  "ru": "а также; так же как",
+  "example_es": "En la feria se venden libros, así como discos y revistas.",
+  "example_ru": "На ярмарке продаются книги, а также диски и журналы.",
+  "rank": 46
+ },
+ {
+  "id": "en-cualquier-caso",
+  "es": "en cualquier caso",
+  "pos": "phrase",
+  "ru": "в любом случае",
+  "example_es": "En cualquier caso, te avisaré antes de salir.",
+  "example_ru": "В любом случае я предупрежу тебя перед выходом.",
+  "rank": 288
+ },
+ {
+  "id": "por-ende",
+  "es": "por ende",
+  "pos": "phrase",
+  "ru": "следовательно (книжн.)",
+  "example_es": "El sistema es más simple y, por ende, más barato.",
+  "example_ru": "Система проще и, следовательно, дешевле.",
+  "rank": 32515
+ },
+ {
+  "id": "con-el-fin-de",
+  "es": "con el fin de",
+  "pos": "phrase",
+  "ru": "с целью, чтобы",
+  "example_es": "Se reunieron con el fin de resolver el conflicto.",
+  "example_ru": "Они встретились, чтобы урегулировать конфликт.",
+  "rank": 386
+ },
+ {
+  "id": "de-ahí-que",
+  "es": "de ahí que",
+  "pos": "phrase",
+  "ru": "отсюда и; поэтому (+ subj.)",
+  "example_es": "Vive lejos del centro, de ahí que siempre llegue tarde.",
+  "example_ru": "Он живёт далеко от центра, поэтому всегда опаздывает.",
+  "rank": 127
+ },
+ {
+  "id": "dicho-de-otro-modo",
+  "es": "dicho de otro modo",
+  "pos": "phrase",
+  "ru": "иначе говоря",
+  "example_es": "Dicho de otro modo, no hay dinero para todos.",
+  "example_ru": "Иначе говоря, денег на всех не хватит.",
+  "rank": 669
+ },
+ {
+  "id": "en-efecto",
+  "es": "en efecto",
+  "pos": "phrase",
+  "ru": "действительно, в самом деле",
+  "example_es": "Dijo que llovería y, en efecto, llovió toda la tarde.",
+  "example_ru": "Он сказал, что пойдёт дождь, и действительно, дождь лил весь вечер.",
+  "rank": 1860
+ },
+ {
+  "id": "pese-a",
+  "es": "pese a",
+  "pos": "phrase",
+  "ru": "несмотря на",
+  "example_es": "Pese a la lluvia, el concierto se celebró al aire libre.",
+  "example_ru": "Несмотря на дождь, концерт прошёл под открытым небом.",
+  "rank": 12552
+ },
+ {
+  "id": "aun-cuando",
+  "es": "aun cuando",
+  "pos": "phrase",
+  "ru": "даже если; хотя",
+  "example_es": "Aun cuando tengas razón, no deberías gritar.",
+  "example_ru": "Даже если ты прав, не стоит кричать.",
+  "rank": 988
+ },
+ {
+  "id": "ahora-bien",
+  "es": "ahora bien",
+  "pos": "phrase",
+  "ru": "однако, но",
+  "example_es": "La idea es buena; ahora bien, ¿quién va a pagarla?",
+  "example_ru": "Идея хорошая, но кто за неё заплатит?",
+  "rank": 42
+ },
+ {
+  "id": "es-más",
+  "es": "es más",
+  "pos": "phrase",
+  "ru": "более того",
+  "example_es": "No me molesta; es más, me encanta la idea.",
+  "example_ru": "Меня это не беспокоит; более того, идея мне очень нравится.",
+  "rank": 36
+ },
+ {
+  "id": "por-otra-parte",
+  "es": "por otra parte",
+  "pos": "phrase",
+  "ru": "с другой стороны; кроме того",
+  "example_es": "Es caro; por otra parte, la calidad es excelente.",
+  "example_ru": "Это дорого; с другой стороны, качество отличное.",
+  "rank": 211
+ },
+ {
+  "id": "a-diferencia-de",
+  "es": "a diferencia de",
+  "pos": "phrase",
+  "ru": "в отличие от",
+  "example_es": "A diferencia de su hermano, ella es muy tranquila.",
+  "example_ru": "В отличие от брата, она очень спокойная.",
+  "rank": 1144
+ },
+ {
+  "id": "encima",
+  "es": "encima",
+  "pos": "adv",
+  "ru": "к тому же, вдобавок; сверху",
+  "example_es": "Llegó tarde y, encima, no pidió perdón.",
+  "example_ru": "Он опоздал, да ещё и не извинился.",
+  "rank": 692
+ },
+ {
+  "id": "del-mismo-modo",
+  "es": "del mismo modo",
+  "pos": "phrase",
+  "ru": "точно так же, аналогично",
+  "example_es": "Del mismo modo, los jóvenes también deben participar.",
+  "example_ru": "Точно так же должна участвовать и молодёжь.",
+  "rank": 669
+ },
+ {
+  "id": "por-más-que",
+  "es": "por más que",
+  "pos": "phrase",
+  "ru": "сколько бы ни, как бы ни",
+  "example_es": "Por más que lo intento, no consigo entenderlo.",
+  "example_ru": "Сколько бы я ни старался, не могу этого понять.",
+  "rank": 36
+ },
+ {
+  "id": "a-raíz-de",
+  "es": "a raíz de",
+  "pos": "phrase",
+  "ru": "вследствие, после (какого-л. события)",
+  "example_es": "A raíz de la crisis, muchas empresas cerraron.",
+  "example_ru": "После кризиса многие компании закрылись.",
+  "rank": 7388
+ },
+ {
+  "id": "en-vista-de-que",
+  "es": "en vista de que",
+  "pos": "phrase",
+  "ru": "ввиду того что, раз",
+  "example_es": "En vista de que no llega, empezaremos sin él.",
+  "example_ru": "Раз его нет, начнём без него.",
+  "rank": 810
+ },
+ {
+  "id": "con-todo",
+  "es": "con todo",
+  "pos": "phrase",
+  "ru": "тем не менее, и всё же",
+  "example_es": "El viaje fue agotador; con todo, mereció la pena.",
+  "example_ru": "Поездка была изматывающей, и всё же она того стоила.",
+  "rank": 39
+ }
+]

@@ -1,0 +1,688 @@
+[
+ {
+  "id": "demandante",
+  "es": "demandante",
+  "pos": "noun",
+  "ru": "истец",
+  "example_es": "El demandante reclama una indemnización por daños.",
+  "example_ru": "Истец требует возмещения ущерба.",
+  "rank": 15139,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "demandantes"
+  ]
+ },
+ {
+  "id": "demandado",
+  "es": "demandado",
+  "pos": "noun",
+  "ru": "ответчик",
+  "example_es": "El demandado no compareció ante el tribunal.",
+  "example_ru": "Ответчик не явился в суд.",
+  "rank": 18722,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "demandada",
+   "demandados",
+   "demandadas"
+  ]
+ },
+ {
+  "id": "querella",
+  "es": "querella",
+  "pos": "noun",
+  "ru": "жалоба, иск (уголовный)",
+  "example_es": "La asociación presentó una querella contra el alcalde.",
+  "example_ru": "Ассоциация подала уголовный иск против мэра.",
+  "rank": 49999,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "querellas"
+  ]
+ },
+ {
+  "id": "litigio",
+  "es": "litigio",
+  "pos": "noun",
+  "ru": "тяжба, судебный спор",
+  "example_es": "Los herederos mantienen un largo litigio por la casa.",
+  "example_ru": "Наследники ведут долгую тяжбу из-за дома.",
+  "rank": 40275,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "litigios"
+  ]
+ },
+ {
+  "id": "fallo",
+  "es": "fallo",
+  "pos": "noun",
+  "ru": "решение суда, приговор; сбой",
+  "example_es": "El fallo del Supremo es firme e inapelable.",
+  "example_ru": "Решение Верховного суда окончательно и обжалованию не подлежит.",
+  "rank": 5314,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "fallos"
+  ]
+ },
+ {
+  "id": "jurisprudencia",
+  "es": "jurisprudencia",
+  "pos": "noun",
+  "ru": "судебная практика; юриспруденция",
+  "example_es": "La jurisprudencia del tribunal ha cambiado en este punto.",
+  "example_ru": "Судебная практика по этому вопросу изменилась.",
+  "rank": 48498,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "jurisprudencias"
+  ]
+ },
+ {
+  "id": "perito",
+  "es": "perito",
+  "pos": "noun",
+  "ru": "эксперт (в суде)",
+  "example_es": "El juez nombró a un perito independiente.",
+  "example_ru": "Судья назначил независимого эксперта.",
+  "rank": 35837,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "perita",
+   "peritos",
+   "peritas"
+  ]
+ },
+ {
+  "id": "cláusula",
+  "es": "cláusula",
+  "pos": "noun",
+  "ru": "пункт, оговорка (договора)",
+  "example_es": "El contrato incluye una cláusula de confidencialidad.",
+  "example_ru": "Договор содержит пункт о конфиденциальности.",
+  "rank": 16306,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "cláusulas"
+  ]
+ },
+ {
+  "id": "estipular",
+  "es": "estipular",
+  "pos": "verb",
+  "ru": "оговаривать, устанавливать (в договоре)",
+  "example_es": "El contrato estipula un plazo de entrega de treinta días.",
+  "example_ru": "Договор устанавливает срок поставки в тридцать дней.",
+  "rank": 49999
+ },
+ {
+  "id": "prescripción",
+  "es": "prescripción",
+  "pos": "noun",
+  "ru": "давность; предписание",
+  "example_es": "La defensa alegó la prescripción de los hechos.",
+  "example_ru": "Защита сослалась на истечение срока давности.",
+  "rank": 19680,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "prescripciones"
+  ]
+ },
+ {
+  "id": "alegar",
+  "es": "alegar",
+  "pos": "verb",
+  "ru": "ссылаться на, утверждать (в свою защиту)",
+  "example_es": "El acusado alegó que estaba de viaje aquella noche.",
+  "example_ru": "Обвиняемый утверждал, что в ту ночь был в отъезде.",
+  "rank": 25327,
+  "forms": [
+   "alegué",
+   "alegue"
+  ]
+ },
+ {
+  "id": "imputado",
+  "es": "imputado",
+  "pos": "noun",
+  "ru": "обвиняемый, подследственный",
+  "example_es": "El imputado se acogió a su derecho a no declarar.",
+  "example_ru": "Подследственный воспользовался правом не давать показаний.",
+  "rank": 49295,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "imputada",
+   "imputados",
+   "imputadas"
+  ]
+ },
+ {
+  "id": "malversación",
+  "es": "malversación",
+  "pos": "noun",
+  "ru": "растрата",
+  "example_es": "Fue condenado por malversación de fondos públicos.",
+  "example_ru": "Его осудили за растрату государственных средств.",
+  "rank": 31527,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "malversaciones"
+  ]
+ },
+ {
+  "id": "cohecho",
+  "es": "cohecho",
+  "pos": "noun",
+  "ru": "взяточничество",
+  "example_es": "El funcionario fue acusado de cohecho.",
+  "example_ru": "Чиновника обвинили во взяточничестве.",
+  "rank": 49999,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "cohechos"
+  ]
+ },
+ {
+  "id": "fianza",
+  "es": "fianza",
+  "pos": "noun",
+  "ru": "залог",
+  "example_es": "Quedó en libertad tras pagar una fianza.",
+  "example_ru": "Его освободили под залог.",
+  "rank": 4344,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "fianzas"
+  ]
+ },
+ {
+  "id": "sumario",
+  "es": "sumario",
+  "pos": "noun",
+  "ru": "материалы следствия",
+  "example_es": "El sumario del caso ocupa miles de páginas.",
+  "example_ru": "Материалы дела занимают тысячи страниц.",
+  "rank": 32979,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "sumarios"
+  ]
+ },
+ {
+  "id": "comparecer",
+  "es": "comparecer",
+  "pos": "verb",
+  "ru": "являться (в суд, к властям)",
+  "example_es": "El testigo deberá comparecer el próximo lunes.",
+  "example_ru": "Свидетель должен явиться в суд в следующий понедельник.",
+  "rank": 30369,
+  "forms": [
+   "comparezco",
+   "comparezca",
+   "compareció"
+  ]
+ },
+ {
+  "id": "citación",
+  "es": "citación",
+  "pos": "noun",
+  "ru": "повестка, вызов в суд",
+  "example_es": "Recibió una citación judicial por correo.",
+  "example_ru": "Он получил судебную повестку по почте.",
+  "rank": 13935,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "citaciones"
+  ]
+ },
+ {
+  "id": "allanamiento",
+  "es": "allanamiento",
+  "pos": "noun",
+  "ru": "обыск; незаконное проникновение",
+  "example_es": "La policía realizó un allanamiento en la sede del partido.",
+  "example_ru": "Полиция провела обыск в штаб-квартире партии.",
+  "rank": 10332,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "allanamientos"
+  ]
+ },
+ {
+  "id": "embargo",
+  "es": "embargo",
+  "pos": "noun",
+  "ru": "арест имущества; эмбарго",
+  "example_es": "El banco solicitó el embargo de sus bienes.",
+  "example_ru": "Банк потребовал наложить арест на его имущество.",
+  "rank": 885,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "embargos"
+  ]
+ },
+ {
+  "id": "albacea",
+  "es": "albacea",
+  "pos": "noun",
+  "ru": "душеприказчик",
+  "example_es": "Nombró albacea a su mejor amigo.",
+  "example_ru": "Он назначил душеприказчиком своего лучшего друга.",
+  "rank": 46311,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "albaceas"
+  ]
+ },
+ {
+  "id": "usufructo",
+  "es": "usufructo",
+  "pos": "noun",
+  "ru": "узуфрукт, право пользования",
+  "example_es": "La viuda conserva el usufructo de la vivienda.",
+  "example_ru": "За вдовой сохраняется право пользования жильём.",
+  "rank": 49999,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "usufructos"
+  ]
+ },
+ {
+  "id": "arrendamiento",
+  "es": "arrendamiento",
+  "pos": "noun",
+  "ru": "аренда, наём",
+  "example_es": "Firmaron un contrato de arrendamiento por cinco años.",
+  "example_ru": "Они подписали договор аренды на пять лет.",
+  "rank": 26431,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "arrendamientos"
+  ]
+ },
+ {
+  "id": "cónyuge",
+  "es": "cónyuge",
+  "pos": "noun",
+  "ru": "супруг, супруга",
+  "example_es": "El cónyuge viudo tiene derecho a una pensión.",
+  "example_ru": "Овдовевший супруг имеет право на пенсию.",
+  "rank": 33667,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "cónyuges"
+  ]
+ },
+ {
+  "id": "tutela",
+  "es": "tutela",
+  "pos": "noun",
+  "ru": "опека; защита",
+  "example_es": "La abuela obtuvo la tutela de los niños.",
+  "example_ru": "Бабушка получила опеку над детьми.",
+  "rank": 26934,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "tutelas"
+  ]
+ },
+ {
+  "id": "vinculante",
+  "es": "vinculante",
+  "pos": "adj",
+  "ru": "обязательный (к исполнению)",
+  "example_es": "La decisión del árbitro es vinculante para ambas partes.",
+  "example_ru": "Решение арбитра обязательно для обеих сторон.",
+  "rank": 43887,
+  "forms": [
+   "vinculantes"
+  ]
+ },
+ {
+  "id": "nulo",
+  "es": "nulo",
+  "pos": "adj",
+  "ru": "недействительный, ничтожный",
+  "example_es": "El contrato se declaró nulo por falta de firma.",
+  "example_ru": "Договор признали недействительным из-за отсутствия подписи.",
+  "rank": 23090,
+  "forms": [
+   "nula",
+   "nulos",
+   "nulas"
+  ]
+ },
+ {
+  "id": "fehaciente",
+  "es": "fehaciente",
+  "pos": "adj",
+  "ru": "достоверный, неопровержимый",
+  "example_es": "No hay pruebas fehacientes de su culpabilidad.",
+  "example_ru": "Неопровержимых доказательств его вины нет.",
+  "rank": 49999,
+  "forms": [
+   "fehacientes"
+  ]
+ },
+ {
+  "id": "dolo",
+  "es": "dolo",
+  "pos": "noun",
+  "ru": "умысел (преступный)",
+  "example_es": "Se demostró que el administrador actuó con dolo.",
+  "example_ru": "Было доказано, что управляющий действовал умышленно.",
+  "rank": 49999,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "dolos"
+  ]
+ },
+ {
+  "id": "agravante",
+  "es": "agravante",
+  "pos": "noun",
+  "ru": "отягчающее обстоятельство",
+  "example_es": "El tribunal apreció la agravante de reincidencia.",
+  "example_ru": "Суд учёл рецидив как отягчающее обстоятельство.",
+  "rank": 49999,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "agravantes"
+  ]
+ },
+ {
+  "id": "atenuante",
+  "es": "atenuante",
+  "pos": "noun",
+  "ru": "смягчающее обстоятельство",
+  "example_es": "La confesión fue considerada una atenuante.",
+  "example_ru": "Признание сочли смягчающим обстоятельством.",
+  "rank": 49999,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "atenuantes"
+  ]
+ },
+ {
+  "id": "indulto",
+  "es": "indulto",
+  "pos": "noun",
+  "ru": "помилование",
+  "example_es": "El Gobierno concedió el indulto a los presos.",
+  "example_ru": "Правительство помиловало заключённых.",
+  "rank": 21489,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "indultos"
+  ]
+ },
+ {
+  "id": "amparo",
+  "es": "amparo",
+  "pos": "noun",
+  "ru": "защита; жалоба о защите конституционных прав",
+  "example_es": "Presentó un recurso de amparo ante el Constitucional.",
+  "example_ru": "Он подал жалобу в Конституционный суд о защите своих прав.",
+  "rank": 22908,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "amparos"
+  ]
+ },
+ {
+  "id": "derogar",
+  "es": "derogar",
+  "pos": "verb",
+  "ru": "отменять (закон)",
+  "example_es": "El Parlamento derogó la ley el año pasado.",
+  "example_ru": "Парламент отменил этот закон в прошлом году.",
+  "rank": 49999,
+  "forms": [
+   "derogué",
+   "derogue"
+  ]
+ },
+ {
+  "id": "subsanar",
+  "es": "subsanar",
+  "pos": "verb",
+  "ru": "устранять (недостаток, ошибку)",
+  "example_es": "Tiene diez días para subsanar los defectos de la solicitud.",
+  "example_ru": "У вас есть десять дней, чтобы устранить недочёты в заявлении.",
+  "rank": 49999
+ },
+ {
+  "id": "coartada",
+  "es": "coartada",
+  "pos": "noun",
+  "ru": "алиби",
+  "example_es": "El sospechoso tenía una coartada sólida para esa noche.",
+  "example_ru": "У подозреваемого было надёжное алиби на ту ночь.",
+  "rank": 3910,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "coartadas"
+  ]
+ },
+ {
+  "id": "perjurio",
+  "es": "perjurio",
+  "pos": "noun",
+  "ru": "лжесвидетельство, клятвопреступление",
+  "example_es": "El testigo fue acusado de perjurio.",
+  "example_ru": "Свидетеля обвинили в лжесвидетельстве.",
+  "rank": 18192,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "perjurios"
+  ]
+ },
+ {
+  "id": "desacato",
+  "es": "desacato",
+  "pos": "noun",
+  "ru": "неуважение к суду; неповиновение",
+  "example_es": "Lo multaron por desacato al tribunal.",
+  "example_ru": "Его оштрафовали за неуважение к суду.",
+  "rank": 18984,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "desacatos"
+  ]
+ },
+ {
+  "id": "encubrimiento",
+  "es": "encubrimiento",
+  "pos": "noun",
+  "ru": "укрывательство, сокрытие",
+  "example_es": "Fue condenado por encubrimiento de un delito.",
+  "example_ru": "Его осудили за укрывательство преступления.",
+  "rank": 19126,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "encubrimientos"
+  ]
+ },
+ {
+  "id": "complicidad",
+  "es": "complicidad",
+  "pos": "noun",
+  "ru": "соучастие; понимание без слов",
+  "example_es": "La investigación demostró su complicidad en el fraude.",
+  "example_ru": "Следствие доказало его соучастие в мошенничестве.",
+  "rank": 20796,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "complicidades"
+  ]
+ },
+ {
+  "id": "extradición",
+  "es": "extradición",
+  "pos": "noun",
+  "ru": "экстрадиция, выдача (преступника)",
+  "example_es": "El Gobierno solicitó la extradición del empresario.",
+  "example_ru": "Правительство запросило выдачу предпринимателя.",
+  "rank": 21939,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "extradiciones"
+  ]
+ },
+ {
+  "id": "impune",
+  "es": "impune",
+  "pos": "adj",
+  "ru": "безнаказанный",
+  "example_es": "No podemos permitir que este crimen quede impune.",
+  "example_ru": "Мы не можем допустить, чтобы это преступление осталось безнаказанным.",
+  "rank": 22804,
+  "forms": [
+   "impunes"
+  ]
+ },
+ {
+  "id": "pleito",
+  "es": "pleito",
+  "pos": "noun",
+  "ru": "тяжба, судебный процесс",
+  "example_es": "Ganó el pleito contra la compañía de seguros.",
+  "example_ru": "Он выиграл тяжбу против страховой компании.",
+  "rank": 23253,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "pleitos"
+  ]
+ },
+ {
+  "id": "prórroga",
+  "es": "prórroga",
+  "pos": "noun",
+  "ru": "отсрочка, продление",
+  "example_es": "El juez concedió una prórroga de dos meses.",
+  "example_ru": "Судья предоставил отсрочку на два месяца.",
+  "rank": 32583,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "prórrogas"
+  ]
+ },
+ {
+  "id": "magistrado",
+  "es": "magistrado",
+  "pos": "noun",
+  "ru": "судья (высшей инстанции), магистрат",
+  "example_es": "El magistrado ordenó el ingreso en prisión del acusado.",
+  "example_ru": "Судья распорядился взять обвиняемого под стражу.",
+  "rank": 12574,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "magistrada",
+   "magistrados",
+   "magistradas"
+  ]
+ },
+ {
+  "id": "inculpar",
+  "es": "inculpar",
+  "pos": "verb",
+  "ru": "обвинять, вменять вину",
+  "example_es": "Las pruebas no bastan para inculpar al alcalde.",
+  "example_ru": "Улик недостаточно, чтобы обвинить мэра.",
+  "rank": 35636
+ },
+ {
+  "id": "desestimar",
+  "es": "desestimar",
+  "pos": "verb",
+  "ru": "отклонять (иск, жалобу)",
+  "example_es": "El tribunal desestimó el recurso de la defensa.",
+  "example_ru": "Суд отклонил жалобу защиты.",
+  "rank": 37407
+ },
+ {
+  "id": "revocar",
+  "es": "revocar",
+  "pos": "verb",
+  "ru": "отменять (решение, лицензию)",
+  "example_es": "La audiencia revocó la sentencia de primera instancia.",
+  "example_ru": "Апелляционный суд отменил приговор первой инстанции.",
+  "rank": 31706,
+  "forms": [
+   "revoqué",
+   "revoque"
+  ]
+ },
+ {
+  "id": "infringir",
+  "es": "infringir",
+  "pos": "verb",
+  "ru": "нарушать (закон, правило)",
+  "example_es": "Quien infrinja esta norma será sancionado.",
+  "example_ru": "Нарушивший это правило будет наказан.",
+  "rank": 40756,
+  "forms": [
+   "infrinja",
+   "infrinjo"
+  ]
+ },
+ {
+  "id": "atestiguar",
+  "es": "atestiguar",
+  "pos": "verb",
+  "ru": "свидетельствовать, подтверждать",
+  "example_es": "Varios vecinos pueden atestiguar que estaba en casa.",
+  "example_ru": "Несколько соседей могут подтвердить, что он был дома.",
+  "rank": 32625,
+  "forms": [
+   "atestigüe",
+   "atestigüé"
+  ]
+ },
+ {
+  "id": "incriminar",
+  "es": "incriminar",
+  "pos": "verb",
+  "ru": "инкриминировать, выставлять виновным",
+  "example_es": "Alguien colocó el arma para incriminarlo.",
+  "example_ru": "Кто-то подбросил оружие, чтобы его подставить.",
+  "rank": 28181
+ }
+]

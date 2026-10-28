@@ -1,0 +1,669 @@
+[
+ {
+  "id": "emprendedor",
+  "es": "emprendedor",
+  "pos": "noun",
+  "ru": "предприниматель (начинающий)",
+  "example_es": "Muchos jóvenes emprendedores buscan financiación para sus ideas.",
+  "example_ru": "Многие молодые предприниматели ищут финансирование для своих идей.",
+  "rank": 32573,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "emprendedores",
+   "emprendedora",
+   "emprendedoras"
+  ]
+ },
+ {
+  "id": "ejecutivo",
+  "es": "ejecutivo",
+  "pos": "noun",
+  "ru": "руководитель, топ-менеджер",
+  "example_es": "Trabaja como ejecutiva en una empresa de cosméticos.",
+  "example_ru": "Она работает руководителем в косметической компании.",
+  "rank": 6517,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "ejecutivos",
+   "ejecutiva",
+   "ejecutivas"
+  ]
+ },
+ {
+  "id": "competidor",
+  "es": "competidor",
+  "pos": "noun",
+  "ru": "конкурент",
+  "example_es": "Nuestro principal competidor ha bajado los precios.",
+  "example_ru": "Наш главный конкурент снизил цены.",
+  "rank": 18353,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "competidores",
+   "competidora",
+   "competidoras"
+  ]
+ },
+ {
+  "id": "estrategia",
+  "es": "estrategia",
+  "pos": "noun",
+  "ru": "стратегия",
+  "example_es": "Necesitamos una nueva estrategia para atraer a clientes jóvenes.",
+  "example_ru": "Нам нужна новая стратегия, чтобы привлечь молодых клиентов.",
+  "rank": 3834,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "estrategias"
+  ]
+ },
+ {
+  "id": "negociación",
+  "es": "negociación",
+  "pos": "noun",
+  "ru": "переговоры",
+  "example_es": "Las negociaciones con el cliente duraron tres meses.",
+  "example_ru": "Переговоры с клиентом длились три месяца.",
+  "rank": 10037,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "negociaciones"
+  ]
+ },
+ {
+  "id": "presupuesto",
+  "es": "presupuesto",
+  "pos": "noun",
+  "ru": "бюджет; смета",
+  "example_es": "El proyecto superó el presupuesto previsto.",
+  "example_ru": "Проект вышел за рамки запланированного бюджета.",
+  "rank": 4685,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "presupuestos"
+  ]
+ },
+ {
+  "id": "sucursal",
+  "es": "sucursal",
+  "pos": "noun",
+  "ru": "филиал, отделение",
+  "example_es": "El banco cerró varias sucursales en zonas rurales.",
+  "example_ru": "Банк закрыл несколько отделений в сельской местности.",
+  "rank": 17029,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "sucursales"
+  ]
+ },
+ {
+  "id": "franquicia",
+  "es": "franquicia",
+  "pos": "noun",
+  "ru": "франшиза",
+  "example_es": "Abrió una franquicia de una cadena de cafeterías.",
+  "example_ru": "Он открыл кофейню по франшизе известной сети.",
+  "rank": 20011,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "franquicias"
+  ]
+ },
+ {
+  "id": "ascender",
+  "es": "ascender",
+  "pos": "verb",
+  "ru": "повышать (в должности); подниматься",
+  "example_es": "La ascendieron a directora después de cinco años.",
+  "example_ru": "Через пять лет её повысили до директора.",
+  "rank": 14529,
+  "forms": [
+   "asciende",
+   "ascienden",
+   "asciendo"
+  ]
+ },
+ {
+  "id": "emprender",
+  "es": "emprender",
+  "pos": "verb",
+  "ru": "начинать (дело), предпринимать",
+  "example_es": "Decidió emprender su propio negocio a los cuarenta.",
+  "example_ru": "В сорок лет он решил открыть собственное дело.",
+  "rank": 24084
+ },
+ {
+  "id": "liderar",
+  "es": "liderar",
+  "pos": "verb",
+  "ru": "возглавлять, руководить",
+  "example_es": "Lidera el proyecto desde su inicio.",
+  "example_ru": "Он возглавляет проект с самого начала.",
+  "rank": 16143
+ },
+ {
+  "id": "delegar",
+  "es": "delegar",
+  "pos": "verb",
+  "ru": "поручать, делегировать",
+  "example_es": "Un buen jefe sabe delegar tareas.",
+  "example_ru": "Хороший начальник умеет делегировать задачи.",
+  "rank": 44949
+ },
+ {
+  "id": "gestión",
+  "es": "gestión",
+  "pos": "noun",
+  "ru": "управление, менеджмент; оформление",
+  "example_es": "La mala gestión llevó a la empresa a la quiebra.",
+  "example_ru": "Плохое управление довело компанию до банкротства.",
+  "rank": 13811,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "gestiones"
+  ]
+ },
+ {
+  "id": "consultor",
+  "es": "consultor",
+  "pos": "noun",
+  "ru": "консультант",
+  "example_es": "Contrataron a un consultor externo para reorganizar la empresa.",
+  "example_ru": "Для реорганизации компании наняли внешнего консультанта.",
+  "rank": 15970,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "consultores",
+   "consultora",
+   "consultoras"
+  ]
+ },
+ {
+  "id": "asesor",
+  "es": "asesor",
+  "pos": "noun",
+  "ru": "советник, консультант",
+  "example_es": "Consulta con tu asesor fiscal antes de firmar.",
+  "example_ru": "Перед подписанием посоветуйся со своим налоговым консультантом.",
+  "rank": 8316,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "asesores",
+   "asesora",
+   "asesoras"
+  ]
+ },
+ {
+  "id": "cualificado",
+  "es": "cualificado",
+  "pos": "adj",
+  "ru": "квалифицированный",
+  "example_es": "Faltan trabajadores {es: cualificados | am: calificados | rio: calificados} en la construcción.",
+  "example_ru": "В строительстве не хватает квалифицированных рабочих.",
+  "rank": 22516,
+  "forms": [
+   "cualificada",
+   "cualificados",
+   "cualificadas"
+  ],
+  "variants": {
+   "am": "calificado",
+   "rio": "calificado"
+  }
+ },
+ {
+  "id": "competente",
+  "es": "competente",
+  "pos": "adj",
+  "ru": "компетентный",
+  "example_es": "Necesitamos a alguien competente para dirigir el departamento.",
+  "example_ru": "Нам нужен компетентный человек, чтобы руководить отделом.",
+  "rank": 14834,
+  "forms": [
+   "competentes"
+  ]
+ },
+ {
+  "id": "rentable",
+  "es": "rentable",
+  "pos": "adj",
+  "ru": "прибыльный, рентабельный",
+  "example_es": "El negocio tardó tres años en ser rentable.",
+  "example_ru": "Бизнес стал прибыльным только через три года.",
+  "rank": 20195,
+  "forms": [
+   "rentables"
+  ]
+ },
+ {
+  "id": "multinacional",
+  "es": "multinacional",
+  "pos": "noun",
+  "ru": "транснациональная компания",
+  "example_es": "Trabajó diez años en una multinacional antes de independizarse.",
+  "example_ru": "Десять лет он проработал в международной корпорации, прежде чем начать своё дело.",
+  "rank": 35944,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "multinacionales"
+  ]
+ },
+ {
+  "id": "incentivo",
+  "es": "incentivo",
+  "pos": "noun",
+  "ru": "стимул; поощрение, бонус",
+  "example_es": "La empresa ofrece incentivos a quien supere los objetivos.",
+  "example_ru": "Компания предлагает бонусы тем, кто перевыполнит план.",
+  "rank": 19084,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "incentivos"
+  ]
+ },
+ {
+  "id": "clientela",
+  "es": "clientela",
+  "pos": "noun",
+  "ru": "клиентура",
+  "example_es": "El restaurante tiene una clientela fiel desde hace años.",
+  "example_ru": "У ресторана уже много лет есть постоянная клиентура.",
+  "rank": 16886,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "clientelas"
+  ]
+ },
+ {
+  "id": "reputación",
+  "es": "reputación",
+  "pos": "noun",
+  "ru": "репутация",
+  "example_es": "Un mal servicio puede arruinar la reputación de una marca.",
+  "example_ru": "Плохое обслуживание может погубить репутацию бренда.",
+  "rank": 2914,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "reputaciones"
+  ]
+ },
+ {
+  "id": "colaborador",
+  "es": "colaborador",
+  "pos": "noun",
+  "ru": "сотрудник; соавтор, партнёр",
+  "example_es": "Agradezco a todos mis colaboradores su esfuerzo.",
+  "example_ru": "Благодарю всех моих сотрудников за их усилия.",
+  "rank": 23890,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "colaboradores",
+   "colaboradora",
+   "colaboradoras"
+  ]
+ },
+ {
+  "id": "aspirante",
+  "es": "aspirante",
+  "pos": "noun",
+  "ru": "кандидат, соискатель",
+  "example_es": "Se presentaron más de doscientos aspirantes al puesto.",
+  "example_ru": "На эту должность претендовали более двухсот кандидатов.",
+  "rank": 14845,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "aspirantes"
+  ]
+ },
+ {
+  "id": "patrocinador",
+  "es": "patrocinador",
+  "pos": "noun",
+  "ru": "спонсор",
+  "example_es": "Los organizadores buscan patrocinadores para cubrir los gastos.",
+  "example_ru": "Организаторы ищут спонсоров, чтобы покрыть расходы.",
+  "rank": 16573,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "patrocinadores",
+   "patrocinadora",
+   "patrocinadoras"
+  ]
+ },
+ {
+  "id": "lanzamiento",
+  "es": "lanzamiento",
+  "pos": "noun",
+  "ru": "запуск (продукта), выпуск; бросок",
+  "example_es": "El lanzamiento del nuevo producto está previsto para marzo.",
+  "example_ru": "Запуск нового продукта запланирован на март.",
+  "rank": 4173,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "lanzamientos"
+  ]
+ },
+ {
+  "id": "empresarial",
+  "es": "empresarial",
+  "pos": "adj",
+  "ru": "деловой, предпринимательский",
+  "example_es": "Tiene una gran visión empresarial.",
+  "example_ru": "У неё прекрасное деловое чутьё.",
+  "rank": 20380,
+  "forms": [
+   "empresariales"
+  ]
+ },
+ {
+  "id": "supervisar",
+  "es": "supervisar",
+  "pos": "verb",
+  "ru": "контролировать, курировать",
+  "example_es": "Una ingeniera supervisa todas las obras.",
+  "example_ru": "За всеми работами следит инженер.",
+  "rank": 17576
+ },
+ {
+  "id": "jerarquía",
+  "es": "jerarquía",
+  "pos": "noun",
+  "ru": "иерархия",
+  "example_es": "En esta empresa la jerarquía es muy rígida.",
+  "example_ru": "В этой компании очень жёсткая иерархия.",
+  "rank": 21132,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "jerarquías"
+  ]
+ },
+ {
+  "id": "iniciativa",
+  "es": "iniciativa",
+  "pos": "noun",
+  "ru": "инициатива",
+  "example_es": "Valoramos a los empleados con iniciativa.",
+  "example_ru": "Мы ценим сотрудников, проявляющих инициативу.",
+  "rank": 7698,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "iniciativas"
+  ]
+ },
+ {
+  "id": "fracaso",
+  "es": "fracaso",
+  "pos": "noun",
+  "ru": "неудача, провал",
+  "example_es": "El fracaso de su primera empresa le enseñó mucho.",
+  "example_ru": "Провал первой компании многому его научил.",
+  "rank": 4223,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "fracasos"
+  ]
+ },
+ {
+  "id": "objetivo",
+  "es": "objetivo",
+  "pos": "noun",
+  "ru": "цель; план (продаж)",
+  "example_es": "Este trimestre no hemos alcanzado los objetivos de ventas.",
+  "example_ru": "В этом квартале мы не выполнили план продаж.",
+  "rank": 1310,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "objetivos"
+  ]
+ },
+ {
+  "id": "meta",
+  "es": "meta",
+  "pos": "noun",
+  "ru": "цель; финиш",
+  "example_es": "Su meta es abrir tres tiendas más el año que viene.",
+  "example_ru": "Его цель — открыть ещё три магазина в следующем году.",
+  "rank": 3081,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "metas"
+  ]
+ },
+ {
+  "id": "misión",
+  "es": "misión",
+  "pos": "noun",
+  "ru": "миссия, задача",
+  "example_es": "La misión de la empresa es ofrecer energía limpia y barata.",
+  "example_ru": "Миссия компании — предлагать чистую и недорогую энергию.",
+  "rank": 1048,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "misiones"
+  ]
+ },
+ {
+  "id": "contratación",
+  "es": "contratación",
+  "pos": "noun",
+  "ru": "наём (персонала); заключение контракта",
+  "example_es": "La empresa ha congelado la contratación hasta el verano.",
+  "example_ru": "Компания заморозила наём до лета.",
+  "rank": 28506,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "contrataciones"
+  ]
+ },
+ {
+  "id": "becario",
+  "es": "becario",
+  "pos": "noun",
+  "ru": "стажёр; стипендиат",
+  "example_es": "{es: Los becarios | am: Los pasantes | rio: Los pasantes} suelen hacer las tareas más aburridas.",
+  "example_ru": "Стажёрам обычно достаётся самая скучная работа.",
+  "rank": 40411,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "becarios",
+   "becaria",
+   "becarias"
+  ],
+  "variants": {
+   "am": "el pasante",
+   "rio": "el pasante"
+  }
+ },
+ {
+  "id": "reclutamiento",
+  "es": "reclutamiento",
+  "pos": "noun",
+  "ru": "подбор персонала, рекрутинг",
+  "example_es": "El reclutamiento de ingenieros es cada vez más difícil.",
+  "example_ru": "Найти инженеров становится всё труднее.",
+  "rank": 15881,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "reclutamientos"
+  ]
+ },
+ {
+  "id": "distribuidor",
+  "es": "distribuidor",
+  "pos": "noun",
+  "ru": "дистрибьютор, оптовый поставщик",
+  "example_es": "Buscamos un distribuidor para vender en otros países.",
+  "example_ru": "Мы ищем дистрибьютора для продаж в других странах.",
+  "rank": 14781,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "distribuidores",
+   "distribuidora",
+   "distribuidoras"
+  ]
+ },
+ {
+  "id": "corporativo",
+  "es": "corporativo",
+  "pos": "adj",
+  "ru": "корпоративный",
+  "example_es": "Todos los empleados deben usar el correo corporativo.",
+  "example_ru": "Все сотрудники должны пользоваться корпоративной почтой.",
+  "rank": 16911,
+  "forms": [
+   "corporativa",
+   "corporativos",
+   "corporativas"
+  ]
+ },
+ {
+  "id": "supervisor",
+  "es": "supervisor",
+  "pos": "noun",
+  "ru": "руководитель, начальник смены; контролёр",
+  "example_es": "Si tienes dudas, pregunta a tu supervisora.",
+  "example_ru": "Если есть вопросы, спроси у своей руководительницы.",
+  "rank": 7150,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "supervisores",
+   "supervisora",
+   "supervisoras"
+  ]
+ },
+ {
+  "id": "captar",
+  "es": "captar",
+  "pos": "verb",
+  "ru": "привлекать (клиентов, средства); улавливать",
+  "example_es": "Necesitamos captar clientes en las redes sociales.",
+  "example_ru": "Нам нужно привлекать клиентов через соцсети.",
+  "rank": 14786
+ },
+ {
+  "id": "competitivo",
+  "es": "competitivo",
+  "pos": "adj",
+  "ru": "конкурентоспособный; конкурентный",
+  "example_es": "Ofrecemos un salario competitivo y horario flexible.",
+  "example_ru": "Мы предлагаем конкурентную зарплату и гибкий график.",
+  "rank": 17781,
+  "forms": [
+   "competitiva",
+   "competitivos",
+   "competitivas"
+  ]
+ },
+ {
+  "id": "expansión",
+  "es": "expansión",
+  "pos": "noun",
+  "ru": "расширение, экспансия",
+  "example_es": "La cadena está en plena expansión por todo el país.",
+  "example_ru": "Сеть активно расширяется по всей стране.",
+  "rank": 11777,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "expansiones"
+  ]
+ },
+ {
+  "id": "administración",
+  "es": "administración",
+  "pos": "noun",
+  "ru": "управление; администрация",
+  "example_es": "Estudió administración de empresas en la universidad.",
+  "example_ru": "В университете он изучал управление бизнесом.",
+  "rank": 5037,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "administraciones"
+  ]
+ },
+ {
+  "id": "recursos-humanos",
+  "es": "recursos humanos",
+  "pos": "phrase",
+  "ru": "отдел кадров, HR",
+  "example_es": "Envía tu solicitud al departamento de recursos humanos.",
+  "example_ru": "Отправь заявление в отдел кадров.",
+  "rank": 3391
+ },
+ {
+  "id": "plan-de-negocio",
+  "es": "plan de negocio",
+  "pos": "phrase",
+  "ru": "бизнес-план",
+  "example_es": "El banco nos pidió un plan de negocio antes del préstamo.",
+  "example_ru": "Перед выдачей кредита банк попросил у нас бизнес-план.",
+  "rank": 757
+ },
+ {
+  "id": "empresa-emergente",
+  "es": "empresa emergente",
+  "pos": "phrase",
+  "ru": "стартап",
+  "example_es": "Trabaja en una empresa emergente de inteligencia artificial.",
+  "example_ru": "Он работает в стартапе, который занимается искусственным интеллектом.",
+  "rank": 36816
+ },
+ {
+  "id": "cerrar-un-trato",
+  "es": "cerrar un trato",
+  "pos": "phrase",
+  "ru": "заключить сделку",
+  "example_es": "Esperamos cerrar un trato con ellos antes de fin de mes.",
+  "example_ru": "Мы надеемся заключить с ними сделку до конца месяца.",
+  "rank": 1798
+ },
+ {
+  "id": "carta-de-presentación",
+  "es": "carta de presentación",
+  "pos": "phrase",
+  "ru": "сопроводительное письмо",
+  "example_es": "Adjunta una carta de presentación junto con el currículum.",
+  "example_ru": "Приложи к резюме сопроводительное письмо.",
+  "rank": 3871
+ },
+ {
+  "id": "contrato-indefinido",
+  "es": "contrato indefinido",
+  "pos": "phrase",
+  "ru": "бессрочный трудовой договор",
+  "example_es": "Después de dos años, por fin le hicieron un contrato indefinido.",
+  "example_ru": "Через два года с ним наконец заключили бессрочный договор.",
+  "rank": 39392
+ }
+]

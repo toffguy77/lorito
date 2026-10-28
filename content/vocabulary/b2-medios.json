@@ -1,0 +1,685 @@
+[
+ {
+  "id": "medios-de-comunicación",
+  "es": "medios de comunicación",
+  "pos": "phrase",
+  "ru": "средства массовой информации, СМИ",
+  "example_es": "Los medios de comunicación tienen una gran influencia en la opinión pública.",
+  "example_ru": "СМИ оказывают большое влияние на общественное мнение.",
+  "rank": 3474
+ },
+ {
+  "id": "periodismo",
+  "es": "periodismo",
+  "pos": "noun",
+  "ru": "журналистика",
+  "example_es": "Estudió periodismo y ahora trabaja en una radio local.",
+  "example_ru": "Она изучала журналистику, а теперь работает на местном радио.",
+  "rank": 13979,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "periodismos"
+  ]
+ },
+ {
+  "id": "artículo",
+  "es": "artículo",
+  "pos": "noun",
+  "ru": "статья; товар",
+  "example_es": "Escribió un artículo sobre la crisis de la vivienda.",
+  "example_ru": "Он написал статью о жилищном кризисе.",
+  "rank": 2438,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "artículos"
+  ]
+ },
+ {
+  "id": "reportaje",
+  "es": "reportaje",
+  "pos": "noun",
+  "ru": "репортаж",
+  "example_es": "Anoche vi un reportaje muy interesante sobre la Antártida.",
+  "example_ru": "Вчера вечером я посмотрел очень интересный репортаж об Антарктиде.",
+  "rank": 11210,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "reportajes"
+  ]
+ },
+ {
+  "id": "editor",
+  "es": "editor",
+  "pos": "noun",
+  "ru": "редактор; издатель",
+  "example_es": "El editor decidió no publicar la entrevista.",
+  "example_ru": "Редактор решил не публиковать интервью.",
+  "rank": 5741,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "editores",
+   "editora",
+   "editoras"
+  ]
+ },
+ {
+  "id": "columna",
+  "es": "columna",
+  "pos": "noun",
+  "ru": "колонка (в газете); колонна",
+  "example_es": "Cada domingo escribe una columna de opinión en el periódico.",
+  "example_ru": "Каждое воскресенье он пишет авторскую колонку в газете.",
+  "rank": 4644,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "columnas"
+  ]
+ },
+ {
+  "id": "cadena",
+  "es": "cadena",
+  "pos": "noun",
+  "ru": "телеканал; цепь",
+  "example_es": "Varias cadenas de televisión retransmitieron el partido.",
+  "example_ru": "Несколько телеканалов транслировали матч.",
+  "rank": 2531,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "cadenas"
+  ]
+ },
+ {
+  "id": "canal",
+  "es": "canal",
+  "pos": "noun",
+  "ru": "канал",
+  "example_es": "Tiene un canal de cocina con miles de suscriptores.",
+  "example_ru": "У неё кулинарный канал с тысячами подписчиков.",
+  "rank": 2691,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "canales"
+  ]
+ },
+ {
+  "id": "emisora",
+  "es": "emisora",
+  "pos": "noun",
+  "ru": "радиостанция",
+  "example_es": "Esta emisora pone música clásica toda la noche.",
+  "example_ru": "Эта радиостанция всю ночь передаёт классическую музыку.",
+  "rank": 15441,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "emisoras"
+  ]
+ },
+ {
+  "id": "audiencia",
+  "es": "audiencia",
+  "pos": "noun",
+  "ru": "аудитория; зрители",
+  "example_es": "El programa tuvo una audiencia de tres millones de personas.",
+  "example_ru": "Аудитория программы составила три миллиона человек.",
+  "rank": 2926,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "audiencias"
+  ]
+ },
+ {
+  "id": "oyente",
+  "es": "oyente",
+  "pos": "noun",
+  "ru": "слушатель",
+  "example_es": "Muchos oyentes llamaron a la radio para dar su opinión.",
+  "example_ru": "Многие слушатели звонили на радио, чтобы высказать своё мнение.",
+  "rank": 24780,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "oyentes"
+  ]
+ },
+ {
+  "id": "anuncio",
+  "es": "anuncio",
+  "pos": "noun",
+  "ru": "объявление; реклама",
+  "example_es": "Pusieron un anuncio en internet para vender el piso.",
+  "example_ru": "Они разместили объявление в интернете о продаже квартиры.",
+  "rank": 3115,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "anuncios"
+  ]
+ },
+ {
+  "id": "publicidad",
+  "es": "publicidad",
+  "pos": "noun",
+  "ru": "реклама",
+  "example_es": "Hay demasiada publicidad en este canal.",
+  "example_ru": "На этом канале слишком много рекламы.",
+  "rank": 3642,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "publicidades"
+  ]
+ },
+ {
+  "id": "publicación",
+  "es": "publicación",
+  "pos": "noun",
+  "ru": "публикация; издание",
+  "example_es": "La publicación del informe causó un gran escándalo.",
+  "example_ru": "Публикация доклада вызвала большой скандал.",
+  "rank": 14931,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "publicaciones"
+  ]
+ },
+ {
+  "id": "difundir",
+  "es": "difundir",
+  "pos": "verb",
+  "ru": "распространять",
+  "example_es": "Las redes sociales difunden los rumores a gran velocidad.",
+  "example_ru": "Соцсети распространяют слухи с огромной скоростью.",
+  "rank": 20250
+ },
+ {
+  "id": "comunicado",
+  "es": "comunicado",
+  "pos": "noun",
+  "ru": "сообщение, официальное заявление",
+  "example_es": "El club emitió un comunicado para explicar la decisión.",
+  "example_ru": "Клуб выпустил официальное заявление, чтобы объяснить решение.",
+  "rank": 8513,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "comunicados"
+  ]
+ },
+ {
+  "id": "fuente",
+  "es": "fuente",
+  "pos": "noun",
+  "ru": "источник; фонтан",
+  "example_es": "El periodista se negó a revelar sus fuentes.",
+  "example_ru": "Журналист отказался раскрыть свои источники.",
+  "rank": 1947,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "fuentes"
+  ]
+ },
+ {
+  "id": "rumor",
+  "es": "rumor",
+  "pos": "noun",
+  "ru": "слух",
+  "example_es": "Corre el rumor de que el director va a dimitir.",
+  "example_ru": "Ходит слух, что директор собирается уйти в отставку.",
+  "rank": 4894,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "rumores"
+  ]
+ },
+ {
+  "id": "censura",
+  "es": "censura",
+  "pos": "noun",
+  "ru": "цензура",
+  "example_es": "Durante la dictadura la censura prohibía muchos libros.",
+  "example_ru": "Во время диктатуры цензура запрещала многие книги.",
+  "rank": 16156,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "censuras"
+  ]
+ },
+ {
+  "id": "seguidor",
+  "es": "seguidor",
+  "pos": "noun",
+  "ru": "подписчик; сторонник, болельщик",
+  "example_es": "La cantante tiene más de dos millones de seguidores.",
+  "example_ru": "У певицы более двух миллионов подписчиков.",
+  "rank": 21025,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "seguidores",
+   "seguidora",
+   "seguidoras"
+  ]
+ },
+ {
+  "id": "perfil",
+  "es": "perfil",
+  "pos": "noun",
+  "ru": "профиль",
+  "example_es": "Actualicé la foto de mi perfil.",
+  "example_ru": "Я обновил фото в своём профиле.",
+  "rank": 3685,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "perfiles"
+  ]
+ },
+ {
+  "id": "comentario",
+  "es": "comentario",
+  "pos": "noun",
+  "ru": "комментарий",
+  "example_es": "El vídeo recibió cientos de comentarios negativos.",
+  "example_ru": "Видео получило сотни негативных комментариев.",
+  "rank": 5454,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "comentarios"
+  ]
+ },
+ {
+  "id": "comentar",
+  "es": "comentar",
+  "pos": "verb",
+  "ru": "комментировать; обсуждать",
+  "example_es": "Muchos usuarios comentaron la publicación en pocos minutos.",
+  "example_ru": "За несколько минут публикацию прокомментировали многие пользователи.",
+  "rank": 14128
+ },
+ {
+  "id": "etiqueta",
+  "es": "etiqueta",
+  "pos": "noun",
+  "ru": "хештег, тег; этикетка",
+  "example_es": "La etiqueta se convirtió en tendencia en pocas horas.",
+  "example_ru": "За несколько часов хештег попал в тренды.",
+  "rank": 6253,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "etiquetas"
+  ]
+ },
+ {
+  "id": "buscador",
+  "es": "buscador",
+  "pos": "noun",
+  "ru": "поисковик, поисковая система",
+  "example_es": "Escribí su nombre en el buscador y no apareció nada.",
+  "example_ru": "Я ввёл его имя в поисковик, и ничего не нашлось.",
+  "rank": 12412,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "buscadores"
+  ]
+ },
+ {
+  "id": "búsqueda",
+  "es": "búsqueda",
+  "pos": "noun",
+  "ru": "поиск",
+  "example_es": "Los resultados de la búsqueda no fueron muy útiles.",
+  "example_ru": "Результаты поиска оказались не очень полезными.",
+  "rank": 1888,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "búsquedas"
+  ]
+ },
+ {
+  "id": "navegar",
+  "es": "navegar",
+  "pos": "verb",
+  "ru": "сидеть в интернете; плавать (на судне)",
+  "example_es": "Pasa horas navegando por internet sin hacer nada.",
+  "example_ru": "Он часами сидит в интернете, ничего не делая.",
+  "rank": 7998
+ },
+ {
+  "id": "privacidad",
+  "es": "privacidad",
+  "pos": "noun",
+  "ru": "конфиденциальность, частная жизнь",
+  "example_es": "Revisa la configuración de privacidad de tus redes sociales.",
+  "example_ru": "Проверь настройки конфиденциальности в своих соцсетях.",
+  "rank": 5558,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "privacidades"
+  ]
+ },
+ {
+  "id": "viral",
+  "es": "viral",
+  "pos": "adj",
+  "ru": "вирусный",
+  "example_es": "El vídeo se hizo viral en menos de un día.",
+  "example_ru": "Видео стало вирусным меньше чем за сутки.",
+  "rank": 17237,
+  "forms": [
+   "virales"
+  ]
+ },
+ {
+  "id": "tendencia",
+  "es": "tendencia",
+  "pos": "noun",
+  "ru": "тенденция; тренд",
+  "example_es": "Existe una tendencia a consumir noticias solo en el móvil.",
+  "example_ru": "Есть тенденция потреблять новости только через телефон.",
+  "rank": 9987,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "tendencias"
+  ]
+ },
+ {
+  "id": "plataforma",
+  "es": "plataforma",
+  "pos": "noun",
+  "ru": "платформа",
+  "example_es": "Hoy vemos casi todas las series en plataformas digitales.",
+  "example_ru": "Сегодня мы смотрим почти все сериалы на цифровых платформах.",
+  "rank": 5580,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "plataformas"
+  ]
+ },
+ {
+  "id": "blog",
+  "es": "blog",
+  "pos": "noun",
+  "ru": "блог",
+  "example_es": "Lleva diez años escribiendo un blog de viajes.",
+  "example_ru": "Он уже десять лет ведёт блог о путешествиях.",
+  "rank": 10151,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "blogs"
+  ]
+ },
+ {
+  "id": "foro",
+  "es": "foro",
+  "pos": "noun",
+  "ru": "форум",
+  "example_es": "Encontré la solución al problema en un foro de usuarios.",
+  "example_ru": "Я нашёл решение проблемы на форуме пользователей.",
+  "rank": 15478,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "foros"
+  ]
+ },
+ {
+  "id": "portada",
+  "es": "portada",
+  "pos": "noun",
+  "ru": "первая полоса; обложка",
+  "example_es": "La foto del accidente salió en la portada de todos los diarios.",
+  "example_ru": "Фото аварии попало на первые полосы всех газет.",
+  "rank": 6918,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "portadas"
+  ]
+ },
+ {
+  "id": "exclusiva",
+  "es": "exclusiva",
+  "pos": "noun",
+  "ru": "эксклюзив, эксклюзивный материал",
+  "example_es": "La revista pagó mucho dinero por la exclusiva.",
+  "example_ru": "Журнал заплатил большие деньги за эксклюзив.",
+  "rank": 8961,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "exclusivas"
+  ]
+ },
+ {
+  "id": "corresponsal",
+  "es": "corresponsal",
+  "pos": "noun",
+  "ru": "корреспондент",
+  "example_es": "Nuestra corresponsal en Asia nos cuenta los últimos detalles.",
+  "example_ru": "Наш корреспондент в Азии сообщает последние подробности.",
+  "rank": 19128,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "corresponsales"
+  ]
+ },
+ {
+  "id": "presentador",
+  "es": "presentador",
+  "pos": "noun",
+  "ru": "ведущий (программы)",
+  "example_es": "El presentador del telediario es muy conocido en todo el país.",
+  "example_ru": "Ведущего выпуска новостей знают по всей стране.",
+  "rank": 16243,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "presentadores",
+   "presentadora",
+   "presentadoras"
+  ]
+ },
+ {
+  "id": "locutor",
+  "es": "locutor",
+  "pos": "noun",
+  "ru": "диктор, радиоведущий",
+  "example_es": "El locutor tiene una voz muy agradable.",
+  "example_ru": "У диктора очень приятный голос.",
+  "rank": 13260,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "locutores",
+   "locutora",
+   "locutoras"
+  ]
+ },
+ {
+  "id": "emitir",
+  "es": "emitir",
+  "pos": "verb",
+  "ru": "транслировать, передавать в эфир; выпускать",
+  "example_es": "La serie se emite todos los jueves a las diez.",
+  "example_ru": "Сериал выходит в эфир каждый четверг в десять.",
+  "rank": 13608
+ },
+ {
+  "id": "en-directo",
+  "es": "en directo",
+  "pos": "phrase",
+  "ru": "в прямом эфире, вживую",
+  "example_es": "Seguimos el debate {es: en directo | am: en vivo | rio: en vivo} desde casa.",
+  "example_ru": "Мы смотрели дебаты в прямом эфире дома.",
+  "rank": 1804,
+  "variants": {
+   "am": "en vivo",
+   "rio": "en vivo"
+  }
+ },
+ {
+  "id": "imparcial",
+  "es": "imparcial",
+  "pos": "adj",
+  "ru": "беспристрастный, объективный",
+  "example_es": "Un buen periodista debe ser imparcial.",
+  "example_ru": "Хороший журналист должен быть беспристрастным.",
+  "rank": 18197,
+  "forms": [
+   "imparciales"
+  ]
+ },
+ {
+  "id": "manipular",
+  "es": "manipular",
+  "pos": "verb",
+  "ru": "манипулировать; подделывать",
+  "example_es": "Acusaron al canal de manipular las imágenes.",
+  "example_ru": "Канал обвинили в подделке видеозаписей.",
+  "rank": 10890
+ },
+ {
+  "id": "manipulación",
+  "es": "manipulación",
+  "pos": "noun",
+  "ru": "манипуляция",
+  "example_es": "La manipulación informativa es un peligro para la democracia.",
+  "example_ru": "Манипулирование информацией — угроза демократии.",
+  "rank": 13984,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "manipulaciones"
+  ]
+ },
+ {
+  "id": "cobertura",
+  "es": "cobertura",
+  "pos": "noun",
+  "ru": "освещение (в СМИ); покрытие (сети)",
+  "example_es": "La cobertura del juicio fue excesiva en todos los canales.",
+  "example_ru": "Освещение суда на всех каналах было чрезмерным.",
+  "rank": 6380,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "coberturas"
+  ]
+ },
+ {
+  "id": "hacker",
+  "es": "hacker",
+  "pos": "noun",
+  "ru": "хакер",
+  "example_es": "Un hacker robó los datos de miles de clientes.",
+  "example_ru": "Хакер украл данные тысяч клиентов.",
+  "rank": 12736,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "hackers"
+  ]
+ },
+ {
+  "id": "pirata",
+  "es": "pirata",
+  "pos": "adj",
+  "ru": "пиратский",
+  "example_es": "Es ilegal descargar películas piratas.",
+  "example_ru": "Скачивать пиратские фильмы незаконно.",
+  "rank": 6462,
+  "forms": [
+   "piratas"
+  ]
+ },
+ {
+  "id": "actualizar",
+  "es": "actualizar",
+  "pos": "verb",
+  "ru": "обновлять",
+  "example_es": "Hay que actualizar la aplicación para ver los nuevos contenidos.",
+  "example_ru": "Чтобы увидеть новые материалы, нужно обновить приложение.",
+  "rank": 22736,
+  "forms": [
+   "actualicé",
+   "actualice"
+  ]
+ },
+ {
+  "id": "anónimo",
+  "es": "anónimo",
+  "pos": "adj",
+  "ru": "анонимный",
+  "example_es": "Recibió varios mensajes anónimos con amenazas.",
+  "example_ru": "Он получил несколько анонимных сообщений с угрозами.",
+  "rank": 10105,
+  "forms": [
+   "anónima",
+   "anónimos",
+   "anónimas"
+  ]
+ },
+ {
+  "id": "telediario",
+  "es": "telediario",
+  "pos": "noun",
+  "ru": "выпуск новостей (по ТВ)",
+  "example_es": "Siempre vemos {es: el telediario | am: el noticiero | rio: el noticiero} mientras cenamos.",
+  "example_ru": "Мы всегда смотрим новости за ужином.",
+  "rank": 49999,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "telediarios"
+  ],
+  "variants": {
+   "am": "el noticiero",
+   "rio": "el noticiero"
+  }
+ },
+ {
+  "id": "periodístico",
+  "es": "periodístico",
+  "pos": "adj",
+  "ru": "журналистский; газетный",
+  "example_es": "El caso se descubrió gracias a una investigación periodística.",
+  "example_ru": "Дело раскрылось благодаря журналистскому расследованию.",
+  "rank": 45672,
+  "forms": [
+   "periodística",
+   "periodísticos",
+   "periodísticas"
+  ]
+ },
+ {
+  "id": "redes-sociales",
+  "es": "redes sociales",
+  "pos": "phrase",
+  "ru": "социальные сети",
+  "example_es": "Pasa demasiado tiempo en las redes sociales.",
+  "example_ru": "Он проводит слишком много времени в соцсетях.",
+  "rank": 7932
+ }
+]

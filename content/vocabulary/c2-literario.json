@@ -1,0 +1,686 @@
+[
+ {
+  "id": "ocaso",
+  "es": "ocaso",
+  "pos": "noun",
+  "ru": "закат; упадок",
+  "example_es": "En el ocaso de su vida escribió sus memorias.",
+  "example_ru": "На закате жизни он написал мемуары.",
+  "rank": 22848,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "ocasos"
+  ]
+ },
+ {
+  "id": "alba",
+  "es": "alba",
+  "pos": "noun",
+  "ru": "рассвет, утренняя заря",
+  "example_es": "Partieron al alba, antes de que despertara el pueblo.",
+  "example_ru": "Они ушли на рассвете, пока деревня ещё спала.",
+  "rank": 9645,
+  "article": "el",
+  "gender": "f",
+  "forms": [
+   "albas"
+  ]
+ },
+ {
+  "id": "crepúsculo",
+  "es": "crepúsculo",
+  "pos": "noun",
+  "ru": "сумерки",
+  "example_es": "El crepúsculo teñía de rojo los tejados del pueblo.",
+  "example_ru": "Сумерки окрашивали крыши деревни в красный цвет.",
+  "rank": 20532,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "crepúsculos"
+  ]
+ },
+ {
+  "id": "penumbra",
+  "es": "penumbra",
+  "pos": "noun",
+  "ru": "полумрак",
+  "example_es": "Leía en la penumbra de la biblioteca vacía.",
+  "example_ru": "Он читал в полумраке пустой библиотеки.",
+  "rank": 34846,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "penumbras"
+  ]
+ },
+ {
+  "id": "umbral",
+  "es": "umbral",
+  "pos": "noun",
+  "ru": "порог",
+  "example_es": "Se detuvo en el umbral sin atreverse a entrar.",
+  "example_ru": "Он остановился на пороге, не решаясь войти.",
+  "rank": 13546,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "umbrales"
+  ]
+ },
+ {
+  "id": "ensueño",
+  "es": "ensueño",
+  "pos": "noun",
+  "ru": "грёза, мечта",
+  "example_es": "Aquella casa junto al mar parecía de ensueño.",
+  "example_ru": "Тот дом у моря казался сказочным.",
+  "rank": 16594,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "ensueños"
+  ]
+ },
+ {
+  "id": "quimera",
+  "es": "quimera",
+  "pos": "noun",
+  "ru": "химера, несбыточная мечта",
+  "example_es": "La paz perpetua le parecía una quimera.",
+  "example_ru": "Вечный мир казался ему химерой.",
+  "rank": 29088,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "quimeras"
+  ]
+ },
+ {
+  "id": "añoranza",
+  "es": "añoranza",
+  "pos": "noun",
+  "ru": "тоска (по ушедшему)",
+  "example_es": "Hablaba de su infancia con una añoranza contenida.",
+  "example_ru": "Он говорил о детстве со сдержанной тоской.",
+  "rank": 48000,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "añoranzas"
+  ]
+ },
+ {
+  "id": "desdicha",
+  "es": "desdicha",
+  "pos": "noun",
+  "ru": "несчастье, злосчастье",
+  "example_es": "Tuvo la desdicha de perderlo todo en una noche.",
+  "example_ru": "Ему выпало несчастье потерять всё за одну ночь.",
+  "rank": 36603,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "desdichas"
+  ]
+ },
+ {
+  "id": "fulgor",
+  "es": "fulgor",
+  "pos": "noun",
+  "ru": "сияние, блеск",
+  "example_es": "El fulgor de la luna iluminaba el camino.",
+  "example_ru": "Сияние луны освещало дорогу.",
+  "rank": 47215,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "fulgores"
+  ]
+ },
+ {
+  "id": "sigilo",
+  "es": "sigilo",
+  "pos": "noun",
+  "ru": "скрытность; бесшумность",
+  "example_es": "Entró en la habitación con sumo sigilo.",
+  "example_ru": "Он вошёл в комнату совершенно бесшумно.",
+  "rank": 28725,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "sigilos"
+  ]
+ },
+ {
+  "id": "regazo",
+  "es": "regazo",
+  "pos": "noun",
+  "ru": "колени (сидящего); лоно",
+  "example_es": "El niño se durmió en el regazo de su abuela.",
+  "example_ru": "Ребёнок уснул на коленях у бабушки.",
+  "rank": 11299,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "regazos"
+  ]
+ },
+ {
+  "id": "semblante",
+  "es": "semblante",
+  "pos": "noun",
+  "ru": "выражение лица, облик",
+  "example_es": "Su semblante se ensombreció al leer la carta.",
+  "example_ru": "Читая письмо, он помрачнел.",
+  "rank": 36454,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "semblantes"
+  ]
+ },
+ {
+  "id": "efímero",
+  "es": "efímero",
+  "pos": "adj",
+  "ru": "эфемерный, мимолётный",
+  "example_es": "La gloria de aquel poeta fue efímera.",
+  "example_ru": "Слава того поэта была недолгой.",
+  "rank": 48105,
+  "forms": [
+   "efímera",
+   "efímeros",
+   "efímeras"
+  ]
+ },
+ {
+  "id": "sombrío",
+  "es": "sombrío",
+  "pos": "adj",
+  "ru": "мрачный, угрюмый",
+  "example_es": "El poema describe un paisaje sombrío e invernal.",
+  "example_ru": "Стихотворение описывает мрачный зимний пейзаж.",
+  "rank": 16459,
+  "forms": [
+   "sombría",
+   "sombríos",
+   "sombrías"
+  ]
+ },
+ {
+  "id": "inefable",
+  "es": "inefable",
+  "pos": "adj",
+  "ru": "невыразимый, неописуемый",
+  "example_es": "Sintió una alegría inefable al ver a su hijo.",
+  "example_ru": "Увидев сына, она испытала невыразимую радость.",
+  "rank": 49999,
+  "forms": [
+   "inefables"
+  ]
+ },
+ {
+  "id": "diáfano",
+  "es": "diáfano",
+  "pos": "adj",
+  "ru": "прозрачный, ясный",
+  "example_es": "Amaneció un cielo diáfano tras la tormenta.",
+  "example_ru": "После грозы утро выдалось ясным.",
+  "rank": 49999,
+  "forms": [
+   "diáfana",
+   "diáfanos",
+   "diáfanas"
+  ]
+ },
+ {
+  "id": "marchito",
+  "es": "marchito",
+  "pos": "adj",
+  "ru": "увядший, поблёкший",
+  "example_es": "Sobre la mesa quedaba un ramo de rosas marchitas.",
+  "example_ru": "На столе остался букет увядших роз.",
+  "rank": 49999,
+  "forms": [
+   "marchita",
+   "marchitos",
+   "marchitas"
+  ]
+ },
+ {
+  "id": "errante",
+  "es": "errante",
+  "pos": "adj",
+  "ru": "странствующий, блуждающий",
+  "example_es": "Llevó una vida errante de puerto en puerto.",
+  "example_ru": "Он скитался из порта в порт.",
+  "rank": 18531,
+  "forms": [
+   "errantes"
+  ]
+ },
+ {
+  "id": "evocar",
+  "es": "evocar",
+  "pos": "verb",
+  "ru": "вызывать в памяти, воскрешать",
+  "example_es": "El olor del pan le evoca su infancia en el pueblo.",
+  "example_ru": "Запах хлеба напоминает ему о детстве в деревне.",
+  "rank": 44852,
+  "forms": [
+   "evoca",
+   "evoqué",
+   "evoque"
+  ]
+ },
+ {
+  "id": "susurrar",
+  "es": "susurrar",
+  "pos": "verb",
+  "ru": "шептать; шелестеть",
+  "example_es": "El viento susurraba entre los pinos.",
+  "example_ru": "Ветер шелестел в соснах.",
+  "rank": 26148
+ },
+ {
+  "id": "yacer",
+  "es": "yacer",
+  "pos": "verb",
+  "ru": "лежать; покоиться (о мёртвых)",
+  "example_es": "Aquí yacen los restos del poeta.",
+  "example_ru": "Здесь покоится прах поэта.",
+  "rank": 40225,
+  "forms": [
+   "yace",
+   "yacen",
+   "yació",
+   "yazca"
+  ]
+ },
+ {
+  "id": "acechar",
+  "es": "acechar",
+  "pos": "verb",
+  "ru": "подстерегать, выслеживать",
+  "example_es": "El peligro acechaba tras cada esquina.",
+  "example_ru": "Опасность подстерегала за каждым углом.",
+  "rank": 39000
+ },
+ {
+  "id": "desvanecerse",
+  "es": "desvanecerse",
+  "pos": "verb",
+  "ru": "рассеиваться, исчезать; терять сознание",
+  "example_es": "La niebla se desvaneció con los primeros rayos.",
+  "example_ru": "С первыми лучами туман рассеялся.",
+  "rank": 33643,
+  "forms": [
+   "desvanece",
+   "desvaneció",
+   "desvanezca"
+  ]
+ },
+ {
+  "id": "sollozar",
+  "es": "sollozar",
+  "pos": "verb",
+  "ru": "рыдать, всхлипывать",
+  "example_es": "La niña sollozaba en silencio junto a la ventana.",
+  "example_ru": "Девочка тихо всхлипывала у окна.",
+  "rank": 49999
+ },
+ {
+  "id": "estremecerse",
+  "es": "estremecerse",
+  "pos": "verb",
+  "ru": "содрогаться, вздрагивать",
+  "example_es": "Se estremeció al oír su nombre en la oscuridad.",
+  "example_ru": "Он вздрогнул, услышав своё имя в темноте.",
+  "rank": 49999,
+  "forms": [
+   "estremece",
+   "estremeció",
+   "estremezca"
+  ]
+ },
+ {
+  "id": "antaño",
+  "es": "antaño",
+  "pos": "adv",
+  "ru": "встарь, в былые времена",
+  "example_es": "Antaño este puerto era el más próspero de la costa.",
+  "example_ru": "Когда-то этот порт был самым процветающим на побережье.",
+  "rank": 19865
+ },
+ {
+  "id": "otrora",
+  "es": "otrora",
+  "pos": "adv",
+  "ru": "некогда, прежде",
+  "example_es": "La otrora poderosa familia vivía ahora en la miseria.",
+  "example_ru": "Некогда могущественная семья теперь жила в нищете.",
+  "rank": 49999
+ },
+ {
+  "id": "hado",
+  "es": "hado",
+  "pos": "noun",
+  "ru": "рок, судьба",
+  "example_es": "El héroe no pudo escapar de su hado.",
+  "example_ru": "Герой не смог уйти от своей судьбы.",
+  "rank": 49999,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "hados"
+  ]
+ },
+ {
+  "id": "lecho",
+  "es": "lecho",
+  "pos": "noun",
+  "ru": "ложе, постель; русло (реки)",
+  "example_es": "Murió en su lecho, rodeado de los suyos.",
+  "example_ru": "Он умер в своей постели, в кругу близких.",
+  "rank": 9417,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "lechos"
+  ]
+ },
+ {
+  "id": "morada",
+  "es": "morada",
+  "pos": "noun",
+  "ru": "обитель, жилище",
+  "example_es": "El castillo fue durante siglos la morada de los condes.",
+  "example_ru": "Замок веками был обителью графов.",
+  "rank": 11498,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "moradas"
+  ]
+ },
+ {
+  "id": "tinieblas",
+  "es": "tinieblas",
+  "pos": "noun",
+  "ru": "тьма, мрак",
+  "example_es": "Avanzaban a tientas entre las tinieblas.",
+  "example_ru": "Они пробирались на ощупь сквозь тьму.",
+  "rank": 13340,
+  "article": "las",
+  "gender": "f"
+ },
+ {
+  "id": "resplandor",
+  "es": "resplandor",
+  "pos": "noun",
+  "ru": "сияние, зарево",
+  "example_es": "A lo lejos se veía el resplandor del incendio.",
+  "example_ru": "Вдали виднелось зарево пожара.",
+  "rank": 15140,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "resplandores"
+  ]
+ },
+ {
+  "id": "destello",
+  "es": "destello",
+  "pos": "noun",
+  "ru": "вспышка, проблеск",
+  "example_es": "Un destello de esperanza iluminó su rostro.",
+  "example_ru": "Проблеск надежды озарил его лицо.",
+  "rank": 16785,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "destellos"
+  ]
+ },
+ {
+  "id": "torbellino",
+  "es": "torbellino",
+  "pos": "noun",
+  "ru": "вихрь, водоворот",
+  "example_es": "Su vida se convirtió en un torbellino de emociones.",
+  "example_ru": "Его жизнь превратилась в вихрь чувств.",
+  "rank": 17934,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "torbellinos"
+  ]
+ },
+ {
+  "id": "murmullo",
+  "es": "murmullo",
+  "pos": "noun",
+  "ru": "ропот, журчание, шёпот",
+  "example_es": "Se oía el murmullo del arroyo bajo los árboles.",
+  "example_ru": "Под деревьями слышалось журчание ручья.",
+  "rank": 21526,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "murmullos"
+  ]
+ },
+ {
+  "id": "presagio",
+  "es": "presagio",
+  "pos": "noun",
+  "ru": "предзнаменование",
+  "example_es": "Los cuervos sobre la torre parecían un mal presagio.",
+  "example_ru": "Вороны над башней казались дурным предзнаменованием.",
+  "rank": 22112,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "presagios"
+  ]
+ },
+ {
+  "id": "confín",
+  "es": "confín",
+  "pos": "noun",
+  "ru": "край, предел (обычно мн.)",
+  "example_es": "Su fama llegó hasta los confines del reino.",
+  "example_ru": "Его слава дошла до самых окраин королевства.",
+  "rank": 49999,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "confines"
+  ]
+ },
+ {
+  "id": "júbilo",
+  "es": "júbilo",
+  "pos": "noun",
+  "ru": "ликование",
+  "example_es": "La noticia fue recibida con júbilo en todo el país.",
+  "example_ru": "Известие встретили ликованием по всей стране.",
+  "rank": 28348,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "júbilos"
+  ]
+ },
+ {
+  "id": "bruma",
+  "es": "bruma",
+  "pos": "noun",
+  "ru": "мгла, дымка (особ. морская)",
+  "example_es": "El barco desapareció entre la bruma del amanecer.",
+  "example_ru": "Корабль исчез в утренней дымке.",
+  "rank": 31332,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "brumas"
+  ]
+ },
+ {
+  "id": "infortunio",
+  "es": "infortunio",
+  "pos": "noun",
+  "ru": "несчастье, злоключение",
+  "example_es": "Soportó con entereza todos sus infortunios.",
+  "example_ru": "Он стойко переносил все свои злоключения.",
+  "rank": 35273,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "infortunios"
+  ]
+ },
+ {
+  "id": "firmamento",
+  "es": "firmamento",
+  "pos": "noun",
+  "ru": "небосвод",
+  "example_es": "Miles de estrellas brillaban en el firmamento.",
+  "example_ru": "На небосводе сияли тысячи звёзд.",
+  "rank": 36391,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "firmamentos"
+  ]
+ },
+ {
+  "id": "sepulcro",
+  "es": "sepulcro",
+  "pos": "noun",
+  "ru": "гробница, склеп",
+  "example_es": "Visitaron el sepulcro del rey en la catedral.",
+  "example_ru": "Они посетили гробницу короля в соборе.",
+  "rank": 35303,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "sepulcros"
+  ]
+ },
+ {
+  "id": "letargo",
+  "es": "letargo",
+  "pos": "noun",
+  "ru": "летаргия, оцепенение",
+  "example_es": "La ciudad despertaba lentamente de su letargo invernal.",
+  "example_ru": "Город медленно пробуждался от зимнего оцепенения.",
+  "rank": 47224,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "letargos"
+  ]
+ },
+ {
+  "id": "sublime",
+  "es": "sublime",
+  "pos": "adj",
+  "ru": "возвышенный, величественный",
+  "example_es": "Contemplaron desde la cumbre un paisaje sublime.",
+  "example_ru": "С вершины им открылся величественный пейзаж.",
+  "rank": 17544,
+  "forms": [
+   "sublimes"
+  ]
+ },
+ {
+  "id": "fúnebre",
+  "es": "fúnebre",
+  "pos": "adj",
+  "ru": "похоронный, траурный; мрачный",
+  "example_es": "Las campanas tocaban una melodía fúnebre.",
+  "example_ru": "Колокола звонили траурную мелодию.",
+  "rank": 18854,
+  "forms": [
+   "fúnebres"
+  ]
+ },
+ {
+  "id": "tenebroso",
+  "es": "tenebroso",
+  "pos": "adj",
+  "ru": "тёмный, мрачный; зловещий",
+  "example_es": "Atravesaron un bosque tenebroso y silencioso.",
+  "example_ru": "Они прошли через тёмный безмолвный лес.",
+  "rank": 20304,
+  "forms": [
+   "tenebrosa",
+   "tenebrosos",
+   "tenebrosas"
+  ]
+ },
+ {
+  "id": "apacible",
+  "es": "apacible",
+  "pos": "adj",
+  "ru": "мирный, кроткий, тихий",
+  "example_es": "Llevaba una vida apacible en un pueblo de montaña.",
+  "example_ru": "Он вёл тихую жизнь в горной деревушке.",
+  "rank": 24913,
+  "forms": [
+   "apacibles"
+  ]
+ },
+ {
+  "id": "desolado",
+  "es": "desolado",
+  "pos": "adj",
+  "ru": "безутешный; опустошённый, пустынный",
+  "example_es": "Tras la muerte de su esposa quedó desolado.",
+  "example_ru": "После смерти жены он остался безутешен.",
+  "rank": 22519,
+  "forms": [
+   "desolada",
+   "desolados",
+   "desoladas"
+  ]
+ },
+ {
+  "id": "absorto",
+  "es": "absorto",
+  "pos": "adj",
+  "ru": "погружённый, поглощённый (мыслями, делом)",
+  "example_es": "Estaba tan absorto en el libro que no me oyó.",
+  "example_ru": "Он так погрузился в книгу, что не услышал меня.",
+  "rank": 37906,
+  "forms": [
+   "absorta",
+   "absortos",
+   "absortas"
+  ]
+ },
+ {
+  "id": "febril",
+  "es": "febril",
+  "pos": "adj",
+  "ru": "лихорадочный",
+  "example_es": "Trabajaba con una actividad febril antes del estreno.",
+  "example_ru": "Перед премьерой он работал с лихорадочной энергией.",
+  "rank": 41312,
+  "forms": [
+   "febriles"
+  ]
+ },
+ {
+  "id": "implorar",
+  "es": "implorar",
+  "pos": "verb",
+  "ru": "умолять, молить",
+  "example_es": "Imploró perdón de rodillas.",
+  "example_ru": "Стоя на коленях, он молил о прощении.",
+  "rank": 46464
+ }
+]

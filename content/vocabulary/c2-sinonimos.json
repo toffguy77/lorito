@@ -1,0 +1,676 @@
+[
+ {
+  "id": "ilusorio",
+  "es": "ilusorio",
+  "pos": "adj",
+  "ru": "иллюзорный (не существующий в действительности)",
+  "example_es": "Sus esperanzas de ganar resultaron ilusorias.",
+  "example_ru": "Его надежды на победу оказались иллюзорными.",
+  "rank": 49999,
+  "forms": [
+   "ilusoria",
+   "ilusorios",
+   "ilusorias"
+  ]
+ },
+ {
+  "id": "presunto",
+  "es": "presunto",
+  "pos": "adj",
+  "ru": "предполагаемый (не доказанный: о преступнике и т. п.)",
+  "example_es": "Detuvieron al presunto autor del robo.",
+  "example_ru": "Задержали предполагаемого виновника кражи.",
+  "rank": 24667,
+  "forms": [
+   "presunta",
+   "presuntos",
+   "presuntas"
+  ]
+ },
+ {
+  "id": "patente",
+  "es": "patente",
+  "pos": "adj",
+  "ru": "очевидный (видный всем)",
+  "example_es": "Su malestar era patente para todos los presentes.",
+  "example_ru": "Его недовольство было очевидно всем присутствующим.",
+  "rank": 15263,
+  "forms": [
+   "patentes"
+  ]
+ },
+ {
+  "id": "tácito",
+  "es": "tácito",
+  "pos": "adj",
+  "ru": "молчаливый, подразумеваемый (не высказанный словами)",
+  "example_es": "Entre ellos había un acuerdo tácito de no hablar del tema.",
+  "example_ru": "Между ними было молчаливое соглашение не касаться этой темы.",
+  "rank": 49999,
+  "forms": [
+   "tácita",
+   "tácitos",
+   "tácitas"
+  ]
+ },
+ {
+  "id": "sucinto",
+  "es": "sucinto",
+  "pos": "adj",
+  "ru": "сжатый (краткий, но исчерпывающий)",
+  "example_es": "Hizo una exposición sucinta de los hechos.",
+  "example_ru": "Он сжато изложил факты.",
+  "rank": 49999,
+  "forms": [
+   "sucinta",
+   "sucintos",
+   "sucintas"
+  ]
+ },
+ {
+  "id": "escueto",
+  "es": "escueto",
+  "pos": "adj",
+  "ru": "лаконичный, сухой (без лишних деталей и украшений)",
+  "example_es": "La nota oficial era escueta: «Sin comentarios».",
+  "example_ru": "Официальное заявление было сухим: «Без комментариев».",
+  "rank": 49999,
+  "forms": [
+   "escueta",
+   "escuetos",
+   "escuetas"
+  ]
+ },
+ {
+  "id": "lacónico",
+  "es": "lacónico",
+  "pos": "adj",
+  "ru": "немногословный (о человеке или ответе, скупом на слова)",
+  "example_es": "Respondió con un lacónico «tal vez».",
+  "example_ru": "Он коротко ответил: «Может быть».",
+  "rank": 49999,
+  "forms": [
+   "lacónica",
+   "lacónicos",
+   "lacónicas"
+  ]
+ },
+ {
+  "id": "somero",
+  "es": "somero",
+  "pos": "adj",
+  "ru": "беглый, поверхностный (неглубокий, приблизительный)",
+  "example_es": "Tras un examen somero, el médico lo dejó marcharse.",
+  "example_ru": "После беглого осмотра врач его отпустил.",
+  "rank": 49999,
+  "forms": [
+   "somera",
+   "someros",
+   "someras"
+  ]
+ },
+ {
+  "id": "engreído",
+  "es": "engreído",
+  "pos": "adj",
+  "ru": "самодовольный, зазнавшийся (переоценивающий себя)",
+  "example_es": "Desde que lo ascendieron está insoportablemente engreído.",
+  "example_ru": "С тех пор как его повысили, он невыносимо зазнался.",
+  "rank": 14356,
+  "forms": [
+   "engreída",
+   "engreídos",
+   "engreídas"
+  ]
+ },
+ {
+  "id": "mezquino",
+  "es": "mezquino",
+  "pos": "adj",
+  "ru": "мелочный, низкий (скупой душой)",
+  "example_es": "Fue un gesto mezquino negarle la ayuda.",
+  "example_ru": "Отказать ему в помощи было мелочно.",
+  "rank": 16188,
+  "forms": [
+   "mezquina",
+   "mezquinos",
+   "mezquinas"
+  ]
+ },
+ {
+  "id": "ruin",
+  "es": "ruin",
+  "pos": "adj",
+  "ru": "подлый, низкий (бесчестный и скупой)",
+  "example_es": "Aprovecharse de su enfermedad fue algo ruin.",
+  "example_ru": "Воспользоваться его болезнью было подло.",
+  "rank": 26793,
+  "forms": [
+   "ruines"
+  ]
+ },
+ {
+  "id": "vil",
+  "es": "vil",
+  "pos": "adj",
+  "ru": "гнусный, презренный (вызывающий отвращение)",
+  "example_es": "Lo traicionaron por un vil puñado de monedas.",
+  "example_ru": "Его предали за жалкую горсть монет.",
+  "rank": 10950,
+  "forms": [
+   "viles"
+  ]
+ },
+ {
+  "id": "tenaz",
+  "es": "tenaz",
+  "pos": "adj",
+  "ru": "упорный (настойчивый — с одобрением)",
+  "example_es": "Es una investigadora tenaz que nunca se rinde.",
+  "example_ru": "Она упорная исследовательница, которая никогда не сдаётся.",
+  "rank": 25720,
+  "forms": [
+   "tenaces"
+  ]
+ },
+ {
+  "id": "terco",
+  "es": "terco",
+  "pos": "adj",
+  "ru": "упрямый (не уступающий — в быту)",
+  "example_es": "No seas terco y pide ayuda.",
+  "example_ru": "Не упрямься и попроси о помощи.",
+  "rank": 12002,
+  "forms": [
+   "terca",
+   "tercos",
+   "tercas"
+  ]
+ },
+ {
+  "id": "ávido",
+  "es": "ávido",
+  "pos": "adj",
+  "ru": "жадный до (страстно жаждущий: знаний, новостей)",
+  "example_es": "Es un lector ávido de novelas históricas.",
+  "example_ru": "Он жадно читает исторические романы.",
+  "rank": 44895,
+  "forms": [
+   "ávida",
+   "ávidos",
+   "ávidas"
+  ]
+ },
+ {
+  "id": "codicioso",
+  "es": "codicioso",
+  "pos": "adj",
+  "ru": "алчный (жадный до богатства)",
+  "example_es": "Un socio codicioso arruinó la empresa familiar.",
+  "example_ru": "Алчный компаньон разорил семейную фирму.",
+  "rank": 17877,
+  "forms": [
+   "codiciosa",
+   "codiciosos",
+   "codiciosas"
+  ]
+ },
+ {
+  "id": "arduo",
+  "es": "arduo",
+  "pos": "adj",
+  "ru": "тяжкий, трудоёмкий (требующий больших усилий)",
+  "example_es": "Reconstruir el país será una tarea ardua.",
+  "example_ru": "Восстановить страну будет трудной задачей.",
+  "rank": 26785,
+  "forms": [
+   "ardua",
+   "arduos",
+   "arduas"
+  ]
+ },
+ {
+  "id": "impasible",
+  "es": "impasible",
+  "pos": "adj",
+  "ru": "бесстрастный (не выказывающий чувств)",
+  "example_es": "Escuchó la sentencia impasible.",
+  "example_ru": "Он выслушал приговор с бесстрастным лицом.",
+  "rank": 44431,
+  "forms": [
+   "impasibles"
+  ]
+ },
+ {
+  "id": "fugaz",
+  "es": "fugaz",
+  "pos": "adj",
+  "ru": "мимолётный (быстрый, как вспышка)",
+  "example_es": "Fue un encuentro fugaz en el aeropuerto.",
+  "example_ru": "Это была мимолётная встреча в аэропорту.",
+  "rank": 17008,
+  "forms": [
+   "fugaces"
+  ]
+ },
+ {
+  "id": "añejo",
+  "es": "añejo",
+  "pos": "adj",
+  "ru": "выдержанный, давний (улучшившийся со временем)",
+  "example_es": "Brindaron con un ron añejo de doce años.",
+  "example_ru": "Они выпили двенадцатилетнего выдержанного рома.",
+  "rank": 43303,
+  "forms": [
+   "añeja",
+   "añejos",
+   "añejas"
+  ]
+ },
+ {
+  "id": "rancio",
+  "es": "rancio",
+  "pos": "adj",
+  "ru": "прогорклый; затхлый (испортившийся от старости)",
+  "example_es": "La mantequilla olía a rancio.",
+  "example_ru": "Масло пахло прогорклым.",
+  "rank": 28770,
+  "forms": [
+   "rancia",
+   "rancios",
+   "rancias"
+  ]
+ },
+ {
+  "id": "lúgubre",
+  "es": "lúgubre",
+  "pos": "adj",
+  "ru": "зловещий, похоронный (наводящий мысль о смерти)",
+  "example_es": "Un silencio lúgubre reinaba en el hospital.",
+  "example_ru": "В больнице царила гнетущая тишина.",
+  "rank": 29963,
+  "forms": [
+   "lúgubres"
+  ]
+ },
+ {
+  "id": "pericia",
+  "es": "pericia",
+  "pos": "noun",
+  "ru": "мастерство (опытность, умелость)",
+  "example_es": "El piloto aterrizó con gran pericia.",
+  "example_ru": "Пилот посадил самолёт очень умело.",
+  "rank": 32848,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "pericias"
+  ]
+ },
+ {
+  "id": "pudor",
+  "es": "pudor",
+  "pos": "noun",
+  "ru": "стыдливость (о теле, интимном)",
+  "example_es": "Por pudor, no quiso desvestirse delante de nadie.",
+  "example_ru": "Из стыдливости она не хотела ни перед кем раздеваться.",
+  "rank": 33604,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "pudores"
+  ]
+ },
+ {
+  "id": "vanidoso",
+  "es": "vanidoso",
+  "pos": "adj",
+  "ru": "тщеславный (жаждущий восхищения окружающих)",
+  "example_es": "Es tan vanidoso que no pasa junto a un espejo sin mirarse.",
+  "example_ru": "Он так тщеславен, что не пройдёт мимо зеркала, не взглянув.",
+  "rank": 27214,
+  "forms": [
+   "vanidosa",
+   "vanidosos",
+   "vanidosas"
+  ]
+ },
+ {
+  "id": "soberbio",
+  "es": "soberbio",
+  "pos": "adj",
+  "ru": "высокомерный (горделиво презирающий других); великолепный",
+  "example_es": "Era un hombre soberbio que nunca pedía perdón.",
+  "example_ru": "Он был высокомерным человеком и никогда не просил прощения.",
+  "rank": 33240,
+  "forms": [
+   "soberbia",
+   "soberbios",
+   "soberbias"
+  ]
+ },
+ {
+  "id": "rastrero",
+  "es": "rastrero",
+  "pos": "adj",
+  "ru": "низкопоклонный, подлый (пресмыкающийся ради выгоды)",
+  "example_es": "Fue una maniobra rastrera para quedarse con el puesto.",
+  "example_ru": "Это был подлый манёвр, чтобы занять должность.",
+  "rank": 36156,
+  "forms": [
+   "rastrera",
+   "rastreros",
+   "rastreras"
+  ]
+ },
+ {
+  "id": "servil",
+  "es": "servil",
+  "pos": "adj",
+  "ru": "раболепный (угодливо подчиняющийся)",
+  "example_es": "Su actitud servil con el jefe molestaba a sus compañeros.",
+  "example_ru": "Его раболепие перед начальником раздражало коллег.",
+  "rank": 41864,
+  "forms": [
+   "serviles"
+  ]
+ },
+ {
+  "id": "dócil",
+  "es": "dócil",
+  "pos": "adj",
+  "ru": "послушный, покладистый (легко поддающийся — без унижения)",
+  "example_es": "Es un perro dócil, ideal para niños.",
+  "example_ru": "Это послушная собака, идеальная для детей.",
+  "rank": 25816,
+  "forms": [
+   "dóciles"
+  ]
+ },
+ {
+  "id": "obstinado",
+  "es": "obstinado",
+  "pos": "adj",
+  "ru": "упорный, упрямый (настойчиво держащийся своего, часто вопреки разуму)",
+  "example_es": "Siguió obstinado en su idea pese a las pruebas.",
+  "example_ru": "Несмотря на факты, он упрямо держался своей идеи.",
+  "rank": 18402,
+  "forms": [
+   "obstinada",
+   "obstinados",
+   "obstinadas"
+  ]
+ },
+ {
+  "id": "parco",
+  "es": "parco",
+  "pos": "adj",
+  "ru": "скупой на что-л. (сдержанный, умеренный: в словах, еде)",
+  "example_es": "Es parco en palabras, pero muy cariñoso.",
+  "example_ru": "Он немногословен, но очень ласков.",
+  "rank": 49999,
+  "forms": [
+   "parca",
+   "parcos",
+   "parcas"
+  ]
+ },
+ {
+  "id": "audaz",
+  "es": "audaz",
+  "pos": "adj",
+  "ru": "смелый (дерзкий и находчивый — с одобрением)",
+  "example_es": "Presentaron un proyecto audaz para la ciudad.",
+  "example_ru": "Они представили смелый проект для города.",
+  "rank": 11253,
+  "forms": [
+   "audaces"
+  ]
+ },
+ {
+  "id": "osado",
+  "es": "osado",
+  "pos": "adj",
+  "ru": "дерзкий (смелый до вызова, рискованный)",
+  "example_es": "Fue una pregunta muy osada para una primera cita.",
+  "example_ru": "Для первого свидания это был очень дерзкий вопрос.",
+  "rank": 22685,
+  "forms": [
+   "osada",
+   "osados",
+   "osadas"
+  ]
+ },
+ {
+  "id": "temerario",
+  "es": "temerario",
+  "pos": "adj",
+  "ru": "безрассудный (смелый без оглядки на опасность)",
+  "example_es": "Adelantar en esa curva fue una maniobra temeraria.",
+  "example_ru": "Обгонять на том повороте было безрассудно.",
+  "rank": 19618,
+  "forms": [
+   "temeraria",
+   "temerarios",
+   "temerarias"
+  ]
+ },
+ {
+  "id": "intrépido",
+  "es": "intrépido",
+  "pos": "adj",
+  "ru": "бесстрашный (не знающий страха перед опасностью)",
+  "example_es": "Un intrépido reportero cruzó la línea del frente.",
+  "example_ru": "Бесстрашный репортёр пересёк линию фронта.",
+  "rank": 26702,
+  "forms": [
+   "intrépida",
+   "intrépidos",
+   "intrépidas"
+  ]
+ },
+ {
+  "id": "perspicaz",
+  "es": "perspicaz",
+  "pos": "adj",
+  "ru": "проницательный (быстро замечающий скрытое)",
+  "example_es": "Una lectora perspicaz descubrirá pronto al culpable.",
+  "example_ru": "Проницательный читатель быстро догадается, кто виновен.",
+  "rank": 21411,
+  "forms": [
+   "perspicaces"
+  ]
+ },
+ {
+  "id": "sagaz",
+  "es": "sagaz",
+  "pos": "adj",
+  "ru": "прозорливый, хитроумный (умный и практичный, предвидящий)",
+  "example_es": "Un negociador sagaz sabe cuándo callar.",
+  "example_ru": "Прозорливый переговорщик знает, когда промолчать.",
+  "rank": 41414,
+  "forms": [
+   "sagaces"
+  ]
+ },
+ {
+  "id": "pulcro",
+  "es": "pulcro",
+  "pos": "adj",
+  "ru": "опрятный, аккуратный (безупречно чистый и тщательный)",
+  "example_es": "Su letra era pulcra y elegante.",
+  "example_ru": "У него был аккуратный и изящный почерк.",
+  "rank": 43083,
+  "forms": [
+   "pulcra",
+   "pulcros",
+   "pulcras"
+  ]
+ },
+ {
+  "id": "ostentoso",
+  "es": "ostentoso",
+  "pos": "adj",
+  "ru": "показной, кричащий (рассчитанный на то, чтобы поразить)",
+  "example_es": "Llegó en un coche ostentoso de color dorado.",
+  "example_ru": "Он приехал на кричащей машине золотого цвета.",
+  "rank": 35186,
+  "forms": [
+   "ostentosa",
+   "ostentosos",
+   "ostentosas"
+  ]
+ },
+ {
+  "id": "pomposo",
+  "es": "pomposo",
+  "pos": "adj",
+  "ru": "напыщенный (высокопарный, важничающий)",
+  "example_es": "Pronunció un discurso pomposo y vacío.",
+  "example_ru": "Он произнёс напыщенную и пустую речь.",
+  "rank": 29362,
+  "forms": [
+   "pomposa",
+   "pomposos",
+   "pomposas"
+  ]
+ },
+ {
+  "id": "flamante",
+  "es": "flamante",
+  "pos": "adj",
+  "ru": "новёхонький (совсем новый и блестящий); только что назначенный",
+  "example_es": "Nos enseñó su flamante bicicleta.",
+  "example_ru": "Он показал нам свой новёхонький велосипед.",
+  "rank": 31809,
+  "forms": [
+   "flamantes"
+  ]
+ },
+ {
+  "id": "desdén",
+  "es": "desdén",
+  "pos": "noun",
+  "ru": "пренебрежение (холодное высокомерное равнодушие)",
+  "example_es": "Trató nuestra propuesta con desdén.",
+  "example_ru": "Он отнёсся к нашему предложению с пренебрежением.",
+  "rank": 33688,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "desdenes"
+  ]
+ },
+ {
+  "id": "afrenta",
+  "es": "afrenta",
+  "pos": "noun",
+  "ru": "оскорбление, позор (публичное унижение чести)",
+  "example_es": "Consideró aquella derrota una afrenta personal.",
+  "example_ru": "То поражение он счёл личным оскорблением.",
+  "rank": 32259,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "afrentas"
+  ]
+ },
+ {
+  "id": "agravio",
+  "es": "agravio",
+  "pos": "noun",
+  "ru": "обида, несправедливость (ущемление прав или чести)",
+  "example_es": "La comunidad denuncia un agravio comparativo con otras regiones.",
+  "example_ru": "Община жалуется на несправедливость по сравнению с другими регионами.",
+  "rank": 44985,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "agravios"
+  ]
+ },
+ {
+  "id": "ultraje",
+  "es": "ultraje",
+  "pos": "noun",
+  "ru": "надругательство (тяжкое оскорбление святого или чести)",
+  "example_es": "Calificaron la pintada como un ultraje a la memoria de las víctimas.",
+  "example_ru": "Надпись назвали надругательством над памятью жертв.",
+  "rank": 27735,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "ultrajes"
+  ]
+ },
+ {
+  "id": "desliz",
+  "es": "desliz",
+  "pos": "noun",
+  "ru": "оплошность (небольшая, простительная ошибка)",
+  "example_es": "Fue solo un desliz sin importancia.",
+  "example_ru": "Это была лишь незначительная оплошность.",
+  "rank": 25625,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "deslices"
+  ]
+ },
+ {
+  "id": "patraña",
+  "es": "patraña",
+  "pos": "noun",
+  "ru": "враньё, небылица (грубая выдумка)",
+  "example_es": "Todo lo que nos contó era una patraña.",
+  "example_ru": "Всё, что он нам рассказал, было враньём.",
+  "rank": 45969,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "patrañas"
+  ]
+ },
+ {
+  "id": "pavor",
+  "es": "pavor",
+  "pos": "noun",
+  "ru": "ужас (сильный, парализующий страх)",
+  "example_es": "Tiene pavor a volar en avión.",
+  "example_ru": "Он панически боится летать на самолёте.",
+  "rank": 31615,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "pavores"
+  ]
+ },
+ {
+  "id": "aflicción",
+  "es": "aflicción",
+  "pos": "noun",
+  "ru": "скорбь (глубокая печаль от утраты)",
+  "example_es": "Expresó su aflicción por la muerte de su amigo.",
+  "example_ru": "Он выразил скорбь в связи со смертью друга.",
+  "rank": 23673,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "aflicciones"
+  ]
+ },
+ {
+  "id": "deleite",
+  "es": "deleite",
+  "pos": "noun",
+  "ru": "наслаждение (утончённое удовольствие)",
+  "example_es": "Escuchaba la música con verdadero deleite.",
+  "example_ru": "Он слушал музыку с истинным наслаждением.",
+  "rank": 25709,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "deleites"
+  ]
+ }
+]

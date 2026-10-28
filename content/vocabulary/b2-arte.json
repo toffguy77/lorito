@@ -1,0 +1,725 @@
+[
+ {
+  "id": "obra",
+  "es": "obra",
+  "pos": "noun",
+  "ru": "произведение; работа",
+  "example_es": "Esta obra fue pintada a finales del siglo XIX.",
+  "example_ru": "Эта картина была написана в конце XIX века.",
+  "rank": 1251,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "obras"
+  ]
+ },
+ {
+  "id": "personaje",
+  "es": "personaje",
+  "pos": "noun",
+  "ru": "персонаж",
+  "example_es": "El personaje principal de la novela es un detective retirado.",
+  "example_ru": "Главный герой романа — детектив на пенсии.",
+  "rank": 2834,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "personajes"
+  ]
+ },
+ {
+  "id": "capítulo",
+  "es": "capítulo",
+  "pos": "noun",
+  "ru": "глава",
+  "example_es": "Me quedé despierto hasta terminar el último capítulo.",
+  "example_ru": "Я не ложился, пока не дочитал последнюю главу.",
+  "rank": 3886,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "capítulos"
+  ]
+ },
+ {
+  "id": "autor",
+  "es": "autor",
+  "pos": "noun",
+  "ru": "автор",
+  "example_es": "La autora firmó ejemplares de su libro durante dos horas.",
+  "example_ru": "Писательница два часа подписывала экземпляры своей книги.",
+  "rank": 5117,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "autores",
+   "autora",
+   "autoras"
+  ]
+ },
+ {
+  "id": "poesía",
+  "es": "poesía",
+  "pos": "noun",
+  "ru": "поэзия; стихотворение",
+  "example_es": "Su poesía habla de la memoria y del exilio.",
+  "example_ru": "Его поэзия — о памяти и изгнании.",
+  "rank": 5054,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "poesías"
+  ]
+ },
+ {
+  "id": "poema",
+  "es": "poema",
+  "pos": "noun",
+  "ru": "стихотворение; поэма",
+  "example_es": "En clase tuvimos que aprender un poema de memoria.",
+  "example_ru": "На уроке нам пришлось выучить стихотворение наизусть.",
+  "rank": 5297,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "poemas"
+  ]
+ },
+ {
+  "id": "poeta",
+  "es": "poeta",
+  "pos": "noun",
+  "ru": "поэт",
+  "example_es": "El poeta leyó sus versos ante un público entusiasmado.",
+  "example_ru": "Поэт читал свои стихи перед восторженной публикой.",
+  "rank": 5776,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "poetas"
+  ]
+ },
+ {
+  "id": "retrato",
+  "es": "retrato",
+  "pos": "noun",
+  "ru": "портрет",
+  "example_es": "El pintor hizo un retrato de su madre ya anciana.",
+  "example_ru": "Художник написал портрет своей пожилой матери.",
+  "rank": 5472,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "retratos"
+  ]
+ },
+ {
+  "id": "pintor",
+  "es": "pintor",
+  "pos": "noun",
+  "ru": "художник, живописец",
+  "example_es": "Los pintores impresionistas trabajaban al aire libre.",
+  "example_ru": "Художники-импрессионисты работали на открытом воздухе.",
+  "rank": 7370,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "pintores",
+   "pintora",
+   "pintoras"
+  ]
+ },
+ {
+  "id": "galería",
+  "es": "galería",
+  "pos": "noun",
+  "ru": "галерея",
+  "example_es": "La galería expone obras de jóvenes artistas locales.",
+  "example_ru": "Галерея выставляет работы молодых местных художников.",
+  "rank": 5735,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "galerías"
+  ]
+ },
+ {
+  "id": "crítica",
+  "es": "crítica",
+  "pos": "noun",
+  "ru": "критика; рецензия",
+  "example_es": "La película recibió muy buenas críticas en la prensa.",
+  "example_ru": "Фильм получил очень хорошие отзывы в прессе.",
+  "rank": 5914,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "críticas"
+  ]
+ },
+ {
+  "id": "leyenda",
+  "es": "leyenda",
+  "pos": "noun",
+  "ru": "легенда; подпись (к изображению)",
+  "example_es": "Según la leyenda, el castillo está habitado por fantasmas.",
+  "example_ru": "По легенде, в замке живут привидения.",
+  "rank": 3583,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "leyendas"
+  ]
+ },
+ {
+  "id": "mito",
+  "es": "mito",
+  "pos": "noun",
+  "ru": "миф",
+  "example_es": "Muchas novelas modernas reinterpretan los mitos griegos.",
+  "example_ru": "Многие современные романы переосмысляют греческие мифы.",
+  "rank": 7495,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "mitos"
+  ]
+ },
+ {
+  "id": "tragedia",
+  "es": "tragedia",
+  "pos": "noun",
+  "ru": "трагедия",
+  "example_es": "Las tragedias clásicas suelen terminar con la muerte del héroe.",
+  "example_ru": "Классические трагедии обычно заканчиваются гибелью героя.",
+  "rank": 3964,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "tragedias"
+  ]
+ },
+ {
+  "id": "comedia",
+  "es": "comedia",
+  "pos": "noun",
+  "ru": "комедия",
+  "example_es": "Es una comedia ligera, perfecta para desconectar.",
+  "example_ru": "Это лёгкая комедия — то, что нужно, чтобы отвлечься.",
+  "rank": 5487,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "comedias"
+  ]
+ },
+ {
+  "id": "protagonista",
+  "es": "protagonista",
+  "pos": "noun",
+  "ru": "главный герой, главная героиня",
+  "example_es": "La protagonista lucha contra los prejuicios de su época.",
+  "example_ru": "Героиня борется с предрассудками своего времени.",
+  "rank": 10364,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "protagonistas"
+  ]
+ },
+ {
+  "id": "trama",
+  "es": "trama",
+  "pos": "noun",
+  "ru": "сюжет",
+  "example_es": "La trama es tan compleja que hay que leer con atención.",
+  "example_ru": "Сюжет настолько запутан, что читать нужно внимательно.",
+  "rank": 10167,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "tramas"
+  ]
+ },
+ {
+  "id": "narrador",
+  "es": "narrador",
+  "pos": "noun",
+  "ru": "рассказчик",
+  "example_es": "El narrador cuenta la historia desde la vejez.",
+  "example_ru": "Рассказчик ведёт повествование, будучи уже стариком.",
+  "rank": 12072,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "narradores",
+   "narradora",
+   "narradoras"
+  ]
+ },
+ {
+  "id": "relato",
+  "es": "relato",
+  "pos": "noun",
+  "ru": "рассказ; повествование",
+  "example_es": "Este libro reúne doce relatos sobre la vida en el campo.",
+  "example_ru": "В эту книгу вошли двенадцать рассказов о деревенской жизни.",
+  "rank": 12759,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "relatos"
+  ]
+ },
+ {
+  "id": "verso",
+  "es": "verso",
+  "pos": "noun",
+  "ru": "стих, стихотворная строка",
+  "example_es": "El poema empieza con un verso muy conocido.",
+  "example_ru": "Стихотворение начинается с очень известной строки.",
+  "rank": 14334,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "versos"
+  ]
+ },
+ {
+  "id": "rima",
+  "es": "rima",
+  "pos": "noun",
+  "ru": "рифма",
+  "example_es": "En la poesía moderna la rima ya no es obligatoria.",
+  "example_ru": "В современной поэзии рифма уже не обязательна.",
+  "rank": 12682,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "rimas"
+  ]
+ },
+ {
+  "id": "metáfora",
+  "es": "metáfora",
+  "pos": "noun",
+  "ru": "метафора",
+  "example_es": "El mar es una metáfora de la libertad en toda su obra.",
+  "example_ru": "Во всём его творчестве море — метафора свободы.",
+  "rank": 11261,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "metáforas"
+  ]
+ },
+ {
+  "id": "ironía",
+  "es": "ironía",
+  "pos": "noun",
+  "ru": "ирония",
+  "example_es": "Escribe sobre la política con mucha ironía.",
+  "example_ru": "Он пишет о политике с большой иронией.",
+  "rank": 9634,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "ironías"
+  ]
+ },
+ {
+  "id": "símbolo",
+  "es": "símbolo",
+  "pos": "noun",
+  "ru": "символ",
+  "example_es": "En el cuadro, la paloma es un símbolo de paz.",
+  "example_ru": "На картине голубь — символ мира.",
+  "rank": 4424,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "símbolos"
+  ]
+ },
+ {
+  "id": "género",
+  "es": "género",
+  "pos": "noun",
+  "ru": "жанр; род; пол",
+  "example_es": "La novela negra es mi género favorito.",
+  "example_ru": "Детектив — мой любимый жанр.",
+  "rank": 8487,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "géneros"
+  ]
+ },
+ {
+  "id": "inspiración",
+  "es": "inspiración",
+  "pos": "noun",
+  "ru": "вдохновение",
+  "example_es": "El autor encontró la inspiración en un viaje por el desierto.",
+  "example_ru": "Автор нашёл вдохновение во время путешествия по пустыне.",
+  "rank": 6466,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "inspiraciones"
+  ]
+ },
+ {
+  "id": "manuscrito",
+  "es": "manuscrito",
+  "pos": "noun",
+  "ru": "рукопись",
+  "example_es": "El manuscrito original se conserva en la biblioteca nacional.",
+  "example_ru": "Оригинал рукописи хранится в национальной библиотеке.",
+  "rank": 11917,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "manuscritos"
+  ]
+ },
+ {
+  "id": "editorial",
+  "es": "editorial",
+  "pos": "noun",
+  "ru": "издательство",
+  "example_es": "Una pequeña editorial aceptó publicar su primera novela.",
+  "example_ru": "Небольшое издательство согласилось выпустить его первый роман.",
+  "rank": 11527,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "editoriales"
+  ]
+ },
+ {
+  "id": "lector",
+  "es": "lector",
+  "pos": "noun",
+  "ru": "читатель",
+  "example_es": "La novela atrapa al lector desde la primera página.",
+  "example_ru": "Роман захватывает читателя с первой страницы.",
+  "rank": 15060,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "lectores",
+   "lectora",
+   "lectoras"
+  ]
+ },
+ {
+  "id": "biografía",
+  "es": "biografía",
+  "pos": "noun",
+  "ru": "биография",
+  "example_es": "Acaba de salir una biografía no autorizada del cantante.",
+  "example_ru": "Только что вышла неавторизованная биография певца.",
+  "rank": 17180,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "biografías"
+  ]
+ },
+ {
+  "id": "escultura",
+  "es": "escultura",
+  "pos": "noun",
+  "ru": "скульптура",
+  "example_es": "En el centro de la plaza hay una escultura de bronce.",
+  "example_ru": "В центре площади стоит бронзовая скульптура.",
+  "rank": 13578,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "esculturas"
+  ]
+ },
+ {
+  "id": "lienzo",
+  "es": "lienzo",
+  "pos": "noun",
+  "ru": "холст; полотно",
+  "example_es": "El artista pintó sobre un lienzo de dos metros.",
+  "example_ru": "Художник писал на двухметровом холсте.",
+  "rank": 19190,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "lienzos"
+  ]
+ },
+ {
+  "id": "boceto",
+  "es": "boceto",
+  "pos": "noun",
+  "ru": "эскиз, набросок",
+  "example_es": "Antes de pintar el cuadro, hizo decenas de bocetos.",
+  "example_ru": "Прежде чем написать картину, он сделал десятки эскизов.",
+  "rank": 23499,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "bocetos"
+  ]
+ },
+ {
+  "id": "vanguardia",
+  "es": "vanguardia",
+  "pos": "noun",
+  "ru": "авангард",
+  "example_es": "Las vanguardias rompieron con el arte académico.",
+  "example_ru": "Авангард порвал с академическим искусством.",
+  "rank": 16239,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "vanguardias"
+  ]
+ },
+ {
+  "id": "creatividad",
+  "es": "creatividad",
+  "pos": "noun",
+  "ru": "творческие способности, креативность",
+  "example_es": "Este taller busca estimular la creatividad de los niños.",
+  "example_ru": "Эта мастерская помогает развивать творческие способности детей.",
+  "rank": 14758,
+  "article": "la",
+  "gender": "f"
+ },
+ {
+  "id": "estética",
+  "es": "estética",
+  "pos": "noun",
+  "ru": "эстетика",
+  "example_es": "La estética de la película recuerda a los años setenta.",
+  "example_ru": "Эстетика фильма напоминает семидесятые.",
+  "rank": 20220,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "estéticas"
+  ]
+ },
+ {
+  "id": "guion",
+  "es": "guion",
+  "pos": "noun",
+  "ru": "сценарий",
+  "example_es": "El guion fue escrito por el propio director.",
+  "example_ru": "Сценарий написал сам режиссёр.",
+  "rank": 18404,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "guiones"
+  ]
+ },
+ {
+  "id": "monólogo",
+  "es": "monólogo",
+  "pos": "noun",
+  "ru": "монолог",
+  "example_es": "El actor recitó el monólogo final sin un solo error.",
+  "example_ru": "Актёр прочитал финальный монолог без единой ошибки.",
+  "rank": 23195,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "monólogos"
+  ]
+ },
+ {
+  "id": "diálogo",
+  "es": "diálogo",
+  "pos": "noun",
+  "ru": "диалог",
+  "example_es": "Los diálogos de la novela suenan muy naturales.",
+  "example_ru": "Диалоги в романе звучат очень естественно.",
+  "rank": 11314,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "diálogos"
+  ]
+ },
+ {
+  "id": "mural",
+  "es": "mural",
+  "pos": "noun",
+  "ru": "настенная роспись, мурал",
+  "example_es": "Un grupo de artistas pintó un mural en la fachada del colegio.",
+  "example_ru": "Группа художников расписала фасад школы.",
+  "rank": 23656,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "murales"
+  ]
+ },
+ {
+  "id": "pincel",
+  "es": "pincel",
+  "pos": "noun",
+  "ru": "кисть (художника)",
+  "example_es": "Limpia bien los pinceles después de pintar al óleo.",
+  "example_ru": "Хорошо промой кисти после работы маслом.",
+  "rank": 23025,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "pinceles"
+  ]
+ },
+ {
+  "id": "literario",
+  "es": "literario",
+  "pos": "adj",
+  "ru": "литературный",
+  "example_es": "Ganó un prestigioso premio literario el año pasado.",
+  "example_ru": "В прошлом году он получил престижную литературную премию.",
+  "rank": 22956,
+  "forms": [
+   "literaria",
+   "literarios",
+   "literarias"
+  ]
+ },
+ {
+  "id": "artístico",
+  "es": "artístico",
+  "pos": "adj",
+  "ru": "художественный; артистический",
+  "example_es": "La ciudad tiene una vida artística muy intensa.",
+  "example_ru": "В городе очень насыщенная художественная жизнь.",
+  "rank": 10703,
+  "forms": [
+   "artística",
+   "artísticos",
+   "artísticas"
+  ]
+ },
+ {
+  "id": "trágico",
+  "es": "trágico",
+  "pos": "adj",
+  "ru": "трагический",
+  "example_es": "La novela tiene un final trágico e inesperado.",
+  "example_ru": "У романа трагический и неожиданный финал.",
+  "rank": 7500,
+  "forms": [
+   "trágica",
+   "trágicos",
+   "trágicas"
+  ]
+ },
+ {
+  "id": "poético",
+  "es": "poético",
+  "pos": "adj",
+  "ru": "поэтический, поэтичный",
+  "example_es": "Su prosa tiene un tono muy poético.",
+  "example_ru": "Его проза звучит очень поэтично.",
+  "rank": 19923,
+  "forms": [
+   "poética",
+   "poéticos",
+   "poéticas"
+  ]
+ },
+ {
+  "id": "clásico",
+  "es": "clásico",
+  "pos": "adj",
+  "ru": "классический",
+  "example_es": "Leer a los autores clásicos sigue siendo necesario.",
+  "example_ru": "Читать классиков по-прежнему необходимо.",
+  "rank": 4648,
+  "forms": [
+   "clásica",
+   "clásicos",
+   "clásicas"
+  ]
+ },
+ {
+  "id": "publicar",
+  "es": "publicar",
+  "pos": "verb",
+  "ru": "публиковать, опубликовать; издавать",
+  "example_es": "Publicó su primer libro a los veinticinco años.",
+  "example_ru": "Свою первую книгу он издал в двадцать пять лет.",
+  "rank": 7885
+ },
+ {
+  "id": "subasta",
+  "es": "subasta",
+  "pos": "noun",
+  "ru": "аукцион",
+  "example_es": "El cuadro se vendió en una subasta por varios millones.",
+  "example_ru": "Картину продали на аукционе за несколько миллионов.",
+  "rank": 7054,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "subastas"
+  ]
+ },
+ {
+  "id": "patrimonio",
+  "es": "patrimonio",
+  "pos": "noun",
+  "ru": "наследие; достояние; имущество",
+  "example_es": "El casco antiguo es patrimonio de la humanidad.",
+  "example_ru": "Старый город — объект всемирного наследия.",
+  "rank": 14124,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "patrimonios"
+  ]
+ },
+ {
+  "id": "novelista",
+  "es": "novelista",
+  "pos": "noun",
+  "ru": "романист, писатель",
+  "example_es": "Es una novelista muy conocida por sus historias familiares.",
+  "example_ru": "Это известная писательница, автор семейных саг.",
+  "rank": 22404,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "novelistas"
+  ]
+ },
+ {
+  "id": "dramático",
+  "es": "dramático",
+  "pos": "adj",
+  "ru": "драматический; драматичный",
+  "example_es": "Estudió arte dramático antes de dedicarse al cine.",
+  "example_ru": "Прежде чем заняться кино, он учился актёрскому мастерству.",
+  "rank": 8980,
+  "forms": [
+   "dramática",
+   "dramáticos",
+   "dramáticas"
+  ]
+ },
+ {
+  "id": "interpretar",
+  "es": "interpretar",
+  "pos": "verb",
+  "ru": "исполнять (роль, произведение); толковать",
+  "example_es": "La actriz interpreta a una madre que busca a su hijo.",
+  "example_ru": "Актриса играет мать, которая ищет своего сына.",
+  "rank": 8705
+ }
+]

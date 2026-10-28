@@ -1,0 +1,515 @@
+[
+ {
+  "id": "acarrear",
+  "es": "acarrear",
+  "pos": "verb",
+  "ru": "влечь за собой; перевозить",
+  "example_es": "Esta decisión puede acarrear graves consecuencias.",
+  "example_ru": "Это решение может повлечь за собой серьёзные последствия.",
+  "rank": 44539
+ },
+ {
+  "id": "desencadenar",
+  "es": "desencadenar",
+  "pos": "verb",
+  "ru": "вызывать, развязывать",
+  "example_es": "Una simple broma desencadenó una pelea.",
+  "example_ru": "Простая шутка спровоцировала драку.",
+  "rank": 34007
+ },
+ {
+  "id": "fomentar",
+  "es": "fomentar",
+  "pos": "verb",
+  "ru": "поощрять, способствовать развитию",
+  "example_es": "El programa busca fomentar la lectura entre los jóvenes.",
+  "example_ru": "Программа стремится поощрять чтение среди молодёжи.",
+  "rank": 30054
+ },
+ {
+  "id": "eludir",
+  "es": "eludir",
+  "pos": "verb",
+  "ru": "избегать, уклоняться",
+  "example_es": "El ministro eludió responder a la pregunta.",
+  "example_ru": "Министр уклонился от ответа на вопрос.",
+  "rank": 22978
+ },
+ {
+  "id": "acatar",
+  "es": "acatar",
+  "pos": "verb",
+  "ru": "подчиняться, соблюдать",
+  "example_es": "Todos deben acatar la decisión del tribunal.",
+  "example_ru": "Все обязаны подчиниться решению суда.",
+  "rank": 35642
+ },
+ {
+  "id": "desempeñar",
+  "es": "desempeñar",
+  "pos": "verb",
+  "ru": "выполнять (роль, функцию); занимать (должность)",
+  "example_es": "Desempeña un papel clave en la negociación.",
+  "example_ru": "Он играет ключевую роль в переговорах.",
+  "rank": 32487
+ },
+ {
+  "id": "ejercer",
+  "es": "ejercer",
+  "pos": "verb",
+  "ru": "осуществлять; практиковать (профессию)",
+  "example_es": "Ejerce la medicina desde hace veinte años.",
+  "example_ru": "Он практикует медицину уже двадцать лет.",
+  "rank": 13139,
+  "forms": [
+   "ejerzo",
+   "ejerza"
+  ]
+ },
+ {
+  "id": "encarar",
+  "es": "encarar",
+  "pos": "verb",
+  "ru": "смотреть в лицо; решать (проблему)",
+  "example_es": "Hay que encarar el problema cuanto antes.",
+  "example_ru": "Проблему нужно решать как можно скорее.",
+  "rank": 27468
+ },
+ {
+  "id": "sobrellevar",
+  "es": "sobrellevar",
+  "pos": "verb",
+  "ru": "переносить, стойко терпеть",
+  "example_es": "Sobrelleva la enfermedad con una entereza admirable.",
+  "example_ru": "Он переносит болезнь с удивительной стойкостью.",
+  "rank": 34528
+ },
+ {
+  "id": "asimilar",
+  "es": "asimilar",
+  "pos": "verb",
+  "ru": "усваивать; осмысливать",
+  "example_es": "Todavía no he asimilado la noticia.",
+  "example_ru": "Я ещё не осознал эту новость.",
+  "rank": 22832
+ },
+ {
+  "id": "discernir",
+  "es": "discernir",
+  "pos": "verb",
+  "ru": "различать, отличать",
+  "example_es": "A veces cuesta discernir lo verdadero de lo falso.",
+  "example_ru": "Иногда трудно отличить правду от лжи.",
+  "rank": 43531,
+  "forms": [
+   "discierno",
+   "discierne",
+   "disciernen"
+  ]
+ },
+ {
+  "id": "indagar",
+  "es": "indagar",
+  "pos": "verb",
+  "ru": "выяснять, расследовать",
+  "example_es": "La policía indaga sobre el origen del dinero.",
+  "example_ru": "Полиция выясняет происхождение денег.",
+  "rank": 28252,
+  "forms": [
+   "indagué"
+  ]
+ },
+ {
+  "id": "profundizar",
+  "es": "profundizar",
+  "pos": "verb",
+  "ru": "углублять(ся), вникать",
+  "example_es": "El curso permite profundizar en la historia del arte.",
+  "example_ru": "Курс позволяет глубже изучить историю искусства.",
+  "rank": 25982,
+  "forms": [
+   "profundicé"
+  ]
+ },
+ {
+  "id": "enfatizar",
+  "es": "enfatizar",
+  "pos": "verb",
+  "ru": "подчёркивать, акцентировать",
+  "example_es": "La directora enfatizó la importancia de la puntualidad.",
+  "example_ru": "Директор подчеркнула важность пунктуальности.",
+  "rank": 37228,
+  "forms": [
+   "enfaticé"
+  ]
+ },
+ {
+  "id": "respaldar",
+  "es": "respaldar",
+  "pos": "verb",
+  "ru": "поддерживать",
+  "example_es": "La mayoría de los socios respaldó la propuesta.",
+  "example_ru": "Большинство членов поддержало предложение.",
+  "rank": 25627
+ },
+ {
+  "id": "consolidar",
+  "es": "consolidar",
+  "pos": "verb",
+  "ru": "укреплять, закреплять",
+  "example_es": "El equipo consolidó su liderato con esta victoria.",
+  "example_ru": "Этой победой команда упрочила своё лидерство.",
+  "rank": 42358
+ },
+ {
+  "id": "erradicar",
+  "es": "erradicar",
+  "pos": "verb",
+  "ru": "искоренять",
+  "example_es": "El objetivo es erradicar la pobreza extrema.",
+  "example_ru": "Цель — искоренить крайнюю бедность.",
+  "rank": 25106,
+  "forms": [
+   "erradiqué"
+  ]
+ },
+ {
+  "id": "contrarrestar",
+  "es": "contrarrestar",
+  "pos": "verb",
+  "ru": "противодействовать, нейтрализовать",
+  "example_es": "El ejercicio ayuda a contrarrestar los efectos del estrés.",
+  "example_ru": "Физические упражнения помогают нейтрализовать последствия стресса.",
+  "rank": 28651
+ },
+ {
+  "id": "desistir",
+  "es": "desistir",
+  "pos": "verb",
+  "ru": "отказываться (от намерения)",
+  "example_es": "Tras varios intentos, desistió de convencerla.",
+  "example_ru": "После нескольких попыток он отказался от мысли её убедить.",
+  "rank": 25071
+ },
+ {
+  "id": "vincular",
+  "es": "vincular",
+  "pos": "verb",
+  "ru": "связывать",
+  "example_es": "Los investigadores vinculan este gen con la obesidad.",
+  "example_ru": "Исследователи связывают этот ген с ожирением.",
+  "rank": 36820
+ },
+ {
+  "id": "otorgar",
+  "es": "otorgar",
+  "pos": "verb",
+  "ru": "предоставлять; присуждать",
+  "example_es": "Le otorgaron el premio por toda su carrera.",
+  "example_ru": "Ему присудили премию за всю карьеру.",
+  "rank": 36656,
+  "forms": [
+   "otorgué"
+  ]
+ },
+ {
+  "id": "conceder",
+  "es": "conceder",
+  "pos": "verb",
+  "ru": "предоставлять; признавать",
+  "example_es": "El banco le concedió un préstamo sin problemas.",
+  "example_ru": "Банк без проблем выдал ему кредит.",
+  "rank": 20505
+ },
+ {
+  "id": "someter",
+  "es": "someter",
+  "pos": "verb",
+  "ru": "подвергать; подчинять; выносить (на голосование)",
+  "example_es": "El proyecto se someterá a votación el lunes.",
+  "example_ru": "Проект вынесут на голосование в понедельник.",
+  "rank": 24977
+ },
+ {
+  "id": "abarcar",
+  "es": "abarcar",
+  "pos": "verb",
+  "ru": "охватывать",
+  "example_es": "El estudio abarca un periodo de cincuenta años.",
+  "example_ru": "Исследование охватывает период в пятьдесят лет.",
+  "rank": 45964,
+  "forms": [
+   "abarqué"
+  ]
+ },
+ {
+  "id": "suprimir",
+  "es": "suprimir",
+  "pos": "verb",
+  "ru": "упразднять; удалять",
+  "example_es": "El Gobierno decidió suprimir ese impuesto.",
+  "example_ru": "Правительство решило отменить этот налог.",
+  "rank": 24129
+ },
+ {
+  "id": "restringir",
+  "es": "restringir",
+  "pos": "verb",
+  "ru": "ограничивать",
+  "example_es": "Han restringido el acceso al centro de la ciudad.",
+  "example_ru": "Доступ в центр города ограничили.",
+  "rank": 45919,
+  "forms": [
+   "restrinjo",
+   "restrinja"
+  ]
+ },
+ {
+  "id": "contemplar",
+  "es": "contemplar",
+  "pos": "verb",
+  "ru": "предусматривать; созерцать",
+  "example_es": "La ley no contempla este tipo de casos.",
+  "example_ru": "Закон не предусматривает подобных случаев.",
+  "rank": 17278
+ },
+ {
+  "id": "rectificar",
+  "es": "rectificar",
+  "pos": "verb",
+  "ru": "исправлять; поправляться",
+  "example_es": "El periódico tuvo que rectificar la información.",
+  "example_ru": "Газете пришлось исправить информацию.",
+  "rank": 35257,
+  "forms": [
+   "rectifiqué"
+  ]
+ },
+ {
+  "id": "desvelar",
+  "es": "desvelar",
+  "pos": "verb",
+  "ru": "раскрывать (тайну)",
+  "example_es": "El autor no quiso desvelar el final de la serie.",
+  "example_ru": "Автор не захотел раскрыть финал сериала.",
+  "rank": 41507
+ },
+ {
+  "id": "acceder",
+  "es": "acceder",
+  "pos": "verb",
+  "ru": "получать доступ; соглашаться",
+  "example_es": "Solo el personal autorizado puede acceder a estos datos.",
+  "example_ru": "Доступ к этим данным есть только у уполномоченного персонала.",
+  "rank": 6087
+ },
+ {
+  "id": "prevalecer",
+  "es": "prevalecer",
+  "pos": "verb",
+  "ru": "преобладать; одерживать верх",
+  "example_es": "Al final prevaleció el sentido común.",
+  "example_ru": "В конце концов возобладал здравый смысл.",
+  "rank": 46086,
+  "forms": [
+   "prevalezca",
+   "prevalece"
+  ]
+ },
+ {
+  "id": "perjudicar",
+  "es": "perjudicar",
+  "pos": "verb",
+  "ru": "вредить, наносить ущерб",
+  "example_es": "La subida de precios perjudica a los más pobres.",
+  "example_ru": "Рост цен бьёт по самым бедным.",
+  "rank": 22569,
+  "forms": [
+   "perjudiqué"
+  ]
+ },
+ {
+  "id": "beneficiar",
+  "es": "beneficiar",
+  "pos": "verb",
+  "ru": "приносить пользу",
+  "example_es": "La nueva ley beneficia sobre todo a los autónomos.",
+  "example_ru": "Новый закон выгоден прежде всего самозанятым.",
+  "rank": 31122
+ },
+ {
+  "id": "agotar",
+  "es": "agotar",
+  "pos": "verb",
+  "ru": "исчерпывать; изнурять",
+  "example_es": "Hemos agotado todas las vías de diálogo.",
+  "example_ru": "Мы исчерпали все пути диалога.",
+  "rank": 34519
+ },
+ {
+  "id": "menospreciar",
+  "es": "menospreciar",
+  "pos": "verb",
+  "ru": "недооценивать; пренебрегать",
+  "example_es": "No menosprecies el talento de tus rivales.",
+  "example_ru": "Не недооценивай талант соперников.",
+  "rank": 43000
+ },
+ {
+  "id": "subestimar",
+  "es": "subestimar",
+  "pos": "verb",
+  "ru": "недооценивать",
+  "example_es": "Subestimamos el tiempo que llevaría la obra.",
+  "example_ru": "Мы недооценили, сколько времени займёт ремонт.",
+  "rank": 30649
+ },
+ {
+  "id": "disuadir",
+  "es": "disuadir",
+  "pos": "verb",
+  "ru": "отговаривать, разубеждать",
+  "example_es": "Intentaron disuadirlo de dejar los estudios.",
+  "example_ru": "Его пытались отговорить бросать учёбу.",
+  "rank": 43721
+ },
+ {
+  "id": "objetar",
+  "es": "objetar",
+  "pos": "verb",
+  "ru": "возражать",
+  "example_es": "¿Alguien tiene algo que objetar a la propuesta?",
+  "example_ru": "У кого-нибудь есть возражения против предложения?",
+  "rank": 28796
+ },
+ {
+  "id": "salvaguardar",
+  "es": "salvaguardar",
+  "pos": "verb",
+  "ru": "охранять, защищать",
+  "example_es": "Es nuestro deber salvaguardar el patrimonio cultural.",
+  "example_ru": "Наш долг — охранять культурное наследие.",
+  "rank": 40100
+ },
+ {
+  "id": "preservar",
+  "es": "preservar",
+  "pos": "verb",
+  "ru": "сохранять, оберегать",
+  "example_es": "Hay que preservar los espacios naturales protegidos.",
+  "example_ru": "Нужно сохранять охраняемые природные территории.",
+  "rank": 12082
+ },
+ {
+  "id": "mitigar",
+  "es": "mitigar",
+  "pos": "verb",
+  "ru": "смягчать, ослаблять",
+  "example_es": "Las nuevas medidas buscan mitigar el impacto de la crisis.",
+  "example_ru": "Новые меры направлены на смягчение последствий кризиса.",
+  "rank": 41821,
+  "forms": [
+   "mitigué"
+  ]
+ },
+ {
+  "id": "retractarse",
+  "es": "retractarse",
+  "pos": "verb",
+  "ru": "брать свои слова обратно",
+  "example_es": "El político se retractó de sus declaraciones.",
+  "example_ru": "Политик взял свои слова обратно.",
+  "rank": 42783,
+  "forms": [
+   "retracto",
+   "retractó",
+   "retractaron"
+  ]
+ },
+ {
+  "id": "sucumbir",
+  "es": "sucumbir",
+  "pos": "verb",
+  "ru": "поддаваться; погибать",
+  "example_es": "Al final sucumbió a la tentación.",
+  "example_ru": "В конце концов он поддался искушению.",
+  "rank": 38149
+ },
+ {
+  "id": "albergar",
+  "es": "albergar",
+  "pos": "verb",
+  "ru": "вмещать, размещать; питать (надежду)",
+  "example_es": "El edificio alberga un museo de arte moderno.",
+  "example_ru": "В здании располагается музей современного искусства.",
+  "rank": 27917
+ },
+ {
+  "id": "atenuar",
+  "es": "atenuar",
+  "pos": "verb",
+  "ru": "смягчать, ослаблять",
+  "example_es": "Las cortinas atenúan la luz del sol.",
+  "example_ru": "Шторы приглушают солнечный свет.",
+  "rank": 49999,
+  "forms": [
+   "atenúa",
+   "atenúan",
+   "atenúo"
+  ]
+ },
+ {
+  "id": "matizar",
+  "es": "matizar",
+  "pos": "verb",
+  "ru": "уточнять, оговаривать",
+  "example_es": "Quisiera matizar lo que acabo de decir.",
+  "example_ru": "Я хотел бы уточнить то, что сейчас сказал.",
+  "rank": 49999,
+  "forms": [
+   "maticé"
+  ]
+ },
+ {
+  "id": "constatar",
+  "es": "constatar",
+  "pos": "verb",
+  "ru": "констатировать, удостоверяться",
+  "example_es": "Los inspectores constataron varias irregularidades.",
+  "example_ru": "Инспекторы установили ряд нарушений.",
+  "rank": 49999
+ },
+ {
+  "id": "conllevar",
+  "es": "conllevar",
+  "pos": "verb",
+  "ru": "влечь за собой, подразумевать",
+  "example_es": "Este cargo conlleva una gran responsabilidad.",
+  "example_ru": "Эта должность влечёт за собой большую ответственность.",
+  "rank": 49999
+ },
+ {
+  "id": "especificar",
+  "es": "especificar",
+  "pos": "verb",
+  "ru": "уточнять, указывать",
+  "example_es": "El contrato no especifica la fecha de entrega.",
+  "example_ru": "В договоре не указан срок поставки.",
+  "rank": 46842,
+  "forms": [
+   "especifiqué"
+  ]
+ },
+ {
+  "id": "priorizar",
+  "es": "priorizar",
+  "pos": "verb",
+  "ru": "отдавать приоритет",
+  "example_es": "En tiempos de crisis hay que priorizar los gastos esenciales.",
+  "example_ru": "Во время кризиса нужно в первую очередь оплачивать самое необходимое.",
+  "rank": 47907,
+  "forms": [
+   "prioricé"
+  ]
+ }
+]

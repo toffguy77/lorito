@@ -1,0 +1,725 @@
+[
+ {
+  "id": "lograr",
+  "es": "lograr",
+  "pos": "verb",
+  "ru": "добиваться, добиться; удаваться",
+  "example_es": "Por fin logré aprobar el examen de conducir.",
+  "example_ru": "Мне наконец удалось сдать экзамен на права.",
+  "rank": 2958
+ },
+ {
+  "id": "empujar",
+  "es": "empujar",
+  "pos": "verb",
+  "ru": "толкать, толкнуть",
+  "example_es": "No empujes, hay sitio para todos.",
+  "example_ru": "Не толкайся, места хватит всем.",
+  "rank": 7925
+ },
+ {
+  "id": "mejorar",
+  "es": "mejorar",
+  "pos": "verb",
+  "ru": "улучшать, улучшить; улучшаться",
+  "example_es": "Mi español ha mejorado mucho este año.",
+  "example_ru": "Мой испанский сильно улучшился за этот год.",
+  "rank": 3379
+ },
+ {
+  "id": "aumentar",
+  "es": "aumentar",
+  "pos": "verb",
+  "ru": "увеличивать, увеличить; расти",
+  "example_es": "Los precios del alquiler han aumentado otra vez.",
+  "example_ru": "Цены на аренду снова выросли.",
+  "rank": 6519
+ },
+ {
+  "id": "reducir",
+  "es": "reducir",
+  "pos": "verb",
+  "ru": "сокращать, сократить; снижать",
+  "example_es": "Quiero reducir el tiempo que paso con el móvil.",
+  "example_ru": "Я хочу сократить время, которое провожу в телефоне.",
+  "rank": 6282,
+  "forms": [
+   "reduzco",
+   "redujo",
+   "redujeron"
+  ]
+ },
+ {
+  "id": "evitar",
+  "es": "evitar",
+  "pos": "verb",
+  "ru": "избегать; предотвращать",
+  "example_es": "Intento evitar las calles con mucho tráfico.",
+  "example_ru": "Я стараюсь избегать улиц с плотным движением.",
+  "rank": 1319
+ },
+ {
+  "id": "sufrir",
+  "es": "sufrir",
+  "pos": "verb",
+  "ru": "страдать; терпеть, переносить",
+  "example_es": "Mi padre sufre de dolores de espalda.",
+  "example_ru": "Мой отец страдает от болей в спине.",
+  "rank": 3196
+ },
+ {
+  "id": "suponer",
+  "es": "suponer",
+  "pos": "verb",
+  "ru": "предполагать; означать",
+  "example_es": "Supongo que llegarán tarde por el tráfico.",
+  "example_ru": "Полагаю, они опоздают из-за пробок.",
+  "rank": 7765,
+  "forms": [
+   "supongo",
+   "supuso",
+   "supuesto",
+   "supondrá"
+  ]
+ },
+ {
+  "id": "proponer",
+  "es": "proponer",
+  "pos": "verb",
+  "ru": "предлагать, предложить",
+  "example_es": "Te propongo un plan: cenamos y luego vamos al cine.",
+  "example_ru": "Предлагаю план: поужинаем, а потом пойдём в кино.",
+  "rank": 11798,
+  "forms": [
+   "propongo",
+   "propuso",
+   "propuesto",
+   "propondrá"
+  ]
+ },
+ {
+  "id": "mantener",
+  "es": "mantener",
+  "pos": "verb",
+  "ru": "поддерживать; сохранять; содержать",
+  "example_es": "Es difícil mantener el contacto con los amigos de la infancia.",
+  "example_ru": "Трудно поддерживать связь с друзьями детства.",
+  "rank": 933,
+  "forms": [
+   "mantengo",
+   "mantiene",
+   "mantuvo",
+   "mantendrá"
+  ]
+ },
+ {
+  "id": "obtener",
+  "es": "obtener",
+  "pos": "verb",
+  "ru": "получать, получить",
+  "example_es": "Obtuvo una beca para estudiar en el extranjero.",
+  "example_ru": "Она получила стипендию для учёбы за границей.",
+  "rank": 1587,
+  "forms": [
+   "obtengo",
+   "obtiene",
+   "obtuvo",
+   "obtendrá"
+  ]
+ },
+ {
+  "id": "construir",
+  "es": "construir",
+  "pos": "verb",
+  "ru": "строить, построить",
+  "example_es": "Van a construir un hospital nuevo en el barrio.",
+  "example_ru": "В районе построят новую больницу.",
+  "rank": 2252,
+  "forms": [
+   "construyo",
+   "construye",
+   "construyó",
+   "construyendo"
+  ]
+ },
+ {
+  "id": "resolver",
+  "es": "resolver",
+  "pos": "verb",
+  "ru": "решать, решить (проблему)",
+  "example_es": "Hablando se resuelven muchos problemas.",
+  "example_ru": "Многие проблемы решаются разговором.",
+  "rank": 1984,
+  "forms": [
+   "resuelvo",
+   "resuelve",
+   "resuelven",
+   "resuelto"
+  ]
+ },
+ {
+  "id": "convencer",
+  "es": "convencer",
+  "pos": "verb",
+  "ru": "убеждать, убедить",
+  "example_es": "Al final me convenció para ir a la fiesta.",
+  "example_ru": "В итоге он уговорил меня пойти на вечеринку.",
+  "rank": 4387,
+  "forms": [
+   "convenzo",
+   "convenza"
+  ]
+ },
+ {
+  "id": "exigir",
+  "es": "exigir",
+  "pos": "verb",
+  "ru": "требовать, потребовать",
+  "example_es": "Los clientes exigen un servicio más rápido.",
+  "example_ru": "Клиенты требуют более быстрого обслуживания.",
+  "rank": 17802,
+  "forms": [
+   "exijo",
+   "exija"
+  ]
+ },
+ {
+  "id": "depender",
+  "es": "depender",
+  "pos": "verb",
+  "ru": "зависеть",
+  "example_es": "Todo depende del tiempo que haga mañana.",
+  "example_ru": "Всё зависит от того, какая завтра будет погода.",
+  "rank": 13037
+ },
+ {
+  "id": "merecer",
+  "es": "merecer",
+  "pos": "verb",
+  "ru": "заслуживать, заслужить; стоить",
+  "example_es": "Has trabajado mucho y mereces unas vacaciones.",
+  "example_ru": "Ты много работал и заслуживаешь отпуска.",
+  "rank": 15091,
+  "forms": [
+   "merezco",
+   "merezca"
+  ]
+ },
+ {
+  "id": "colgar",
+  "es": "colgar",
+  "pos": "verb",
+  "ru": "вешать, повесить; класть трубку",
+  "example_es": "Colgó el abrigo detrás de la puerta.",
+  "example_ru": "Она повесила пальто за дверью.",
+  "rank": 4403,
+  "forms": [
+   "cuelgo",
+   "cuelga",
+   "colgué"
+  ]
+ },
+ {
+  "id": "quejarse",
+  "es": "quejarse",
+  "pos": "verb",
+  "ru": "жаловаться, пожаловаться",
+  "example_es": "Mi vecino siempre se queja del ruido.",
+  "example_ru": "Мой сосед вечно жалуется на шум.",
+  "rank": 21836,
+  "forms": [
+   "quejo",
+   "queja",
+   "quejan",
+   "quejó"
+  ]
+ },
+ {
+  "id": "llenar",
+  "es": "llenar",
+  "pos": "verb",
+  "ru": "наполнять, наполнить; заполнять",
+  "example_es": "¿Me llenas la botella de agua, por favor?",
+  "example_ru": "Наполнишь мне бутылку водой, пожалуйста?",
+  "rank": 4666
+ },
+ {
+  "id": "superar",
+  "es": "superar",
+  "pos": "verb",
+  "ru": "преодолевать, преодолеть; превосходить",
+  "example_es": "Le costó mucho superar la muerte de su perro.",
+  "example_ru": "Ей было очень тяжело пережить смерть собаки.",
+  "rank": 4103
+ },
+ {
+  "id": "alcanzar",
+  "es": "alcanzar",
+  "pos": "verb",
+  "ru": "достигать, достичь; догонять",
+  "example_es": "Con mucho esfuerzo alcanzó todos sus objetivos.",
+  "example_ru": "Ценой больших усилий он достиг всех своих целей.",
+  "rank": 3993,
+  "forms": [
+   "alcancé",
+   "alcance"
+  ]
+ },
+ {
+  "id": "aparecer",
+  "es": "aparecer",
+  "pos": "verb",
+  "ru": "появляться, появиться",
+  "example_es": "De repente apareció un gato en la ventana.",
+  "example_ru": "Вдруг в окне появился кот.",
+  "rank": 3551,
+  "forms": [
+   "aparezco",
+   "aparezca"
+  ]
+ },
+ {
+  "id": "desaparecer",
+  "es": "desaparecer",
+  "pos": "verb",
+  "ru": "исчезать, исчезнуть",
+  "example_es": "Mis llaves han desaparecido otra vez.",
+  "example_ru": "Мои ключи опять куда-то пропали.",
+  "rank": 2959,
+  "forms": [
+   "desaparezco",
+   "desaparezca"
+  ]
+ },
+ {
+  "id": "añadir",
+  "es": "añadir",
+  "pos": "verb",
+  "ru": "добавлять, добавить",
+  "example_es": "Añade un poco de sal a la sopa.",
+  "example_ru": "Добавь немного соли в суп.",
+  "rank": 6066
+ },
+ {
+  "id": "cumplir",
+  "es": "cumplir",
+  "pos": "verb",
+  "ru": "исполнять, выполнять; исполняться (о возрасте)",
+  "example_es": "Mi hija cumple diez años el sábado.",
+  "example_ru": "В субботу моей дочери исполняется десять лет.",
+  "rank": 2555
+ },
+ {
+  "id": "reconocer",
+  "es": "reconocer",
+  "pos": "verb",
+  "ru": "узнавать, узнать; признавать",
+  "example_es": "No te reconocí con el pelo tan corto.",
+  "example_ru": "Я не узнал тебя с такой короткой стрижкой.",
+  "rank": 4700,
+  "forms": [
+   "reconozco",
+   "reconozca"
+  ]
+ },
+ {
+  "id": "sonar",
+  "es": "sonar",
+  "pos": "verb",
+  "ru": "звучать; звонить (о телефоне, будильнике)",
+  "example_es": "Mi móvil sonó en medio de la reunión.",
+  "example_ru": "Мой телефон зазвонил посреди совещания.",
+  "rank": 3641,
+  "forms": [
+   "suena",
+   "suenan",
+   "sonó"
+  ]
+ },
+ {
+  "id": "comparar",
+  "es": "comparar",
+  "pos": "verb",
+  "ru": "сравнивать, сравнить",
+  "example_es": "No me compares con mi hermano mayor.",
+  "example_ru": "Не сравнивай меня со старшим братом.",
+  "rank": 9697
+ },
+ {
+  "id": "describir",
+  "es": "describir",
+  "pos": "verb",
+  "ru": "описывать, описать",
+  "example_es": "¿Puedes describir al hombre que viste?",
+  "example_ru": "Можешь описать мужчину, которого ты видел?",
+  "rank": 7316,
+  "forms": [
+   "descrito",
+   "describe"
+  ]
+ },
+ {
+  "id": "imaginar",
+  "es": "imaginar",
+  "pos": "verb",
+  "ru": "представлять, представить; воображать",
+  "example_es": "Imagina que vives en una isla desierta.",
+  "example_ru": "Представь, что ты живёшь на необитаемом острове.",
+  "rank": 2296
+ },
+ {
+  "id": "soñar",
+  "es": "soñar",
+  "pos": "verb",
+  "ru": "мечтать; видеть во сне",
+  "example_es": "Desde pequeña sueña con ser médica.",
+  "example_ru": "С детства она мечтает стать врачом.",
+  "rank": 5974,
+  "forms": [
+   "sueño",
+   "sueña",
+   "sueñan"
+  ]
+ },
+ {
+  "id": "sugerir",
+  "es": "sugerir",
+  "pos": "verb",
+  "ru": "предлагать, предложить; советовать",
+  "example_es": "El médico me sugirió hacer más deporte.",
+  "example_ru": "Врач посоветовал мне больше заниматься спортом.",
+  "rank": 9556,
+  "forms": [
+   "sugiero",
+   "sugiere",
+   "sugirió"
+  ]
+ },
+ {
+  "id": "avisar",
+  "es": "avisar",
+  "pos": "verb",
+  "ru": "предупреждать, предупредить; сообщать",
+  "example_es": "Avísame cuando llegues a casa.",
+  "example_ru": "Дай мне знать, когда доберёшься до дома.",
+  "rank": 5689
+ },
+ {
+  "id": "prometer",
+  "es": "prometer",
+  "pos": "verb",
+  "ru": "обещать, пообещать",
+  "example_es": "Te prometo que no voy a llegar tarde.",
+  "example_ru": "Обещаю тебе, что не опоздаю.",
+  "rank": 9276
+ },
+ {
+  "id": "negar",
+  "es": "negar",
+  "pos": "verb",
+  "ru": "отрицать; отказывать",
+  "example_es": "El ladrón negó todo delante del juez.",
+  "example_ru": "Вор всё отрицал перед судьёй.",
+  "rank": 6595,
+  "forms": [
+   "niego",
+   "niega",
+   "niegan"
+  ]
+ },
+ {
+  "id": "admitir",
+  "es": "admitir",
+  "pos": "verb",
+  "ru": "признавать, признать; допускать",
+  "example_es": "Tengo que admitir que tenías razón.",
+  "example_ru": "Должен признать, что ты был прав.",
+  "rank": 3143
+ },
+ {
+  "id": "recomendar",
+  "es": "recomendar",
+  "pos": "verb",
+  "ru": "рекомендовать, советовать",
+  "example_es": "¿Me recomiendas algún restaurante cerca de aquí?",
+  "example_ru": "Посоветуешь какой-нибудь ресторан поблизости?",
+  "rank": 18466,
+  "forms": [
+   "recomiendo",
+   "recomienda",
+   "recomiendas"
+  ]
+ },
+ {
+  "id": "insistir",
+  "es": "insistir",
+  "pos": "verb",
+  "ru": "настаивать",
+  "example_es": "Insistió en pagar la cena de todos.",
+  "example_ru": "Он настоял на том, чтобы заплатить за ужин за всех.",
+  "rank": 11954
+ },
+ {
+  "id": "dudar",
+  "es": "dudar",
+  "pos": "verb",
+  "ru": "сомневаться",
+  "example_es": "Dudo que el tren llegue a tiempo.",
+  "example_ru": "Сомневаюсь, что поезд придёт вовремя.",
+  "rank": 8230
+ },
+ {
+  "id": "acostumbrarse",
+  "es": "acostumbrarse",
+  "pos": "verb",
+  "ru": "привыкать, привыкнуть",
+  "example_es": "Todavía no me acostumbro a levantarme tan temprano.",
+  "example_ru": "Я всё ещё не привык вставать так рано.",
+  "rank": 31661,
+  "forms": [
+   "acostumbro",
+   "acostumbré",
+   "acostumbrado"
+  ]
+ },
+ {
+  "id": "enterarse",
+  "es": "enterarse",
+  "pos": "verb",
+  "ru": "узнавать, узнать (новость)",
+  "example_es": "Me enteré de la noticia por la radio.",
+  "example_ru": "Я узнал эту новость по радио.",
+  "rank": 8925,
+  "forms": [
+   "entero",
+   "enteré",
+   "enteró"
+  ]
+ },
+ {
+  "id": "equivocarse",
+  "es": "equivocarse",
+  "pos": "verb",
+  "ru": "ошибаться, ошибиться",
+  "example_es": "Perdone, me he equivocado de número.",
+  "example_ru": "Извините, я ошибся номером.",
+  "rank": 35536,
+  "forms": [
+   "equivoco",
+   "equivoqué",
+   "equivocado"
+  ]
+ },
+ {
+  "id": "despedirse",
+  "es": "despedirse",
+  "pos": "verb",
+  "ru": "прощаться, попрощаться",
+  "example_es": "Se despidió de todos y se fue.",
+  "example_ru": "Он со всеми попрощался и ушёл.",
+  "rank": 6245,
+  "forms": [
+   "despido",
+   "despide",
+   "despidió"
+  ]
+ },
+ {
+  "id": "sorprender",
+  "es": "sorprender",
+  "pos": "verb",
+  "ru": "удивлять, удивить",
+  "example_es": "Me sorprendió mucho su respuesta.",
+  "example_ru": "Его ответ меня очень удивил.",
+  "rank": 12958
+ },
+ {
+  "id": "rechazar",
+  "es": "rechazar",
+  "pos": "verb",
+  "ru": "отклонять, отклонить; отвергать",
+  "example_es": "Rechazó la oferta porque el sueldo era bajo.",
+  "example_ru": "Он отклонил предложение, потому что зарплата была низкой.",
+  "rank": 7873,
+  "forms": [
+   "rechacé",
+   "rechace"
+  ]
+ },
+ {
+  "id": "participar",
+  "es": "participar",
+  "pos": "verb",
+  "ru": "участвовать",
+  "example_es": "Cien corredores participaron en la carrera.",
+  "example_ru": "В забеге участвовали сто бегунов.",
+  "rank": 4433
+ },
+ {
+  "id": "organizar",
+  "es": "organizar",
+  "pos": "verb",
+  "ru": "организовывать, организовать",
+  "example_es": "Estamos organizando una fiesta sorpresa para mamá.",
+  "example_ru": "Мы готовим для мамы вечеринку-сюрприз.",
+  "rank": 5354,
+  "forms": [
+   "organicé",
+   "organice"
+  ]
+ },
+ {
+  "id": "tardar",
+  "es": "tardar",
+  "pos": "verb",
+  "ru": "задерживаться; занимать (время)",
+  "example_es": "¿Cuánto tardas en llegar al trabajo?",
+  "example_ru": "Сколько времени у тебя занимает дорога на работу?",
+  "rank": 7015
+ },
+ {
+  "id": "durar",
+  "es": "durar",
+  "pos": "verb",
+  "ru": "длиться, продолжаться",
+  "example_es": "La película dura casi tres horas.",
+  "example_ru": "Фильм длится почти три часа.",
+  "rank": 5598
+ },
+ {
+  "id": "aguantar",
+  "es": "aguantar",
+  "pos": "verb",
+  "ru": "терпеть, выносить; выдерживать",
+  "example_es": "No aguanto el calor de este verano.",
+  "example_ru": "Я не выношу жару этого лета.",
+  "rank": 3616
+ },
+ {
+  "id": "esconder",
+  "es": "esconder",
+  "pos": "verb",
+  "ru": "прятать, спрятать",
+  "example_es": "Los niños escondieron los regalos debajo de la cama.",
+  "example_ru": "Дети спрятали подарки под кроватью.",
+  "rank": 4523
+ },
+ {
+  "id": "coger",
+  "es": "coger",
+  "pos": "verb",
+  "ru": "брать, взять; ловить; садиться (на транспорт)",
+  "example_es": "{es: Cojo el autobús | am: Tomo el autobús | rio: Agarro el colectivo} todos los días a las ocho.",
+  "example_ru": "Каждый день в восемь я сажусь на автобус.",
+  "rank": 1564,
+  "forms": [
+   "cojo",
+   "coja",
+   "cogió"
+  ],
+  "variants": {
+   "am": "tomar",
+   "rio": "agarrar"
+  }
+ },
+ {
+  "id": "tirar",
+  "es": "tirar",
+  "pos": "verb",
+  "ru": "бросать; выбрасывать; тянуть",
+  "example_es": "No tires los papeles al suelo.",
+  "example_ru": "Не бросай бумажки на пол.",
+  "rank": 2408
+ },
+ {
+  "id": "gritar",
+  "es": "gritar",
+  "pos": "verb",
+  "ru": "кричать",
+  "example_es": "No hace falta gritar, te oigo perfectamente.",
+  "example_ru": "Не нужно кричать, я тебя прекрасно слышу.",
+  "rank": 2798
+ },
+ {
+  "id": "saltar",
+  "es": "saltar",
+  "pos": "verb",
+  "ru": "прыгать, прыгнуть; пропускать",
+  "example_es": "El perro saltó la valla del jardín.",
+  "example_ru": "Собака перепрыгнула через забор сада.",
+  "rank": 2649
+ },
+ {
+  "id": "atreverse",
+  "es": "atreverse",
+  "pos": "verb",
+  "ru": "осмеливаться, решаться",
+  "example_es": "No me atrevo a hablar en público.",
+  "example_ru": "Я не решаюсь выступать на публике.",
+  "rank": 36622,
+  "forms": [
+   "atrevo",
+   "atreve",
+   "atrevió"
+  ]
+ },
+ {
+  "id": "prohibir",
+  "es": "prohibir",
+  "pos": "verb",
+  "ru": "запрещать, запретить",
+  "example_es": "Está prohibido aparcar delante del garaje.",
+  "example_ru": "Парковаться перед гаражом запрещено.",
+  "rank": 19989,
+  "forms": [
+   "prohíbo",
+   "prohíbe",
+   "prohíben"
+  ]
+ },
+ {
+  "id": "impedir",
+  "es": "impedir",
+  "pos": "verb",
+  "ru": "мешать, помешать; не давать",
+  "example_es": "La lluvia nos impidió salir de casa.",
+  "example_ru": "Дождь не дал нам выйти из дома.",
+  "rank": 6455,
+  "forms": [
+   "impido",
+   "impide",
+   "impidió"
+  ]
+ },
+ {
+  "id": "causar",
+  "es": "causar",
+  "pos": "verb",
+  "ru": "причинять, вызывать",
+  "example_es": "La tormenta causó muchos problemas en la ciudad.",
+  "example_ru": "Буря вызвала много проблем в городе.",
+  "rank": 4281
+ },
+ {
+  "id": "crear",
+  "es": "crear",
+  "pos": "verb",
+  "ru": "создавать, создать",
+  "example_es": "Quiero crear mi propia empresa algún día.",
+  "example_ru": "Когда-нибудь я хочу создать собственную компанию.",
+  "rank": 1981
+ },
+ {
+  "id": "descubrir",
+  "es": "descubrir",
+  "pos": "verb",
+  "ru": "обнаруживать, обнаружить; открывать",
+  "example_es": "Descubrimos un restaurante muy bueno cerca del puerto.",
+  "example_ru": "Мы обнаружили очень хороший ресторан у порта.",
+  "rank": 2044,
+  "forms": [
+   "descubierto",
+   "descubrió"
+  ]
+ }
+]

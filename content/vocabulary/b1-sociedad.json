@@ -1,0 +1,712 @@
+[
+ {
+  "id": "sociedad",
+  "es": "sociedad",
+  "pos": "noun",
+  "ru": "общество",
+  "example_es": "Vivimos en una sociedad cada vez más conectada.",
+  "example_ru": "Мы живём во всё более связанном обществе.",
+  "rank": 1733,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "sociedades"
+  ]
+ },
+ {
+  "id": "noticia",
+  "es": "noticia",
+  "pos": "noun",
+  "ru": "новость",
+  "example_es": "¿Has oído la noticia sobre el nuevo hospital?",
+  "example_ru": "Ты слышал новость о новой больнице?",
+  "rank": 1443,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "noticias"
+  ]
+ },
+ {
+  "id": "periódico",
+  "es": "periódico",
+  "pos": "noun",
+  "ru": "газета",
+  "example_es": "Mi abuelo lee el periódico todas las mañanas.",
+  "example_ru": "Мой дедушка каждое утро читает газету.",
+  "rank": 1974,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "periódicos"
+  ]
+ },
+ {
+  "id": "periodista",
+  "es": "periodista",
+  "pos": "noun",
+  "ru": "журналист; журналистка",
+  "example_es": "La periodista entrevistó al alcalde para la radio.",
+  "example_ru": "Журналистка взяла интервью у мэра для радио.",
+  "rank": 3522,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "periodistas"
+  ]
+ },
+ {
+  "id": "prensa",
+  "es": "prensa",
+  "pos": "noun",
+  "ru": "пресса",
+  "example_es": "La prensa habló mucho del accidente.",
+  "example_ru": "Пресса много писала об аварии.",
+  "rank": 1556,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "prensas"
+  ]
+ },
+ {
+  "id": "revista",
+  "es": "revista",
+  "pos": "noun",
+  "ru": "журнал",
+  "example_es": "Compré una revista de viajes en el quiosco.",
+  "example_ru": "Я купил журнал о путешествиях в киоске.",
+  "rank": 2686,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "revistas"
+  ]
+ },
+ {
+  "id": "titular",
+  "es": "titular",
+  "pos": "noun",
+  "ru": "заголовок",
+  "example_es": "El titular de hoy habla de la huelga.",
+  "example_ru": "Сегодняшний заголовок посвящён забастовке.",
+  "rank": 10838,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "titulares"
+  ]
+ },
+ {
+  "id": "gobierno",
+  "es": "gobierno",
+  "pos": "noun",
+  "ru": "правительство",
+  "example_es": "El gobierno ha anunciado nuevas medidas económicas.",
+  "example_ru": "Правительство объявило о новых экономических мерах.",
+  "rank": 912,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "gobiernos"
+  ]
+ },
+ {
+  "id": "presidente",
+  "es": "presidente",
+  "pos": "noun",
+  "ru": "президент; председатель",
+  "example_es": "El presidente dio un discurso en la televisión.",
+  "example_ru": "Президент выступил с речью по телевидению.",
+  "rank": 649,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "presidentes",
+   "presidenta",
+   "presidentas"
+  ]
+ },
+ {
+  "id": "ministro",
+  "es": "ministro",
+  "pos": "noun",
+  "ru": "министр",
+  "example_es": "La ministra de Sanidad visitó el hospital.",
+  "example_ru": "Министр здравоохранения посетила больницу.",
+  "rank": 1718,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "ministros",
+   "ministra",
+   "ministras"
+  ]
+ },
+ {
+  "id": "alcalde",
+  "es": "alcalde",
+  "pos": "noun",
+  "ru": "мэр",
+  "example_es": "El alcalde quiere construir un parque nuevo.",
+  "example_ru": "Мэр хочет построить новый парк.",
+  "rank": 1948,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "alcaldes",
+   "alcaldesa",
+   "alcaldesas"
+  ]
+ },
+ {
+  "id": "ayuntamiento",
+  "es": "ayuntamiento",
+  "pos": "noun",
+  "ru": "мэрия; городской совет",
+  "example_es": "Tengo que ir {es: al ayuntamiento | rio: a la municipalidad} para pedir un certificado.",
+  "example_ru": "Мне нужно сходить в мэрию за справкой.",
+  "rank": 6085,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "ayuntamientos"
+  ],
+  "variants": {
+   "rio": "la municipalidad"
+  }
+ },
+ {
+  "id": "ciudadano",
+  "es": "ciudadano",
+  "pos": "noun",
+  "ru": "гражданин; житель",
+  "example_es": "Todos los ciudadanos tienen derecho a votar.",
+  "example_ru": "Все граждане имеют право голосовать.",
+  "rank": 4820,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "ciudadanos",
+   "ciudadana",
+   "ciudadanas"
+  ]
+ },
+ {
+  "id": "población",
+  "es": "población",
+  "pos": "noun",
+  "ru": "население",
+  "example_es": "La población de la ciudad ha crecido mucho.",
+  "example_ru": "Население города сильно выросло.",
+  "rank": 4502,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "poblaciones"
+  ]
+ },
+ {
+  "id": "habitante",
+  "es": "habitante",
+  "pos": "noun",
+  "ru": "житель",
+  "example_es": "El pueblo tiene solo trescientos habitantes.",
+  "example_ru": "В деревне всего триста жителей.",
+  "rank": 36274,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "habitantes"
+  ]
+ },
+ {
+  "id": "votar",
+  "es": "votar",
+  "pos": "verb",
+  "ru": "голосовать, проголосовать",
+  "example_es": "¿A quién vas a votar en las próximas elecciones?",
+  "example_ru": "За кого ты будешь голосовать на следующих выборах?",
+  "rank": 4230
+ },
+ {
+  "id": "voto",
+  "es": "voto",
+  "pos": "noun",
+  "ru": "голос (на выборах)",
+  "example_es": "Cada voto es importante en una democracia.",
+  "example_ru": "В демократии важен каждый голос.",
+  "rank": 2848,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "votos"
+  ]
+ },
+ {
+  "id": "elección",
+  "es": "elección",
+  "pos": "noun",
+  "ru": "выборы; выбор",
+  "example_es": "Las elecciones serán el próximo domingo.",
+  "example_ru": "Выборы пройдут в следующее воскресенье.",
+  "rank": 1461,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "elecciones"
+  ]
+ },
+ {
+  "id": "ley",
+  "es": "ley",
+  "pos": "noun",
+  "ru": "закон",
+  "example_es": "La nueva ley prohíbe fumar en los parques.",
+  "example_ru": "Новый закон запрещает курить в парках.",
+  "rank": 857,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "leyes"
+  ]
+ },
+ {
+  "id": "derecho",
+  "es": "derecho",
+  "pos": "noun",
+  "ru": "право",
+  "example_es": "La educación es un derecho de todos los niños.",
+  "example_ru": "Образование — право каждого ребёнка.",
+  "rank": 668,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "derechos"
+  ]
+ },
+ {
+  "id": "libertad",
+  "es": "libertad",
+  "pos": "noun",
+  "ru": "свобода",
+  "example_es": "La libertad de expresión es muy importante.",
+  "example_ru": "Свобода слова очень важна.",
+  "rank": 969,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "libertades"
+  ]
+ },
+ {
+  "id": "justicia",
+  "es": "justicia",
+  "pos": "noun",
+  "ru": "справедливость; правосудие",
+  "example_es": "Las familias de las víctimas piden justicia.",
+  "example_ru": "Семьи пострадавших требуют справедливости.",
+  "rank": 1364,
+  "article": "la",
+  "gender": "f"
+ },
+ {
+  "id": "igualdad",
+  "es": "igualdad",
+  "pos": "noun",
+  "ru": "равенство",
+  "example_es": "Luchamos por la igualdad entre hombres y mujeres.",
+  "example_ru": "Мы боремся за равенство мужчин и женщин.",
+  "rank": 10736,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "igualdades"
+  ]
+ },
+ {
+  "id": "manifestación",
+  "es": "manifestación",
+  "pos": "noun",
+  "ru": "демонстрация, манифестация",
+  "example_es": "Miles de personas fueron a la manifestación.",
+  "example_ru": "Тысячи людей пришли на демонстрацию.",
+  "rank": 10980,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "manifestaciones"
+  ]
+ },
+ {
+  "id": "protesta",
+  "es": "protesta",
+  "pos": "noun",
+  "ru": "протест",
+  "example_es": "Hubo protestas contra la subida de precios.",
+  "example_ru": "Прошли протесты против роста цен.",
+  "rank": 7532,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "protestas"
+  ]
+ },
+ {
+  "id": "crisis",
+  "es": "crisis",
+  "pos": "noun",
+  "ru": "кризис",
+  "example_es": "Muchas familias lo pasaron mal durante la crisis.",
+  "example_ru": "Многим семьям было тяжело во время кризиса.",
+  "rank": 2695,
+  "article": "la",
+  "gender": "f"
+ },
+ {
+  "id": "pobreza",
+  "es": "pobreza",
+  "pos": "noun",
+  "ru": "бедность",
+  "example_es": "Muchos niños del mundo viven en la pobreza.",
+  "example_ru": "Многие дети в мире живут в бедности.",
+  "rank": 7196,
+  "article": "la",
+  "gender": "f"
+ },
+ {
+  "id": "riqueza",
+  "es": "riqueza",
+  "pos": "noun",
+  "ru": "богатство",
+  "example_es": "La riqueza del país está mal repartida.",
+  "example_ru": "Богатство страны распределено несправедливо.",
+  "rank": 6044,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "riquezas"
+  ]
+ },
+ {
+  "id": "violencia",
+  "es": "violencia",
+  "pos": "noun",
+  "ru": "насилие",
+  "example_es": "La violencia nunca es la solución.",
+  "example_ru": "Насилие никогда не решает проблем.",
+  "rank": 2276,
+  "article": "la",
+  "gender": "f"
+ },
+ {
+  "id": "seguridad",
+  "es": "seguridad",
+  "pos": "noun",
+  "ru": "безопасность",
+  "example_es": "La seguridad en el barrio ha mejorado mucho.",
+  "example_ru": "Безопасность в районе заметно улучшилась.",
+  "rank": 530,
+  "article": "la",
+  "gender": "f"
+ },
+ {
+  "id": "policía",
+  "es": "policía",
+  "pos": "noun",
+  "ru": "полиция; полицейский",
+  "example_es": "Llamamos a la policía cuando vimos el robo.",
+  "example_ru": "Мы вызвали полицию, когда увидели ограбление.",
+  "rank": 256,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "policías"
+  ]
+ },
+ {
+  "id": "robo",
+  "es": "robo",
+  "pos": "noun",
+  "ru": "кража; ограбление",
+  "example_es": "Ayer hubo un robo en la tienda de la esquina.",
+  "example_ru": "Вчера ограбили магазин на углу.",
+  "rank": 1644,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "robos"
+  ]
+ },
+ {
+  "id": "ladrón",
+  "es": "ladrón",
+  "pos": "noun",
+  "ru": "вор",
+  "example_es": "La policía detuvo al ladrón en la estación.",
+  "example_ru": "Полиция задержала вора на вокзале.",
+  "rank": 2022,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "ladrones",
+   "ladrona",
+   "ladronas"
+  ]
+ },
+ {
+  "id": "guerra",
+  "es": "guerra",
+  "pos": "noun",
+  "ru": "война",
+  "example_es": "Mis abuelos vivieron una guerra muy dura.",
+  "example_ru": "Мои бабушка и дедушка пережили очень тяжёлую войну.",
+  "rank": 422,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "guerras"
+  ]
+ },
+ {
+  "id": "paz",
+  "es": "paz",
+  "pos": "noun",
+  "ru": "мир (не война); покой",
+  "example_es": "Todos queremos vivir en paz.",
+  "example_ru": "Мы все хотим жить в мире.",
+  "rank": 563,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "paces"
+  ]
+ },
+ {
+  "id": "inmigrante",
+  "es": "inmigrante",
+  "pos": "noun",
+  "ru": "иммигрант",
+  "example_es": "Muchos inmigrantes trabajan en la agricultura.",
+  "example_ru": "Многие иммигранты работают в сельском хозяйстве.",
+  "rank": 18529,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "inmigrantes"
+  ]
+ },
+ {
+  "id": "voluntario",
+  "es": "voluntario",
+  "pos": "noun",
+  "ru": "волонтёр, доброволец",
+  "example_es": "Trabajo como voluntaria en un comedor social.",
+  "example_ru": "Я работаю волонтёром в бесплатной столовой.",
+  "rank": 6056,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "voluntarios",
+   "voluntaria",
+   "voluntarias"
+  ]
+ },
+ {
+  "id": "asociación",
+  "es": "asociación",
+  "pos": "noun",
+  "ru": "ассоциация; общество, объединение",
+  "example_es": "Formamos una asociación de vecinos el año pasado.",
+  "example_ru": "В прошлом году мы создали ассоциацию жителей.",
+  "rank": 5047,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "asociaciones"
+  ]
+ },
+ {
+  "id": "comunidad",
+  "es": "comunidad",
+  "pos": "noun",
+  "ru": "сообщество; община",
+  "example_es": "La comunidad latina de la ciudad es muy grande.",
+  "example_ru": "Латиноамериканская община города очень большая.",
+  "rank": 2307,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "comunidades"
+  ]
+ },
+ {
+  "id": "pensión",
+  "es": "pensión",
+  "pos": "noun",
+  "ru": "пенсия; пансион",
+  "example_es": "Mi abuela vive de su pensión.",
+  "example_ru": "Моя бабушка живёт на пенсию.",
+  "rank": 5286,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "pensiones"
+  ]
+ },
+ {
+  "id": "encuesta",
+  "es": "encuesta",
+  "pos": "noun",
+  "ru": "опрос",
+  "example_es": "Según la encuesta, la gente está preocupada por el paro.",
+  "example_ru": "Согласно опросу, людей беспокоит безработица.",
+  "rank": 14342,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "encuestas"
+  ]
+ },
+ {
+  "id": "mayoría",
+  "es": "mayoría",
+  "pos": "noun",
+  "ru": "большинство",
+  "example_es": "La mayoría de los jóvenes usa el móvil para informarse.",
+  "example_ru": "Большинство молодых людей узнаёт новости из телефона.",
+  "rank": 1002,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "mayorías"
+  ]
+ },
+ {
+  "id": "público",
+  "es": "público",
+  "pos": "adj",
+  "ru": "общественный; государственный",
+  "example_es": "Mis hijos van a un colegio público.",
+  "example_ru": "Мои дети ходят в государственную школу.",
+  "rank": 1090,
+  "forms": [
+   "pública",
+   "públicos",
+   "públicas"
+  ]
+ },
+ {
+  "id": "social",
+  "es": "social",
+  "pos": "adj",
+  "ru": "социальный; общественный",
+  "example_es": "El paro es un problema social muy serio.",
+  "example_ru": "Безработица — очень серьёзная социальная проблема.",
+  "rank": 2306,
+  "forms": [
+   "sociales"
+  ]
+ },
+ {
+  "id": "internacional",
+  "es": "internacional",
+  "pos": "adj",
+  "ru": "международный",
+  "example_es": "La noticia salió en la prensa internacional.",
+  "example_ru": "Новость появилась в международной прессе.",
+  "rank": 3684,
+  "forms": [
+   "internacionales"
+  ]
+ },
+ {
+  "id": "informar",
+  "es": "informar",
+  "pos": "verb",
+  "ru": "сообщать, сообщить; информировать",
+  "example_es": "El periódico informa de todo lo que pasa en la ciudad.",
+  "example_ru": "Газета сообщает обо всём, что происходит в городе.",
+  "rank": 4914
+ },
+ {
+  "id": "suceso",
+  "es": "suceso",
+  "pos": "noun",
+  "ru": "происшествие; событие",
+  "example_es": "En la sección de sucesos hablan del incendio.",
+  "example_ru": "В разделе происшествий пишут о пожаре.",
+  "rank": 14878,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "sucesos"
+  ]
+ },
+ {
+  "id": "actual",
+  "es": "actual",
+  "pos": "adj",
+  "ru": "нынешний, современный",
+  "example_es": "El gobierno actual no tiene mayoría.",
+  "example_ru": "У нынешнего правительства нет большинства.",
+  "rank": 3431,
+  "forms": [
+   "actuales"
+  ]
+ },
+ {
+  "id": "víctima",
+  "es": "víctima",
+  "pos": "noun",
+  "ru": "жертва, пострадавший",
+  "example_es": "Una de las víctimas del accidente era una niña.",
+  "example_ru": "Одной из жертв аварии была девочка.",
+  "rank": 1041,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "víctimas"
+  ]
+ },
+ {
+  "id": "crimen",
+  "es": "crimen",
+  "pos": "noun",
+  "ru": "преступление",
+  "example_es": "La policía todavía investiga el crimen.",
+  "example_ru": "Полиция всё ещё расследует преступление.",
+  "rank": 996,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "crímenes"
+  ]
+ },
+ {
+  "id": "nacional",
+  "es": "nacional",
+  "pos": "adj",
+  "ru": "национальный; государственный",
+  "example_es": "La noticia abrió el telediario nacional.",
+  "example_ru": "Этой новостью открылся общенациональный выпуск новостей.",
+  "rank": 1689,
+  "forms": [
+   "nacionales"
+  ]
+ },
+ {
+  "id": "generación",
+  "es": "generación",
+  "pos": "noun",
+  "ru": "поколение",
+  "example_es": "La nueva generación se informa por internet.",
+  "example_ru": "Новое поколение узнаёт новости из интернета.",
+  "rank": 3619,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "generaciones"
+  ]
+ }
+]

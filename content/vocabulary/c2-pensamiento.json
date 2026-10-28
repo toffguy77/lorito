@@ -1,0 +1,660 @@
+[
+ {
+  "id": "ontología",
+  "es": "ontología",
+  "pos": "noun",
+  "ru": "онтология",
+  "example_es": "La ontología estudia el ser en cuanto tal.",
+  "example_ru": "Онтология изучает бытие как таковое.",
+  "rank": 49999,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "ontologías"
+  ]
+ },
+ {
+  "id": "epistemología",
+  "es": "epistemología",
+  "pos": "noun",
+  "ru": "эпистемология, теория познания",
+  "example_es": "La epistemología se pregunta cómo justificamos lo que sabemos.",
+  "example_ru": "Эпистемология задаётся вопросом, как мы обосновываем своё знание.",
+  "rank": 49999,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "epistemologías"
+  ]
+ },
+ {
+  "id": "metafísica",
+  "es": "metafísica",
+  "pos": "noun",
+  "ru": "метафизика",
+  "example_es": "La crítica moderna quiso poner límites a la metafísica.",
+  "example_ru": "Философия Нового времени стремилась ограничить притязания метафизики.",
+  "rank": 47190,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "metafísicas"
+  ]
+ },
+ {
+  "id": "dialéctica",
+  "es": "dialéctica",
+  "pos": "noun",
+  "ru": "диалектика",
+  "example_es": "La dialéctica hegeliana avanza a través de contradicciones.",
+  "example_ru": "Гегелевская диалектика развивается через противоречия.",
+  "rank": 49999,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "dialécticas"
+  ]
+ },
+ {
+  "id": "silogismo",
+  "es": "silogismo",
+  "pos": "noun",
+  "ru": "силлогизм",
+  "example_es": "Todo silogismo consta de dos premisas y una conclusión.",
+  "example_ru": "Любой силлогизм состоит из двух посылок и вывода.",
+  "rank": 49999,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "silogismos"
+  ]
+ },
+ {
+  "id": "falacia",
+  "es": "falacia",
+  "pos": "noun",
+  "ru": "ложный довод, логическая ошибка",
+  "example_es": "Su argumento descansa sobre una falacia evidente.",
+  "example_ru": "Его аргумент строится на очевидной логической ошибке.",
+  "rank": 49999,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "falacias"
+  ]
+ },
+ {
+  "id": "a-priori",
+  "es": "a priori",
+  "pos": "phrase",
+  "ru": "априори, заранее",
+  "example_es": "No podemos descartar esa hipótesis a priori.",
+  "example_ru": "Мы не можем априори отвергать эту гипотезу.",
+  "rank": 4
+ },
+ {
+  "id": "a-posteriori",
+  "es": "a posteriori",
+  "pos": "phrase",
+  "ru": "апостериори, задним числом",
+  "example_es": "Es fácil justificar las decisiones a posteriori.",
+  "example_ru": "Задним числом решения оправдывать легко.",
+  "rank": 4
+ },
+ {
+  "id": "escepticismo",
+  "es": "escepticismo",
+  "pos": "noun",
+  "ru": "скептицизм",
+  "example_es": "Recibieron la propuesta con cierto escepticismo.",
+  "example_ru": "Предложение встретили с некоторым скептицизмом.",
+  "rank": 32572,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "escepticismos"
+  ]
+ },
+ {
+  "id": "trascendencia",
+  "es": "trascendencia",
+  "pos": "noun",
+  "ru": "трансцендентность; значимость",
+  "example_es": "Nadie advirtió entonces la trascendencia de aquel descubrimiento.",
+  "example_ru": "Тогда никто не осознал значимости этого открытия.",
+  "rank": 48917,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "trascendencias"
+  ]
+ },
+ {
+  "id": "trascendental",
+  "es": "trascendental",
+  "pos": "adj",
+  "ru": "трансцендентальный; важнейший",
+  "example_es": "Fue una decisión trascendental para el futuro del país.",
+  "example_ru": "Это было важнейшее решение для будущего страны.",
+  "rank": 32440,
+  "forms": [
+   "trascendentales"
+  ]
+ },
+ {
+  "id": "ente",
+  "es": "ente",
+  "pos": "noun",
+  "ru": "сущее, сущность; организация",
+  "example_es": "Según aquella doctrina, todo ente tiene una causa.",
+  "example_ru": "Согласно этому учению, у всякого сущего есть причина.",
+  "rank": 25717,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "entes"
+  ]
+ },
+ {
+  "id": "dogma",
+  "es": "dogma",
+  "pos": "noun",
+  "ru": "догма, догмат",
+  "example_es": "Cuestionó los dogmas de su época sin miedo.",
+  "example_ru": "Он бесстрашно ставил под вопрос догмы своей эпохи.",
+  "rank": 40353,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "dogmas"
+  ]
+ },
+ {
+  "id": "contingente",
+  "es": "contingente",
+  "pos": "adj",
+  "ru": "случайный, не необходимый (филос.)",
+  "example_es": "La existencia del mundo es contingente, no necesaria.",
+  "example_ru": "Существование мира случайно, а не необходимо.",
+  "rank": 37815,
+  "forms": [
+   "contingentes"
+  ]
+ },
+ {
+  "id": "contingencia",
+  "es": "contingencia",
+  "pos": "noun",
+  "ru": "случайность; непредвиденное обстоятельство",
+  "example_es": "Debemos estar preparados para cualquier contingencia.",
+  "example_ru": "Нужно быть готовыми к любой случайности.",
+  "rank": 29816,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "contingencias"
+  ]
+ },
+ {
+  "id": "especular",
+  "es": "especular",
+  "pos": "verb",
+  "ru": "размышлять; строить догадки; спекулировать",
+  "example_es": "Los filósofos antiguos especulaban sobre el origen del cosmos.",
+  "example_ru": "Древние философы размышляли о происхождении космоса.",
+  "rank": 22855
+ },
+ {
+  "id": "conjetura",
+  "es": "conjetura",
+  "pos": "noun",
+  "ru": "догадка, предположение",
+  "example_es": "Por ahora, todo esto no son más que conjeturas.",
+  "example_ru": "Пока что всё это лишь догадки.",
+  "rank": 17226,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "conjeturas"
+  ]
+ },
+ {
+  "id": "intelecto",
+  "es": "intelecto",
+  "pos": "noun",
+  "ru": "интеллект, разум",
+  "example_es": "Admiraban su intelecto, pero temían su carácter.",
+  "example_ru": "Его интеллектом восхищались, но характера побаивались.",
+  "rank": 18349,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "intelectos"
+  ]
+ },
+ {
+  "id": "entendimiento",
+  "es": "entendimiento",
+  "pos": "noun",
+  "ru": "разумение, рассудок; взаимопонимание",
+  "example_es": "Hay verdades que superan el entendimiento humano.",
+  "example_ru": "Есть истины, превосходящие человеческое разумение.",
+  "rank": 11969,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "entendimientos"
+  ]
+ },
+ {
+  "id": "moralidad",
+  "es": "moralidad",
+  "pos": "noun",
+  "ru": "нравственность, мораль",
+  "example_es": "Cuestionó la moralidad de aquella decisión.",
+  "example_ru": "Он поставил под сомнение нравственность того решения.",
+  "rank": 14457,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "moralidades"
+  ]
+ },
+ {
+  "id": "cinismo",
+  "es": "cinismo",
+  "pos": "noun",
+  "ru": "цинизм",
+  "example_es": "Respondió con un cinismo que nos dejó helados.",
+  "example_ru": "Он ответил с цинизмом, от которого нам стало не по себе.",
+  "rank": 28319,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "cinismos"
+  ]
+ },
+ {
+  "id": "escéptico",
+  "es": "escéptico",
+  "pos": "adj",
+  "ru": "скептический; скептик",
+  "example_es": "Sigo escéptico respecto a esa teoría.",
+  "example_ru": "Я по-прежнему скептически отношусь к этой теории.",
+  "rank": 20577,
+  "forms": [
+   "escéptica",
+   "escépticos",
+   "escépticas"
+  ]
+ },
+ {
+  "id": "idealismo",
+  "es": "idealismo",
+  "pos": "noun",
+  "ru": "идеализм",
+  "example_es": "El idealismo alemán marcó todo el siglo XIX.",
+  "example_ru": "Немецкий идеализм определил весь XIX век.",
+  "rank": 37535,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "idealismos"
+  ]
+ },
+ {
+  "id": "idealista",
+  "es": "idealista",
+  "pos": "adj",
+  "ru": "идеалистический; идеалист",
+  "example_es": "Era un joven idealista que quería cambiar el mundo.",
+  "example_ru": "Он был юным идеалистом, мечтавшим изменить мир.",
+  "rank": 21604,
+  "forms": [
+   "idealistas"
+  ]
+ },
+ {
+  "id": "materialista",
+  "es": "materialista",
+  "pos": "adj",
+  "ru": "материалистический; меркантильный",
+  "example_es": "Tiene una visión materialista de la historia.",
+  "example_ru": "У него материалистический взгляд на историю.",
+  "rank": 40369,
+  "forms": [
+   "materialistas"
+  ]
+ },
+ {
+  "id": "deducción",
+  "es": "deducción",
+  "pos": "noun",
+  "ru": "дедукция, вывод",
+  "example_es": "Llegó a la solución por pura deducción.",
+  "example_ru": "Он пришёл к решению путём чистой дедукции.",
+  "rank": 22412,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "deducciones"
+  ]
+ },
+ {
+  "id": "inducción",
+  "es": "inducción",
+  "pos": "noun",
+  "ru": "индукция",
+  "example_es": "La inducción parte de casos particulares para llegar a leyes generales.",
+  "example_ru": "Индукция идёт от частных случаев к общим законам.",
+  "rank": 37455,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "inducciones"
+  ]
+ },
+ {
+  "id": "razonamiento",
+  "es": "razonamiento",
+  "pos": "noun",
+  "ru": "рассуждение, ход мысли",
+  "example_es": "Tu razonamiento tiene un fallo en la segunda premisa.",
+  "example_ru": "В твоём рассуждении ошибка во второй посылке.",
+  "rank": 16848,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "razonamientos"
+  ]
+ },
+ {
+  "id": "utopía",
+  "es": "utopía",
+  "pos": "noun",
+  "ru": "утопия",
+  "example_es": "Una sociedad sin ningún conflicto es pura utopía.",
+  "example_ru": "Общество совсем без конфликтов — чистая утопия.",
+  "rank": 26677,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "utopías"
+  ]
+ },
+ {
+  "id": "teología",
+  "es": "teología",
+  "pos": "noun",
+  "ru": "богословие, теология",
+  "example_es": "Estudió teología antes de dedicarse a la filosofía.",
+  "example_ru": "Прежде чем заняться философией, он изучал богословие.",
+  "rank": 29682,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "teologías"
+  ]
+ },
+ {
+  "id": "divinidad",
+  "es": "divinidad",
+  "pos": "noun",
+  "ru": "божество; божественность",
+  "example_es": "En muchas culturas el sol era una divinidad.",
+  "example_ru": "Во многих культурах солнце было божеством.",
+  "rank": 25455,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "divinidades"
+  ]
+ },
+ {
+  "id": "misticismo",
+  "es": "misticismo",
+  "pos": "noun",
+  "ru": "мистицизм, мистика",
+  "example_es": "El misticismo español alcanzó su cumbre en el siglo XVI.",
+  "example_ru": "Испанская мистика достигла расцвета в XVI веке.",
+  "rank": 48526,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "misticismos"
+  ]
+ },
+ {
+  "id": "místico",
+  "es": "místico",
+  "pos": "adj",
+  "ru": "мистический; мистик",
+  "example_es": "Vivió una experiencia casi mística en el desierto.",
+  "example_ru": "В пустыне он пережил почти мистический опыт.",
+  "rank": 19792,
+  "forms": [
+   "mística",
+   "místicos",
+   "místicas"
+  ]
+ },
+ {
+  "id": "estoico",
+  "es": "estoico",
+  "pos": "adj",
+  "ru": "стоический; стоик",
+  "example_es": "Aguantó el dolor con una calma estoica.",
+  "example_ru": "Он переносил боль со стоическим спокойствием.",
+  "rank": 48787,
+  "forms": [
+   "estoica",
+   "estoicos",
+   "estoicas"
+  ]
+ },
+ {
+  "id": "existencial",
+  "es": "existencial",
+  "pos": "adj",
+  "ru": "экзистенциальный",
+  "example_es": "Atraviesa una crisis existencial a los cuarenta.",
+  "example_ru": "В сорок лет он переживает экзистенциальный кризис.",
+  "rank": 34376,
+  "forms": [
+   "existenciales"
+  ]
+ },
+ {
+  "id": "simbolismo",
+  "es": "simbolismo",
+  "pos": "noun",
+  "ru": "символизм, символика",
+  "example_es": "El simbolismo del agua recorre toda la novela.",
+  "example_ru": "Символика воды проходит через весь роман.",
+  "rank": 36421,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "simbolismos"
+  ]
+ },
+ {
+  "id": "sinsentido",
+  "es": "sinsentido",
+  "pos": "noun",
+  "ru": "бессмыслица, абсурд",
+  "example_es": "Para él, la guerra era un sinsentido absoluto.",
+  "example_ru": "Для него война была полной бессмыслицей.",
+  "rank": 29071,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "sinsentidos"
+  ]
+ },
+ {
+  "id": "contemplación",
+  "es": "contemplación",
+  "pos": "noun",
+  "ru": "созерцание",
+  "example_es": "Los monjes dedicaban horas a la contemplación.",
+  "example_ru": "Монахи часами предавались созерцанию.",
+  "rank": 47297,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "contemplaciones"
+  ]
+ },
+ {
+  "id": "meditar",
+  "es": "meditar",
+  "pos": "verb",
+  "ru": "размышлять; медитировать",
+  "example_es": "Meditó largamente antes de responder.",
+  "example_ru": "Он долго размышлял, прежде чем ответить.",
+  "rank": 20523
+ },
+ {
+  "id": "concebir",
+  "es": "concebir",
+  "pos": "verb",
+  "ru": "постигать, представлять себе; задумывать",
+  "example_es": "No concibo un mundo sin libros.",
+  "example_ru": "Я не представляю себе мира без книг.",
+  "rank": 18957,
+  "forms": [
+   "concibo",
+   "concibe",
+   "concibió",
+   "conciba"
+  ]
+ },
+ {
+  "id": "razonar",
+  "es": "razonar",
+  "pos": "verb",
+  "ru": "рассуждать, мыслить логически",
+  "example_es": "Es inútil razonar con alguien tan obstinado.",
+  "example_ru": "Бесполезно рассуждать с таким упрямцем.",
+  "rank": 14397
+ },
+ {
+  "id": "argumentar",
+  "es": "argumentar",
+  "pos": "verb",
+  "ru": "аргументировать, доказывать",
+  "example_es": "Argumentó que la libertad precede a la moral.",
+  "example_ru": "Он доказывал, что свобода первичнее морали.",
+  "rank": 23670
+ },
+ {
+  "id": "intuición",
+  "es": "intuición",
+  "pos": "noun",
+  "ru": "интуиция, чутьё",
+  "example_es": "Confió en su intuición y no se equivocó.",
+  "example_ru": "Он доверился чутью и не ошибся.",
+  "rank": 10199,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "intuiciones"
+  ]
+ },
+ {
+  "id": "cosmos",
+  "es": "cosmos",
+  "pos": "noun",
+  "ru": "космос, мироздание",
+  "example_es": "Los antiguos veían el cosmos como un todo ordenado.",
+  "example_ru": "Древние видели мироздание упорядоченным целым.",
+  "rank": 11218,
+  "article": "el",
+  "gender": "m"
+ },
+ {
+  "id": "pensador",
+  "es": "pensador",
+  "pos": "noun",
+  "ru": "мыслитель",
+  "example_es": "Fue uno de los grandes pensadores del siglo XX.",
+  "example_ru": "Он был одним из великих мыслителей XX века.",
+  "rank": 30009,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "pensadora",
+   "pensadores",
+   "pensadoras"
+  ]
+ },
+ {
+  "id": "fanatismo",
+  "es": "fanatismo",
+  "pos": "noun",
+  "ru": "фанатизм",
+  "example_es": "El fanatismo es enemigo de todo diálogo.",
+  "example_ru": "Фанатизм — враг любого диалога.",
+  "rank": 42183,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "fanatismos"
+  ]
+ },
+ {
+  "id": "irracional",
+  "es": "irracional",
+  "pos": "adj",
+  "ru": "иррациональный, неразумный",
+  "example_es": "Sentía un miedo irracional a la oscuridad.",
+  "example_ru": "Он испытывал иррациональный страх темноты.",
+  "rank": 13705,
+  "forms": [
+   "irracionales"
+  ]
+ },
+ {
+  "id": "abstracto",
+  "es": "abstracto",
+  "pos": "adj",
+  "ru": "абстрактный, отвлечённый",
+  "example_es": "Es un concepto demasiado abstracto para los niños.",
+  "example_ru": "Это слишком отвлечённое понятие для детей.",
+  "rank": 25583,
+  "forms": [
+   "abstracta",
+   "abstractos",
+   "abstractas"
+  ]
+ },
+ {
+  "id": "ateo",
+  "es": "ateo",
+  "pos": "adj",
+  "ru": "атеистический; атеист",
+  "example_es": "Se crió en una familia atea.",
+  "example_ru": "Он вырос в семье атеистов.",
+  "rank": 22834,
+  "forms": [
+   "atea",
+   "ateos",
+   "ateas"
+  ]
+ },
+ {
+  "id": "cínico",
+  "es": "cínico",
+  "pos": "adj",
+  "ru": "циничный; циник",
+  "example_es": "No seas cínico: todavía hay gente honrada.",
+  "example_ru": "Не будь циником: честные люди ещё есть.",
+  "rank": 14791,
+  "forms": [
+   "cínica",
+   "cínicos",
+   "cínicas"
+  ]
+ }
+]

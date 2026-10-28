@@ -1,0 +1,692 @@
+[
+ {
+  "id": "acervo",
+  "es": "acervo",
+  "pos": "noun",
+  "ru": "достояние, фонд (культурный)",
+  "example_es": "El museo conserva un rico acervo de manuscritos medievales.",
+  "example_ru": "Музей хранит богатое собрание средневековых рукописей.",
+  "rank": 49999,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "acervos"
+  ]
+ },
+ {
+  "id": "ápice",
+  "es": "ápice",
+  "pos": "noun",
+  "ru": "вершина; ничтожная доля («ni un ápice» — ни на йоту)",
+  "example_es": "No cedió ni un ápice en sus exigencias.",
+  "example_ru": "Он ни на йоту не уступил в своих требованиях.",
+  "rank": 35398,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "ápices"
+  ]
+ },
+ {
+  "id": "baluarte",
+  "es": "baluarte",
+  "pos": "noun",
+  "ru": "оплот, бастион",
+  "example_es": "La ciudad fue el último baluarte de la resistencia.",
+  "example_ru": "Город стал последним оплотом сопротивления.",
+  "rank": 49999,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "baluartes"
+  ]
+ },
+ {
+  "id": "dádiva",
+  "es": "dádiva",
+  "pos": "noun",
+  "ru": "дар, подношение",
+  "example_es": "El funcionario aceptó dádivas de varias empresas.",
+  "example_ru": "Чиновник принимал подношения от нескольких компаний.",
+  "rank": 49999,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "dádivas"
+  ]
+ },
+ {
+  "id": "loa",
+  "es": "loa",
+  "pos": "noun",
+  "ru": "хвала, похвала",
+  "example_es": "El libro es una loa a la vida sencilla del campo.",
+  "example_ru": "Книга — это хвалебная песнь простой деревенской жизни.",
+  "rank": 49118,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "loas"
+  ]
+ },
+ {
+  "id": "óbice",
+  "es": "óbice",
+  "pos": "noun",
+  "ru": "препятствие («no es óbice para» — не мешает)",
+  "example_es": "Su edad no fue óbice para terminar la carrera.",
+  "example_ru": "Возраст не помешал ему окончить университет.",
+  "rank": 49999,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "óbices"
+  ]
+ },
+ {
+  "id": "ignominia",
+  "es": "ignominia",
+  "pos": "noun",
+  "ru": "позор, бесчестье",
+  "example_es": "Vivió la derrota como una ignominia.",
+  "example_ru": "Он воспринял поражение как позор.",
+  "rank": 49999,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "ignominias"
+  ]
+ },
+ {
+  "id": "exiguo",
+  "es": "exiguo",
+  "pos": "adj",
+  "ru": "скудный, ничтожный",
+  "example_es": "Con un presupuesto tan exiguo no podemos contratar a nadie.",
+  "example_ru": "С таким скудным бюджетом мы никого не можем нанять.",
+  "rank": 49999,
+  "forms": [
+   "exigua",
+   "exiguos",
+   "exiguas"
+  ]
+ },
+ {
+  "id": "fausto",
+  "es": "fausto",
+  "pos": "adj",
+  "ru": "счастливый, благоприятный (о событии)",
+  "example_es": "Celebramos tan fausto acontecimiento con una cena.",
+  "example_ru": "Мы отметили это радостное событие ужином.",
+  "rank": 20514,
+  "forms": [
+   "fausta",
+   "faustos",
+   "faustas"
+  ]
+ },
+ {
+  "id": "inexorable",
+  "es": "inexorable",
+  "pos": "adj",
+  "ru": "неумолимый, неотвратимый",
+  "example_es": "El paso inexorable del tiempo se nota en su rostro.",
+  "example_ru": "Неумолимый бег времени заметен на его лице.",
+  "rank": 49999,
+  "forms": [
+   "inexorables"
+  ]
+ },
+ {
+  "id": "nefasto",
+  "es": "nefasto",
+  "pos": "adj",
+  "ru": "пагубный, злосчастный",
+  "example_es": "Aquella política tuvo efectos nefastos para la economía.",
+  "example_ru": "Эта политика имела пагубные последствия для экономики.",
+  "rank": 34420,
+  "forms": [
+   "nefasta",
+   "nefastos",
+   "nefastas"
+  ]
+ },
+ {
+  "id": "pusilánime",
+  "es": "pusilánime",
+  "pos": "adj",
+  "ru": "малодушный",
+  "example_es": "Fue una respuesta pusilánime ante un problema grave.",
+  "example_ru": "Это был малодушный ответ на серьёзную проблему.",
+  "rank": 49999,
+  "forms": [
+   "pusilánimes"
+  ]
+ },
+ {
+  "id": "magnánimo",
+  "es": "magnánimo",
+  "pos": "adj",
+  "ru": "великодушный",
+  "example_es": "El vencedor se mostró magnánimo con los vencidos.",
+  "example_ru": "Победитель проявил великодушие к побеждённым.",
+  "rank": 46930,
+  "forms": [
+   "magnánima",
+   "magnánimos",
+   "magnánimas"
+  ]
+ },
+ {
+  "id": "infamia",
+  "es": "infamia",
+  "pos": "noun",
+  "ru": "бесчестье; гнусность",
+  "example_es": "Aquella traición cubrió de infamia a toda la familia.",
+  "example_ru": "Это предательство покрыло позором всю семью.",
+  "rank": 28703,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "infamias"
+  ]
+ },
+ {
+  "id": "deshonra",
+  "es": "deshonra",
+  "pos": "noun",
+  "ru": "бесчестье, позор",
+  "example_es": "Para el viejo militar, rendirse era una deshonra.",
+  "example_ru": "Для старого военного сдаться было бесчестьем.",
+  "rank": 16968,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "deshonras"
+  ]
+ },
+ {
+  "id": "erudito",
+  "es": "erudito",
+  "pos": "noun",
+  "ru": "эрудит, учёный муж",
+  "example_es": "Los eruditos aún discuten la fecha del manuscrito.",
+  "example_ru": "Учёные до сих пор спорят о датировке рукописи.",
+  "rank": 18332,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "erudita",
+   "eruditos",
+   "eruditas"
+  ]
+ },
+ {
+  "id": "letrado",
+  "es": "letrado",
+  "pos": "noun",
+  "ru": "юрист, адвокат; образованный человек",
+  "example_es": "El letrado presentó sus conclusiones ante la sala.",
+  "example_ru": "Адвокат изложил свои выводы перед судом.",
+  "rank": 36471,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "letrada",
+   "letrados",
+   "letradas"
+  ]
+ },
+ {
+  "id": "génesis",
+  "es": "génesis",
+  "pos": "noun",
+  "ru": "возникновение, генезис",
+  "example_es": "El libro explica la génesis del conflicto.",
+  "example_ru": "Книга объясняет истоки конфликта.",
+  "rank": 18460,
+  "article": "la",
+  "gender": "f"
+ },
+ {
+  "id": "decoro",
+  "es": "decoro",
+  "pos": "noun",
+  "ru": "приличие, благопристойность",
+  "example_es": "Exigió que se comportaran con decoro en la ceremonia.",
+  "example_ru": "Он потребовал вести себя на церемонии подобающе.",
+  "rank": 27466,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "decoros"
+  ]
+ },
+ {
+  "id": "rectitud",
+  "es": "rectitud",
+  "pos": "noun",
+  "ru": "прямота, честность",
+  "example_es": "Todos reconocían la rectitud de su conducta.",
+  "example_ru": "Все признавали безупречность его поведения.",
+  "rank": 28476,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "rectitudes"
+  ]
+ },
+ {
+  "id": "ardid",
+  "es": "ardid",
+  "pos": "noun",
+  "ru": "уловка, хитрость",
+  "example_es": "Se valió de un ardid para entrar en el palacio.",
+  "example_ru": "Он прибегнул к уловке, чтобы проникнуть во дворец.",
+  "rank": 31813,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "ardides"
+  ]
+ },
+ {
+  "id": "estratagema",
+  "es": "estratagema",
+  "pos": "noun",
+  "ru": "хитрость, военная уловка",
+  "example_es": "La estratagema del general sorprendió al enemigo.",
+  "example_ru": "Уловка генерала застала противника врасплох.",
+  "rank": 34674,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "estratagemas"
+  ]
+ },
+ {
+  "id": "artimaña",
+  "es": "artimaña",
+  "pos": "noun",
+  "ru": "ухищрение, хитрая проделка",
+  "example_es": "Recurrió a todo tipo de artimañas para no pagar.",
+  "example_ru": "Он пускался на всякие ухищрения, лишь бы не платить.",
+  "rank": 35925,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "artimañas"
+  ]
+ },
+ {
+  "id": "secuaz",
+  "es": "secuaz",
+  "pos": "noun",
+  "ru": "приспешник",
+  "example_es": "El cabecilla y sus secuaces fueron detenidos.",
+  "example_ru": "Главаря и его приспешников задержали.",
+  "rank": 34845,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "secuaces"
+  ]
+ },
+ {
+  "id": "cúspide",
+  "es": "cúspide",
+  "pos": "noun",
+  "ru": "вершина, пик",
+  "example_es": "Llegó a la cúspide de su carrera a los cuarenta años.",
+  "example_ru": "Он достиг вершины карьеры в сорок лет.",
+  "rank": 34897,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "cúspides"
+  ]
+ },
+ {
+  "id": "perspicacia",
+  "es": "perspicacia",
+  "pos": "noun",
+  "ru": "проницательность",
+  "example_es": "Resolvió el caso gracias a su perspicacia.",
+  "example_ru": "Он раскрыл дело благодаря своей проницательности.",
+  "rank": 35523,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "perspicacias"
+  ]
+ },
+ {
+  "id": "mecenas",
+  "es": "mecenas",
+  "pos": "noun",
+  "ru": "меценат",
+  "example_es": "Un rico mecenas financió la restauración de la iglesia.",
+  "example_ru": "Богатый меценат оплатил реставрацию церкви.",
+  "rank": 35723,
+  "article": "el",
+  "gender": "mf"
+ },
+ {
+  "id": "paladín",
+  "es": "paladín",
+  "pos": "noun",
+  "ru": "поборник, рыцарь (идеи)",
+  "example_es": "Se presentaba como paladín de los derechos humanos.",
+  "example_ru": "Он выставлял себя поборником прав человека.",
+  "rank": 42124,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "paladines"
+  ]
+ },
+ {
+  "id": "cábala",
+  "es": "cábala",
+  "pos": "noun",
+  "ru": "каббала; догадки, расчёты (мн.)",
+  "example_es": "Los periodistas hacen cábalas sobre el nuevo Gobierno.",
+  "example_ru": "Журналисты строят догадки о новом правительстве.",
+  "rank": 43458,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "cábalas"
+  ]
+ },
+ {
+  "id": "bajeza",
+  "es": "bajeza",
+  "pos": "noun",
+  "ru": "низость, подлость",
+  "example_es": "Nunca imaginé que fuera capaz de semejante bajeza.",
+  "example_ru": "Я никогда не думал, что он способен на такую низость.",
+  "rank": 47317,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "bajezas"
+  ]
+ },
+ {
+  "id": "precursor",
+  "es": "precursor",
+  "pos": "noun",
+  "ru": "предтеча, предшественник",
+  "example_es": "Fue un precursor del cine de animación.",
+  "example_ru": "Он был одним из предтеч анимационного кино.",
+  "rank": 46982,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "precursora",
+   "precursores",
+   "precursoras"
+  ]
+ },
+ {
+  "id": "benevolencia",
+  "es": "benevolencia",
+  "pos": "noun",
+  "ru": "благосклонность, доброжелательность",
+  "example_es": "El tribunal mostró cierta benevolencia con el acusado.",
+  "example_ru": "Суд проявил к обвиняемому некоторую снисходительность.",
+  "rank": 33797,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "benevolencias"
+  ]
+ },
+ {
+  "id": "lucidez",
+  "es": "lucidez",
+  "pos": "noun",
+  "ru": "ясность ума, трезвость мысли",
+  "example_es": "A sus noventa años conserva una lucidez asombrosa.",
+  "example_ru": "В свои девяносто он сохраняет удивительную ясность ума.",
+  "rank": 34649,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "lucideces"
+  ]
+ },
+ {
+  "id": "indulgencia",
+  "es": "indulgencia",
+  "pos": "noun",
+  "ru": "снисходительность; индульгенция",
+  "example_es": "Juzgaba los errores ajenos con indulgencia.",
+  "example_ru": "Он судил о чужих ошибках снисходительно.",
+  "rank": 25382,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "indulgencias"
+  ]
+ },
+ {
+  "id": "clemencia",
+  "es": "clemencia",
+  "pos": "noun",
+  "ru": "милосердие, помилование",
+  "example_es": "El condenado pidió clemencia al rey.",
+  "example_ru": "Осуждённый просил короля о милосердии.",
+  "rank": 14632,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "clemencias"
+  ]
+ },
+ {
+  "id": "cordura",
+  "es": "cordura",
+  "pos": "noun",
+  "ru": "здравомыслие, благоразумие",
+  "example_es": "En medio del caos, ella fue la voz de la cordura.",
+  "example_ru": "Посреди хаоса она была голосом разума.",
+  "rank": 14566,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "corduras"
+  ]
+ },
+ {
+  "id": "arrojo",
+  "es": "arrojo",
+  "pos": "noun",
+  "ru": "отвага, удаль",
+  "example_es": "Defendió su postura con arrojo frente a todos.",
+  "example_ru": "Он отважно отстаивал свою позицию перед всеми.",
+  "rank": 31856,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "arrojos"
+  ]
+ },
+ {
+  "id": "deslealtad",
+  "es": "deslealtad",
+  "pos": "noun",
+  "ru": "вероломство, нелояльность",
+  "example_es": "Interpretó su silencio como una deslealtad.",
+  "example_ru": "Он расценил её молчание как предательство.",
+  "rank": 43630,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "deslealtades"
+  ]
+ },
+ {
+  "id": "honradez",
+  "es": "honradez",
+  "pos": "noun",
+  "ru": "честность, порядочность",
+  "example_es": "Su honradez estaba fuera de toda duda.",
+  "example_ru": "Его честность была вне всяких сомнений.",
+  "rank": 28792,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "honradeces"
+  ]
+ },
+ {
+  "id": "esplendor",
+  "es": "esplendor",
+  "pos": "noun",
+  "ru": "блеск, великолепие; расцвет",
+  "example_es": "La ciudad vivió su máximo esplendor en el siglo XV.",
+  "example_ru": "Город переживал наивысший расцвет в XV веке.",
+  "rank": 16661,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "esplendores"
+  ]
+ },
+ {
+  "id": "decadencia",
+  "es": "decadencia",
+  "pos": "noun",
+  "ru": "упадок",
+  "example_es": "El imperio entró en una lenta decadencia.",
+  "example_ru": "Империя пришла в медленный упадок.",
+  "rank": 18859,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "decadencias"
+  ]
+ },
+ {
+  "id": "ferviente",
+  "es": "ferviente",
+  "pos": "adj",
+  "ru": "пылкий, ревностный",
+  "example_es": "Es un ferviente defensor de la escuela pública.",
+  "example_ru": "Он ревностный защитник государственной школы.",
+  "rank": 36280,
+  "forms": [
+   "fervientes"
+  ]
+ },
+ {
+  "id": "íntegro",
+  "es": "íntegro",
+  "pos": "adj",
+  "ru": "честный, неподкупный; целый",
+  "example_es": "Era un juez íntegro, imposible de sobornar.",
+  "example_ru": "Это был неподкупный судья, которого невозможно было подкупить.",
+  "rank": 36857,
+  "forms": [
+   "íntegra",
+   "íntegros",
+   "íntegras"
+  ]
+ },
+ {
+  "id": "indomable",
+  "es": "indomable",
+  "pos": "adj",
+  "ru": "неукротимый",
+  "example_es": "Tenía un espíritu indomable que nada podía quebrar.",
+  "example_ru": "У него был неукротимый дух, который ничто не могло сломить.",
+  "rank": 42777,
+  "forms": [
+   "indomables"
+  ]
+ },
+ {
+  "id": "propicio",
+  "es": "propicio",
+  "pos": "adj",
+  "ru": "благоприятный, подходящий",
+  "example_es": "No es el momento propicio para pedir un aumento.",
+  "example_ru": "Сейчас неподходящий момент, чтобы просить прибавку.",
+  "rank": 35444,
+  "forms": [
+   "propicia",
+   "propicios",
+   "propicias"
+  ]
+ },
+ {
+  "id": "bienaventurado",
+  "es": "bienaventurado",
+  "pos": "adj",
+  "ru": "блаженный, благословенный",
+  "example_es": "Bienaventurados los que tienen hambre de justicia.",
+  "example_ru": "Блаженны алчущие правды.",
+  "rank": 49999,
+  "forms": [
+   "bienaventurada",
+   "bienaventurados",
+   "bienaventuradas"
+  ]
+ },
+ {
+  "id": "impetuoso",
+  "es": "impetuoso",
+  "pos": "adj",
+  "ru": "порывистый, стремительный",
+  "example_es": "Era un joven impetuoso que actuaba sin pensar.",
+  "example_ru": "Он был порывистым юношей, который действовал не думая.",
+  "rank": 32692,
+  "forms": [
+   "impetuosa",
+   "impetuosos",
+   "impetuosas"
+  ]
+ },
+ {
+  "id": "ileso",
+  "es": "ileso",
+  "pos": "adj",
+  "ru": "невредимый",
+  "example_es": "El conductor salió ileso del accidente.",
+  "example_ru": "Водитель не пострадал в аварии.",
+  "rank": 25906,
+  "forms": [
+   "ilesa",
+   "ilesos",
+   "ilesas"
+  ]
+ },
+ {
+  "id": "inquebrantable",
+  "es": "inquebrantable",
+  "pos": "adj",
+  "ru": "непоколебимый",
+  "example_es": "Mantuvo una fe inquebrantable en su victoria.",
+  "example_ru": "Он сохранял непоколебимую веру в победу.",
+  "rank": 29218,
+  "forms": [
+   "inquebrantables"
+  ]
+ },
+ {
+  "id": "dichoso",
+  "es": "dichoso",
+  "pos": "adj",
+  "ru": "счастливый; (ирон.) проклятый, треклятый",
+  "example_es": "Dichosos los ojos que te ven.",
+  "example_ru": "Какая радость тебя видеть!",
+  "rank": 24799,
+  "forms": [
+   "dichosa",
+   "dichosos",
+   "dichosas"
+  ]
+ }
+]

@@ -1,0 +1,672 @@
+[
+ {
+  "id": "sentimiento",
+  "es": "sentimiento",
+  "pos": "noun",
+  "ru": "чувство",
+  "example_es": "Le cuesta expresar sus sentimientos.",
+  "example_ru": "Ему трудно выражать свои чувства.",
+  "rank": 3138,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "sentimientos"
+  ]
+ },
+ {
+  "id": "emoción",
+  "es": "emoción",
+  "pos": "noun",
+  "ru": "эмоция; волнение",
+  "example_es": "Lloró de emoción al ver a su hija.",
+  "example_ru": "Она расплакалась от волнения, увидев дочь.",
+  "rank": 3745,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "emociones"
+  ]
+ },
+ {
+  "id": "ánimo",
+  "es": "ánimo",
+  "pos": "noun",
+  "ru": "настроение, дух; бодрость",
+  "example_es": "Hoy estoy de buen ánimo.",
+  "example_ru": "Сегодня я в хорошем настроении.",
+  "rank": 3792,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "ánimos"
+  ]
+ },
+ {
+  "id": "humor",
+  "es": "humor",
+  "pos": "noun",
+  "ru": "настроение; юмор",
+  "example_es": "Mi jefe está de mal humor hoy.",
+  "example_ru": "Мой начальник сегодня не в духе.",
+  "rank": 1789,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "humores"
+  ]
+ },
+ {
+  "id": "enfado",
+  "es": "enfado",
+  "pos": "noun",
+  "ru": "злость, раздражение",
+  "example_es": "No pudo ocultar su {es: enfado | am: enojo | rio: enojo}.",
+  "example_ru": "Он не смог скрыть раздражения.",
+  "rank": 14603,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "enfados"
+  ],
+  "variants": {
+   "am": "el enojo",
+   "rio": "el enojo"
+  }
+ },
+ {
+  "id": "enfadarse",
+  "es": "enfadarse",
+  "pos": "verb",
+  "ru": "злиться, сердиться",
+  "example_es": "Se {es: enfadó | am: enojó | rio: enojó} conmigo porque llegué tarde.",
+  "example_ru": "Она рассердилась на меня, потому что я опоздал.",
+  "rank": 11876,
+  "forms": [
+   "enfadó",
+   "enfadé",
+   "enfadado"
+  ],
+  "variants": {
+   "am": "enojarse",
+   "rio": "enojarse"
+  }
+ },
+ {
+  "id": "rabia",
+  "es": "rabia",
+  "pos": "noun",
+  "ru": "ярость; досада",
+  "example_es": "¡Qué rabia! He vuelto a perder el autobús.",
+  "example_ru": "Вот досада! Я опять опоздал на автобус.",
+  "rank": 5123,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "rabias"
+  ]
+ },
+ {
+  "id": "envidia",
+  "es": "envidia",
+  "pos": "noun",
+  "ru": "зависть",
+  "example_es": "Siento envidia de tu tranquilidad.",
+  "example_ru": "Я завидую твоему спокойствию.",
+  "rank": 6924,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "envidias"
+  ]
+ },
+ {
+  "id": "celos",
+  "es": "celos",
+  "pos": "noun",
+  "ru": "ревность",
+  "example_es": "Tiene celos de su hermano pequeño.",
+  "example_ru": "Он ревнует к младшему брату.",
+  "rank": 4816,
+  "article": "los",
+  "gender": "m"
+ },
+ {
+  "id": "orgullo",
+  "es": "orgullo",
+  "pos": "noun",
+  "ru": "гордость",
+  "example_es": "Habla de sus hijos con orgullo.",
+  "example_ru": "Она с гордостью говорит о своих детях.",
+  "rank": 2770,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "orgullos"
+  ]
+ },
+ {
+  "id": "soledad",
+  "es": "soledad",
+  "pos": "noun",
+  "ru": "одиночество",
+  "example_es": "Después del divorcio sintió mucha soledad.",
+  "example_ru": "После развода он чувствовал себя очень одиноким.",
+  "rank": 5005,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "soledades"
+  ]
+ },
+ {
+  "id": "ilusión",
+  "es": "ilusión",
+  "pos": "noun",
+  "ru": "радостное предвкушение; иллюзия",
+  "example_es": "Me hace mucha ilusión verte en verano.",
+  "example_ru": "Я очень жду нашей встречи летом.",
+  "rank": 5090,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "ilusiones"
+  ]
+ },
+ {
+  "id": "decepción",
+  "es": "decepción",
+  "pos": "noun",
+  "ru": "разочарование",
+  "example_es": "La película fue una gran decepción.",
+  "example_ru": "Фильм сильно разочаровал.",
+  "rank": 8469,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "decepciones"
+  ]
+ },
+ {
+  "id": "decepcionado",
+  "es": "decepcionado",
+  "pos": "adj",
+  "ru": "разочарованный",
+  "example_es": "Me siento decepcionado con su respuesta.",
+  "example_ru": "Я разочарован его ответом.",
+  "rank": 5253,
+  "forms": [
+   "decepcionada",
+   "decepcionados",
+   "decepcionadas"
+  ]
+ },
+ {
+  "id": "satisfecho",
+  "es": "satisfecho",
+  "pos": "adj",
+  "ru": "довольный",
+  "example_es": "Estoy satisfecho con el resultado.",
+  "example_ru": "Я доволен результатом.",
+  "rank": 5183,
+  "forms": [
+   "satisfecha",
+   "satisfechos",
+   "satisfechas"
+  ]
+ },
+ {
+  "id": "agradecido",
+  "es": "agradecido",
+  "pos": "adj",
+  "ru": "благодарный",
+  "example_es": "Te estoy muy agradecida por tu ayuda.",
+  "example_ru": "Я тебе очень благодарна за помощь.",
+  "rank": 4041,
+  "forms": [
+   "agradecida",
+   "agradecidos",
+   "agradecidas"
+  ]
+ },
+ {
+  "id": "agradecer",
+  "es": "agradecer",
+  "pos": "verb",
+  "ru": "благодарить",
+  "example_es": "Te agradezco mucho el regalo.",
+  "example_ru": "Большое спасибо тебе за подарок.",
+  "rank": 6882,
+  "forms": [
+   "agradezco",
+   "agradezca"
+  ]
+ },
+ {
+  "id": "sorpresa",
+  "es": "sorpresa",
+  "pos": "noun",
+  "ru": "сюрприз; удивление",
+  "example_es": "¡Qué sorpresa verte aquí!",
+  "example_ru": "Какая неожиданность увидеть тебя здесь!",
+  "rank": 984,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "sorpresas"
+  ]
+ },
+ {
+  "id": "emocionado",
+  "es": "emocionado",
+  "pos": "adj",
+  "ru": "взволнованный, растроганный",
+  "example_es": "Estaba tan emocionado que no podía hablar.",
+  "example_ru": "Он был так взволнован, что не мог говорить.",
+  "rank": 4586,
+  "forms": [
+   "emocionada",
+   "emocionados",
+   "emocionadas"
+  ]
+ },
+ {
+  "id": "ansiedad",
+  "es": "ansiedad",
+  "pos": "noun",
+  "ru": "тревожность, беспокойство",
+  "example_es": "Los exámenes le provocan mucha ansiedad.",
+  "example_ru": "Экзамены вызывают у него сильную тревогу.",
+  "rank": 6684,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "ansiedades"
+  ]
+ },
+ {
+  "id": "nervios",
+  "es": "nervios",
+  "pos": "noun",
+  "ru": "нервы, волнение",
+  "example_es": "Antes de la entrevista tenía muchos nervios.",
+  "example_ru": "Перед собеседованием я очень нервничал.",
+  "rank": 3742,
+  "article": "los",
+  "gender": "m"
+ },
+ {
+  "id": "tranquilizarse",
+  "es": "tranquilizarse",
+  "pos": "verb",
+  "ru": "успокаиваться",
+  "example_es": "Tranquilízate, todo va a salir bien.",
+  "example_ru": "Успокойся, всё будет хорошо.",
+  "rank": 27353,
+  "forms": [
+   "tranquilízate",
+   "tranquilizó",
+   "tranquilo"
+  ]
+ },
+ {
+  "id": "relajarse",
+  "es": "relajarse",
+  "pos": "verb",
+  "ru": "расслабляться",
+  "example_es": "Necesito unas vacaciones para relajarme.",
+  "example_ru": "Мне нужен отпуск, чтобы расслабиться.",
+  "rank": 20443
+ },
+ {
+  "id": "alegrarse",
+  "es": "alegrarse",
+  "pos": "verb",
+  "ru": "радоваться",
+  "example_es": "Me alegro mucho de verte.",
+  "example_ru": "Очень рад тебя видеть.",
+  "rank": 24927,
+  "forms": [
+   "alegro",
+   "alegré",
+   "alegra"
+  ]
+ },
+ {
+  "id": "arrepentirse",
+  "es": "arrepentirse",
+  "pos": "verb",
+  "ru": "сожалеть, раскаиваться",
+  "example_es": "No me arrepiento de nada.",
+  "example_ru": "Я ни о чём не жалею.",
+  "rank": 16745,
+  "forms": [
+   "arrepiento",
+   "arrepintió",
+   "arrepienta"
+  ]
+ },
+ {
+  "id": "perdonar",
+  "es": "perdonar",
+  "pos": "verb",
+  "ru": "прощать",
+  "example_es": "¿Podrás perdonarme algún día?",
+  "example_ru": "Сможешь ли ты когда-нибудь меня простить?",
+  "rank": 6079
+ },
+ {
+  "id": "amistad",
+  "es": "amistad",
+  "pos": "noun",
+  "ru": "дружба",
+  "example_es": "Nuestra amistad empezó en el colegio.",
+  "example_ru": "Наша дружба началась ещё в школе.",
+  "rank": 2367,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "amistades"
+  ]
+ },
+ {
+  "id": "enemigo",
+  "es": "enemigo",
+  "pos": "noun",
+  "ru": "враг",
+  "example_es": "No tiene enemigos, todo el mundo lo quiere.",
+  "example_ru": "У него нет врагов, его все любят.",
+  "rank": 1356,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "enemigos",
+   "enemiga",
+   "enemigas"
+  ]
+ },
+ {
+  "id": "matrimonio",
+  "es": "matrimonio",
+  "pos": "noun",
+  "ru": "брак; супружеская пара",
+  "example_es": "Llevan veinte años de matrimonio.",
+  "example_ru": "Они женаты уже двадцать лет.",
+  "rank": 962,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "matrimonios"
+  ]
+ },
+ {
+  "id": "boda",
+  "es": "boda",
+  "pos": "noun",
+  "ru": "свадьба",
+  "example_es": "La boda será en junio en el pueblo de la novia.",
+  "example_ru": "Свадьба будет в июне в деревне невесты.",
+  "rank": 869,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "bodas"
+  ]
+ },
+ {
+  "id": "divorcio",
+  "es": "divorcio",
+  "pos": "noun",
+  "ru": "развод",
+  "example_es": "Sus padres pidieron el divorcio.",
+  "example_ru": "Его родители подали на развод.",
+  "rank": 2656,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "divorcios"
+  ]
+ },
+ {
+  "id": "divorciarse",
+  "es": "divorciarse",
+  "pos": "verb",
+  "ru": "разводиться",
+  "example_es": "Se divorciaron después de diez años juntos.",
+  "example_ru": "Они развелись после десяти лет вместе.",
+  "rank": 19815
+ },
+ {
+  "id": "separarse",
+  "es": "separarse",
+  "pos": "verb",
+  "ru": "расставаться; разделяться",
+  "example_es": "Se separaron, pero siguen siendo amigos.",
+  "example_ru": "Они расстались, но остались друзьями.",
+  "rank": 7883
+ },
+ {
+  "id": "beso",
+  "es": "beso",
+  "pos": "noun",
+  "ru": "поцелуй",
+  "example_es": "Le dio un beso en la mejilla.",
+  "example_ru": "Она поцеловала его в щёку.",
+  "rank": 1463,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "besos"
+  ]
+ },
+ {
+  "id": "besar",
+  "es": "besar",
+  "pos": "verb",
+  "ru": "целовать",
+  "example_es": "La besó antes de irse.",
+  "example_ru": "Он поцеловал её перед уходом.",
+  "rank": 4559
+ },
+ {
+  "id": "abrazo",
+  "es": "abrazo",
+  "pos": "noun",
+  "ru": "объятие",
+  "example_es": "Dame un abrazo, te he echado de menos.",
+  "example_ru": "Обними меня, я по тебе скучал.",
+  "rank": 3672,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "abrazos"
+  ]
+ },
+ {
+  "id": "abrazar",
+  "es": "abrazar",
+  "pos": "verb",
+  "ru": "обнимать",
+  "example_es": "Abrazó a su madre en el aeropuerto.",
+  "example_ru": "Он обнял маму в аэропорту.",
+  "rank": 11390
+ },
+ {
+  "id": "amar",
+  "es": "amar",
+  "pos": "verb",
+  "ru": "любить",
+  "example_es": "Te amo con todo mi corazón.",
+  "example_ru": "Я люблю тебя всем сердцем.",
+  "rank": 2850
+ },
+ {
+  "id": "odio",
+  "es": "odio",
+  "pos": "noun",
+  "ru": "ненависть",
+  "example_es": "No siento odio por nadie.",
+  "example_ru": "Я ни к кому не испытываю ненависти.",
+  "rank": 679,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "odios"
+  ]
+ },
+ {
+  "id": "respeto",
+  "es": "respeto",
+  "pos": "noun",
+  "ru": "уважение",
+  "example_es": "Hay que tratar a todos con respeto.",
+  "example_ru": "Ко всем нужно относиться с уважением.",
+  "rank": 1175,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "respetos"
+  ]
+ },
+ {
+  "id": "respetar",
+  "es": "respetar",
+  "pos": "verb",
+  "ru": "уважать; соблюдать",
+  "example_es": "Respeto tu decisión, aunque no la comparto.",
+  "example_ru": "Я уважаю твоё решение, хотя и не разделяю его.",
+  "rank": 6679
+ },
+ {
+  "id": "apoyar",
+  "es": "apoyar",
+  "pos": "verb",
+  "ru": "поддерживать",
+  "example_es": "Mis padres siempre me apoyan en todo.",
+  "example_ru": "Родители всегда меня во всём поддерживают.",
+  "rank": 6539
+ },
+ {
+  "id": "echar-de-menos",
+  "es": "echar de menos",
+  "pos": "phrase",
+  "ru": "скучать (по кому-то)",
+  "example_es": "{es: Echo de menos | am: Extraño | rio: Extraño} a mis amigos de la infancia.",
+  "example_ru": "Я скучаю по друзьям детства.",
+  "rank": 1677,
+  "forms": [
+   "echo de menos",
+   "echas de menos"
+  ],
+  "variants": {
+   "am": "extrañar",
+   "rio": "extrañar"
+  }
+ },
+ {
+  "id": "deprimido",
+  "es": "deprimido",
+  "pos": "adj",
+  "ru": "подавленный, в депрессии",
+  "example_es": "Está deprimido desde que perdió el trabajo.",
+  "example_ru": "С тех пор как он потерял работу, он в депрессии.",
+  "rank": 7142,
+  "forms": [
+   "deprimida",
+   "deprimidos",
+   "deprimidas"
+  ]
+ },
+ {
+  "id": "avergonzado",
+  "es": "avergonzado",
+  "pos": "adj",
+  "ru": "смущённый, пристыженный",
+  "example_es": "Me sentí avergonzado por mi error.",
+  "example_ru": "Мне было стыдно за свою ошибку.",
+  "rank": 5506,
+  "forms": [
+   "avergonzada",
+   "avergonzados",
+   "avergonzadas"
+  ]
+ },
+ {
+  "id": "aliviado",
+  "es": "aliviado",
+  "pos": "adj",
+  "ru": "испытывающий облегчение",
+  "example_es": "Me quedé aliviada al saber la noticia.",
+  "example_ru": "Узнав новость, я почувствовала облегчение.",
+  "rank": 13361,
+  "forms": [
+   "aliviada",
+   "aliviados",
+   "aliviadas"
+  ]
+ },
+ {
+  "id": "pelearse",
+  "es": "pelearse",
+  "pos": "verb",
+  "ru": "ссориться; драться",
+  "example_es": "Los niños se pelean por todo.",
+  "example_ru": "Дети ссорятся из-за всего.",
+  "rank": 1675,
+  "forms": [
+   "pelean",
+   "peleó",
+   "peleado"
+  ]
+ },
+ {
+  "id": "mentira",
+  "es": "mentira",
+  "pos": "noun",
+  "ru": "ложь",
+  "example_es": "No me digas mentiras.",
+  "example_ru": "Не ври мне.",
+  "rank": 1335,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "mentiras"
+  ]
+ },
+ {
+  "id": "engañar",
+  "es": "engañar",
+  "pos": "verb",
+  "ru": "обманывать; изменять",
+  "example_es": "Su novio la engañó con otra.",
+  "example_ru": "Её парень изменил ей с другой.",
+  "rank": 4148
+ },
+ {
+  "id": "nostalgia",
+  "es": "nostalgia",
+  "pos": "noun",
+  "ru": "ностальгия, тоска по прошлому",
+  "example_es": "Siento nostalgia cuando veo fotos de mi infancia.",
+  "example_ru": "Меня охватывает ностальгия, когда я смотрю детские фотографии.",
+  "rank": 12625,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "nostalgias"
+  ]
+ },
+ {
+  "id": "ternura",
+  "es": "ternura",
+  "pos": "noun",
+  "ru": "нежность",
+  "example_es": "Miraba a su bebé con mucha ternura.",
+  "example_ru": "Она смотрела на своего малыша с огромной нежностью.",
+  "rank": 13094,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "ternuras"
+  ]
+ }
+]

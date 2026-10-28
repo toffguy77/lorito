@@ -1,0 +1,683 @@
+[
+ {
+  "id": "isótopo",
+  "es": "isótopo",
+  "pos": "noun",
+  "ru": "изотоп",
+  "example_es": "El carbono catorce es un isótopo radiactivo.",
+  "example_ru": "Углерод-14 — радиоактивный изотоп.",
+  "rank": 49999,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "isótopos"
+  ]
+ },
+ {
+  "id": "catalizador",
+  "es": "catalizador",
+  "pos": "noun",
+  "ru": "катализатор",
+  "example_es": "El platino actúa como catalizador de la reacción.",
+  "example_ru": "Платина служит катализатором реакции.",
+  "rank": 29596,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "catalizadores"
+  ]
+ },
+ {
+  "id": "enzima",
+  "es": "enzima",
+  "pos": "noun",
+  "ru": "фермент, энзим",
+  "example_es": "Esta enzima descompone los azúcares complejos.",
+  "example_ru": "Этот фермент расщепляет сложные сахара.",
+  "rank": 32035,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "enzimas"
+  ]
+ },
+ {
+  "id": "cromosoma",
+  "es": "cromosoma",
+  "pos": "noun",
+  "ru": "хромосома",
+  "example_es": "El ser humano tiene veintitrés pares de cromosomas.",
+  "example_ru": "У человека двадцать три пары хромосом.",
+  "rank": 38717,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "cromosomas"
+  ]
+ },
+ {
+  "id": "genoma",
+  "es": "genoma",
+  "pos": "noun",
+  "ru": "геном",
+  "example_es": "Secuenciar un genoma completo es hoy mucho más barato.",
+  "example_ru": "Расшифровать полный геном сегодня гораздо дешевле.",
+  "rank": 25757,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "genomas"
+  ]
+ },
+ {
+  "id": "mitocondria",
+  "es": "mitocondria",
+  "pos": "noun",
+  "ru": "митохондрия",
+  "example_es": "La mitocondria produce la energía de la célula.",
+  "example_ru": "Митохондрия вырабатывает энергию клетки.",
+  "rank": 49999,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "mitocondrias"
+  ]
+ },
+ {
+  "id": "fotosíntesis",
+  "es": "fotosíntesis",
+  "pos": "noun",
+  "ru": "фотосинтез",
+  "example_es": "Las plantas liberan oxígeno durante la fotosíntesis.",
+  "example_ru": "Во время фотосинтеза растения выделяют кислород.",
+  "rank": 49999,
+  "article": "la",
+  "gender": "f"
+ },
+ {
+  "id": "homeostasis",
+  "es": "homeostasis",
+  "pos": "noun",
+  "ru": "гомеостаз",
+  "example_es": "El sudor ayuda a mantener la homeostasis térmica.",
+  "example_ru": "Пот помогает поддерживать тепловой гомеостаз.",
+  "rank": 49999,
+  "article": "la",
+  "gender": "f"
+ },
+ {
+  "id": "sinapsis",
+  "es": "sinapsis",
+  "pos": "noun",
+  "ru": "синапс",
+  "example_es": "Los neurotransmisores se liberan en la sinapsis.",
+  "example_ru": "Нейромедиаторы выделяются в синапсе.",
+  "rank": 41514,
+  "article": "la",
+  "gender": "f"
+ },
+ {
+  "id": "entropía",
+  "es": "entropía",
+  "pos": "noun",
+  "ru": "энтропия",
+  "example_es": "En un sistema aislado la entropía nunca disminuye.",
+  "example_ru": "В изолированной системе энтропия никогда не уменьшается.",
+  "rank": 45416,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "entropías"
+  ]
+ },
+ {
+  "id": "vector",
+  "es": "vector",
+  "pos": "noun",
+  "ru": "вектор",
+  "example_es": "La velocidad es un vector con módulo y dirección.",
+  "example_ru": "Скорость — это вектор, у которого есть модуль и направление.",
+  "rank": 24064,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "vectores"
+  ]
+ },
+ {
+  "id": "polímero",
+  "es": "polímero",
+  "pos": "noun",
+  "ru": "полимер",
+  "example_es": "El plástico es un polímero derivado del petróleo.",
+  "example_ru": "Пластик — полимер, получаемый из нефти.",
+  "rank": 42385,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "polímeros"
+  ]
+ },
+ {
+  "id": "coeficiente",
+  "es": "coeficiente",
+  "pos": "noun",
+  "ru": "коэффициент",
+  "example_es": "Calcularon el coeficiente de dilatación del metal.",
+  "example_ru": "Рассчитали коэффициент расширения металла.",
+  "rank": 22153,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "coeficientes"
+  ]
+ },
+ {
+  "id": "logaritmo",
+  "es": "logaritmo",
+  "pos": "noun",
+  "ru": "логарифм",
+  "example_es": "El logaritmo de cien en base diez es dos.",
+  "example_ru": "Десятичный логарифм ста равен двум.",
+  "rank": 49999,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "logaritmos"
+  ]
+ },
+ {
+  "id": "derivada",
+  "es": "derivada",
+  "pos": "noun",
+  "ru": "производная",
+  "example_es": "La derivada de la posición respecto al tiempo es la velocidad.",
+  "example_ru": "Производная координаты по времени — это скорость.",
+  "rank": 49999,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "derivadas"
+  ]
+ },
+ {
+  "id": "integral",
+  "es": "integral",
+  "pos": "noun",
+  "ru": "интеграл",
+  "example_es": "Resolvió la integral sin ayuda de la calculadora.",
+  "example_ru": "Он взял интеграл без калькулятора.",
+  "rank": 18705,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "integrales"
+  ]
+ },
+ {
+  "id": "teorema",
+  "es": "teorema",
+  "pos": "noun",
+  "ru": "теорема",
+  "example_es": "Tardaron siglos en demostrar aquel teorema.",
+  "example_ru": "Доказательство этой теоремы заняло века.",
+  "rank": 36777,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "teoremas"
+  ]
+ },
+ {
+  "id": "exponencial",
+  "es": "exponencial",
+  "pos": "adj",
+  "ru": "экспоненциальный",
+  "example_es": "El número de contagios creció de forma exponencial.",
+  "example_ru": "Число заражений росло экспоненциально.",
+  "rank": 48297,
+  "forms": [
+   "exponenciales"
+  ]
+ },
+ {
+  "id": "cuántico",
+  "es": "cuántico",
+  "pos": "adj",
+  "ru": "квантовый",
+  "example_es": "La mecánica cuántica desafía la intuición cotidiana.",
+  "example_ru": "Квантовая механика противоречит житейской интуиции.",
+  "rank": 23017,
+  "forms": [
+   "cuántica",
+   "cuánticos",
+   "cuánticas"
+  ]
+ },
+ {
+  "id": "electromagnético",
+  "es": "electromagnético",
+  "pos": "adj",
+  "ru": "электромагнитный",
+  "example_es": "La luz es una onda electromagnética.",
+  "example_ru": "Свет — это электромагнитная волна.",
+  "rank": 23661,
+  "forms": [
+   "electromagnética",
+   "electromagnéticos",
+   "electromagnéticas"
+  ]
+ },
+ {
+  "id": "inerte",
+  "es": "inerte",
+  "pos": "adj",
+  "ru": "инертный; неподвижный",
+  "example_es": "El helio es un gas inerte que no reacciona.",
+  "example_ru": "Гелий — инертный газ, который не вступает в реакции.",
+  "rank": 37812,
+  "forms": [
+   "inertes"
+  ]
+ },
+ {
+  "id": "electrón",
+  "es": "electrón",
+  "pos": "noun",
+  "ru": "электрон",
+  "example_es": "El electrón tiene carga eléctrica negativa.",
+  "example_ru": "Электрон имеет отрицательный электрический заряд.",
+  "rank": 38808,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "electrones"
+  ]
+ },
+ {
+  "id": "neutrón",
+  "es": "neutrón",
+  "pos": "noun",
+  "ru": "нейтрон",
+  "example_es": "El núcleo del átomo contiene protones y neutrones.",
+  "example_ru": "Ядро атома состоит из протонов и нейтронов.",
+  "rank": 49999,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "neutrones"
+  ]
+ },
+ {
+  "id": "fisión",
+  "es": "fisión",
+  "pos": "noun",
+  "ru": "деление (ядра)",
+  "example_es": "La fisión del uranio libera una enorme energía.",
+  "example_ru": "При делении урана выделяется огромная энергия.",
+  "rank": 42137,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "fisiones"
+  ]
+ },
+ {
+  "id": "radiactividad",
+  "es": "radiactividad",
+  "pos": "noun",
+  "ru": "радиоактивность",
+  "example_es": "La radiactividad de la zona sigue siendo peligrosa.",
+  "example_ru": "Радиоактивность в этой зоне по-прежнему опасна.",
+  "rank": 49737,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "radiactividades"
+  ]
+ },
+ {
+  "id": "espectro",
+  "es": "espectro",
+  "pos": "noun",
+  "ru": "спектр; призрак",
+  "example_es": "El prisma descompone la luz en su espectro.",
+  "example_ru": "Призма разлагает свет в спектр.",
+  "rank": 10615,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "espectros"
+  ]
+ },
+ {
+  "id": "disolvente",
+  "es": "disolvente",
+  "pos": "noun",
+  "ru": "растворитель",
+  "example_es": "La acetona es un disolvente muy común.",
+  "example_ru": "Ацетон — очень распространённый растворитель.",
+  "rank": 43537,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "disolventes"
+  ]
+ },
+ {
+  "id": "precipitado",
+  "es": "precipitado",
+  "pos": "noun",
+  "ru": "осадок (хим.)",
+  "example_es": "Al mezclar ambas soluciones se formó un precipitado blanco.",
+  "example_ru": "При смешивании растворов образовался белый осадок.",
+  "rank": 19774,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "precipitados"
+  ]
+ },
+ {
+  "id": "aleación",
+  "es": "aleación",
+  "pos": "noun",
+  "ru": "сплав",
+  "example_es": "El bronce es una aleación de cobre y estaño.",
+  "example_ru": "Бронза — сплав меди и олова.",
+  "rank": 27344,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "aleaciones"
+  ]
+ },
+ {
+  "id": "combustión",
+  "es": "combustión",
+  "pos": "noun",
+  "ru": "горение, сгорание",
+  "example_es": "La combustión del gas libera dióxido de carbono.",
+  "example_ru": "При сгорании газа выделяется углекислый газ.",
+  "rank": 23337,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "combustiones"
+  ]
+ },
+ {
+  "id": "condensación",
+  "es": "condensación",
+  "pos": "noun",
+  "ru": "конденсация",
+  "example_es": "La condensación del vapor forma las nubes.",
+  "example_ru": "Облака образуются при конденсации пара.",
+  "rank": 49029,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "condensaciones"
+  ]
+ },
+ {
+  "id": "anticuerpo",
+  "es": "anticuerpo",
+  "pos": "noun",
+  "ru": "антитело",
+  "example_es": "El organismo genera anticuerpos contra el virus.",
+  "example_ru": "Организм вырабатывает антитела против вируса.",
+  "rank": 49999,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "anticuerpos"
+  ]
+ },
+ {
+  "id": "patógeno",
+  "es": "patógeno",
+  "pos": "noun",
+  "ru": "патоген, возбудитель болезни",
+  "example_es": "El laboratorio aisló el patógeno responsable del brote.",
+  "example_ru": "Лаборатория выделила возбудителя вспышки.",
+  "rank": 35297,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "patógenos"
+  ]
+ },
+ {
+  "id": "membrana",
+  "es": "membrana",
+  "pos": "noun",
+  "ru": "мембрана, оболочка",
+  "example_es": "La membrana celular regula el paso de sustancias.",
+  "example_ru": "Клеточная мембрана регулирует прохождение веществ.",
+  "rank": 27330,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "membranas"
+  ]
+ },
+ {
+  "id": "embrión",
+  "es": "embrión",
+  "pos": "noun",
+  "ru": "эмбрион, зародыш",
+  "example_es": "El embrión se implanta en el útero a los pocos días.",
+  "example_ru": "Через несколько дней эмбрион закрепляется в матке.",
+  "rank": 29254,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "embriones"
+  ]
+ },
+ {
+  "id": "magnetismo",
+  "es": "magnetismo",
+  "pos": "noun",
+  "ru": "магнетизм",
+  "example_es": "El magnetismo terrestre orienta la aguja de la brújula.",
+  "example_ru": "Земной магнетизм направляет стрелку компаса.",
+  "rank": 29724,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "magnetismos"
+  ]
+ },
+ {
+  "id": "relatividad",
+  "es": "relatividad",
+  "pos": "noun",
+  "ru": "относительность",
+  "example_es": "La teoría de la relatividad cambió nuestra idea del tiempo.",
+  "example_ru": "Теория относительности изменила наше представление о времени.",
+  "rank": 27465,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "relatividades"
+  ]
+ },
+ {
+  "id": "antimateria",
+  "es": "antimateria",
+  "pos": "noun",
+  "ru": "антиматерия, антивещество",
+  "example_es": "Al chocar con la materia, la antimateria se aniquila.",
+  "example_ru": "При столкновении с веществом антиматерия аннигилирует.",
+  "rank": 22313,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "antimaterias"
+  ]
+ },
+ {
+  "id": "fotón",
+  "es": "fotón",
+  "pos": "noun",
+  "ru": "фотон",
+  "example_es": "Cada fotón transporta una cantidad fija de energía.",
+  "example_ru": "Каждый фотон несёт определённую порцию энергии.",
+  "rank": 49999,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "fotones"
+  ]
+ },
+ {
+  "id": "electrodo",
+  "es": "electrodo",
+  "pos": "noun",
+  "ru": "электрод",
+  "example_es": "Colocaron electrodos en el cuero cabelludo del paciente.",
+  "example_ru": "Пациенту закрепили электроды на коже головы.",
+  "rank": 49999,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "electrodos"
+  ]
+ },
+ {
+  "id": "ion",
+  "es": "ion",
+  "pos": "noun",
+  "ru": "ион",
+  "example_es": "Un ion es un átomo con carga eléctrica.",
+  "example_ru": "Ион — это атом с электрическим зарядом.",
+  "rank": 49999,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "iones"
+  ]
+ },
+ {
+  "id": "cinético",
+  "es": "cinético",
+  "pos": "adj",
+  "ru": "кинетический",
+  "example_es": "La energía cinética depende de la masa y la velocidad.",
+  "example_ru": "Кинетическая энергия зависит от массы и скорости.",
+  "rank": 49999,
+  "forms": [
+   "cinética",
+   "cinéticos",
+   "cinéticas"
+  ]
+ },
+ {
+  "id": "densidad",
+  "es": "densidad",
+  "pos": "noun",
+  "ru": "плотность",
+  "example_es": "El hielo flota porque su densidad es menor que la del agua.",
+  "example_ru": "Лёд плавает, потому что его плотность меньше, чем у воды.",
+  "rank": 17897,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "densidades"
+  ]
+ },
+ {
+  "id": "simetría",
+  "es": "simetría",
+  "pos": "noun",
+  "ru": "симметрия",
+  "example_es": "Los cristales muestran una simetría perfecta.",
+  "example_ru": "Кристаллы обладают идеальной симметрией.",
+  "rank": 27821,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "simetrías"
+  ]
+ },
+ {
+  "id": "nebulosa",
+  "es": "nebulosa",
+  "pos": "noun",
+  "ru": "туманность",
+  "example_es": "Las estrellas nacen en el interior de las nebulosas.",
+  "example_ru": "Звёзды рождаются внутри туманностей.",
+  "rank": 19411,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "nebulosas"
+  ]
+ },
+ {
+  "id": "sísmico",
+  "es": "sísmico",
+  "pos": "adj",
+  "ru": "сейсмический",
+  "example_es": "Es una zona de gran actividad sísmica.",
+  "example_ru": "Это зона высокой сейсмической активности.",
+  "rank": 49999,
+  "forms": [
+   "sísmica",
+   "sísmicos",
+   "sísmicas"
+  ]
+ },
+ {
+  "id": "sintetizar",
+  "es": "sintetizar",
+  "pos": "verb",
+  "ru": "синтезировать; обобщать",
+  "example_es": "Lograron sintetizar la molécula en el laboratorio.",
+  "example_ru": "Им удалось синтезировать молекулу в лаборатории.",
+  "rank": 42969,
+  "forms": [
+   "sinteticé",
+   "sintetice"
+  ]
+ },
+ {
+  "id": "calibrar",
+  "es": "calibrar",
+  "pos": "verb",
+  "ru": "калибровать; оценивать",
+  "example_es": "Hay que calibrar los instrumentos antes de cada medición.",
+  "example_ru": "Перед каждым измерением приборы нужно калибровать.",
+  "rank": 49560
+ },
+ {
+  "id": "magma",
+  "es": "magma",
+  "pos": "noun",
+  "ru": "магма",
+  "example_es": "El magma asciende por las grietas de la corteza.",
+  "example_ru": "Магма поднимается по трещинам в земной коре.",
+  "rank": 31427,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "magmas"
+  ]
+ },
+ {
+  "id": "clonación",
+  "es": "clonación",
+  "pos": "noun",
+  "ru": "клонирование",
+  "example_es": "La clonación de animales plantea dilemas éticos.",
+  "example_ru": "Клонирование животных ставит этические проблемы.",
+  "rank": 30727,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "clonaciones"
+  ]
+ }
+]

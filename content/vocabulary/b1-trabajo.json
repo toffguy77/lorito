@@ -1,0 +1,691 @@
+[
+ {
+  "id": "ascenso",
+  "es": "ascenso",
+  "pos": "noun",
+  "ru": "повышение (по службе)",
+  "example_es": "Después de cinco años, por fin me dieron un ascenso.",
+  "example_ru": "Через пять лет мне наконец дали повышение.",
+  "rank": 5954,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "ascensos"
+  ]
+ },
+ {
+  "id": "solicitud",
+  "es": "solicitud",
+  "pos": "noun",
+  "ru": "заявление; заявка",
+  "example_es": "Envié la solicitud para el puesto de diseñador.",
+  "example_ru": "Я отправил заявку на должность дизайнера.",
+  "rank": 4885,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "solicitudes"
+  ]
+ },
+ {
+  "id": "solicitar",
+  "es": "solicitar",
+  "pos": "verb",
+  "ru": "подавать заявку; просить",
+  "example_es": "Quiero solicitar unos días libres en diciembre.",
+  "example_ru": "Хочу попросить несколько выходных в декабре.",
+  "rank": 10941
+ },
+ {
+  "id": "currículum",
+  "es": "currículum",
+  "pos": "noun",
+  "ru": "резюме",
+  "example_es": "Actualiza tu currículum antes de buscar trabajo.",
+  "example_ru": "Обнови резюме, прежде чем искать работу.",
+  "rank": 13855,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "currículums"
+  ]
+ },
+ {
+  "id": "candidato",
+  "es": "candidato",
+  "pos": "noun",
+  "ru": "кандидат",
+  "example_es": "Hay más de cien candidatos para este puesto.",
+  "example_ru": "На эту должность больше ста кандидатов.",
+  "rank": 5115,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "candidatos",
+   "candidata",
+   "candidatas"
+  ]
+ },
+ {
+  "id": "vacante",
+  "es": "vacante",
+  "pos": "noun",
+  "ru": "вакансия",
+  "example_es": "La empresa tiene dos vacantes en el departamento de ventas.",
+  "example_ru": "В компании две вакансии в отделе продаж.",
+  "rank": 13642,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "vacantes"
+  ]
+ },
+ {
+  "id": "plazo",
+  "es": "plazo",
+  "pos": "noun",
+  "ru": "срок",
+  "example_es": "El plazo para entregar el informe termina el viernes.",
+  "example_ru": "Срок сдачи отчёта истекает в пятницу.",
+  "rank": 4406,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "plazos"
+  ]
+ },
+ {
+  "id": "jornada",
+  "es": "jornada",
+  "pos": "noun",
+  "ru": "рабочий день",
+  "example_es": "Trabajo a jornada completa desde el año pasado.",
+  "example_ru": "С прошлого года я работаю полный день.",
+  "rank": 10402,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "jornadas"
+  ]
+ },
+ {
+  "id": "turno",
+  "es": "turno",
+  "pos": "noun",
+  "ru": "смена; очередь",
+  "example_es": "Esta semana me toca el turno de noche.",
+  "example_ru": "На этой неделе у меня ночная смена.",
+  "rank": 1485,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "turnos"
+  ]
+ },
+ {
+  "id": "horas-extra",
+  "es": "horas extra",
+  "pos": "phrase",
+  "ru": "сверхурочные",
+  "example_es": "Este mes he hecho muchas horas extra.",
+  "example_ru": "В этом месяце у меня было много сверхурочных.",
+  "rank": 1990
+ },
+ {
+  "id": "colega",
+  "es": "colega",
+  "pos": "noun",
+  "ru": "коллега",
+  "example_es": "Mis colegas me organizaron una fiesta de despedida.",
+  "example_ru": "Коллеги устроили мне прощальную вечеринку.",
+  "rank": 1609,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "colegas"
+  ]
+ },
+ {
+  "id": "socio",
+  "es": "socio",
+  "pos": "noun",
+  "ru": "партнёр, компаньон; член (клуба)",
+  "example_es": "Mi socio y yo abrimos la tienda hace diez años.",
+  "example_ru": "Мы с компаньоном открыли магазин десять лет назад.",
+  "rank": 2375,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "socios",
+   "socia",
+   "socias"
+  ]
+ },
+ {
+  "id": "empresario",
+  "es": "empresario",
+  "pos": "noun",
+  "ru": "предприниматель",
+  "example_es": "Es un empresario joven con mucho éxito.",
+  "example_ru": "Он молодой и очень успешный предприниматель.",
+  "rank": 10319,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "empresarios",
+   "empresaria",
+   "empresarias"
+  ]
+ },
+ {
+  "id": "gerente",
+  "es": "gerente",
+  "pos": "noun",
+  "ru": "управляющий, менеджер",
+  "example_es": "La gerente quiere hablar contigo después de la reunión.",
+  "example_ru": "Управляющая хочет поговорить с тобой после совещания.",
+  "rank": 3698,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "gerentes"
+  ]
+ },
+ {
+  "id": "funcionario",
+  "es": "funcionario",
+  "pos": "noun",
+  "ru": "госслужащий, чиновник",
+  "example_es": "Mi madre es funcionaria del ayuntamiento.",
+  "example_ru": "Моя мама — служащая мэрии.",
+  "rank": 10447,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "funcionarios",
+   "funcionaria",
+   "funcionarias"
+  ]
+ },
+ {
+  "id": "autónomo",
+  "es": "autónomo",
+  "pos": "adj",
+  "ru": "самозанятый; независимый",
+  "example_es": "Ahora trabajo como autónomo y elijo a mis clientes.",
+  "example_ru": "Теперь я работаю на себя и сам выбираю клиентов.",
+  "rank": 36060,
+  "forms": [
+   "autónoma",
+   "autónomos",
+   "autónomas"
+  ]
+ },
+ {
+  "id": "obrero",
+  "es": "obrero",
+  "pos": "noun",
+  "ru": "рабочий",
+  "example_es": "Los obreros empiezan a las siete de la mañana.",
+  "example_ru": "Рабочие начинают в семь утра.",
+  "rank": 13907,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "obreros",
+   "obrera",
+   "obreras"
+  ]
+ },
+ {
+  "id": "oficio",
+  "es": "oficio",
+  "pos": "noun",
+  "ru": "ремесло, профессия",
+  "example_es": "Mi abuelo aprendió el oficio de carpintero muy joven.",
+  "example_ru": "Мой дедушка освоил ремесло плотника совсем молодым.",
+  "rank": 6232,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "oficios"
+  ]
+ },
+ {
+  "id": "prácticas",
+  "es": "prácticas",
+  "pos": "noun",
+  "ru": "стажировка, практика",
+  "example_es": "Hice {es: las prácticas | rio: las pasantías} en una agencia de publicidad.",
+  "example_ru": "Я проходил стажировку в рекламном агентстве.",
+  "rank": 7798,
+  "article": "las",
+  "gender": "f",
+  "variants": {
+   "rio": "las pasantías"
+  }
+ },
+ {
+  "id": "formación",
+  "es": "formación",
+  "pos": "noun",
+  "ru": "обучение, подготовка",
+  "example_es": "La empresa ofrece formación gratuita a los empleados.",
+  "example_ru": "Компания бесплатно обучает сотрудников.",
+  "rank": 5251,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "formaciones"
+  ]
+ },
+ {
+  "id": "despacho",
+  "es": "despacho",
+  "pos": "noun",
+  "ru": "кабинет",
+  "example_es": "La directora está en su despacho, puedes pasar.",
+  "example_ru": "Директор у себя в кабинете, можешь зайти.",
+  "rank": 2520,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "despachos"
+  ]
+ },
+ {
+  "id": "sede",
+  "es": "sede",
+  "pos": "noun",
+  "ru": "главный офис, штаб-квартира",
+  "example_es": "La sede central de la empresa está en el centro.",
+  "example_ru": "Главный офис компании находится в центре.",
+  "rank": 8954,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "sedes"
+  ]
+ },
+ {
+  "id": "fábrica",
+  "es": "fábrica",
+  "pos": "noun",
+  "ru": "фабрика, завод",
+  "example_es": "Mi padre trabajó treinta años en una fábrica de coches.",
+  "example_ru": "Мой отец тридцать лет проработал на автозаводе.",
+  "rank": 2532,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "fábricas"
+  ]
+ },
+ {
+  "id": "sindicato",
+  "es": "sindicato",
+  "pos": "noun",
+  "ru": "профсоюз",
+  "example_es": "El sindicato pide mejores condiciones de trabajo.",
+  "example_ru": "Профсоюз требует лучших условий труда.",
+  "rank": 5638,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "sindicatos"
+  ]
+ },
+ {
+  "id": "huelga",
+  "es": "huelga",
+  "pos": "noun",
+  "ru": "забастовка",
+  "example_es": "Los conductores de autobús están hoy en huelga.",
+  "example_ru": "Водители автобусов сегодня бастуют.",
+  "rank": 5122,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "huelgas"
+  ]
+ },
+ {
+  "id": "paro",
+  "es": "paro",
+  "pos": "noun",
+  "ru": "безработица; пособие по безработице",
+  "example_es": "Se quedó en {es: paro | am: desempleo | rio: desempleo} cuando cerraron la tienda.",
+  "example_ru": "Когда магазин закрыли, он остался без работы.",
+  "rank": 5568,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "paros"
+  ],
+  "variants": {
+   "am": "el desempleo",
+   "rio": "el desempleo"
+  }
+ },
+ {
+  "id": "desempleado",
+  "es": "desempleado",
+  "pos": "adj",
+  "ru": "безработный",
+  "example_es": "Hay muchos jóvenes desempleados en esta región.",
+  "example_ru": "В этом регионе много безработной молодёжи.",
+  "rank": 18220,
+  "forms": [
+   "desempleada",
+   "desempleados",
+   "desempleadas"
+  ]
+ },
+ {
+  "id": "jubilarse",
+  "es": "jubilarse",
+  "pos": "verb",
+  "ru": "выходить на пенсию",
+  "example_es": "Mi tía se jubiló el año pasado.",
+  "example_ru": "Моя тётя вышла на пенсию в прошлом году.",
+  "rank": 34581,
+  "forms": [
+   "jubiló",
+   "jubilé",
+   "jubilado"
+  ]
+ },
+ {
+  "id": "dimitir",
+  "es": "dimitir",
+  "pos": "verb",
+  "ru": "уходить в отставку",
+  "example_es": "El director dimitió después del escándalo.",
+  "example_ru": "Директор ушёл в отставку после скандала.",
+  "rank": 21127
+ },
+ {
+  "id": "renunciar",
+  "es": "renunciar",
+  "pos": "verb",
+  "ru": "отказываться; увольняться по собственному желанию",
+  "example_es": "Renunció a su puesto para cuidar a sus hijos.",
+  "example_ru": "Она уволилась, чтобы заниматься детьми.",
+  "rank": 3236
+ },
+ {
+  "id": "nómina",
+  "es": "nómina",
+  "pos": "noun",
+  "ru": "расчётный лист; зарплата",
+  "example_es": "Revisa tu nómina para ver cuánto pagas de impuestos.",
+  "example_ru": "Посмотри в расчётном листе, сколько ты платишь налогов.",
+  "rank": 14254,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "nóminas"
+  ]
+ },
+ {
+  "id": "impuesto",
+  "es": "impuesto",
+  "pos": "noun",
+  "ru": "налог",
+  "example_es": "Los autónomos pagan los impuestos cada tres meses.",
+  "example_ru": "Самозанятые платят налоги раз в три месяца.",
+  "rank": 10023,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "impuestos"
+  ]
+ },
+ {
+  "id": "encargarse",
+  "es": "encargarse",
+  "pos": "verb",
+  "ru": "заниматься, брать на себя",
+  "example_es": "Yo me encargo de preparar la presentación.",
+  "example_ru": "Подготовку презентации я беру на себя.",
+  "rank": 14190,
+  "forms": [
+   "encargo",
+   "encargué",
+   "encarga"
+  ]
+ },
+ {
+  "id": "encargado",
+  "es": "encargado",
+  "pos": "noun",
+  "ru": "ответственный, заведующий",
+  "example_es": "Pregunta al encargado de la tienda.",
+  "example_ru": "Спроси у заведующего магазином.",
+  "rank": 4255,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "encargados",
+   "encargada",
+   "encargadas"
+  ]
+ },
+ {
+  "id": "gestionar",
+  "es": "gestionar",
+  "pos": "verb",
+  "ru": "управлять, руководить; оформлять",
+  "example_es": "Ella gestiona un equipo de doce personas.",
+  "example_ru": "Она руководит командой из двенадцати человек.",
+  "rank": 34560
+ },
+ {
+  "id": "negociar",
+  "es": "negociar",
+  "pos": "verb",
+  "ru": "вести переговоры; договариваться",
+  "example_es": "Tenemos que negociar el precio con el proveedor.",
+  "example_ru": "Нам нужно договориться о цене с поставщиком.",
+  "rank": 4847
+ },
+ {
+  "id": "departamento",
+  "es": "departamento",
+  "pos": "noun",
+  "ru": "отдел",
+  "example_es": "Trabajo en el departamento de recursos humanos.",
+  "example_ru": "Я работаю в отделе кадров.",
+  "rank": 1034,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "departamentos"
+  ]
+ },
+ {
+  "id": "cargo",
+  "es": "cargo",
+  "pos": "noun",
+  "ru": "должность",
+  "example_es": "Ocupa un cargo importante en el banco.",
+  "example_ru": "Он занимает важную должность в банке.",
+  "rank": 1040,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "cargos"
+  ]
+ },
+ {
+  "id": "responsabilidad",
+  "es": "responsabilidad",
+  "pos": "noun",
+  "ru": "ответственность; обязанность",
+  "example_es": "Este puesto tiene mucha responsabilidad.",
+  "example_ru": "Эта должность связана с большой ответственностью.",
+  "rank": 1887,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "responsabilidades"
+  ]
+ },
+ {
+  "id": "laboral",
+  "es": "laboral",
+  "pos": "adj",
+  "ru": "трудовой, рабочий",
+  "example_es": "Las condiciones laborales han mejorado mucho.",
+  "example_ru": "Условия труда сильно улучшились.",
+  "rank": 9971,
+  "forms": [
+   "laborales"
+  ]
+ },
+ {
+  "id": "eficaz",
+  "es": "eficaz",
+  "pos": "adj",
+  "ru": "эффективный, действенный",
+  "example_es": "Necesitamos una solución rápida y eficaz.",
+  "example_ru": "Нам нужно быстрое и действенное решение.",
+  "rank": 12213,
+  "forms": [
+   "eficaces"
+  ]
+ },
+ {
+  "id": "colaborar",
+  "es": "colaborar",
+  "pos": "verb",
+  "ru": "сотрудничать",
+  "example_es": "Colaboramos con varias empresas extranjeras.",
+  "example_ru": "Мы сотрудничаем с несколькими иностранными компаниями.",
+  "rank": 13065
+ },
+ {
+  "id": "teletrabajo",
+  "es": "teletrabajo",
+  "pos": "noun",
+  "ru": "удалённая работа",
+  "example_es": "Dos días a la semana hago teletrabajo.",
+  "example_ru": "Два дня в неделю я работаю удалённо.",
+  "rank": 49999,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "teletrabajos"
+  ]
+ },
+ {
+  "id": "compañía",
+  "es": "compañía",
+  "pos": "noun",
+  "ru": "компания; общество (присутствие)",
+  "example_es": "Trabaja para una compañía de seguros.",
+  "example_ru": "Он работает в страховой компании.",
+  "rank": 790,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "compañías"
+  ]
+ },
+ {
+  "id": "venta",
+  "es": "venta",
+  "pos": "noun",
+  "ru": "продажа",
+  "example_es": "Las ventas bajaron en el último trimestre.",
+  "example_ru": "В последнем квартале продажи упали.",
+  "rank": 2416,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "ventas"
+  ]
+ },
+ {
+  "id": "herramienta",
+  "es": "herramienta",
+  "pos": "noun",
+  "ru": "инструмент",
+  "example_es": "El ordenador es mi principal herramienta de trabajo.",
+  "example_ru": "Компьютер — мой главный рабочий инструмент.",
+  "rank": 8063,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "herramientas"
+  ]
+ },
+ {
+  "id": "agenda",
+  "es": "agenda",
+  "pos": "noun",
+  "ru": "ежедневник; расписание",
+  "example_es": "Tengo la agenda muy llena esta semana.",
+  "example_ru": "На этой неделе у меня очень плотное расписание.",
+  "rank": 4323,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "agendas"
+  ]
+ },
+ {
+  "id": "convocar",
+  "es": "convocar",
+  "pos": "verb",
+  "ru": "созывать; объявлять (конкурс)",
+  "example_es": "La jefa convocó una reunión urgente.",
+  "example_ru": "Начальница созвала срочное совещание.",
+  "rank": 22415,
+  "forms": [
+   "convoqué"
+  ]
+ },
+ {
+  "id": "despido",
+  "es": "despido",
+  "pos": "noun",
+  "ru": "увольнение",
+  "example_es": "Tras el despido, recibió una indemnización.",
+  "example_ru": "После увольнения он получил компенсацию.",
+  "rank": 9203,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "despidos"
+  ]
+ },
+ {
+  "id": "profesional",
+  "es": "profesional",
+  "pos": "adj",
+  "ru": "профессиональный; специалист",
+  "example_es": "Busca un trabajo con más futuro profesional.",
+  "example_ru": "Она ищет работу с лучшими карьерными перспективами.",
+  "rank": 1765,
+  "forms": [
+   "profesionales"
+  ]
+ },
+ {
+  "id": "proveedor",
+  "es": "proveedor",
+  "pos": "noun",
+  "ru": "поставщик",
+  "example_es": "Cambiamos de proveedor porque el anterior siempre llegaba tarde.",
+  "example_ru": "Мы сменили поставщика, потому что прежний вечно опаздывал.",
+  "rank": 10996,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "proveedores",
+   "proveedora",
+   "proveedoras"
+  ]
+ }
+]

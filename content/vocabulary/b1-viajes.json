@@ -1,0 +1,702 @@
+[
+ {
+  "id": "conducir",
+  "es": "conducir",
+  "pos": "verb",
+  "ru": "водить (машину)",
+  "example_es": "Aprendí a {es: conducir | am: manejar | rio: manejar} a los dieciocho años.",
+  "example_ru": "Я научился водить в восемнадцать лет.",
+  "rank": 1719,
+  "forms": [
+   "conduzco",
+   "condujo",
+   "condujeron",
+   "conduje"
+  ],
+  "variants": {
+   "am": "manejar",
+   "rio": "manejar"
+  }
+ },
+ {
+  "id": "carné-de-conducir",
+  "es": "carné de conducir",
+  "pos": "phrase",
+  "ru": "водительские права",
+  "example_es": "Saqué {es: el carné de conducir | am: la licencia de conducir | rio: el registro de conducir} el verano pasado.",
+  "example_ru": "Я получил права прошлым летом.",
+  "rank": 13731,
+  "variants": {
+   "am": "la licencia de conducir",
+   "rio": "el registro de conducir"
+  }
+ },
+ {
+  "id": "carretera",
+  "es": "carretera",
+  "pos": "noun",
+  "ru": "шоссе, дорога",
+  "example_es": "La carretera está cortada por la nieve.",
+  "example_ru": "Дорога перекрыта из-за снега.",
+  "rank": 1951,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "carreteras"
+  ]
+ },
+ {
+  "id": "autopista",
+  "es": "autopista",
+  "pos": "noun",
+  "ru": "автомагистраль",
+  "example_es": "Por la autopista llegamos en dos horas.",
+  "example_ru": "По автомагистрали мы доедем за два часа.",
+  "rank": 5254,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "autopistas"
+  ]
+ },
+ {
+  "id": "gasolina",
+  "es": "gasolina",
+  "pos": "noun",
+  "ru": "бензин",
+  "example_es": "Hay que poner {es: gasolina | rio: nafta} antes de salir.",
+  "example_ru": "Перед выездом нужно заправиться.",
+  "rank": 3160,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "gasolinas"
+  ],
+  "variants": {
+   "rio": "la nafta"
+  }
+ },
+ {
+  "id": "gasolinera",
+  "es": "gasolinera",
+  "pos": "noun",
+  "ru": "автозаправка",
+  "example_es": "Paramos en {es: una gasolinera | rio: una estación de servicio} para tomar un café.",
+  "example_ru": "Мы остановились на заправке выпить кофе.",
+  "rank": 9385,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "gasolineras"
+  ],
+  "variants": {
+   "rio": "la estación de servicio"
+  }
+ },
+ {
+  "id": "aparcar",
+  "es": "aparcar",
+  "pos": "verb",
+  "ru": "парковать(ся)",
+  "example_es": "No hay sitio para {es: aparcar | am: estacionar | rio: estacionar} en el centro.",
+  "example_ru": "В центре негде припарковаться.",
+  "rank": 15110,
+  "forms": [
+   "aparqué",
+   "aparque"
+  ],
+  "variants": {
+   "am": "estacionar",
+   "rio": "estacionar"
+  }
+ },
+ {
+  "id": "aparcamiento",
+  "es": "aparcamiento",
+  "pos": "noun",
+  "ru": "парковка, стоянка",
+  "example_es": "El hotel tiene {es: aparcamiento | am: estacionamiento | rio: estacionamiento} gratuito.",
+  "example_ru": "В отеле есть бесплатная парковка.",
+  "rank": 7642,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "aparcamientos"
+  ],
+  "variants": {
+   "am": "el estacionamiento",
+   "rio": "el estacionamiento"
+  }
+ },
+ {
+  "id": "multa",
+  "es": "multa",
+  "pos": "noun",
+  "ru": "штраф",
+  "example_es": "Me pusieron una multa por exceso de velocidad.",
+  "example_ru": "Меня оштрафовали за превышение скорости.",
+  "rank": 6032,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "multas"
+  ]
+ },
+ {
+  "id": "peaje",
+  "es": "peaje",
+  "pos": "noun",
+  "ru": "плата за проезд; платная дорога",
+  "example_es": "Esta autopista es de peaje.",
+  "example_ru": "Эта автомагистраль платная.",
+  "rank": 21266,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "peajes"
+  ]
+ },
+ {
+  "id": "atasco",
+  "es": "atasco",
+  "pos": "noun",
+  "ru": "пробка (на дороге)",
+  "example_es": "Había {es: un atasco | am: un embotellamiento | rio: un embotellamiento} enorme a la salida de la ciudad.",
+  "example_ru": "На выезде из города была огромная пробка.",
+  "rank": 20197,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "atascos"
+  ],
+  "variants": {
+   "am": "el embotellamiento",
+   "rio": "el embotellamiento"
+  }
+ },
+ {
+  "id": "transporte",
+  "es": "transporte",
+  "pos": "noun",
+  "ru": "транспорт",
+  "example_es": "El transporte público funciona muy bien aquí.",
+  "example_ru": "Общественный транспорт здесь работает отлично.",
+  "rank": 3131,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "transportes"
+  ]
+ },
+ {
+  "id": "conductor",
+  "es": "conductor",
+  "pos": "noun",
+  "ru": "водитель",
+  "example_es": "El conductor del autobús nos ayudó con las maletas.",
+  "example_ru": "Водитель автобуса помог нам с чемоданами.",
+  "rank": 2613,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "conductores",
+   "conductora",
+   "conductoras"
+  ]
+ },
+ {
+  "id": "andén",
+  "es": "andén",
+  "pos": "noun",
+  "ru": "платформа, перрон",
+  "example_es": "El tren sale del andén número tres.",
+  "example_ru": "Поезд отправляется с третьей платформы.",
+  "rank": 19071,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "andenes"
+  ]
+ },
+ {
+  "id": "vía",
+  "es": "vía",
+  "pos": "noun",
+  "ru": "путь (железнодорожный); дорога",
+  "example_es": "Está prohibido cruzar las vías del tren.",
+  "example_ru": "Переходить железнодорожные пути запрещено.",
+  "rank": 3490,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "vías"
+  ]
+ },
+ {
+  "id": "visado",
+  "es": "visado",
+  "pos": "noun",
+  "ru": "виза",
+  "example_es": "Para viajar a ese país necesitas {es: visado | am: visa | rio: visa}.",
+  "example_ru": "Чтобы поехать в эту страну, нужна виза.",
+  "rank": 20492,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "visados"
+  ],
+  "variants": {
+   "am": "la visa",
+   "rio": "la visa"
+  }
+ },
+ {
+  "id": "aduana",
+  "es": "aduana",
+  "pos": "noun",
+  "ru": "таможня",
+  "example_es": "Pasamos la aduana sin ningún problema.",
+  "example_ru": "Мы прошли таможню без проблем.",
+  "rank": 13868,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "aduanas"
+  ]
+ },
+ {
+  "id": "embarque",
+  "es": "embarque",
+  "pos": "noun",
+  "ru": "посадка (на рейс)",
+  "example_es": "El embarque empieza media hora antes del vuelo.",
+  "example_ru": "Посадка начинается за полчаса до вылета.",
+  "rank": 14682,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "embarques"
+  ]
+ },
+ {
+  "id": "facturar",
+  "es": "facturar",
+  "pos": "verb",
+  "ru": "сдавать (багаж)",
+  "example_es": "¿Va a facturar alguna maleta?",
+  "example_ru": "Будете сдавать чемодан в багаж?",
+  "rank": 49999
+ },
+ {
+  "id": "escala",
+  "es": "escala",
+  "pos": "noun",
+  "ru": "пересадка, промежуточная посадка",
+  "example_es": "El vuelo hace escala en una ciudad europea.",
+  "example_ru": "У рейса пересадка в одном европейском городе.",
+  "rank": 4493,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "escalas"
+  ]
+ },
+ {
+  "id": "transbordo",
+  "es": "transbordo",
+  "pos": "noun",
+  "ru": "пересадка (в транспорте)",
+  "example_es": "Tienes que hacer transbordo en la siguiente estación.",
+  "example_ru": "На следующей станции тебе нужно сделать пересадку.",
+  "rank": 49999,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "transbordos"
+  ]
+ },
+ {
+  "id": "cancelar",
+  "es": "cancelar",
+  "pos": "verb",
+  "ru": "отменять",
+  "example_es": "Cancelaron el vuelo por la niebla.",
+  "example_ru": "Рейс отменили из-за тумана.",
+  "rank": 5543
+ },
+ {
+  "id": "retrasarse",
+  "es": "retrasarse",
+  "pos": "verb",
+  "ru": "задерживаться, опаздывать",
+  "example_es": "El tren se retrasó una hora.",
+  "example_ru": "Поезд задержался на час.",
+  "rank": 14481,
+  "forms": [
+   "retrasó",
+   "retrasado",
+   "retrasa"
+  ]
+ },
+ {
+  "id": "plano",
+  "es": "plano",
+  "pos": "noun",
+  "ru": "план, карта (города)",
+  "example_es": "Pedí un plano de la ciudad en el hotel.",
+  "example_ru": "Я попросил в отеле карту города.",
+  "rank": 4713,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "planos"
+  ]
+ },
+ {
+  "id": "folleto",
+  "es": "folleto",
+  "pos": "noun",
+  "ru": "буклет, брошюра",
+  "example_es": "En la oficina de turismo te dan folletos gratis.",
+  "example_ru": "В туристическом бюро бесплатно дают буклеты.",
+  "rank": 12820,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "folletos"
+  ]
+ },
+ {
+  "id": "itinerario",
+  "es": "itinerario",
+  "pos": "noun",
+  "ru": "маршрут",
+  "example_es": "Ya tenemos el itinerario de todo el viaje.",
+  "example_ru": "У нас уже есть маршрут на всю поездку.",
+  "rank": 16542,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "itinerarios"
+  ]
+ },
+ {
+  "id": "trayecto",
+  "es": "trayecto",
+  "pos": "noun",
+  "ru": "поездка, отрезок пути",
+  "example_es": "El trayecto en tren dura cuatro horas.",
+  "example_ru": "Поездка на поезде длится четыре часа.",
+  "rank": 15158,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "trayectos"
+  ]
+ },
+ {
+  "id": "kilómetro",
+  "es": "kilómetro",
+  "pos": "noun",
+  "ru": "километр",
+  "example_es": "El pueblo está a veinte kilómetros de la costa.",
+  "example_ru": "Деревня находится в двадцати километрах от побережья.",
+  "rank": 9950,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "kilómetros"
+  ]
+ },
+ {
+  "id": "velocidad",
+  "es": "velocidad",
+  "pos": "noun",
+  "ru": "скорость",
+  "example_es": "Reduce la velocidad, estamos cerca de un colegio.",
+  "example_ru": "Сбавь скорость, мы рядом со школой.",
+  "rank": 1622,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "velocidades"
+  ]
+ },
+ {
+  "id": "moto",
+  "es": "moto",
+  "pos": "noun",
+  "ru": "мотоцикл",
+  "example_es": "Recorrió todo el país en moto.",
+  "example_ru": "Он объехал всю страну на мотоцикле.",
+  "rank": 3274,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "motos"
+  ]
+ },
+ {
+  "id": "camión",
+  "es": "camión",
+  "pos": "noun",
+  "ru": "грузовик",
+  "example_es": "Un camión bloqueaba la carretera.",
+  "example_ru": "Грузовик перегородил дорогу.",
+  "rank": 1521,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "camiones"
+  ]
+ },
+ {
+  "id": "tranvía",
+  "es": "tranvía",
+  "pos": "noun",
+  "ru": "трамвай",
+  "example_es": "El tranvía para justo delante del hotel.",
+  "example_ru": "Трамвай останавливается прямо перед отелем.",
+  "rank": 14285,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "tranvías"
+  ]
+ },
+ {
+  "id": "furgoneta",
+  "es": "furgoneta",
+  "pos": "noun",
+  "ru": "фургон, микроавтобус",
+  "example_es": "Alquilamos {es: una furgoneta | am: una camioneta | rio: una camioneta} para ir los ocho juntos.",
+  "example_ru": "Мы взяли напрокат микроавтобус, чтобы поехать ввосьмером.",
+  "rank": 4634,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "furgonetas"
+  ],
+  "variants": {
+   "am": "la camioneta",
+   "rio": "la camioneta"
+  }
+ },
+ {
+  "id": "albergue",
+  "es": "albergue",
+  "pos": "noun",
+  "ru": "хостел; приют",
+  "example_es": "Dormimos en un albergue juvenil muy barato.",
+  "example_ru": "Мы ночевали в очень дешёвом молодёжном хостеле.",
+  "rank": 13666,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "albergues"
+  ]
+ },
+ {
+  "id": "hostal",
+  "es": "hostal",
+  "pos": "noun",
+  "ru": "недорогая гостиница",
+  "example_es": "Encontramos un hostal limpio cerca de la plaza.",
+  "example_ru": "Мы нашли чистую гостиницу рядом с площадью.",
+  "rank": 24041,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "hostales"
+  ]
+ },
+ {
+  "id": "recepción",
+  "es": "recepción",
+  "pos": "noun",
+  "ru": "стойка регистрации; приём",
+  "example_es": "Deja la llave en recepción al salir.",
+  "example_ru": "Уходя, оставь ключ на стойке регистрации.",
+  "rank": 4156,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "recepciones"
+  ]
+ },
+ {
+  "id": "huésped",
+  "es": "huésped",
+  "pos": "noun",
+  "ru": "постоялец, гость",
+  "example_es": "El hotel ofrece desayuno a todos los huéspedes.",
+  "example_ru": "Отель предлагает завтрак всем гостям.",
+  "rank": 7674,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "huéspedes"
+  ]
+ },
+ {
+  "id": "acampar",
+  "es": "acampar",
+  "pos": "verb",
+  "ru": "разбивать лагерь, ставить палатку",
+  "example_es": "Acampamos junto al río.",
+  "example_ru": "Мы разбили лагерь у реки.",
+  "rank": 11585
+ },
+ {
+  "id": "camping",
+  "es": "camping",
+  "pos": "noun",
+  "ru": "кемпинг",
+  "example_es": "Pasamos una semana en un camping de la costa.",
+  "example_ru": "Мы провели неделю в кемпинге на побережье.",
+  "rank": 17955,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "campings"
+  ]
+ },
+ {
+  "id": "viajero",
+  "es": "viajero",
+  "pos": "noun",
+  "ru": "путешественник",
+  "example_es": "Es una viajera incansable.",
+  "example_ru": "Она неутомимая путешественница.",
+  "rank": 10305,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "viajeros",
+   "viajera",
+   "viajeras"
+  ]
+ },
+ {
+  "id": "aventura",
+  "es": "aventura",
+  "pos": "noun",
+  "ru": "приключение",
+  "example_es": "El viaje por la selva fue una gran aventura.",
+  "example_ru": "Поездка по джунглям стала настоящим приключением.",
+  "rank": 2304,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "aventuras"
+  ]
+ },
+ {
+  "id": "vista",
+  "es": "vista",
+  "pos": "noun",
+  "ru": "вид; зрение",
+  "example_es": "La habitación tiene unas vistas preciosas al mar.",
+  "example_ru": "Из номера прекрасный вид на море.",
+  "rank": 810,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "vistas"
+  ]
+ },
+ {
+  "id": "alrededores",
+  "es": "alrededores",
+  "pos": "noun",
+  "ru": "окрестности",
+  "example_es": "Visitamos los alrededores de la ciudad en bicicleta.",
+  "example_ru": "Мы объехали окрестности города на велосипеде.",
+  "rank": 8434,
+  "article": "los",
+  "gender": "m"
+ },
+ {
+  "id": "objetos-perdidos",
+  "es": "objetos perdidos",
+  "pos": "phrase",
+  "ru": "бюро находок",
+  "example_es": "Pregunta en objetos perdidos, quizá alguien encontró tu cartera.",
+  "example_ru": "Спроси в бюро находок, может, кто-то нашёл твой кошелёк.",
+  "rank": 4273
+ },
+ {
+  "id": "hacer-la-maleta",
+  "es": "hacer la maleta",
+  "pos": "phrase",
+  "ru": "собирать чемодан",
+  "example_es": "Esta noche tengo que hacer la maleta.",
+  "example_ru": "Сегодня вечером мне нужно собрать чемодан.",
+  "rank": 3226
+ },
+ {
+  "id": "temporada-alta",
+  "es": "temporada alta",
+  "pos": "phrase",
+  "ru": "высокий сезон",
+  "example_es": "En temporada alta los precios suben mucho.",
+  "example_ru": "В высокий сезон цены сильно растут.",
+  "rank": 2095
+ },
+ {
+  "id": "turismo",
+  "es": "turismo",
+  "pos": "noun",
+  "ru": "туризм",
+  "example_es": "El turismo es muy importante para esta isla.",
+  "example_ru": "Туризм очень важен для этого острова.",
+  "rank": 13734,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "turismos"
+  ]
+ },
+ {
+  "id": "semáforo",
+  "es": "semáforo",
+  "pos": "noun",
+  "ru": "светофор",
+  "example_es": "Gira a la derecha en el próximo semáforo.",
+  "example_ru": "На следующем светофоре поверни направо.",
+  "rank": 14972,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "semáforos"
+  ]
+ },
+ {
+  "id": "ventanilla",
+  "es": "ventanilla",
+  "pos": "noun",
+  "ru": "окошко (кассы); окно (в транспорте)",
+  "example_es": "Prefiero el asiento de ventanilla en el avión.",
+  "example_ru": "В самолёте я предпочитаю место у окна.",
+  "rank": 12237,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "ventanillas"
+  ]
+ },
+ {
+  "id": "carril",
+  "es": "carril",
+  "pos": "noun",
+  "ru": "полоса (движения)",
+  "example_es": "El carril de la izquierda es solo para adelantar.",
+  "example_ru": "Левая полоса — только для обгона.",
+  "rank": 14619,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "carriles"
+  ]
+ }
+]

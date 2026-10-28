@@ -1,0 +1,694 @@
+[
+ {
+  "id": "esencia",
+  "es": "esencia",
+  "pos": "noun",
+  "ru": "сущность; суть",
+  "example_es": "En esencia, los dos proyectos persiguen lo mismo.",
+  "example_ru": "По сути, оба проекта преследуют одну и ту же цель.",
+  "rank": 6733,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "esencias"
+  ]
+ },
+ {
+  "id": "índole",
+  "es": "índole",
+  "pos": "noun",
+  "ru": "характер, природа (чего-либо)",
+  "example_es": "Son problemas de índole económica, no política.",
+  "example_ru": "Это проблемы экономического, а не политического характера.",
+  "rank": 33753,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "índoles"
+  ]
+ },
+ {
+  "id": "noción",
+  "es": "noción",
+  "pos": "noun",
+  "ru": "понятие; представление",
+  "example_es": "Perdió la noción del tiempo mientras leía.",
+  "example_ru": "За чтением он потерял счёт времени.",
+  "rank": 10568,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "nociones"
+  ]
+ },
+ {
+  "id": "alcance",
+  "es": "alcance",
+  "pos": "noun",
+  "ru": "охват; масштаб; досягаемость",
+  "example_es": "Todavía no conocemos el alcance real de la crisis.",
+  "example_ru": "Мы пока не знаем реальных масштабов кризиса.",
+  "rank": 3215,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "alcances"
+  ]
+ },
+ {
+  "id": "trasfondo",
+  "es": "trasfondo",
+  "pos": "noun",
+  "ru": "подоплёка; фон",
+  "example_es": "Detrás del conflicto hay un trasfondo histórico complejo.",
+  "example_ru": "За конфликтом стоит сложная историческая подоплёка.",
+  "rank": 41357,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "trasfondos"
+  ]
+ },
+ {
+  "id": "dimensión",
+  "es": "dimensión",
+  "pos": "noun",
+  "ru": "измерение; масштаб; аспект",
+  "example_es": "El problema tiene también una dimensión ética.",
+  "example_ru": "У проблемы есть и этический аспект.",
+  "rank": 7082,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "dimensiones"
+  ]
+ },
+ {
+  "id": "equilibrio",
+  "es": "equilibrio",
+  "pos": "noun",
+  "ru": "равновесие; баланс",
+  "example_es": "Busco un equilibrio entre el trabajo y la vida personal.",
+  "example_ru": "Я ищу баланс между работой и личной жизнью.",
+  "rank": 5841,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "equilibrios"
+  ]
+ },
+ {
+  "id": "incertidumbre",
+  "es": "incertidumbre",
+  "pos": "noun",
+  "ru": "неопределённость",
+  "example_es": "Vivimos una época de enorme incertidumbre.",
+  "example_ru": "Мы живём во времена огромной неопределённости.",
+  "rank": 18614,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "incertidumbres"
+  ]
+ },
+ {
+  "id": "ambigüedad",
+  "es": "ambigüedad",
+  "pos": "noun",
+  "ru": "двусмысленность; неоднозначность",
+  "example_es": "La ambigüedad del texto permite varias interpretaciones.",
+  "example_ru": "Неоднозначность текста допускает разные толкования.",
+  "rank": 43403,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "ambigüedades"
+  ]
+ },
+ {
+  "id": "contradicción",
+  "es": "contradicción",
+  "pos": "noun",
+  "ru": "противоречие",
+  "example_es": "Hay una contradicción evidente entre lo que dice y lo que hace.",
+  "example_ru": "Между его словами и делами явное противоречие.",
+  "rank": 23265,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "contradicciones"
+  ]
+ },
+ {
+  "id": "paradoja",
+  "es": "paradoja",
+  "pos": "noun",
+  "ru": "парадокс",
+  "example_es": "Es una paradoja que el país más rico tenga tanta pobreza.",
+  "example_ru": "Парадокс в том, что в самой богатой стране столько бедности.",
+  "rank": 19503,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "paradojas"
+  ]
+ },
+ {
+  "id": "dilema",
+  "es": "dilema",
+  "pos": "noun",
+  "ru": "дилемма",
+  "example_es": "Me encuentro ante un dilema moral difícil de resolver.",
+  "example_ru": "Я стою перед трудной моральной дилеммой.",
+  "rank": 11887,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "dilemas"
+  ]
+ },
+ {
+  "id": "vínculo",
+  "es": "vínculo",
+  "pos": "noun",
+  "ru": "связь; узы",
+  "example_es": "Mantiene un vínculo muy estrecho con su tierra natal.",
+  "example_ru": "Он сохраняет очень тесную связь с родными местами.",
+  "rank": 7465,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "vínculos"
+  ]
+ },
+ {
+  "id": "transcurso",
+  "es": "transcurso",
+  "pos": "noun",
+  "ru": "течение, ход (времени)",
+  "example_es": "En el transcurso de la reunión surgieron nuevas dudas.",
+  "example_ru": "В ходе встречи возникли новые сомнения.",
+  "rank": 23582,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "transcursos"
+  ]
+ },
+ {
+  "id": "perspectiva",
+  "es": "perspectiva",
+  "pos": "noun",
+  "ru": "перспектива; точка зрения",
+  "example_es": "Con el tiempo, veo aquella decisión desde otra perspectiva.",
+  "example_ru": "Со временем я смотрю на то решение с другой точки зрения.",
+  "rank": 5073,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "perspectivas"
+  ]
+ },
+ {
+  "id": "criterio",
+  "es": "criterio",
+  "pos": "noun",
+  "ru": "критерий; суждение",
+  "example_es": "¿Con qué criterio eligieron a los ganadores?",
+  "example_ru": "По какому критерию выбрали победителей?",
+  "rank": 12973,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "criterios"
+  ]
+ },
+ {
+  "id": "pauta",
+  "es": "pauta",
+  "pos": "noun",
+  "ru": "ориентир; правило; модель",
+  "example_es": "Los expertos han marcado unas pautas claras de actuación.",
+  "example_ru": "Эксперты задали чёткие ориентиры действий.",
+  "rank": 36345,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "pautas"
+  ]
+ },
+ {
+  "id": "carencia",
+  "es": "carencia",
+  "pos": "noun",
+  "ru": "нехватка; отсутствие",
+  "example_es": "Su mayor problema es la carencia de recursos.",
+  "example_ru": "Их главная проблема — нехватка ресурсов.",
+  "rank": 37567,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "carencias"
+  ]
+ },
+ {
+  "id": "plenitud",
+  "es": "plenitud",
+  "pos": "noun",
+  "ru": "полнота; расцвет",
+  "example_es": "A los cuarenta años vivía la plenitud de su carrera.",
+  "example_ru": "В сорок лет он был в расцвете карьеры.",
+  "rank": 31860,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "plenitudes"
+  ]
+ },
+ {
+  "id": "azar",
+  "es": "azar",
+  "pos": "noun",
+  "ru": "случай; случайность",
+  "example_es": "Nada en esta novela ocurre por azar.",
+  "example_ru": "В этом романе ничего не происходит случайно.",
+  "rank": 5004,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "azares"
+  ]
+ },
+ {
+  "id": "albedrío",
+  "es": "albedrío",
+  "pos": "noun",
+  "ru": "воля, свобода воли",
+  "example_es": "Los filósofos discuten si existe el libre albedrío.",
+  "example_ru": "Философы спорят, существует ли свобода воли.",
+  "rank": 22059,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "albedríos"
+  ]
+ },
+ {
+  "id": "conciencia",
+  "es": "conciencia",
+  "pos": "noun",
+  "ru": "сознание; совесть",
+  "example_es": "Cada vez hay más conciencia sobre el cambio climático.",
+  "example_ru": "Осознание проблемы изменения климата растёт.",
+  "rank": 2645,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "conciencias"
+  ]
+ },
+ {
+  "id": "relevancia",
+  "es": "relevancia",
+  "pos": "noun",
+  "ru": "значимость, важность",
+  "example_es": "Es un detalle sin mayor relevancia.",
+  "example_ru": "Это деталь, не имеющая особого значения.",
+  "rank": 19339,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "relevancias"
+  ]
+ },
+ {
+  "id": "complejidad",
+  "es": "complejidad",
+  "pos": "noun",
+  "ru": "сложность",
+  "example_es": "Subestimamos la complejidad del proyecto.",
+  "example_ru": "Мы недооценили сложность проекта.",
+  "rank": 22040,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "complejidades"
+  ]
+ },
+ {
+  "id": "singularidad",
+  "es": "singularidad",
+  "pos": "noun",
+  "ru": "своеобразие; уникальность",
+  "example_es": "La singularidad de su estilo lo hace inconfundible.",
+  "example_ru": "Своеобразие его стиля делает его узнаваемым.",
+  "rank": 26114,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "singularidades"
+  ]
+ },
+ {
+  "id": "autenticidad",
+  "es": "autenticidad",
+  "pos": "noun",
+  "ru": "подлинность",
+  "example_es": "Los expertos dudan de la autenticidad del cuadro.",
+  "example_ru": "Эксперты сомневаются в подлинности картины.",
+  "rank": 24773,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "autenticidades"
+  ]
+ },
+ {
+  "id": "legitimidad",
+  "es": "legitimidad",
+  "pos": "noun",
+  "ru": "легитимность; законность",
+  "example_es": "El nuevo gobierno carece de legitimidad ante la población.",
+  "example_ru": "Новое правительство не обладает легитимностью в глазах населения.",
+  "rank": 37528,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "legitimidades"
+  ]
+ },
+ {
+  "id": "finalidad",
+  "es": "finalidad",
+  "pos": "noun",
+  "ru": "цель; назначение",
+  "example_es": "La finalidad del programa es reducir el abandono escolar.",
+  "example_ru": "Цель программы — сократить отсев из школ.",
+  "rank": 30531,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "finalidades"
+  ]
+ },
+ {
+  "id": "propósito",
+  "es": "propósito",
+  "pos": "noun",
+  "ru": "цель; намерение",
+  "example_es": "Mi propósito para este año es leer más.",
+  "example_ru": "Моя цель на этот год — больше читать.",
+  "rank": 1442,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "propósitos"
+  ]
+ },
+ {
+  "id": "desenlace",
+  "es": "desenlace",
+  "pos": "noun",
+  "ru": "развязка; исход",
+  "example_es": "El desenlace de la novela sorprendió a todos.",
+  "example_ru": "Развязка романа всех удивила.",
+  "rank": 34970,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "desenlaces"
+  ]
+ },
+ {
+  "id": "auge",
+  "es": "auge",
+  "pos": "noun",
+  "ru": "подъём; расцвет; бум",
+  "example_es": "El turismo rural vive un auge sin precedentes.",
+  "example_ru": "Сельский туризм переживает небывалый подъём.",
+  "rank": 23315,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "auges"
+  ]
+ },
+ {
+  "id": "declive",
+  "es": "declive",
+  "pos": "noun",
+  "ru": "упадок; спад",
+  "example_es": "La ciudad entró en declive tras el cierre de las minas.",
+  "example_ru": "После закрытия шахт город пришёл в упадок.",
+  "rank": 31585,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "declives"
+  ]
+ },
+ {
+  "id": "apogeo",
+  "es": "apogeo",
+  "pos": "noun",
+  "ru": "апогей; расцвет",
+  "example_es": "El imperio alcanzó su apogeo en el siglo XVI.",
+  "example_ru": "Империя достигла расцвета в XVI веке.",
+  "rank": 26711,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "apogeos"
+  ]
+ },
+ {
+  "id": "afán",
+  "es": "afán",
+  "pos": "noun",
+  "ru": "стремление; рвение",
+  "example_es": "Lo movía un afán constante de superación.",
+  "example_ru": "Им двигало постоянное стремление к самосовершенствованию.",
+  "rank": 30719,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "afanes"
+  ]
+ },
+ {
+  "id": "anhelo",
+  "es": "anhelo",
+  "pos": "noun",
+  "ru": "страстное желание; чаяние",
+  "example_es": "Su mayor anhelo era volver a ver a su familia.",
+  "example_ru": "Её самым заветным желанием было снова увидеть семью.",
+  "rank": 15243,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "anhelos"
+  ]
+ },
+ {
+  "id": "indicio",
+  "es": "indicio",
+  "pos": "noun",
+  "ru": "признак; улика",
+  "example_es": "No hay ningún indicio de mejora a corto plazo.",
+  "example_ru": "Нет никаких признаков улучшения в ближайшее время.",
+  "rank": 14017,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "indicios"
+  ]
+ },
+ {
+  "id": "vestigio",
+  "es": "vestigio",
+  "pos": "noun",
+  "ru": "след; остаток",
+  "example_es": "En el pueblo aún quedan vestigios de la época romana.",
+  "example_ru": "В деревне ещё сохранились следы римской эпохи.",
+  "rank": 43953,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "vestigios"
+  ]
+ },
+ {
+  "id": "idiosincrasia",
+  "es": "idiosincrasia",
+  "pos": "noun",
+  "ru": "своеобразие; менталитет",
+  "example_es": "El humor forma parte de la idiosincrasia de este pueblo.",
+  "example_ru": "Юмор — часть менталитета этого народа.",
+  "rank": 49999,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "idiosincrasias"
+  ]
+ },
+ {
+  "id": "coyuntura",
+  "es": "coyuntura",
+  "pos": "noun",
+  "ru": "обстановка; конъюнктура",
+  "example_es": "En la coyuntura actual, no conviene arriesgar.",
+  "example_ru": "В нынешней обстановке рисковать не стоит.",
+  "rank": 49999,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "coyunturas"
+  ]
+ },
+ {
+  "id": "intrínseco",
+  "es": "intrínseco",
+  "pos": "adj",
+  "ru": "внутренне присущий",
+  "example_es": "La belleza tiene un valor intrínseco.",
+  "example_ru": "Красота обладает ценностью сама по себе.",
+  "rank": 49999,
+  "forms": [
+   "intrínseca",
+   "intrínsecos",
+   "intrínsecas"
+  ]
+ },
+ {
+  "id": "inherente",
+  "es": "inherente",
+  "pos": "adj",
+  "ru": "присущий, неотъемлемый",
+  "example_es": "El riesgo es inherente a cualquier inversión.",
+  "example_ru": "Риск присущ любым инвестициям.",
+  "rank": 39023,
+  "forms": [
+   "inherentes"
+  ]
+ },
+ {
+  "id": "subyacente",
+  "es": "subyacente",
+  "pos": "adj",
+  "ru": "лежащий в основе; скрытый",
+  "example_es": "Hay que atacar las causas subyacentes del problema.",
+  "example_ru": "Нужно бороться с глубинными причинами проблемы.",
+  "rank": 33367,
+  "forms": [
+   "subyacentes"
+  ]
+ },
+ {
+  "id": "tangible",
+  "es": "tangible",
+  "pos": "adj",
+  "ru": "осязаемый, ощутимый",
+  "example_es": "Los resultados todavía no son tangibles.",
+  "example_ru": "Результаты пока не ощутимы.",
+  "rank": 30647,
+  "forms": [
+   "tangibles"
+  ]
+ },
+ {
+  "id": "latente",
+  "es": "latente",
+  "pos": "adj",
+  "ru": "скрытый, латентный",
+  "example_es": "El conflicto seguía latente bajo una calma aparente.",
+  "example_ru": "Конфликт сохранялся в скрытом виде под видимым спокойствием.",
+  "rank": 29124,
+  "forms": [
+   "latentes"
+  ]
+ },
+ {
+  "id": "nexo",
+  "es": "nexo",
+  "pos": "noun",
+  "ru": "связь; связующее звено",
+  "example_es": "No existe ningún nexo entre ambos casos.",
+  "example_ru": "Между этими двумя делами нет никакой связи.",
+  "rank": 32245,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "nexos"
+  ]
+ },
+ {
+  "id": "certeza",
+  "es": "certeza",
+  "pos": "noun",
+  "ru": "уверенность; достоверность",
+  "example_es": "No tenemos la certeza de que vaya a funcionar.",
+  "example_ru": "У нас нет уверенности, что это сработает.",
+  "rank": 5847,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "certezas"
+  ]
+ },
+ {
+  "id": "pretexto",
+  "es": "pretexto",
+  "pos": "noun",
+  "ru": "предлог",
+  "example_es": "Usó el cansancio como pretexto para no venir.",
+  "example_ru": "Он сослался на усталость как на предлог, чтобы не приходить.",
+  "rank": 14247,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "pretextos"
+  ]
+ },
+ {
+  "id": "precedente",
+  "es": "precedente",
+  "pos": "noun",
+  "ru": "прецедент",
+  "example_es": "La sentencia sienta un precedente importante.",
+  "example_ru": "Это решение создаёт важный прецедент.",
+  "rank": 16736,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "precedentes"
+  ]
+ },
+ {
+  "id": "continuidad",
+  "es": "continuidad",
+  "pos": "noun",
+  "ru": "преемственность; непрерывность",
+  "example_es": "El nuevo director garantiza la continuidad del proyecto.",
+  "example_ru": "Новый директор гарантирует преемственность проекта.",
+  "rank": 23288,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "continuidades"
+  ]
+ },
+ {
+  "id": "ruptura",
+  "es": "ruptura",
+  "pos": "noun",
+  "ru": "разрыв; перелом",
+  "example_es": "Su obra supone una ruptura con la tradición.",
+  "example_ru": "Его творчество означает разрыв с традицией.",
+  "rank": 7235,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "rupturas"
+  ]
+ }
+]

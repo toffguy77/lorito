@@ -1,0 +1,679 @@
+[
+ {
+  "id": "síntoma",
+  "es": "síntoma",
+  "pos": "noun",
+  "ru": "симптом",
+  "example_es": "¿Qué síntomas tiene usted desde ayer?",
+  "example_ru": "Какие у вас симптомы со вчерашнего дня?",
+  "rank": 13791,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "síntomas"
+  ]
+ },
+ {
+  "id": "tratamiento",
+  "es": "tratamiento",
+  "pos": "noun",
+  "ru": "лечение",
+  "example_es": "El tratamiento dura dos semanas.",
+  "example_ru": "Лечение длится две недели.",
+  "rank": 2546,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "tratamientos"
+  ]
+ },
+ {
+  "id": "diagnóstico",
+  "es": "diagnóstico",
+  "pos": "noun",
+  "ru": "диагноз",
+  "example_es": "El médico todavía no tiene un diagnóstico claro.",
+  "example_ru": "У врача пока нет чёткого диагноза.",
+  "rank": 7026,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "diagnósticos"
+  ]
+ },
+ {
+  "id": "operación",
+  "es": "operación",
+  "pos": "noun",
+  "ru": "операция",
+  "example_es": "La operación salió muy bien.",
+  "example_ru": "Операция прошла очень хорошо.",
+  "rank": 1456,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "operaciones"
+  ]
+ },
+ {
+  "id": "operar",
+  "es": "operar",
+  "pos": "verb",
+  "ru": "оперировать",
+  "example_es": "Lo operaron de la rodilla la semana pasada.",
+  "example_ru": "На прошлой неделе ему сделали операцию на колене.",
+  "rank": 6990
+ },
+ {
+  "id": "cirujano",
+  "es": "cirujano",
+  "pos": "noun",
+  "ru": "хирург",
+  "example_es": "El cirujano me explicó todos los riesgos.",
+  "example_ru": "Хирург объяснил мне все риски.",
+  "rank": 4875,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "cirujanos",
+   "cirujana",
+   "cirujanas"
+  ]
+ },
+ {
+  "id": "vacuna",
+  "es": "vacuna",
+  "pos": "noun",
+  "ru": "вакцина, прививка",
+  "example_es": "Todos los niños necesitan esta vacuna.",
+  "example_ru": "Всем детям нужна эта прививка.",
+  "rank": 9631,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "vacunas"
+  ]
+ },
+ {
+  "id": "inyección",
+  "es": "inyección",
+  "pos": "noun",
+  "ru": "укол",
+  "example_es": "La enfermera me puso una inyección en el brazo.",
+  "example_ru": "Медсестра сделала мне укол в руку.",
+  "rank": 6841,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "inyecciones"
+  ]
+ },
+ {
+  "id": "jarabe",
+  "es": "jarabe",
+  "pos": "noun",
+  "ru": "сироп",
+  "example_es": "Toma este jarabe para la tos tres veces al día.",
+  "example_ru": "Пей этот сироп от кашля три раза в день.",
+  "rank": 13777,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "jarabes"
+  ]
+ },
+ {
+  "id": "pomada",
+  "es": "pomada",
+  "pos": "noun",
+  "ru": "мазь",
+  "example_es": "Ponte esta pomada en la quemadura.",
+  "example_ru": "Намажь ожог этой мазью.",
+  "rank": 26843,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "pomadas"
+  ]
+ },
+ {
+  "id": "tirita",
+  "es": "tirita",
+  "pos": "noun",
+  "ru": "пластырь",
+  "example_es": "Necesito {es: una tirita | am: una curita | rio: una curita}, me he cortado el dedo.",
+  "example_ru": "Мне нужен пластырь, я порезал палец.",
+  "rank": 31168,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "tiritas"
+  ],
+  "variants": {
+   "am": "la curita",
+   "rio": "la curita"
+  }
+ },
+ {
+  "id": "venda",
+  "es": "venda",
+  "pos": "noun",
+  "ru": "бинт, повязка",
+  "example_es": "Llevó una venda en el tobillo durante una semana.",
+  "example_ru": "Неделю он ходил с повязкой на лодыжке.",
+  "rank": 7726,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "vendas"
+  ]
+ },
+ {
+  "id": "termómetro",
+  "es": "termómetro",
+  "pos": "noun",
+  "ru": "градусник, термометр",
+  "example_es": "Ponle el termómetro al niño, parece que tiene fiebre.",
+  "example_ru": "Поставь ребёнку градусник, кажется, у него температура.",
+  "rank": 23413,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "termómetros"
+  ]
+ },
+ {
+  "id": "consulta",
+  "es": "consulta",
+  "pos": "noun",
+  "ru": "приём (у врача); консультация",
+  "example_es": "La doctora tiene consulta por las mañanas.",
+  "example_ru": "Врач ведёт приём по утрам.",
+  "rank": 6009,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "consultas"
+  ]
+ },
+ {
+  "id": "mareo",
+  "es": "mareo",
+  "pos": "noun",
+  "ru": "головокружение; укачивание",
+  "example_es": "En el barco siempre tengo mareos.",
+  "example_ru": "На корабле меня всегда укачивает.",
+  "rank": 15318,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "mareos"
+  ]
+ },
+ {
+  "id": "marearse",
+  "es": "marearse",
+  "pos": "verb",
+  "ru": "чувствовать головокружение; укачиваться",
+  "example_es": "Me mareo cuando leo en el coche.",
+  "example_ru": "Меня укачивает, когда я читаю в машине.",
+  "rank": 48285,
+  "forms": [
+   "mareo",
+   "mareé",
+   "mareado"
+  ]
+ },
+ {
+  "id": "vomitar",
+  "es": "vomitar",
+  "pos": "verb",
+  "ru": "тошнить (рвать)",
+  "example_es": "El niño vomitó toda la noche.",
+  "example_ru": "Ребёнка рвало всю ночь.",
+  "rank": 4703
+ },
+ {
+  "id": "toser",
+  "es": "toser",
+  "pos": "verb",
+  "ru": "кашлять",
+  "example_es": "No paró de toser durante toda la película.",
+  "example_ru": "Он кашлял весь фильм.",
+  "rank": 25311
+ },
+ {
+  "id": "estornudar",
+  "es": "estornudar",
+  "pos": "verb",
+  "ru": "чихать",
+  "example_es": "Con la alergia no dejo de estornudar.",
+  "example_ru": "Из-за аллергии я постоянно чихаю.",
+  "rank": 30229
+ },
+ {
+  "id": "sangre",
+  "es": "sangre",
+  "pos": "noun",
+  "ru": "кровь",
+  "example_es": "Perdió mucha sangre en el accidente.",
+  "example_ru": "В аварии он потерял много крови.",
+  "rank": 427,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "sangres"
+  ]
+ },
+ {
+  "id": "hueso",
+  "es": "hueso",
+  "pos": "noun",
+  "ru": "кость",
+  "example_es": "Se rompió un hueso de la mano.",
+  "example_ru": "Он сломал кость в руке.",
+  "rank": 3564,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "huesos"
+  ]
+ },
+ {
+  "id": "músculo",
+  "es": "músculo",
+  "pos": "noun",
+  "ru": "мышца",
+  "example_es": "Después del gimnasio me duelen todos los músculos.",
+  "example_ru": "После спортзала у меня болят все мышцы.",
+  "rank": 9848,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "músculos"
+  ]
+ },
+ {
+  "id": "piel",
+  "es": "piel",
+  "pos": "noun",
+  "ru": "кожа",
+  "example_es": "Usa crema, tienes la piel muy seca.",
+  "example_ru": "Пользуйся кремом, у тебя очень сухая кожа.",
+  "rank": 1355,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "pieles"
+  ]
+ },
+ {
+  "id": "pulmón",
+  "es": "pulmón",
+  "pos": "noun",
+  "ru": "лёгкое",
+  "example_es": "Fumar daña los pulmones.",
+  "example_ru": "Курение вредит лёгким.",
+  "rank": 8572,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "pulmones"
+  ]
+ },
+ {
+  "id": "cerebro",
+  "es": "cerebro",
+  "pos": "noun",
+  "ru": "мозг",
+  "example_es": "El cerebro necesita dormir para recuperarse.",
+  "example_ru": "Мозгу нужен сон, чтобы восстановиться.",
+  "rank": 1012,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "cerebros"
+  ]
+ },
+ {
+  "id": "nariz",
+  "es": "nariz",
+  "pos": "noun",
+  "ru": "нос",
+  "example_es": "Tengo la nariz tapada por el resfriado.",
+  "example_ru": "У меня заложен нос из-за простуды.",
+  "rank": 1693,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "narices"
+  ]
+ },
+ {
+  "id": "boca",
+  "es": "boca",
+  "pos": "noun",
+  "ru": "рот",
+  "example_es": "Abra la boca, por favor, y diga «a».",
+  "example_ru": "Откройте, пожалуйста, рот и скажите «а».",
+  "rank": 705,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "bocas"
+  ]
+ },
+ {
+  "id": "oreja",
+  "es": "oreja",
+  "pos": "noun",
+  "ru": "ухо (наружное)",
+  "example_es": "Lleva un pendiente en la oreja izquierda.",
+  "example_ru": "Он носит серьгу в левом ухе.",
+  "rank": 4942,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "orejas"
+  ]
+ },
+ {
+  "id": "oído",
+  "es": "oído",
+  "pos": "noun",
+  "ru": "ухо (внутреннее); слух",
+  "example_es": "Me duele el oído desde ayer.",
+  "example_ru": "У меня со вчерашнего дня болит ухо.",
+  "rank": 543,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "oídos"
+  ]
+ },
+ {
+  "id": "hombro",
+  "es": "hombro",
+  "pos": "noun",
+  "ru": "плечо",
+  "example_es": "Llevo la mochila en un solo hombro y me duele.",
+  "example_ru": "Я ношу рюкзак на одном плече, и оно болит.",
+  "rank": 3337,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "hombros"
+  ]
+ },
+ {
+  "id": "tobillo",
+  "es": "tobillo",
+  "pos": "noun",
+  "ru": "лодыжка",
+  "example_es": "Me torcí el tobillo jugando al fútbol.",
+  "example_ru": "Я подвернул ногу, играя в футбол.",
+  "rank": 7079,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "tobillos"
+  ]
+ },
+ {
+  "id": "muñeca",
+  "es": "muñeca",
+  "pos": "noun",
+  "ru": "запястье; кукла",
+  "example_es": "Se hizo daño en la muñeca al caerse.",
+  "example_ru": "Падая, она повредила запястье.",
+  "rank": 2818,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "muñecas"
+  ]
+ },
+ {
+  "id": "dieta",
+  "es": "dieta",
+  "pos": "noun",
+  "ru": "диета; рацион",
+  "example_es": "Estoy a dieta: nada de dulces.",
+  "example_ru": "Я на диете: никаких сладостей.",
+  "rank": 5154,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "dietas"
+  ]
+ },
+ {
+  "id": "adelgazar",
+  "es": "adelgazar",
+  "pos": "verb",
+  "ru": "худеть",
+  "example_es": "Quiere adelgazar cinco kilos antes del verano.",
+  "example_ru": "Она хочет похудеть на пять килограммов до лета.",
+  "rank": 30324,
+  "forms": [
+   "adelgacé"
+  ]
+ },
+ {
+  "id": "engordar",
+  "es": "engordar",
+  "pos": "verb",
+  "ru": "толстеть, поправляться",
+  "example_es": "Si comes tanto pan, vas a engordar.",
+  "example_ru": "Если будешь есть столько хлеба, поправишься.",
+  "rank": 21115
+ },
+ {
+  "id": "estrés",
+  "es": "estrés",
+  "pos": "noun",
+  "ru": "стресс",
+  "example_es": "El estrés afecta mucho a la salud.",
+  "example_ru": "Стресс сильно влияет на здоровье.",
+  "rank": 4442,
+  "article": "el",
+  "gender": "m"
+ },
+ {
+  "id": "cansancio",
+  "es": "cansancio",
+  "pos": "noun",
+  "ru": "усталость",
+  "example_es": "Por la tarde siento un cansancio enorme.",
+  "example_ru": "Днём я чувствую огромную усталость.",
+  "rank": 13914,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "cansancios"
+  ]
+ },
+ {
+  "id": "insomnio",
+  "es": "insomnio",
+  "pos": "noun",
+  "ru": "бессонница",
+  "example_es": "Sufre de insomnio desde hace meses.",
+  "example_ru": "Он уже несколько месяцев страдает бессонницей.",
+  "rank": 16641,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "insomnios"
+  ]
+ },
+ {
+  "id": "embarazada",
+  "es": "embarazada",
+  "pos": "adj",
+  "ru": "беременная",
+  "example_es": "Mi hermana está embarazada de seis meses.",
+  "example_ru": "Моя сестра на шестом месяце беременности.",
+  "rank": 1414,
+  "forms": [
+   "embarazadas"
+  ]
+ },
+ {
+  "id": "embarazo",
+  "es": "embarazo",
+  "pos": "noun",
+  "ru": "беременность",
+  "example_es": "Durante el embarazo hay que evitar el alcohol.",
+  "example_ru": "Во время беременности нужно избегать алкоголя.",
+  "rank": 5384,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "embarazos"
+  ]
+ },
+ {
+  "id": "quemadura",
+  "es": "quemadura",
+  "pos": "noun",
+  "ru": "ожог",
+  "example_es": "Tengo una quemadura del sol en la espalda.",
+  "example_ru": "У меня солнечный ожог на спине.",
+  "rank": 15886,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "quemaduras"
+  ]
+ },
+ {
+  "id": "golpe",
+  "es": "golpe",
+  "pos": "noun",
+  "ru": "удар; ушиб",
+  "example_es": "Me di un golpe en la cabeza con la puerta.",
+  "example_ru": "Я ударился головой о дверь.",
+  "rank": 1283,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "golpes"
+  ]
+ },
+ {
+  "id": "hinchado",
+  "es": "hinchado",
+  "pos": "adj",
+  "ru": "опухший",
+  "example_es": "Tengo el pie muy hinchado.",
+  "example_ru": "У меня сильно опухла нога.",
+  "rank": 16976,
+  "forms": [
+   "hinchada",
+   "hinchados",
+   "hinchadas"
+  ]
+ },
+ {
+  "id": "empeorar",
+  "es": "empeorar",
+  "pos": "verb",
+  "ru": "ухудшаться",
+  "example_es": "Sin antibióticos, la infección puede empeorar.",
+  "example_ru": "Без антибиотиков инфекция может обостриться.",
+  "rank": 10759
+ },
+ {
+  "id": "recuperarse",
+  "es": "recuperarse",
+  "pos": "verb",
+  "ru": "выздоравливать, приходить в себя",
+  "example_es": "Se recuperó rápido de la gripe.",
+  "example_ru": "Он быстро оправился от гриппа.",
+  "rank": 2019,
+  "forms": [
+   "recuperó",
+   "recuperé",
+   "recuperado"
+  ]
+ },
+ {
+  "id": "infección",
+  "es": "infección",
+  "pos": "noun",
+  "ru": "инфекция",
+  "example_es": "Tiene una infección de oído.",
+  "example_ru": "У него воспаление уха.",
+  "rank": 5181,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "infecciones"
+  ]
+ },
+ {
+  "id": "contagiar",
+  "es": "contagiar",
+  "pos": "verb",
+  "ru": "заражать",
+  "example_es": "Quédate en casa, vas a contagiar a todos.",
+  "example_ru": "Оставайся дома, а то всех заразишь.",
+  "rank": 43967
+ },
+ {
+  "id": "presión",
+  "es": "presión",
+  "pos": "noun",
+  "ru": "давление",
+  "example_es": "La enfermera me tomó la presión arterial.",
+  "example_ru": "Медсестра измерила мне давление.",
+  "rank": 1422,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "presiones"
+  ]
+ },
+ {
+  "id": "hacerse-daño",
+  "es": "hacerse daño",
+  "pos": "phrase",
+  "ru": "ушибиться, пораниться",
+  "example_es": "Me hice daño en la espalda al levantar la caja.",
+  "example_ru": "Я потянул спину, когда поднимал коробку.",
+  "rank": 2431,
+  "forms": [
+   "me hice daño",
+   "te has hecho daño"
+  ]
+ },
+ {
+  "id": "cuidarse",
+  "es": "cuidarse",
+  "pos": "verb",
+  "ru": "беречь себя, следить за здоровьем",
+  "example_es": "Cuídate mucho y descansa.",
+  "example_ru": "Береги себя и отдыхай.",
+  "rank": 1703,
+  "forms": [
+   "cuídate",
+   "cuida",
+   "cuidé"
+  ]
+ },
+ {
+  "id": "radiografía",
+  "es": "radiografía",
+  "pos": "noun",
+  "ru": "рентгеновский снимок",
+  "example_es": "La radiografía muestra que no hay fractura.",
+  "example_ru": "Рентген показывает, что перелома нет.",
+  "rank": 15717,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "radiografías"
+  ]
+ }
+]

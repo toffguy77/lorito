@@ -1,0 +1,686 @@
+[
+ {
+  "id": "desigualdad",
+  "es": "desigualdad",
+  "pos": "noun",
+  "ru": "неравенство",
+  "example_es": "La desigualdad entre ricos y pobres no deja de crecer.",
+  "example_ru": "Неравенство между богатыми и бедными продолжает расти.",
+  "rank": 39328,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "desigualdades"
+  ]
+ },
+ {
+  "id": "exclusión",
+  "es": "exclusión",
+  "pos": "noun",
+  "ru": "исключение; социальная изоляция",
+  "example_es": "Muchas personas mayores viven en riesgo de exclusión social.",
+  "example_ru": "Многие пожилые люди находятся под угрозой социальной изоляции.",
+  "rank": 32201,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "exclusiones"
+  ]
+ },
+ {
+  "id": "marginación",
+  "es": "marginación",
+  "pos": "noun",
+  "ru": "маргинализация; изоляция",
+  "example_es": "La falta de empleo conduce a menudo a la marginación.",
+  "example_ru": "Отсутствие работы часто приводит к маргинализации.",
+  "rank": 49999,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "marginaciones"
+  ]
+ },
+ {
+  "id": "precariedad",
+  "es": "precariedad",
+  "pos": "noun",
+  "ru": "нестабильность, необеспеченность",
+  "example_es": "La precariedad laboral afecta sobre todo a los jóvenes.",
+  "example_ru": "Нестабильная занятость затрагивает прежде всего молодёжь.",
+  "rank": 49999,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "precariedades"
+  ]
+ },
+ {
+  "id": "vulnerable",
+  "es": "vulnerable",
+  "pos": "adj",
+  "ru": "уязвимый",
+  "example_es": "Las ayudas van dirigidas a los grupos más vulnerables.",
+  "example_ru": "Помощь направлена самым уязвимым группам.",
+  "rank": 6597,
+  "forms": [
+   "vulnerables"
+  ]
+ },
+ {
+  "id": "colectivo",
+  "es": "colectivo",
+  "pos": "noun",
+  "ru": "группа, сообщество (людей)",
+  "example_es": "El colectivo de enfermeras exige mejores condiciones.",
+  "example_ru": "Медсёстры как профессиональная группа требуют лучших условий.",
+  "rank": 14044,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "colectivos"
+  ]
+ },
+ {
+  "id": "integración",
+  "es": "integración",
+  "pos": "noun",
+  "ru": "интеграция",
+  "example_es": "El idioma es clave para la integración de los recién llegados.",
+  "example_ru": "Язык — ключ к интеграции приезжих.",
+  "rank": 24068,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "integraciones"
+  ]
+ },
+ {
+  "id": "discriminación",
+  "es": "discriminación",
+  "pos": "noun",
+  "ru": "дискриминация",
+  "example_es": "La ley prohíbe cualquier discriminación por motivos de sexo.",
+  "example_ru": "Закон запрещает любую дискриминацию по признаку пола.",
+  "rank": 16562,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "discriminaciones"
+  ]
+ },
+ {
+  "id": "racismo",
+  "es": "racismo",
+  "pos": "noun",
+  "ru": "расизм",
+  "example_es": "El club condenó el racismo de algunos aficionados.",
+  "example_ru": "Клуб осудил расизм некоторых болельщиков.",
+  "rank": 15781,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "racismos"
+  ]
+ },
+ {
+  "id": "xenofobia",
+  "es": "xenofobia",
+  "pos": "noun",
+  "ru": "ксенофобия",
+  "example_es": "Las campañas contra la xenofobia empiezan en la escuela.",
+  "example_ru": "Кампании против ксенофобии начинаются в школе.",
+  "rank": 49999,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "xenofobias"
+  ]
+ },
+ {
+  "id": "feminismo",
+  "es": "feminismo",
+  "pos": "noun",
+  "ru": "феминизм",
+  "example_es": "El feminismo ha cambiado profundamente la sociedad.",
+  "example_ru": "Феминизм глубоко изменил общество.",
+  "rank": 32553,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "feminismos"
+  ]
+ },
+ {
+  "id": "brecha",
+  "es": "brecha",
+  "pos": "noun",
+  "ru": "разрыв; брешь",
+  "example_es": "La brecha salarial entre hombres y mujeres persiste.",
+  "example_ru": "Разрыв в зарплатах между мужчинами и женщинами сохраняется.",
+  "rank": 10337,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "brechas"
+  ]
+ },
+ {
+  "id": "envejecimiento",
+  "es": "envejecimiento",
+  "pos": "noun",
+  "ru": "старение",
+  "example_es": "El envejecimiento de la población pone en riesgo las pensiones.",
+  "example_ru": "Старение населения ставит под угрозу пенсии.",
+  "rank": 27155,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "envejecimientos"
+  ]
+ },
+ {
+  "id": "natalidad",
+  "es": "natalidad",
+  "pos": "noun",
+  "ru": "рождаемость",
+  "example_es": "La tasa de natalidad es de las más bajas de Europa.",
+  "example_ru": "Уровень рождаемости — один из самых низких в Европе.",
+  "rank": 34659,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "natalidades"
+  ]
+ },
+ {
+  "id": "éxodo",
+  "es": "éxodo",
+  "pos": "noun",
+  "ru": "исход, массовый отток",
+  "example_es": "El éxodo rural dejó muchos pueblos vacíos.",
+  "example_ru": "Отток сельского населения оставил многие деревни пустыми.",
+  "rank": 26876,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "éxodos"
+  ]
+ },
+ {
+  "id": "asilo",
+  "es": "asilo",
+  "pos": "noun",
+  "ru": "убежище; приют",
+  "example_es": "Miles de personas solicitan asilo cada año.",
+  "example_ru": "Тысячи людей ежегодно просят убежища.",
+  "rank": 6994,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "asilos"
+  ]
+ },
+ {
+  "id": "desahucio",
+  "es": "desahucio",
+  "pos": "noun",
+  "ru": "выселение (за долги)",
+  "example_es": "Los vecinos se movilizaron para frenar el desahucio.",
+  "example_ru": "Соседи объединились, чтобы остановить выселение.",
+  "rank": 49999,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "desahucios"
+  ]
+ },
+ {
+  "id": "mendigo",
+  "es": "mendigo",
+  "pos": "noun",
+  "ru": "нищий",
+  "example_es": "Un mendigo pedía limosna a la puerta de la iglesia.",
+  "example_ru": "У дверей церкви нищий просил милостыню.",
+  "rank": 12603,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "mendigos",
+   "mendiga",
+   "mendigas"
+  ]
+ },
+ {
+  "id": "indigente",
+  "es": "indigente",
+  "pos": "noun",
+  "ru": "бездомный, нищий",
+  "example_es": "El albergue acoge a indigentes durante el invierno.",
+  "example_ru": "Зимой приют принимает бездомных.",
+  "rank": 20057,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "indigentes"
+  ]
+ },
+ {
+  "id": "voluntariado",
+  "es": "voluntariado",
+  "pos": "noun",
+  "ru": "волонтёрство",
+  "example_es": "Dedica los fines de semana al voluntariado.",
+  "example_ru": "Выходные она посвящает волонтёрству.",
+  "rank": 37241,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "voluntariados"
+  ]
+ },
+ {
+  "id": "estigma",
+  "es": "estigma",
+  "pos": "noun",
+  "ru": "клеймо, стигма",
+  "example_es": "Todavía existe un fuerte estigma en torno a la salud mental.",
+  "example_ru": "Вокруг психического здоровья всё ещё сильная стигма.",
+  "rank": 34237,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "estigmas"
+  ]
+ },
+ {
+  "id": "estereotipo",
+  "es": "estereotipo",
+  "pos": "noun",
+  "ru": "стереотип",
+  "example_es": "La película reproduce todos los estereotipos sobre el sur.",
+  "example_ru": "Фильм воспроизводит все стереотипы о юге.",
+  "rank": 25131,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "estereotipos"
+  ]
+ },
+ {
+  "id": "tolerancia",
+  "es": "tolerancia",
+  "pos": "noun",
+  "ru": "терпимость",
+  "example_es": "La tolerancia es la base de una sociedad plural.",
+  "example_ru": "Терпимость — основа плюралистического общества.",
+  "rank": 12922,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "tolerancias"
+  ]
+ },
+ {
+  "id": "convivencia",
+  "es": "convivencia",
+  "pos": "noun",
+  "ru": "сосуществование; совместная жизнь",
+  "example_es": "La convivencia entre culturas no siempre es fácil.",
+  "example_ru": "Сосуществование культур не всегда даётся легко.",
+  "rank": 32870,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "convivencias"
+  ]
+ },
+ {
+  "id": "bienestar",
+  "es": "bienestar",
+  "pos": "noun",
+  "ru": "благосостояние; благополучие",
+  "example_es": "El Estado del bienestar garantiza la sanidad pública.",
+  "example_ru": "Государство всеобщего благосостояния гарантирует общедоступное здравоохранение.",
+  "rank": 6802,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "bienestares"
+  ]
+ },
+ {
+  "id": "subsidio",
+  "es": "subsidio",
+  "pos": "noun",
+  "ru": "пособие",
+  "example_es": "Cobra un subsidio por desempleo desde marzo.",
+  "example_ru": "С марта он получает пособие по безработице.",
+  "rank": 24248,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "subsidios"
+  ]
+ },
+ {
+  "id": "delincuencia",
+  "es": "delincuencia",
+  "pos": "noun",
+  "ru": "преступность",
+  "example_es": "La delincuencia juvenil ha bajado en los últimos años.",
+  "example_ru": "Подростковая преступность в последние годы снизилась.",
+  "rank": 20689,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "delincuencias"
+  ]
+ },
+ {
+  "id": "adicción",
+  "es": "adicción",
+  "pos": "noun",
+  "ru": "зависимость",
+  "example_es": "La adicción al juego destruye muchas familias.",
+  "example_ru": "Игровая зависимость разрушает многие семьи.",
+  "rank": 9464,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "adicciones"
+  ]
+ },
+ {
+  "id": "maltrato",
+  "es": "maltrato",
+  "pos": "noun",
+  "ru": "жестокое обращение",
+  "example_es": "Las denuncias por maltrato han aumentado este año.",
+  "example_ru": "В этом году выросло число заявлений о жестоком обращении.",
+  "rank": 24559,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "maltratos"
+  ]
+ },
+ {
+  "id": "acoso",
+  "es": "acoso",
+  "pos": "noun",
+  "ru": "травля; домогательство",
+  "example_es": "El acoso escolar deja secuelas durante años.",
+  "example_ru": "Школьная травля оставляет следы на долгие годы.",
+  "rank": 7437,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "acosos"
+  ]
+ },
+ {
+  "id": "equidad",
+  "es": "equidad",
+  "pos": "noun",
+  "ru": "справедливость, равноправие",
+  "example_es": "El sistema fiscal debe basarse en la equidad.",
+  "example_ru": "Налоговая система должна основываться на справедливости.",
+  "rank": 44481,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "equidades"
+  ]
+ },
+ {
+  "id": "dependencia",
+  "es": "dependencia",
+  "pos": "noun",
+  "ru": "зависимость; потребность в уходе",
+  "example_es": "La ley de dependencia ayuda a quienes no pueden valerse solos.",
+  "example_ru": "Закон о социальном уходе помогает тем, кто не может себя обслуживать.",
+  "rank": 23625,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "dependencias"
+  ]
+ },
+ {
+  "id": "segregación",
+  "es": "segregación",
+  "pos": "noun",
+  "ru": "сегрегация",
+  "example_es": "La segregación escolar perjudica a los alumnos más pobres.",
+  "example_ru": "Сегрегация в школах вредит самым бедным ученикам.",
+  "rank": 36300,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "segregaciones"
+  ]
+ },
+ {
+  "id": "desigual",
+  "es": "desigual",
+  "pos": "adj",
+  "ru": "неравный, неравномерный",
+  "example_es": "El reparto de la riqueza es muy desigual.",
+  "example_ru": "Богатство распределено очень неравномерно.",
+  "rank": 34636,
+  "forms": [
+   "desiguales"
+  ]
+ },
+ {
+  "id": "marginal",
+  "es": "marginal",
+  "pos": "adj",
+  "ru": "маргинальный; второстепенный",
+  "example_es": "Creció en un barrio marginal de la capital.",
+  "example_ru": "Он вырос в неблагополучном районе столицы.",
+  "rank": 34370,
+  "forms": [
+   "marginales"
+  ]
+ },
+ {
+  "id": "solidario",
+  "es": "solidario",
+  "pos": "adj",
+  "ru": "солидарный; отзывчивый",
+  "example_es": "Es una persona muy solidaria con los demás.",
+  "example_ru": "Она очень отзывчива к другим.",
+  "rank": 49644,
+  "forms": [
+   "solidaria",
+   "solidarios",
+   "solidarias"
+  ]
+ },
+ {
+  "id": "movilidad",
+  "es": "movilidad",
+  "pos": "noun",
+  "ru": "мобильность",
+  "example_es": "La movilidad social es baja en muchos países.",
+  "example_ru": "Во многих странах социальная мобильность низкая.",
+  "rank": 25607,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "movilidades"
+  ]
+ },
+ {
+  "id": "refugiado",
+  "es": "refugiado",
+  "pos": "noun",
+  "ru": "беженец",
+  "example_es": "El campo acoge a miles de refugiados de la guerra.",
+  "example_ru": "Лагерь принимает тысячи беженцев от войны.",
+  "rank": 21616,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "refugiados",
+   "refugiada",
+   "refugiadas"
+  ]
+ },
+ {
+  "id": "solidaridad",
+  "es": "solidaridad",
+  "pos": "noun",
+  "ru": "солидарность",
+  "example_es": "La respuesta de la gente fue un ejemplo de solidaridad.",
+  "example_ru": "Реакция людей стала примером солидарности.",
+  "rank": 16305,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "solidaridades"
+  ]
+ },
+ {
+  "id": "étnico",
+  "es": "étnico",
+  "pos": "adj",
+  "ru": "этнический",
+  "example_es": "El país tiene una gran diversidad étnica.",
+  "example_ru": "В стране большое этническое разнообразие.",
+  "rank": 38254,
+  "forms": [
+   "étnica",
+   "étnicos",
+   "étnicas"
+  ]
+ },
+ {
+  "id": "inmigración",
+  "es": "inmigración",
+  "pos": "noun",
+  "ru": "иммиграция",
+  "example_es": "La inmigración ha rejuvenecido la población del pueblo.",
+  "example_ru": "Иммиграция омолодила население деревни.",
+  "rank": 9210,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "inmigraciones"
+  ]
+ },
+ {
+  "id": "ciudadanía",
+  "es": "ciudadanía",
+  "pos": "noun",
+  "ru": "гражданство; граждане",
+  "example_es": "La ciudadanía exige más transparencia a sus políticos.",
+  "example_ru": "Граждане требуют от политиков большей прозрачности.",
+  "rank": 21609,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "ciudadanías"
+  ]
+ },
+ {
+  "id": "humanitario",
+  "es": "humanitario",
+  "pos": "adj",
+  "ru": "гуманитарный",
+  "example_es": "Varias ONG enviaron ayuda humanitaria a la zona.",
+  "example_ru": "Несколько НКО отправили в регион гуманитарную помощь.",
+  "rank": 29028,
+  "forms": [
+   "humanitaria",
+   "humanitarios",
+   "humanitarias"
+  ]
+ },
+ {
+  "id": "hambruna",
+  "es": "hambruna",
+  "pos": "noun",
+  "ru": "голод (массовый)",
+  "example_es": "La sequía provocó una hambruna en toda la región.",
+  "example_ru": "Засуха вызвала голод во всём регионе.",
+  "rank": 22470,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "hambrunas"
+  ]
+ },
+ {
+  "id": "periferia",
+  "es": "periferia",
+  "pos": "noun",
+  "ru": "окраина; периферия",
+  "example_es": "Muchas familias se mudan a la periferia por los alquileres.",
+  "example_ru": "Многие семьи переезжают на окраины из-за цен на аренду.",
+  "rank": 35290,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "periferias"
+  ]
+ },
+ {
+  "id": "explotación",
+  "es": "explotación",
+  "pos": "noun",
+  "ru": "эксплуатация",
+  "example_es": "Denunciaron la explotación laboral de los temporeros.",
+  "example_ru": "Они сообщили об эксплуатации сезонных рабочих.",
+  "rank": 16675,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "explotaciones"
+  ]
+ },
+ {
+  "id": "esclavitud",
+  "es": "esclavitud",
+  "pos": "noun",
+  "ru": "рабство",
+  "example_es": "La esclavitud se abolió en el siglo XIX.",
+  "example_ru": "Рабство было отменено в XIX веке.",
+  "rank": 9795,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "esclavitudes"
+  ]
+ },
+ {
+  "id": "activista",
+  "es": "activista",
+  "pos": "noun",
+  "ru": "активист",
+  "example_es": "Una activista ecologista fue detenida durante la protesta.",
+  "example_ru": "Во время протеста задержали экоактивистку.",
+  "rank": 18275,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "activistas"
+  ]
+ },
+ {
+  "id": "beneficencia",
+  "es": "beneficencia",
+  "pos": "noun",
+  "ru": "благотворительность",
+  "example_es": "Donó toda su herencia a la beneficencia.",
+  "example_ru": "Он пожертвовал всё наследство на благотворительность.",
+  "rank": 15222,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "beneficencias"
+  ]
+ }
+]

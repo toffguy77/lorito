@@ -1,0 +1,717 @@
+[
+ {
+  "id": "asignatura",
+  "es": "asignatura",
+  "pos": "noun",
+  "ru": "учебный предмет",
+  "example_es": "¿Cuál es tu {es: asignatura | am: materia | rio: materia} favorita este año?",
+  "example_ru": "Какой у тебя любимый предмет в этом году?",
+  "rank": 34577,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "asignaturas"
+  ],
+  "variants": {
+   "am": "la materia",
+   "rio": "la materia"
+  }
+ },
+ {
+  "id": "matrícula",
+  "es": "matrícula",
+  "pos": "noun",
+  "ru": "запись, зачисление; плата за обучение",
+  "example_es": "La matrícula de la universidad es bastante cara.",
+  "example_ru": "Обучение в университете стоит довольно дорого.",
+  "rank": 5945,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "matrículas"
+  ]
+ },
+ {
+  "id": "matricularse",
+  "es": "matricularse",
+  "pos": "verb",
+  "ru": "записываться (на курс), поступать",
+  "example_es": "Me matriculé en un curso de alemán.",
+  "example_ru": "Я записался на курс немецкого.",
+  "rank": 49999,
+  "forms": [
+   "matriculé",
+   "matriculó",
+   "matriculado"
+  ]
+ },
+ {
+  "id": "suspender",
+  "es": "suspender",
+  "pos": "verb",
+  "ru": "провалить (экзамен); не сдать",
+  "example_es": "{es: Suspendí | am: Reprobé | rio: Desaprobé} matemáticas y tengo que repetir el examen.",
+  "example_ru": "Я завалил математику и должен пересдавать экзамен.",
+  "rank": 14602,
+  "variants": {
+   "am": "reprobar",
+   "rio": "desaprobar"
+  }
+ },
+ {
+  "id": "licenciatura",
+  "es": "licenciatura",
+  "pos": "noun",
+  "ru": "высшее образование (степень бакалавра)",
+  "example_es": "Terminó la licenciatura en Derecho hace dos años.",
+  "example_ru": "Два года назад она окончила юридический.",
+  "rank": 25160,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "licenciaturas"
+  ]
+ },
+ {
+  "id": "máster",
+  "es": "máster",
+  "pos": "noun",
+  "ru": "магистратура",
+  "example_es": "Después de la carrera quiero hacer {es: un máster | am: una maestría | rio: una maestría}.",
+  "example_ru": "После университета хочу пойти в магистратуру.",
+  "rank": 36453,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "másteres"
+  ],
+  "variants": {
+   "am": "la maestría",
+   "rio": "la maestría"
+  }
+ },
+ {
+  "id": "apuntes",
+  "es": "apuntes",
+  "pos": "noun",
+  "ru": "конспект",
+  "example_es": "¿Me prestas tus apuntes de la clase de ayer?",
+  "example_ru": "Дашь мне свой конспект вчерашнего занятия?",
+  "rank": 13452,
+  "article": "los",
+  "gender": "m"
+ },
+ {
+  "id": "pizarra",
+  "es": "pizarra",
+  "pos": "noun",
+  "ru": "классная доска",
+  "example_es": "El profesor escribió la fórmula en {es: la pizarra | am: el pizarrón | rio: el pizarrón}.",
+  "example_ru": "Учитель написал формулу на доске.",
+  "rank": 11680,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "pizarras"
+  ],
+  "variants": {
+   "am": "el pizarrón",
+   "rio": "el pizarrón"
+  }
+ },
+ {
+  "id": "aula",
+  "es": "aula",
+  "pos": "noun",
+  "ru": "аудитория, класс",
+  "example_es": "El examen será en el aula doce.",
+  "example_ru": "Экзамен будет в двенадцатой аудитории.",
+  "rank": 14593,
+  "article": "el",
+  "gender": "f",
+  "forms": [
+   "aulas"
+  ]
+ },
+ {
+  "id": "facultad",
+  "es": "facultad",
+  "pos": "noun",
+  "ru": "факультет; способность",
+  "example_es": "La facultad de medicina está al lado del hospital.",
+  "example_ru": "Медицинский факультет находится рядом с больницей.",
+  "rank": 5421,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "facultades"
+  ]
+ },
+ {
+  "id": "primaria",
+  "es": "primaria",
+  "pos": "noun",
+  "ru": "начальная школа",
+  "example_es": "Mi hijo está en tercero de primaria.",
+  "example_ru": "Мой сын учится в третьем классе.",
+  "rank": 7347,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "primarias"
+  ]
+ },
+ {
+  "id": "secundaria",
+  "es": "secundaria",
+  "pos": "noun",
+  "ru": "средняя школа",
+  "example_es": "Terminé la secundaria a los diecisiete años.",
+  "example_ru": "Я окончил среднюю школу в семнадцать лет.",
+  "rank": 2482,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "secundarias"
+  ]
+ },
+ {
+  "id": "bachillerato",
+  "es": "bachillerato",
+  "pos": "noun",
+  "ru": "старшие классы школы",
+  "example_es": "Después del bachillerato quiere estudiar arquitectura.",
+  "example_ru": "После старших классов она хочет изучать архитектуру.",
+  "rank": 16070,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "bachilleratos"
+  ]
+ },
+ {
+  "id": "enseñanza",
+  "es": "enseñanza",
+  "pos": "noun",
+  "ru": "обучение, преподавание",
+  "example_es": "La enseñanza pública es gratuita en este país.",
+  "example_ru": "В этой стране государственное образование бесплатное.",
+  "rank": 12306,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "enseñanzas"
+  ]
+ },
+ {
+  "id": "educación",
+  "es": "educación",
+  "pos": "noun",
+  "ru": "образование; воспитание",
+  "example_es": "El gobierno debe invertir más en educación.",
+  "example_ru": "Правительство должно больше вкладывать в образование.",
+  "rank": 2537,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "educaciones"
+  ]
+ },
+ {
+  "id": "aprendizaje",
+  "es": "aprendizaje",
+  "pos": "noun",
+  "ru": "обучение, усвоение",
+  "example_es": "El aprendizaje de un idioma requiere paciencia.",
+  "example_ru": "Изучение языка требует терпения.",
+  "rank": 11832,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "aprendizajes"
+  ]
+ },
+ {
+  "id": "conocimiento",
+  "es": "conocimiento",
+  "pos": "noun",
+  "ru": "знание",
+  "example_es": "Tiene buenos conocimientos de informática.",
+  "example_ru": "У него хорошие знания в информатике.",
+  "rank": 2594,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "conocimientos"
+  ]
+ },
+ {
+  "id": "repasar",
+  "es": "repasar",
+  "pos": "verb",
+  "ru": "повторять (материал)",
+  "example_es": "Esta noche voy a repasar el vocabulario.",
+  "example_ru": "Сегодня вечером я буду повторять слова.",
+  "rank": 12731
+ },
+ {
+  "id": "memorizar",
+  "es": "memorizar",
+  "pos": "verb",
+  "ru": "заучивать наизусть",
+  "example_es": "Es difícil memorizar tantas fechas.",
+  "example_ru": "Трудно запомнить столько дат.",
+  "rank": 23128
+ },
+ {
+  "id": "investigar",
+  "es": "investigar",
+  "pos": "verb",
+  "ru": "исследовать; расследовать",
+  "example_es": "Los alumnos investigaron la historia de su barrio.",
+  "example_ru": "Ученики исследовали историю своего района.",
+  "rank": 3429
+ },
+ {
+  "id": "investigación",
+  "es": "investigación",
+  "pos": "noun",
+  "ru": "исследование",
+  "example_es": "Trabaja en un centro de investigación.",
+  "example_ru": "Он работает в исследовательском центре.",
+  "rank": 930,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "investigaciones"
+  ]
+ },
+ {
+  "id": "conferencia",
+  "es": "conferencia",
+  "pos": "noun",
+  "ru": "лекция; конференция",
+  "example_es": "Asistí a una conferencia sobre el cambio climático.",
+  "example_ru": "Я сходил на лекцию об изменении климата.",
+  "rank": 3181,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "conferencias"
+  ]
+ },
+ {
+  "id": "seminario",
+  "es": "seminario",
+  "pos": "noun",
+  "ru": "семинар",
+  "example_es": "Los jueves tenemos un seminario de literatura.",
+  "example_ru": "По четвергам у нас семинар по литературе.",
+  "rank": 9775,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "seminarios"
+  ]
+ },
+ {
+  "id": "tutor",
+  "es": "tutor",
+  "pos": "noun",
+  "ru": "научный руководитель; куратор",
+  "example_es": "Mi tutor me ayudó a elegir el tema del trabajo.",
+  "example_ru": "Научный руководитель помог мне выбрать тему работы.",
+  "rank": 8828,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "tutores",
+   "tutora",
+   "tutoras"
+  ]
+ },
+ {
+  "id": "maestro",
+  "es": "maestro",
+  "pos": "noun",
+  "ru": "учитель (начальной школы); мастер",
+  "example_es": "La maestra de mi hija es muy paciente.",
+  "example_ru": "Учительница моей дочери очень терпеливая.",
+  "rank": 990,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "maestros",
+   "maestra",
+   "maestras"
+  ]
+ },
+ {
+  "id": "asistir",
+  "es": "asistir",
+  "pos": "verb",
+  "ru": "посещать, присутствовать",
+  "example_es": "Es obligatorio asistir a todas las clases.",
+  "example_ru": "Посещать все занятия обязательно.",
+  "rank": 6052
+ },
+ {
+  "id": "certificado",
+  "es": "certificado",
+  "pos": "noun",
+  "ru": "сертификат; справка",
+  "example_es": "Al final del curso recibes un certificado.",
+  "example_ru": "В конце курса ты получаешь сертификат.",
+  "rank": 5705,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "certificados"
+  ]
+ },
+ {
+  "id": "idioma",
+  "es": "idioma",
+  "pos": "noun",
+  "ru": "язык (иностранный)",
+  "example_es": "Hablar otro idioma abre muchas puertas.",
+  "example_ru": "Знание другого языка открывает много дверей.",
+  "rank": 4692,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "idiomas"
+  ]
+ },
+ {
+  "id": "lengua",
+  "es": "lengua",
+  "pos": "noun",
+  "ru": "язык; язык (орган)",
+  "example_es": "Su lengua materna es el ruso.",
+  "example_ru": "Его родной язык — русский.",
+  "rank": 2021,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "lenguas"
+  ]
+ },
+ {
+  "id": "vocabulario",
+  "es": "vocabulario",
+  "pos": "noun",
+  "ru": "словарный запас, лексика",
+  "example_es": "Leer novelas ayuda a ampliar el vocabulario.",
+  "example_ru": "Чтение романов помогает расширить словарный запас.",
+  "rank": 14821,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "vocabularios"
+  ]
+ },
+ {
+  "id": "gramática",
+  "es": "gramática",
+  "pos": "noun",
+  "ru": "грамматика",
+  "example_es": "La gramática alemana me parece complicada.",
+  "example_ru": "Немецкая грамматика кажется мне сложной.",
+  "rank": 22459,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "gramáticas"
+  ]
+ },
+ {
+  "id": "ejercicio",
+  "es": "ejercicio",
+  "pos": "noun",
+  "ru": "упражнение; физические упражнения",
+  "example_es": "Haz los ejercicios de la página veinte.",
+  "example_ru": "Сделай упражнения на двадцатой странице.",
+  "rank": 3573,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "ejercicios"
+  ]
+ },
+ {
+  "id": "prueba",
+  "es": "prueba",
+  "pos": "noun",
+  "ru": "тест, проверка; доказательство",
+  "example_es": "Mañana tenemos una prueba de nivel.",
+  "example_ru": "Завтра у нас тест на определение уровня.",
+  "rank": 609,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "pruebas"
+  ]
+ },
+ {
+  "id": "ortografía",
+  "es": "ortografía",
+  "pos": "noun",
+  "ru": "орфография",
+  "example_es": "Cuidado con la ortografía en el examen.",
+  "example_ru": "Следи за орфографией на экзамене.",
+  "rank": 21594,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "ortografías"
+  ]
+ },
+ {
+  "id": "traducción",
+  "es": "traducción",
+  "pos": "noun",
+  "ru": "перевод",
+  "example_es": "Hice la traducción del texto sin diccionario.",
+  "example_ru": "Я перевёл текст без словаря.",
+  "rank": 2581,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "traducciones"
+  ]
+ },
+ {
+  "id": "traducir",
+  "es": "traducir",
+  "pos": "verb",
+  "ru": "переводить",
+  "example_es": "¿Puedes traducir esta frase al ruso?",
+  "example_ru": "Можешь перевести эту фразу на русский?",
+  "rank": 16220,
+  "forms": [
+   "traduzco",
+   "tradujo",
+   "tradujeron",
+   "tradujiste"
+  ]
+ },
+ {
+  "id": "diccionario",
+  "es": "diccionario",
+  "pos": "noun",
+  "ru": "словарь",
+  "example_es": "Busca la palabra en el diccionario.",
+  "example_ru": "Посмотри это слово в словаре.",
+  "rank": 12801,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "diccionarios"
+  ]
+ },
+ {
+  "id": "matemáticas",
+  "es": "matemáticas",
+  "pos": "noun",
+  "ru": "математика",
+  "example_es": "Siempre se me dieron bien las matemáticas.",
+  "example_ru": "Математика мне всегда давалась легко.",
+  "rank": 4277,
+  "article": "las",
+  "gender": "f"
+ },
+ {
+  "id": "historia",
+  "es": "historia",
+  "pos": "noun",
+  "ru": "история",
+  "example_es": "Me encanta la historia antigua.",
+  "example_ru": "Обожаю древнюю историю.",
+  "rank": 314,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "historias"
+  ]
+ },
+ {
+  "id": "cuaderno",
+  "es": "cuaderno",
+  "pos": "noun",
+  "ru": "тетрадь",
+  "example_es": "Apunta los deberes en el cuaderno.",
+  "example_ru": "Запиши домашнее задание в тетрадь.",
+  "rank": 8839,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "cuadernos"
+  ]
+ },
+ {
+  "id": "bolígrafo",
+  "es": "bolígrafo",
+  "pos": "noun",
+  "ru": "шариковая ручка",
+  "example_es": "¿Me dejas {es: un bolígrafo | am: una pluma | rio: una birome} azul?",
+  "example_ru": "Одолжишь мне синюю ручку?",
+  "rank": 9728,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "bolígrafos"
+  ],
+  "variants": {
+   "am": "la pluma",
+   "rio": "la birome"
+  }
+ },
+ {
+  "id": "calificación",
+  "es": "calificación",
+  "pos": "noun",
+  "ru": "оценка, отметка",
+  "example_es": "Sacó la calificación más alta de la clase.",
+  "example_ru": "Он получил самую высокую оценку в классе.",
+  "rank": 17844,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "calificaciones"
+  ]
+ },
+ {
+  "id": "nivel",
+  "es": "nivel",
+  "pos": "noun",
+  "ru": "уровень",
+  "example_es": "Tengo un nivel intermedio de español.",
+  "example_ru": "У меня средний уровень испанского.",
+  "rank": 1196,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "niveles"
+  ]
+ },
+ {
+  "id": "esfuerzo",
+  "es": "esfuerzo",
+  "pos": "noun",
+  "ru": "усилие",
+  "example_es": "Con esfuerzo, todo se puede aprender.",
+  "example_ru": "Приложив усилия, можно выучить что угодно.",
+  "rank": 2332,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "esfuerzos"
+  ]
+ },
+ {
+  "id": "copiar",
+  "es": "copiar",
+  "pos": "verb",
+  "ru": "списывать; копировать",
+  "example_es": "Lo echaron del examen por copiar.",
+  "example_ru": "Его выгнали с экзамена за списывание.",
+  "rank": 14606
+ },
+ {
+  "id": "universitario",
+  "es": "universitario",
+  "pos": "adj",
+  "ru": "университетский",
+  "example_es": "La vida universitaria es muy intensa.",
+  "example_ru": "Студенческая жизнь очень насыщенная.",
+  "rank": 8886,
+  "forms": [
+   "universitaria",
+   "universitarios",
+   "universitarias"
+  ]
+ },
+ {
+  "id": "escolar",
+  "es": "escolar",
+  "pos": "adj",
+  "ru": "школьный",
+  "example_es": "El año escolar empieza en septiembre.",
+  "example_ru": "Учебный год начинается в сентябре.",
+  "rank": 5074,
+  "forms": [
+   "escolares"
+  ]
+ },
+ {
+  "id": "obligatorio",
+  "es": "obligatorio",
+  "pos": "adj",
+  "ru": "обязательный",
+  "example_es": "La asistencia a clase es obligatoria para todos.",
+  "example_ru": "Посещать занятия обязаны все.",
+  "rank": 15232,
+  "forms": [
+   "obligatoria",
+   "obligatorios",
+   "obligatorias"
+  ]
+ },
+ {
+  "id": "recreo",
+  "es": "recreo",
+  "pos": "noun",
+  "ru": "перемена",
+  "example_es": "En el recreo los niños juegan al fútbol.",
+  "example_ru": "На перемене дети играют в футбол.",
+  "rank": 12388,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "recreos"
+  ]
+ },
+ {
+  "id": "corregir",
+  "es": "corregir",
+  "pos": "verb",
+  "ru": "исправлять; проверять (работы)",
+  "example_es": "La profesora tarda una semana en corregir los exámenes.",
+  "example_ru": "Учительнице нужна неделя, чтобы проверить контрольные.",
+  "rank": 11042,
+  "forms": [
+   "corrijo",
+   "corrigió",
+   "corrija"
+  ]
+ },
+ {
+  "id": "evaluación",
+  "es": "evaluación",
+  "pos": "noun",
+  "ru": "оценивание; аттестация",
+  "example_es": "La evaluación final incluye un examen oral.",
+  "example_ru": "Итоговая аттестация включает устный экзамен.",
+  "rank": 7298,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "evaluaciones"
+  ]
+ },
+ {
+  "id": "trimestre",
+  "es": "trimestre",
+  "pos": "noun",
+  "ru": "четверть; квартал (три месяца)",
+  "example_es": "En el segundo trimestre mejoré mucho en inglés.",
+  "example_ru": "Во второй четверти я сильно подтянул английский.",
+  "rank": 13667,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "trimestres"
+  ]
+ }
+]

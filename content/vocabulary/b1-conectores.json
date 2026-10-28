@@ -1,0 +1,380 @@
+[
+ {
+  "id": "es-decir",
+  "es": "es decir",
+  "pos": "phrase",
+  "ru": "то есть",
+  "example_es": "Llegaré pasado mañana, es decir, el jueves.",
+  "example_ru": "Я приеду послезавтра, то есть в четверг.",
+  "rank": 111
+ },
+ {
+  "id": "por-lo-tanto",
+  "es": "por lo tanto",
+  "pos": "phrase",
+  "ru": "поэтому, следовательно",
+  "example_es": "Estaba enfermo y, por lo tanto, no fue a clase.",
+  "example_ru": "Он был болен и поэтому не пошёл на занятия.",
+  "rank": 235
+ },
+ {
+  "id": "a-pesar-de",
+  "es": "a pesar de",
+  "pos": "phrase",
+  "ru": "несмотря на",
+  "example_es": "Salimos a pasear a pesar de la lluvia.",
+  "example_ru": "Мы пошли гулять, несмотря на дождь.",
+  "rank": 1398
+ },
+ {
+  "id": "ya-que",
+  "es": "ya que",
+  "pos": "phrase",
+  "ru": "так как, поскольку",
+  "example_es": "Ya que estás aquí, ayúdame con la cena.",
+  "example_ru": "Раз уж ты здесь, помоги мне с ужином.",
+  "rank": 40
+ },
+ {
+  "id": "puesto-que",
+  "es": "puesto que",
+  "pos": "phrase",
+  "ru": "поскольку, так как",
+  "example_es": "No compré nada, puesto que todo era muy caro.",
+  "example_ru": "Я ничего не купил, так как всё было очень дорого.",
+  "rank": 625
+ },
+ {
+  "id": "debido-a",
+  "es": "debido a",
+  "pos": "phrase",
+  "ru": "из-за, вследствие",
+  "example_es": "El vuelo se canceló debido a la niebla.",
+  "example_ru": "Рейс отменили из-за тумана.",
+  "rank": 1168
+ },
+ {
+  "id": "gracias-a",
+  "es": "gracias a",
+  "pos": "phrase",
+  "ru": "благодаря",
+  "example_es": "Encontré trabajo gracias a una amiga.",
+  "example_ru": "Я нашёл работу благодаря подруге.",
+  "rank": 70
+ },
+ {
+  "id": "por-culpa-de",
+  "es": "por culpa de",
+  "pos": "phrase",
+  "ru": "по вине, из-за (кого-то, чего-то плохого)",
+  "example_es": "Llegamos tarde por culpa del tráfico.",
+  "example_ru": "Мы опоздали из-за пробок.",
+  "rank": 461
+ },
+ {
+  "id": "en-cuanto",
+  "es": "en cuanto",
+  "pos": "phrase",
+  "ru": "как только",
+  "example_es": "Te llamo en cuanto llegue a casa.",
+  "example_ru": "Я позвоню тебе, как только доберусь до дома.",
+  "rank": 567
+ },
+ {
+  "id": "en-cuanto-a",
+  "es": "en cuanto a",
+  "pos": "phrase",
+  "ru": "что касается",
+  "example_es": "En cuanto al precio, todavía no hemos decidido nada.",
+  "example_ru": "Что касается цены, мы пока ничего не решили.",
+  "rank": 567
+ },
+ {
+  "id": "hasta-que",
+  "es": "hasta que",
+  "pos": "phrase",
+  "ru": "пока не; до тех пор, пока",
+  "example_es": "Espera aquí hasta que vuelva.",
+  "example_ru": "Жди здесь, пока я не вернусь.",
+  "rank": 126
+ },
+ {
+  "id": "desde-que",
+  "es": "desde que",
+  "pos": "phrase",
+  "ru": "с тех пор как",
+  "example_es": "Desde que vive sola, cocina mucho mejor.",
+  "example_ru": "С тех пор как она живёт одна, она готовит гораздо лучше.",
+  "rank": 163
+ },
+ {
+  "id": "para-que",
+  "es": "para que",
+  "pos": "phrase",
+  "ru": "чтобы (с другим подлежащим)",
+  "example_es": "Te lo explico otra vez para que lo entiendas.",
+  "example_ru": "Объясню ещё раз, чтобы ты понял.",
+  "rank": 20
+ },
+ {
+  "id": "siempre-que",
+  "es": "siempre que",
+  "pos": "phrase",
+  "ru": "каждый раз, когда; при условии, что",
+  "example_es": "Siempre que viene a Madrid, nos visita.",
+  "example_ru": "Каждый раз, когда он приезжает в Мадрид, он нас навещает.",
+  "rank": 125
+ },
+ {
+  "id": "mientras-que",
+  "es": "mientras que",
+  "pos": "phrase",
+  "ru": "тогда как, в то время как",
+  "example_es": "Yo prefiero el mar, mientras que mi marido prefiere la montaña.",
+  "example_ru": "Я предпочитаю море, тогда как мой муж — горы.",
+  "rank": 284
+ },
+ {
+  "id": "en-lugar-de",
+  "es": "en lugar de",
+  "pos": "phrase",
+  "ru": "вместо",
+  "example_es": "En lugar de quejarte, busca una solución.",
+  "example_ru": "Вместо того чтобы жаловаться, ищи решение.",
+  "rank": 177
+ },
+ {
+  "id": "además-de",
+  "es": "además de",
+  "pos": "phrase",
+  "ru": "кроме, помимо",
+  "example_es": "Además de inglés, habla francés y alemán.",
+  "example_ru": "Помимо английского, он говорит по-французски и по-немецки.",
+  "rank": 541
+ },
+ {
+  "id": "aparte-de",
+  "es": "aparte de",
+  "pos": "phrase",
+  "ru": "кроме, не считая",
+  "example_es": "Aparte de eso, el viaje fue perfecto.",
+  "example_ru": "Если не считать этого, поездка была идеальной.",
+  "rank": 2235
+ },
+ {
+  "id": "excepto",
+  "es": "excepto",
+  "pos": "prep",
+  "ru": "кроме, за исключением",
+  "example_es": "La tienda abre todos los días excepto el domingo.",
+  "example_ru": "Магазин работает каждый день, кроме воскресенья.",
+  "rank": 1128
+ },
+ {
+  "id": "según",
+  "es": "según",
+  "pos": "prep",
+  "ru": "согласно, по словам; в зависимости от",
+  "example_es": "Según el médico, no es nada grave.",
+  "example_ru": "По словам врача, ничего серьёзного.",
+  "rank": 991
+ },
+ {
+  "id": "a-través-de",
+  "es": "a través de",
+  "pos": "phrase",
+  "ru": "через, посредством",
+  "example_es": "Nos conocimos a través de un amigo común.",
+  "example_ru": "Мы познакомились через общего друга.",
+  "rank": 799
+ },
+ {
+  "id": "sin-duda",
+  "es": "sin duda",
+  "pos": "phrase",
+  "ru": "несомненно, без сомнения",
+  "example_es": "Es, sin duda, la mejor película del año.",
+  "example_ru": "Это, без сомнения, лучший фильм года.",
+  "rank": 1037
+ },
+ {
+  "id": "desde-luego",
+  "es": "desde luego",
+  "pos": "phrase",
+  "ru": "конечно, разумеется",
+  "example_es": "—¿Vienes a la fiesta? —¡Desde luego!",
+  "example_ru": "— Ты придёшь на вечеринку? — Конечно!",
+  "rank": 197
+ },
+ {
+  "id": "por-lo-general",
+  "es": "por lo general",
+  "pos": "phrase",
+  "ru": "как правило, обычно",
+  "example_es": "Por lo general, cenamos a las nueve.",
+  "example_ru": "Как правило, мы ужинаем в девять.",
+  "rank": 664
+ },
+ {
+  "id": "en-general",
+  "es": "en general",
+  "pos": "phrase",
+  "ru": "в целом, в общем",
+  "example_es": "En general, estoy contento con mi trabajo.",
+  "example_ru": "В целом я доволен своей работой.",
+  "rank": 664
+ },
+ {
+  "id": "en-primer-lugar",
+  "es": "en primer lugar",
+  "pos": "phrase",
+  "ru": "во-первых, в первую очередь",
+  "example_es": "En primer lugar, quiero dar las gracias a todos.",
+  "example_ru": "Прежде всего я хочу всех поблагодарить.",
+  "rank": 407
+ },
+ {
+  "id": "por-un-lado",
+  "es": "por un lado",
+  "pos": "phrase",
+  "ru": "с одной стороны",
+  "example_es": "Por un lado, el piso es bonito, pero es muy caro.",
+  "example_ru": "С одной стороны, квартира красивая, но она очень дорогая.",
+  "rank": 285
+ },
+ {
+  "id": "por-otro-lado",
+  "es": "por otro lado",
+  "pos": "phrase",
+  "ru": "с другой стороны",
+  "example_es": "Por otro lado, está muy lejos del centro.",
+  "example_ru": "С другой стороны, она очень далеко от центра.",
+  "rank": 285
+ },
+ {
+  "id": "por-último",
+  "es": "por último",
+  "pos": "phrase",
+  "ru": "наконец, в заключение",
+  "example_es": "Por último, revisa bien todo el texto.",
+  "example_ru": "И наконец, внимательно проверь весь текст.",
+  "rank": 542
+ },
+ {
+  "id": "al-mismo-tiempo",
+  "es": "al mismo tiempo",
+  "pos": "phrase",
+  "ru": "одновременно, в то же время",
+  "example_es": "No puedo estudiar y ver la tele al mismo tiempo.",
+  "example_ru": "Я не могу одновременно учиться и смотреть телевизор.",
+  "rank": 149
+ },
+ {
+  "id": "a-la-vez",
+  "es": "a la vez",
+  "pos": "phrase",
+  "ru": "одновременно, сразу",
+  "example_es": "Hablaban todos a la vez y no entendía nada.",
+  "example_ru": "Все говорили одновременно, и я ничего не понимал.",
+  "rank": 71
+ },
+ {
+  "id": "de-nuevo",
+  "es": "de nuevo",
+  "pos": "phrase",
+  "ru": "снова, опять",
+  "example_es": "El ascensor no funciona de nuevo.",
+  "example_ru": "Лифт снова не работает.",
+  "rank": 185
+ },
+ {
+  "id": "de-pronto",
+  "es": "de pronto",
+  "pos": "phrase",
+  "ru": "вдруг, внезапно",
+  "example_es": "De pronto se apagaron todas las luces.",
+  "example_ru": "Вдруг погас весь свет.",
+  "rank": 333
+ },
+ {
+  "id": "poco-a-poco",
+  "es": "poco a poco",
+  "pos": "phrase",
+  "ru": "постепенно, понемногу",
+  "example_es": "Poco a poco me acostumbro a la ciudad.",
+  "example_ru": "Понемногу я привыкаю к городу.",
+  "rank": 133
+ },
+ {
+  "id": "de-momento",
+  "es": "de momento",
+  "pos": "phrase",
+  "ru": "пока, на данный момент",
+  "example_es": "De momento vivo con mis padres.",
+  "example_ru": "Пока я живу с родителями.",
+  "rank": 167
+ },
+ {
+  "id": "hoy-en-día",
+  "es": "hoy en día",
+  "pos": "phrase",
+  "ru": "в наше время, сегодня",
+  "example_es": "Hoy en día casi todo se paga con el móvil.",
+  "example_ru": "Сегодня почти за всё платят телефоном.",
+  "rank": 201
+ },
+ {
+  "id": "actualmente",
+  "es": "actualmente",
+  "pos": "adv",
+  "ru": "в настоящее время, сейчас",
+  "example_es": "Actualmente trabajo en una empresa de software.",
+  "example_ru": "Сейчас я работаю в компании-разработчике ПО.",
+  "rank": 4811
+ },
+ {
+  "id": "a-lo-mejor",
+  "es": "a lo mejor",
+  "pos": "phrase",
+  "ru": "может быть, возможно",
+  "example_es": "A lo mejor vamos a la playa este fin de semana.",
+  "example_ru": "Может быть, мы поедем на пляж в эти выходные.",
+  "rank": 108
+ },
+ {
+  "id": "en-resumen",
+  "es": "en resumen",
+  "pos": "phrase",
+  "ru": "короче говоря, в итоге",
+  "example_es": "En resumen, fue un año muy bueno para nosotros.",
+  "example_ru": "В итоге это был очень хороший год для нас.",
+  "rank": 7644
+ },
+ {
+  "id": "aun-así",
+  "es": "aun así",
+  "pos": "phrase",
+  "ru": "и всё же, тем не менее",
+  "example_es": "Estaba muy cansado y, aun así, fue a entrenar.",
+  "example_ru": "Он очень устал и всё же пошёл на тренировку.",
+  "rank": 988
+ },
+ {
+  "id": "probablemente",
+  "es": "probablemente",
+  "pos": "adv",
+  "ru": "вероятно, наверное",
+  "example_es": "Probablemente llegaremos un poco tarde.",
+  "example_ru": "Вероятно, мы немного опоздаем.",
+  "rank": 494
+ },
+ {
+  "id": "seguramente",
+  "es": "seguramente",
+  "pos": "adv",
+  "ru": "наверняка, скорее всего",
+  "example_es": "Seguramente ha perdido el autobús.",
+  "example_ru": "Наверняка он опоздал на автобус.",
+  "rank": 1572
+ }
+]

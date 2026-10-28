@@ -1,0 +1,604 @@
+[
+ {
+  "id": "matiz",
+  "es": "matiz",
+  "pos": "noun",
+  "ru": "оттенок, нюанс",
+  "example_es": "Hay un matiz importante entre las dos palabras.",
+  "example_ru": "Между этими двумя словами есть важный нюанс.",
+  "rank": 41239,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "matices"
+  ]
+ },
+ {
+  "id": "sutil",
+  "es": "sutil",
+  "pos": "adj",
+  "ru": "тонкий, едва уловимый",
+  "example_es": "Su ironía es tan sutil que pocos la notan.",
+  "example_ru": "Его ирония настолько тонкая, что мало кто её замечает.",
+  "rank": 8981,
+  "forms": [
+   "sutiles"
+  ]
+ },
+ {
+  "id": "tenue",
+  "es": "tenue",
+  "pos": "adj",
+  "ru": "слабый, приглушённый",
+  "example_es": "Una luz tenue iluminaba la habitación.",
+  "example_ru": "Комнату освещал приглушённый свет.",
+  "rank": 27822,
+  "forms": [
+   "tenues"
+  ]
+ },
+ {
+  "id": "ambiguo",
+  "es": "ambiguo",
+  "pos": "adj",
+  "ru": "двусмысленный, неоднозначный",
+  "example_es": "Su respuesta fue deliberadamente ambigua.",
+  "example_ru": "Его ответ был намеренно уклончивым.",
+  "rank": 35939,
+  "forms": [
+   "ambigua",
+   "ambiguos",
+   "ambiguas"
+  ]
+ },
+ {
+  "id": "contundente",
+  "es": "contundente",
+  "pos": "adj",
+  "ru": "убедительный, весомый; решительный",
+  "example_es": "Presentó pruebas contundentes de su inocencia.",
+  "example_ru": "Он представил неопровержимые доказательства своей невиновности.",
+  "rank": 16938,
+  "forms": [
+   "contundentes"
+  ]
+ },
+ {
+  "id": "rotundo",
+  "es": "rotundo",
+  "pos": "adj",
+  "ru": "категорический; полный",
+  "example_es": "La obra fue un éxito rotundo.",
+  "example_ru": "Спектакль имел оглушительный успех.",
+  "rank": 33972,
+  "forms": [
+   "rotunda",
+   "rotundos",
+   "rotundas"
+  ]
+ },
+ {
+  "id": "tajante",
+  "es": "tajante",
+  "pos": "adj",
+  "ru": "категоричный, резкий",
+  "example_es": "Su negativa fue tajante: no habrá negociación.",
+  "example_ru": "Его отказ был категоричным: переговоров не будет.",
+  "rank": 49999,
+  "forms": [
+   "tajantes"
+  ]
+ },
+ {
+  "id": "minucioso",
+  "es": "minucioso",
+  "pos": "adj",
+  "ru": "тщательный, подробный",
+  "example_es": "La policía hizo un registro minucioso del piso.",
+  "example_ru": "Полиция провела тщательный обыск квартиры.",
+  "rank": 30812,
+  "forms": [
+   "minuciosa",
+   "minuciosos",
+   "minuciosas"
+  ]
+ },
+ {
+  "id": "meticuloso",
+  "es": "meticuloso",
+  "pos": "adj",
+  "ru": "скрупулёзный, педантичный",
+  "example_es": "Es muy meticulosa con los detalles.",
+  "example_ru": "Она очень скрупулёзна в деталях.",
+  "rank": 22533,
+  "forms": [
+   "meticulosa",
+   "meticulosos",
+   "meticulosas"
+  ]
+ },
+ {
+  "id": "pormenorizado",
+  "es": "pormenorizado",
+  "pos": "adj",
+  "ru": "подробный, детальный",
+  "example_es": "Nos entregaron un informe pormenorizado de los gastos.",
+  "example_ru": "Нам предоставили подробный отчёт о расходах.",
+  "rank": 49999,
+  "forms": [
+   "pormenorizada",
+   "pormenorizados",
+   "pormenorizadas"
+  ]
+ },
+ {
+  "id": "superfluo",
+  "es": "superfluo",
+  "pos": "adj",
+  "ru": "излишний, лишний",
+  "example_es": "Elimina del texto todo lo superfluo.",
+  "example_ru": "Убери из текста всё лишнее.",
+  "rank": 48099,
+  "forms": [
+   "superflua",
+   "superfluos",
+   "superfluas"
+  ]
+ },
+ {
+  "id": "irrelevante",
+  "es": "irrelevante",
+  "pos": "adj",
+  "ru": "несущественный, не относящийся к делу",
+  "example_es": "Para el jurado, ese detalle es irrelevante.",
+  "example_ru": "Для присяжных эта деталь несущественна.",
+  "rank": 9983,
+  "forms": [
+   "irrelevantes"
+  ]
+ },
+ {
+  "id": "primordial",
+  "es": "primordial",
+  "pos": "adj",
+  "ru": "первостепенный",
+  "example_es": "La seguridad de los pasajeros es primordial.",
+  "example_ru": "Безопасность пассажиров — первостепенная задача.",
+  "rank": 22284,
+  "forms": [
+   "primordiales"
+  ]
+ },
+ {
+  "id": "crucial",
+  "es": "crucial",
+  "pos": "adj",
+  "ru": "ключевой, решающий",
+  "example_es": "Los próximos días serán cruciales para el acuerdo.",
+  "example_ru": "Ближайшие дни станут решающими для соглашения.",
+  "rank": 9078,
+  "forms": [
+   "cruciales"
+  ]
+ },
+ {
+  "id": "notable",
+  "es": "notable",
+  "pos": "adj",
+  "ru": "заметный, значительный; выдающийся",
+  "example_es": "Se ha producido una mejora notable en sus notas.",
+  "example_ru": "В его оценках произошло заметное улучшение.",
+  "rank": 9100,
+  "forms": [
+   "notables"
+  ]
+ },
+ {
+  "id": "considerable",
+  "es": "considerable",
+  "pos": "adj",
+  "ru": "значительный",
+  "example_es": "La reforma supuso un ahorro considerable.",
+  "example_ru": "Реформа принесла значительную экономию.",
+  "rank": 11713,
+  "forms": [
+   "considerables"
+  ]
+ },
+ {
+  "id": "desmesurado",
+  "es": "desmesurado",
+  "pos": "adj",
+  "ru": "непомерный, чрезмерный",
+  "example_es": "Su ambición desmesurada acabó arruinándolo.",
+  "example_ru": "Непомерное честолюбие в итоге его погубило.",
+  "rank": 49999,
+  "forms": [
+   "desmesurada",
+   "desmesurados",
+   "desmesuradas"
+  ]
+ },
+ {
+  "id": "abismal",
+  "es": "abismal",
+  "pos": "adj",
+  "ru": "огромный (о разнице), колоссальный",
+  "example_es": "Hay una diferencia abismal entre los dos equipos.",
+  "example_ru": "Между двумя командами огромная разница.",
+  "rank": 49999,
+  "forms": [
+   "abismales"
+  ]
+ },
+ {
+  "id": "acertado",
+  "es": "acertado",
+  "pos": "adj",
+  "ru": "удачный, верный",
+  "example_es": "Fue una decisión muy acertada cambiar de proveedor.",
+  "example_ru": "Сменить поставщика было очень верным решением.",
+  "rank": 13696,
+  "forms": [
+   "acertada",
+   "acertados",
+   "acertadas"
+  ]
+ },
+ {
+  "id": "plausible",
+  "es": "plausible",
+  "pos": "adj",
+  "ru": "правдоподобный; похвальный",
+  "example_es": "Es una explicación plausible, pero hay que comprobarla.",
+  "example_ru": "Это правдоподобное объяснение, но его нужно проверить.",
+  "rank": 29713,
+  "forms": [
+   "plausibles"
+  ]
+ },
+ {
+  "id": "inverosímil",
+  "es": "inverosímil",
+  "pos": "adj",
+  "ru": "неправдоподобный",
+  "example_es": "Nos contó una historia completamente inverosímil.",
+  "example_ru": "Он рассказал нам совершенно неправдоподобную историю.",
+  "rank": 41229,
+  "forms": [
+   "inverosímiles"
+  ]
+ },
+ {
+  "id": "discutible",
+  "es": "discutible",
+  "pos": "adj",
+  "ru": "спорный",
+  "example_es": "Es una afirmación, como mínimo, discutible.",
+  "example_ru": "Это утверждение, как минимум, спорное.",
+  "rank": 29096,
+  "forms": [
+   "discutibles"
+  ]
+ },
+ {
+  "id": "cuestionable",
+  "es": "cuestionable",
+  "pos": "adj",
+  "ru": "сомнительный, спорный",
+  "example_es": "Sus métodos son éticamente cuestionables.",
+  "example_ru": "Его методы сомнительны с этической точки зрения.",
+  "rank": 26578,
+  "forms": [
+   "cuestionables"
+  ]
+ },
+ {
+  "id": "loable",
+  "es": "loable",
+  "pos": "adj",
+  "ru": "похвальный",
+  "example_es": "Es un esfuerzo loable, aunque insuficiente.",
+  "example_ru": "Это похвальное усилие, хотя и недостаточное.",
+  "rank": 45286,
+  "forms": [
+   "loables"
+  ]
+ },
+ {
+  "id": "deplorable",
+  "es": "deplorable",
+  "pos": "adj",
+  "ru": "плачевный, прискорбный",
+  "example_es": "El edificio estaba en un estado deplorable.",
+  "example_ru": "Здание было в плачевном состоянии.",
+  "rank": 31342,
+  "forms": [
+   "deplorables"
+  ]
+ },
+ {
+  "id": "lamentable",
+  "es": "lamentable",
+  "pos": "adj",
+  "ru": "прискорбный, жалкий",
+  "example_es": "Fue un espectáculo lamentable por parte de ambos.",
+  "example_ru": "С обеих сторон это было жалкое зрелище.",
+  "rank": 7973,
+  "forms": [
+   "lamentables"
+  ]
+ },
+ {
+  "id": "mediocre",
+  "es": "mediocre",
+  "pos": "adj",
+  "ru": "посредственный",
+  "example_es": "La película tiene un guion bastante mediocre.",
+  "example_ru": "У фильма довольно посредственный сценарий.",
+  "rank": 13956,
+  "forms": [
+   "mediocres"
+  ]
+ },
+ {
+  "id": "insólito",
+  "es": "insólito",
+  "pos": "adj",
+  "ru": "необычный, небывалый",
+  "example_es": "Nevar en esta ciudad es algo insólito.",
+  "example_ru": "Снег в этом городе — нечто небывалое.",
+  "rank": 28528,
+  "forms": [
+   "insólita",
+   "insólitos",
+   "insólitas"
+  ]
+ },
+ {
+  "id": "peculiar",
+  "es": "peculiar",
+  "pos": "adj",
+  "ru": "своеобразный, особенный",
+  "example_es": "Tiene un sentido del humor muy peculiar.",
+  "example_ru": "У него очень своеобразное чувство юмора.",
+  "rank": 11364,
+  "forms": [
+   "peculiares"
+  ]
+ },
+ {
+  "id": "llamativo",
+  "es": "llamativo",
+  "pos": "adj",
+  "ru": "броский, бросающийся в глаза",
+  "example_es": "Llevaba un abrigo de un color muy llamativo.",
+  "example_ru": "На ней было пальто очень яркого цвета.",
+  "rank": 19908,
+  "forms": [
+   "llamativa",
+   "llamativos",
+   "llamativas"
+  ]
+ },
+ {
+  "id": "sobrio",
+  "es": "sobrio",
+  "pos": "adj",
+  "ru": "сдержанный, строгий; трезвый",
+  "example_es": "La decoración del salón es sobria y elegante.",
+  "example_ru": "Интерьер гостиной строгий и элегантный.",
+  "rank": 7130,
+  "forms": [
+   "sobria",
+   "sobrios",
+   "sobrias"
+  ]
+ },
+ {
+  "id": "pretencioso",
+  "es": "pretencioso",
+  "pos": "adj",
+  "ru": "претенциозный",
+  "example_es": "El estilo del libro me resulta algo pretencioso.",
+  "example_ru": "Стиль книги кажется мне несколько претенциозным.",
+  "rank": 20663,
+  "forms": [
+   "pretenciosa",
+   "pretenciosos",
+   "pretenciosas"
+  ]
+ },
+ {
+  "id": "dudoso",
+  "es": "dudoso",
+  "pos": "adj",
+  "ru": "сомнительный",
+  "example_es": "Es dudoso que lleguen a tiempo.",
+  "example_ru": "Сомнительно, что они успеют вовремя.",
+  "rank": 21472,
+  "forms": [
+   "dudosa",
+   "dudosos",
+   "dudosas"
+  ]
+ },
+ {
+  "id": "impecable",
+  "es": "impecable",
+  "pos": "adj",
+  "ru": "безупречный",
+  "example_es": "Su presentación fue impecable de principio a fin.",
+  "example_ru": "Его выступление было безупречным от начала до конца.",
+  "rank": 11640,
+  "forms": [
+   "impecables"
+  ]
+ },
+ {
+  "id": "deficiente",
+  "es": "deficiente",
+  "pos": "adj",
+  "ru": "недостаточный, неудовлетворительный",
+  "example_es": "El informe señala una gestión deficiente de los recursos.",
+  "example_ru": "В докладе отмечается неудовлетворительное управление ресурсами.",
+  "rank": 28029,
+  "forms": [
+   "deficientes"
+  ]
+ },
+ {
+  "id": "pésimo",
+  "es": "pésimo",
+  "pos": "adj",
+  "ru": "отвратительный, ужасный",
+  "example_es": "El servicio del hotel fue pésimo.",
+  "example_ru": "Обслуживание в отеле было ужасным.",
+  "rank": 9299,
+  "forms": [
+   "pésima",
+   "pésimos",
+   "pésimas"
+  ]
+ },
+ {
+  "id": "endeble",
+  "es": "endeble",
+  "pos": "adj",
+  "ru": "слабый, шаткий",
+  "example_es": "Sus argumentos me parecen bastante endebles.",
+  "example_ru": "Его аргументы кажутся мне довольно шаткими.",
+  "rank": 42307,
+  "forms": [
+   "endebles"
+  ]
+ },
+ {
+  "id": "banal",
+  "es": "banal",
+  "pos": "adj",
+  "ru": "банальный",
+  "example_es": "Discutieron por un asunto completamente banal.",
+  "example_ru": "Они поссорились из-за совершенно пустякового дела.",
+  "rank": 28567,
+  "forms": [
+   "banales"
+  ]
+ },
+ {
+  "id": "elocuente",
+  "es": "elocuente",
+  "pos": "adj",
+  "ru": "красноречивый",
+  "example_es": "Su silencio fue más elocuente que cualquier palabra.",
+  "example_ru": "Его молчание было красноречивее любых слов.",
+  "rank": 24432,
+  "forms": [
+   "elocuentes"
+  ]
+ },
+ {
+  "id": "certero",
+  "es": "certero",
+  "pos": "adj",
+  "ru": "меткий, точный",
+  "example_es": "Hizo un diagnóstico certero de la situación.",
+  "example_ru": "Он дал точную оценку ситуации.",
+  "rank": 44012,
+  "forms": [
+   "certera",
+   "certeros",
+   "certeras"
+  ]
+ },
+ {
+  "id": "ligeramente",
+  "es": "ligeramente",
+  "pos": "adv",
+  "ru": "слегка, немного",
+  "example_es": "Los precios han subido ligeramente este mes.",
+  "example_ru": "В этом месяце цены немного выросли.",
+  "rank": 8649
+ },
+ {
+  "id": "sumamente",
+  "es": "sumamente",
+  "pos": "adv",
+  "ru": "чрезвычайно, крайне",
+  "example_es": "Es un asunto sumamente delicado.",
+  "example_ru": "Это крайне деликатный вопрос.",
+  "rank": 9497
+ },
+ {
+  "id": "levemente",
+  "es": "levemente",
+  "pos": "adv",
+  "ru": "слегка, чуть-чуть",
+  "example_es": "La herida sangraba levemente.",
+  "example_ru": "Рана слегка кровоточила.",
+  "rank": 33547
+ },
+ {
+  "id": "rotundamente",
+  "es": "rotundamente",
+  "pos": "adv",
+  "ru": "категорически",
+  "example_es": "El acusado negó rotundamente los hechos.",
+  "example_ru": "Обвиняемый категорически отрицал факты.",
+  "rank": 25569
+ },
+ {
+  "id": "francamente",
+  "es": "francamente",
+  "pos": "adv",
+  "ru": "откровенно; по-настоящему",
+  "example_es": "Francamente, no esperaba tanto de él.",
+  "example_ru": "Честно говоря, я не ожидал от него такого.",
+  "rank": 4143
+ },
+ {
+  "id": "meramente",
+  "es": "meramente",
+  "pos": "adv",
+  "ru": "лишь, просто, исключительно",
+  "example_es": "Su papel es meramente decorativo.",
+  "example_ru": "Его роль чисто декоративная.",
+  "rank": 25714
+ },
+ {
+  "id": "relativamente",
+  "es": "relativamente",
+  "pos": "adv",
+  "ru": "относительно",
+  "example_es": "El examen fue relativamente fácil.",
+  "example_ru": "Экзамен был относительно лёгким.",
+  "rank": 13177
+ },
+ {
+  "id": "estrictamente",
+  "es": "estrictamente",
+  "pos": "adv",
+  "ru": "строго",
+  "example_es": "Está estrictamente prohibido fumar en el edificio.",
+  "example_ru": "Курить в здании строго запрещено.",
+  "rank": 8996
+ },
+ {
+  "id": "notablemente",
+  "es": "notablemente",
+  "pos": "adv",
+  "ru": "заметно, значительно",
+  "example_es": "La calidad del aire ha mejorado notablemente.",
+  "example_ru": "Качество воздуха заметно улучшилось.",
+  "rank": 30563
+ },
+ {
+  "id": "medianamente",
+  "es": "medianamente",
+  "pos": "adv",
+  "ru": "более или менее, сносно",
+  "example_es": "Cualquier persona medianamente informada lo sabe.",
+  "example_ru": "Любой мало-мальски осведомлённый человек это знает.",
+  "rank": 47999
+ }
+]

@@ -1,0 +1,681 @@
+[
+ {
+  "id": "medio-ambiente",
+  "es": "medio ambiente",
+  "pos": "phrase",
+  "ru": "окружающая среда",
+  "example_es": "Todos debemos cuidar el medio ambiente.",
+  "example_ru": "Мы все должны беречь окружающую среду.",
+  "rank": 3001
+ },
+ {
+  "id": "cambio-climático",
+  "es": "cambio climático",
+  "pos": "phrase",
+  "ru": "изменение климата",
+  "example_es": "El cambio climático afecta a todo el planeta.",
+  "example_ru": "Изменение климата затрагивает всю планету.",
+  "rank": 21281
+ },
+ {
+  "id": "contaminación",
+  "es": "contaminación",
+  "pos": "noun",
+  "ru": "загрязнение",
+  "example_es": "La contaminación del aire es un problema en las ciudades grandes.",
+  "example_ru": "Загрязнение воздуха — проблема больших городов.",
+  "rank": 12492,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "contaminaciones"
+  ]
+ },
+ {
+  "id": "contaminar",
+  "es": "contaminar",
+  "pos": "verb",
+  "ru": "загрязнять, загрязнить",
+  "example_es": "Las fábricas contaminan el río con sus residuos.",
+  "example_ru": "Заводы загрязняют реку своими отходами.",
+  "rank": 30076
+ },
+ {
+  "id": "reciclar",
+  "es": "reciclar",
+  "pos": "verb",
+  "ru": "перерабатывать (отходы); сортировать мусор",
+  "example_es": "En casa reciclamos el papel y el vidrio.",
+  "example_ru": "Дома мы сдаём на переработку бумагу и стекло.",
+  "rank": 32524
+ },
+ {
+  "id": "residuo",
+  "es": "residuo",
+  "pos": "noun",
+  "ru": "отходы; остаток",
+  "example_es": "Separamos los residuos en diferentes contenedores.",
+  "example_ru": "Мы раскладываем отходы по разным контейнерам.",
+  "rank": 21152,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "residuos"
+  ]
+ },
+ {
+  "id": "plástico",
+  "es": "plástico",
+  "pos": "noun",
+  "ru": "пластик",
+  "example_es": "Intento no comprar productos con mucho plástico.",
+  "example_ru": "Я стараюсь не покупать товары в большом количестве пластика.",
+  "rank": 4129,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "plásticos"
+  ]
+ },
+ {
+  "id": "energía",
+  "es": "energía",
+  "pos": "noun",
+  "ru": "энергия",
+  "example_es": "La energía solar es cada vez más barata.",
+  "example_ru": "Солнечная энергия становится всё дешевле.",
+  "rank": 1043,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "energías"
+  ]
+ },
+ {
+  "id": "renovable",
+  "es": "renovable",
+  "pos": "adj",
+  "ru": "возобновляемый",
+  "example_es": "El país produce mucha energía renovable.",
+  "example_ru": "Страна производит много возобновляемой энергии.",
+  "rank": 49999,
+  "forms": [
+   "renovables"
+  ]
+ },
+ {
+  "id": "recurso",
+  "es": "recurso",
+  "pos": "noun",
+  "ru": "ресурс; средство",
+  "example_es": "El agua es un recurso que no debemos desperdiciar.",
+  "example_ru": "Вода — ресурс, который нельзя тратить впустую.",
+  "rank": 9829,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "recursos"
+  ]
+ },
+ {
+  "id": "calentamiento",
+  "es": "calentamiento",
+  "pos": "noun",
+  "ru": "потепление; нагрев",
+  "example_es": "El calentamiento global derrite el hielo de los polos.",
+  "example_ru": "Глобальное потепление растапливает лёд на полюсах.",
+  "rank": 11418,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "calentamientos"
+  ]
+ },
+ {
+  "id": "sequía",
+  "es": "sequía",
+  "pos": "noun",
+  "ru": "засуха",
+  "example_es": "Este verano la sequía ha afectado a los agricultores.",
+  "example_ru": "Этим летом засуха ударила по фермерам.",
+  "rank": 16002,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "sequías"
+  ]
+ },
+ {
+  "id": "inundación",
+  "es": "inundación",
+  "pos": "noun",
+  "ru": "наводнение",
+  "example_es": "Las lluvias provocaron inundaciones en el sur.",
+  "example_ru": "Дожди вызвали наводнения на юге.",
+  "rank": 14125,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "inundaciones"
+  ]
+ },
+ {
+  "id": "incendio",
+  "es": "incendio",
+  "pos": "noun",
+  "ru": "пожар",
+  "example_es": "Un incendio destruyó cientos de hectáreas de bosque.",
+  "example_ru": "Пожар уничтожил сотни гектаров леса.",
+  "rank": 2796,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "incendios"
+  ]
+ },
+ {
+  "id": "huracán",
+  "es": "huracán",
+  "pos": "noun",
+  "ru": "ураган",
+  "example_es": "El huracán llegó a la costa por la noche.",
+  "example_ru": "Ураган дошёл до побережья ночью.",
+  "rank": 8697,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "huracanes"
+  ]
+ },
+ {
+  "id": "terremoto",
+  "es": "terremoto",
+  "pos": "noun",
+  "ru": "землетрясение",
+  "example_es": "Después del terremoto, muchos edificios quedaron dañados.",
+  "example_ru": "После землетрясения многие здания были повреждены.",
+  "rank": 7639,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "terremotos"
+  ]
+ },
+ {
+  "id": "especie",
+  "es": "especie",
+  "pos": "noun",
+  "ru": "вид (животных, растений)",
+  "example_es": "Esta especie de tortuga está en peligro.",
+  "example_ru": "Этот вид черепах находится под угрозой.",
+  "rank": 1142,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "especies"
+  ]
+ },
+ {
+  "id": "extinción",
+  "es": "extinción",
+  "pos": "noun",
+  "ru": "вымирание; исчезновение",
+  "example_es": "Muchos animales están en peligro de extinción.",
+  "example_ru": "Многие животные находятся под угрозой исчезновения.",
+  "rank": 11697,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "extinciones"
+  ]
+ },
+ {
+  "id": "proteger",
+  "es": "proteger",
+  "pos": "verb",
+  "ru": "защищать, защитить",
+  "example_es": "Hay que proteger los bosques de los incendios.",
+  "example_ru": "Нужно защищать леса от пожаров.",
+  "rank": 1748,
+  "forms": [
+   "protejo",
+   "proteja"
+  ]
+ },
+ {
+  "id": "conservar",
+  "es": "conservar",
+  "pos": "verb",
+  "ru": "сохранять, сохранить",
+  "example_es": "Queremos conservar la naturaleza para nuestros hijos.",
+  "example_ru": "Мы хотим сохранить природу для наших детей.",
+  "rank": 6773
+ },
+ {
+  "id": "destruir",
+  "es": "destruir",
+  "pos": "verb",
+  "ru": "разрушать, разрушить; уничтожать",
+  "example_es": "La tormenta destruyó varias casas del pueblo.",
+  "example_ru": "Буря разрушила несколько домов в деревне.",
+  "rank": 2226,
+  "forms": [
+   "destruyo",
+   "destruye",
+   "destruyó",
+   "destruyendo"
+  ]
+ },
+ {
+  "id": "selva",
+  "es": "selva",
+  "pos": "noun",
+  "ru": "джунгли, тропический лес",
+  "example_es": "En la selva viven miles de especies de animales.",
+  "example_ru": "В джунглях живут тысячи видов животных.",
+  "rank": 5059,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "selvas"
+  ]
+ },
+ {
+  "id": "océano",
+  "es": "océano",
+  "pos": "noun",
+  "ru": "океан",
+  "example_es": "Hay toneladas de plástico en el océano.",
+  "example_ru": "В океане тонны пластика.",
+  "rank": 3046,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "océanos"
+  ]
+ },
+ {
+  "id": "ola",
+  "es": "ola",
+  "pos": "noun",
+  "ru": "волна",
+  "example_es": "Las olas eran muy altas por el viento.",
+  "example_ru": "Из-за ветра волны были очень высокими.",
+  "rank": 5469,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "olas"
+  ]
+ },
+ {
+  "id": "valle",
+  "es": "valle",
+  "pos": "noun",
+  "ru": "долина",
+  "example_es": "El pueblo está en un valle entre montañas.",
+  "example_ru": "Деревня находится в долине между горами.",
+  "rank": 3753,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "valles"
+  ]
+ },
+ {
+  "id": "colina",
+  "es": "colina",
+  "pos": "noun",
+  "ru": "холм",
+  "example_es": "Desde la colina se ve todo el valle.",
+  "example_ru": "С холма видна вся долина.",
+  "rank": 4061,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "colinas"
+  ]
+ },
+ {
+  "id": "cueva",
+  "es": "cueva",
+  "pos": "noun",
+  "ru": "пещера",
+  "example_es": "Encontraron pinturas muy antiguas en la cueva.",
+  "example_ru": "В пещере нашли очень древние рисунки.",
+  "rank": 4271,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "cuevas"
+  ]
+ },
+ {
+  "id": "volcán",
+  "es": "volcán",
+  "pos": "noun",
+  "ru": "вулкан",
+  "example_es": "El volcán lleva cien años sin actividad.",
+  "example_ru": "Вулкан не извергался уже сто лет.",
+  "rank": 9648,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "volcanes"
+  ]
+ },
+ {
+  "id": "planeta",
+  "es": "planeta",
+  "pos": "noun",
+  "ru": "планета",
+  "example_es": "Solo tenemos un planeta y debemos cuidarlo.",
+  "example_ru": "У нас только одна планета, и мы должны её беречь.",
+  "rank": 1164,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "planetas"
+  ]
+ },
+ {
+  "id": "atmósfera",
+  "es": "atmósfera",
+  "pos": "noun",
+  "ru": "атмосфера",
+  "example_es": "Los coches emiten gases a la atmósfera.",
+  "example_ru": "Машины выбрасывают газы в атмосферу.",
+  "rank": 5282,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "atmósferas"
+  ]
+ },
+ {
+  "id": "petróleo",
+  "es": "petróleo",
+  "pos": "noun",
+  "ru": "нефть",
+  "example_es": "El precio del petróleo ha subido otra vez.",
+  "example_ru": "Цена на нефть снова выросла.",
+  "rank": 4468,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "petróleos"
+  ]
+ },
+ {
+  "id": "carbón",
+  "es": "carbón",
+  "pos": "noun",
+  "ru": "уголь",
+  "example_es": "Muchas centrales de carbón ya están cerradas.",
+  "example_ru": "Многие угольные электростанции уже закрыты.",
+  "rank": 5993,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "carbones"
+  ]
+ },
+ {
+  "id": "combustible",
+  "es": "combustible",
+  "pos": "noun",
+  "ru": "топливо",
+  "example_es": "Los aviones gastan mucho combustible.",
+  "example_ru": "Самолёты расходуют много топлива.",
+  "rank": 3465,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "combustibles"
+  ]
+ },
+ {
+  "id": "humo",
+  "es": "humo",
+  "pos": "noun",
+  "ru": "дым",
+  "example_es": "Salía mucho humo negro de la fábrica.",
+  "example_ru": "Из завода шёл густой чёрный дым.",
+  "rank": 2932,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "humos"
+  ]
+ },
+ {
+  "id": "ecológico",
+  "es": "ecológico",
+  "pos": "adj",
+  "ru": "экологичный; экологический",
+  "example_es": "Prefiero comprar fruta ecológica en el mercado.",
+  "example_ru": "Я предпочитаю покупать экологически чистые фрукты на рынке.",
+  "rank": 30606,
+  "forms": [
+   "ecológica",
+   "ecológicos",
+   "ecológicas"
+  ]
+ },
+ {
+  "id": "sostenible",
+  "es": "sostenible",
+  "pos": "adj",
+  "ru": "устойчивый, экологичный",
+  "example_es": "Necesitamos un transporte más sostenible en la ciudad.",
+  "example_ru": "Городу нужен более экологичный транспорт.",
+  "rank": 35839,
+  "forms": [
+   "sostenibles"
+  ]
+ },
+ {
+  "id": "natural",
+  "es": "natural",
+  "pos": "adj",
+  "ru": "природный; естественный",
+  "example_es": "Este parque natural es precioso en primavera.",
+  "example_ru": "Этот природный парк прекрасен весной.",
+  "rank": 1830,
+  "forms": [
+   "naturales"
+  ]
+ },
+ {
+  "id": "emisión",
+  "es": "emisión",
+  "pos": "noun",
+  "ru": "выброс; излучение; передача (эфир)",
+  "example_es": "Los países deben reducir las emisiones de gases contaminantes.",
+  "example_ru": "Страны должны сократить выбросы загрязняющих газов.",
+  "rank": 12888,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "emisiones"
+  ]
+ },
+ {
+  "id": "desperdiciar",
+  "es": "desperdiciar",
+  "pos": "verb",
+  "ru": "тратить впустую, разбазаривать",
+  "example_es": "No desperdicies la comida, guárdala para mañana.",
+  "example_ru": "Не выбрасывай еду, оставь её на завтра.",
+  "rank": 10180
+ },
+ {
+  "id": "contenedor",
+  "es": "contenedor",
+  "pos": "noun",
+  "ru": "контейнер (для мусора)",
+  "example_es": "El vidrio va en el contenedor verde.",
+  "example_ru": "Стекло выбрасывают в зелёный контейнер.",
+  "rank": 7663,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "contenedores"
+  ]
+ },
+ {
+  "id": "granja",
+  "es": "granja",
+  "pos": "noun",
+  "ru": "ферма",
+  "example_es": "Los niños visitaron una granja con vacas y cerdos.",
+  "example_ru": "Дети побывали на ферме с коровами и свиньями.",
+  "rank": 2330,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "granjas"
+  ]
+ },
+ {
+  "id": "cultivar",
+  "es": "cultivar",
+  "pos": "verb",
+  "ru": "выращивать; возделывать",
+  "example_es": "Mis padres cultivan tomates en el jardín.",
+  "example_ru": "Мои родители выращивают помидоры в саду.",
+  "rank": 13157
+ },
+ {
+  "id": "semilla",
+  "es": "semilla",
+  "pos": "noun",
+  "ru": "семя, семечко",
+  "example_es": "Planté unas semillas de girasol en una maceta.",
+  "example_ru": "Я посадил семена подсолнуха в горшок.",
+  "rank": 8664,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "semillas"
+  ]
+ },
+ {
+  "id": "hierba",
+  "es": "hierba",
+  "pos": "noun",
+  "ru": "трава; трава (пряная)",
+  "example_es": "Los niños jugaban sentados en {es: la hierba | am: el pasto | rio: el pasto}.",
+  "example_ru": "Дети играли, сидя на траве.",
+  "rank": 3065,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "hierbas"
+  ],
+  "variants": {
+   "am": "el pasto",
+   "rio": "el pasto"
+  }
+ },
+ {
+  "id": "rama",
+  "es": "rama",
+  "pos": "noun",
+  "ru": "ветка",
+  "example_es": "El viento rompió una rama del árbol.",
+  "example_ru": "Ветер сломал ветку дерева.",
+  "rank": 6689,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "ramas"
+  ]
+ },
+ {
+  "id": "raíz",
+  "es": "raíz",
+  "pos": "noun",
+  "ru": "корень",
+  "example_es": "Las raíces de este árbol son muy profundas.",
+  "example_ru": "Корни этого дерева уходят очень глубоко.",
+  "rank": 7388,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "raíces"
+  ]
+ },
+ {
+  "id": "insecto",
+  "es": "insecto",
+  "pos": "noun",
+  "ru": "насекомое",
+  "example_es": "En verano hay muchos insectos en el campo.",
+  "example_ru": "Летом за городом много насекомых.",
+  "rank": 9623,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "insectos"
+  ]
+ },
+ {
+  "id": "abeja",
+  "es": "abeja",
+  "pos": "noun",
+  "ru": "пчела",
+  "example_es": "Sin abejas, muchas plantas no podrían vivir.",
+  "example_ru": "Без пчёл многие растения не смогли бы выжить.",
+  "rank": 9368,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "abejas"
+  ]
+ },
+ {
+  "id": "ballena",
+  "es": "ballena",
+  "pos": "noun",
+  "ru": "кит",
+  "example_es": "Desde el barco vimos una ballena enorme.",
+  "example_ru": "С корабля мы увидели огромного кита.",
+  "rank": 7628,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "ballenas"
+  ]
+ },
+ {
+  "id": "lobo",
+  "es": "lobo",
+  "pos": "noun",
+  "ru": "волк",
+  "example_es": "Por la noche se oían los lobos en el bosque.",
+  "example_ru": "Ночью в лесу было слышно волков.",
+  "rank": 2596,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "lobos",
+   "loba",
+   "lobas"
+  ]
+ },
+ {
+  "id": "águila",
+  "es": "águila",
+  "pos": "noun",
+  "ru": "орёл",
+  "example_es": "Un águila volaba sobre las montañas.",
+  "example_ru": "Над горами летал орёл.",
+  "rank": 5983,
+  "article": "el",
+  "gender": "f",
+  "forms": [
+   "águilas"
+  ]
+ }
+]

@@ -1,0 +1,688 @@
+[
+ {
+  "id": "autoestima",
+  "es": "autoestima",
+  "pos": "noun",
+  "ru": "самооценка",
+  "example_es": "Las críticas constantes le bajaron la autoestima.",
+  "example_ru": "Постоянная критика подорвала его самооценку.",
+  "rank": 11595,
+  "article": "la",
+  "gender": "f"
+ },
+ {
+  "id": "temperamento",
+  "es": "temperamento",
+  "pos": "noun",
+  "ru": "темперамент, нрав",
+  "example_es": "Tiene un temperamento fuerte y se enfada con facilidad.",
+  "example_ru": "У него крутой нрав, он легко выходит из себя.",
+  "rank": 10710,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "temperamentos"
+  ]
+ },
+ {
+  "id": "conducta",
+  "es": "conducta",
+  "pos": "noun",
+  "ru": "поведение",
+  "example_es": "Los psicólogos estudian la conducta humana en grupo.",
+  "example_ru": "Психологи изучают поведение человека в группе.",
+  "rank": 4429,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "conductas"
+  ]
+ },
+ {
+  "id": "comportamiento",
+  "es": "comportamiento",
+  "pos": "noun",
+  "ru": "поведение",
+  "example_es": "Su comportamiento cambió mucho después del divorcio.",
+  "example_ru": "После развода его поведение сильно изменилось.",
+  "rank": 2682,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "comportamientos"
+  ]
+ },
+ {
+  "id": "actitud",
+  "es": "actitud",
+  "pos": "noun",
+  "ru": "отношение, настрой; позиция",
+  "example_es": "Con una actitud positiva todo resulta más fácil.",
+  "example_ru": "С позитивным настроем всё даётся легче.",
+  "rank": 2829,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "actitudes"
+  ]
+ },
+ {
+  "id": "empatía",
+  "es": "empatía",
+  "pos": "noun",
+  "ru": "эмпатия, сопереживание",
+  "example_es": "Un buen médico necesita sentir empatía por sus pacientes.",
+  "example_ru": "Хороший врач должен уметь сопереживать пациентам.",
+  "rank": 17641,
+  "article": "la",
+  "gender": "f"
+ },
+ {
+  "id": "inseguridad",
+  "es": "inseguridad",
+  "pos": "noun",
+  "ru": "неуверенность; небезопасность",
+  "example_es": "Su inseguridad le impide hablar en público.",
+  "example_ru": "Неуверенность в себе мешает ему выступать публично.",
+  "rank": 22906,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "inseguridades"
+  ]
+ },
+ {
+  "id": "rencor",
+  "es": "rencor",
+  "pos": "noun",
+  "ru": "злопамятность, затаённая обида",
+  "example_es": "No le guardo rencor, aunque me hizo mucho daño.",
+  "example_ru": "Я не держу на него зла, хотя он причинил мне много боли.",
+  "rank": 7498,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "rencores"
+  ]
+ },
+ {
+  "id": "frustración",
+  "es": "frustración",
+  "pos": "noun",
+  "ru": "разочарование, фрустрация",
+  "example_es": "Sintió una gran frustración al no conseguir el puesto.",
+  "example_ru": "Он испытал сильное разочарование, не получив должность.",
+  "rank": 13627,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "frustraciones"
+  ]
+ },
+ {
+  "id": "angustia",
+  "es": "angustia",
+  "pos": "noun",
+  "ru": "тревога, тоска",
+  "example_es": "La espera de los resultados le producía mucha angustia.",
+  "example_ru": "Ожидание результатов вызывало у неё сильную тревогу.",
+  "rank": 9141,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "angustias"
+  ]
+ },
+ {
+  "id": "trauma",
+  "es": "trauma",
+  "pos": "noun",
+  "ru": "психологическая травма",
+  "example_es": "Superar un trauma infantil puede llevar años.",
+  "example_ru": "Преодоление детской травмы может занять годы.",
+  "rank": 4841,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "traumas"
+  ]
+ },
+ {
+  "id": "motivación",
+  "es": "motivación",
+  "pos": "noun",
+  "ru": "мотивация",
+  "example_es": "La falta de motivación es el mayor problema del grupo.",
+  "example_ru": "Нехватка мотивации — главная проблема группы.",
+  "rank": 11332,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "motivaciones"
+  ]
+ },
+ {
+  "id": "madurez",
+  "es": "madurez",
+  "pos": "noun",
+  "ru": "зрелость",
+  "example_es": "Reaccionó con una madurez impropia de su edad.",
+  "example_ru": "Он отреагировал со зрелостью, не свойственной его возрасту.",
+  "rank": 16218,
+  "article": "la",
+  "gender": "f"
+ },
+ {
+  "id": "impulso",
+  "es": "impulso",
+  "pos": "noun",
+  "ru": "порыв, импульс",
+  "example_es": "Compró el coche por impulso y luego se arrepintió.",
+  "example_ru": "Он купил машину под влиянием порыва, а потом пожалел.",
+  "rank": 5901,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "impulsos"
+  ]
+ },
+ {
+  "id": "instinto",
+  "es": "instinto",
+  "pos": "noun",
+  "ru": "инстинкт; чутьё",
+  "example_es": "Mi instinto me dice que no debemos confiar en él.",
+  "example_ru": "Чутьё подсказывает мне, что ему нельзя доверять.",
+  "rank": 4583,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "instintos"
+  ]
+ },
+ {
+  "id": "subconsciente",
+  "es": "subconsciente",
+  "pos": "noun",
+  "ru": "подсознание",
+  "example_es": "Los sueños revelan lo que guardamos en el subconsciente.",
+  "example_ru": "Сны раскрывают то, что мы храним в подсознании.",
+  "rank": 14492,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "subconscientes"
+  ]
+ },
+ {
+  "id": "inconsciente",
+  "es": "inconsciente",
+  "pos": "adj",
+  "ru": "безрассудный; бессознательный; без сознания",
+  "example_es": "Fue muy inconsciente salir al mar con esa tormenta.",
+  "example_ru": "Выходить в море в такой шторм было очень безрассудно.",
+  "rank": 4265,
+  "forms": [
+   "inconscientes"
+  ]
+ },
+ {
+  "id": "terapia",
+  "es": "terapia",
+  "pos": "noun",
+  "ru": "терапия; психотерапия",
+  "example_es": "Lleva un año en terapia y se encuentra mucho mejor.",
+  "example_ru": "Он уже год ходит к психотерапевту и чувствует себя гораздо лучше.",
+  "rank": 3056,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "terapias"
+  ]
+ },
+ {
+  "id": "terapeuta",
+  "es": "terapeuta",
+  "pos": "noun",
+  "ru": "психотерапевт; терапевт",
+  "example_es": "Mi terapeuta me recomendó escribir un diario.",
+  "example_ru": "Мой психотерапевт посоветовал мне вести дневник.",
+  "rank": 6313,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "terapeutas"
+  ]
+ },
+ {
+  "id": "psicólogo",
+  "es": "psicólogo",
+  "pos": "noun",
+  "ru": "психолог",
+  "example_es": "La empresa ofrece un psicólogo gratuito a sus empleados.",
+  "example_ru": "Компания бесплатно предоставляет сотрудникам психолога.",
+  "rank": 10315,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "psicólogos",
+   "psicóloga",
+   "psicólogas"
+  ]
+ },
+ {
+  "id": "egoísmo",
+  "es": "egoísmo",
+  "pos": "noun",
+  "ru": "эгоизм",
+  "example_es": "Su egoísmo acabó alejando a todos sus amigos.",
+  "example_ru": "Из-за его эгоизма от него в итоге отвернулись все друзья.",
+  "rank": 17919,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "egoísmos"
+  ]
+ },
+ {
+  "id": "ambicioso",
+  "es": "ambicioso",
+  "pos": "adj",
+  "ru": "честолюбивый, амбициозный",
+  "example_es": "Es una persona ambiciosa que quiere llegar lejos.",
+  "example_ru": "Это амбициозный человек, который хочет многого добиться.",
+  "rank": 10542,
+  "forms": [
+   "ambiciosa",
+   "ambiciosos",
+   "ambiciosas"
+  ]
+ },
+ {
+  "id": "testarudo",
+  "es": "testarudo",
+  "pos": "adj",
+  "ru": "упрямый",
+  "example_es": "Es tan testarudo que nunca admite sus errores.",
+  "example_ru": "Он такой упрямый, что никогда не признаёт своих ошибок.",
+  "rank": 14923,
+  "forms": [
+   "testaruda",
+   "testarudos",
+   "testarudas"
+  ]
+ },
+ {
+  "id": "sensato",
+  "es": "sensato",
+  "pos": "adj",
+  "ru": "благоразумный, здравомыслящий",
+  "example_es": "Lo más sensato sería esperar a mañana.",
+  "example_ru": "Разумнее всего было бы подождать до завтра.",
+  "rank": 11066,
+  "forms": [
+   "sensata",
+   "sensatos",
+   "sensatas"
+  ]
+ },
+ {
+  "id": "impulsivo",
+  "es": "impulsivo",
+  "pos": "adj",
+  "ru": "импульсивный",
+  "example_es": "Es muy impulsiva y toma decisiones sin pensar.",
+  "example_ru": "Она очень импульсивна и принимает решения не подумав.",
+  "rank": 17031,
+  "forms": [
+   "impulsiva",
+   "impulsivos",
+   "impulsivas"
+  ]
+ },
+ {
+  "id": "inseguro",
+  "es": "inseguro",
+  "pos": "adj",
+  "ru": "неуверенный; небезопасный",
+  "example_es": "Se siente inseguro cuando tiene que hablar en inglés.",
+  "example_ru": "Он чувствует себя неуверенно, когда приходится говорить по-английски.",
+  "rank": 14010,
+  "forms": [
+   "insegura",
+   "inseguros",
+   "inseguras"
+  ]
+ },
+ {
+  "id": "orgulloso",
+  "es": "orgulloso",
+  "pos": "adj",
+  "ru": "гордый; гордящийся",
+  "example_es": "Estoy muy orgullosa de lo que has conseguido.",
+  "example_ru": "Я очень горжусь тем, чего ты добился.",
+  "rank": 1681,
+  "forms": [
+   "orgullosa",
+   "orgullosos",
+   "orgullosas"
+  ]
+ },
+ {
+  "id": "comprensivo",
+  "es": "comprensivo",
+  "pos": "adj",
+  "ru": "понимающий, чуткий",
+  "example_es": "Mi jefa fue muy comprensiva cuando enfermó mi padre.",
+  "example_ru": "Начальница отнеслась с большим пониманием, когда заболел мой отец.",
+  "rank": 14493,
+  "forms": [
+   "comprensiva",
+   "comprensivos",
+   "comprensivas"
+  ]
+ },
+ {
+  "id": "exigente",
+  "es": "exigente",
+  "pos": "adj",
+  "ru": "требовательный",
+  "example_es": "Es un profesor exigente, pero muy justo.",
+  "example_ru": "Он требовательный, но очень справедливый преподаватель.",
+  "rank": 11586,
+  "forms": [
+   "exigentes"
+  ]
+ },
+ {
+  "id": "pesimista",
+  "es": "pesimista",
+  "pos": "adj",
+  "ru": "пессимистичный; пессимист",
+  "example_es": "No seas tan pesimista, todavía hay solución.",
+  "example_ru": "Не будь таким пессимистом, выход ещё есть.",
+  "rank": 19234,
+  "forms": [
+   "pesimistas"
+  ]
+ },
+ {
+  "id": "sensible",
+  "es": "sensible",
+  "pos": "adj",
+  "ru": "чувствительный, ранимый (не «разумный»)",
+  "example_es": "Es un niño muy sensible y llora con facilidad.",
+  "example_ru": "Он очень чувствительный ребёнок и легко плачет.",
+  "rank": 3699,
+  "forms": [
+   "sensibles"
+  ]
+ },
+ {
+  "id": "maduro",
+  "es": "maduro",
+  "pos": "adj",
+  "ru": "зрелый; спелый",
+  "example_es": "Para su edad, es un chico muy maduro.",
+  "example_ru": "Для своего возраста он очень зрелый парень.",
+  "rank": 9792,
+  "forms": [
+   "madura",
+   "maduros",
+   "maduras"
+  ]
+ },
+ {
+  "id": "ingenuo",
+  "es": "ingenuo",
+  "pos": "adj",
+  "ru": "наивный",
+  "example_es": "Fue muy ingenuo al creer todas sus promesas.",
+  "example_ru": "С его стороны было очень наивно верить всем её обещаниям.",
+  "rank": 9548,
+  "forms": [
+   "ingenua",
+   "ingenuos",
+   "ingenuas"
+  ]
+ },
+ {
+  "id": "astuto",
+  "es": "astuto",
+  "pos": "adj",
+  "ru": "хитрый, ловкий; проницательный",
+  "example_es": "Es un negociador astuto que siempre consigue lo que quiere.",
+  "example_ru": "Это хитрый переговорщик, который всегда добивается своего.",
+  "rank": 6224,
+  "forms": [
+   "astuta",
+   "astutos",
+   "astutas"
+  ]
+ },
+ {
+  "id": "manipulador",
+  "es": "manipulador",
+  "pos": "adj",
+  "ru": "склонный к манипуляциям; манипулятор",
+  "example_es": "Una pareja manipuladora puede destruir tu autoestima.",
+  "example_ru": "Партнёр-манипулятор может разрушить вашу самооценку.",
+  "rank": 22285,
+  "forms": [
+   "manipuladora",
+   "manipuladores",
+   "manipuladoras"
+  ]
+ },
+ {
+  "id": "obsesivo",
+  "es": "obsesivo",
+  "pos": "adj",
+  "ru": "навязчивый; одержимый",
+  "example_es": "Tiene un miedo obsesivo a los gérmenes.",
+  "example_ru": "У него навязчивый страх перед микробами.",
+  "rank": 19632,
+  "forms": [
+   "obsesiva",
+   "obsesivos",
+   "obsesivas"
+  ]
+ },
+ {
+  "id": "humilde",
+  "es": "humilde",
+  "pos": "adj",
+  "ru": "скромный; бедный, простой",
+  "example_es": "A pesar de su fama, sigue siendo muy humilde.",
+  "example_ru": "Несмотря на славу, он остаётся очень скромным.",
+  "rank": 5811,
+  "forms": [
+   "humildes"
+  ]
+ },
+ {
+  "id": "arrogante",
+  "es": "arrogante",
+  "pos": "adj",
+  "ru": "высокомерный, надменный",
+  "example_es": "Su tono arrogante molestó a todo el equipo.",
+  "example_ru": "Его высокомерный тон задел всю команду.",
+  "rank": 6187,
+  "forms": [
+   "arrogantes"
+  ]
+ },
+ {
+  "id": "susceptible",
+  "es": "susceptible",
+  "pos": "adj",
+  "ru": "обидчивый; подверженный",
+  "example_es": "No le digas nada de su peso, es muy susceptible.",
+  "example_ru": "Не говори ничего о его весе, он очень обидчивый.",
+  "rank": 18506,
+  "forms": [
+   "susceptibles"
+  ]
+ },
+ {
+  "id": "obsesión",
+  "es": "obsesión",
+  "pos": "noun",
+  "ru": "одержимость, навязчивая идея",
+  "example_es": "Su obsesión por el orden empieza a preocuparnos.",
+  "example_ru": "Его помешанность на порядке начинает нас беспокоить.",
+  "rank": 7134,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "obsesiones"
+  ]
+ },
+ {
+  "id": "manía",
+  "es": "manía",
+  "pos": "noun",
+  "ru": "причуда, пунктик; мания",
+  "example_es": "Tiene la manía de comprobar tres veces si cerró la puerta.",
+  "example_ru": "У него пунктик: трижды проверять, закрыл ли он дверь.",
+  "rank": 14842,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "manías"
+  ]
+ },
+ {
+  "id": "percepción",
+  "es": "percepción",
+  "pos": "noun",
+  "ru": "восприятие",
+  "example_es": "El cansancio altera nuestra percepción del tiempo.",
+  "example_ru": "Усталость искажает наше восприятие времени.",
+  "rank": 10892,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "percepciones"
+  ]
+ },
+ {
+  "id": "valentía",
+  "es": "valentía",
+  "pos": "noun",
+  "ru": "смелость, храбрость",
+  "example_es": "Hace falta valentía para reconocer los propios errores.",
+  "example_ru": "Нужна смелость, чтобы признать собственные ошибки.",
+  "rank": 8497,
+  "article": "la",
+  "gender": "f"
+ },
+ {
+  "id": "hipócrita",
+  "es": "hipócrita",
+  "pos": "adj",
+  "ru": "лицемерный; лицемер",
+  "example_es": "Es hipócrita criticar algo que tú también haces.",
+  "example_ru": "Лицемерно критиковать то, что ты делаешь сам.",
+  "rank": 9126,
+  "forms": [
+   "hipócritas"
+  ]
+ },
+ {
+  "id": "rasgo",
+  "es": "rasgo",
+  "pos": "noun",
+  "ru": "черта (характера, лица)",
+  "example_es": "La generosidad es uno de sus rasgos más admirables.",
+  "example_ru": "Щедрость — одна из самых восхитительных его черт.",
+  "rank": 21968,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "rasgos"
+  ]
+ },
+ {
+  "id": "virtud",
+  "es": "virtud",
+  "pos": "noun",
+  "ru": "добродетель; достоинство",
+  "example_es": "La paciencia no es una de sus virtudes.",
+  "example_ru": "Терпение не входит в число его достоинств.",
+  "rank": 8193,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "virtudes"
+  ]
+ },
+ {
+  "id": "defecto",
+  "es": "defecto",
+  "pos": "noun",
+  "ru": "недостаток, изъян",
+  "example_es": "Todos tenemos defectos, nadie es perfecto.",
+  "example_ru": "У всех есть недостатки, никто не идеален.",
+  "rank": 9403,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "defectos"
+  ]
+ },
+ {
+  "id": "mentalidad",
+  "es": "mentalidad",
+  "pos": "noun",
+  "ru": "менталитет, образ мышления",
+  "example_es": "Hay que cambiar de mentalidad para aceptar el fracaso.",
+  "example_ru": "Чтобы принять неудачу, нужно изменить образ мышления.",
+  "rank": 14088,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "mentalidades"
+  ]
+ },
+ {
+  "id": "trastorno",
+  "es": "trastorno",
+  "pos": "noun",
+  "ru": "расстройство (психическое)",
+  "example_es": "Padece un trastorno de ansiedad desde la adolescencia.",
+  "example_ru": "Она страдает тревожным расстройством с подросткового возраста.",
+  "rank": 10793,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "trastornos"
+  ]
+ },
+ {
+  "id": "reservado",
+  "es": "reservado",
+  "pos": "adj",
+  "ru": "сдержанный, замкнутый; забронированный",
+  "example_es": "Es una persona reservada que habla poco de su vida.",
+  "example_ru": "Это сдержанный человек, он мало рассказывает о своей жизни.",
+  "rank": 6353,
+  "forms": [
+   "reservada",
+   "reservados",
+   "reservadas"
+  ]
+ },
+ {
+  "id": "prudente",
+  "es": "prudente",
+  "pos": "adj",
+  "ru": "осмотрительный, благоразумный",
+  "example_es": "Sé prudente y no firmes nada sin leerlo.",
+  "example_ru": "Будь осмотрителен и ничего не подписывай, не прочитав.",
+  "rank": 8455,
+  "forms": [
+   "prudentes"
+  ]
+ }
+]

@@ -1,0 +1,526 @@
+[
+ {
+  "id": "acaparar",
+  "es": "acaparar",
+  "pos": "verb",
+  "ru": "скупать, захватывать (всё себе)",
+  "example_es": "El nuevo modelo acaparó todas las miradas en la feria.",
+  "example_ru": "Новая модель приковала к себе все взгляды на выставке.",
+  "rank": 43830
+ },
+ {
+  "id": "apaciguar",
+  "es": "apaciguar",
+  "pos": "verb",
+  "ru": "умиротворять, успокаивать",
+  "example_es": "Intentó apaciguar los ánimos con una broma.",
+  "example_ru": "Он попытался разрядить обстановку шуткой.",
+  "rank": 40815,
+  "forms": [
+   "apacigüe",
+   "apacigüé"
+  ]
+ },
+ {
+  "id": "socavar",
+  "es": "socavar",
+  "pos": "verb",
+  "ru": "подрывать, подтачивать",
+  "example_es": "Los rumores socavaron la confianza de los inversores.",
+  "example_ru": "Слухи подорвали доверие инвесторов.",
+  "rank": 42217
+ },
+ {
+  "id": "sopesar",
+  "es": "sopesar",
+  "pos": "verb",
+  "ru": "взвешивать (доводы, варианты)",
+  "example_es": "Sopesó todas las opciones antes de aceptar.",
+  "example_ru": "Прежде чем согласиться, он взвесил все варианты.",
+  "rank": 47796
+ },
+ {
+  "id": "tergiversar",
+  "es": "tergiversar",
+  "pos": "verb",
+  "ru": "искажать (факты, слова)",
+  "example_es": "La prensa tergiversó sus declaraciones.",
+  "example_ru": "Пресса исказила его заявления.",
+  "rank": 49999
+ },
+ {
+  "id": "soslayar",
+  "es": "soslayar",
+  "pos": "verb",
+  "ru": "обходить, уклоняться (от вопроса)",
+  "example_es": "El ministro soslayó la pregunta sobre los recortes.",
+  "example_ru": "Министр уклонился от вопроса о сокращениях.",
+  "rank": 49999
+ },
+ {
+  "id": "atañer",
+  "es": "atañer",
+  "pos": "verb",
+  "ru": "касаться, относиться к",
+  "example_es": "Este asunto no te atañe en absoluto.",
+  "example_ru": "Это дело тебя совершенно не касается.",
+  "rank": 49999,
+  "forms": [
+   "atañe",
+   "atañen",
+   "atañó"
+  ]
+ },
+ {
+  "id": "aniquilar",
+  "es": "aniquilar",
+  "pos": "verb",
+  "ru": "уничтожать, истреблять",
+  "example_es": "La epidemia aniquiló a media población de la isla.",
+  "example_ru": "Эпидемия истребила половину населения острова.",
+  "rank": 27352
+ },
+ {
+  "id": "perecer",
+  "es": "perecer",
+  "pos": "verb",
+  "ru": "погибнуть (книжн.)",
+  "example_es": "Cientos de personas perecieron en el naufragio.",
+  "example_ru": "При кораблекрушении погибли сотни людей.",
+  "rank": 43455,
+  "forms": [
+   "perece",
+   "perecen",
+   "pereció",
+   "perezca"
+  ]
+ },
+ {
+  "id": "aplacar",
+  "es": "aplacar",
+  "pos": "verb",
+  "ru": "унять, утолить (гнев, голод)",
+  "example_es": "Nada lograba aplacar la ira del rey.",
+  "example_ru": "Ничто не могло унять гнев короля.",
+  "rank": 42805,
+  "forms": [
+   "aplaqué",
+   "aplaque"
+  ]
+ },
+ {
+  "id": "sofocar",
+  "es": "sofocar",
+  "pos": "verb",
+  "ru": "подавить, потушить (огонь, бунт)",
+  "example_es": "Los bomberos tardaron horas en sofocar el incendio.",
+  "example_ru": "Пожарным понадобились часы, чтобы потушить пожар.",
+  "rank": 44162,
+  "forms": [
+   "sofoqué",
+   "sofoque"
+  ]
+ },
+ {
+  "id": "derrochar",
+  "es": "derrochar",
+  "pos": "verb",
+  "ru": "расточать, транжирить",
+  "example_es": "Derrochó la herencia en apenas dos años.",
+  "example_ru": "Он промотал наследство всего за два года.",
+  "rank": 44088
+ },
+ {
+  "id": "doblegar",
+  "es": "doblegar",
+  "pos": "verb",
+  "ru": "сломить, подчинить",
+  "example_es": "Ni la cárcel logró doblegar su voluntad.",
+  "example_ru": "Даже тюрьма не сломила его волю.",
+  "rank": 47080,
+  "forms": [
+   "doblegué",
+   "doblegue"
+  ]
+ },
+ {
+  "id": "redimir",
+  "es": "redimir",
+  "pos": "verb",
+  "ru": "искупить; избавить",
+  "example_es": "Quería redimir sus errores ayudando a los demás.",
+  "example_ru": "Он хотел искупить свои ошибки, помогая другим.",
+  "rank": 46421
+ },
+ {
+  "id": "expiar",
+  "es": "expiar",
+  "pos": "verb",
+  "ru": "искупать (вину)",
+  "example_es": "Pasó años intentando expiar aquella culpa.",
+  "example_ru": "Годами он пытался искупить ту вину.",
+  "rank": 36888,
+  "forms": [
+   "expío",
+   "expía"
+  ]
+ },
+ {
+  "id": "profanar",
+  "es": "profanar",
+  "pos": "verb",
+  "ru": "осквернять",
+  "example_es": "Unos vándalos profanaron varias tumbas del cementerio.",
+  "example_ru": "Вандалы осквернили несколько могил на кладбище.",
+  "rank": 40996
+ },
+ {
+  "id": "saciar",
+  "es": "saciar",
+  "pos": "verb",
+  "ru": "утолять, насыщать",
+  "example_es": "Ningún éxito parecía saciar su ambición.",
+  "example_ru": "Казалось, никакой успех не мог утолить его честолюбие.",
+  "rank": 38451
+ },
+ {
+  "id": "saquear",
+  "es": "saquear",
+  "pos": "verb",
+  "ru": "грабить, разорять",
+  "example_es": "Los soldados saquearon la ciudad durante tres días.",
+  "example_ru": "Солдаты три дня грабили город.",
+  "rank": 24547
+ },
+ {
+  "id": "desmantelar",
+  "es": "desmantelar",
+  "pos": "verb",
+  "ru": "разбирать, демонтировать; ликвидировать",
+  "example_es": "La policía desmanteló una red de contrabando.",
+  "example_ru": "Полиция ликвидировала сеть контрабандистов.",
+  "rank": 30584
+ },
+ {
+  "id": "exhumar",
+  "es": "exhumar",
+  "pos": "verb",
+  "ru": "эксгумировать; извлекать из забвения",
+  "example_es": "El juez ordenó exhumar el cadáver.",
+  "example_ru": "Судья распорядился провести эксгумацию тела.",
+  "rank": 49517
+ },
+ {
+  "id": "merodear",
+  "es": "merodear",
+  "pos": "verb",
+  "ru": "бродить, слоняться (с подозрительной целью)",
+  "example_es": "Un desconocido merodeaba por el barrio de noche.",
+  "example_ru": "Ночью по кварталу бродил какой-то незнакомец.",
+  "rank": 35377
+ },
+ {
+  "id": "desentrañar",
+  "es": "desentrañar",
+  "pos": "verb",
+  "ru": "распутывать, раскрывать (тайну, смысл)",
+  "example_es": "Los historiadores intentan desentrañar el misterio.",
+  "example_ru": "Историки пытаются разгадать эту тайну.",
+  "rank": 48300
+ },
+ {
+  "id": "interceder",
+  "es": "interceder",
+  "pos": "verb",
+  "ru": "заступаться, ходатайствовать",
+  "example_es": "Su madre intercedió por él ante el director.",
+  "example_ru": "Мать заступилась за него перед директором.",
+  "rank": 46363
+ },
+ {
+  "id": "acallar",
+  "es": "acallar",
+  "pos": "verb",
+  "ru": "заглушить, заставить замолчать",
+  "example_es": "El Gobierno intentó acallar las críticas.",
+  "example_ru": "Правительство пыталось заглушить критику.",
+  "rank": 46555
+ },
+ {
+  "id": "consumar",
+  "es": "consumar",
+  "pos": "verb",
+  "ru": "совершить, довести до конца",
+  "example_es": "Los ladrones no llegaron a consumar el robo.",
+  "example_ru": "Грабителям так и не удалось совершить кражу.",
+  "rank": 46611
+ },
+ {
+  "id": "conjurar",
+  "es": "conjurar",
+  "pos": "verb",
+  "ru": "предотвратить (опасность); заклинать",
+  "example_es": "El acuerdo logró conjurar el riesgo de huelga.",
+  "example_ru": "Соглашение позволило предотвратить угрозу забастовки.",
+  "rank": 46710
+ },
+ {
+  "id": "disentir",
+  "es": "disentir",
+  "pos": "verb",
+  "ru": "расходиться во мнениях, не соглашаться",
+  "example_es": "Me permito disentir de su opinión.",
+  "example_ru": "Позволю себе не согласиться с вашим мнением.",
+  "rank": 46992,
+  "forms": [
+   "disiento",
+   "disiente",
+   "disintió",
+   "disienta"
+  ]
+ },
+ {
+  "id": "avivar",
+  "es": "avivar",
+  "pos": "verb",
+  "ru": "разжигать, оживлять",
+  "example_es": "Sus palabras avivaron la polémica.",
+  "example_ru": "Его слова разожгли полемику.",
+  "rank": 47730
+ },
+ {
+  "id": "perpetuar",
+  "es": "perpetuar",
+  "pos": "verb",
+  "ru": "увековечивать; закреплять",
+  "example_es": "Estas leyes perpetúan la desigualdad.",
+  "example_ru": "Эти законы закрепляют неравенство.",
+  "rank": 47749,
+  "forms": [
+   "perpetúa",
+   "perpetúan"
+  ]
+ },
+ {
+  "id": "subsistir",
+  "es": "subsistir",
+  "pos": "verb",
+  "ru": "существовать, сохраняться; выживать",
+  "example_es": "Subsisten dudas sobre la eficacia del tratamiento.",
+  "example_ru": "Сомнения в эффективности лечения сохраняются.",
+  "rank": 49223
+ },
+ {
+  "id": "amasar",
+  "es": "amasar",
+  "pos": "verb",
+  "ru": "сколотить (состояние); месить",
+  "example_es": "Amasó una gran fortuna con el comercio de especias.",
+  "example_ru": "Он сколотил огромное состояние на торговле пряностями.",
+  "rank": 49356
+ },
+ {
+  "id": "desterrar",
+  "es": "desterrar",
+  "pos": "verb",
+  "ru": "изгонять, ссылать; искоренять",
+  "example_es": "Hay que desterrar esos prejuicios de una vez.",
+  "example_ru": "Эти предрассудки пора искоренить раз и навсегда.",
+  "rank": 49488,
+  "forms": [
+   "destierra",
+   "destierran",
+   "destierre"
+  ]
+ },
+ {
+  "id": "quebrantar",
+  "es": "quebrantar",
+  "pos": "verb",
+  "ru": "нарушать (закон, клятву); подрывать",
+  "example_es": "Quebrantó su promesa sin el menor remordimiento.",
+  "example_ru": "Он нарушил обещание без малейших угрызений совести.",
+  "rank": 38078
+ },
+ {
+  "id": "infligir",
+  "es": "infligir",
+  "pos": "verb",
+  "ru": "наносить (урон), налагать (наказание)",
+  "example_es": "El equipo local infligió una dura derrota al campeón.",
+  "example_ru": "Хозяева нанесли чемпиону тяжёлое поражение.",
+  "rank": 40504,
+  "forms": [
+   "inflijo",
+   "inflija"
+  ]
+ },
+ {
+  "id": "rehusar",
+  "es": "rehusar",
+  "pos": "verb",
+  "ru": "отказываться",
+  "example_es": "Rehusó la invitación con una excusa cortés.",
+  "example_ru": "Он отклонил приглашение под вежливым предлогом.",
+  "rank": 42115,
+  "forms": [
+   "rehúsa",
+   "rehúso",
+   "rehúsan"
+  ]
+ },
+ {
+  "id": "disipar",
+  "es": "disipar",
+  "pos": "verb",
+  "ru": "рассеивать (сомнения, туман)",
+  "example_es": "Sus explicaciones disiparon todas mis dudas.",
+  "example_ru": "Его объяснения развеяли все мои сомнения.",
+  "rank": 42154
+ },
+ {
+  "id": "oprimir",
+  "es": "oprimir",
+  "pos": "verb",
+  "ru": "угнетать; нажимать",
+  "example_es": "El régimen oprimía a las minorías.",
+  "example_ru": "Режим угнетал меньшинства.",
+  "rank": 44048
+ },
+ {
+  "id": "alardear",
+  "es": "alardear",
+  "pos": "verb",
+  "ru": "хвастаться, кичиться",
+  "example_es": "Le encanta alardear de sus contactos.",
+  "example_ru": "Он обожает хвастаться своими связями.",
+  "rank": 18913
+ },
+ {
+  "id": "abatir",
+  "es": "abatir",
+  "pos": "verb",
+  "ru": "сбить; повергнуть в уныние",
+  "example_es": "La noticia lo abatió profundamente.",
+  "example_ru": "Известие глубоко его подкосило.",
+  "rank": 47624
+ },
+ {
+  "id": "atenerse",
+  "es": "atenerse",
+  "pos": "verb",
+  "ru": "придерживаться (правил); отвечать за последствия",
+  "example_es": "Si no estudias, atente a las consecuencias.",
+  "example_ru": "Не будешь учиться — пеняй на себя.",
+  "rank": 47641,
+  "forms": [
+   "atengo",
+   "atiene",
+   "atuvo",
+   "atente"
+  ]
+ },
+ {
+  "id": "engendrar",
+  "es": "engendrar",
+  "pos": "verb",
+  "ru": "порождать; зачинать",
+  "example_es": "La violencia engendra más violencia.",
+  "example_ru": "Насилие порождает насилие.",
+  "rank": 38321
+ },
+ {
+  "id": "sortear",
+  "es": "sortear",
+  "pos": "verb",
+  "ru": "обходить (препятствие); разыгрывать в лотерею",
+  "example_es": "Supo sortear todos los obstáculos burocráticos.",
+  "example_ru": "Он сумел обойти все бюрократические препоны.",
+  "rank": 41023
+ },
+ {
+  "id": "extirpar",
+  "es": "extirpar",
+  "pos": "verb",
+  "ru": "удалять (хирургически); искоренять",
+  "example_es": "Le extirparon un tumor benigno.",
+  "example_ru": "Ему удалили доброкачественную опухоль.",
+  "rank": 34687
+ },
+ {
+  "id": "arrebatar",
+  "es": "arrebatar",
+  "pos": "verb",
+  "ru": "вырывать, отнимать",
+  "example_es": "Un ladrón le arrebató el bolso en la calle.",
+  "example_ru": "Вор вырвал у неё сумку прямо на улице.",
+  "rank": 35430
+ },
+ {
+  "id": "escabullirse",
+  "es": "escabullirse",
+  "pos": "verb",
+  "ru": "ускользнуть, улизнуть",
+  "example_es": "Logró escabullirse entre la multitud.",
+  "example_ru": "Ему удалось ускользнуть в толпе.",
+  "rank": 30615,
+  "forms": [
+   "escabulló",
+   "escabulle"
+  ]
+ },
+ {
+  "id": "entrometerse",
+  "es": "entrometerse",
+  "pos": "verb",
+  "ru": "вмешиваться (непрошено)",
+  "example_es": "No me gusta que se entrometa en mi vida.",
+  "example_ru": "Мне не нравится, что он лезет в мою жизнь.",
+  "rank": 33111,
+  "forms": [
+   "entrometa",
+   "entromete",
+   "entrometió"
+  ]
+ },
+ {
+  "id": "husmear",
+  "es": "husmear",
+  "pos": "verb",
+  "ru": "вынюхивать, совать нос",
+  "example_es": "Deja de husmear en mis cajones.",
+  "example_ru": "Хватит рыться в моих ящиках.",
+  "rank": 21863
+ },
+ {
+  "id": "desacreditar",
+  "es": "desacreditar",
+  "pos": "verb",
+  "ru": "дискредитировать",
+  "example_es": "Intentaron desacreditar al testigo con mentiras.",
+  "example_ru": "Свидетеля пытались опорочить ложью.",
+  "rank": 32131
+ },
+ {
+  "id": "desquitarse",
+  "es": "desquitarse",
+  "pos": "verb",
+  "ru": "отыграться, взять реванш",
+  "example_es": "Perdió la ida, pero se desquitó en la vuelta.",
+  "example_ru": "Он проиграл первый матч, но отыгрался в ответном.",
+  "rank": 49716,
+  "forms": [
+   "desquitó",
+   "desquita"
+  ]
+ },
+ {
+  "id": "conspirar",
+  "es": "conspirar",
+  "pos": "verb",
+  "ru": "устраивать заговор, интриговать",
+  "example_es": "Varios oficiales conspiraban contra el dictador.",
+  "example_ru": "Несколько офицеров замышляли заговор против диктатора.",
+  "rank": 28411
+ }
+]

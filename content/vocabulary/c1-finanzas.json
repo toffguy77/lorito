@@ -1,0 +1,704 @@
+[
+ {
+  "id": "activo",
+  "es": "activo",
+  "pos": "noun",
+  "ru": "актив",
+  "example_es": "La empresa vendió parte de sus activos para pagar las deudas.",
+  "example_ru": "Компания продала часть активов, чтобы расплатиться с долгами.",
+  "rank": 5733,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "activos"
+  ]
+ },
+ {
+  "id": "pasivo",
+  "es": "pasivo",
+  "pos": "noun",
+  "ru": "пассив; обязательства",
+  "example_es": "El pasivo de la sociedad supera ya al activo.",
+  "example_ru": "Обязательства компании уже превышают её активы.",
+  "rank": 24686,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "pasivos"
+  ]
+ },
+ {
+  "id": "balance",
+  "es": "balance",
+  "pos": "noun",
+  "ru": "баланс; итог",
+  "example_es": "El balance del primer trimestre es positivo.",
+  "example_ru": "Итоги первого квартала положительные.",
+  "rank": 11052,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "balances"
+  ]
+ },
+ {
+  "id": "liquidez",
+  "es": "liquidez",
+  "pos": "noun",
+  "ru": "ликвидность; наличные средства",
+  "example_es": "La compañía atraviesa problemas de liquidez.",
+  "example_ru": "У компании проблемы с ликвидностью.",
+  "rank": 42506,
+  "article": "la",
+  "gender": "f"
+ },
+ {
+  "id": "rentabilidad",
+  "es": "rentabilidad",
+  "pos": "noun",
+  "ru": "доходность; рентабельность",
+  "example_es": "Este fondo ofrece una rentabilidad del cinco por ciento.",
+  "example_ru": "Этот фонд обеспечивает доходность в пять процентов.",
+  "rank": 49999,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "rentabilidades"
+  ]
+ },
+ {
+  "id": "endeudamiento",
+  "es": "endeudamiento",
+  "pos": "noun",
+  "ru": "задолженность; долговая нагрузка",
+  "example_es": "El nivel de endeudamiento de las familias sigue creciendo.",
+  "example_ru": "Уровень задолженности семей продолжает расти.",
+  "rank": 49999,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "endeudamientos"
+  ]
+ },
+ {
+  "id": "dividendo",
+  "es": "dividendo",
+  "pos": "noun",
+  "ru": "дивиденд",
+  "example_es": "La empresa repartirá dividendos entre sus accionistas.",
+  "example_ru": "Компания распределит дивиденды между акционерами.",
+  "rank": 49999,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "dividendos"
+  ]
+ },
+ {
+  "id": "cotización",
+  "es": "cotización",
+  "pos": "noun",
+  "ru": "котировка; курс; взнос",
+  "example_es": "La cotización de las acciones cayó un diez por ciento.",
+  "example_ru": "Котировки акций упали на десять процентов.",
+  "rank": 49999,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "cotizaciones"
+  ]
+ },
+ {
+  "id": "divisa",
+  "es": "divisa",
+  "pos": "noun",
+  "ru": "(иностранная) валюта",
+  "example_es": "El país necesita divisas para pagar las importaciones.",
+  "example_ru": "Стране нужна валюта, чтобы оплачивать импорт.",
+  "rank": 47299,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "divisas"
+  ]
+ },
+ {
+  "id": "auditoría",
+  "es": "auditoría",
+  "pos": "noun",
+  "ru": "аудит; ревизия",
+  "example_es": "Una auditoría externa detectó varias irregularidades.",
+  "example_ru": "Внешний аудит выявил ряд нарушений.",
+  "rank": 26569,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "auditorías"
+  ]
+ },
+ {
+  "id": "auditor",
+  "es": "auditor",
+  "pos": "noun",
+  "ru": "аудитор",
+  "example_es": "El auditor revisó las cuentas de los últimos tres años.",
+  "example_ru": "Аудитор проверил отчётность за последние три года.",
+  "rank": 45344,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "auditores",
+   "auditora",
+   "auditoras"
+  ]
+ },
+ {
+  "id": "contabilidad",
+  "es": "contabilidad",
+  "pos": "noun",
+  "ru": "бухгалтерия; бухгалтерский учёт",
+  "example_es": "Ella lleva la contabilidad de varias pequeñas empresas.",
+  "example_ru": "Она ведёт бухгалтерию нескольких небольших компаний.",
+  "rank": 9855,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "contabilidades"
+  ]
+ },
+ {
+  "id": "contable",
+  "es": "contable",
+  "pos": "noun",
+  "ru": "бухгалтер",
+  "example_es": "Pregúntale al {es: contable | am: contador | rio: contador} si podemos deducir este gasto.",
+  "example_ru": "Спроси у бухгалтера, можем ли мы вычесть этот расход.",
+  "rank": 9764,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "contables"
+  ],
+  "variants": {
+   "am": "el contador",
+   "rio": "el contador"
+  }
+ },
+ {
+  "id": "partida",
+  "es": "partida",
+  "pos": "noun",
+  "ru": "статья (бюджета); партия",
+  "example_es": "El Gobierno aumentará la partida destinada a sanidad.",
+  "example_ru": "Правительство увеличит статью расходов на здравоохранение.",
+  "rank": 3449,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "partidas"
+  ]
+ },
+ {
+  "id": "margen",
+  "es": "margen",
+  "pos": "noun",
+  "ru": "маржа; поле; запас",
+  "example_es": "Con estos precios, el margen de beneficio es mínimo.",
+  "example_ru": "При таких ценах маржа минимальна.",
+  "rank": 5380,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "márgenes"
+  ]
+ },
+ {
+  "id": "fiscal",
+  "es": "fiscal",
+  "pos": "adj",
+  "ru": "налоговый; фискальный",
+  "example_es": "La nueva reforma fiscal beneficia a las pymes.",
+  "example_ru": "Новая налоговая реформа выгодна малому бизнесу.",
+  "rank": 1828,
+  "forms": [
+   "fiscales"
+  ]
+ },
+ {
+  "id": "recaudación",
+  "es": "recaudación",
+  "pos": "noun",
+  "ru": "сбор (налогов, средств)",
+  "example_es": "La recaudación por el IVA aumentó este año.",
+  "example_ru": "Поступления от НДС в этом году выросли.",
+  "rank": 13482,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "recaudaciones"
+  ]
+ },
+ {
+  "id": "recaudar",
+  "es": "recaudar",
+  "pos": "verb",
+  "ru": "собирать (налоги, средства)",
+  "example_es": "El concierto benéfico recaudó más de veinte mil euros.",
+  "example_ru": "Благотворительный концерт собрал более двадцати тысяч евро.",
+  "rank": 14662
+ },
+ {
+  "id": "financiación",
+  "es": "financiación",
+  "pos": "noun",
+  "ru": "финансирование",
+  "example_es": "El proyecto se quedó sin {es: financiación | am: financiamiento | rio: financiamiento} pública.",
+  "example_ru": "Проект остался без государственного финансирования.",
+  "rank": 15701,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "financiaciones"
+  ],
+  "variants": {
+   "am": "el financiamiento",
+   "rio": "el financiamiento"
+  }
+ },
+ {
+  "id": "inversor",
+  "es": "inversor",
+  "pos": "noun",
+  "ru": "инвестор",
+  "example_es": "{es: Los inversores | am: Los inversionistas} extranjeros muestran interés por el sector.",
+  "example_ru": "Иностранные инвесторы проявляют интерес к отрасли.",
+  "rank": 18813,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "inversores",
+   "inversora",
+   "inversoras"
+  ],
+  "variants": {
+   "am": "el inversionista"
+  }
+ },
+ {
+  "id": "solvente",
+  "es": "solvente",
+  "pos": "adj",
+  "ru": "платёжеспособный; надёжный",
+  "example_es": "El banco solo presta dinero a clientes solventes.",
+  "example_ru": "Банк даёт кредиты только платёжеспособным клиентам.",
+  "rank": 41836,
+  "forms": [
+   "solventes"
+  ]
+ },
+ {
+  "id": "especulación",
+  "es": "especulación",
+  "pos": "noun",
+  "ru": "спекуляция",
+  "example_es": "La especulación inmobiliaria disparó los precios.",
+  "example_ru": "Спекуляция на рынке недвижимости взвинтила цены.",
+  "rank": 16612,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "especulaciones"
+  ]
+ },
+ {
+  "id": "saldo",
+  "es": "saldo",
+  "pos": "noun",
+  "ru": "остаток (на счёте); сальдо",
+  "example_es": "Consulta el saldo de tu cuenta antes de pagar.",
+  "example_ru": "Проверь остаток на счёте, прежде чем платить.",
+  "rank": 22570,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "saldos"
+  ]
+ },
+ {
+  "id": "liquidar",
+  "es": "liquidar",
+  "pos": "verb",
+  "ru": "погашать; ликвидировать",
+  "example_es": "Por fin hemos liquidado la deuda con el banco.",
+  "example_ru": "Мы наконец погасили долг перед банком.",
+  "rank": 19453
+ },
+ {
+  "id": "licitación",
+  "es": "licitación",
+  "pos": "noun",
+  "ru": "тендер, торги",
+  "example_es": "Tres empresas se presentaron a la licitación pública.",
+  "example_ru": "В государственном тендере участвовали три компании.",
+  "rank": 46009,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "licitaciones"
+  ]
+ },
+ {
+  "id": "tesorería",
+  "es": "tesorería",
+  "pos": "noun",
+  "ru": "казначейство; денежные средства",
+  "example_es": "Necesitamos mejorar la gestión de tesorería.",
+  "example_ru": "Нам нужно улучшить управление денежными средствами.",
+  "rank": 37278,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "tesorerías"
+  ]
+ },
+ {
+  "id": "bancario",
+  "es": "bancario",
+  "pos": "adj",
+  "ru": "банковский",
+  "example_es": "Hizo el pago mediante una transferencia bancaria.",
+  "example_ru": "Он заплатил банковским переводом.",
+  "rank": 19674,
+  "forms": [
+   "bancaria",
+   "bancarios",
+   "bancarias"
+  ]
+ },
+ {
+  "id": "retribución",
+  "es": "retribución",
+  "pos": "noun",
+  "ru": "вознаграждение, оплата",
+  "example_es": "La retribución de los consejeros generó polémica.",
+  "example_ru": "Вознаграждение членов совета вызвало споры.",
+  "rank": 29674,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "retribuciones"
+  ]
+ },
+ {
+  "id": "comisión",
+  "es": "comisión",
+  "pos": "noun",
+  "ru": "комиссия; комиссионные",
+  "example_es": "El banco cobra una comisión por cada retirada.",
+  "example_ru": "Банк берёт комиссию за каждое снятие денег.",
+  "rank": 4159,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "comisiones"
+  ]
+ },
+ {
+  "id": "consejero",
+  "es": "consejero",
+  "pos": "noun",
+  "ru": "член совета директоров; советник",
+  "example_es": "Fue nombrado consejero delegado de la compañía.",
+  "example_ru": "Его назначили генеральным директором компании.",
+  "rank": 5883,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "consejeros",
+   "consejera",
+   "consejeras"
+  ]
+ },
+ {
+  "id": "indemnización",
+  "es": "indemnización",
+  "pos": "noun",
+  "ru": "компенсация; выходное пособие",
+  "example_es": "Recibió una indemnización tras el despido.",
+  "example_ru": "После увольнения он получил компенсацию.",
+  "rank": 15494,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "indemnizaciones"
+  ]
+ },
+ {
+  "id": "lucro",
+  "es": "lucro",
+  "pos": "noun",
+  "ru": "прибыль, нажива",
+  "example_es": "Es una asociación sin ánimo de lucro.",
+  "example_ru": "Это некоммерческая организация.",
+  "rank": 22521,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "lucros"
+  ]
+ },
+ {
+  "id": "bono",
+  "es": "bono",
+  "pos": "noun",
+  "ru": "облигация; абонемент",
+  "example_es": "El Estado emitió bonos a diez años.",
+  "example_ru": "Государство выпустило десятилетние облигации.",
+  "rank": 10161,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "bonos"
+  ]
+ },
+ {
+  "id": "inmueble",
+  "es": "inmueble",
+  "pos": "noun",
+  "ru": "объект недвижимости",
+  "example_es": "El fondo invierte sobre todo en inmuebles de oficinas.",
+  "example_ru": "Фонд вкладывает в основном в офисную недвижимость.",
+  "rank": 46883,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "inmuebles"
+  ]
+ },
+ {
+  "id": "eficiencia",
+  "es": "eficiencia",
+  "pos": "noun",
+  "ru": "эффективность",
+  "example_es": "Buscamos mejorar la eficiencia de los procesos internos.",
+  "example_ru": "Мы стремимся повысить эффективность внутренних процессов.",
+  "rank": 16505,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "eficiencias"
+  ]
+ },
+ {
+  "id": "lucrativo",
+  "es": "lucrativo",
+  "pos": "adj",
+  "ru": "прибыльный, доходный",
+  "example_es": "Montó un negocio muy lucrativo en pocos años.",
+  "example_ru": "За несколько лет он создал очень прибыльный бизнес.",
+  "rank": 24123,
+  "forms": [
+   "lucrativa",
+   "lucrativos",
+   "lucrativas"
+  ]
+ },
+ {
+  "id": "monetario",
+  "es": "monetario",
+  "pos": "adj",
+  "ru": "денежный; монетарный",
+  "example_es": "El banco central endureció su política monetaria.",
+  "example_ru": "Центральный банк ужесточил денежно-кредитную политику.",
+  "rank": 32683,
+  "forms": [
+   "monetaria",
+   "monetarios",
+   "monetarias"
+  ]
+ },
+ {
+  "id": "previsión",
+  "es": "previsión",
+  "pos": "noun",
+  "ru": "прогноз; предусмотрительность",
+  "example_es": "Las previsiones de ventas para este año son optimistas.",
+  "example_ru": "Прогнозы продаж на этот год оптимистичны.",
+  "rank": 27280,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "previsiones"
+  ]
+ },
+ {
+  "id": "gestor",
+  "es": "gestor",
+  "pos": "noun",
+  "ru": "управляющий; менеджер",
+  "example_es": "Un gestor de fondos administra nuestros ahorros.",
+  "example_ru": "Нашими сбережениями управляет управляющий фондом.",
+  "rank": 44181,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "gestores",
+   "gestora",
+   "gestoras"
+  ]
+ },
+ {
+  "id": "endeudado",
+  "es": "endeudado",
+  "pos": "adj",
+  "ru": "погрязший в долгах",
+  "example_es": "Muchas familias están muy endeudadas tras la crisis.",
+  "example_ru": "После кризиса многие семьи сильно задолжали.",
+  "rank": 38672,
+  "forms": [
+   "endeudada",
+   "endeudados",
+   "endeudadas"
+  ]
+ },
+ {
+  "id": "banca",
+  "es": "banca",
+  "pos": "noun",
+  "ru": "банковский сектор; банки",
+  "example_es": "La banca obtuvo beneficios récord el año pasado.",
+  "example_ru": "В прошлом году банки получили рекордную прибыль.",
+  "rank": 10639,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "bancas"
+  ]
+ },
+ {
+  "id": "prestamista",
+  "es": "prestamista",
+  "pos": "noun",
+  "ru": "кредитор; ростовщик",
+  "example_es": "Acudió a un prestamista porque el banco le negó el crédito.",
+  "example_ru": "Он обратился к частному кредитору, потому что банк отказал ему в кредите.",
+  "rank": 23264,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "prestamistas"
+  ]
+ },
+ {
+  "id": "aval",
+  "es": "aval",
+  "pos": "noun",
+  "ru": "поручительство; гарантия",
+  "example_es": "Sus padres le sirvieron de aval para el préstamo.",
+  "example_ru": "Родители выступили поручителями по его кредиту.",
+  "rank": 35789,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "avales"
+  ]
+ },
+ {
+  "id": "evasión",
+  "es": "evasión",
+  "pos": "noun",
+  "ru": "уклонение (от налогов); бегство",
+  "example_es": "La evasión fiscal cuesta miles de millones al Estado.",
+  "example_ru": "Уклонение от налогов обходится государству в миллиарды.",
+  "rank": 18070,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "evasiones"
+  ]
+ },
+ {
+  "id": "blanqueo",
+  "es": "blanqueo",
+  "pos": "noun",
+  "ru": "отмывание (денег)",
+  "example_es": "Lo investigan por blanqueo de capitales.",
+  "example_ru": "Его подозревают в отмывании денег.",
+  "rank": 43728,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "blanqueos"
+  ]
+ },
+ {
+  "id": "desfalco",
+  "es": "desfalco",
+  "pos": "noun",
+  "ru": "растрата, хищение",
+  "example_es": "El tesorero cometió un desfalco de medio millón.",
+  "example_ru": "Казначей растратил полмиллиона.",
+  "rank": 49203,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "desfalcos"
+  ]
+ },
+ {
+  "id": "ajuste",
+  "es": "ajuste",
+  "pos": "noun",
+  "ru": "корректировка; сокращение (расходов)",
+  "example_es": "El Gobierno anunció un ajuste del gasto público.",
+  "example_ru": "Правительство объявило о сокращении государственных расходов.",
+  "rank": 11373,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "ajustes"
+  ]
+ },
+ {
+  "id": "aseguradora",
+  "es": "aseguradora",
+  "pos": "noun",
+  "ru": "страховая компания",
+  "example_es": "La aseguradora se niega a cubrir los daños.",
+  "example_ru": "Страховая компания отказывается покрывать ущерб.",
+  "rank": 21779,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "aseguradoras"
+  ]
+ },
+ {
+  "id": "póliza",
+  "es": "póliza",
+  "pos": "noun",
+  "ru": "страховой полис",
+  "example_es": "Revisa bien las condiciones de la póliza antes de firmar.",
+  "example_ru": "Внимательно изучи условия полиса перед подписанием.",
+  "rank": 12326,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "pólizas"
+  ]
+ },
+ {
+  "id": "supervisión",
+  "es": "supervisión",
+  "pos": "noun",
+  "ru": "надзор, контроль",
+  "example_es": "El banco central ejerce la supervisión de las entidades financieras.",
+  "example_ru": "Центральный банк осуществляет надзор за финансовыми организациями.",
+  "rank": 10898,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "supervisiones"
+  ]
+ }
+]

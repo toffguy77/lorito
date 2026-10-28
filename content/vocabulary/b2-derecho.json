@@ -1,0 +1,724 @@
+[
+ {
+  "id": "juez",
+  "es": "juez",
+  "pos": "noun",
+  "ru": "судья",
+  "example_es": "La jueza escuchó a los testigos durante toda la mañana.",
+  "example_ru": "Судья всё утро выслушивала свидетелей.",
+  "rank": 1212,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "jueces",
+   "jueza",
+   "juezas"
+  ]
+ },
+ {
+  "id": "juicio",
+  "es": "juicio",
+  "pos": "noun",
+  "ru": "суд, судебный процесс; рассудок",
+  "example_es": "El juicio contra el exalcalde empezará en marzo.",
+  "example_ru": "Суд над бывшим мэром начнётся в марте.",
+  "rank": 1129,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "juicios"
+  ]
+ },
+ {
+  "id": "tribunal",
+  "es": "tribunal",
+  "pos": "noun",
+  "ru": "суд, трибунал",
+  "example_es": "El tribunal rechazó el recurso de la empresa.",
+  "example_ru": "Суд отклонил жалобу компании.",
+  "rank": 2046,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "tribunales"
+  ]
+ },
+ {
+  "id": "juzgar",
+  "es": "juzgar",
+  "pos": "verb",
+  "ru": "судить; оценивать",
+  "example_es": "No se puede juzgar a nadie dos veces por el mismo delito.",
+  "example_ru": "Нельзя судить человека дважды за одно и то же преступление.",
+  "rank": 4995,
+  "forms": [
+   "juzgué",
+   "juzgue"
+  ]
+ },
+ {
+  "id": "acusado",
+  "es": "acusado",
+  "pos": "noun",
+  "ru": "обвиняемый, подсудимый",
+  "example_es": "El acusado se declaró inocente ante el juez.",
+  "example_ru": "Обвиняемый заявил судье о своей невиновности.",
+  "rank": 2642,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "acusados",
+   "acusada",
+   "acusadas"
+  ]
+ },
+ {
+  "id": "acusar",
+  "es": "acusar",
+  "pos": "verb",
+  "ru": "обвинять",
+  "example_es": "Lo acusan de haber robado documentos de la empresa.",
+  "example_ru": "Его обвиняют в краже документов компании.",
+  "rank": 10322,
+  "forms": [
+   "acusé",
+   "acuse"
+  ]
+ },
+ {
+  "id": "acusación",
+  "es": "acusación",
+  "pos": "noun",
+  "ru": "обвинение",
+  "example_es": "La acusación no presentó pruebas suficientes.",
+  "example_ru": "Обвинение не представило достаточных доказательств.",
+  "rank": 4874,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "acusaciones"
+  ]
+ },
+ {
+  "id": "culpable",
+  "es": "culpable",
+  "pos": "adj",
+  "ru": "виновный, виноватый",
+  "example_es": "El jurado lo declaró culpable de fraude.",
+  "example_ru": "Присяжные признали его виновным в мошенничестве.",
+  "rank": 1233,
+  "forms": [
+   "culpables"
+  ]
+ },
+ {
+  "id": "inocente",
+  "es": "inocente",
+  "pos": "adj",
+  "ru": "невиновный; наивный",
+  "example_es": "Siempre ha dicho que es inocente.",
+  "example_ru": "Он всегда утверждал, что невиновен.",
+  "rank": 1397,
+  "forms": [
+   "inocentes"
+  ]
+ },
+ {
+  "id": "inocencia",
+  "es": "inocencia",
+  "pos": "noun",
+  "ru": "невиновность; невинность",
+  "example_es": "Su abogada consiguió demostrar su inocencia.",
+  "example_ru": "Его адвокату удалось доказать его невиновность.",
+  "rank": 6301,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "inocencias"
+  ]
+ },
+ {
+  "id": "delito",
+  "es": "delito",
+  "pos": "noun",
+  "ru": "преступление, правонарушение",
+  "example_es": "Conducir sin carné es un delito en muchos países.",
+  "example_ru": "Во многих странах вождение без прав — правонарушение.",
+  "rank": 3186,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "delitos"
+  ]
+ },
+ {
+  "id": "criminal",
+  "es": "criminal",
+  "pos": "noun",
+  "ru": "преступник; уголовный",
+  "example_es": "La policía detuvo a un peligroso criminal en la frontera.",
+  "example_ru": "Полиция задержала на границе опасного преступника.",
+  "rank": 2118,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "criminales"
+  ]
+ },
+ {
+  "id": "delincuente",
+  "es": "delincuente",
+  "pos": "noun",
+  "ru": "правонарушитель, преступник",
+  "example_es": "Los delincuentes huyeron en un coche robado.",
+  "example_ru": "Преступники скрылись на угнанной машине.",
+  "rank": 6900,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "delincuentes"
+  ]
+ },
+ {
+  "id": "asesinato",
+  "es": "asesinato",
+  "pos": "noun",
+  "ru": "убийство",
+  "example_es": "El asesinato del periodista conmocionó a todo el país.",
+  "example_ru": "Убийство журналиста потрясло всю страну.",
+  "rank": 745,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "asesinatos"
+  ]
+ },
+ {
+  "id": "asesino",
+  "es": "asesino",
+  "pos": "noun",
+  "ru": "убийца",
+  "example_es": "La policía sigue buscando al asesino.",
+  "example_ru": "Полиция всё ещё ищет убийцу.",
+  "rank": 676,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "asesinos",
+   "asesina",
+   "asesinas"
+  ]
+ },
+ {
+  "id": "testigo",
+  "es": "testigo",
+  "pos": "noun",
+  "ru": "свидетель",
+  "example_es": "Un testigo vio al ladrón salir por la ventana.",
+  "example_ru": "Свидетель видел, как вор вылезал через окно.",
+  "rank": 1424,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "testigos"
+  ]
+ },
+ {
+  "id": "testimonio",
+  "es": "testimonio",
+  "pos": "noun",
+  "ru": "показания; свидетельство",
+  "example_es": "Su testimonio fue clave para resolver el caso.",
+  "example_ru": "Его показания стали ключевыми для раскрытия дела.",
+  "rank": 4108,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "testimonios"
+  ]
+ },
+ {
+  "id": "demandar",
+  "es": "demandar",
+  "pos": "verb",
+  "ru": "подавать в суд; требовать",
+  "example_es": "Los vecinos demandaron a la constructora por los daños.",
+  "example_ru": "Жильцы подали в суд на застройщика за причинённый ущерб.",
+  "rank": 10071
+ },
+ {
+  "id": "denuncia",
+  "es": "denuncia",
+  "pos": "noun",
+  "ru": "заявление (в полицию); жалоба",
+  "example_es": "Fui a la comisaría a poner una denuncia por el robo del móvil.",
+  "example_ru": "Я пошёл в полицию написать заявление о краже телефона.",
+  "rank": 6534,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "denuncias"
+  ]
+ },
+ {
+  "id": "denunciar",
+  "es": "denunciar",
+  "pos": "verb",
+  "ru": "заявлять (в полицию); обличать",
+  "example_es": "Decidió denunciar a su jefe por acoso.",
+  "example_ru": "Она решила заявить на начальника за домогательства.",
+  "rank": 12434
+ },
+ {
+  "id": "condena",
+  "es": "condena",
+  "pos": "noun",
+  "ru": "приговор; срок; осуждение",
+  "example_es": "Cumple una condena de cinco años de cárcel.",
+  "example_ru": "Он отбывает пятилетний срок в тюрьме.",
+  "rank": 4572,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "condenas"
+  ]
+ },
+ {
+  "id": "condenar",
+  "es": "condenar",
+  "pos": "verb",
+  "ru": "приговаривать; осуждать",
+  "example_es": "El juez lo condenó a dos años de prisión.",
+  "example_ru": "Судья приговорил его к двум годам тюрьмы.",
+  "rank": 15672
+ },
+ {
+  "id": "sentencia",
+  "es": "sentencia",
+  "pos": "noun",
+  "ru": "приговор, решение суда",
+  "example_es": "La sentencia se conocerá la próxima semana.",
+  "example_ru": "Приговор станет известен на следующей неделе.",
+  "rank": 4138,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "sentencias"
+  ]
+ },
+ {
+  "id": "castigo",
+  "es": "castigo",
+  "pos": "noun",
+  "ru": "наказание",
+  "example_es": "El castigo fue demasiado duro para un delito tan leve.",
+  "example_ru": "Наказание было слишком суровым для столь мелкого правонарушения.",
+  "rank": 2917,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "castigos"
+  ]
+ },
+ {
+  "id": "castigar",
+  "es": "castigar",
+  "pos": "verb",
+  "ru": "наказывать",
+  "example_es": "La nueva ley castiga con más dureza la conducción bajo los efectos del alcohol.",
+  "example_ru": "Новый закон строже наказывает за вождение в нетрезвом виде.",
+  "rank": 10573,
+  "forms": [
+   "castigué",
+   "castigue"
+  ]
+ },
+ {
+  "id": "cárcel",
+  "es": "cárcel",
+  "pos": "noun",
+  "ru": "тюрьма",
+  "example_es": "Pasó tres años en la cárcel por robo.",
+  "example_ru": "Он провёл три года в тюрьме за кражу.",
+  "rank": 895,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "cárceles"
+  ]
+ },
+ {
+  "id": "prisión",
+  "es": "prisión",
+  "pos": "noun",
+  "ru": "тюрьма; тюремное заключение",
+  "example_es": "Lo condenaron a seis meses de prisión.",
+  "example_ru": "Его приговорили к шести месяцам заключения.",
+  "rank": 1087,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "prisiones"
+  ]
+ },
+ {
+  "id": "preso",
+  "es": "preso",
+  "pos": "noun",
+  "ru": "заключённый",
+  "example_es": "Los presos tienen derecho a recibir visitas.",
+  "example_ru": "Заключённые имеют право на свидания.",
+  "rank": 5597,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "presos",
+   "presa",
+   "presas"
+  ]
+ },
+ {
+  "id": "detener",
+  "es": "detener",
+  "pos": "verb",
+  "ru": "задерживать, арестовывать; останавливать",
+  "example_es": "La policía detuvo a dos sospechosos anoche.",
+  "example_ru": "Вчера вечером полиция задержала двух подозреваемых.",
+  "rank": 2036,
+  "forms": [
+   "detengo",
+   "detiene",
+   "detuvo",
+   "detuvieron",
+   "detenido"
+  ]
+ },
+ {
+  "id": "detención",
+  "es": "detención",
+  "pos": "noun",
+  "ru": "задержание, арест",
+  "example_es": "Tras su detención, pasó la noche en la comisaría.",
+  "example_ru": "После задержания он провёл ночь в отделении полиции.",
+  "rank": 6546,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "detenciones"
+  ]
+ },
+ {
+  "id": "sospechoso",
+  "es": "sospechoso",
+  "pos": "noun",
+  "ru": "подозреваемый; подозрительный",
+  "example_es": "El principal sospechoso tiene una coartada sólida.",
+  "example_ru": "У главного подозреваемого надёжное алиби.",
+  "rank": 1576,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "sospechosos",
+   "sospechosa",
+   "sospechosas"
+  ]
+ },
+ {
+  "id": "defensa",
+  "es": "defensa",
+  "pos": "noun",
+  "ru": "защита",
+  "example_es": "La defensa pidió más tiempo para preparar el caso.",
+  "example_ru": "Защита попросила больше времени на подготовку дела.",
+  "rank": 1417,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "defensas"
+  ]
+ },
+ {
+  "id": "legal",
+  "es": "legal",
+  "pos": "adj",
+  "ru": "законный, легальный; юридический",
+  "example_es": "En algunos países es legal trabajar a partir de los quince años.",
+  "example_ru": "В некоторых странах работать законно с пятнадцати лет.",
+  "rank": 2320,
+  "forms": [
+   "legales"
+  ]
+ },
+ {
+  "id": "ilegal",
+  "es": "ilegal",
+  "pos": "adj",
+  "ru": "незаконный",
+  "example_es": "Es ilegal aparcar delante de la salida de emergencia.",
+  "example_ru": "Парковаться перед запасным выходом запрещено.",
+  "rank": 2792,
+  "forms": [
+   "ilegales"
+  ]
+ },
+ {
+  "id": "legítimo",
+  "es": "legítimo",
+  "pos": "adj",
+  "ru": "законный; подлинный",
+  "example_es": "Actuó en legítima defensa, según el tribunal.",
+  "example_ru": "По заключению суда, он действовал в пределах необходимой обороны.",
+  "rank": 9351,
+  "forms": [
+   "legítima",
+   "legítimos",
+   "legítimas"
+  ]
+ },
+ {
+  "id": "jurado",
+  "es": "jurado",
+  "pos": "noun",
+  "ru": "присяжные; жюри",
+  "example_es": "El jurado tardó dos días en llegar a un veredicto.",
+  "example_ru": "Присяжным понадобилось два дня, чтобы вынести вердикт.",
+  "rank": 1773,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "jurados"
+  ]
+ },
+ {
+  "id": "jurar",
+  "es": "jurar",
+  "pos": "verb",
+  "ru": "клясться; присягать",
+  "example_es": "El testigo juró decir toda la verdad.",
+  "example_ru": "Свидетель поклялся говорить только правду.",
+  "rank": 11454
+ },
+ {
+  "id": "declarar",
+  "es": "declarar",
+  "pos": "verb",
+  "ru": "давать показания; заявлять; декларировать",
+  "example_es": "Mañana tendrá que declarar ante el juez.",
+  "example_ru": "Завтра ему придётся давать показания перед судьёй.",
+  "rank": 6670
+ },
+ {
+  "id": "declaración",
+  "es": "declaración",
+  "pos": "noun",
+  "ru": "заявление; показания; декларация",
+  "example_es": "El testigo cambió su declaración varias veces.",
+  "example_ru": "Свидетель несколько раз менял показания.",
+  "rank": 2060,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "declaraciones"
+  ]
+ },
+ {
+  "id": "infracción",
+  "es": "infracción",
+  "pos": "noun",
+  "ru": "нарушение (правил)",
+  "example_es": "Saltarse un semáforo en rojo es una infracción grave.",
+  "example_ru": "Проезд на красный свет — серьёзное нарушение.",
+  "rank": 20021,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "infracciones"
+  ]
+ },
+ {
+  "id": "norma",
+  "es": "norma",
+  "pos": "noun",
+  "ru": "норма, правило",
+  "example_es": "Todos los vecinos deben respetar las normas de la comunidad.",
+  "example_ru": "Все жильцы должны соблюдать правила дома.",
+  "rank": 6474,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "normas"
+  ]
+ },
+ {
+  "id": "obligación",
+  "es": "obligación",
+  "pos": "noun",
+  "ru": "обязанность, обязательство",
+  "example_es": "Pagar impuestos es una obligación de todos los ciudadanos.",
+  "example_ru": "Платить налоги — обязанность каждого гражданина.",
+  "rank": 6110,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "obligaciones"
+  ]
+ },
+ {
+  "id": "violar",
+  "es": "violar",
+  "pos": "verb",
+  "ru": "нарушать (закон); насиловать",
+  "example_es": "La empresa violó las normas de seguridad.",
+  "example_ru": "Компания нарушила правила техники безопасности.",
+  "rank": 8642
+ },
+ {
+  "id": "apelar",
+  "es": "apelar",
+  "pos": "verb",
+  "ru": "обжаловать; взывать",
+  "example_es": "Su abogado va a apelar la sentencia.",
+  "example_ru": "Его адвокат собирается обжаловать приговор.",
+  "rank": 16851
+ },
+ {
+  "id": "estafa",
+  "es": "estafa",
+  "pos": "noun",
+  "ru": "мошенничество, афера",
+  "example_es": "Muchos ancianos fueron víctimas de una estafa telefónica.",
+  "example_ru": "Многие пожилые люди стали жертвами телефонного мошенничества.",
+  "rank": 7315,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "estafas"
+  ]
+ },
+ {
+  "id": "fraude",
+  "es": "fraude",
+  "pos": "noun",
+  "ru": "мошенничество, обман",
+  "example_es": "Lo investigan por fraude fiscal.",
+  "example_ru": "Его проверяют по делу о налоговом мошенничестве.",
+  "rank": 4627,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "fraudes"
+  ]
+ },
+ {
+  "id": "soborno",
+  "es": "soborno",
+  "pos": "noun",
+  "ru": "взятка; подкуп",
+  "example_es": "El funcionario aceptó un soborno a cambio de la licencia.",
+  "example_ru": "Чиновник взял взятку в обмен на лицензию.",
+  "rank": 9643,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "sobornos"
+  ]
+ },
+ {
+  "id": "herencia",
+  "es": "herencia",
+  "pos": "noun",
+  "ru": "наследство; наследие",
+  "example_es": "Los hermanos se pelearon por la herencia de sus padres.",
+  "example_ru": "Братья поссорились из-за наследства родителей.",
+  "rank": 5720,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "herencias"
+  ]
+ },
+ {
+  "id": "testamento",
+  "es": "testamento",
+  "pos": "noun",
+  "ru": "завещание",
+  "example_es": "Mi abuelo dejó la casa a sus nietos en el testamento.",
+  "example_ru": "Дедушка по завещанию оставил дом внукам.",
+  "rank": 4315,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "testamentos"
+  ]
+ },
+ {
+  "id": "propiedad",
+  "es": "propiedad",
+  "pos": "noun",
+  "ru": "собственность; свойство",
+  "example_es": "Este terreno es propiedad del ayuntamiento.",
+  "example_ru": "Этот участок — собственность муниципалитета.",
+  "rank": 1933,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "propiedades"
+  ]
+ },
+ {
+  "id": "secuestro",
+  "es": "secuestro",
+  "pos": "noun",
+  "ru": "похищение; захват",
+  "example_es": "El secuestro del avión duró más de diez horas.",
+  "example_ru": "Захват самолёта длился более десяти часов.",
+  "rank": 3973,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "secuestros"
+  ]
+ },
+ {
+  "id": "amenaza",
+  "es": "amenaza",
+  "pos": "noun",
+  "ru": "угроза",
+  "example_es": "Recibió amenazas de muerte por sus artículos.",
+  "example_ru": "Из-за своих статей он получал угрозы убийством.",
+  "rank": 1833,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "amenazas"
+  ]
+ },
+ {
+  "id": "chantaje",
+  "es": "chantaje",
+  "pos": "noun",
+  "ru": "шантаж",
+  "example_es": "Fue víctima de un chantaje por unas fotos privadas.",
+  "example_ru": "Она стала жертвой шантажа из-за личных фотографий.",
+  "rank": 8006,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "chantajes"
+  ]
+ },
+ {
+  "id": "legislación",
+  "es": "legislación",
+  "pos": "noun",
+  "ru": "законодательство",
+  "example_es": "La legislación laboral ha cambiado mucho en los últimos años.",
+  "example_ru": "За последние годы трудовое законодательство сильно изменилось.",
+  "rank": 22339,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "legislaciones"
+  ]
+ }
+]

@@ -1,0 +1,691 @@
+[
+ {
+  "id": "inflación",
+  "es": "inflación",
+  "pos": "noun",
+  "ru": "инфляция",
+  "example_es": "La inflación ha reducido el poder adquisitivo de las familias.",
+  "example_ru": "Инфляция снизила покупательную способность семей.",
+  "rank": 20490,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "inflaciones"
+  ]
+ },
+ {
+  "id": "ahorro",
+  "es": "ahorro",
+  "pos": "noun",
+  "ru": "экономия; сбережения",
+  "example_es": "El ahorro de energía también reduce los gastos de la casa.",
+  "example_ru": "Экономия энергии также сокращает домашние расходы.",
+  "rank": 15256,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "ahorros"
+  ]
+ },
+ {
+  "id": "crédito",
+  "es": "crédito",
+  "pos": "noun",
+  "ru": "кредит",
+  "example_es": "El banco le negó el crédito por falta de ingresos.",
+  "example_ru": "Банк отказал ему в кредите из-за отсутствия доходов.",
+  "rank": 2136,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "créditos"
+  ]
+ },
+ {
+  "id": "interés",
+  "es": "interés",
+  "pos": "noun",
+  "ru": "процент (по кредиту); интерес",
+  "example_es": "Este préstamo tiene un interés del cinco por ciento.",
+  "example_ru": "По этому займу ставка — пять процентов.",
+  "rank": 1915,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "intereses"
+  ]
+ },
+ {
+  "id": "inversión",
+  "es": "inversión",
+  "pos": "noun",
+  "ru": "инвестиция, вложение",
+  "example_es": "Comprar una vivienda puede ser una buena inversión a largo plazo.",
+  "example_ru": "Покупка жилья может быть хорошим долгосрочным вложением.",
+  "rank": 5491,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "inversiones"
+  ]
+ },
+ {
+  "id": "invertir",
+  "es": "invertir",
+  "pos": "verb",
+  "ru": "инвестировать, вкладывать",
+  "example_es": "Decidió invertir sus ahorros en un pequeño negocio familiar.",
+  "example_ru": "Он решил вложить свои сбережения в небольшой семейный бизнес.",
+  "rank": 8132,
+  "forms": [
+   "invierto",
+   "invierte",
+   "invierten",
+   "invirtió",
+   "invirtieron"
+  ]
+ },
+ {
+  "id": "beneficio",
+  "es": "beneficio",
+  "pos": "noun",
+  "ru": "прибыль; польза",
+  "example_es": "La compañía obtuvo grandes beneficios el año pasado.",
+  "example_ru": "В прошлом году компания получила большую прибыль.",
+  "rank": 4636,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "beneficios"
+  ]
+ },
+ {
+  "id": "pérdida",
+  "es": "pérdida",
+  "pos": "noun",
+  "ru": "потеря; убыток",
+  "example_es": "El negocio sufrió pérdidas durante los primeros meses.",
+  "example_ru": "В первые месяцы бизнес нёс убытки.",
+  "rank": 2063,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "pérdidas"
+  ]
+ },
+ {
+  "id": "ganancia",
+  "es": "ganancia",
+  "pos": "noun",
+  "ru": "прибыль, доход",
+  "example_es": "Las ganancias de la venta se repartieron entre los dos hermanos.",
+  "example_ru": "Доход от продажи разделили между двумя братьями.",
+  "rank": 10888,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "ganancias"
+  ]
+ },
+ {
+  "id": "ingreso",
+  "es": "ingreso",
+  "pos": "noun",
+  "ru": "доход; поступление",
+  "example_es": "Sus ingresos mensuales apenas cubren el alquiler y la comida.",
+  "example_ru": "Его месячного дохода едва хватает на аренду и еду.",
+  "rank": 9790,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "ingresos"
+  ]
+ },
+ {
+  "id": "salario",
+  "es": "salario",
+  "pos": "noun",
+  "ru": "зарплата, оклад",
+  "example_es": "El salario mínimo subirá a partir de enero.",
+  "example_ru": "С января минимальная зарплата повысится.",
+  "rank": 5211,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "salarios"
+  ]
+ },
+ {
+  "id": "desempleo",
+  "es": "desempleo",
+  "pos": "noun",
+  "ru": "безработица",
+  "example_es": "El desempleo juvenil sigue siendo un problema grave.",
+  "example_ru": "Молодёжная безработица остаётся серьёзной проблемой.",
+  "rank": 16329,
+  "article": "el",
+  "gender": "m"
+ },
+ {
+  "id": "consumidor",
+  "es": "consumidor",
+  "pos": "noun",
+  "ru": "потребитель",
+  "example_es": "Los consumidores buscan productos más baratos en tiempos de crisis.",
+  "example_ru": "Во время кризиса потребители ищут товары подешевле.",
+  "rank": 19924,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "consumidores",
+   "consumidora",
+   "consumidoras"
+  ]
+ },
+ {
+  "id": "demanda",
+  "es": "demanda",
+  "pos": "noun",
+  "ru": "спрос; иск",
+  "example_es": "Cuando la demanda supera a la oferta, los precios suben.",
+  "example_ru": "Когда спрос превышает предложение, цены растут.",
+  "rank": 3677,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "demandas"
+  ]
+ },
+ {
+  "id": "comercio",
+  "es": "comercio",
+  "pos": "noun",
+  "ru": "торговля; магазин",
+  "example_es": "El comercio entre los dos países ha crecido mucho.",
+  "example_ru": "Торговля между двумя странами сильно выросла.",
+  "rank": 5176,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "comercios"
+  ]
+ },
+ {
+  "id": "cobrar",
+  "es": "cobrar",
+  "pos": "verb",
+  "ru": "получать (деньги); брать плату",
+  "example_es": "¿Cuánto te cobraron por arreglar la lavadora?",
+  "example_ru": "Сколько с тебя взяли за ремонт стиральной машины?",
+  "rank": 5511
+ },
+ {
+  "id": "hipoteca",
+  "es": "hipoteca",
+  "pos": "noun",
+  "ru": "ипотека",
+  "example_es": "Pagan una hipoteca de ochocientos euros al mes.",
+  "example_ru": "Они платят по ипотеке восемьсот евро в месяц.",
+  "rank": 9177,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "hipotecas"
+  ]
+ },
+ {
+  "id": "capital",
+  "es": "capital",
+  "pos": "noun",
+  "ru": "капитал",
+  "example_es": "Necesitan más capital para abrir una segunda tienda.",
+  "example_ru": "Им нужно больше капитала, чтобы открыть второй магазин.",
+  "rank": 3623,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "capitales"
+  ]
+ },
+ {
+  "id": "coste",
+  "es": "coste",
+  "pos": "noun",
+  "ru": "стоимость; издержки",
+  "example_es": "{es: El coste | am: El costo | rio: El costo} de la vida en las grandes ciudades no deja de subir.",
+  "example_ru": "Стоимость жизни в больших городах продолжает расти.",
+  "rank": 14569,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "costes"
+  ],
+  "variants": {
+   "am": "el costo",
+   "rio": "el costo"
+  }
+ },
+ {
+  "id": "recesión",
+  "es": "recesión",
+  "pos": "noun",
+  "ru": "рецессия, спад",
+  "example_es": "Los expertos temen que la economía entre en recesión.",
+  "example_ru": "Эксперты опасаются, что экономика войдёт в рецессию.",
+  "rank": 23491,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "recesiones"
+  ]
+ },
+ {
+  "id": "crecimiento",
+  "es": "crecimiento",
+  "pos": "noun",
+  "ru": "рост",
+  "example_es": "El crecimiento económico fue menor de lo esperado.",
+  "example_ru": "Экономический рост оказался ниже ожидаемого.",
+  "rank": 6909,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "crecimientos"
+  ]
+ },
+ {
+  "id": "producción",
+  "es": "producción",
+  "pos": "noun",
+  "ru": "производство",
+  "example_es": "La producción de automóviles bajó un diez por ciento.",
+  "example_ru": "Производство автомобилей упало на десять процентов.",
+  "rank": 3812,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "producciones"
+  ]
+ },
+ {
+  "id": "industria",
+  "es": "industria",
+  "pos": "noun",
+  "ru": "промышленность; отрасль",
+  "example_es": "La industria textil emplea a miles de personas en la región.",
+  "example_ru": "Текстильная промышленность даёт работу тысячам людей в регионе.",
+  "rank": 3852,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "industrias"
+  ]
+ },
+ {
+  "id": "tasa",
+  "es": "tasa",
+  "pos": "noun",
+  "ru": "уровень, ставка; сбор",
+  "example_es": "La tasa de desempleo bajó al doce por ciento.",
+  "example_ru": "Уровень безработицы снизился до двенадцати процентов.",
+  "rank": 9387,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "tasas"
+  ]
+ },
+ {
+  "id": "tarifa",
+  "es": "tarifa",
+  "pos": "noun",
+  "ru": "тариф",
+  "example_es": "La compañía eléctrica ha vuelto a subir sus tarifas.",
+  "example_ru": "Энергокомпания снова повысила тарифы.",
+  "rank": 12011,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "tarifas"
+  ]
+ },
+ {
+  "id": "jubilación",
+  "es": "jubilación",
+  "pos": "noun",
+  "ru": "выход на пенсию; пенсия",
+  "example_es": "Muchos temen que su jubilación no alcance para vivir.",
+  "example_ru": "Многие боятся, что пенсии не хватит на жизнь.",
+  "rank": 12331,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "jubilaciones"
+  ]
+ },
+ {
+  "id": "financiero",
+  "es": "financiero",
+  "pos": "adj",
+  "ru": "финансовый",
+  "example_es": "La compañía atraviesa graves problemas financieros.",
+  "example_ru": "Компания переживает серьёзные финансовые трудности.",
+  "rank": 8202,
+  "forms": [
+   "financiera",
+   "financieros",
+   "financieras"
+  ]
+ },
+ {
+  "id": "económico",
+  "es": "económico",
+  "pos": "adj",
+  "ru": "экономический; экономичный",
+  "example_es": "La situación económica del país ha mejorado poco a poco.",
+  "example_ru": "Экономическая ситуация в стране постепенно улучшилась.",
+  "rank": 11161,
+  "forms": [
+   "económica",
+   "económicos",
+   "económicas"
+  ]
+ },
+ {
+  "id": "comercial",
+  "es": "comercial",
+  "pos": "adj",
+  "ru": "торговый; коммерческий",
+  "example_es": "Abrieron un nuevo centro comercial en las afueras.",
+  "example_ru": "На окраине открыли новый торговый центр.",
+  "rank": 2843,
+  "forms": [
+   "comerciales"
+  ]
+ },
+ {
+  "id": "mercancía",
+  "es": "mercancía",
+  "pos": "noun",
+  "ru": "товар",
+  "example_es": "La mercancía llegó al puerto con dos semanas de retraso.",
+  "example_ru": "Товар прибыл в порт с опозданием на две недели.",
+  "rank": 5978,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "mercancías"
+  ]
+ },
+ {
+  "id": "lujo",
+  "es": "lujo",
+  "pos": "noun",
+  "ru": "роскошь",
+  "example_es": "No podemos permitirnos el lujo de viajar este verano.",
+  "example_ru": "Этим летом мы не можем позволить себе роскошь путешествовать.",
+  "rank": 3794,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "lujos"
+  ]
+ },
+ {
+  "id": "escasez",
+  "es": "escasez",
+  "pos": "noun",
+  "ru": "нехватка, дефицит",
+  "example_es": "La escasez de vivienda ha disparado los precios.",
+  "example_ru": "Нехватка жилья привела к резкому росту цен.",
+  "rank": 15364,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "escaseces"
+  ]
+ },
+ {
+  "id": "competencia",
+  "es": "competencia",
+  "pos": "noun",
+  "ru": "конкуренция; компетенция",
+  "example_es": "La competencia entre los supermercados beneficia a los clientes.",
+  "example_ru": "Конкуренция между супермаркетами выгодна покупателям.",
+  "rank": 2944,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "competencias"
+  ]
+ },
+ {
+  "id": "renta",
+  "es": "renta",
+  "pos": "noun",
+  "ru": "доход; подоходный налог",
+  "example_es": "Cada primavera hay que hacer la declaración de la renta.",
+  "example_ru": "Каждую весну нужно подавать декларацию о доходах.",
+  "rank": 6290,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "rentas"
+  ]
+ },
+ {
+  "id": "sector",
+  "es": "sector",
+  "pos": "noun",
+  "ru": "сектор, отрасль",
+  "example_es": "El sector turístico representa una gran parte de la economía.",
+  "example_ru": "Туристический сектор составляет значительную часть экономики.",
+  "rank": 4632,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "sectores"
+  ]
+ },
+ {
+  "id": "producir",
+  "es": "producir",
+  "pos": "verb",
+  "ru": "производить",
+  "example_es": "Esta fábrica produce mil bicicletas al día.",
+  "example_ru": "Эта фабрика производит тысячу велосипедов в день.",
+  "rank": 7089,
+  "forms": [
+   "produzco",
+   "produce",
+   "produjo",
+   "produjeron"
+  ]
+ },
+ {
+  "id": "financiar",
+  "es": "financiar",
+  "pos": "verb",
+  "ru": "финансировать",
+  "example_es": "El ayuntamiento financiará la construcción del nuevo polideportivo.",
+  "example_ru": "Мэрия профинансирует строительство нового спорткомплекса.",
+  "rank": 14617
+ },
+ {
+  "id": "aumento",
+  "es": "aumento",
+  "pos": "noun",
+  "ru": "рост, увеличение; повышение",
+  "example_es": "Los trabajadores piden un aumento de sueldo.",
+  "example_ru": "Работники требуют повышения зарплаты.",
+  "rank": 4522,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "aumentos"
+  ]
+ },
+ {
+  "id": "reducción",
+  "es": "reducción",
+  "pos": "noun",
+  "ru": "сокращение, снижение",
+  "example_es": "El plan prevé una fuerte reducción del gasto público.",
+  "example_ru": "План предусматривает значительное сокращение государственных расходов.",
+  "rank": 13782,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "reducciones"
+  ]
+ },
+ {
+  "id": "quiebra",
+  "es": "quiebra",
+  "pos": "noun",
+  "ru": "банкротство",
+  "example_es": "Tras años de pérdidas, la empresa se declaró en quiebra.",
+  "example_ru": "После многих лет убытков компания объявила себя банкротом.",
+  "rank": 9159,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "quiebras"
+  ]
+ },
+ {
+  "id": "déficit",
+  "es": "déficit",
+  "pos": "noun",
+  "ru": "дефицит (бюджета)",
+  "example_es": "El déficit público superó las previsiones del Gobierno.",
+  "example_ru": "Дефицит бюджета превысил прогнозы правительства.",
+  "rank": 20832,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "déficits"
+  ]
+ },
+ {
+  "id": "recorte",
+  "es": "recorte",
+  "pos": "noun",
+  "ru": "сокращение (расходов)",
+  "example_es": "Los recortes en sanidad provocaron protestas en todo el país.",
+  "example_ru": "Сокращения в здравоохранении вызвали протесты по всей стране.",
+  "rank": 21454,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "recortes"
+  ]
+ },
+ {
+  "id": "acción",
+  "es": "acción",
+  "pos": "noun",
+  "ru": "акция; действие",
+  "example_es": "Compró acciones de una empresa tecnológica.",
+  "example_ru": "Он купил акции технологической компании.",
+  "rank": 1249,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "acciones"
+  ]
+ },
+ {
+  "id": "consumir",
+  "es": "consumir",
+  "pos": "verb",
+  "ru": "потреблять",
+  "example_es": "Los países ricos consumen la mayor parte de la energía mundial.",
+  "example_ru": "Богатые страны потребляют большую часть мировой энергии.",
+  "rank": 15651
+ },
+ {
+  "id": "cuota",
+  "es": "cuota",
+  "pos": "noun",
+  "ru": "взнос; квота",
+  "example_es": "Pago una cuota mensual de treinta euros al gimnasio.",
+  "example_ru": "Я плачу в спортзал ежемесячный взнос в тридцать евро.",
+  "rank": 10723,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "cuotas"
+  ]
+ },
+ {
+  "id": "rescate",
+  "es": "rescate",
+  "pos": "noun",
+  "ru": "спасение; финансовая помощь (банку, стране)",
+  "example_es": "El Gobierno aprobó el rescate de varios bancos en quiebra.",
+  "example_ru": "Правительство одобрило спасение нескольких обанкротившихся банков.",
+  "rank": 2974,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "rescates"
+  ]
+ },
+ {
+  "id": "gratuito",
+  "es": "gratuito",
+  "pos": "adj",
+  "ru": "бесплатный",
+  "example_es": "La entrada al museo es gratuita los domingos.",
+  "example_ru": "По воскресеньям вход в музей бесплатный.",
+  "rank": 18873,
+  "forms": [
+   "gratuita",
+   "gratuitos",
+   "gratuitas"
+  ]
+ },
+ {
+  "id": "subvención",
+  "es": "subvención",
+  "pos": "noun",
+  "ru": "субсидия, дотация",
+  "example_es": "Los agricultores reciben subvenciones para modernizar sus explotaciones.",
+  "example_ru": "Фермеры получают субсидии на модернизацию своих хозяйств.",
+  "rank": 26838,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "subvenciones"
+  ]
+ },
+ {
+  "id": "exportación",
+  "es": "exportación",
+  "pos": "noun",
+  "ru": "экспорт",
+  "example_es": "Las exportaciones de aceite de oliva han crecido este año.",
+  "example_ru": "В этом году экспорт оливкового масла вырос.",
+  "rank": 26537,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "exportaciones"
+  ]
+ },
+ {
+  "id": "costoso",
+  "es": "costoso",
+  "pos": "adj",
+  "ru": "дорогостоящий",
+  "example_es": "Reparar el edificio sería demasiado costoso.",
+  "example_ru": "Ремонт здания обошёлся бы слишком дорого.",
+  "rank": 14439,
+  "forms": [
+   "costosa",
+   "costosos",
+   "costosas"
+  ]
+ }
+]

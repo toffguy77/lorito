@@ -1,0 +1,657 @@
+[
+ {
+  "id": "hipótesis",
+  "es": "hipótesis",
+  "pos": "noun",
+  "ru": "гипотеза",
+  "example_es": "Los resultados del experimento no confirmaron la hipótesis inicial.",
+  "example_ru": "Результаты эксперимента не подтвердили исходную гипотезу.",
+  "rank": 11191,
+  "article": "la",
+  "gender": "f"
+ },
+ {
+  "id": "tesis",
+  "es": "tesis",
+  "pos": "noun",
+  "ru": "диссертация; тезис",
+  "example_es": "Defendió su tesis doctoral sobre la poesía del exilio.",
+  "example_ru": "Он защитил докторскую диссертацию о поэзии эмиграции.",
+  "rank": 10510,
+  "article": "la",
+  "gender": "f"
+ },
+ {
+  "id": "investigador",
+  "es": "investigador",
+  "pos": "noun",
+  "ru": "исследователь",
+  "example_es": "Un equipo de investigadores publicó los datos la semana pasada.",
+  "example_ru": "Группа исследователей опубликовала данные на прошлой неделе.",
+  "rank": 6561,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "investigadores",
+   "investigadora",
+   "investigadoras"
+  ]
+ },
+ {
+  "id": "metodología",
+  "es": "metodología",
+  "pos": "noun",
+  "ru": "методология",
+  "example_es": "El artículo explica con detalle la metodología empleada.",
+  "example_ru": "В статье подробно описана использованная методология.",
+  "rank": 40430,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "metodologías"
+  ]
+ },
+ {
+  "id": "enfoque",
+  "es": "enfoque",
+  "pos": "noun",
+  "ru": "подход",
+  "example_es": "Este libro propone un enfoque interdisciplinario del problema.",
+  "example_ru": "Эта книга предлагает междисциплинарный подход к проблеме.",
+  "rank": 8140,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "enfoques"
+  ]
+ },
+ {
+  "id": "marco",
+  "es": "marco",
+  "pos": "noun",
+  "ru": "рамки; основа",
+  "example_es": "Primero hay que definir el marco teórico de la investigación.",
+  "example_ru": "Сначала нужно определить теоретическую основу исследования.",
+  "rank": 3265,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "marcos"
+  ]
+ },
+ {
+  "id": "análisis",
+  "es": "análisis",
+  "pos": "noun",
+  "ru": "анализ",
+  "example_es": "El análisis de los datos llevó casi tres meses.",
+  "example_ru": "Анализ данных занял почти три месяца.",
+  "rank": 2628,
+  "article": "el",
+  "gender": "m"
+ },
+ {
+  "id": "síntesis",
+  "es": "síntesis",
+  "pos": "noun",
+  "ru": "синтез; краткое изложение",
+  "example_es": "Al final del capítulo encontrarás una síntesis de las ideas principales.",
+  "example_ru": "В конце главы ты найдёшь краткое изложение основных идей.",
+  "rank": 37424,
+  "article": "la",
+  "gender": "f"
+ },
+ {
+  "id": "bibliografía",
+  "es": "bibliografía",
+  "pos": "noun",
+  "ru": "список литературы",
+  "example_es": "No olvides incluir la bibliografía al final del trabajo.",
+  "example_ru": "Не забудь добавить список литературы в конце работы.",
+  "rank": 49999,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "bibliografías"
+  ]
+ },
+ {
+  "id": "referencia",
+  "es": "referencia",
+  "pos": "noun",
+  "ru": "ссылка; упоминание",
+  "example_es": "El autor hace referencia a varios estudios anteriores.",
+  "example_ru": "Автор ссылается на несколько предыдущих исследований.",
+  "rank": 6258,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "referencias"
+  ]
+ },
+ {
+  "id": "muestra",
+  "es": "muestra",
+  "pos": "noun",
+  "ru": "выборка; образец",
+  "example_es": "La muestra incluía a dos mil adultos de varias regiones.",
+  "example_ru": "Выборка включала две тысячи взрослых из разных регионов.",
+  "rank": 1476,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "muestras"
+  ]
+ },
+ {
+  "id": "variable",
+  "es": "variable",
+  "pos": "noun",
+  "ru": "переменная",
+  "example_es": "Hay que controlar todas las variables que influyen en el resultado.",
+  "example_ru": "Нужно контролировать все переменные, влияющие на результат.",
+  "rank": 25280,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "variables"
+  ]
+ },
+ {
+  "id": "conclusión",
+  "es": "conclusión",
+  "pos": "noun",
+  "ru": "вывод; заключение",
+  "example_es": "Los autores llegan a una conclusión bastante prudente.",
+  "example_ru": "Авторы приходят к довольно осторожному выводу.",
+  "rank": 5193,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "conclusiones"
+  ]
+ },
+ {
+  "id": "premisa",
+  "es": "premisa",
+  "pos": "noun",
+  "ru": "предпосылка",
+  "example_es": "Todo su razonamiento parte de una premisa falsa.",
+  "example_ru": "Всё его рассуждение исходит из ложной предпосылки.",
+  "rank": 27546,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "premisas"
+  ]
+ },
+ {
+  "id": "congreso",
+  "es": "congreso",
+  "pos": "noun",
+  "ru": "конференция; съезд",
+  "example_es": "Presentará sus resultados en un congreso internacional en Lisboa.",
+  "example_ru": "Она представит свои результаты на международной конференции в Лиссабоне.",
+  "rank": 4611,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "congresos"
+  ]
+ },
+ {
+  "id": "doctorado",
+  "es": "doctorado",
+  "pos": "noun",
+  "ru": "докторантура; учёная степень доктора",
+  "example_es": "Está haciendo el doctorado en biología molecular.",
+  "example_ru": "Он учится в докторантуре по молекулярной биологии.",
+  "rank": 12187,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "doctorados"
+  ]
+ },
+ {
+  "id": "catedrático",
+  "es": "catedrático",
+  "pos": "noun",
+  "ru": "профессор (заведующий кафедрой)",
+  "example_es": "Es catedrática de Historia Medieval en Salamanca.",
+  "example_ru": "Она профессор кафедры средневековой истории в Саламанке.",
+  "rank": 43064,
+  "article": "el",
+  "gender": "mf",
+  "forms": [
+   "catedráticos",
+   "catedrática",
+   "catedráticas"
+  ]
+ },
+ {
+  "id": "rigor",
+  "es": "rigor",
+  "pos": "noun",
+  "ru": "строгость; точность",
+  "example_es": "El estudio destaca por su rigor científico.",
+  "example_ru": "Исследование отличается научной строгостью.",
+  "rank": 17974,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "rigores"
+  ]
+ },
+ {
+  "id": "riguroso",
+  "es": "riguroso",
+  "pos": "adj",
+  "ru": "строгий; тщательный",
+  "example_es": "Los datos se sometieron a un control riguroso.",
+  "example_ru": "Данные прошли строгую проверку.",
+  "rank": 30281,
+  "forms": [
+   "rigurosa",
+   "rigurosos",
+   "rigurosas"
+  ]
+ },
+ {
+  "id": "teórico",
+  "es": "teórico",
+  "pos": "adj",
+  "ru": "теоретический",
+  "example_es": "La primera parte del curso es puramente teórica.",
+  "example_ru": "Первая часть курса чисто теоретическая.",
+  "rank": 25582,
+  "forms": [
+   "teórica",
+   "teóricos",
+   "teóricas"
+  ]
+ },
+ {
+  "id": "cualitativo",
+  "es": "cualitativo",
+  "pos": "adj",
+  "ru": "качественный",
+  "example_es": "Combinamos encuestas con entrevistas para un análisis cualitativo.",
+  "example_ru": "Мы сочетали опросы с интервью для качественного анализа.",
+  "rank": 49999,
+  "forms": [
+   "cualitativa",
+   "cualitativos",
+   "cualitativas"
+  ]
+ },
+ {
+  "id": "exhaustivo",
+  "es": "exhaustivo",
+  "pos": "adj",
+  "ru": "исчерпывающий",
+  "example_es": "Realizaron una revisión exhaustiva de la literatura existente.",
+  "example_ru": "Они провели исчерпывающий обзор существующей литературы.",
+  "rank": 36692,
+  "forms": [
+   "exhaustiva",
+   "exhaustivos",
+   "exhaustivas"
+  ]
+ },
+ {
+  "id": "fiable",
+  "es": "fiable",
+  "pos": "adj",
+  "ru": "надёжный; достоверный",
+  "example_es": "Necesitamos fuentes fiables antes de publicar nada.",
+  "example_ru": "Прежде чем что-то публиковать, нам нужны надёжные источники.",
+  "rank": 13273,
+  "forms": [
+   "fiables"
+  ]
+ },
+ {
+  "id": "coherente",
+  "es": "coherente",
+  "pos": "adj",
+  "ru": "связный; последовательный",
+  "example_es": "Tu argumentación no es del todo coherente.",
+  "example_ru": "Твоя аргументация не совсем последовательна.",
+  "rank": 21154,
+  "forms": [
+   "coherentes"
+  ]
+ },
+ {
+  "id": "pertinente",
+  "es": "pertinente",
+  "pos": "adj",
+  "ru": "уместный; относящийся к делу",
+  "example_es": "Me parece una pregunta muy pertinente.",
+  "example_ru": "По-моему, это очень уместный вопрос.",
+  "rank": 26403,
+  "forms": [
+   "pertinentes"
+  ]
+ },
+ {
+  "id": "plantear",
+  "es": "plantear",
+  "pos": "verb",
+  "ru": "ставить (вопрос); выдвигать",
+  "example_es": "El estudio plantea varias preguntas sin respuesta.",
+  "example_ru": "Исследование ставит ряд вопросов, на которые нет ответа.",
+  "rank": 29486
+ },
+ {
+  "id": "formular",
+  "es": "formular",
+  "pos": "verb",
+  "ru": "формулировать",
+  "example_es": "Es importante formular la pregunta de investigación con precisión.",
+  "example_ru": "Важно точно сформулировать исследовательский вопрос.",
+  "rank": 32032
+ },
+ {
+  "id": "corroborar",
+  "es": "corroborar",
+  "pos": "verb",
+  "ru": "подтверждать",
+  "example_es": "Otros laboratorios han corroborado estos resultados.",
+  "example_ru": "Другие лаборатории подтвердили эти результаты.",
+  "rank": 26447
+ },
+ {
+  "id": "citar",
+  "es": "citar",
+  "pos": "verb",
+  "ru": "цитировать; ссылаться",
+  "example_es": "Hay que citar siempre la fuente original.",
+  "example_ru": "Всегда нужно ссылаться на первоисточник.",
+  "rank": 17432
+ },
+ {
+  "id": "deducir",
+  "es": "deducir",
+  "pos": "verb",
+  "ru": "делать вывод; выводить",
+  "example_es": "De sus palabras deduje que no estaba de acuerdo.",
+  "example_ru": "Из его слов я сделал вывод, что он не согласен.",
+  "rank": 19389,
+  "forms": [
+   "deduzco",
+   "deduje",
+   "dedujo",
+   "dedujeron"
+  ]
+ },
+ {
+  "id": "disciplina",
+  "es": "disciplina",
+  "pos": "noun",
+  "ru": "дисциплина (научная); порядок",
+  "example_es": "La lingüística es una disciplina relativamente joven.",
+  "example_ru": "Лингвистика — относительно молодая дисциплина.",
+  "rank": 6421,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "disciplinas"
+  ]
+ },
+ {
+  "id": "fenómeno",
+  "es": "fenómeno",
+  "pos": "noun",
+  "ru": "явление",
+  "example_es": "Los científicos intentan explicar este fenómeno desde hace décadas.",
+  "example_ru": "Учёные десятилетиями пытаются объяснить это явление.",
+  "rank": 5699,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "fenómenos"
+  ]
+ },
+ {
+  "id": "paradigma",
+  "es": "paradigma",
+  "pos": "noun",
+  "ru": "парадигма",
+  "example_es": "Internet supuso un cambio de paradigma en la comunicación.",
+  "example_ru": "Интернет стал сменой парадигмы в коммуникации.",
+  "rank": 33831,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "paradigmas"
+  ]
+ },
+ {
+  "id": "índice",
+  "es": "índice",
+  "pos": "noun",
+  "ru": "оглавление; индекс; показатель",
+  "example_es": "Busca el capítulo en el índice del libro.",
+  "example_ru": "Найди главу в оглавлении книги.",
+  "rank": 11245,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "índices"
+  ]
+ },
+ {
+  "id": "apartado",
+  "es": "apartado",
+  "pos": "noun",
+  "ru": "раздел; пункт",
+  "example_es": "Este punto se explica en el apartado tres.",
+  "example_ru": "Этот момент объясняется в разделе три.",
+  "rank": 10601,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "apartados"
+  ]
+ },
+ {
+  "id": "párrafo",
+  "es": "párrafo",
+  "pos": "noun",
+  "ru": "абзац",
+  "example_es": "El primer párrafo debe presentar la idea central.",
+  "example_ru": "Первый абзац должен представлять центральную идею.",
+  "rank": 15408,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "párrafos"
+  ]
+ },
+ {
+  "id": "resumen",
+  "es": "resumen",
+  "pos": "noun",
+  "ru": "краткое изложение; аннотация",
+  "example_es": "Cada artículo va precedido de un breve resumen.",
+  "example_ru": "Каждой статье предшествует краткая аннотация.",
+  "rank": 7644,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "resúmenes"
+  ]
+ },
+ {
+  "id": "redactar",
+  "es": "redactar",
+  "pos": "verb",
+  "ru": "составлять, писать (текст)",
+  "example_es": "Tardé dos semanas en redactar la introducción.",
+  "example_ru": "Я две недели писал введение.",
+  "rank": 26681
+ },
+ {
+  "id": "revisión",
+  "es": "revisión",
+  "pos": "noun",
+  "ru": "проверка; обзор; пересмотр",
+  "example_es": "El manuscrito está en fase de revisión.",
+  "example_ru": "Рукопись находится на стадии рецензирования.",
+  "rank": 6625,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "revisiones"
+  ]
+ },
+ {
+  "id": "hallazgo",
+  "es": "hallazgo",
+  "pos": "noun",
+  "ru": "находка; открытие",
+  "example_es": "El hallazgo cambió nuestra visión de la prehistoria.",
+  "example_ru": "Эта находка изменила наше представление о доисторической эпохе.",
+  "rank": 17834,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "hallazgos"
+  ]
+ },
+ {
+  "id": "cuestionario",
+  "es": "cuestionario",
+  "pos": "noun",
+  "ru": "анкета; опросник",
+  "example_es": "Los participantes rellenaron un cuestionario anónimo.",
+  "example_ru": "Участники заполнили анонимную анкету.",
+  "rank": 22878,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "cuestionarios"
+  ]
+ },
+ {
+  "id": "sesgo",
+  "es": "sesgo",
+  "pos": "noun",
+  "ru": "предвзятость; искажение",
+  "example_es": "El estudio presenta un claro sesgo de selección.",
+  "example_ru": "В исследовании явное искажение выборки.",
+  "rank": 49999,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "sesgos"
+  ]
+ },
+ {
+  "id": "académico",
+  "es": "académico",
+  "pos": "adj",
+  "ru": "академический; учебный",
+  "example_es": "Este año ha mejorado mucho su rendimiento académico.",
+  "example_ru": "В этом году его успеваемость сильно улучшилась.",
+  "rank": 14883,
+  "forms": [
+   "académica",
+   "académicos",
+   "académicas"
+  ]
+ },
+ {
+  "id": "experimental",
+  "es": "experimental",
+  "pos": "adj",
+  "ru": "экспериментальный",
+  "example_es": "El fármaco aún está en fase experimental.",
+  "example_ru": "Препарат всё ещё находится на экспериментальной стадии.",
+  "rank": 13290,
+  "forms": [
+   "experimentales"
+  ]
+ },
+ {
+  "id": "verificar",
+  "es": "verificar",
+  "pos": "verb",
+  "ru": "проверять; подтверждать",
+  "example_es": "Antes de publicar, verificamos cada cifra dos veces.",
+  "example_ru": "Перед публикацией мы дважды проверяем каждую цифру.",
+  "rank": 7879
+ },
+ {
+  "id": "objetividad",
+  "es": "objetividad",
+  "pos": "noun",
+  "ru": "объективность",
+  "example_es": "El periodista debe mantener la objetividad.",
+  "example_ru": "Журналист должен сохранять объективность.",
+  "rank": 34183,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "objetividades"
+  ]
+ },
+ {
+  "id": "interpretación",
+  "es": "interpretación",
+  "pos": "noun",
+  "ru": "толкование, интерпретация",
+  "example_es": "Los datos admiten más de una interpretación.",
+  "example_ru": "Данные допускают более одного толкования.",
+  "rank": 8792,
+  "article": "la",
+  "gender": "f",
+  "forms": [
+   "interpretaciones"
+  ]
+ },
+ {
+  "id": "indicador",
+  "es": "indicador",
+  "pos": "noun",
+  "ru": "показатель, индикатор",
+  "example_es": "La esperanza de vida es un indicador clave de desarrollo.",
+  "example_ru": "Продолжительность жизни — ключевой показатель развития.",
+  "rank": 20014,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "indicadores"
+  ]
+ },
+ {
+  "id": "fundamento",
+  "es": "fundamento",
+  "pos": "noun",
+  "ru": "основание, основа",
+  "example_es": "Sus críticas carecen de fundamento.",
+  "example_ru": "Его критика лишена оснований.",
+  "rank": 19294,
+  "article": "el",
+  "gender": "m",
+  "forms": [
+   "fundamentos"
+  ]
+ },
+ {
+  "id": "subjetivo",
+  "es": "subjetivo",
+  "pos": "adj",
+  "ru": "субъективный",
+  "example_es": "Es una valoración muy subjetiva, no un dato objetivo.",
+  "example_ru": "Это очень субъективная оценка, а не объективный факт.",
+  "rank": 40349,
+  "forms": [
+   "subjetiva",
+   "subjetivos",
+   "subjetivas"
+  ]
+ }
+]

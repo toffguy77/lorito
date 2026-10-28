@@ -1,0 +1,564 @@
+[
+ {
+  "id": "dar-gato-por-liebre",
+  "es": "dar gato por liebre",
+  "pos": "phrase",
+  "ru": "обмануть, подсунуть худшее вместо лучшего",
+  "example_es": "En ese mercado intentan dar gato por liebre a los turistas.",
+  "example_ru": "На этом рынке туристам пытаются всучить подделку.",
+  "rank": 18259,
+  "forms": [
+   "dio gato por liebre",
+   "dan gato por liebre",
+   "dieron gato por liebre"
+  ]
+ },
+ {
+  "id": "a-troche-y-moche",
+  "es": "a troche y moche",
+  "pos": "phrase",
+  "ru": "без разбору, направо и налево",
+  "example_es": "Repartía consejos a troche y moche.",
+  "example_ru": "Он раздавал советы направо и налево.",
+  "rank": 7
+ },
+ {
+  "id": "a-pie-juntillas",
+  "es": "a pie juntillas",
+  "pos": "phrase",
+  "ru": "безоговорочно, слепо (верить)",
+  "example_es": "Se creyó a pie juntillas todo lo que le contaron.",
+  "example_ru": "Он слепо поверил всему, что ему рассказали.",
+  "rank": 738
+ },
+ {
+  "id": "a-regañadientes",
+  "es": "a regañadientes",
+  "pos": "phrase",
+  "ru": "неохотно, скрепя сердце",
+  "example_es": "Aceptó la propuesta a regañadientes.",
+  "example_ru": "Он нехотя принял предложение.",
+  "rank": 49337
+ },
+ {
+  "id": "a-la-chita-callando",
+  "es": "a la chita callando",
+  "pos": "phrase",
+  "ru": "втихомолку, исподтишка",
+  "example_es": "A la chita callando, se hizo con la mayoría de las acciones.",
+  "example_ru": "Втихомолку он скупил большинство акций.",
+  "rank": 31927
+ },
+ {
+  "id": "a-ultranza",
+  "es": "a ultranza",
+  "pos": "phrase",
+  "ru": "любой ценой, до последнего; убеждённый",
+  "example_es": "Es un defensor a ultranza del libre mercado.",
+  "example_ru": "Он убеждённый сторонник свободного рынка.",
+  "rank": 4
+ },
+ {
+  "id": "buscarle-tres-pies-al-gato",
+  "es": "buscarle tres pies al gato",
+  "pos": "phrase",
+  "ru": "искать сложности, которых нет",
+  "example_es": "No le busques tres pies al gato: el contrato es sencillo.",
+  "example_ru": "Не ищи подвоха — договор простой.",
+  "rank": 10498,
+  "forms": [
+   "busques tres pies al gato",
+   "busca tres pies al gato"
+  ]
+ },
+ {
+  "id": "tirar-la-casa-por-la-ventana",
+  "es": "tirar la casa por la ventana",
+  "pos": "phrase",
+  "ru": "не скупиться на расходы, шиковать",
+  "example_es": "Para la boda de su hija tiraron la casa por la ventana.",
+  "example_ru": "На свадьбу дочери они денег не пожалели.",
+  "rank": 2408,
+  "forms": [
+   "tiraron la casa por la ventana",
+   "tira la casa por la ventana"
+  ]
+ },
+ {
+  "id": "hacer-de-tripas-corazón",
+  "es": "hacer de tripas corazón",
+  "pos": "phrase",
+  "ru": "пересилить себя, собраться с духом",
+  "example_es": "Hizo de tripas corazón y entró a hablar con el jefe.",
+  "example_ru": "Он собрался с духом и пошёл говорить с начальником.",
+  "rank": 9929,
+  "forms": [
+   "hizo de tripas corazón",
+   "hago de tripas corazón"
+  ]
+ },
+ {
+  "id": "no-dar-su-brazo-a-torcer",
+  "es": "no dar su brazo a torcer",
+  "pos": "phrase",
+  "ru": "не уступать, стоять на своём",
+  "example_es": "Discutieron horas, pero ella no dio su brazo a torcer.",
+  "example_ru": "Они спорили часами, но она так и не уступила.",
+  "rank": 32658,
+  "forms": [
+   "no dio su brazo a torcer",
+   "no da su brazo a torcer"
+  ]
+ },
+ {
+  "id": "estar-en-ascuas",
+  "es": "estar en ascuas",
+  "pos": "phrase",
+  "ru": "быть как на иголках",
+  "example_es": "Estamos en ascuas esperando los resultados.",
+  "example_ru": "Мы как на иголках ждём результатов.",
+  "rank": 44958,
+  "forms": [
+   "estamos en ascuas",
+   "estoy en ascuas",
+   "está en ascuas"
+  ]
+ },
+ {
+  "id": "rizar-el-rizo",
+  "es": "rizar el rizo",
+  "pos": "phrase",
+  "ru": "мудрить, усложнять без нужды",
+  "example_es": "Ya está bien así; no hace falta rizar el rizo.",
+  "example_ru": "И так хорошо, не надо мудрить.",
+  "rank": 45063
+ },
+ {
+  "id": "cortar-el-bacalao",
+  "es": "cortar el bacalao",
+  "pos": "phrase",
+  "ru": "заправлять делами, быть главным",
+  "example_es": "En esta casa quien corta el bacalao es la abuela.",
+  "example_ru": "В этом доме всем заправляет бабушка.",
+  "rank": 19072,
+  "forms": [
+   "corta el bacalao",
+   "cortaba el bacalao"
+  ]
+ },
+ {
+  "id": "ser-harina-de-otro-costal",
+  "es": "ser harina de otro costal",
+  "pos": "phrase",
+  "ru": "совсем другое дело",
+  "example_es": "Lo del sueldo es harina de otro costal.",
+  "example_ru": "Зарплата — это совсем другой разговор.",
+  "rank": 37840,
+  "forms": [
+   "es harina de otro costal"
+  ]
+ },
+ {
+  "id": "llevarse-el-gato-al-agua",
+  "es": "llevarse el gato al agua",
+  "pos": "phrase",
+  "ru": "добиться своего, одержать верх",
+  "example_es": "Tras una dura negociación, se llevó el gato al agua.",
+  "example_ru": "После тяжёлых переговоров он добился своего.",
+  "rank": 5185,
+  "forms": [
+   "llevó el gato al agua",
+   "lleva el gato al agua"
+  ]
+ },
+ {
+  "id": "poner-el-grito-en-el-cielo",
+  "es": "poner el grito en el cielo",
+  "pos": "phrase",
+  "ru": "поднять шум, возмутиться",
+  "example_es": "Los vecinos pusieron el grito en el cielo por el ruido.",
+  "example_ru": "Соседи подняли шум из-за грохота.",
+  "rank": 4870,
+  "forms": [
+   "pusieron el grito en el cielo",
+   "puso el grito en el cielo",
+   "pone el grito en el cielo"
+  ]
+ },
+ {
+  "id": "dorar-la-píldora",
+  "es": "dorar la píldora",
+  "pos": "phrase",
+  "ru": "подсластить пилюлю",
+  "example_es": "No me dores la píldora y dime la verdad.",
+  "example_ru": "Не подслащивай пилюлю, скажи правду.",
+  "rank": 9070,
+  "forms": [
+   "dores la píldora",
+   "doró la píldora"
+  ]
+ },
+ {
+  "id": "echar-balones-fuera",
+  "es": "echar balones fuera",
+  "pos": "phrase",
+  "ru": "уходить от ответа, перекладывать ответственность",
+  "example_es": "El ministro se limitó a echar balones fuera.",
+  "example_ru": "Министр лишь уходил от ответа.",
+  "rank": 36153,
+  "forms": [
+   "echó balones fuera",
+   "echa balones fuera"
+  ]
+ },
+ {
+  "id": "de-buenas-a-primeras",
+  "es": "de buenas a primeras",
+  "pos": "phrase",
+  "ru": "ни с того ни с сего, вдруг",
+  "example_es": "De buenas a primeras, dejó el trabajo y se fue.",
+  "example_ru": "Ни с того ни с сего он бросил работу и уехал.",
+  "rank": 3618
+ },
+ {
+  "id": "a-bote-pronto",
+  "es": "a bote pronto",
+  "pos": "phrase",
+  "ru": "навскидку, с ходу",
+  "example_es": "A bote pronto, diría que es una buena idea.",
+  "example_ru": "Навскидку я бы сказал, что идея хорошая.",
+  "rank": 2120
+ },
+ {
+  "id": "en-un-santiamén",
+  "es": "en un santiamén",
+  "pos": "phrase",
+  "ru": "в мгновение ока",
+  "example_es": "Preparó la cena en un santiamén.",
+  "example_ru": "Он приготовил ужин в мгновение ока.",
+  "rank": 23729
+ },
+ {
+  "id": "a-la-buena-de-dios",
+  "es": "a la buena de Dios",
+  "pos": "phrase",
+  "ru": "на авось, как придётся",
+  "example_es": "Organizaron el viaje a la buena de Dios.",
+  "example_ru": "Они спланировали поездку на авось.",
+  "rank": 203
+ },
+ {
+  "id": "sin-ton-ni-son",
+  "es": "sin ton ni son",
+  "pos": "phrase",
+  "ru": "без толку, ни с того ни с сего",
+  "example_es": "Hablaba sin ton ni son durante horas.",
+  "example_ru": "Он часами болтал без всякого смысла.",
+  "rank": 22628
+ },
+ {
+  "id": "dar-palos-de-ciego",
+  "es": "dar palos de ciego",
+  "pos": "phrase",
+  "ru": "действовать вслепую, наугад",
+  "example_es": "Sin datos fiables, la policía daba palos de ciego.",
+  "example_ru": "Без надёжных данных полиция действовала вслепую.",
+  "rank": 7464,
+  "forms": [
+   "daba palos de ciego",
+   "dan palos de ciego",
+   "dando palos de ciego"
+  ]
+ },
+ {
+  "id": "salirse-por-la-tangente",
+  "es": "salirse por la tangente",
+  "pos": "phrase",
+  "ru": "увильнуть, уйти от ответа",
+  "example_es": "Cuando le pregunté por el dinero, se salió por la tangente.",
+  "example_ru": "Когда я спросил его о деньгах, он увильнул.",
+  "rank": 11032,
+  "forms": [
+   "salió por la tangente",
+   "sale por la tangente"
+  ]
+ },
+ {
+  "id": "tener-mano-izquierda",
+  "es": "tener mano izquierda",
+  "pos": "phrase",
+  "ru": "быть тактичным, уметь ладить с людьми",
+  "example_es": "Para dirigir este equipo hay que tener mano izquierda.",
+  "example_ru": "Чтобы руководить этой командой, нужен такт.",
+  "rank": 1051,
+  "forms": [
+   "tiene mano izquierda"
+  ]
+ },
+ {
+  "id": "ser-de-armas-tomar",
+  "es": "ser de armas tomar",
+  "pos": "phrase",
+  "ru": "с крутым характером, с ним шутки плохи",
+  "example_es": "Cuidado con su suegra, que es de armas tomar.",
+  "example_ru": "Осторожнее с его тёщей, с ней шутки плохи.",
+  "rank": 685,
+  "forms": [
+   "es de armas tomar"
+  ]
+ },
+ {
+  "id": "al-pie-del-cañón",
+  "es": "al pie del cañón",
+  "pos": "phrase",
+  "ru": "на посту, не сдаваясь",
+  "example_es": "Con ochenta años sigue al pie del cañón en su taller.",
+  "example_ru": "В восемьдесят лет он всё ещё трудится в своей мастерской.",
+  "rank": 4225
+ },
+ {
+  "id": "a-carta-cabal",
+  "es": "a carta cabal",
+  "pos": "phrase",
+  "ru": "до мозга костей, во всех отношениях",
+  "example_es": "Es un profesional a carta cabal.",
+  "example_ru": "Он профессионал до мозга костей.",
+  "rank": 49199
+ },
+ {
+  "id": "de-rompe-y-rasga",
+  "es": "de rompe y rasga",
+  "pos": "phrase",
+  "ru": "решительный, отчаянный",
+  "example_es": "Su abuela era una mujer de rompe y rasga.",
+  "example_ru": "Его бабушка была женщиной решительной и бесстрашной.",
+  "rank": 4152
+ },
+ {
+  "id": "a-tontas-y-a-locas",
+  "es": "a tontas y a locas",
+  "pos": "phrase",
+  "ru": "бездумно, очертя голову",
+  "example_es": "No se pueden tomar decisiones a tontas y a locas.",
+  "example_ru": "Нельзя принимать решения очертя голову.",
+  "rank": 9651
+ },
+ {
+  "id": "coser-y-cantar",
+  "es": "coser y cantar",
+  "pos": "phrase",
+  "ru": "проще простого",
+  "example_es": "Con este programa, editar vídeos es coser y cantar.",
+  "example_ru": "С этой программой монтировать видео — проще простого.",
+  "rank": 10709
+ },
+ {
+  "id": "pagar-el-pato",
+  "es": "pagar el pato",
+  "pos": "phrase",
+  "ru": "отдуваться за других",
+  "example_es": "Siempre acaba pagando el pato el más débil.",
+  "example_ru": "Отдуваться всегда приходится самому слабому.",
+  "rank": 5026,
+  "forms": [
+   "pagando el pato",
+   "pagó el pato",
+   "paga el pato"
+  ]
+ },
+ {
+  "id": "ponerse-las-botas",
+  "es": "ponerse las botas",
+  "pos": "phrase",
+  "ru": "наесться до отвала; хорошо нажиться",
+  "example_es": "En la boda nos pusimos las botas.",
+  "example_ru": "На свадьбе мы наелись до отвала.",
+  "rank": 3338,
+  "forms": [
+   "nos pusimos las botas",
+   "se puso las botas"
+  ]
+ },
+ {
+  "id": "a-la-sazón",
+  "es": "a la sazón",
+  "pos": "phrase",
+  "ru": "в то время, тогда (книжн.)",
+  "example_es": "El ministro, a la sazón embajador, negó los hechos.",
+  "example_ru": "Министр, бывший в то время послом, отрицал эти факты.",
+  "rank": 5
+ },
+ {
+  "id": "hacer-mella",
+  "es": "hacer mella",
+  "pos": "phrase",
+  "ru": "задевать, производить впечатление; подрывать",
+  "example_es": "Las críticas no hicieron mella en su ánimo.",
+  "example_ru": "Критика не поколебала его настроя.",
+  "rank": 35599,
+  "forms": [
+   "hicieron mella",
+   "hace mella",
+   "hizo mella"
+  ]
+ },
+ {
+  "id": "tomar-cartas-en-el-asunto",
+  "es": "tomar cartas en el asunto",
+  "pos": "phrase",
+  "ru": "вмешаться, взяться за дело",
+  "example_es": "El Gobierno decidió tomar cartas en el asunto.",
+  "example_ru": "Правительство решило вмешаться.",
+  "rank": 1291
+ },
+ {
+  "id": "ni-corto-ni-perezoso",
+  "es": "ni corto ni perezoso",
+  "pos": "phrase",
+  "ru": "недолго думая, не раздумывая",
+  "example_es": "Ni corto ni perezoso, se subió al escenario a cantar.",
+  "example_ru": "Недолго думая, он поднялся на сцену и запел.",
+  "rank": 13236
+ },
+ {
+  "id": "a-la-postre",
+  "es": "a la postre",
+  "pos": "phrase",
+  "ru": "в конечном счёте, в итоге",
+  "example_es": "Aquel error, a la postre, le costó el puesto.",
+  "example_ru": "В итоге эта ошибка стоила ему должности.",
+  "rank": 4492
+ },
+ {
+  "id": "de-tapadillo",
+  "es": "de tapadillo",
+  "pos": "phrase",
+  "ru": "тайком, исподтишка",
+  "example_es": "Fumaba de tapadillo para que no lo viera su madre.",
+  "example_ru": "Он курил тайком, чтобы мать не видела.",
+  "rank": 1
+ },
+ {
+  "id": "venir-a-cuento",
+  "es": "venir a cuento",
+  "pos": "phrase",
+  "ru": "быть к месту, иметь отношение к делу",
+  "example_es": "Ese comentario no viene a cuento ahora.",
+  "example_ru": "Это замечание сейчас не к месту.",
+  "rank": 1930,
+  "forms": [
+   "viene a cuento",
+   "venía a cuento"
+  ]
+ },
+ {
+  "id": "traer-a-colación",
+  "es": "traer a colación",
+  "pos": "phrase",
+  "ru": "упомянуть, привести (к слову)",
+  "example_es": "Trajo a colación un viejo asunto familiar.",
+  "example_ru": "Он вспомнил к слову старую семейную историю.",
+  "rank": 33548,
+  "forms": [
+   "trajo a colación",
+   "trae a colación"
+  ]
+ },
+ {
+  "id": "curarse-en-salud",
+  "es": "curarse en salud",
+  "pos": "phrase",
+  "ru": "перестраховаться заранее",
+  "example_es": "Prefiero curarme en salud y llevar paraguas.",
+  "example_ru": "Лучше перестрахуюсь и возьму зонт.",
+  "rank": 19021,
+  "forms": [
+   "curarme en salud",
+   "se curó en salud"
+  ]
+ },
+ {
+  "id": "meter-cizaña",
+  "es": "meter cizaña",
+  "pos": "phrase",
+  "ru": "сеять раздор, ссорить",
+  "example_es": "Siempre está metiendo cizaña entre los hermanos.",
+  "example_ru": "Он вечно ссорит братьев.",
+  "rank": 2534,
+  "forms": [
+   "metiendo cizaña",
+   "mete cizaña"
+  ]
+ },
+ {
+  "id": "salir-rana",
+  "es": "salir rana",
+  "pos": "phrase",
+  "ru": "не оправдать надежд, оказаться пустышкой",
+  "example_es": "El nuevo fichaje les salió rana.",
+  "example_ru": "Новичок команды их разочаровал.",
+  "rank": 6681,
+  "forms": [
+   "salió rana",
+   "sale rana"
+  ]
+ },
+ {
+  "id": "írsele-el-santo-al-cielo",
+  "es": "írsele el santo al cielo",
+  "pos": "phrase",
+  "ru": "вылететь из головы, забыть",
+  "example_es": "Perdona, se me fue el santo al cielo y no te llamé.",
+  "example_ru": "Прости, совсем вылетело из головы, и я тебе не позвонил.",
+  "rank": 1232,
+  "forms": [
+   "fue el santo al cielo",
+   "va el santo al cielo"
+  ]
+ },
+ {
+  "id": "a-rajatabla",
+  "es": "a rajatabla",
+  "pos": "phrase",
+  "ru": "неукоснительно, строго",
+  "example_es": "Sigue la dieta a rajatabla.",
+  "example_ru": "Он неукоснительно соблюдает диету.",
+  "rank": 4
+ },
+ {
+  "id": "tener-la-sartén-por-el-mango",
+  "es": "tener la sartén por el mango",
+  "pos": "phrase",
+  "ru": "держать всё в своих руках",
+  "example_es": "En esta negociación, ellos tienen la sartén por el mango.",
+  "example_ru": "В этих переговорах козыри у них.",
+  "rank": 14313,
+  "forms": [
+   "tienen la sartén por el mango",
+   "tiene la sartén por el mango"
+  ]
+ },
+ {
+  "id": "a-calzón-quitado",
+  "es": "a calzón quitado",
+  "pos": "phrase",
+  "ru": "откровенно, начистоту",
+  "example_es": "Hablaron a calzón quitado de sus problemas.",
+  "example_ru": "Они поговорили о своих проблемах начистоту.",
+  "rank": 38849
+ },
+ {
+  "id": "hacerse-el-sueco",
+  "es": "hacerse el sueco",
+  "pos": "phrase",
+  "ru": "прикидываться непонимающим",
+  "example_es": "Le pedí el dinero, pero se hizo el sueco.",
+  "example_ru": "Я попросил у него деньги, но он сделал вид, что не понимает.",
+  "rank": 11443,
+  "forms": [
+   "hizo el sueco",
+   "hace el sueco",
+   "hagas el sueco"
+  ]
+ }
+]
