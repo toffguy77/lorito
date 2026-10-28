@@ -1,0 +1,71 @@
+{
+  "id": "latinismos-c1",
+  "title_ru": "Латинизм",
+  "cards": [
+    "C1-13"
+  ],
+  "phrases": [
+    {
+      "text": "a priori",
+      "ru": "заранее, до опыта",
+      "example": "A priori, el plan parece bueno."
+    },
+    {
+      "text": "a posteriori",
+      "ru": "после опыта, задним числом",
+      "example": "Lo analizaron a posteriori."
+    },
+    {
+      "text": "grosso modo",
+      "ru": "грубо говоря, в общих чертах",
+      "example": "Grosso modo, son mil personas."
+    },
+    {
+      "text": "ipso facto",
+      "ru": "немедленно",
+      "example": "Resolvió el problema ipso facto."
+    },
+    {
+      "text": "statu quo",
+      "ru": "существующее положение",
+      "example": "Mantuvieron el statu quo."
+    },
+    {
+      "text": "modus operandi",
+      "ru": "образ действий",
+      "example": "La policía estudió su modus operandi."
+    },
+    {
+      "text": "in situ",
+      "ru": "на месте",
+      "example": "Analizaron las muestras in situ."
+    },
+    {
+      "text": "per cápita|capita",
+      "ru": "на душу населения",
+      "example": "Aumentó el PIB per cápita."
+    },
+    {
+      "text": "alma máter|mater",
+      "ru": "альма-матер",
+      "example": "Visitó su alma máter en Salamanca."
+    },
+    {
+      "text": "sui géneris|generis",
+      "ru": "своеобразный",
+      "example": "Tiene un humor muy sui géneris."
+    },
+    {
+      "text": "motu proprio",
+      "ru": "по собственной воле",
+      "example": "Lo confesó motu proprio."
+    }
+  ],
+  "examples": {
+    "negative": [
+      "A veces llego tarde.",
+      "El modo de pago es fácil.",
+      "Mi alma está tranquila."
+    ]
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "id": "colocaciones-c1",
+  "title_ru": "Колокация",
+  "cards": [
+    "C1-11"
+  ],
+  "phrases": [
+    {
+      "text": "~tomar una|la|esta|esa decisión",
+      "ru": "принять решение",
+      "example": "Tomé una decisión difícil."
+    },
+    {
+      "text": "~tomar decisiones",
+      "ru": "принимать решения",
+      "example": "Ella toma decisiones rápidas."
+    },
+    {
+      "text": "presta|prestan|prestas|presto|prestamos|prestó|prestar|prestad|preste atención",
+      "ru": "уделять внимание",
+      "example": "Presta atención a la explicación."
+    },
+    {
+      "text": "comete|cometen|cometes|cometo|cometió|cometí|cometer|cometido un|el|este|ese error|delito",
+      "ru": "совершить ошибку/преступление",
+      "example": "Cometió un error grave."
+    },
+    {
+      "text": "~correr un|el|ese riesgo",
+      "ru": "рисковать",
+      "example": "No quiero correr ese riesgo."
+    },
+    {
+      "text": "~correr riesgos",
+      "ru": "рисковать",
+      "example": "No corro riesgos innecesarios."
+    },
+    {
+      "text": "~poner en marcha",
+      "ru": "запустить",
+      "example": "Pusieron en marcha el proyecto."
+    },
+    {
+      "text": "~dar un paseo",
+      "ru": "прогуляться",
+      "example": "Dimos un paseo por el parque."
+    },
+    {
+      "text": "~dar una vuelta",
+      "ru": "прогуляться",
+      "example": "Vamos a dar una vuelta por el centro."
+    },
+    {
+      "text": "guarda|guardan|guardar|guardó|guardaron|guardamos|guardad silencio",
+      "ru": "хранить молчание",
+      "example": "Todos guardaron silencio."
+    },
+    {
+      "text": "entablar|entabla|entabló|entablaron|entablamos una conversación",
+      "ru": "завязать беседу",
+      "example": "Entabló una conversación con su vecino."
+    },
+    {
+      "text": "plantea|plantean|plantear|planteó|plantearon|planteado un|una|el|la problema|pregunta|cuestión",
+      "ru": "поднять вопрос/проблему",
+      "example": "El estudio plantea un problema nuevo."
+    },
+    {
+      "text": "surte|surten|surtir|surtió|surtido efecto",
+      "ru": "возыметь действие",
+      "example": "La medicina surtió efecto enseguida."
+    },
+    {
+      "text": "bate|baten|batir|batió|batido un|el récord",
+      "ru": "побить рекорд",
+      "example": "La atleta batió el récord mundial."
+    },
+    {
+      "text": "conciliar|concilio|concilia|concilió el sueño",
+      "ru": "заснуть",
+      "example": "No pude conciliar el sueño."
+    },
+    {
+      "text": "error garrafal",
+      "ru": "грубейшая ошибка",
+      "example": "Fue un error garrafal."
+    },
+    {
+      "text": "craso error",
+      "ru": "грубейшая ошибка",
+      "example": "Cometieron un craso error."
+    },
+    {
+      "text": "fracaso estrepitoso",
+      "ru": "громкий провал",
+      "example": "La película fue un fracaso estrepitoso."
+    },
+    {
+      "text": "diferencia abismal",
+      "ru": "огромная разница",
+      "example": "Hay una diferencia abismal entre los dos."
+    },
+    {
+      "text": "rotundo éxito",
+      "ru": "безоговорочный успех",
+      "example": "El concierto fue un rotundo éxito."
+    },
+    {
+      "text": "lluvia torrencial|torrenciales",
+      "ru": "ливень",
+      "example": "Una lluvia torrencial inundó la ciudad."
+    },
+    {
+      "text": "a cántaros",
+      "ru": "как из ведра",
+      "example": "Ayer llovió a cántaros."
+    },
+    {
+      "text": "profundamente dormido|dormida|dormidos|dormidas",
+      "ru": "крепко спящий",
+      "example": "El niño está profundamente dormido."
+    },
+    {
+      "text": "firmemente convencido|convencida|convencidos|convencidas",
+      "ru": "твёрдо убеждённый",
+      "example": "Estoy firmemente convencido de ello."
+    },
+    {
+      "text": "rotundamente falso|falsa",
+      "ru": "категорически ложный",
+      "example": "Eso es rotundamente falso."
+    },
+    {
+      "text": "niega|niegan|negó|negaron|negar rotundamente",
+      "ru": "наотрез отрицать",
+      "example": "El acusado lo negó rotundamente."
+    },
+    {
+      "text": "rayo de esperanza",
+      "ru": "луч надежды",
+      "example": "La noticia fue un rayo de esperanza."
+    },
+    {
+      "text": "ataque de risa",
+      "ru": "приступ смеха",
+      "example": "Le dio un ataque de risa."
+    },
+    {
+      "text": "pizca de sal",
+      "ru": "щепотка соли",
+      "example": "Añade una pizca de sal."
+    },
+    {
+      "text": "cúmulo de circunstancias",
+      "ru": "стечение обстоятельств",
+      "example": "Fue un cúmulo de circunstancias."
+    },
+    {
+      "text": "atisbo de duda",
+      "ru": "тень сомнения",
+      "example": "Lo dijo sin un atisbo de duda."
+    }
+  ],
+  "examples": {
+    "negative": [
+      "Tomamos el autobús a las ocho.",
+      "La decisión es tuya.",
+      "Hay un error en la página."
+    ]
+  }
+}

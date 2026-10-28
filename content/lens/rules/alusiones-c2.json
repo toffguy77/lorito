@@ -1,0 +1,61 @@
+{
+  "id": "alusiones-c2",
+  "title_ru": "Культурная аллюзия",
+  "cards": [
+    "C2-12"
+  ],
+  "phrases": [
+    {
+      "text": "ladran luego cabalgamos",
+      "ru": "лают — значит, едем",
+      "example": "Que critiquen: ladran, luego cabalgamos."
+    },
+    {
+      "text": "con la iglesia hemos topado",
+      "ru": "наткнулись на непреодолимое",
+      "example": "Pedimos el permiso y, claro, con la iglesia hemos topado."
+    },
+    {
+      "text": "más se perdió en cuba",
+      "ru": "бывало и хуже",
+      "example": "Hemos perdido el partido, pero más se perdió en Cuba."
+    },
+    {
+      "text": "gallo de morón",
+      "ru": "остаться посрамлённым",
+      "example": "Se quedó como el gallo de Morón."
+    },
+    {
+      "text": "gato encerrado",
+      "ru": "тут что-то нечисто",
+      "example": "Aquí hay gato encerrado."
+    },
+    {
+      "text": "donde cristo dio las tres voces",
+      "ru": "у чёрта на куличках",
+      "example": "Vive donde Cristo dio las tres voces."
+    },
+    {
+      "text": "donde el diablo perdió el poncho",
+      "ru": "у чёрта на куличках",
+      "example": "Su casa está donde el diablo perdió el poncho."
+    },
+    {
+      "text": "buen samaritano",
+      "ru": "бескорыстный помощник",
+      "example": "Un buen samaritano me ayudó con la rueda."
+    },
+    {
+      "text": "vísteme despacio",
+      "ru": "тише едешь — дальше будешь",
+      "example": "Vísteme despacio, que tengo prisa."
+    }
+  ],
+  "examples": {
+    "negative": [
+      "Mi gato duerme en casa.",
+      "Ladran los perros del vecino.",
+      "Voy a Cuba en verano."
+    ]
+  }
+}

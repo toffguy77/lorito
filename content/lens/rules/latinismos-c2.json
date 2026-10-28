@@ -1,0 +1,46 @@
+{
+  "id": "latinismos-c2",
+  "title_ru": "Латинизм",
+  "cards": [
+    "C2-09"
+  ],
+  "phrases": [
+    {
+      "text": "modus vivendi",
+      "ru": "образ жизни; временное соглашение",
+      "example": "Encontraron un modus vivendi razonable."
+    },
+    {
+      "text": "sine qua non",
+      "ru": "обязательное условие",
+      "example": "Es un requisito sine qua non."
+    },
+    {
+      "text": "in extremis",
+      "ru": "в последний момент",
+      "example": "Se salvaron in extremis."
+    },
+    {
+      "text": "ad hoc",
+      "ru": "специально для этого случая",
+      "example": "Crearon una comisión ad hoc."
+    },
+    {
+      "text": "mutatis mutandis",
+      "ru": "с соответствующими изменениями",
+      "example": "Mutatis mutandis, la regla vale aquí."
+    },
+    {
+      "text": "de facto",
+      "ru": "фактически",
+      "example": "Es el jefe de facto del equipo."
+    }
+  ],
+  "examples": {
+    "negative": [
+      "De hecho, no lo sé.",
+      "Vivimos en una casa pequeña.",
+      "Hoy es un día extremo."
+    ]
+  }
+}

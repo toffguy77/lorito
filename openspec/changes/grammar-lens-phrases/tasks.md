@@ -5,8 +5,8 @@
 
 ## 2. Content (generated — нужна вычитка)
 
-- [ ] 2.1 Phrase lists for the lexical cards whose expressions the card teaches; those cards leave the coverage map
-- [ ] 2.2 Precision pass: run every rule over the vocabulary examples and the card bodies; drop or constrain phrases that misfire
+- [x] 2.1 Phrase lists for the lexical cards whose expressions the card teaches; those cards leave the coverage map
+- [x] 2.2 Precision pass: run every rule over the vocabulary examples and the card bodies; drop or constrain phrases that misfire
 - [ ] 2.3 (manual, owner) Review the phrase lists
 
 ## 3. Verify

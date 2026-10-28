@@ -1,0 +1,51 @@
+{
+  "id": "eufemismos-c1",
+  "title_ru": "Эвфемизм",
+  "cards": [
+    "C1-20"
+  ],
+  "phrases": [
+    {
+      "text": "~pasar a mejor vida",
+      "ru": "умереть (эвф.)",
+      "example": "Su abuelo pasó a mejor vida el año pasado."
+    },
+    {
+      "text": "tercera edad",
+      "ru": "пожилые (эвф.)",
+      "example": "Hay descuentos para personas de la tercera edad."
+    },
+    {
+      "text": "reajuste de plantilla",
+      "ru": "сокращение штата (эвф.)",
+      "example": "La empresa anunció un reajuste de plantilla."
+    },
+    {
+      "text": "regulación de empleo",
+      "ru": "массовое увольнение (эвф.)",
+      "example": "Presentaron un expediente de regulación de empleo."
+    },
+    {
+      "text": "con sobrepeso",
+      "ru": "полный (эвф.)",
+      "example": "Muchos niños con sobrepeso hacen poco deporte."
+    },
+    {
+      "text": "talla grande",
+      "ru": "большого размера (эвф.)",
+      "example": "Venden ropa de talla grande."
+    },
+    {
+      "text": "con pocos recursos",
+      "ru": "бедный (эвф.)",
+      "example": "Ayudan a familias con pocos recursos."
+    }
+  ],
+  "examples": {
+    "negative": [
+      "Mi hermano mayor vive en Madrid.",
+      "La vida es bella.",
+      "Tengo pocos amigos."
+    ]
+  }
+}

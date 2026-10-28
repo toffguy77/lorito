@@ -1,0 +1,116 @@
+{
+  "id": "locuciones-cultas-c2",
+  "title_ru": "Книжный оборот",
+  "cards": [
+    "C2-11"
+  ],
+  "phrases": [
+    {
+      "text": "a la sazón",
+      "ru": "в то время",
+      "example": "El rey, a la sazón un niño, no gobernaba."
+    },
+    {
+      "text": "a la postre",
+      "ru": "в конце концов",
+      "example": "A la postre, todos sus esfuerzos fueron vanos."
+    },
+    {
+      "text": "en aras de|del",
+      "ru": "ради, во имя",
+      "example": "Cedió en aras del acuerdo."
+    },
+    {
+      "text": "so pena de",
+      "ru": "под угрозой",
+      "example": "Debe pagar, so pena de embargo."
+    },
+    {
+      "text": "a tenor de|del",
+      "ru": "согласно",
+      "example": "A tenor de lo dispuesto en la ley, se archiva."
+    },
+    {
+      "text": "habida cuenta",
+      "ru": "принимая во внимание",
+      "example": "Habida cuenta de su edad, se le eximió."
+    },
+    {
+      "text": "a la zaga",
+      "ru": "позади, не отставая",
+      "example": "No le va a la zaga en talento."
+    },
+    {
+      "text": "~poner coto",
+      "ru": "положить предел",
+      "example": "Hay que poner coto a los abusos."
+    },
+    {
+      "text": "sentar|sienta|sientan|sentó|sentaron|sentado las bases",
+      "ru": "заложить основы",
+      "example": "El tratado sentó las bases de la paz."
+    },
+    {
+      "text": "chivo expiatorio",
+      "ru": "козёл отпущения",
+      "example": "Lo convirtieron en el chivo expiatorio."
+    },
+    {
+      "text": "el rubicón",
+      "ru": "сделать необратимый шаг",
+      "example": "Con esa decisión cruzó el Rubicón."
+    },
+    {
+      "text": "talón de aquiles",
+      "ru": "уязвимое место",
+      "example": "La defensa es su talón de Aquiles."
+    },
+    {
+      "text": "espada de damocles",
+      "ru": "нависшая угроза",
+      "example": "La deuda es una espada de Damocles."
+    },
+    {
+      "text": "trabajo de sísifo",
+      "ru": "бесконечный труд",
+      "example": "Limpiar esta casa es un trabajo de Sísifo."
+    },
+    {
+      "text": "caja de pandora",
+      "ru": "череда бед",
+      "example": "Esa reforma abrió la caja de Pandora."
+    },
+    {
+      "text": "caso omiso",
+      "ru": "игнорировать",
+      "example": "Hizo caso omiso de las advertencias."
+    },
+    {
+      "text": "~dar pábulo",
+      "ru": "подпитывать (слухи)",
+      "example": "No hay que dar pábulo a los rumores."
+    },
+    {
+      "text": "echar|echa|echan|echó|echaron|echado por tierra",
+      "ru": "разрушить (план)",
+      "example": "La lluvia echó por tierra nuestros planes."
+    },
+    {
+      "text": "~salir al paso",
+      "ru": "пресечь, выйти навстречу",
+      "example": "El ministro salió al paso de las críticas."
+    },
+    {
+      "text": "tela de juicio",
+      "ru": "под сомнение",
+      "example": "Puso en tela de juicio sus datos."
+    }
+  ],
+  "examples": {
+    "negative": [
+      "La caja está en la mesa.",
+      "Hay que pagar la cuenta.",
+      "Salió a la calle."
+    ]
+  }
+}

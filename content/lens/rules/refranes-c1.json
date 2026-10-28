@@ -1,0 +1,86 @@
+{
+  "id": "refranes-c1",
+  "title_ru": "Пословица",
+  "cards": [
+    "C1-17"
+  ],
+  "phrases": [
+    {
+      "text": "no por mucho madrugar",
+      "ru": "спешка не ускоряет дела",
+      "example": "No por mucho madrugar amanece más temprano."
+    },
+    {
+      "text": "a quien madruga",
+      "ru": "кто рано встаёт, тому Бог подаёт",
+      "example": "A quien madruga, Dios le ayuda."
+    },
+    {
+      "text": "en boca cerrada",
+      "ru": "молчание — золото",
+      "example": "Mejor callar: en boca cerrada no entran moscas."
+    },
+    {
+      "text": "más vale prevenir",
+      "ru": "лучше предупредить, чем лечить",
+      "example": "Más vale prevenir que curar."
+    },
+    {
+      "text": "no hay mal que cien años",
+      "ru": "ничто не вечно",
+      "example": "Ánimo, no hay mal que cien años dure."
+    },
+    {
+      "text": "quien mucho abarca",
+      "ru": "кто за многое берётся, мало успевает",
+      "example": "Quien mucho abarca, poco aprieta."
+    },
+    {
+      "text": "dime con quién andas",
+      "ru": "скажи, кто твой друг…",
+      "example": "Dime con quién andas y te diré quién eres."
+    },
+    {
+      "text": "a caballo regalado",
+      "ru": "дарёному коню в зубы не смотрят",
+      "example": "A caballo regalado no le mires el diente."
+    },
+    {
+      "text": "el que no llora",
+      "ru": "под лежачий камень вода не течёт",
+      "example": "Pide el aumento: el que no llora, no mama."
+    },
+    {
+      "text": "más vale tarde",
+      "ru": "лучше поздно, чем никогда",
+      "example": "Llegó a las diez, pero más vale tarde que nunca."
+    },
+    {
+      "text": "más vale pájaro en mano",
+      "ru": "лучше синица в руках",
+      "example": "Más vale pájaro en mano que ciento volando."
+    },
+    {
+      "text": "todo lo que reluce",
+      "ru": "не всё то золото, что блестит",
+      "example": "No es oro todo lo que reluce."
+    },
+    {
+      "text": "cría cuervos",
+      "ru": "пригрел змею на груди",
+      "example": "Cría cuervos y te sacarán los ojos."
+    },
+    {
+      "text": "ojos que no ven",
+      "ru": "с глаз долой — из сердца вон",
+      "example": "Ojos que no ven, corazón que no siente."
+    }
+  ],
+  "examples": {
+    "negative": [
+      "Más vale ir temprano.",
+      "Mañana madrugo mucho.",
+      "Quien quiera venir, que venga."
+    ]
+  }
+}

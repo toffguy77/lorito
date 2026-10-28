@@ -1,0 +1,86 @@
+{
+  "id": "formulas-b2",
+  "title_ru": "Абстрактная формула B2",
+  "cards": [
+    "B2-25"
+  ],
+  "phrases": [
+    {
+      "text": "~sacar conclusiones",
+      "ru": "делать выводы",
+      "example": "Es pronto para sacar conclusiones."
+    },
+    {
+      "text": "~sacar una|la|alguna conclusión",
+      "ru": "сделать вывод",
+      "example": "Sacamos una conclusión clara del estudio."
+    },
+    {
+      "text": "~llegar a un acuerdo",
+      "ru": "прийти к соглашению",
+      "example": "Las partes llegaron a un acuerdo."
+    },
+    {
+      "text": "~tomar conciencia",
+      "ru": "осознать",
+      "example": "Debemos tomar conciencia del problema."
+    },
+    {
+      "text": "~hacer hincapié",
+      "ru": "делать акцент",
+      "example": "El ministro hizo hincapié en la educación."
+    },
+    {
+      "text": "~poner de manifiesto",
+      "ru": "выявить, показать",
+      "example": "El informe pone de manifiesto la desigualdad."
+    },
+    {
+      "text": "cabe señalar|destacar|recordar|mencionar|subrayar",
+      "ru": "следует отметить",
+      "example": "Cabe señalar que los datos son provisionales."
+    },
+    {
+      "text": "conviene recordar|señalar|destacar|subrayar",
+      "ru": "стоит напомнить",
+      "example": "Conviene recordar que el plazo termina hoy."
+    },
+    {
+      "text": "~tomar medidas",
+      "ru": "принимать меры",
+      "example": "El gobierno tomó medidas contra la crisis."
+    },
+    {
+      "text": "huella de carbono",
+      "ru": "углеродный след",
+      "example": "Queremos reducir la huella de carbono."
+    },
+    {
+      "text": "medios de comunicación",
+      "ru": "СМИ",
+      "example": "Los medios de comunicación difundieron la noticia."
+    },
+    {
+      "text": "libertad de expresión",
+      "ru": "свобода слова",
+      "example": "La libertad de expresión es un derecho."
+    },
+    {
+      "text": "mercado laboral",
+      "ru": "рынок труда",
+      "example": "El mercado laboral ha cambiado mucho."
+    },
+    {
+      "text": "desarrollo sostenible",
+      "ru": "устойчивое развитие",
+      "example": "La empresa apuesta por el desarrollo sostenible."
+    }
+  ],
+  "examples": {
+    "negative": [
+      "Tomamos un café en la plaza.",
+      "El mercado abre a las nueve.",
+      "No cabe en la maleta."
+    ]
+  }
+}

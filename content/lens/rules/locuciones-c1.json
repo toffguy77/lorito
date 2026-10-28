@@ -1,0 +1,101 @@
+{
+  "id": "locuciones-c1",
+  "title_ru": "Фразеологизм",
+  "cards": [
+    "C1-16"
+  ],
+  "phrases": [
+    {
+      "text": "~dar la lata",
+      "ru": "надоедать",
+      "example": "Mi hermano no para de dar la lata."
+    },
+    {
+      "text": "el qué dirán",
+      "ru": "что скажут люди",
+      "example": "Le preocupa demasiado el qué dirán."
+    },
+    {
+      "text": "mosquita muerta",
+      "ru": "тихоня себе на уме",
+      "example": "Parece una mosquita muerta, pero no lo es."
+    },
+    {
+      "text": "de pelo en pecho",
+      "ru": "мужественный",
+      "example": "Es un hombre de pelo en pecho."
+    },
+    {
+      "text": "de pacotilla",
+      "ru": "никудышный",
+      "example": "Es un político de pacotilla."
+    },
+    {
+      "text": "a duras penas",
+      "ru": "с трудом",
+      "example": "Aprobó a duras penas."
+    },
+    {
+      "text": "sin ton ni son",
+      "ru": "без причины",
+      "example": "Habla sin ton ni son."
+    },
+    {
+      "text": "a raíz de",
+      "ru": "вследствие",
+      "example": "A raíz de la crisis, cerró la tienda."
+    },
+    {
+      "text": "en virtud de",
+      "ru": "в силу",
+      "example": "Actuó en virtud de la ley."
+    },
+    {
+      "text": "con miras a",
+      "ru": "с целью",
+      "example": "Ahorra con miras a comprar una casa."
+    },
+    {
+      "text": "el|su brazo a torcer",
+      "ru": "не уступать",
+      "example": "No dio su brazo a torcer."
+    },
+    {
+      "text": "el santo al cielo",
+      "ru": "забыть, что хотел сказать",
+      "example": "Perdona, se me fue el santo al cielo."
+    },
+    {
+      "text": "~estar en el ajo",
+      "ru": "быть в курсе (тайны)",
+      "example": "Todos sabían que él estaba en el ajo."
+    },
+    {
+      "text": "tres pies al gato",
+      "ru": "искать сложности на ровном месте",
+      "example": "No le busques tres pies al gato."
+    },
+    {
+      "text": "a buenas horas",
+      "ru": "слишком поздно",
+      "example": "¡A buenas horas llegas!"
+    },
+    {
+      "text": "el grito en el cielo",
+      "ru": "возмущаться",
+      "example": "Los vecinos pusieron el grito en el cielo."
+    },
+    {
+      "text": "gato por liebre",
+      "ru": "обмануть, подсунуть негодное",
+      "example": "En esa tienda te dan gato por liebre."
+    }
+  ],
+  "examples": {
+    "negative": [
+      "Tengo un gato en casa.",
+      "El cielo está azul.",
+      "Me duele el brazo."
+    ]
+  }
+}

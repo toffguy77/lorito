@@ -1,0 +1,66 @@
+{
+  "id": "formulas-a2",
+  "title_ru": "Речевая формула A2",
+  "cards": [
+    "A2-29"
+  ],
+  "phrases": [
+    {
+      "text": "qué tiempo hace",
+      "ru": "какая погода?",
+      "example": "¿Qué tiempo hace hoy en Madrid?"
+    },
+    {
+      "text": "~hacer sol|calor|frío|viento|fresco",
+      "ru": "погода: hace + сущ.",
+      "example": "En verano hace calor en Sevilla."
+    },
+    {
+      "text": "~estar nublado",
+      "ru": "облачно",
+      "example": "Hoy está nublado y no vamos a la playa."
+    },
+    {
+      "text": "cuánto cuesta|cuestan",
+      "ru": "сколько стоит?",
+      "example": "¿Cuánto cuesta esta camiseta?"
+    },
+    {
+      "text": "~seguir recto",
+      "ru": "идти прямо",
+      "example": "Siga recto hasta la plaza."
+    },
+    {
+      "text": "en efectivo",
+      "ru": "наличными",
+      "example": "¿Puedo pagar en efectivo?"
+    },
+    {
+      "text": "con tarjeta",
+      "ru": "картой",
+      "example": "Prefiero pagar con tarjeta."
+    },
+    {
+      "text": "dolor de cabeza|estómago|espalda|garganta|muelas",
+      "ru": "боль (головная, в животе…)",
+      "example": "Tengo dolor de cabeza desde ayer."
+    },
+    {
+      "text": "~tener fiebre|tos|gripe",
+      "ru": "у меня температура / кашель / грипп",
+      "example": "El niño tiene fiebre y no va al colegio."
+    },
+    {
+      "text": "me llevo este|esta|esto",
+      "ru": "я беру это (покупка)",
+      "example": "Me llevo esta chaqueta, gracias."
+    }
+  ],
+  "examples": {
+    "negative": [
+      "Hace dos años que vivo aquí.",
+      "No tengo tiempo hoy.",
+      "Esta tarjeta es nueva."
+    ]
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "id": "atenuacion-c1",
+  "title_ru": "Смягчение",
+  "cards": [
+    "C1-23"
+  ],
+  "phrases": [
+    {
+      "text": "te|le|os|les importaría",
+      "ru": "вы не против…? (вежливая просьба)",
+      "example": "¿Te importaría cerrar la ventana?"
+    },
+    {
+      "text": "si no te|le|os|les importa",
+      "ru": "если вы не против",
+      "example": "Me siento aquí, si no te importa."
+    },
+    {
+      "text": "me temo que",
+      "ru": "боюсь, что (вежливый отказ)",
+      "example": "Me temo que no va a ser posible."
+    },
+    {
+      "text": "por así decirlo",
+      "ru": "так сказать",
+      "example": "Es, por así decirlo, un genio."
+    },
+    {
+      "text": "si no me equivoco",
+      "ru": "если не ошибаюсь",
+      "example": "Si no me equivoco, la reunión es mañana."
+    },
+    {
+      "text": "yo diría que",
+      "ru": "я бы сказал(а), что",
+      "example": "Yo diría que tienes razón."
+    },
+    {
+      "text": "en cierto modo",
+      "ru": "в некотором роде",
+      "example": "En cierto modo, tiene sentido."
+    },
+    {
+      "text": "se ruega",
+      "ru": "просьба (безличн.)",
+      "example": "Se ruega silencio en la sala."
+    },
+    {
+      "text": "de lo más",
+      "ru": "крайне, очень",
+      "example": "La película es de lo más divertida."
+    },
+    {
+      "text": "que flipas",
+      "ru": "офигенно (разг.)",
+      "example": "Canta que flipas."
+    }
+  ],
+  "examples": {
+    "negative": [
+      "Me importa mucho tu opinión.",
+      "Digo que no.",
+      "Cierto día llegó tarde."
+    ]
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "id": "formulas-b1",
+  "title_ru": "Речевая формула B1",
+  "cards": [
+    "B1-25"
+  ],
+  "phrases": [
+    {
+      "text": "echo|echas|echa|echamos|echan|eché|echó|echaba|echar|echado de menos",
+      "ru": "скучать по",
+      "example": "Echo de menos a mi familia."
+    },
+    {
+      "text": "me|te|se|nos|os ~llevar bien|mal|fatal",
+      "ru": "ладить / не ладить",
+      "example": "Me llevo bien con mis compañeros."
+    },
+    {
+      "text": "~hacer las paces",
+      "ru": "помириться",
+      "example": "Al final hicieron las paces."
+    },
+    {
+      "text": "~estar al día",
+      "ru": "быть в курсе",
+      "example": "Leo la prensa para estar al día."
+    },
+    {
+      "text": "~dar vergüenza|pena",
+      "ru": "стыдно / жалко",
+      "example": "Me da vergüenza hablar en público."
+    },
+    {
+      "text": "yo que tú",
+      "ru": "на твоём месте",
+      "example": "Yo que tú, iría al médico."
+    },
+    {
+      "text": "~estar en paro",
+      "ru": "быть безработным",
+      "example": "Mi primo está en paro desde marzo."
+    },
+    {
+      "text": "~sacar buena|buenas|mala|malas nota|notas",
+      "ru": "получить хорошую/плохую оценку",
+      "example": "Saqué buena nota en el examen."
+    },
+    {
+      "text": "~buscar empleo",
+      "ru": "искать работу",
+      "example": "Busco empleo en una empresa grande."
+    },
+    {
+      "text": "~estar acostumbrado|acostumbrada|acostumbrados|acostumbradas a",
+      "ru": "привык(ла) к",
+      "example": "Estoy acostumbrado a madrugar."
+    },
+    {
+      "text": "lo mejor sería que",
+      "ru": "лучше всего было бы, чтобы",
+      "example": "Lo mejor sería que hablaras con él."
+    },
+    {
+      "text": "calentamiento global",
+      "ru": "глобальное потепление",
+      "example": "El calentamiento global es un problema serio."
+    }
+  ],
+  "examples": {
+    "negative": [
+      "Echa sal a la sopa.",
+      "Llevo el libro a clase.",
+      "Hoy es un buen día para descansar."
+    ]
+  }
+}

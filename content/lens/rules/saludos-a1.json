@@ -1,0 +1,61 @@
+{
+  "id": "saludos-a1",
+  "title_ru": "Формула вежливости",
+  "cards": [
+    "A1-30"
+  ],
+  "phrases": [
+    {
+      "text": "buenos días",
+      "ru": "доброе утро / добрый день",
+      "example": "Buenos días, ¿cómo estás?"
+    },
+    {
+      "text": "buenas tardes",
+      "ru": "добрый день",
+      "example": "Buenas tardes, señora García."
+    },
+    {
+      "text": "buenas noches",
+      "ru": "добрый вечер / спокойной ночи",
+      "example": "Buenas noches, mamá, hasta mañana."
+    },
+    {
+      "text": "hasta luego",
+      "ru": "до встречи",
+      "example": "Me voy a casa, ¡hasta luego!"
+    },
+    {
+      "text": "hasta pronto",
+      "ru": "до скорого",
+      "example": "Gracias por todo y hasta pronto."
+    },
+    {
+      "text": "muchas gracias",
+      "ru": "большое спасибо",
+      "example": "Muchas gracias por la ayuda."
+    },
+    {
+      "text": "lo siento",
+      "ru": "извините / мне жаль",
+      "example": "Lo siento, no puedo ir a la fiesta."
+    },
+    {
+      "text": "por favor",
+      "ru": "пожалуйста (просьба)",
+      "example": "Un café con leche, por favor."
+    },
+    {
+      "text": "cómo se dice",
+      "ru": "как сказать…?",
+      "example": "¿Cómo se dice «libro» en ruso?"
+    }
+  ],
+  "examples": {
+    "negative": [
+      "Hoy es un buen día.",
+      "Hasta ahora no ha llegado nadie.",
+      "Tengo muchas cosas que hacer."
+    ]
+  }
+}

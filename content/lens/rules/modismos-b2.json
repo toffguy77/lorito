@@ -1,0 +1,132 @@
+{
+  "id": "modismos-b2",
+  "title_ru": "Идиома",
+  "cards": [
+    "B2-22"
+  ],
+  "phrases": [
+    {
+      "text": "~estar hecho|hecha|hechos|hechas polvo",
+      "ru": "вымотаться",
+      "example": "Después del viaje estoy hecho polvo."
+    },
+    {
+      "text": "un ojo de la cara",
+      "ru": "очень дорого",
+      "example": "Este coche cuesta un ojo de la cara."
+    },
+    {
+      "text": "~tomar el pelo",
+      "ru": "разыгрывать, дурачить",
+      "example": "¿Me tomas el pelo?"
+    },
+    {
+      "text": "pelos en la lengua",
+      "ru": "резать правду в глаза",
+      "example": "Mi abuela no tiene pelos en la lengua."
+    },
+    {
+      "text": "~poner las pilas",
+      "ru": "взяться за дело",
+      "example": "Si quieres aprobar, te pones las pilas ya."
+    },
+    {
+      "text": "ponte|ponerse|ponerme|ponerte|poneos las pilas",
+      "ru": "взяться за дело",
+      "example": "Tienes que ponerte las pilas con el español."
+    },
+    {
+      "text": "~dar en el clavo",
+      "ru": "попасть в точку",
+      "example": "Con esa respuesta diste en el clavo."
+    },
+    {
+      "text": "echa|echas|echo|echar|eché|echó|échame|échale|echarte|echarle una mano",
+      "ru": "помочь",
+      "example": "¿Me echas una mano con la mudanza?"
+    },
+    {
+      "text": "meto|metes|mete|metí|metiste|metió|metimos|metieron|meter|metido la pata",
+      "ru": "оплошать",
+      "example": "Metí la pata con mi jefe."
+    },
+    {
+      "text": "~estar en las nubes",
+      "ru": "витать в облаках",
+      "example": "Hoy estás en las nubes."
+    },
+    {
+      "text": "~ser pan comido",
+      "ru": "проще простого",
+      "example": "El examen fue pan comido."
+    },
+    {
+      "text": "~quedar de piedra",
+      "ru": "остолбенеть",
+      "example": "Me quedé de piedra al ver la noticia."
+    },
+    {
+      "text": "tirar|tiro|tira|tiras|tiró|tiré|tires la toalla",
+      "ru": "сдаться",
+      "example": "No tires la toalla tan pronto."
+    },
+    {
+      "text": "~hacer la vista gorda",
+      "ru": "закрыть глаза (на что-то)",
+      "example": "El profesor hizo la vista gorda."
+    },
+    {
+      "text": "~estar como una cabra",
+      "ru": "быть с приветом",
+      "example": "Tu vecino está como una cabra."
+    },
+    {
+      "text": "como pez en el agua",
+      "ru": "как рыба в воде",
+      "example": "En la cocina se siente como pez en el agua."
+    },
+    {
+      "text": "vale|valió|valdrá|valdría|valía|merece la pena",
+      "ru": "оно того стоит",
+      "example": "Vale la pena visitar Granada."
+    },
+    {
+      "text": "~dar igual",
+      "ru": "всё равно",
+      "example": "Me da igual dónde cenar."
+    },
+    {
+      "text": "~dar lo mismo",
+      "ru": "всё равно",
+      "example": "A mí me da lo mismo."
+    },
+    {
+      "text": "por si acaso",
+      "ru": "на всякий случай",
+      "example": "Llévate el paraguas por si acaso."
+    },
+    {
+      "text": "de vez en cuando",
+      "ru": "время от времени",
+      "example": "Voy al cine de vez en cuando."
+    },
+    {
+      "text": "no hay mal que por bien",
+      "ru": "нет худа без добра",
+      "example": "Perdí el tren, pero no hay mal que por bien no venga."
+    },
+    {
+      "text": "a mal tiempo buena cara",
+      "ru": "держать хорошую мину",
+      "example": "Ya sabes: a mal tiempo, buena cara."
+    }
+  ],
+  "examples": {
+    "negative": [
+      "Tengo una mano rota.",
+      "El pelo de mi hermana es largo.",
+      "Hay nubes en el cielo.",
+      "Me quedo en casa."
+    ]
+  }
+}
