@@ -1,0 +1,45 @@
+{
+  "id": "a-pesar-de",
+  "title_ru": "A pesar de (que)",
+  "cards": [
+    "B2-11"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "a"
+      ]
+    },
+    {
+      "surface": [
+        "pesar"
+      ]
+    },
+    {
+      "surface": [
+        "de"
+      ]
+    }
+  ],
+  "requires": [
+    {
+      "not_before": {
+        "lemma": [
+          "ir"
+        ]
+      },
+      "within": 1
+    }
+  ],
+  "examples": {
+    "positive": [
+      "A pesar de la lluvia, salimos.",
+      "A pesar de que estaba cansado, vino.",
+      "Lo hizo a pesar de todo."
+    ],
+    "negative": [
+      "Voy a pesar la fruta.",
+      "Va a pasar."
+    ]
+  }
+}

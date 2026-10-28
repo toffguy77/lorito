@@ -1,0 +1,40 @@
+{
+  "id": "reflexivo-nos",
+  "title_ru": "Возвратный глагол (me llamo, se levanta)",
+  "cards": [
+    "A1-21"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "nos"
+      ]
+    },
+    {
+      "surface": [
+        "llamamos",
+        "levantamos",
+        "duchamos",
+        "acostamos",
+        "despertamos",
+        "lavamos",
+        "vestimos",
+        "sentimos",
+        "quedamos",
+        "vamos"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Nos levantamos tarde.",
+      "Nos quedamos en casa.",
+      "Nos llamamos Ana y Luis."
+    ],
+    "negative": [
+      "Nos llama.",
+      "Nos ven."
+    ]
+  }
+}

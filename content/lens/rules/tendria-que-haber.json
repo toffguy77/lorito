@@ -1,0 +1,42 @@
+{
+  "id": "tendria-que-haber",
+  "title_ru": "Упрёк: tendría que haber + participio",
+  "cards": [
+    "B2-09"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "tendría",
+        "tendrías",
+        "tendríamos",
+        "tendrían"
+      ]
+    },
+    {
+      "surface": [
+        "que"
+      ]
+    },
+    {
+      "surface": [
+        "haber"
+      ]
+    },
+    {
+      "set": "participio-flex"
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Tendrías que haber venido.",
+      "Tendría que haber estudiado.",
+      "Tendríamos que haber salido antes."
+    ],
+    "negative": [
+      "Tendrías que venir.",
+      "Tienes que haber terminado."
+    ]
+  }
+}

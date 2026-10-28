@@ -1,0 +1,61 @@
+{
+  "id": "se-accidental",
+  "title_ru": "Se accidental: se me olvidó",
+  "cards": [
+    "B2-14"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "se"
+      ]
+    },
+    {
+      "surface": [
+        "me",
+        "te",
+        "le",
+        "nos",
+        "les"
+      ]
+    },
+    {
+      "surface": [
+        "olvidó",
+        "olvidaron",
+        "olvida",
+        "olvidan",
+        "cayó",
+        "cayeron",
+        "cae",
+        "caen",
+        "rompió",
+        "rompieron",
+        "perdió",
+        "perdieron",
+        "acabó",
+        "acabaron",
+        "quemó",
+        "escapó",
+        "escaparon",
+        "ocurrió",
+        "ocurre",
+        "manchó",
+        "estropeó",
+        "murió"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Se me olvidó la llave.",
+      "Se le cayó el vaso.",
+      "Se nos acabó el pan."
+    ],
+    "negative": [
+      "Me olvidé de la llave.",
+      "Se lo di."
+    ]
+  }
+}

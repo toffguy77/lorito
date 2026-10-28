@@ -1,0 +1,46 @@
+{
+  "id": "fechas",
+  "title_ru": "Дни недели и месяцы",
+  "cards": [
+    "A1-29"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "lunes",
+        "martes",
+        "miércoles",
+        "jueves",
+        "viernes",
+        "sábado",
+        "domingo",
+        "sábados",
+        "domingos",
+        "enero",
+        "febrero",
+        "marzo",
+        "abril",
+        "mayo",
+        "junio",
+        "julio",
+        "agosto",
+        "septiembre",
+        "octubre",
+        "noviembre",
+        "diciembre"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "El lunes trabajo.",
+      "Nací en mayo.",
+      "Hoy es martes."
+    ],
+    "negative": [
+      "Hoy trabajo.",
+      "Mañana voy."
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "id": "no-hay-nadie-que",
+  "title_ru": "No hay nadie que + subjuntivo",
+  "cards": [
+    "B1-08"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "nadie",
+        "nada",
+        "ninguno",
+        "ninguna"
+      ]
+    },
+    {
+      "surface": [
+        "que"
+      ]
+    },
+    {
+      "set": "presente-subjuntivo",
+      "gap": 1
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "No hay nadie que sepa la respuesta.",
+      "No hay nada que pueda hacer.",
+      "No conozco a nadie que viva aquí."
+    ],
+    "negative": [
+      "No sé nada.",
+      "Nadie que conozco vive aquí."
+    ]
+  }
+}

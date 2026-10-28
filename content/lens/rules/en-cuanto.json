@@ -1,0 +1,35 @@
+{
+  "id": "en-cuanto",
+  "title_ru": "En cuanto + subjuntivo («как только»)",
+  "cards": [
+    "B2-12"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "en"
+      ]
+    },
+    {
+      "surface": [
+        "cuanto"
+      ]
+    },
+    {
+      "set": "presente-subjuntivo",
+      "gap": 2
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "En cuanto llegues, llámame.",
+      "Te aviso en cuanto sepa algo.",
+      "En cuanto termine, salgo."
+    ],
+    "negative": [
+      "En cuanto a eso, no sé.",
+      "En cuanto llegó, cenamos."
+    ]
+  }
+}

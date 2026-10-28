@@ -1,0 +1,33 @@
+{
+  "id": "perfecto-subjuntivo",
+  "title_ru": "Pretérito perfecto de subjuntivo (haya hablado)",
+  "cards": [
+    "B2-01"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "haya",
+        "hayas",
+        "hayamos",
+        "hayáis",
+        "hayan"
+      ]
+    },
+    {
+      "set": "participio-flex"
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Espero que hayas comido.",
+      "No creo que haya llegado.",
+      "Me alegro de que hayan venido."
+    ],
+    "negative": [
+      "Ha llegado.",
+      "Hay comida."
+    ]
+  }
+}

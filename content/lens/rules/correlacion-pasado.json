@@ -1,0 +1,43 @@
+{
+  "id": "correlacion-pasado",
+  "title_ru": "Согласование: quería que + imperfecto de subjuntivo",
+  "cards": [
+    "B1-10",
+    "B2-03"
+  ],
+  "pattern": [
+    {
+      "lemma": [
+        "querer",
+        "pedir",
+        "esperar",
+        "preferir",
+        "necesitar",
+        "decir"
+      ],
+      "set": "pasado"
+    },
+    {
+      "surface": [
+        "que"
+      ],
+      "gap": 2
+    },
+    {
+      "set": "imperfecto-subjuntivo",
+      "gap": 3
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Quería que vinieras.",
+      "Me pidió que lo llamara.",
+      "Esperaba que fuera más fácil."
+    ],
+    "negative": [
+      "Quiero que vengas.",
+      "Quería un café."
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "relativos",
+  "title_ru": "Относительные: donde, quien",
+  "cards": [
+    "A2-23"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "donde",
+        "quien",
+        "quienes"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "La ciudad donde vivo es bonita.",
+      "Es la persona con quien hablé.",
+      "Los alumnos, quienes llegaron tarde, no entraron."
+    ],
+    "negative": [
+      "¿Dónde vives?",
+      "¿Quién es?"
+    ]
+  }
+}

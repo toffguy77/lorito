@@ -1,0 +1,31 @@
+{
+  "id": "si-bien",
+  "title_ru": "Si bien — «хотя»",
+  "cards": [
+    "B2-11"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "si"
+      ]
+    },
+    {
+      "surface": [
+        "bien"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Si bien es caro, lo compraré.",
+      "Si bien no estoy de acuerdo, lo acepto.",
+      "Lo hizo, si bien tarde."
+    ],
+    "negative": [
+      "Sí, bien.",
+      "Está bien."
+    ]
+  }
+}

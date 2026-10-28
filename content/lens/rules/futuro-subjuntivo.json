@@ -1,0 +1,25 @@
+{
+  "id": "futuro-subjuntivo",
+  "title_ru": "Futuro de subjuntivo (hablare, fuere)",
+  "cards": [
+    "C1-03",
+    "C2-03"
+  ],
+  "pattern": [
+    {
+      "set": "futuro-subjuntivo"
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Sea lo que fuere, lo haremos.",
+      "Adonde fueres, haz lo que vieres.",
+      "Si alguien tuviere dudas, pregunte."
+    ],
+    "negative": [
+      "Sea lo que sea, lo haremos.",
+      "Si alguien tiene dudas, pregunte."
+    ]
+  }
+}

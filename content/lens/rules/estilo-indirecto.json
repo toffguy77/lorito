@@ -1,0 +1,37 @@
+{
+  "id": "estilo-indirecto",
+  "title_ru": "Косвенная речь: dijo que, preguntó si",
+  "cards": [
+    "B1-17"
+  ],
+  "pattern": [
+    {
+      "lemma": [
+        "decir",
+        "contar",
+        "explicar",
+        "preguntar"
+      ],
+      "set": "pasado"
+    },
+    {
+      "surface": [
+        "que",
+        "si"
+      ],
+      "gap": 1
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Me dijo que venía.",
+      "Nos contó que estaba cansado.",
+      "Le preguntó si quería café."
+    ],
+    "negative": [
+      "Dice que viene.",
+      "Dijo la verdad."
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "es-decir",
+  "title_ru": "Связка «es decir»",
+  "cards": [
+    "B1-23"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "es"
+      ]
+    },
+    {
+      "surface": [
+        "decir"
+      ]
+    }
+  ],
+  "requires": [
+    {
+      "not_after": {
+        "surface": [
+          "que"
+        ]
+      },
+      "within": 1
+    }
+  ],
+  "examples": {
+    "positive": [
+      "Llega el lunes, es decir, mañana.",
+      "Es decir, no vienes.",
+      "Es mi tía, es decir, la hermana de mi madre."
+    ],
+    "negative": [
+      "Quiero decir algo.",
+      "Es difícil decir."
+    ]
+  }
+}

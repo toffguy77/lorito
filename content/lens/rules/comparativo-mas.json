@@ -1,0 +1,33 @@
+{
+  "id": "comparativo-mas",
+  "title_ru": "Сравнение: más / menos … que",
+  "cards": [
+    "A2-17"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "más",
+        "menos"
+      ]
+    },
+    {
+      "surface": [
+        "que"
+      ],
+      "gap": 3
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Es más alto que yo.",
+      "Tengo menos dinero que tú.",
+      "Hoy hace más calor que ayer."
+    ],
+    "negative": [
+      "Quiero más.",
+      "Más o menos."
+    ]
+  }
+}

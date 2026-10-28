@@ -1,0 +1,41 @@
+{
+  "id": "a-fin-de-que",
+  "title_ru": "A fin de que + subjuntivo",
+  "cards": [
+    "B2-12"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "a"
+      ]
+    },
+    {
+      "surface": [
+        "fin"
+      ]
+    },
+    {
+      "surface": [
+        "de"
+      ]
+    },
+    {
+      "surface": [
+        "que"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Te lo explico a fin de que lo entiendas.",
+      "Hablo despacio a fin de que me sigas.",
+      "Lo enviamos a fin de que llegue hoy."
+    ],
+    "negative": [
+      "A fin de mes cobro.",
+      "Al fin llegó."
+    ]
+  }
+}

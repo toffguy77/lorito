@@ -1,0 +1,39 @@
+{
+  "id": "perifrasis-infinitivo",
+  "title_ru": "Перифразы: acabar de, volver a, empezar a, dejar de",
+  "cards": [
+    "A2-11",
+    "B1-21"
+  ],
+  "pattern": [
+    {
+      "lemma": [
+        "acabar",
+        "volver",
+        "empezar",
+        "dejar"
+      ]
+    },
+    {
+      "surface": [
+        "a",
+        "de"
+      ]
+    },
+    {
+      "set": "infinitivo"
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Acabo de llegar.",
+      "Volvió a llamar.",
+      "Dejé de trabajar."
+    ],
+    "negative": [
+      "Volví a casa.",
+      "Dejé el libro aquí."
+    ]
+  }
+}

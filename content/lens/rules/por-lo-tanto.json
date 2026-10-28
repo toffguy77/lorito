@@ -1,0 +1,40 @@
+{
+  "id": "por-lo-tanto",
+  "title_ru": "Связки: por lo tanto, por otro lado",
+  "cards": [
+    "B1-23",
+    "B2-10"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "por"
+      ]
+    },
+    {
+      "surface": [
+        "lo",
+        "otro",
+        "un"
+      ]
+    },
+    {
+      "surface": [
+        "tanto",
+        "lado"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Llueve; por lo tanto, nos quedamos.",
+      "Por un lado es barato; por otro lado, es lejos.",
+      "No estudió, por lo tanto suspendió."
+    ],
+    "negative": [
+      "Gracias por todo.",
+      "Voy por el otro camino."
+    ]
+  }
+}

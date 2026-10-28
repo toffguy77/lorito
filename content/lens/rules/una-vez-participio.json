@@ -1,0 +1,34 @@
+{
+  "id": "una-vez-participio",
+  "title_ru": "Una vez + participio (абсолютный оборот)",
+  "cards": [
+    "C1-08"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "una"
+      ]
+    },
+    {
+      "surface": [
+        "vez"
+      ]
+    },
+    {
+      "set": "participio-flex"
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Una vez terminado el trabajo, salimos.",
+      "Una vez abierta la puerta, entramos.",
+      "Una vez hecho esto, descansa."
+    ],
+    "negative": [
+      "Una vez fui a Roma.",
+      "Lo hice una vez."
+    ]
+  }
+}

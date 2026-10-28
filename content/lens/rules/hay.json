@@ -1,0 +1,35 @@
+{
+  "id": "hay",
+  "title_ru": "Hay — «есть, имеется»",
+  "cards": [
+    "A1-17"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "hay"
+      ]
+    }
+  ],
+  "requires": [
+    {
+      "not_after": {
+        "surface": [
+          "que"
+        ]
+      },
+      "within": 1
+    }
+  ],
+  "examples": {
+    "positive": [
+      "Hay un banco aquí.",
+      "¿Hay leche?",
+      "No hay problema."
+    ],
+    "negative": [
+      "Hay que estudiar.",
+      "Ahí está."
+    ]
+  }
+}

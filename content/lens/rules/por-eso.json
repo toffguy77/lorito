@@ -1,0 +1,31 @@
+{
+  "id": "por-eso",
+  "title_ru": "Связка «por eso»",
+  "cards": [
+    "A2-22"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "por"
+      ]
+    },
+    {
+      "surface": [
+        "eso"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Estaba cansado, por eso no vine.",
+      "Por eso te llamo.",
+      "Llueve; por eso me quedo."
+    ],
+    "negative": [
+      "Lo hago por ti.",
+      "Eso es todo."
+    ]
+  }
+}

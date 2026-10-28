@@ -1,0 +1,35 @@
+{
+  "id": "como-si",
+  "title_ru": "Como si + imperfecto de subjuntivo",
+  "cards": [
+    "B1-10"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "como"
+      ]
+    },
+    {
+      "surface": [
+        "si"
+      ]
+    },
+    {
+      "set": "imperfecto-subjuntivo",
+      "gap": 2
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Habla como si fuera el jefe.",
+      "Me mira como si no me conociera.",
+      "Gasta como si tuviera mucho dinero."
+    ],
+    "negative": [
+      "Como pan si tengo hambre.",
+      "Habla como el jefe."
+    ]
+  }
+}

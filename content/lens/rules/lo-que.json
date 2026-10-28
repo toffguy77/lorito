@@ -1,0 +1,32 @@
+{
+  "id": "lo-que",
+  "title_ru": "Lo que — «то, что»",
+  "cards": [
+    "A2-23",
+    "B2-19"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "lo"
+      ]
+    },
+    {
+      "surface": [
+        "que"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "No entiendo lo que dices.",
+      "Lo que quiero es dormir.",
+      "Haz lo que quieras."
+    ],
+    "negative": [
+      "Lo veo.",
+      "Que te vaya bien."
+    ]
+  }
+}

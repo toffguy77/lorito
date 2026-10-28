@@ -1,0 +1,41 @@
+{
+  "id": "por-mas-que",
+  "title_ru": "Por más que / por mucho que (уступка)",
+  "cards": [
+    "B2-11"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "por"
+      ]
+    },
+    {
+      "surface": [
+        "más",
+        "mucho",
+        "mucha",
+        "muchos",
+        "muchas"
+      ]
+    },
+    {
+      "surface": [
+        "que"
+      ],
+      "gap": 2
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Por más que lo intento, no puedo.",
+      "Por mucho que estudies, es difícil.",
+      "Por mucho dinero que tenga, no es feliz."
+    ],
+    "negative": [
+      "Gracias por más tiempo.",
+      "Lo hago por mucho tiempo."
+    ]
+  }
+}

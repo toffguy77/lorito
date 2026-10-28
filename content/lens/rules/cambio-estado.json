@@ -1,0 +1,86 @@
+{
+  "id": "cambio-estado",
+  "title_ru": "Изменение состояния: ponerse, volverse, quedarse",
+  "cards": [
+    "B1-20"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "se",
+        "me",
+        "te",
+        "nos"
+      ]
+    },
+    {
+      "surface": [
+        "puso",
+        "pone",
+        "pongo",
+        "pusieron",
+        "puse",
+        "volvió",
+        "vuelve",
+        "volvieron",
+        "quedó",
+        "queda",
+        "quedé",
+        "quedaron",
+        "quedan",
+        "pongo"
+      ]
+    },
+    {
+      "surface": [
+        "loco",
+        "loca",
+        "rojo",
+        "roja",
+        "triste",
+        "tristes",
+        "nervioso",
+        "nerviosa",
+        "nerviosos",
+        "ciego",
+        "ciega",
+        "sordo",
+        "sorda",
+        "calvo",
+        "viudo",
+        "viuda",
+        "embarazada",
+        "dormido",
+        "dormida",
+        "callado",
+        "callada",
+        "pálido",
+        "pálida",
+        "serio",
+        "seria",
+        "contento",
+        "contenta",
+        "furioso",
+        "furiosa",
+        "enfermo",
+        "enferma",
+        "famoso",
+        "famosa",
+        "rico",
+        "rica"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Se puso rojo.",
+      "Me quedé dormido.",
+      "Se volvió loco."
+    ],
+    "negative": [
+      "Se puso la chaqueta.",
+      "Me quedé en casa."
+    ]
+  }
+}

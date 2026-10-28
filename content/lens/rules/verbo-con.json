@@ -1,0 +1,49 @@
+{
+  "id": "verbo-con",
+  "title_ru": "Глагол + con: soñar con, contar con, casarse con",
+  "cards": [
+    "B2-16"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "sueño",
+        "sueñas",
+        "sueña",
+        "soñamos",
+        "sueñan",
+        "soñé",
+        "soñó",
+        "cuento",
+        "cuentas",
+        "cuenta",
+        "contamos",
+        "cuentan",
+        "casó",
+        "casé",
+        "casarse",
+        "casarme",
+        "quedé",
+        "quedamos",
+        "quedaste"
+      ]
+    },
+    {
+      "surface": [
+        "con"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Sueño con viajar.",
+      "Cuento con tu ayuda.",
+      "Se casó con un italiano."
+    ],
+    "negative": [
+      "Sueño mucho.",
+      "Cuento hasta diez."
+    ]
+  }
+}

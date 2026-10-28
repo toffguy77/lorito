@@ -1,0 +1,36 @@
+{
+  "id": "el-cual",
+  "title_ru": "Относительные: el cual, lo cual",
+  "cards": [
+    "B1-22"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "el",
+        "la",
+        "los",
+        "las",
+        "lo"
+      ]
+    },
+    {
+      "surface": [
+        "cual",
+        "cuales"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Es la razón por la cual me fui.",
+      "Llegó tarde, lo cual me molestó.",
+      "Los libros, los cuales compré ayer, son caros."
+    ],
+    "negative": [
+      "¿Cuál es tu nombre?",
+      "La razón es simple."
+    ]
+  }
+}

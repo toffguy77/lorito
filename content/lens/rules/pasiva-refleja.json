@@ -1,0 +1,53 @@
+{
+  "id": "pasiva-refleja",
+  "title_ru": "Pasiva refleja / безличное se",
+  "cards": [
+    "B1-19",
+    "B2-15"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "se"
+      ]
+    },
+    {
+      "surface": [
+        "vende",
+        "venden",
+        "alquila",
+        "alquilan",
+        "habla",
+        "hablan",
+        "busca",
+        "buscan",
+        "necesita",
+        "necesitan",
+        "prohíbe",
+        "dice",
+        "cree",
+        "sabe",
+        "puede",
+        "come",
+        "vive",
+        "trabaja",
+        "permite",
+        "ruega",
+        "ve",
+        "oye"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Se vende piso.",
+      "Aquí se habla español.",
+      "Se dice que va a llover."
+    ],
+    "negative": [
+      "Se lo vendo.",
+      "Ella habla español."
+    ]
+  }
+}

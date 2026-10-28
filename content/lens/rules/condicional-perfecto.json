@@ -1,0 +1,43 @@
+{
+  "id": "condicional-perfecto",
+  "title_ru": "Condicional perfecto (habría hablado)",
+  "cards": [
+    "B1-12",
+    "B2-09"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "habría",
+        "habrías",
+        "habríamos",
+        "habríais",
+        "habrían"
+      ]
+    },
+    {
+      "set": "participio-flex"
+    }
+  ],
+  "requires": [
+    {
+      "not_before": {
+        "surface": [
+          "si"
+        ]
+      },
+      "within": 6
+    }
+  ],
+  "examples": {
+    "positive": [
+      "Yo no habría dicho eso.",
+      "Habrías aprobado con más tiempo.",
+      "Habríamos llegado antes en tren."
+    ],
+    "negative": [
+      "Habría mucha gente.",
+      "No he dicho eso."
+    ]
+  }
+}

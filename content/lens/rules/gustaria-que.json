@@ -1,0 +1,38 @@
+{
+  "id": "gustaria-que",
+  "title_ru": "Me gustaría que + imperfecto de subjuntivo",
+  "cards": [
+    "B1-10",
+    "B2-03"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "gustaría",
+        "encantaría",
+        "importaría"
+      ]
+    },
+    {
+      "surface": [
+        "que"
+      ]
+    },
+    {
+      "set": "imperfecto-subjuntivo",
+      "gap": 3
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Me gustaría que vinieras.",
+      "Nos encantaría que te quedaras.",
+      "¿Te importaría que abriera la ventana?"
+    ],
+    "negative": [
+      "Me gustaría venir.",
+      "Me gusta que vengas."
+    ]
+  }
+}

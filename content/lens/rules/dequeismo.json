@@ -1,0 +1,39 @@
+{
+  "id": "dequeismo",
+  "title_ru": "Dequeísmo: «pienso de que» (ошибка)",
+  "cards": [
+    "C1-09"
+  ],
+  "pattern": [
+    {
+      "lemma": [
+        "pensar",
+        "creer",
+        "decir",
+        "parecer"
+      ]
+    },
+    {
+      "surface": [
+        "de"
+      ]
+    },
+    {
+      "surface": [
+        "que"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Pienso de que es tarde.",
+      "Me dijo de que vendría.",
+      "Creo de que tienes razón."
+    ],
+    "negative": [
+      "Pienso que es tarde.",
+      "Me alegro de que vengas."
+    ]
+  }
+}

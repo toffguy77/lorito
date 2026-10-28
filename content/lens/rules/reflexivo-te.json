@@ -1,0 +1,41 @@
+{
+  "id": "reflexivo-te",
+  "title_ru": "Возвратный глагол (me llamo, se levanta)",
+  "cards": [
+    "A1-21"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "te"
+      ]
+    },
+    {
+      "surface": [
+        "llamas",
+        "levantas",
+        "duchas",
+        "acuestas",
+        "despiertas",
+        "lavas",
+        "vistes",
+        "sientes",
+        "quedas",
+        "pones",
+        "vas"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "¿Cómo te llamas?",
+      "¿A qué hora te levantas?",
+      "¿Te quedas en casa?"
+    ],
+    "negative": [
+      "Te llamo luego.",
+      "Te veo mañana."
+    ]
+  }
+}

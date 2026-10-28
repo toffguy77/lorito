@@ -1,0 +1,30 @@
+{
+  "id": "pronombre-oi",
+  "title_ru": "Косвенное дополнение: le, les",
+  "cards": [
+    "A2-13"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "le",
+        "les"
+      ]
+    },
+    {
+      "set": "finito"
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Le dije la verdad.",
+      "Les escribo una carta.",
+      "¿Le gusta el café?"
+    ],
+    "negative": [
+      "Lo veo.",
+      "Ella habla."
+    ]
+  }
+}

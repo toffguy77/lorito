@@ -1,0 +1,46 @@
+{
+  "id": "pluscuamperfecto-subjuntivo",
+  "title_ru": "Pluscuamperfecto de subjuntivo (hubiera hablado)",
+  "cards": [
+    "B2-02",
+    "C1-05"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "hubiera",
+        "hubieras",
+        "hubiéramos",
+        "hubieran",
+        "hubiese",
+        "hubieses",
+        "hubiésemos",
+        "hubiesen"
+      ]
+    },
+    {
+      "set": "participio-flex"
+    }
+  ],
+  "requires": [
+    {
+      "not_before": {
+        "surface": [
+          "si"
+        ]
+      },
+      "within": 3
+    }
+  ],
+  "examples": {
+    "positive": [
+      "Ojalá hubiera estudiado más.",
+      "Me alegré de que hubieras venido.",
+      "Hubiera sido mejor no ir."
+    ],
+    "negative": [
+      "Había estudiado.",
+      "Si hubiera sabido, no habría venido."
+    ]
+  }
+}

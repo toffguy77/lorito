@@ -1,75 +1,161 @@
 {
-  "presente-subjuntivo": {
-    "tense": "presente-subjuntivo",
-    "extra": [
-      "llueva",
-      "nieve"
-    ]
-  },
-  "imperfecto-subjuntivo": {
-    "tense": "imperfecto-subjuntivo"
-  },
-  "preterito-indefinido": {
-    "tense": "preterito-indefinido"
-  },
-  "preterito-imperfecto": {
-    "tense": "preterito-imperfecto"
-  },
-  "infinitivo": {
-    "generate": "infinitives",
-    "extra": [
-      "preparar",
-      "descansar",
-      "aprobar",
-      "cocinar",
-      "salir"
-    ]
-  },
-  "participio": {
-    "generate": "participles",
-    "extra": [
-      "preparado",
-      "cocinado",
-      "terminado",
-      "aprobado"
-    ]
-  },
-  "gerundio": [
-    "hablando",
-    "comiendo",
-    "viviendo",
-    "trabajando",
-    "estudiando",
-    "leyendo",
-    "escribiendo",
-    "haciendo",
-    "diciendo",
-    "durmiendo",
-    "pidiendo",
-    "sintiendo",
-    "viniendo",
-    "siguiendo",
-    "yendo",
-    "oyendo",
-    "cayendo",
-    "trayendo",
-    "jugando",
-    "mirando",
-    "esperando",
-    "buscando",
-    "escuchando",
-    "bebiendo",
-    "corriendo",
-    "aprendiendo",
-    "cocinando",
-    "lloviendo",
-    "viajando",
-    "llamando",
-    "pensando",
-    "llegando",
-    "tomando",
-    "bailando",
-    "cantando",
-    "limpiando"
+ "presente-subjuntivo": {
+  "tense": "presente-subjuntivo",
+  "extra": [
+   "llueva",
+   "nieve"
   ]
+ },
+ "imperfecto-subjuntivo": {
+  "tense": "imperfecto-subjuntivo"
+ },
+ "preterito-indefinido": {
+  "tense": "preterito-indefinido"
+ },
+ "preterito-imperfecto": {
+  "tense": "preterito-imperfecto"
+ },
+ "infinitivo": {
+  "generate": "infinitives",
+  "extra": [
+   "preparar",
+   "descansar",
+   "aprobar",
+   "cocinar",
+   "salir",
+   "llorar",
+   "fumar",
+   "reír",
+   "nadar",
+   "mudarse",
+   "mudarnos",
+   "traducir"
+  ]
+ },
+ "participio": {
+  "generate": "participles",
+  "extra": [
+   "preparado",
+   "cocinado",
+   "terminado",
+   "aprobado"
+  ]
+ },
+ "gerundio": [
+  "hablando",
+  "comiendo",
+  "viviendo",
+  "trabajando",
+  "estudiando",
+  "leyendo",
+  "escribiendo",
+  "haciendo",
+  "diciendo",
+  "durmiendo",
+  "pidiendo",
+  "sintiendo",
+  "viniendo",
+  "siguiendo",
+  "yendo",
+  "oyendo",
+  "cayendo",
+  "trayendo",
+  "jugando",
+  "mirando",
+  "esperando",
+  "buscando",
+  "escuchando",
+  "bebiendo",
+  "corriendo",
+  "aprendiendo",
+  "cocinando",
+  "lloviendo",
+  "viajando",
+  "llamando",
+  "pensando",
+  "llegando",
+  "tomando",
+  "bailando",
+  "cantando",
+  "limpiando"
+ ],
+ "indefinido-claro": {
+  "tense": "preterito-indefinido",
+  "exclude_tenses": [
+   "presente"
+  ]
+ },
+ "futuro": {
+  "tense": "futuro-simple"
+ },
+ "condicional": {
+  "tense": "condicional-simple",
+  "extra": [
+   "gustaría",
+   "encantaría",
+   "importaría",
+   "gustarían"
+  ]
+ },
+ "presente-indicativo": {
+  "tense": "presente",
+  "extra": [
+   "hay",
+   "llueve",
+   "nieva"
+  ]
+ },
+ "pasado": {
+  "tenses": [
+   "preterito-indefinido",
+   "preterito-imperfecto"
+  ]
+ },
+ "finito": {
+  "tenses": [
+   "presente",
+   "preterito-indefinido",
+   "preterito-imperfecto",
+   "futuro-simple",
+   "condicional-simple"
+  ],
+  "extra": [
+   "gusta",
+   "gustan",
+   "gustó",
+   "encanta",
+   "encantan",
+   "interesa",
+   "duele",
+   "parece"
+  ]
+ },
+ "participio-flex": {
+  "generate": "participles",
+  "inflect": true,
+  "extra": [
+   "preparado",
+   "cocinado",
+   "terminado",
+   "aprobado",
+   "detenido",
+   "detenida",
+   "publicado",
+   "publicados",
+   "construido",
+   "construida",
+   "preocupado",
+   "preocupada",
+   "roto",
+   "rotos",
+   "rota",
+   "rotas",
+   "avisado",
+   "saludado",
+   "estropeado"
+  ]
+ },
+ "futuro-subjuntivo": {
+  "tense": "futuro-subjuntivo"
+ }
 }

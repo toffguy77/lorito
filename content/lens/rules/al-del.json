@@ -1,0 +1,27 @@
+{
+  "id": "al-del",
+  "title_ru": "Слияния al и del",
+  "cards": [
+    "A1-10"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "al",
+        "del"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Voy al cine.",
+      "Vengo del trabajo.",
+      "La casa del profesor es grande."
+    ],
+    "negative": [
+      "Voy a la playa.",
+      "Vengo de la tienda."
+    ]
+  }
+}

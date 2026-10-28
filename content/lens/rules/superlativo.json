@@ -1,0 +1,46 @@
+{
+  "id": "superlativo",
+  "title_ru": "Превосходная степень: el más … de",
+  "cards": [
+    "A2-18"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "el",
+        "la",
+        "los",
+        "las"
+      ]
+    },
+    {
+      "surface": [
+        "más",
+        "menos"
+      ],
+      "gap": 2
+    }
+  ],
+  "requires": [
+    {
+      "after": {
+        "surface": [
+          "de",
+          "del"
+        ]
+      },
+      "within": 3
+    }
+  ],
+  "examples": {
+    "positive": [
+      "Es la más alta de la clase.",
+      "Es el libro más interesante del año.",
+      "Son los más baratos de la tienda."
+    ],
+    "negative": [
+      "La casa es más grande que la mía.",
+      "El coche es más caro."
+    ]
+  }
+}

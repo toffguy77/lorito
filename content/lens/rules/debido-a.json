@@ -1,0 +1,32 @@
+{
+  "id": "debido-a",
+  "title_ru": "Debido a — «из-за»",
+  "cards": [
+    "B2-10"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "debido"
+      ]
+    },
+    {
+      "surface": [
+        "a",
+        "al"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Se canceló debido a la lluvia.",
+      "Debido al tráfico, llegué tarde.",
+      "Cerraron debido a la crisis."
+    ],
+    "negative": [
+      "Lo hice a tiempo.",
+      "Debo ir."
+    ]
+  }
+}

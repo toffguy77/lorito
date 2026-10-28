@@ -1,0 +1,30 @@
+{
+  "id": "estar-participio",
+  "title_ru": "Estar + participio (результат)",
+  "cards": [
+    "B2-18"
+  ],
+  "pattern": [
+    {
+      "lemma": [
+        "estar"
+      ]
+    },
+    {
+      "set": "participio-flex",
+      "gap": 1
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "La tienda está cerrada.",
+      "Los platos están rotos.",
+      "Estoy muy preocupado."
+    ],
+    "negative": [
+      "Está en casa.",
+      "Ha cerrado la tienda."
+    ]
+  }
+}

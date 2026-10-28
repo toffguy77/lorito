@@ -1,0 +1,43 @@
+{
+  "id": "hace-tiempo",
+  "title_ru": "Hace + время («… назад», «уже …»)",
+  "cards": [
+    "A2-25"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "hace"
+      ]
+    },
+    {
+      "surface": [
+        "años",
+        "año",
+        "meses",
+        "mes",
+        "días",
+        "día",
+        "semanas",
+        "semana",
+        "horas",
+        "hora",
+        "minutos",
+        "minuto"
+      ],
+      "gap": 2
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Llegué hace dos días.",
+      "Vivo aquí desde hace un año.",
+      "Lo vi hace una semana."
+    ],
+    "negative": [
+      "Hace frío.",
+      "Hace un tiempo horrible."
+    ]
+  }
+}

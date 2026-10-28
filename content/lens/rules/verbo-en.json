@@ -1,0 +1,31 @@
+{
+  "id": "verbo-en",
+  "title_ru": "Глагол + en: pensar en, tardar en, insistir en",
+  "cards": [
+    "B2-16"
+  ],
+  "pattern": [
+    {
+      "lemma": [
+        "pensar"
+      ]
+    },
+    {
+      "surface": [
+        "en"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Pienso en ti.",
+      "Siempre piensas en el trabajo.",
+      "Pensamos en mudarnos."
+    ],
+    "negative": [
+      "Pienso que sí.",
+      "Vivo en Madrid."
+    ]
+  }
+}

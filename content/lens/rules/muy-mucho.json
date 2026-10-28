@@ -1,0 +1,30 @@
+{
+  "id": "muy-mucho",
+  "title_ru": "Muy vs mucho",
+  "cards": [
+    "A1-26"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "muy",
+        "mucho",
+        "mucha",
+        "muchos",
+        "muchas"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Es muy alto.",
+      "Tengo mucho trabajo.",
+      "Hay muchas personas."
+    ],
+    "negative": [
+      "Es alto.",
+      "Tengo poco trabajo."
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "id": "verbo-en-2",
+  "title_ru": "Глагол + en: consistir, tardar, confiar, insistir",
+  "cards": [
+    "B2-16"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "consiste",
+        "consisten",
+        "consistía",
+        "tardo",
+        "tardas",
+        "tarda",
+        "tardan",
+        "tardé",
+        "tardó",
+        "confío",
+        "confías",
+        "confía",
+        "confían",
+        "insisto",
+        "insiste",
+        "insisten",
+        "insistió",
+        "fijarse",
+        "fíjate",
+        "fijé"
+      ]
+    },
+    {
+      "surface": [
+        "en"
+      ],
+      "gap": 3
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "El trabajo consiste en traducir.",
+      "Tardé dos horas en llegar.",
+      "Confío en ti."
+    ],
+    "negative": [
+      "Confío mucho.",
+      "Tardé mucho."
+    ]
+  }
+}

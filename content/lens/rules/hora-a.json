@@ -1,0 +1,48 @@
+{
+  "id": "hora-a",
+  "title_ru": "Время: a la una, a las ocho",
+  "cards": [
+    "A1-28"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "a"
+      ]
+    },
+    {
+      "surface": [
+        "la",
+        "las"
+      ]
+    },
+    {
+      "surface": [
+        "una",
+        "dos",
+        "tres",
+        "cuatro",
+        "cinco",
+        "seis",
+        "siete",
+        "ocho",
+        "nueve",
+        "diez",
+        "once",
+        "doce"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Llego a las ocho.",
+      "La clase empieza a la una.",
+      "Nos vemos a las seis."
+    ],
+    "negative": [
+      "Voy a la playa.",
+      "A las chicas les gusta."
+    ]
+  }
+}

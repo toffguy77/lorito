@@ -1,0 +1,37 @@
+{
+  "id": "indefinidos",
+  "title_ru": "Неопределённые: algo, alguien, nadie, ninguno",
+  "cards": [
+    "A2-21"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "algo",
+        "alguien",
+        "alguno",
+        "alguna",
+        "algunos",
+        "algunas",
+        "algún",
+        "nada",
+        "nadie",
+        "ninguno",
+        "ninguna",
+        "ningún"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "¿Quieres algo?",
+      "Alguien llama a la puerta.",
+      "Tengo algunos amigos aquí."
+    ],
+    "negative": [
+      "Quiero un café.",
+      "Todos vienen."
+    ]
+  }
+}

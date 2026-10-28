@@ -1,0 +1,40 @@
+{
+  "id": "ahora-bien",
+  "title_ru": "Связка C1 «ahora bien»",
+  "cards": [
+    "C1-21"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "ahora"
+      ]
+    },
+    {
+      "surface": [
+        "bien"
+      ]
+    }
+  ],
+  "requires": [
+    {
+      "not_before": {
+        "lemma": [
+          "estar"
+        ]
+      },
+      "within": 1
+    }
+  ],
+  "examples": {
+    "positive": [
+      "Ahora bien, no es tan fácil.",
+      "Es barato. Ahora bien, ¿funciona?",
+      "Ahora bien, hay un problema."
+    ],
+    "negative": [
+      "Ahora voy.",
+      "Ahora estoy bien."
+    ]
+  }
+}

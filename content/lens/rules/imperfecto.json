@@ -1,0 +1,24 @@
+{
+  "id": "imperfecto",
+  "title_ru": "Pretérito imperfecto (hablaba, era)",
+  "cards": [
+    "A2-04"
+  ],
+  "pattern": [
+    {
+      "set": "preterito-imperfecto"
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Cuando era niño, jugaba mucho.",
+      "Antes vivíamos en Lima.",
+      "Hacía mucho calor."
+    ],
+    "negative": [
+      "Juego mucho.",
+      "Vivimos en Lima."
+    ]
+  }
+}

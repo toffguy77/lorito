@@ -1,0 +1,30 @@
+{
+  "id": "si-presente",
+  "title_ru": "Si + presente (реальное условие)",
+  "cards": [
+    "B1-15"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "si"
+      ]
+    },
+    {
+      "set": "presente-indicativo",
+      "gap": 2
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Si llueve, no salgo.",
+      "Si tienes tiempo, llámame.",
+      "Si estudias, aprobarás."
+    ],
+    "negative": [
+      "Sí, tengo tiempo.",
+      "Si tuviera tiempo, iría."
+    ]
+  }
+}

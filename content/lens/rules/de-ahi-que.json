@@ -1,0 +1,36 @@
+{
+  "id": "de-ahi-que",
+  "title_ru": "Связка C1 «de ahí que» + subjuntivo",
+  "cards": [
+    "C1-21"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "de"
+      ]
+    },
+    {
+      "surface": [
+        "ahí"
+      ]
+    },
+    {
+      "surface": [
+        "que"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Llovió mucho; de ahí que cancelaran el partido.",
+      "No estudió, de ahí que suspendiera.",
+      "Es tarde, de ahí que no venga."
+    ],
+    "negative": [
+      "Salió de ahí.",
+      "Ahí está."
+    ]
+  }
+}

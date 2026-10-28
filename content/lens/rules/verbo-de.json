@@ -1,0 +1,61 @@
+{
+  "id": "verbo-de",
+  "title_ru": "Глагол + de: depender de, acordarse de, enamorarse de",
+  "cards": [
+    "B2-16"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "depende",
+        "dependen",
+        "dependía",
+        "acuerdo",
+        "acuerdas",
+        "acuerda",
+        "acordamos",
+        "acuerdan",
+        "acordé",
+        "acordó",
+        "enamoré",
+        "enamoró",
+        "enamorado",
+        "enamorada",
+        "olvidé",
+        "olvidó",
+        "olvidaste",
+        "trata",
+        "tratan",
+        "quejo",
+        "queja",
+        "quejan"
+      ]
+    },
+    {
+      "surface": [
+        "de"
+      ]
+    }
+  ],
+  "requires": [
+    {
+      "not_before": {
+        "surface": [
+          "de"
+        ]
+      },
+      "within": 1
+    }
+  ],
+  "examples": {
+    "positive": [
+      "Depende de ti.",
+      "¿Te acuerdas de mí?",
+      "Se enamoró de su vecina."
+    ],
+    "negative": [
+      "No me acuerdo.",
+      "Depende."
+    ]
+  }
+}

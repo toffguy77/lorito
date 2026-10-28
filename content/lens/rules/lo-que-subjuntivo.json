@@ -1,0 +1,35 @@
+{
+  "id": "lo-que-subjuntivo",
+  "title_ru": "Lo que + subjuntivo (эмфаза)",
+  "cards": [
+    "B2-05"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "lo"
+      ]
+    },
+    {
+      "surface": [
+        "que"
+      ]
+    },
+    {
+      "set": "presente-subjuntivo",
+      "gap": 2
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Haz lo que quieras.",
+      "Diga lo que diga, no le creo.",
+      "Pase lo que pase, iré."
+    ],
+    "negative": [
+      "Lo que dices es verdad.",
+      "Que te vaya bien."
+    ]
+  }
+}

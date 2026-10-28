@@ -1,0 +1,55 @@
+{
+  "id": "imperativo-enclitico",
+  "title_ru": "Императив с местоимением (dime, siéntate)",
+  "cards": [
+    "A2-15"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "dime",
+        "dame",
+        "dale",
+        "díselo",
+        "siéntate",
+        "levántate",
+        "cállate",
+        "espérame",
+        "llámame",
+        "escríbeme",
+        "ayúdame",
+        "tráeme",
+        "dígame",
+        "pásame",
+        "ponte",
+        "vete",
+        "quédate",
+        "acuérdate",
+        "fíjate",
+        "mírame",
+        "déjame",
+        "perdóname",
+        "cuéntame",
+        "explícame",
+        "ayúdanos",
+        "siéntese",
+        "dímelo",
+        "dámelo",
+        "llámalo",
+        "cómpralo"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Dime la verdad.",
+      "Siéntate aquí, por favor.",
+      "Llámame mañana."
+    ],
+    "negative": [
+      "Te digo la verdad.",
+      "Me siento aquí."
+    ]
+  }
+}

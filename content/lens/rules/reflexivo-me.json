@@ -1,0 +1,41 @@
+{
+  "id": "reflexivo-me",
+  "title_ru": "Возвратный глагол (me llamo, se levanta)",
+  "cards": [
+    "A1-21"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "me"
+      ]
+    },
+    {
+      "surface": [
+        "llamo",
+        "levanto",
+        "ducho",
+        "acuesto",
+        "despierto",
+        "lavo",
+        "visto",
+        "siento",
+        "quedo",
+        "pongo",
+        "voy"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Me llamo Ana.",
+      "Me levanto a las siete.",
+      "Me ducho por la mañana."
+    ],
+    "negative": [
+      "Me llama mi madre.",
+      "Te llamo mañana."
+    ]
+  }
+}

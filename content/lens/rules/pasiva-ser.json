@@ -1,0 +1,29 @@
+{
+  "id": "pasiva-ser",
+  "title_ru": "Пассив: ser + participio",
+  "cards": [
+    "B1-18"
+  ],
+  "pattern": [
+    {
+      "lemma": [
+        "ser"
+      ]
+    },
+    {
+      "set": "participio-flex"
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "La casa fue construida en 1900.",
+      "El ladrón fue detenido por la policía.",
+      "Los resultados serán publicados mañana."
+    ],
+    "negative": [
+      "La casa está cerrada.",
+      "No es mi amigo, es un conocido."
+    ]
+  }
+}

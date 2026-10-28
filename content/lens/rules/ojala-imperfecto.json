@@ -1,0 +1,30 @@
+{
+  "id": "ojala-imperfecto",
+  "title_ru": "Ojalá + imperfecto de subjuntivo",
+  "cards": [
+    "B1-10"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "ojalá"
+      ]
+    },
+    {
+      "set": "imperfecto-subjuntivo",
+      "gap": 2
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Ojalá tuviera más tiempo.",
+      "Ojalá estuvieras aquí.",
+      "¡Ojalá pudiera ir!"
+    ],
+    "negative": [
+      "Ojalá venga.",
+      "Tenía más tiempo."
+    ]
+  }
+}

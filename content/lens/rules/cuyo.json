@@ -1,0 +1,29 @@
+{
+  "id": "cuyo",
+  "title_ru": "Относительное cuyo",
+  "cards": [
+    "B1-22"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "cuyo",
+        "cuya",
+        "cuyos",
+        "cuyas"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "El hombre cuyo hijo estudia aquí.",
+      "Es una ciudad cuya historia es larga.",
+      "Los vecinos cuyos perros ladran."
+    ],
+    "negative": [
+      "El hombre que estudia aquí.",
+      "Su hijo estudia aquí."
+    ]
+  }
+}

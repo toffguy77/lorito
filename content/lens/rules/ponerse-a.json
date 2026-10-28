@@ -1,0 +1,49 @@
+{
+  "id": "ponerse-a",
+  "title_ru": "Ponerse a / echarse a + инфинитив",
+  "cards": [
+    "B2-17"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "se",
+        "me",
+        "te",
+        "nos"
+      ]
+    },
+    {
+      "surface": [
+        "puso",
+        "pusieron",
+        "puse",
+        "pone",
+        "ponen",
+        "echó",
+        "echaron",
+        "eché"
+      ]
+    },
+    {
+      "surface": [
+        "a"
+      ]
+    },
+    {
+      "set": "infinitivo"
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Se puso a hablar.",
+      "Me puse a estudiar.",
+      "Se echó a correr."
+    ],
+    "negative": [
+      "Se puso la chaqueta.",
+      "Me puse a dieta."
+    ]
+  }
+}

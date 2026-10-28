@@ -1,0 +1,50 @@
+{
+  "id": "reproche-haber",
+  "title_ru": "Упрёк и сожаление: debería haber, podrías haber",
+  "cards": [
+    "B2-09"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "debería",
+        "deberías",
+        "deberíamos",
+        "deberían",
+        "debiste",
+        "debió",
+        "podría",
+        "podrías",
+        "podríamos",
+        "podrían"
+      ]
+    },
+    {
+      "surface": [
+        "haber",
+        "haberme",
+        "haberte",
+        "haberle",
+        "haberlo",
+        "haberla",
+        "habernos",
+        "haberles"
+      ]
+    },
+    {
+      "set": "participio-flex"
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Deberías haber llamado.",
+      "Podrías haberme avisado.",
+      "Debiste haber estudiado más."
+    ],
+    "negative": [
+      "Deberías llamar.",
+      "Debe haber un error."
+    ]
+  }
+}

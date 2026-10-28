@@ -1,0 +1,54 @@
+{
+  "id": "numerales",
+  "title_ru": "Числительные",
+  "cards": [
+    "A1-27"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "once",
+        "doce",
+        "trece",
+        "catorce",
+        "quince",
+        "dieciséis",
+        "diecisiete",
+        "dieciocho",
+        "diecinueve",
+        "veinte",
+        "veintiuno",
+        "veintidós",
+        "veintitrés",
+        "veinticinco",
+        "treinta",
+        "cuarenta",
+        "cincuenta",
+        "sesenta",
+        "setenta",
+        "ochenta",
+        "noventa",
+        "cien",
+        "ciento",
+        "doscientos",
+        "trescientos",
+        "quinientos",
+        "mil",
+        "millón",
+        "millones"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Tengo veinte años.",
+      "Cuesta cien euros.",
+      "Hay treinta alumnos."
+    ],
+    "negative": [
+      "Tengo dos hermanos.",
+      "Hay muchos alumnos."
+    ]
+  }
+}

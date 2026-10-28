@@ -1,0 +1,33 @@
+{
+  "id": "comparativos-irregulares",
+  "title_ru": "Неправильные сравнения: mejor, peor, mayor, menor",
+  "cards": [
+    "A2-19"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "mejor",
+        "mejores",
+        "peor",
+        "peores",
+        "mayor",
+        "mayores",
+        "menor",
+        "menores"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Este café es mejor.",
+      "Mi hermano mayor vive en Lima.",
+      "Es peor que antes."
+    ],
+    "negative": [
+      "Es bueno.",
+      "Es más grande."
+    ]
+  }
+}

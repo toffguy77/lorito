@@ -1,0 +1,51 @@
+{
+  "id": "posesivos",
+  "title_ru": "Притяжательные: mi, tu, su, nuestro",
+  "cards": [
+    "A1-12"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "mi",
+        "mis",
+        "tu",
+        "tus",
+        "su",
+        "sus",
+        "nuestro",
+        "nuestra",
+        "nuestros",
+        "nuestras",
+        "vuestro",
+        "vuestra",
+        "vuestros",
+        "vuestras",
+        "mío",
+        "mía",
+        "míos",
+        "mías",
+        "tuyo",
+        "tuya",
+        "tuyos",
+        "tuyas",
+        "suyo",
+        "suya",
+        "suyos",
+        "suyas"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Mi casa es pequeña.",
+      "¿Dónde están tus llaves?",
+      "Nuestra profesora es de Chile."
+    ],
+    "negative": [
+      "Tú eres alto.",
+      "Es para mí."
+    ]
+  }
+}

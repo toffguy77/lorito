@@ -1,0 +1,29 @@
+{
+  "id": "al-infinitivo",
+  "title_ru": "Al + инфинитив («когда, при»)",
+  "cards": [
+    "C1-07"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "al"
+      ]
+    },
+    {
+      "set": "infinitivo"
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Al llegar a casa, cené.",
+      "Al salir, cierra la puerta.",
+      "Me caí al entrar."
+    ],
+    "negative": [
+      "Voy al cine.",
+      "Al final llegó."
+    ]
+  }
+}

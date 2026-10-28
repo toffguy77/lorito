@@ -1,0 +1,46 @@
+{
+  "id": "llevar-tiempo-gerundio",
+  "title_ru": "Llevar + время + герундий",
+  "cards": [
+    "A2-25",
+    "B2-17"
+  ],
+  "pattern": [
+    {
+      "lemma": [
+        "llevar"
+      ]
+    },
+    {
+      "surface": [
+        "años",
+        "año",
+        "meses",
+        "mes",
+        "días",
+        "semanas",
+        "semana",
+        "horas",
+        "hora",
+        "tiempo",
+        "rato"
+      ],
+      "gap": 2
+    },
+    {
+      "set": "gerundio"
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Llevo dos años estudiando español.",
+      "Llevamos una hora esperando.",
+      "Lleva mucho tiempo trabajando aquí."
+    ],
+    "negative": [
+      "Llevo dos libros.",
+      "Estudio español desde hace dos años."
+    ]
+  }
+}

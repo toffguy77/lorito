@@ -1,0 +1,31 @@
+{
+  "id": "perifrasis-gerundio",
+  "title_ru": "Перифразы с герундием: ir, andar, venir + gerundio",
+  "cards": [
+    "B2-17"
+  ],
+  "pattern": [
+    {
+      "lemma": [
+        "ir",
+        "andar",
+        "venir"
+      ]
+    },
+    {
+      "set": "gerundio"
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Voy aprendiendo poco a poco.",
+      "Anda diciendo tonterías.",
+      "Viene diciendo lo mismo desde enero."
+    ],
+    "negative": [
+      "Voy a casa.",
+      "Estoy comiendo."
+    ]
+  }
+}

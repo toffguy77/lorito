@@ -1,0 +1,25 @@
+{
+  "id": "indefinido",
+  "title_ru": "Pretérito indefinido (habló, comí)",
+  "cards": [
+    "A2-02",
+    "A2-03"
+  ],
+  "pattern": [
+    {
+      "set": "indefinido-claro"
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Ella habló con Juan.",
+      "Fuimos a la playa.",
+      "¿Qué hiciste el sábado?"
+    ],
+    "negative": [
+      "Hablamos mañana.",
+      "Como pan."
+    ]
+  }
+}

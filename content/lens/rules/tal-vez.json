@@ -1,0 +1,45 @@
+{
+  "id": "tal-vez",
+  "title_ru": "Tal vez / a lo mejor (вероятность)",
+  "cards": [
+    "B1-14"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "tal",
+        "lo"
+      ]
+    },
+    {
+      "surface": [
+        "vez",
+        "mejor"
+      ]
+    }
+  ],
+  "requires": [
+    {
+      "not_before": {
+        "surface": [
+          "es",
+          "era",
+          "sería",
+          "fue"
+        ]
+      },
+      "within": 1
+    }
+  ],
+  "examples": {
+    "positive": [
+      "Tal vez venga.",
+      "A lo mejor llueve.",
+      "Tal vez tienes razón."
+    ],
+    "negative": [
+      "Es lo mejor.",
+      "Una vez fui."
+    ]
+  }
+}

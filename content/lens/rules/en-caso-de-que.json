@@ -1,0 +1,41 @@
+{
+  "id": "en-caso-de-que",
+  "title_ru": "En caso de que + subjuntivo",
+  "cards": [
+    "B2-08"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "en"
+      ]
+    },
+    {
+      "surface": [
+        "caso"
+      ]
+    },
+    {
+      "surface": [
+        "de"
+      ]
+    },
+    {
+      "surface": [
+        "que"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "En caso de que llueva, no iremos.",
+      "Llámame en caso de que necesites algo.",
+      "Toma la llave en caso de que llegue tarde."
+    ],
+    "negative": [
+      "En este caso, no.",
+      "En caso de duda, pregunta."
+    ]
+  }
+}

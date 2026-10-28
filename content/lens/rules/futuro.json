@@ -1,0 +1,24 @@
+{
+  "id": "futuro",
+  "title_ru": "Futuro simple (hablaré)",
+  "cards": [
+    "A2-07"
+  ],
+  "pattern": [
+    {
+      "set": "futuro"
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Mañana iré al médico.",
+      "Te llamaré luego.",
+      "¿Vendrás a la fiesta?"
+    ],
+    "negative": [
+      "Voy a ir.",
+      "Te llamo luego."
+    ]
+  }
+}

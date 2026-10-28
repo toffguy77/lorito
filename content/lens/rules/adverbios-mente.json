@@ -1,0 +1,53 @@
+{
+  "id": "adverbios-mente",
+  "title_ru": "Наречия на -mente",
+  "cards": [
+    "A2-20"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "rápidamente",
+        "normalmente",
+        "finalmente",
+        "realmente",
+        "solamente",
+        "totalmente",
+        "generalmente",
+        "fácilmente",
+        "claramente",
+        "actualmente",
+        "especialmente",
+        "simplemente",
+        "probablemente",
+        "exactamente",
+        "perfectamente",
+        "completamente",
+        "últimamente",
+        "lentamente",
+        "tranquilamente",
+        "personalmente",
+        "directamente",
+        "seguramente",
+        "afortunadamente",
+        "desgraciadamente",
+        "absolutamente",
+        "recientemente",
+        "frecuentemente",
+        "inmediatamente"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Normalmente como a las dos.",
+      "Habla perfectamente español.",
+      "Últimamente duermo mal."
+    ],
+    "negative": [
+      "Como a las dos.",
+      "Habla bien."
+    ]
+  }
+}

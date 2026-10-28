@@ -1,0 +1,39 @@
+{
+  "id": "en-mi-opinion",
+  "title_ru": "Выражение мнения: en mi opinión, a mi juicio",
+  "cards": [
+    "B1-24"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "en",
+        "a"
+      ]
+    },
+    {
+      "surface": [
+        "mi"
+      ]
+    },
+    {
+      "surface": [
+        "opinión",
+        "juicio",
+        "parecer"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "En mi opinión, es caro.",
+      "A mi juicio, tienes razón.",
+      "En mi opinión no es necesario."
+    ],
+    "negative": [
+      "Pienso en mi casa.",
+      "Voy a mi casa."
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "futuro-perfecto",
+  "title_ru": "Futuro perfecto (habré hablado)",
+  "cards": [
+    "B1-12"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "habré",
+        "habrás",
+        "habrá",
+        "habremos",
+        "habréis",
+        "habrán"
+      ]
+    },
+    {
+      "set": "participio-flex"
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "A las ocho ya habré terminado.",
+      "¿Habrá llegado ya?",
+      "Para junio habremos acabado."
+    ],
+    "negative": [
+      "Habrá una fiesta.",
+      "He terminado."
+    ]
+  }
+}

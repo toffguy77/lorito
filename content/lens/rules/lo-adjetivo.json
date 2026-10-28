@@ -1,0 +1,57 @@
+{
+  "id": "lo-adjetivo",
+  "title_ru": "Lo + прилагательное, lo de",
+  "cards": [
+    "B2-19"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "lo"
+      ]
+    },
+    {
+      "surface": [
+        "bueno",
+        "malo",
+        "mejor",
+        "peor",
+        "importante",
+        "difícil",
+        "fácil",
+        "raro",
+        "interesante",
+        "curioso",
+        "único",
+        "primero",
+        "último",
+        "normal",
+        "mismo",
+        "triste",
+        "increíble",
+        "de"
+      ]
+    }
+  ],
+  "requires": [
+    {
+      "not_before": {
+        "surface": [
+          "a"
+        ]
+      },
+      "within": 1
+    }
+  ],
+  "examples": {
+    "positive": [
+      "Lo bueno es que llegamos.",
+      "Lo importante es la salud.",
+      "¿Qué pasó con lo de ayer?"
+    ],
+    "negative": [
+      "Lo veo.",
+      "Es bueno."
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "ser-de",
+  "title_ru": "Ser de: происхождение, материал, принадлежность",
+  "cards": [
+    "A1-15"
+  ],
+  "pattern": [
+    {
+      "lemma": [
+        "ser"
+      ]
+    },
+    {
+      "surface": [
+        "de"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Soy de Rusia.",
+      "La mesa es de madera.",
+      "Este libro es de María."
+    ],
+    "negative": [
+      "Estoy de vacaciones.",
+      "Vengo de Madrid."
+    ]
+  }
+}

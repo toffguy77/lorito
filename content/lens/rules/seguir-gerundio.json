@@ -1,0 +1,30 @@
+{
+  "id": "seguir-gerundio",
+  "title_ru": "Seguir + герундий («продолжать»)",
+  "cards": [
+    "A2-11",
+    "B1-21"
+  ],
+  "pattern": [
+    {
+      "lemma": [
+        "seguir"
+      ]
+    },
+    {
+      "set": "gerundio"
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Sigo trabajando aquí.",
+      "Siguió hablando.",
+      "¿Sigues estudiando español?"
+    ],
+    "negative": [
+      "Sigo a mi hermano.",
+      "Trabajo aquí."
+    ]
+  }
+}

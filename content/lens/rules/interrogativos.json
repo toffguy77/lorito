@@ -1,0 +1,38 @@
+{
+  "id": "interrogativos",
+  "title_ru": "Вопросительные слова (с ударением)",
+  "cards": [
+    "A1-24"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "qué",
+        "quién",
+        "quiénes",
+        "cuál",
+        "cuáles",
+        "cuándo",
+        "dónde",
+        "adónde",
+        "cómo",
+        "cuánto",
+        "cuánta",
+        "cuántos",
+        "cuántas"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "¿Dónde vives?",
+      "¿Qué hora es?",
+      "No sé cómo se llama."
+    ],
+    "negative": [
+      "Vivo donde trabajo.",
+      "Creo que vienes."
+    ]
+  }
+}

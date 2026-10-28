@@ -1,0 +1,41 @@
+{
+  "id": "con-tal-de-que",
+  "title_ru": "Con tal de que + subjuntivo",
+  "cards": [
+    "B1-07"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "con"
+      ]
+    },
+    {
+      "surface": [
+        "tal"
+      ]
+    },
+    {
+      "surface": [
+        "de"
+      ]
+    },
+    {
+      "surface": [
+        "que"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Te lo presto con tal de que me lo devuelvas.",
+      "Iré con tal de que vengas.",
+      "Con tal de que estés bien, todo está bien."
+    ],
+    "negative": [
+      "Hablo con tal persona.",
+      "Café con leche."
+    ]
+  }
+}

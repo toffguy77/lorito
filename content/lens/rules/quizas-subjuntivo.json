@@ -1,0 +1,31 @@
+{
+  "id": "quizas-subjuntivo",
+  "title_ru": "Quizás / quizá + subjuntivo (вероятность)",
+  "cards": [
+    "B1-14"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "quizás",
+        "quizá"
+      ]
+    },
+    {
+      "set": "presente-subjuntivo",
+      "gap": 2
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Quizás llueva mañana.",
+      "Quizá no venga.",
+      "Quizás tengas razón."
+    ],
+    "negative": [
+      "Quizás mañana.",
+      "Llueve mañana."
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "id": "por-consiguiente",
+  "title_ru": "Связка «por consiguiente»",
+  "cards": [
+    "B2-21",
+    "B2-10"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "por"
+      ]
+    },
+    {
+      "surface": [
+        "consiguiente"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "No hay dinero; por consiguiente, no viajamos.",
+      "Por consiguiente, lo dejamos.",
+      "Llegó tarde y, por consiguiente, no entró."
+    ],
+    "negative": [
+      "Por favor, ven.",
+      "El día siguiente."
+    ]
+  }
+}

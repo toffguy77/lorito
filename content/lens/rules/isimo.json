@@ -1,0 +1,52 @@
+{
+  "id": "isimo",
+  "title_ru": "Суффикс -ísimo",
+  "cards": [
+    "A2-18"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "muchísimo",
+        "muchísima",
+        "muchísimos",
+        "muchísimas",
+        "buenísimo",
+        "buenísima",
+        "riquísimo",
+        "riquísima",
+        "guapísimo",
+        "guapísima",
+        "carísimo",
+        "carísima",
+        "facilísimo",
+        "dificilísimo",
+        "larguísimo",
+        "poquísimo",
+        "rapidísimo",
+        "tardísimo",
+        "lejísimos",
+        "cansadísimo",
+        "cansadísima",
+        "altísimo",
+        "grandísimo",
+        "malísimo",
+        "malísima",
+        "contentísimo",
+        "baratísimo"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "La comida está riquísima.",
+      "Es carísimo.",
+      "Te quiero muchísimo."
+    ],
+    "negative": [
+      "Es muy caro.",
+      "La comida está rica."
+    ]
+  }
+}

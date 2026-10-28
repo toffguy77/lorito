@@ -1,0 +1,42 @@
+{
+  "id": "el-hecho-de-que",
+  "title_ru": "El hecho de que",
+  "cards": [
+    "B2-04",
+    "C1-10"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "el"
+      ]
+    },
+    {
+      "surface": [
+        "hecho"
+      ]
+    },
+    {
+      "surface": [
+        "de"
+      ]
+    },
+    {
+      "surface": [
+        "que"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "El hecho de que no venga me preocupa.",
+      "Me molesta el hecho de que mientas.",
+      "El hecho de que sea caro no importa."
+    ],
+    "negative": [
+      "He hecho la cena.",
+      "El hecho es grave."
+    ]
+  }
+}

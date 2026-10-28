@@ -1,0 +1,36 @@
+{
+  "id": "de-acuerdo",
+  "title_ru": "Estar de acuerdo",
+  "cards": [
+    "B1-24"
+  ],
+  "pattern": [
+    {
+      "lemma": [
+        "estar"
+      ]
+    },
+    {
+      "surface": [
+        "de"
+      ]
+    },
+    {
+      "surface": [
+        "acuerdo"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Estoy de acuerdo contigo.",
+      "No estamos de acuerdo.",
+      "¿Estás de acuerdo?"
+    ],
+    "negative": [
+      "De acuerdo, vamos.",
+      "Estoy de vacaciones."
+    ]
+  }
+}

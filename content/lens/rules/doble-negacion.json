@@ -1,0 +1,40 @@
+{
+  "id": "doble-negacion",
+  "title_ru": "Двойное отрицание: no … nada / nadie / nunca",
+  "cards": [
+    "A1-23",
+    "A2-21"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "no"
+      ]
+    },
+    {
+      "surface": [
+        "nada",
+        "nadie",
+        "nunca",
+        "ninguno",
+        "ninguna",
+        "ningún",
+        "tampoco",
+        "jamás"
+      ],
+      "gap": 3
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "No veo nada.",
+      "No viene nadie.",
+      "No he estado nunca en Cuba."
+    ],
+    "negative": [
+      "Nadie viene.",
+      "No sé."
+    ]
+  }
+}

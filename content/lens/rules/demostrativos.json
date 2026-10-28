@@ -1,0 +1,40 @@
+{
+  "id": "demostrativos",
+  "title_ru": "Указательные: este, ese, aquel",
+  "cards": [
+    "A1-13"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "este",
+        "esta",
+        "estos",
+        "estas",
+        "ese",
+        "esa",
+        "esos",
+        "esas",
+        "aquel",
+        "aquella",
+        "aquellos",
+        "aquellas",
+        "esto",
+        "eso",
+        "aquello"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Este libro es mío.",
+      "¿Qué es eso?",
+      "Aquella casa es grande."
+    ],
+    "negative": [
+      "Está en casa.",
+      "El libro es mío."
+    ]
+  }
+}

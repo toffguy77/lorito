@@ -1,0 +1,46 @@
+{
+  "id": "subjuntivo-independiente",
+  "title_ru": "Независимый subjuntivo: ¡Que te vaya bien!",
+  "cards": [
+    "C1-02"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "que"
+      ]
+    },
+    {
+      "surface": [
+        "vaya",
+        "vayan",
+        "aproveche",
+        "aprovechen",
+        "descanses",
+        "descanse",
+        "mejores",
+        "mejore",
+        "diviertas",
+        "diviertan",
+        "disfrutes",
+        "disfruten",
+        "duermas",
+        "cumplas",
+        "llegues"
+      ],
+      "gap": 1
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "¡Que te vaya bien!",
+      "¡Que aproveche!",
+      "¡Que descanses!"
+    ],
+    "negative": [
+      "Creo que va bien.",
+      "Dice que descansa."
+    ]
+  }
+}

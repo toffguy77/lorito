@@ -1,0 +1,34 @@
+{
+  "id": "causales",
+  "title_ru": "Причина и следствие: ya que, puesto que, así que",
+  "cards": [
+    "B2-10"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "ya",
+        "puesto",
+        "dado",
+        "así"
+      ]
+    },
+    {
+      "surface": [
+        "que"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "No voy, ya que estoy enfermo.",
+      "Puesto que no vienes, me voy.",
+      "Llovía, así que me quedé."
+    ],
+    "negative": [
+      "Ya llegó.",
+      "Así es."
+    ]
+  }
+}

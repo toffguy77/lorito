@@ -1,0 +1,31 @@
+{
+  "id": "tratamiento",
+  "title_ru": "Обращение: usted, ustedes, vosotros, vos",
+  "cards": [
+    "A1-14",
+    "C1-18"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "usted",
+        "ustedes",
+        "vosotros",
+        "vosotras",
+        "vos"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "¿Ustedes son de aquí?",
+      "¿Usted habla inglés?",
+      "Vos sos de acá."
+    ],
+    "negative": [
+      "Ellos son de aquí.",
+      "Tú eres de aquí."
+    ]
+  }
+}

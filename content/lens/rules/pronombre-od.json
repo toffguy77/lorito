@@ -1,0 +1,51 @@
+{
+  "id": "pronombre-od",
+  "title_ru": "Прямое дополнение: lo, los, las",
+  "cards": [
+    "A2-12"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "lo",
+        "los",
+        "las"
+      ]
+    },
+    {
+      "set": "finito"
+    }
+  ],
+  "requires": [
+    {
+      "not_before": {
+        "surface": [
+          "todos",
+          "todas",
+          "a",
+          "de",
+          "en",
+          "con",
+          "por",
+          "para",
+          "sin",
+          "entre",
+          "sobre",
+          "hasta"
+        ]
+      },
+      "within": 1
+    }
+  ],
+  "examples": {
+    "positive": [
+      "Lo compré ayer.",
+      "Las veo mañana.",
+      "¿Los conoces?"
+    ],
+    "negative": [
+      "Lo que quiero es dormir.",
+      "Respondió a todas las preguntas."
+    ]
+  }
+}

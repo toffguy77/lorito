@@ -1,0 +1,34 @@
+{
+  "id": "en-definitiva",
+  "title_ru": "Итоговые связки: en definitiva, en resumen",
+  "cards": [
+    "B2-21"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "en"
+      ]
+    },
+    {
+      "surface": [
+        "definitiva",
+        "resumen",
+        "suma",
+        "conclusión"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "En definitiva, es una buena idea.",
+      "En resumen, todo salió bien.",
+      "En conclusión, hay que cambiar."
+    ],
+    "negative": [
+      "En casa estoy bien.",
+      "Hago un resumen."
+    ]
+  }
+}

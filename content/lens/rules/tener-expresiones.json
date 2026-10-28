@@ -1,0 +1,43 @@
+{
+  "id": "tener-expresiones",
+  "title_ru": "Tener: tengo hambre, tengo razón, tengo … años",
+  "cards": [
+    "A1-18"
+  ],
+  "pattern": [
+    {
+      "lemma": [
+        "tener"
+      ]
+    },
+    {
+      "surface": [
+        "hambre",
+        "sed",
+        "frío",
+        "calor",
+        "sueño",
+        "miedo",
+        "razón",
+        "prisa",
+        "suerte",
+        "cuidado",
+        "ganas",
+        "años"
+      ],
+      "gap": 3
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Tengo mucha hambre.",
+      "Tienes razón.",
+      "Mi hijo tiene cinco años."
+    ],
+    "negative": [
+      "Tengo un coche.",
+      "Hace frío."
+    ]
+  }
+}

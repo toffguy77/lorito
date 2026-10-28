@@ -1,0 +1,30 @@
+{
+  "id": "aunque-subjuntivo",
+  "title_ru": "Aunque + subjuntivo (уступка)",
+  "cards": [
+    "B1-07"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "aunque"
+      ]
+    },
+    {
+      "set": "presente-subjuntivo",
+      "gap": 3
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Aunque llueva, saldremos.",
+      "Aunque no quieras, tienes que venir.",
+      "Lo haré aunque sea difícil."
+    ],
+    "negative": [
+      "Aunque llueve, salimos.",
+      "Salimos porque llueve."
+    ]
+  }
+}

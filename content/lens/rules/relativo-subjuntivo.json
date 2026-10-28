@@ -1,0 +1,47 @@
+{
+  "id": "relativo-subjuntivo",
+  "title_ru": "Относительное с subjuntivo (busco a alguien que sepa)",
+  "cards": [
+    "B1-08"
+  ],
+  "pattern": [
+    {
+      "lemma": [
+        "buscar",
+        "necesitar"
+      ]
+    },
+    {
+      "surface": [
+        "un",
+        "una",
+        "unos",
+        "unas",
+        "algo",
+        "alguien",
+        "a"
+      ]
+    },
+    {
+      "surface": [
+        "que"
+      ],
+      "gap": 2
+    },
+    {
+      "set": "presente-subjuntivo"
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Busco un piso que tenga terraza.",
+      "Necesito a alguien que hable inglés.",
+      "Buscamos algo que sea barato."
+    ],
+    "negative": [
+      "Busco el piso que tiene terraza.",
+      "Necesito que vengas."
+    ]
+  }
+}

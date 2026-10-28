@@ -1,0 +1,31 @@
+{
+  "id": "no-obstante",
+  "title_ru": "Связка «no obstante»",
+  "cards": [
+    "B1-23"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "no"
+      ]
+    },
+    {
+      "surface": [
+        "obstante"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "No obstante, seguimos adelante.",
+      "Es tarde; no obstante, iré.",
+      "No obstante lo dicho, acepto."
+    ],
+    "negative": [
+      "No voy.",
+      "No es tarde."
+    ]
+  }
+}

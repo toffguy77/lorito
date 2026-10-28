@@ -1,0 +1,36 @@
+{
+  "id": "punto-de-vista",
+  "title_ru": "Desde mi punto de vista",
+  "cards": [
+    "B1-24"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "punto"
+      ]
+    },
+    {
+      "surface": [
+        "de"
+      ]
+    },
+    {
+      "surface": [
+        "vista"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Desde mi punto de vista, es un error.",
+      "Es otro punto de vista.",
+      "Desde su punto de vista, tiene razón."
+    ],
+    "negative": [
+      "Es un punto importante.",
+      "Tengo buena vista."
+    ]
+  }
+}

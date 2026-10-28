@@ -1,0 +1,39 @@
+{
+  "id": "estilo-indirecto-condicional",
+  "title_ru": "Косвенная речь: dijo que vendría",
+  "cards": [
+    "B2-13"
+  ],
+  "pattern": [
+    {
+      "lemma": [
+        "decir",
+        "contar",
+        "explicar"
+      ],
+      "set": "pasado"
+    },
+    {
+      "surface": [
+        "que"
+      ],
+      "gap": 1
+    },
+    {
+      "set": "condicional",
+      "gap": 3
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Me dijo que vendría.",
+      "Nos explicó que lo haría mañana.",
+      "Dijo que no podría venir."
+    ],
+    "negative": [
+      "Me dijo que venía.",
+      "Dice que vendrá."
+    ]
+  }
+}

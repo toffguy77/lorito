@@ -1,0 +1,44 @@
+{
+  "id": "imperativo-negativo",
+  "title_ru": "Отрицательный императив (no hables)",
+  "cards": [
+    "A2-16"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "no"
+      ]
+    },
+    {
+      "set": "presente-subjuntivo",
+      "gap": 2
+    }
+  ],
+  "requires": [
+    {
+      "not_before": {
+        "surface": [
+          "que",
+          "ojalá",
+          "cuando",
+          "aunque",
+          "quizás",
+          "quizá"
+        ]
+      },
+      "within": 2
+    }
+  ],
+  "examples": {
+    "positive": [
+      "No hables tan alto.",
+      "¡No me llames!",
+      "No bebas esa agua."
+    ],
+    "negative": [
+      "No hablas mucho.",
+      "Quiero que no vengas."
+    ]
+  }
+}

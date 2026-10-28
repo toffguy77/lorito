@@ -1,0 +1,48 @@
+{
+  "id": "queismo",
+  "title_ru": "Queísmo: «me acuerdo que» (ошибка)",
+  "cards": [
+    "C1-09"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "acuerdo",
+        "acuerdas",
+        "acuerda",
+        "acordé",
+        "acordó",
+        "olvidé",
+        "olvidó",
+        "enteré",
+        "enteró"
+      ]
+    },
+    {
+      "surface": [
+        "que"
+      ]
+    }
+  ],
+  "requires": [
+    {
+      "not_before": {
+        "surface": [
+          "de"
+        ]
+      },
+      "within": 1
+    }
+  ],
+  "examples": {
+    "positive": [
+      "Me acuerdo que era verano.",
+      "Me olvidé que tenía clase.",
+      "Me enteré que te casas."
+    ],
+    "negative": [
+      "Me acuerdo de que era verano.",
+      "Estoy de acuerdo."
+    ]
+  }
+}

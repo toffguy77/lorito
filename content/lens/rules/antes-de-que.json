@@ -1,0 +1,37 @@
+{
+  "id": "antes-de-que",
+  "title_ru": "Antes de que / después de que",
+  "cards": [
+    "B2-12"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "antes",
+        "después"
+      ]
+    },
+    {
+      "surface": [
+        "de"
+      ]
+    },
+    {
+      "surface": [
+        "que"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Llámame antes de que salgas.",
+      "Después de que te fuiste, llegó Ana.",
+      "Termina antes de que llegue."
+    ],
+    "negative": [
+      "Antes de comer, lávate.",
+      "Después de clase voy."
+    ]
+  }
+}

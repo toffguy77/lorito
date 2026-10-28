@@ -1,0 +1,38 @@
+{
+  "id": "soler",
+  "title_ru": "Soler + инфинитив («обычно»)",
+  "cards": [
+    "A2-11",
+    "B1-21"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "suelo",
+        "sueles",
+        "suele",
+        "solemos",
+        "suelen",
+        "solía",
+        "solías",
+        "solíamos",
+        "solían"
+      ]
+    },
+    {
+      "set": "infinitivo"
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Suelo comer a las dos.",
+      "Solíamos ir al cine.",
+      "¿Sueles salir los viernes?"
+    ],
+    "negative": [
+      "El suelo está sucio.",
+      "Como a las dos."
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "condicional",
+  "title_ru": "Condicional simple (hablaría)",
+  "cards": [
+    "A2-09"
+  ],
+  "pattern": [
+    {
+      "set": "condicional"
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Me gustaría viajar.",
+      "Yo no haría eso.",
+      "¿Podrías ayudarme?"
+    ],
+    "negative": [
+      "Puedes ayudarme.",
+      "Hago eso."
+    ]
+  }
+}

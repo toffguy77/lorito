@@ -1,0 +1,33 @@
+{
+  "id": "sin-embargo-en-cambio",
+  "title_ru": "Связки: sin embargo, en cambio",
+  "cards": [
+    "B1-23"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "sin",
+        "en"
+      ]
+    },
+    {
+      "surface": [
+        "embargo",
+        "cambio"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Es caro; sin embargo, lo compro.",
+      "Yo trabajo; ella, en cambio, descansa.",
+      "Sin embargo, no vino."
+    ],
+    "negative": [
+      "Sin dinero no voy.",
+      "En casa estoy bien."
+    ]
+  }
+}

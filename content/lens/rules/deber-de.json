@@ -1,0 +1,34 @@
+{
+  "id": "deber-de",
+  "title_ru": "Deber de + инфинитив (предположение)",
+  "cards": [
+    "B1-14"
+  ],
+  "pattern": [
+    {
+      "lemma": [
+        "deber"
+      ]
+    },
+    {
+      "surface": [
+        "de"
+      ]
+    },
+    {
+      "set": "infinitivo"
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Debe de ser tarde.",
+      "Deben de estar en casa.",
+      "Debía de tener veinte años."
+    ],
+    "negative": [
+      "Debes estudiar.",
+      "Debo dinero."
+    ]
+  }
+}

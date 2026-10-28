@@ -1,0 +1,39 @@
+{
+  "id": "a-menos-que",
+  "title_ru": "A menos que / a no ser que + subjuntivo",
+  "cards": [
+    "B1-07"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "a"
+      ]
+    },
+    {
+      "surface": [
+        "menos",
+        "no"
+      ]
+    },
+    {
+      "surface": [
+        "que",
+        "ser"
+      ],
+      "gap": 1
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Iré a menos que llueva.",
+      "No saldré a no ser que me llames.",
+      "Lo compro a menos que sea caro."
+    ],
+    "negative": [
+      "A mí me gusta menos.",
+      "Voy a comer."
+    ]
+  }
+}

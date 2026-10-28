@@ -1,0 +1,36 @@
+{
+  "id": "comparativo-tan",
+  "title_ru": "Сравнение: tan / tanto … como",
+  "cards": [
+    "A2-17"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "tan",
+        "tanto",
+        "tanta",
+        "tantos",
+        "tantas"
+      ]
+    },
+    {
+      "surface": [
+        "como"
+      ],
+      "gap": 3
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Es tan alto como su padre.",
+      "Tengo tantos libros como tú.",
+      "No es tan difícil como parece."
+    ],
+    "negative": [
+      "Es tan bonito.",
+      "Como pan."
+    ]
+  }
+}

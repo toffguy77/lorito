@@ -1,0 +1,32 @@
+{
+  "id": "conectores-a2",
+  "title_ru": "Связки: porque, aunque, además, entonces",
+  "cards": [
+    "A2-22"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "porque",
+        "aunque",
+        "además",
+        "entonces",
+        "pero",
+        "también",
+        "tampoco"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "No voy porque estoy cansado.",
+      "Además, es barato.",
+      "Entonces, ¿vienes?"
+    ],
+    "negative": [
+      "¿Por qué no vienes?",
+      "Voy a casa."
+    ]
+  }
+}

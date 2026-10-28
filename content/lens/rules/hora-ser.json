@@ -1,0 +1,48 @@
+{
+  "id": "hora-ser",
+  "title_ru": "Время: es la una, son las dos",
+  "cards": [
+    "A1-28"
+  ],
+  "pattern": [
+    {
+      "lemma": [
+        "ser"
+      ]
+    },
+    {
+      "surface": [
+        "la",
+        "las"
+      ]
+    },
+    {
+      "surface": [
+        "una",
+        "dos",
+        "tres",
+        "cuatro",
+        "cinco",
+        "seis",
+        "siete",
+        "ocho",
+        "nueve",
+        "diez",
+        "once",
+        "doce"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Es la una.",
+      "Son las tres y media.",
+      "Ya son las diez."
+    ],
+    "negative": [
+      "Son las casas.",
+      "Es la casa."
+    ]
+  }
+}

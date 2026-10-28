@@ -1,0 +1,48 @@
+{
+  "id": "reflexivo-se",
+  "title_ru": "Возвратный глагол (me llamo, se levanta)",
+  "cards": [
+    "A1-21"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "se"
+      ]
+    },
+    {
+      "surface": [
+        "llama",
+        "llaman",
+        "levanta",
+        "levantan",
+        "ducha",
+        "duchan",
+        "acuesta",
+        "acuestan",
+        "despierta",
+        "despiertan",
+        "lava",
+        "lavan",
+        "viste",
+        "visten",
+        "queda",
+        "quedan",
+        "va",
+        "van"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "Se llama Pedro.",
+      "Ella se levanta temprano.",
+      "Los niños se acuestan a las nueve."
+    ],
+    "negative": [
+      "Se lo di.",
+      "Me llama."
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "a-fin-de-cuentas",
+  "title_ru": "Связка «a fin de cuentas»",
+  "cards": [
+    "B2-21"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "fin"
+      ]
+    },
+    {
+      "surface": [
+        "de"
+      ]
+    },
+    {
+      "surface": [
+        "cuentas"
+      ]
+    }
+  ],
+  "requires": [],
+  "examples": {
+    "positive": [
+      "A fin de cuentas, es tu decisión.",
+      "A fin de cuentas, todos ganamos.",
+      "Es, a fin de cuentas, lo mismo."
+    ],
+    "negative": [
+      "Pago las cuentas.",
+      "A fin de mes cobro."
+    ]
+  }
+}

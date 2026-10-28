@@ -1,0 +1,56 @@
+{
+  "id": "de-haber-participio",
+  "title_ru": "De + haber + participio (условие)",
+  "cards": [
+    "B2-08"
+  ],
+  "pattern": [
+    {
+      "surface": [
+        "de"
+      ]
+    },
+    {
+      "surface": [
+        "haber",
+        "haberlo",
+        "haberla",
+        "haberlos",
+        "haberlas",
+        "haberme",
+        "haberte",
+        "haberle",
+        "haberles",
+        "habérselo"
+      ]
+    },
+    {
+      "set": "participio-flex"
+    }
+  ],
+  "requires": [
+    {
+      "not_before": {
+        "surface": [
+          "después",
+          "antes",
+          "tras",
+          "además",
+          "luego"
+        ]
+      },
+      "within": 1
+    }
+  ],
+  "examples": {
+    "positive": [
+      "De haberlo sabido, no habría venido.",
+      "De haber estudiado, habrías aprobado.",
+      "De haberte visto, te habría saludado."
+    ],
+    "negative": [
+      "Después de haber comido, salimos.",
+      "Tengo que haber terminado."
+    ]
+  }
+}
