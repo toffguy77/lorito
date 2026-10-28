@@ -17,4 +17,4 @@
 ## 3. Verify
 
 - [x] 3.1 `swift test` (Swift matcher cross-check on every example); `python3 tools/test_pipeline.py`
-- [ ] 3.2 Lens UI test still green; `openspec validate grammar-lens-coverage --strict`
+- [x] 3.2 Lens UI test still green; `openspec validate grammar-lens-coverage --strict`
