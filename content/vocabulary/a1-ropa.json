@@ -18,14 +18,17 @@
   "es": "camiseta",
   "pos": "noun",
   "ru": "футболка, майка",
-  "example_es": "Esta camiseta es muy cómoda.",
+  "example_es": "Esta {es: camiseta | rio: remera} es muy cómoda.",
   "example_ru": "Эта футболка очень удобная.",
   "rank": 3926,
   "article": "la",
   "gender": "f",
   "forms": [
    "camisetas"
-  ]
+  ],
+  "variants": {
+   "rio": "la remera"
+  }
  },
  {
   "id": "pantalón",
@@ -46,14 +49,17 @@
   "es": "falda",
   "pos": "noun",
   "ru": "юбка",
-  "example_es": "Me gusta tu falda roja.",
+  "example_es": "Me gusta tu {es: falda | rio: pollera} roja.",
   "example_ru": "Мне нравится твоя красная юбка.",
   "rank": 6436,
   "article": "la",
   "gender": "f",
   "forms": [
    "faldas"
-  ]
+  ],
+  "variants": {
+   "rio": "la pollera"
+  }
  },
  {
   "id": "vestido",
@@ -74,14 +80,17 @@
   "es": "chaqueta",
   "pos": "noun",
   "ru": "куртка; пиджак",
-  "example_es": "Ponte la chaqueta, hace frío.",
+  "example_es": "Ponte {es: la chaqueta | rio: la campera}, hace frío.",
   "example_ru": "Надень куртку, холодно.",
   "rank": 2451,
   "article": "la",
   "gender": "f",
   "forms": [
    "chaquetas"
-  ]
+  ],
+  "variants": {
+   "rio": "la campera"
+  }
  },
  {
   "id": "abrigo",
@@ -102,14 +111,18 @@
   "es": "jersey",
   "pos": "noun",
   "ru": "свитер",
-  "example_es": "Llevo un jersey de lana.",
+  "example_es": "Llevo {es: un jersey | am: un suéter | rio: un pulóver} de lana.",
   "example_ru": "На мне шерстяной свитер.",
   "rank": 3895,
   "article": "el",
   "gender": "m",
   "forms": [
    "jerséis"
-  ]
+  ],
+  "variants": {
+   "am": "el suéter",
+   "rio": "el pulóver"
+  }
  },
  {
   "id": "zapato",
@@ -130,14 +143,17 @@
   "es": "zapatilla",
   "pos": "noun",
   "ru": "кроссовка; тапочка",
-  "example_es": "Llevo zapatillas para correr.",
+  "example_es": "Llevo {es: zapatillas | am: tenis} para correr.",
   "example_ru": "Я в кроссовках для бега.",
   "rank": 25779,
   "article": "la",
   "gender": "f",
   "forms": [
    "zapatillas"
-  ]
+  ],
+  "variants": {
+   "am": "el tenis"
+  }
  },
  {
   "id": "bota",
@@ -158,14 +174,17 @@
   "es": "calcetín",
   "pos": "noun",
   "ru": "носок",
-  "example_es": "No encuentro mis calcetines.",
+  "example_es": "No encuentro mis {es: calcetines | rio: medias}.",
   "example_ru": "Не могу найти свои носки.",
   "rank": 16249,
   "article": "el",
   "gender": "m",
   "forms": [
    "calcetines"
-  ]
+  ],
+  "variants": {
+   "rio": "la media"
+  }
  },
  {
   "id": "sombrero",
@@ -228,25 +247,32 @@
   "es": "gafas",
   "pos": "noun",
   "ru": "очки",
-  "example_es": "No veo bien sin gafas.",
+  "example_es": "No veo bien sin {es: gafas | am: lentes | rio: anteojos}.",
   "example_ru": "Без очков я плохо вижу.",
   "rank": 3673,
   "article": "las",
-  "gender": "f"
+  "gender": "f",
+  "variants": {
+   "am": "los lentes",
+   "rio": "los anteojos"
+  }
  },
  {
   "id": "bolso",
   "es": "bolso",
   "pos": "noun",
   "ru": "сумка (дамская)",
-  "example_es": "Mi bolso es marrón.",
+  "example_es": "Dejé {es: el bolso | rio: la cartera} en casa.",
   "example_ru": "Моя сумка коричневая.",
   "rank": 2358,
   "article": "el",
   "gender": "m",
   "forms": [
    "bolsos"
-  ]
+  ],
+  "variants": {
+   "rio": "la cartera"
+  }
  },
  {
   "id": "cinturón",
@@ -309,11 +335,15 @@
   "es": "vaqueros",
   "pos": "noun",
   "ru": "джинсы",
-  "example_es": "Siempre llevo vaqueros.",
+  "example_es": "Siempre llevo {es: vaqueros | am: jeans | rio: jeans}.",
   "example_ru": "Я всегда ношу джинсы.",
   "rank": 7092,
   "article": "los",
-  "gender": "m"
+  "gender": "m",
+  "variants": {
+   "am": "los jeans",
+   "rio": "los jeans"
+  }
  },
  {
   "id": "bolsillo",
@@ -514,26 +544,32 @@
   "es": "marrón",
   "pos": "adj",
   "ru": "коричневый",
-  "example_es": "Busco unas botas marrones.",
+  "example_es": "Busco unas botas {es: marrones | am: café}.",
   "example_ru": "Я ищу коричневые сапоги.",
   "rank": 6305,
   "forms": [
    "marrones"
-  ]
+  ],
+  "variants": {
+   "am": "café"
+  }
  },
  {
   "id": "morado",
   "es": "morado",
   "pos": "adj",
   "ru": "фиолетовый",
-  "example_es": "Su color favorito es el morado.",
+  "example_es": "Su color favorito es el {es: morado | rio: violeta}.",
   "example_ru": "Её любимый цвет — фиолетовый.",
   "rank": 13115,
   "forms": [
    "morada",
    "morados",
    "moradas"
-  ]
+  ],
+  "variants": {
+   "rio": "violeta"
+  }
  },
  {
   "id": "claro",
@@ -630,14 +666,17 @@
   "es": "talla",
   "pos": "noun",
   "ru": "размер (одежды)",
-  "example_es": "¿Tiene una talla más grande?",
+  "example_es": "¿Tiene {es: una talla | rio: un talle} más grande?",
   "example_ru": "У вас есть размер побольше?",
   "rank": 5623,
   "article": "la",
   "gender": "f",
   "forms": [
    "tallas"
-  ]
+  ],
+  "variants": {
+   "rio": "el talle"
+  }
  },
  {
   "id": "moda",

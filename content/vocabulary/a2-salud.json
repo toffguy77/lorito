@@ -186,14 +186,17 @@
   "es": "resfriado",
   "pos": "noun",
   "ru": "простуда",
-  "example_es": "Tengo un resfriado.",
+  "example_es": "Tengo {es: un resfriado | rio: un resfrío}.",
   "example_ru": "У меня простуда.",
   "rank": 8321,
   "article": "el",
   "gender": "m",
   "forms": [
    "resfriados"
-  ]
+  ],
+  "variants": {
+   "rio": "el resfrío"
+  }
  },
  {
   "id": "dolor",
@@ -549,11 +552,14 @@
   "es": "urgencias",
   "pos": "noun",
   "ru": "отделение неотложной помощи",
-  "example_es": "Fuimos a urgencias por la noche.",
+  "example_es": "Fuimos a {es: urgencias | rio: la guardia} por la noche.",
   "example_ru": "Ночью мы поехали в травмпункт.",
   "rank": 5554,
   "article": "las",
-  "gender": "f"
+  "gender": "f",
+  "variants": {
+   "rio": "la guardia"
+  }
  },
  {
   "id": "curar",

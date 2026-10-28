@@ -29,14 +29,17 @@
   "es": "maleta",
   "pos": "noun",
   "ru": "чемодан",
-  "example_es": "Hago la maleta.",
+  "example_es": "Hago {es: la maleta | rio: la valija}.",
   "example_ru": "Я собираю чемодан.",
   "rank": 3226,
   "article": "la",
   "gender": "f",
   "forms": [
    "maletas"
-  ]
+  ],
+  "variants": {
+   "rio": "la valija"
+  }
  },
  {
   "id": "pasaporte",
@@ -377,9 +380,12 @@
   "es": "tarjeta de embarque",
   "pos": "phrase",
   "ru": "посадочный талон",
-  "example_es": "Aquí tiene su tarjeta de embarque.",
+  "example_es": "Aquí tiene su {es: tarjeta de embarque | am: pase de abordar}.",
   "example_ru": "Вот ваш посадочный талон.",
-  "rank": 1336
+  "rank": 1336,
+  "variants": {
+   "am": "pase de abordar"
+  }
  },
  {
   "id": "pasajero",

@@ -465,14 +465,18 @@
   "es": "enfadado",
   "pos": "adj",
   "ru": "сердитый, рассерженный",
-  "example_es": "¿Estás enfadado conmigo?",
+  "example_es": "¿Estás {es: enfadado | am: enojado | rio: enojado} conmigo?",
   "example_ru": "Ты на меня сердишься?",
   "rank": 2777,
   "forms": [
    "enfadada",
    "enfadados",
    "enfadadas"
-  ]
+  ],
+  "variants": {
+   "am": "enojado",
+   "rio": "enojado"
+  }
  },
  {
   "id": "tristeza",

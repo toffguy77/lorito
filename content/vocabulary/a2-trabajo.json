@@ -540,11 +540,15 @@
   "es": "deberes",
   "pos": "noun",
   "ru": "домашнее задание",
-  "example_es": "Los niños hacen los deberes después de comer.",
+  "example_es": "Los niños hacen {es: los deberes | am: la tarea | rio: la tarea} después de comer.",
   "example_ru": "Дети делают уроки после обеда.",
   "rank": 4869,
   "article": "los",
-  "gender": "m"
+  "gender": "m",
+  "variants": {
+   "am": "la tarea",
+   "rio": "la tarea"
+  }
  },
  {
   "id": "contratar",

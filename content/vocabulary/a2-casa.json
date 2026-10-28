@@ -43,14 +43,18 @@
   "es": "armario",
   "pos": "noun",
   "ru": "шкаф",
-  "example_es": "La ropa está en el armario.",
+  "example_es": "La ropa está en {es: el armario | am: el clóset | rio: el placard}.",
   "example_ru": "Одежда в шкафу.",
   "rank": 2595,
   "article": "el",
   "gender": "m",
   "forms": [
    "armarios"
-  ]
+  ],
+  "variants": {
+   "am": "el clóset",
+   "rio": "el placard"
+  }
  },
  {
   "id": "sofá",
@@ -71,28 +75,34 @@
   "es": "nevera",
   "pos": "noun",
   "ru": "холодильник",
-  "example_es": "La leche está en la nevera.",
+  "example_es": "La leche está en {es: la nevera | rio: la heladera}.",
   "example_ru": "Молоко в холодильнике.",
   "rank": 6862,
   "article": "la",
   "gender": "f",
   "forms": [
    "neveras"
-  ]
+  ],
+  "variants": {
+   "rio": "la heladera"
+  }
  },
  {
   "id": "lavadora",
   "es": "lavadora",
   "pos": "noun",
   "ru": "стиральная машина",
-  "example_es": "Pongo la lavadora.",
+  "example_es": "Pongo {es: la lavadora | rio: el lavarropas}.",
   "example_ru": "Я включаю стиральную машину.",
   "rank": 12589,
   "article": "la",
   "gender": "f",
   "forms": [
    "lavadoras"
-  ]
+  ],
+  "variants": {
+   "rio": "el lavarropas"
+  }
  },
  {
   "id": "basura",
@@ -228,9 +238,13 @@
   "es": "encender",
   "pos": "verb",
   "ru": "включать",
-  "example_es": "Enciende la luz.",
+  "example_es": "{es: Enciende | am: Prende | rio: Prendé} la luz.",
   "example_ru": "Включи свет.",
-  "rank": 5129
+  "rank": 5129,
+  "variants": {
+   "am": "prender",
+   "rio": "prender"
+  }
  },
  {
   "id": "roto",
@@ -251,14 +265,18 @@
   "es": "grifo",
   "pos": "noun",
   "ru": "кран (водопроводный)",
-  "example_es": "El grifo de la cocina gotea.",
+  "example_es": "{es: El grifo | am: La llave | rio: La canilla} de la cocina gotea.",
   "example_ru": "Кран на кухне подтекает.",
   "rank": 12225,
   "article": "el",
   "gender": "m",
   "forms": [
    "grifos"
-  ]
+  ],
+  "variants": {
+   "am": "la llave",
+   "rio": "la canilla"
+  }
  },
  {
   "id": "ruido",
@@ -366,14 +384,18 @@
   "es": "manta",
   "pos": "noun",
   "ru": "одеяло, плед",
-  "example_es": "Hace frío, necesito una manta.",
+  "example_es": "Hace frío, necesito {es: una manta | am: una cobija | rio: una frazada}.",
   "example_ru": "Холодно, мне нужен плед.",
   "rank": 5779,
   "article": "la",
   "gender": "f",
   "forms": [
    "mantas"
-  ]
+  ],
+  "variants": {
+   "am": "la cobija",
+   "rio": "la frazada"
+  }
  },
  {
   "id": "pasillo",
@@ -422,14 +444,18 @@
   "es": "tejado",
   "pos": "noun",
   "ru": "крыша",
-  "example_es": "Hay un gato en el tejado.",
+  "example_es": "Hay un gato en {es: el tejado | am: el techo | rio: el techo}.",
   "example_ru": "На крыше сидит кот.",
   "rank": 6233,
   "article": "el",
   "gender": "m",
   "forms": [
    "tejados"
-  ]
+  ],
+  "variants": {
+   "am": "el techo",
+   "rio": "el techo"
+  }
  },
  {
   "id": "sótano",
@@ -478,14 +504,18 @@
   "es": "bañera",
   "pos": "noun",
   "ru": "ванна",
-  "example_es": "Prefiero la ducha a la bañera.",
+  "example_es": "Prefiero la ducha a {es: la bañera | am: la tina | rio: la bañadera}.",
   "example_ru": "Я предпочитаю душ ванне.",
   "rank": 5672,
   "article": "la",
   "gender": "f",
   "forms": [
    "bañeras"
-  ]
+  ],
+  "variants": {
+   "am": "la tina",
+   "rio": "la bañadera"
+  }
  },
  {
   "id": "cajón",

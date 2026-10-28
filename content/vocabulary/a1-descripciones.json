@@ -60,14 +60,17 @@
   "es": "guapo",
   "pos": "adj",
   "ru": "красивый (о человеке)",
-  "example_es": "Tu novio es muy guapo.",
+  "example_es": "Tu novio es muy {es: guapo | rio: lindo}.",
   "example_ru": "Твой парень очень красивый.",
   "rank": 1986,
   "forms": [
    "guapa",
    "guapos",
    "guapas"
-  ]
+  ],
+  "variants": {
+   "rio": "lindo"
+  }
  },
  {
   "id": "feo",

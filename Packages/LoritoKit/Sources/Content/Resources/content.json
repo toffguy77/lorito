@@ -33325,14 +33325,18 @@
             "es": "coche",
             "pos": "noun",
             "ru": "машина",
-            "example_es": "Tengo un coche rojo.",
+            "example_es": "Tengo {es: un coche | am: un carro | rio: un auto} rojo.",
             "example_ru": "У меня красная машина.",
             "rank": 408,
             "article": "el",
             "gender": "m",
             "forms": [
               "coches"
-            ]
+            ],
+            "variants": {
+              "am": "el carro",
+              "rio": "el auto"
+            }
           },
           {
             "id": "pequeño",
@@ -33493,14 +33497,18 @@
             "es": "suelo",
             "pos": "noun",
             "ru": "пол; земля",
-            "example_es": "El libro está en el suelo.",
+            "example_es": "El libro está en {es: el suelo | am: el piso | rio: el piso}.",
             "example_ru": "Книга лежит на полу.",
             "rank": 893,
             "article": "el",
             "gender": "m",
             "forms": [
               "suelos"
-            ]
+            ],
+            "variants": {
+              "am": "el piso",
+              "rio": "el piso"
+            }
           },
           {
             "id": "regalo",
@@ -33535,14 +33543,18 @@
             "es": "piso",
             "pos": "noun",
             "ru": "квартира; этаж",
-            "example_es": "Vivo en un piso en el centro.",
+            "example_es": "Vivo en {es: un piso | am: un apartamento | rio: un departamento} en el centro.",
             "example_ru": "Я живу в квартире в центре.",
             "rank": 1007,
             "article": "el",
             "gender": "m",
             "forms": [
               "pisos"
-            ]
+            ],
+            "variants": {
+              "am": "el apartamento",
+              "rio": "el departamento"
+            }
           },
           {
             "id": "cocina",
@@ -33689,14 +33701,18 @@
             "es": "salón",
             "pos": "noun",
             "ru": "гостиная",
-            "example_es": "Vemos la televisión en el salón.",
+            "example_es": "Vemos la televisión en {es: el salón | am: la sala | rio: el living}.",
             "example_ru": "Мы смотрим телевизор в гостиной.",
             "rank": 2163,
             "article": "el",
             "gender": "m",
             "forms": [
               "salones"
-            ]
+            ],
+            "variants": {
+              "am": "la sala",
+              "rio": "el living"
+            }
           },
           {
             "id": "taza",
@@ -33759,14 +33775,18 @@
             "es": "ordenador",
             "pos": "noun",
             "ru": "компьютер",
-            "example_es": "Trabajo con el ordenador.",
+            "example_es": "Trabajo con {es: el ordenador | am: la computadora | rio: la computadora}.",
             "example_ru": "Я работаю за компьютером.",
             "rank": 3218,
             "article": "el",
             "gender": "m",
             "forms": [
               "ordenadores"
-            ]
+            ],
+            "variants": {
+              "am": "la computadora",
+              "rio": "la computadora"
+            }
           },
           {
             "id": "cuadro",
@@ -35289,11 +35309,14 @@
             "es": "autobús",
             "pos": "noun",
             "ru": "автобус",
-            "example_es": "Voy en autobús.",
+            "example_es": "Voy en {es: autobús | rio: colectivo}.",
             "example_ru": "Я еду на автобусе.",
             "rank": 1702,
             "article": "el",
             "gender": "m",
+            "variants": {
+              "rio": "el colectivo"
+            },
             "forms": []
           },
           {
@@ -35381,14 +35404,17 @@
             "es": "tráfico",
             "pos": "noun",
             "ru": "движение (транспорта), пробки",
-            "example_es": "Hay mucho tráfico en el centro.",
+            "example_es": "Hay mucho {es: tráfico | rio: tránsito} en el centro.",
             "example_ru": "В центре сильное движение.",
             "rank": 2600,
             "article": "el",
             "gender": "m",
             "forms": [
               "tráficos"
-            ]
+            ],
+            "variants": {
+              "rio": "el tránsito"
+            }
           },
           {
             "id": "cruzar",
@@ -35405,14 +35431,17 @@
             "es": "metro",
             "pos": "noun",
             "ru": "метро",
-            "example_es": "Cojo el metro cada día.",
+            "example_es": "Tomo {es: el metro | rio: el subte} cada día.",
             "example_ru": "Я каждый день езжу на метро.",
             "rank": 3230,
             "article": "el",
             "gender": "m",
             "forms": [
               "metros"
-            ]
+            ],
+            "variants": {
+              "rio": "el subte"
+            }
           },
           {
             "id": "bicicleta",
@@ -35447,14 +35476,18 @@
             "es": "billete",
             "pos": "noun",
             "ru": "билет; купюра",
-            "example_es": "Un billete de ida y vuelta.",
+            "example_es": "{es: Un billete | am: Un boleto | rio: Un boleto} de ida y vuelta.",
             "example_ru": "Билет туда и обратно.",
             "rank": 3981,
             "article": "el",
             "gender": "m",
             "forms": [
               "billetes"
-            ]
+            ],
+            "variants": {
+              "am": "el boleto",
+              "rio": "el boleto"
+            }
           }
         ]
       },
@@ -36799,14 +36832,17 @@
             "es": "guapo",
             "pos": "adj",
             "ru": "красивый (о человеке)",
-            "example_es": "Tu novio es muy guapo.",
+            "example_es": "Tu novio es muy {es: guapo | rio: lindo}.",
             "example_ru": "Твой парень очень красивый.",
             "rank": 1986,
             "forms": [
               "guapa",
               "guapos",
               "guapas"
-            ]
+            ],
+            "variants": {
+              "rio": "lindo"
+            }
           },
           {
             "id": "antiguo",
@@ -37297,14 +37333,17 @@
             "es": "bolso",
             "pos": "noun",
             "ru": "сумка (дамская)",
-            "example_es": "Mi bolso es marrón.",
+            "example_es": "Dejé {es: el bolso | rio: la cartera} en casa.",
             "example_ru": "Моя сумка коричневая.",
             "rank": 2358,
             "article": "el",
             "gender": "m",
             "forms": [
               "bolsos"
-            ]
+            ],
+            "variants": {
+              "rio": "la cartera"
+            }
           },
           {
             "id": "bolsillo",
@@ -37325,14 +37364,17 @@
             "es": "chaqueta",
             "pos": "noun",
             "ru": "куртка; пиджак",
-            "example_es": "Ponte la chaqueta, hace frío.",
+            "example_es": "Ponte {es: la chaqueta | rio: la campera}, hace frío.",
             "example_ru": "Надень куртку, холодно.",
             "rank": 2451,
             "article": "la",
             "gender": "f",
             "forms": [
               "chaquetas"
-            ]
+            ],
+            "variants": {
+              "rio": "la campera"
+            }
           },
           {
             "id": "abrigo",
@@ -37436,11 +37478,15 @@
             "es": "gafas",
             "pos": "noun",
             "ru": "очки",
-            "example_es": "No veo bien sin gafas.",
+            "example_es": "No veo bien sin {es: gafas | am: lentes | rio: anteojos}.",
             "example_ru": "Без очков я плохо вижу.",
             "rank": 3673,
             "article": "las",
             "gender": "f",
+            "variants": {
+              "am": "los lentes",
+              "rio": "los anteojos"
+            },
             "forms": []
           },
           {
@@ -37448,28 +37494,35 @@
             "es": "jersey",
             "pos": "noun",
             "ru": "свитер",
-            "example_es": "Llevo un jersey de lana.",
+            "example_es": "Llevo {es: un jersey | am: un suéter | rio: un pulóver} de lana.",
             "example_ru": "На мне шерстяной свитер.",
             "rank": 3895,
             "article": "el",
             "gender": "m",
             "forms": [
               "jerséis"
-            ]
+            ],
+            "variants": {
+              "am": "el suéter",
+              "rio": "el pulóver"
+            }
           },
           {
             "id": "camiseta",
             "es": "camiseta",
             "pos": "noun",
             "ru": "футболка, майка",
-            "example_es": "Esta camiseta es muy cómoda.",
+            "example_es": "Esta {es: camiseta | rio: remera} es muy cómoda.",
             "example_ru": "Эта футболка очень удобная.",
             "rank": 3926,
             "article": "la",
             "gender": "f",
             "forms": [
               "camisetas"
-            ]
+            ],
+            "variants": {
+              "rio": "la remera"
+            }
           },
           {
             "id": "naranja",
@@ -37554,40 +37607,49 @@
             "es": "talla",
             "pos": "noun",
             "ru": "размер (одежды)",
-            "example_es": "¿Tiene una talla más grande?",
+            "example_es": "¿Tiene {es: una talla | rio: un talle} más grande?",
             "example_ru": "У вас есть размер побольше?",
             "rank": 5623,
             "article": "la",
             "gender": "f",
             "forms": [
               "tallas"
-            ]
+            ],
+            "variants": {
+              "rio": "el talle"
+            }
           },
           {
             "id": "marrón",
             "es": "marrón",
             "pos": "adj",
             "ru": "коричневый",
-            "example_es": "Busco unas botas marrones.",
+            "example_es": "Busco unas botas {es: marrones | am: café}.",
             "example_ru": "Я ищу коричневые сапоги.",
             "rank": 6305,
             "forms": [
               "marrones"
-            ]
+            ],
+            "variants": {
+              "am": "café"
+            }
           },
           {
             "id": "falda",
             "es": "falda",
             "pos": "noun",
             "ru": "юбка",
-            "example_es": "Me gusta tu falda roja.",
+            "example_es": "Me gusta tu {es: falda | rio: pollera} roja.",
             "example_ru": "Мне нравится твоя красная юбка.",
             "rank": 6436,
             "article": "la",
             "gender": "f",
             "forms": [
               "faldas"
-            ]
+            ],
+            "variants": {
+              "rio": "la pollera"
+            }
           },
           {
             "id": "gorra",
@@ -37622,11 +37684,15 @@
             "es": "vaqueros",
             "pos": "noun",
             "ru": "джинсы",
-            "example_es": "Siempre llevo vaqueros.",
+            "example_es": "Siempre llevo {es: vaqueros | am: jeans | rio: jeans}.",
             "example_ru": "Я всегда ношу джинсы.",
             "rank": 7092,
             "article": "los",
             "gender": "m",
+            "variants": {
+              "am": "los jeans",
+              "rio": "los jeans"
+            },
             "forms": []
           },
           {
@@ -37743,42 +37809,51 @@
             "es": "morado",
             "pos": "adj",
             "ru": "фиолетовый",
-            "example_es": "Su color favorito es el morado.",
+            "example_es": "Su color favorito es el {es: morado | rio: violeta}.",
             "example_ru": "Её любимый цвет — фиолетовый.",
             "rank": 13115,
             "forms": [
               "morada",
               "morados",
               "moradas"
-            ]
+            ],
+            "variants": {
+              "rio": "violeta"
+            }
           },
           {
             "id": "calcetín",
             "es": "calcetín",
             "pos": "noun",
             "ru": "носок",
-            "example_es": "No encuentro mis calcetines.",
+            "example_es": "No encuentro mis {es: calcetines | rio: medias}.",
             "example_ru": "Не могу найти свои носки.",
             "rank": 16249,
             "article": "el",
             "gender": "m",
             "forms": [
               "calcetines"
-            ]
+            ],
+            "variants": {
+              "rio": "la media"
+            }
           },
           {
             "id": "zapatilla",
             "es": "zapatilla",
             "pos": "noun",
             "ru": "кроссовка; тапочка",
-            "example_es": "Llevo zapatillas para correr.",
+            "example_es": "Llevo {es: zapatillas | am: tenis} para correr.",
             "example_ru": "Я в кроссовках для бега.",
             "rank": 25779,
             "article": "la",
             "gender": "f",
             "forms": [
               "zapatillas"
-            ]
+            ],
+            "variants": {
+              "am": "el tenis"
+            }
           },
           {
             "id": "probarse",
@@ -39303,9 +39378,12 @@
             "es": "tarjeta de embarque",
             "pos": "phrase",
             "ru": "посадочный талон",
-            "example_es": "Aquí tiene su tarjeta de embarque.",
+            "example_es": "Aquí tiene su {es: tarjeta de embarque | am: pase de abordar}.",
             "example_ru": "Вот ваш посадочный талон.",
             "rank": 1336,
+            "variants": {
+              "am": "pase de abordar"
+            },
             "forms": []
           },
           {
@@ -39499,14 +39577,17 @@
             "es": "maleta",
             "pos": "noun",
             "ru": "чемодан",
-            "example_es": "Hago la maleta.",
+            "example_es": "Hago {es: la maleta | rio: la valija}.",
             "example_ru": "Я собираю чемодан.",
             "rank": 3226,
             "article": "la",
             "gender": "f",
             "forms": [
               "maletas"
-            ]
+            ],
+            "variants": {
+              "rio": "la valija"
+            }
           },
           {
             "id": "reserva",
@@ -40323,11 +40404,15 @@
             "es": "deberes",
             "pos": "noun",
             "ru": "домашнее задание",
-            "example_es": "Los niños hacen los deberes después de comer.",
+            "example_es": "Los niños hacen {es: los deberes | am: la tarea | rio: la tarea} después de comer.",
             "example_ru": "Дети делают уроки после обеда.",
             "rank": 4869,
             "article": "los",
             "gender": "m",
+            "variants": {
+              "am": "la tarea",
+              "rio": "la tarea"
+            },
             "forms": []
           },
           {
@@ -40878,11 +40963,14 @@
             "es": "urgencias",
             "pos": "noun",
             "ru": "отделение неотложной помощи",
-            "example_es": "Fuimos a urgencias por la noche.",
+            "example_es": "Fuimos a {es: urgencias | rio: la guardia} por la noche.",
             "example_ru": "Ночью мы поехали в травмпункт.",
             "rank": 5554,
             "article": "las",
             "gender": "f",
+            "variants": {
+              "rio": "la guardia"
+            },
             "forms": []
           },
           {
@@ -40964,14 +41052,17 @@
             "es": "resfriado",
             "pos": "noun",
             "ru": "простуда",
-            "example_es": "Tengo un resfriado.",
+            "example_es": "Tengo {es: un resfriado | rio: un resfrío}.",
             "example_ru": "У меня простуда.",
             "rank": 8321,
             "article": "el",
             "gender": "m",
             "forms": [
               "resfriados"
-            ]
+            ],
+            "variants": {
+              "rio": "el resfrío"
+            }
           },
           {
             "id": "pastilla",
@@ -41176,14 +41267,18 @@
             "es": "armario",
             "pos": "noun",
             "ru": "шкаф",
-            "example_es": "La ropa está en el armario.",
+            "example_es": "La ropa está en {es: el armario | am: el clóset | rio: el placard}.",
             "example_ru": "Одежда в шкафу.",
             "rank": 2595,
             "article": "el",
             "gender": "m",
             "forms": [
               "armarios"
-            ]
+            ],
+            "variants": {
+              "am": "el clóset",
+              "rio": "el placard"
+            }
           },
           {
             "id": "sótano",
@@ -41372,9 +41467,13 @@
             "es": "encender",
             "pos": "verb",
             "ru": "включать",
-            "example_es": "Enciende la luz.",
+            "example_es": "{es: Enciende | am: Prende | rio: Prendé} la luz.",
             "example_ru": "Включи свет.",
             "rank": 5129,
+            "variants": {
+              "am": "prender",
+              "rio": "prender"
+            },
             "forms": []
           },
           {
@@ -41410,28 +41509,36 @@
             "es": "bañera",
             "pos": "noun",
             "ru": "ванна",
-            "example_es": "Prefiero la ducha a la bañera.",
+            "example_es": "Prefiero la ducha a {es: la bañera | am: la tina | rio: la bañadera}.",
             "example_ru": "Я предпочитаю душ ванне.",
             "rank": 5672,
             "article": "la",
             "gender": "f",
             "forms": [
               "bañeras"
-            ]
+            ],
+            "variants": {
+              "am": "la tina",
+              "rio": "la bañadera"
+            }
           },
           {
             "id": "manta",
             "es": "manta",
             "pos": "noun",
             "ru": "одеяло, плед",
-            "example_es": "Hace frío, necesito una manta.",
+            "example_es": "Hace frío, necesito {es: una manta | am: una cobija | rio: una frazada}.",
             "example_ru": "Холодно, мне нужен плед.",
             "rank": 5779,
             "article": "la",
             "gender": "f",
             "forms": [
               "mantas"
-            ]
+            ],
+            "variants": {
+              "am": "la cobija",
+              "rio": "la frazada"
+            }
           },
           {
             "id": "lámpara",
@@ -41452,14 +41559,18 @@
             "es": "tejado",
             "pos": "noun",
             "ru": "крыша",
-            "example_es": "Hay un gato en el tejado.",
+            "example_es": "Hay un gato en {es: el tejado | am: el techo | rio: el techo}.",
             "example_ru": "На крыше сидит кот.",
             "rank": 6233,
             "article": "el",
             "gender": "m",
             "forms": [
               "tejados"
-            ]
+            ],
+            "variants": {
+              "am": "el techo",
+              "rio": "el techo"
+            }
           },
           {
             "id": "ordenar",
@@ -41476,14 +41587,17 @@
             "es": "nevera",
             "pos": "noun",
             "ru": "холодильник",
-            "example_es": "La leche está en la nevera.",
+            "example_es": "La leche está en {es: la nevera | rio: la heladera}.",
             "example_ru": "Молоко в холодильнике.",
             "rank": 6862,
             "article": "la",
             "gender": "f",
             "forms": [
               "neveras"
-            ]
+            ],
+            "variants": {
+              "rio": "la heladera"
+            }
           },
           {
             "id": "balcón",
@@ -41582,28 +41696,35 @@
             "es": "grifo",
             "pos": "noun",
             "ru": "кран (водопроводный)",
-            "example_es": "El grifo de la cocina gotea.",
+            "example_es": "{es: El grifo | am: La llave | rio: La canilla} de la cocina gotea.",
             "example_ru": "Кран на кухне подтекает.",
             "rank": 12225,
             "article": "el",
             "gender": "m",
             "forms": [
               "grifos"
-            ]
+            ],
+            "variants": {
+              "am": "la llave",
+              "rio": "la canilla"
+            }
           },
           {
             "id": "lavadora",
             "es": "lavadora",
             "pos": "noun",
             "ru": "стиральная машина",
-            "example_es": "Pongo la lavadora.",
+            "example_es": "Pongo {es: la lavadora | rio: el lavarropas}.",
             "example_ru": "Я включаю стиральную машину.",
             "rank": 12589,
             "article": "la",
             "gender": "f",
             "forms": [
               "lavadoras"
-            ]
+            ],
+            "variants": {
+              "rio": "el lavarropas"
+            }
           },
           {
             "id": "aspiradora",
@@ -41978,14 +42099,17 @@
             "es": "piscina",
             "pos": "noun",
             "ru": "бассейн",
-            "example_es": "La piscina abre a las diez.",
+            "example_es": "{es: La piscina | rio: La pileta} abre a las diez.",
             "example_ru": "Бассейн открывается в десять.",
             "rank": 2680,
             "article": "la",
             "gender": "f",
             "forms": [
               "piscinas"
-            ]
+            ],
+            "variants": {
+              "rio": "la pileta"
+            }
           },
           {
             "id": "concierto",
@@ -42691,14 +42815,18 @@
             "es": "enfadado",
             "pos": "adj",
             "ru": "сердитый, рассерженный",
-            "example_es": "¿Estás enfadado conmigo?",
+            "example_es": "¿Estás {es: enfadado | am: enojado | rio: enojado} conmigo?",
             "example_ru": "Ты на меня сердишься?",
             "rank": 2777,
             "forms": [
               "enfadada",
               "enfadados",
               "enfadadas"
-            ]
+            ],
+            "variants": {
+              "am": "enojado",
+              "rio": "enojado"
+            }
           },
           {
             "id": "preocuparse",
@@ -42998,14 +43126,18 @@
             "es": "cola",
             "pos": "noun",
             "ru": "очередь",
-            "example_es": "Hay mucha cola en la caja.",
+            "example_es": "Hay {es: una cola | am: una fila | rio: una fila} muy larga en la caja.",
             "example_ru": "На кассе большая очередь.",
             "rank": 2440,
             "article": "la",
             "gender": "f",
             "forms": [
               "colas"
-            ]
+            ],
+            "variants": {
+              "am": "la fila",
+              "rio": "la fila"
+            }
           },
           {
             "id": "compra",
@@ -43054,14 +43186,18 @@
             "es": "cartera",
             "pos": "noun",
             "ru": "бумажник, кошелёк",
-            "example_es": "Perdí la cartera en el metro.",
+            "example_es": "Perdí {es: la cartera | am: la billetera | rio: la billetera} en la calle.",
             "example_ru": "Я потерял бумажник в метро.",
             "rank": 3517,
             "article": "la",
             "gender": "f",
             "forms": [
               "carteras"
-            ]
+            ],
+            "variants": {
+              "am": "la billetera",
+              "rio": "la billetera"
+            }
           },
           {
             "id": "recibo",
@@ -43397,7 +43533,7 @@
             "es": "dependiente",
             "pos": "noun",
             "ru": "продавец (в магазине)",
-            "example_es": "La dependienta me trajo otra talla.",
+            "example_es": "{es: El dependiente | am: El vendedor | rio: El vendedor} me trajo otra talla.",
             "example_ru": "Продавщица принесла мне другой размер.",
             "rank": 18018,
             "article": "el",
@@ -43406,7 +43542,11 @@
               "dependienta",
               "dependientes",
               "dependientas"
-            ]
+            ],
+            "variants": {
+              "am": "el vendedor",
+              "rio": "el vendedor"
+            }
           },
           {
             "id": "devolución",
@@ -43427,14 +43567,17 @@
             "es": "rebajas",
             "pos": "noun",
             "ru": "распродажа, скидки",
-            "example_es": "En enero empiezan las rebajas.",
+            "example_es": "En enero empiezan {es: las rebajas | rio: las liquidaciones}.",
             "example_ru": "В январе начинаются распродажи.",
             "rank": 24342,
             "article": "las",
             "gender": "f",
             "forms": [
               "rebaja"
-            ]
+            ],
+            "variants": {
+              "rio": "la liquidación"
+            }
           }
         ]
       },
@@ -43799,14 +43942,18 @@
             "es": "sello",
             "pos": "noun",
             "ru": "почтовая марка; печать",
-            "example_es": "Necesito un sello para esta carta.",
+            "example_es": "Necesito {es: un sello | am: una estampilla | rio: una estampilla} para esta carta.",
             "example_ru": "Мне нужна марка для этого письма.",
             "rank": 5243,
             "article": "el",
             "gender": "m",
             "forms": [
               "sellos"
-            ]
+            ],
+            "variants": {
+              "am": "la estampilla",
+              "rio": "la estampilla"
+            }
           },
           {
             "id": "aparato",
@@ -44033,14 +44180,17 @@
             "es": "auriculares",
             "pos": "noun",
             "ru": "наушники",
-            "example_es": "Siempre escucho música con auriculares.",
+            "example_es": "Siempre escucho música con {es: auriculares | am: audífonos}.",
             "example_ru": "Я всегда слушаю музыку в наушниках.",
             "rank": 16484,
             "article": "los",
             "gender": "m",
             "forms": [
               "auricular"
-            ]
+            ],
+            "variants": {
+              "am": "los audífonos"
+            }
           },
           {
             "id": "impresora",

@@ -426,14 +426,17 @@
   "es": "piscina",
   "pos": "noun",
   "ru": "бассейн",
-  "example_es": "La piscina abre a las diez.",
+  "example_es": "{es: La piscina | rio: La pileta} abre a las diez.",
   "example_ru": "Бассейн открывается в десять.",
   "rank": 2680,
   "article": "la",
   "gender": "f",
   "forms": [
    "piscinas"
-  ]
+  ],
+  "variants": {
+   "rio": "la pileta"
+  }
  },
  {
   "id": "celebrar",

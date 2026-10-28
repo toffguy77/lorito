@@ -18,14 +18,18 @@
   "es": "piso",
   "pos": "noun",
   "ru": "квартира; этаж",
-  "example_es": "Vivo en un piso en el centro.",
+  "example_es": "Vivo en {es: un piso | am: un apartamento | rio: un departamento} en el centro.",
   "example_ru": "Я живу в квартире в центре.",
   "rank": 1007,
   "article": "el",
   "gender": "m",
   "forms": [
    "pisos"
-  ]
+  ],
+  "variants": {
+   "am": "el apartamento",
+   "rio": "el departamento"
+  }
  },
  {
   "id": "habitación",
@@ -186,14 +190,18 @@
   "es": "coche",
   "pos": "noun",
   "ru": "машина",
-  "example_es": "Tengo un coche rojo.",
+  "example_es": "Tengo {es: un coche | am: un carro | rio: un auto} rojo.",
   "example_ru": "У меня красная машина.",
   "rank": 408,
   "article": "el",
   "gender": "m",
   "forms": [
    "coches"
-  ]
+  ],
+  "variants": {
+   "am": "el carro",
+   "rio": "el auto"
+  }
  },
  {
   "id": "dinero",
@@ -312,14 +320,18 @@
   "es": "ordenador",
   "pos": "noun",
   "ru": "компьютер",
-  "example_es": "Trabajo con el ordenador.",
+  "example_es": "Trabajo con {es: el ordenador | am: la computadora | rio: la computadora}.",
   "example_ru": "Я работаю за компьютером.",
   "rank": 3218,
   "article": "el",
   "gender": "m",
   "forms": [
    "ordenadores"
-  ]
+  ],
+  "variants": {
+   "am": "la computadora",
+   "rio": "la computadora"
+  }
  },
  {
   "id": "reloj",
@@ -436,28 +448,36 @@
   "es": "salón",
   "pos": "noun",
   "ru": "гостиная",
-  "example_es": "Vemos la televisión en el salón.",
+  "example_es": "Vemos la televisión en {es: el salón | am: la sala | rio: el living}.",
   "example_ru": "Мы смотрим телевизор в гостиной.",
   "rank": 2163,
   "article": "el",
   "gender": "m",
   "forms": [
    "salones"
-  ]
+  ],
+  "variants": {
+   "am": "la sala",
+   "rio": "el living"
+  }
  },
  {
   "id": "suelo",
   "es": "suelo",
   "pos": "noun",
   "ru": "пол; земля",
-  "example_es": "El libro está en el suelo.",
+  "example_es": "El libro está en {es: el suelo | am: el piso | rio: el piso}.",
   "example_ru": "Книга лежит на полу.",
   "rank": 893,
   "article": "el",
   "gender": "m",
   "forms": [
    "suelos"
-  ]
+  ],
+  "variants": {
+   "am": "el piso",
+   "rio": "el piso"
+  }
  },
  {
   "id": "caja",

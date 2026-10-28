@@ -116,25 +116,31 @@
   "es": "autobús",
   "pos": "noun",
   "ru": "автобус",
-  "example_es": "Voy en autobús.",
+  "example_es": "Voy en {es: autobús | rio: colectivo}.",
   "example_ru": "Я еду на автобусе.",
   "rank": 1702,
   "article": "el",
-  "gender": "m"
+  "gender": "m",
+  "variants": {
+   "rio": "el colectivo"
+  }
  },
  {
   "id": "metro",
   "es": "metro",
   "pos": "noun",
   "ru": "метро",
-  "example_es": "Cojo el metro cada día.",
+  "example_es": "Tomo {es: el metro | rio: el subte} cada día.",
   "example_ru": "Я каждый день езжу на метро.",
   "rank": 3230,
   "article": "el",
   "gender": "m",
   "forms": [
    "metros"
-  ]
+  ],
+  "variants": {
+   "rio": "el subte"
+  }
  },
  {
   "id": "avión",
@@ -169,14 +175,18 @@
   "es": "billete",
   "pos": "noun",
   "ru": "билет; купюра",
-  "example_es": "Un billete de ida y vuelta.",
+  "example_es": "{es: Un billete | am: Un boleto | rio: Un boleto} de ida y vuelta.",
   "example_ru": "Билет туда и обратно.",
   "rank": 3981,
   "article": "el",
   "gender": "m",
   "forms": [
    "billetes"
-  ]
+  ],
+  "variants": {
+   "am": "el boleto",
+   "rio": "el boleto"
+  }
  },
  {
   "id": "mapa",
@@ -452,14 +462,17 @@
   "es": "tráfico",
   "pos": "noun",
   "ru": "движение (транспорта), пробки",
-  "example_es": "Hay mucho tráfico en el centro.",
+  "example_es": "Hay mucho {es: tráfico | rio: tránsito} en el centro.",
   "example_ru": "В центре сильное движение.",
   "rank": 2600,
   "article": "el",
   "gender": "m",
   "forms": [
    "tráficos"
-  ]
+  ],
+  "variants": {
+   "rio": "el tránsito"
+  }
  },
  {
   "id": "esquina",

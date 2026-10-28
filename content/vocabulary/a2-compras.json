@@ -119,7 +119,7 @@
   "es": "dependiente",
   "pos": "noun",
   "ru": "продавец (в магазине)",
-  "example_es": "La dependienta me trajo otra talla.",
+  "example_es": "{es: El dependiente | am: El vendedor | rio: El vendedor} me trajo otra talla.",
   "example_ru": "Продавщица принесла мне другой размер.",
   "rank": 18018,
   "article": "el",
@@ -128,21 +128,29 @@
    "dependienta",
    "dependientes",
    "dependientas"
-  ]
+  ],
+  "variants": {
+   "am": "el vendedor",
+   "rio": "el vendedor"
+  }
  },
  {
   "id": "cola",
   "es": "cola",
   "pos": "noun",
   "ru": "очередь",
-  "example_es": "Hay mucha cola en la caja.",
+  "example_es": "Hay {es: una cola | am: una fila | rio: una fila} muy larga en la caja.",
   "example_ru": "На кассе большая очередь.",
   "rank": 2440,
   "article": "la",
   "gender": "f",
   "forms": [
    "colas"
-  ]
+  ],
+  "variants": {
+   "am": "la fila",
+   "rio": "la fila"
+  }
  },
  {
   "id": "carrito",
@@ -284,14 +292,17 @@
   "es": "rebajas",
   "pos": "noun",
   "ru": "распродажа, скидки",
-  "example_es": "En enero empiezan las rebajas.",
+  "example_es": "En enero empiezan {es: las rebajas | rio: las liquidaciones}.",
   "example_ru": "В январе начинаются распродажи.",
   "rank": 24342,
   "article": "las",
   "gender": "f",
   "forms": [
    "rebaja"
-  ]
+  ],
+  "variants": {
+   "rio": "la liquidación"
+  }
  },
  {
   "id": "gratis",
@@ -432,14 +443,18 @@
   "es": "cartera",
   "pos": "noun",
   "ru": "бумажник, кошелёк",
-  "example_es": "Perdí la cartera en el metro.",
+  "example_es": "Perdí {es: la cartera | am: la billetera | rio: la billetera} en la calle.",
   "example_ru": "Я потерял бумажник в метро.",
   "rank": 3517,
   "article": "la",
   "gender": "f",
   "forms": [
    "carteras"
-  ]
+  ],
+  "variants": {
+   "am": "la billetera",
+   "rio": "la billetera"
+  }
  },
  {
   "id": "cajero",

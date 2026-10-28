@@ -341,14 +341,17 @@
   "es": "auriculares",
   "pos": "noun",
   "ru": "наушники",
-  "example_es": "Siempre escucho música con auriculares.",
+  "example_es": "Siempre escucho música con {es: auriculares | am: audífonos}.",
   "example_ru": "Я всегда слушаю музыку в наушниках.",
   "rank": 16484,
   "article": "los",
   "gender": "m",
   "forms": [
    "auricular"
-  ]
+  ],
+  "variants": {
+   "am": "los audífonos"
+  }
  },
  {
   "id": "radio",
@@ -538,14 +541,18 @@
   "es": "sello",
   "pos": "noun",
   "ru": "почтовая марка; печать",
-  "example_es": "Necesito un sello para esta carta.",
+  "example_es": "Necesito {es: un sello | am: una estampilla | rio: una estampilla} para esta carta.",
   "example_ru": "Мне нужна марка для этого письма.",
   "rank": 5243,
   "article": "el",
   "gender": "m",
   "forms": [
    "sellos"
-  ]
+  ],
+  "variants": {
+   "am": "la estampilla",
+   "rio": "la estampilla"
+  }
  },
  {
   "id": "paquete",
