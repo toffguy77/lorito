@@ -72,3 +72,18 @@ struct BundledExamContentTests {
         #expect(exams.items(exam: "dele-a2", form: 1).filter { $0.preview }.allSatisfy { $0.section == "reading" })
     }
 }
+
+@Suite("Bundled vocabulary coverage")
+struct VocabularyCoverageTests {
+    @Test("A1 and A2 each carry at least 450 words; every deck at least 20; ids unique")
+    func coverage() throws {
+        let decks = try #require(try ContentLoader.loadCatalog().vocabulary).decks
+        for level in [CEFRLevel.a1, .a2] {
+            let count = decks.filter { $0.level == level }.reduce(0) { $0 + $1.words.count }
+            #expect(count >= 450, "\(level): \(count)")
+        }
+        for deck in decks { #expect(deck.words.count >= 20, "\(deck.id): \(deck.words.count)") }
+        let ids = decks.flatMap { $0.words.map(\.id) }
+        #expect(Set(ids).count == ids.count)
+    }
+}

@@ -11,6 +11,8 @@ unique across decks; `rank` is the FrequencyWords position of the lemma.
 from __future__ import annotations
 
 import json
+import re
+import unicodedata
 from pathlib import Path
 
 import lib
@@ -18,6 +20,23 @@ import lib
 POS = {"noun", "verb", "adj", "adv", "pron", "prep", "conj", "num", "phrase", "det", "interj"}
 GENDERS = {"m", "f", "mf"}
 ARTICLES = {"el", "la", "los", "las"}  # los / las for plural-only nouns (vacaciones)
+
+
+def _fold(s: str) -> str:
+    return "".join(c for c in unicodedata.normalize("NFD", s.lower()) if unicodedata.category(c) != "Mn")
+
+
+def example_uses_word(w: dict) -> bool:
+    """The example contains the lemma or a listed form. Verbs are exempt: their
+    examples are conjugated and conjugated forms aren't all listed."""
+    if w.get("pos") == "verb":
+        return True
+    example = _fold(w.get("example_es", ""))
+    candidates = [w.get("es", "")] + list(w.get("forms") or [])
+    if " " in w.get("es", ""):
+        return any(_fold(c) in example for c in candidates if c)
+    tokens = set(re.findall(r"[a-zñ]+", example))
+    return any(_fold(c) in tokens for c in candidates if c)
 
 
 def vocab_dir() -> Path:
@@ -77,6 +96,11 @@ def validate_vocabulary() -> list[str]:
                     errors.append(f"vocabulary: word '{wid}' missing '{key}'")
             if w.get("pos") not in POS:
                 errors.append(f"vocabulary: word '{wid}' unknown pos '{w.get('pos')}'")
+            if w.get("example_es") and not example_uses_word(w):
+                errors.append(f"vocabulary: word '{wid}' example doesn't contain the word or a listed form")
+            if w.get("pos") == "noun" and w.get("article") == "el" and w.get("gender") == "f" \
+                    and not re.match(r"^h?[aá]", _fold(w.get("es", ""))):
+                errors.append(f"vocabulary: noun '{wid}' with el must be masculine (el + feminine only before stressed a-)")
             if w.get("pos") == "noun":
                 if w.get("article") not in ARTICLES:
                     errors.append(f"vocabulary: noun '{wid}' needs article el/la (los/las for plural-only)")

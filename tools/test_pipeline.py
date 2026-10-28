@@ -740,6 +740,19 @@ class VocabularyPipelineTests(unittest.TestCase):
         errs = self.write(self.decks, {"a1-casa": [word("casa", 0)]})
         self.assertTrue(any("casa" in e and "rank" in e for e in errs), errs)
 
+    def test_example_uses_the_word(self):
+        errs = self.write(self.decks, {"a1-casa": [word("mesa", 10, example_es="Es grande.")]})
+        self.assertTrue(any("mesa" in e and "example" in e for e in errs), errs)
+        ok = [word("mesa", 10, example_es="Hay dos mesas.", forms=["mesas"]),
+              word("bueno", 11, pos="adj", article=None, gender=None, example_es="Es un buen libro.", forms=["buen"]),
+              word("ir", 12, pos="verb", article=None, gender=None, example_es="Voy a casa.")]  # verbs: conjugated
+        self.assertEqual(self.write(self.decks, {"a1-casa": ok}), [])
+
+    def test_el_with_feminine_only_before_stressed_a(self):
+        self.assertEqual(self.write(self.decks, {"a1-casa": [word("agua", 10, article="el", gender="f", example_es="El agua está fría.")]}), [])
+        errs = self.write(self.decks, {"a1-casa": [word("mesa", 10, article="el", gender="f")]})
+        self.assertTrue(any("mesa" in e and "el" in e for e in errs), errs)
+
     def test_missing_license(self):
         (self.dir / "LICENSE").unlink()
         errs = self.write(self.decks, {"a1-casa": [word("casa", 10)]})
