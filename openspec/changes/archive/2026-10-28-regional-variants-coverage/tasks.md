@@ -14,4 +14,4 @@
 ## 3. Verify
 
 - [x] 3.1 `swift test`; `python3 tools/test_pipeline.py`
-- [ ] 3.2 Full UI suite (regional-variants UI test still green); `openspec validate regional-variants-coverage --strict`
+- [x] 3.2 Full UI suite (regional-variants UI test still green); `openspec validate regional-variants-coverage --strict`
