@@ -342,6 +342,20 @@ that aren't in the conjugation data; the compiled table adds every single-word
 form (and `vos` form) of every verb in `content/conjugation/`. A rule naming a
 lemma missing from the table fails validation.
 
+`sets.json` entries are a plain form list or an object:
+`{"tense": "<id>"}` / `{"tenses": [...]}` (all single-word forms of those
+conjugation tenses), `{"generate": "infinitives" | "participles"}` (with
+`"inflect": true` participles also get -a/-os/-as), `"exclude_tenses": [...]`
+(drop forms of other tenses — e.g. *hablamos* out of the indefinido set),
+`"extra"` and `"exclude"` (forms). The pipeline expands every set; the app
+receives plain lists.
+
+### `coverage.json`
+
+`{"no_rule": {"<card id>": "<reason>"}}` — every card must be linked by at
+least one rule or listed here with a reason (pronunciation, spelling, lexis,
+style…). A card that is neither, both, or unknown fails validation.
+
 `sets.json` names surface sets: a list of forms; `{"tense": "<id>"}` — all
 single-word forms of a conjugation tense; `{"generate": "infinitives" |
 "participles"}`; `"extra"` adds forms to a generated set.

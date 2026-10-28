@@ -936,5 +936,65 @@ class LensPipelineTests(unittest.TestCase):
         self.assertTrue(any("examples" in e for e in errs), errs)
 
 
+class LensCoverageAndSetsTests(unittest.TestCase):
+    def setUp(self) -> None:
+        self.tmp = tempfile.TemporaryDirectory()
+        os.environ["LORITO_CONTENT_DIR"] = self.tmp.name
+        self.root = Path(self.tmp.name)
+        write_content(self.root, [card("A1-01", 1), card("A1-02", 2)], THEME)
+        self.dir = self.root / "lens"
+        (self.dir / "rules").mkdir(parents=True)
+        (self.dir / "lemmas.tsv").write_text("espero\tesperar\nquiero\tquerer\nesperar\tesperar\nquerer\tquerer\n", encoding="utf-8")
+        (self.dir / "sets.json").write_text(json.dumps({"presente-subjuntivo": ["vengas", "llames"]}), encoding="utf-8")
+        (self.dir / "rules" / "subj-esperar-que.json").write_text(json.dumps(lens_rule(), ensure_ascii=False), encoding="utf-8")
+
+    def tearDown(self) -> None:
+        os.environ.pop("LORITO_CONTENT_DIR", None)
+        self.tmp.cleanup()
+
+    def coverage(self, no_rule):
+        (self.dir / "coverage.json").write_text(json.dumps({"no_rule": no_rule}, ensure_ascii=False), encoding="utf-8")
+        return [e for e in validate.validate() if "coverage" in e]
+
+    def test_no_map_file_skips_the_check(self):
+        self.assertEqual([e for e in validate.validate() if "coverage" in e], [])
+
+    def test_every_card_ruled_or_listed(self):
+        self.assertEqual(self.coverage({"A1-02": "произношение — в тексте не видно"}), [])
+        errs = self.coverage({})
+        self.assertTrue(any("A1-02" in e for e in errs), errs)
+
+    def test_both_unknown_or_empty_reason_fail(self):
+        errs = self.coverage({"A1-01": "x", "A1-02": "ok", "Z9-99": "x"})
+        self.assertTrue(any("A1-01" in e and "rule" in e for e in errs), errs)
+        self.assertTrue(any("Z9-99" in e for e in errs), errs)
+        errs = self.coverage({"A1-02": "  "})
+        self.assertTrue(any("A1-02" in e and "reason" in e for e in errs), errs)
+
+    VERBS = [
+        {"infinitive": "hablar", "paradigms": {
+            "presente": ["hablo", "hablas", "habla", "hablamos", "habláis", "hablan"],
+            "preterito-indefinido": ["hablé", "hablaste", "habló", "hablamos", "hablasteis", "hablaron"],
+            "futuro-simple": ["hablaré", "hablarás", "hablará", "hablaremos", "hablaréis", "hablarán"],
+            "preterito-perfecto": ["he hablado", "has hablado", "ha hablado", "hemos hablado", "habéis hablado", "han hablado"]}},
+        {"infinitive": "cerrar", "paradigms": {
+            "preterito-perfecto": ["he cerrado", "has cerrado", "ha cerrado", "hemos cerrado", "habéis cerrado", "han cerrado"]}},
+    ]
+
+    def test_tense_union_and_exclusion(self):
+        s = lens.expand_set({"tenses": ["preterito-indefinido", "futuro-simple"], "exclude_tenses": ["presente"]}, self.VERBS)
+        self.assertIn("habló", s)
+        self.assertIn("hablará", s)
+        self.assertNotIn("hablamos", s)
+        s = lens.expand_set({"tense": "preterito-indefinido", "exclude_tenses": ["presente"], "exclude": ["hablé"]}, self.VERBS)
+        self.assertEqual(s, sorted(["hablaste", "habló", "hablasteis", "hablaron"]))
+
+    def test_inflected_participles(self):
+        s = lens.expand_set({"generate": "participles", "inflect": True}, self.VERBS)
+        for f in ["cerrado", "cerrada", "cerrados", "cerradas", "hablada"]:
+            self.assertIn(f, s)
+        self.assertNotIn("cerrada", lens.expand_set({"generate": "participles"}, self.VERBS))
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

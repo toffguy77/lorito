@@ -179,28 +179,56 @@ def lemma_table() -> dict[str, str]:
     return table
 
 
+def _tense_forms(verbs: list[dict], tense: str) -> set[str]:
+    return {f.lower() for v in verbs
+            for f in v["paradigms"].get(tense, []) + ([v["vos"][tense]] if tense in v.get("vos", {}) else [])
+            if " " not in f}
+
+
+def expand_set(spec, verbs: list[dict]) -> list[str]:
+    """One sets.json entry → a sorted plain form list (what the app receives)."""
+    if not isinstance(spec, dict):
+        return sorted({f.lower() for f in spec})
+    forms: set[str] = set()
+    if spec.get("generate") == "infinitives":
+        forms = {conjugate.base_infinitive(v["infinitive"]) for v in verbs}
+    elif spec.get("generate") == "participles":
+        # participle = the word after the auxiliary in the pretérito perfecto
+        forms = {f.split()[-1] for v in verbs for f in v["paradigms"].get("preterito-perfecto", [])}
+        if spec.get("inflect"):
+            forms |= {p[:-1] + end for p in forms if p.endswith("o") for end in ("a", "os", "as")}
+    tenses = ([spec["tense"]] if "tense" in spec else []) + list(spec.get("tenses", []))
+    for tense in tenses:
+        forms |= _tense_forms(verbs, tense)
+    for tense in spec.get("exclude_tenses", []):
+        forms -= _tense_forms(verbs, tense)
+    forms = {f.lower() for f in forms | set(spec.get("extra", []))}
+    forms -= {f.lower() for f in spec.get("exclude", [])}
+    return sorted(forms)
+
+
 def load_sets() -> dict[str, list[str]]:
     p = lens_dir() / "sets.json"
     raw = json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
-    conj = _conjugation()
-    out: dict[str, list[str]] = {}
-    for name, spec in raw.items():
-        if isinstance(spec, dict) and spec.get("generate") in ("infinitives", "participles"):
-            verbs = (conj or {}).get("verbs", [])
-            if spec["generate"] == "infinitives":
-                forms = {conjugate.base_infinitive(v["infinitive"]) for v in verbs}
-            else:  # participle = the word after the auxiliary in the pretérito perfecto
-                forms = {f.split()[-1] for v in verbs for f in v["paradigms"].get("preterito-perfecto", [])}
-            out[name] = sorted(f.lower() for f in forms | set(spec.get("extra", [])))
-        elif isinstance(spec, dict) and "tense" in spec:
-            forms = {f.lower() for v in (conj or {}).get("verbs", [])
-                     for f in v["paradigms"].get(spec["tense"], []) + ([v["vos"][spec["tense"]]] if spec["tense"] in v.get("vos", {}) else [])
-                     if " " not in f}
-            forms |= {f.lower() for f in spec.get("extra", [])}
-            out[name] = sorted(forms)
-        else:
-            out[name] = sorted({f.lower() for f in spec})
-    return out
+    verbs = (_conjugation() or {}).get("verbs", [])
+    return {name: expand_set(spec, verbs) for name, spec in raw.items()}
+
+
+def validate_coverage(card_ids: set[str], rules: list[dict]) -> list[str]:
+    """coverage.json: every card is linked by a rule or listed in `no_rule` with a reason."""
+    p = lens_dir() / "coverage.json"
+    if not p.exists():
+        return []
+    try:
+        no_rule = json.loads(p.read_text(encoding="utf-8")).get("no_rule", {})
+    except Exception as e:  # noqa: BLE001
+        return [f"lens coverage: failed to parse coverage.json ({e})"]
+    ruled = {c for r in rules for c in r.get("cards") or []}
+    errors = [f"lens coverage: unknown card '{c}'" for c in sorted(set(no_rule) - card_ids)]
+    errors += [f"lens coverage: '{c}' has a rule and a no_rule entry" for c in sorted(set(no_rule) & ruled)]
+    errors += [f"lens coverage: '{c}' needs a reason" for c, why in sorted(no_rule.items()) if not str(why).strip()]
+    errors += [f"lens coverage: '{c}' has no rule and no no_rule entry" for c in sorted(card_ids - ruled - set(no_rule))]
+    return errors
 
 
 def _check_step(rid: str, step, lemmas: set[str], sets: dict, where: str) -> list[str]:
@@ -227,6 +255,7 @@ def validate_lens(card_ids: set[str]) -> list[str]:
     except Exception as e:  # noqa: BLE001
         return [f"lens: failed to load ({e})"]
     lemmas = set(table.values())
+    errors += validate_coverage(card_ids, rules)
     seen: set[str] = set()
     for r in rules:
         rid = r.get("id", "?")
