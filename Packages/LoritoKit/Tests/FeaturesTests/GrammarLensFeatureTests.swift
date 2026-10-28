@@ -58,7 +58,7 @@ struct GrammarLensFeatureTests {
         m.request("B1-02")
         #expect(try store.allRequestedItems().map(\.itemID) == ["B1-02"])
         #expect(m.status(for: "B1-02") == .requested)
-        #expect(recorder.events.last == .lensCardRequested)
+        #expect(recorder.events.last == .lensCardRequested(card: CatalogCardID("B1-02")!))
         let today = TodayModel(store: store, catalog: try ContentLoader.loadCatalog(),
                                boosts: FirstSessionBoostStore(defaults: UserDefaults(suiteName: UUID().uuidString)!))
         #expect(today.sessionQueue().first == "B1-02")

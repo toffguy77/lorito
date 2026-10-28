@@ -25,9 +25,31 @@ public enum ExerciseTypeName: String, Codable, Sendable, CaseIterable {
     }
 }
 
-/// The closed, anonymous product-event taxonomy. Payloads are enums, ints and
-/// bools only — never item ids, text or personal data. New events are added
-/// only by an ADDED requirement in the `product-analytics` capability.
+/// A bundled grammar card id (`A1-07`) — the only identifier analytics may carry,
+/// and only where an event's requirement names it. Words, drills and free text
+/// can't be turned into one.
+public struct CatalogCardID: Codable, Sendable, Hashable {
+    public let rawValue: String
+
+    public init?(_ raw: String) {
+        guard raw.wholeMatch(of: /[A-C][12]-\d{2}/) != nil else { return nil }
+        rawValue = raw
+    }
+
+    public init(from decoder: Decoder) throws {
+        let raw = try decoder.singleValueContainer().decode(String.self)
+        guard let id = CatalogCardID(raw) else {
+            throw DecodingError.dataCorrupted(.init(codingPath: decoder.codingPath, debugDescription: "not a card id"))
+        }
+        self = id
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        var c = encoder.singleValueContainer()
+        try c.encode(rawValue)
+    }
+}
+
 /// Where Grammar Lens text came from.
 public enum LensSource: String, Codable, Sendable, CaseIterable { case paste, share, camera, photo }
 
@@ -48,6 +70,10 @@ public enum PaywallEntry: String, Codable, Sendable { case settings, examPath }
 public enum PurchaseFailure: String, Codable, Sendable { case cancelled, pending, error, unavailable }
 public enum RestoreOutcome: String, Codable, Sendable { case restored, nothingToRestore, failed }
 
+/// The closed, anonymous product-event taxonomy. Payloads are enums, ints, bools
+/// and — where a requirement names it — a `CatalogCardID`; never other item ids,
+/// text or personal data. New events are added only by an ADDED requirement in
+/// the `product-analytics` capability.
 public enum AnalyticsEvent: Codable, Sendable, Hashable {
     case onboardingStep(OnboardingStepName)
     case onboardingCompleted
@@ -74,10 +100,10 @@ public enum AnalyticsEvent: Codable, Sendable, Hashable {
     case mockCompleted(exam: String, passed: Bool)
     case mockExpired(exam: String)
     case mockAbandoned(exam: String)
-    // grammar-lens (no analysed text; no item id — product-analytics forbids identifiers)
+    // grammar-lens (no analysed text; the requested card's catalog id only)
     case lensOpened(source: LensSource)
     case lensAnalyzed(source: LensSource, matches: LensMatchBucket)
-    case lensCardRequested
+    case lensCardRequested(card: CatalogCardID)
     // study-buddy (no names)
     case buddyInviteSent, buddyInviteAccepted, buddyNudgeSent, buddyLeft
 
@@ -118,7 +144,8 @@ public enum AnalyticsEvent: Codable, Sendable, Hashable {
     public var parameters: [String: String] {
         switch self {
         case .onboardingStep(let step): return ["step": step.rawValue]
-        case .onboardingCompleted, .reminderOpened, .placementStarted, .lensCardRequested: return [:]
+        case .onboardingCompleted, .reminderOpened, .placementStarted: return [:]
+        case .lensCardRequested(let card): return ["card": card.rawValue]
         case .buddyInviteSent, .buddyInviteAccepted, .buddyNudgeSent, .buddyLeft: return [:]
         case .lensOpened(let source): return ["source": source.rawValue]
         case .lensAnalyzed(let source, let matches): return ["source": source.rawValue, "matches": matches.rawValue]

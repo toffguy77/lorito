@@ -89,7 +89,7 @@ public final class LensModel: Identifiable {
         guard let store, status(for: cardID) == .new else { return }
         try? store.requestItem(cardID, at: now())
         statusVersion += 1
-        analytics.record(.lensCardRequested)
+        if let card = CatalogCardID(cardID) { analytics.record(.lensCardRequested(card: card)) }
     }
 
     public nonisolated static func statusText(_ status: CardStatus) -> String {

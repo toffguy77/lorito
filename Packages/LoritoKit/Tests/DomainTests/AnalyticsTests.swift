@@ -25,6 +25,21 @@ struct AnalyticsEventTests {
         }
     }
 
+    @Test("Catalog card ids only: grammar cards pass, words, drills and free text don't")
+    func catalogCardID() {
+        #expect(CatalogCardID("B1-03")?.rawValue == "B1-03")
+        for bad in ["word:casa", "conj:ser:presente:yo", "A1-7", "D1-01", "Espero que vengas", "a1-01", " A1-01"] {
+            #expect(CatalogCardID(bad) == nil, "\(bad)")
+        }
+    }
+
+    @Test("lens_card_requested carries the card id and round-trips through the queue encoding")
+    func lensCardRequested() throws {
+        let r = AnalyticsRecord(event: .lensCardRequested(card: CatalogCardID("B1-03")!), date: Date(timeIntervalSince1970: 0))
+        #expect(r.name == "lens_card_requested" && r.parameters == ["card": "B1-03"])
+        #expect(try JSONDecoder().decode(AnalyticsRecord.self, from: JSONEncoder().encode(r)) == r)
+    }
+
     @Test("Grade event carries kind, grade and revealed — no item id")
     func gradeEvent() {
         let r = AnalyticsRecord(event: .itemGraded(kind: .conjugation, grade: .again, revealed: true), date: Date())
