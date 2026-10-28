@@ -91,11 +91,11 @@ Retention metrics SHALL be derivable from events alone: a user is active on a lo
 - **THEN** that day does not count as an active day
 
 ### Requirement: Privacy disclosures match collection
-The privacy policy and the App Store privacy answers SHALL describe the collected usage data as product interaction data that is not linked to the user and not used for tracking, and SHALL be updated in the same release that first sends events.
+The privacy policy and the App Store privacy answers SHALL describe the collected usage data as product interaction data that is not linked to the user and not used for tracking, and SHALL be updated in the same release that first sends events. They SHALL also disclose crash data, performance (hang) data and other diagnostic data sent by crash reporting, not linked to the user and not used for tracking, in the release that first enables it.
 
-#### Scenario: Release with analytics
-- **WHEN** the first build that sends analytics events is submitted
-- **THEN** the privacy policy page and App Store privacy answers describe that collection
+#### Scenario: Crash reporting disclosed
+- **WHEN** the first release with crash reporting ships
+- **THEN** the privacy policy names the crash-reporting service and what it receives, and the App Privacy answers list Crash Data, Performance Data and Other Diagnostic Data as not linked and not tracking
 
 ### Requirement: Placement and first-session events
 The event taxonomy SHALL include `placementStarted`, `placementCompleted` with the proposed level, the highest known level (or none) and the number of questions, `placementSkipKnownApplied` with the number of seeded cards, and `firstSessionStarted` with the number of new cards; all payloads SHALL be enumerated values, integers or booleans.
