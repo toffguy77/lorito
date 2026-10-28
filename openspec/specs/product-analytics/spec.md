@@ -4,7 +4,7 @@
 TBD - created by archiving change product-analytics. Update Purpose after archive.
 ## Requirements
 ### Requirement: Closed anonymous event taxonomy
-The app SHALL record product events only from a closed, enumerated set defined in the `Domain` layer, whose payloads contain only enumerated values, integers and booleans. Events SHALL NOT contain personal data, free text, item identifiers or content text, and the app SHALL NOT require or create an account for analytics.
+The app SHALL record product events only from a closed, enumerated set defined in the `Domain` layer, whose payloads contain only enumerated values, integers, booleans and — only where an event's requirement names it — a bundled grammar card id matching `^[A-C][12]-\d{2}$`. Events SHALL NOT contain personal data, free text, other item identifiers (words, conjugation drills, CCSE questions, personal words) or content text, and the app SHALL NOT require or create an account for analytics.
 
 #### Scenario: Grade event carries no content
 - **WHEN** the user grades a card
@@ -13,6 +13,10 @@ The app SHALL record product events only from a closed, enumerated set defined i
 #### Scenario: No account needed
 - **WHEN** a new user installs and studies without signing in anywhere
 - **THEN** events are recorded without any account or login
+
+#### Scenario: Only catalog card ids
+- **WHEN** code tries to build a card-id payload from a word id or free text
+- **THEN** no card-id value is produced and nothing is recorded with it
 
 ### Requirement: Taxonomy extended only through this capability
 New events SHALL be introduced only by an ADDED requirement in the `product-analytics` capability together with a new case of the event enum. Code SHALL NOT send events that are not cases of that enum.
@@ -116,11 +120,15 @@ The app SHALL record the anonymous events `paywall_shown` (with the entry point)
 - **THEN** `paywall_shown` is recorded and a `purchase_failed` event is not recorded unless a purchase was attempted
 
 ### Requirement: Grammar Lens events
-The app SHALL record anonymous events `lens_opened` (with input source: paste, share, camera, photo), `lens_analyzed` (with a bucketed match count) and `lens_card_requested` (with card id), and SHALL NOT record the analysed text.
+The app SHALL record anonymous events `lens_opened` (with input source: paste, share, camera, photo), `lens_analyzed` (with a bucketed match count) and `lens_card_requested` (with the bundled card id as `card`), and SHALL NOT record the analysed text.
 
 #### Scenario: Analysis recorded without text
 - **WHEN** the user analyses a pasted paragraph with three matches
 - **THEN** `lens_analyzed` is recorded with source paste and the match bucket, and no text
+
+#### Scenario: Requested card recorded with its id
+- **WHEN** the user adds card `B1-03` to review from a Lens highlight
+- **THEN** `lens_card_requested` is recorded with `card` = `B1-03` and no text
 
 ### Requirement: Study buddy events
 The app SHALL record the anonymous events `buddy_invite_sent`, `buddy_invite_accepted`, `buddy_nudge_sent` and `buddy_left`, without payload, and SHALL NOT record names, user record names or partner data.
