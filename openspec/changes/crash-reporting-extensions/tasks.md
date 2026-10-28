@@ -10,4 +10,4 @@
 ## 3. Verify
 
 - [x] 3.1 `xcodegen generate`; build; the extensions' Info.plist carry `SentryDSN`; the app still reports (Debug `-crash-reporting` run lands with `component: app`)
-- [ ] 3.2 `swift test`; UI suite on iPhone; `openspec validate crash-reporting-extensions --strict`
+- [x] 3.2 `swift test`; UI suite on iPhone; `openspec validate crash-reporting-extensions --strict`

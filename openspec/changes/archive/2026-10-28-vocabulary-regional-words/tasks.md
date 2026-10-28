@@ -20,4 +20,4 @@
 
 ## 5. Verify
 
-- [ ] 5.1 `swift test`; `python3 tools/test_pipeline.py`; `validate.py`; `openspec validate vocabulary-regional-words --strict`
+- [x] 5.1 `swift test`; `python3 tools/test_pipeline.py`; `validate.py`; `openspec validate vocabulary-regional-words --strict`

@@ -12,4 +12,4 @@
 ## 3. Verify
 
 - [x] 3.1 Content test: B1/B2 ≥ 450, C1/C2 ≥ 350, ≥ 20 per deck
-- [ ] 3.2 `swift test`; `python3 tools/test_pipeline.py`; `openspec validate vocabulary-b1-c2 --strict`
+- [x] 3.2 `swift test`; `python3 tools/test_pipeline.py`; `openspec validate vocabulary-b1-c2 --strict`

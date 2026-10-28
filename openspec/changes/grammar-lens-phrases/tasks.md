@@ -11,4 +11,4 @@
 
 ## 3. Verify
 
-- [ ] 3.1 `validate.py`, `compile.py`; `swift test` (Lens cross-check); `openspec validate grammar-lens-phrases --strict`
+- [x] 3.1 `validate.py`, `compile.py`; `swift test` (Lens cross-check); `openspec validate grammar-lens-phrases --strict`
