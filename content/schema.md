@@ -288,7 +288,7 @@ separate dataset — nothing else is generated from the list.
 
 `decks.json`: `[{id, level, title_ru, order}]` (`order` unique per level).
 `<deck-id>.json`: `[{id, es, pos, article?, gender?, plural?, forms?, ru,
-example_es, example_ru, rank}]`:
+example_es, example_ru, rank, variants?}]`:
 
 | Field | Meaning |
 |---|---|
@@ -297,6 +297,14 @@ example_es, example_ru, rank}]`:
 | `article`, `gender` | required for nouns: `el` / `la`; `m`, `f` or `mf` (either article accepted) |
 | `forms` | inflected forms used for lookup («В мои слова» on a card) |
 | `rank` | FrequencyWords position of the lemma (positive integer) |
+| `variants` | optional regional forms `{"am": …, "rio": …}` when everyday usage differs; nouns carry their own article (`"am": "la computadora"`). `es` is the Spain form and stays the id. The example marks the form with an inline alternative: `Uso {es: el ordenador \| am: la computadora}.` |
+
+Validation: a non-verb's example contains the word or a listed form (inline
+alternatives read as their Spain form); `el` with feminine gender only before
+stressed *a-/ha-*; variant codes `am`/`rio` only, nouns' forms with an article, no
+form equal to the Spain form, and a word with variants marks its form in the
+example. B1–C2 decks: B1 and B2 at least 450 words, C1 and C2 at least 350; A1 and
+A2 at least 450; every deck at least 20 (pinned by `ContentTests`).
 
 `tools/enrich.py --vocab <deck-id>` prints a drafting prompt for translations
 and examples (LLM integration point); drafts are reviewed by a human.

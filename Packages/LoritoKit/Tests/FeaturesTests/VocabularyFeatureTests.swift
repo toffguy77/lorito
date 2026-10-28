@@ -66,4 +66,26 @@ struct VocabularyFeatureTests {
         s.submit()
         #expect(s.check?.note == .genderMistake && s.check?.grade == .again)
     }
+
+    @Test("Latin American learner: own form shown and expected; other forms listed after the check")
+    func regional() throws {
+        let (_, store) = try make()
+        var settings = try store.loadSettings()
+        settings.spanishVariant = .latinAmerica
+        try store.saveSettings(settings)
+        let word = Word(id: "ordenador", es: "ordenador", pos: "noun", article: "el", gender: "m", ru: "компьютер",
+                        exampleEs: "Uso {es: el ordenador | am: la computadora}.", exampleRu: "", rank: 1,
+                        variants: [.latinAmerica: "la computadora"])
+        let cal = Calendar.learningDay
+        for d in [-3, -1] {
+            try store.appendEvent(StudyEvent(cardID: "word:ordenador", date: cal.date(byAdding: .day, value: d, to: Date())!, grade: "good"))
+        }
+        let s = WordSessionModel(store: store, items: [("word:ordenador", word)])
+        #expect(s.shown?.display == "la computadora" && s.shown?.exampleEs == "Uso la computadora.")
+        #expect(s.otherForms.isEmpty)
+        s.typed = "la computadora"
+        s.submit()
+        #expect(s.check?.verdict == .correct && s.check?.expected == "la computadora")
+        #expect(s.otherForms == [VariantForm(variant: .spain, text: "el ordenador")])
+    }
 }

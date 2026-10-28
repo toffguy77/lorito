@@ -12,9 +12,13 @@ public struct Word: Codable, Sendable, Hashable, Identifiable {
     public let exampleRu: String
     public let rank: Int
     public let forms: [String]
+    /// Regional forms (`am`, `rio`); `es` is the Spain form and stays the id.
+    /// A noun's form carries its own article (`la computadora`).
+    public let variants: [SpanishVariant: String]
 
     public init(id: String, es: String, pos: String, article: String? = nil, gender: String? = nil, ru: String,
-                exampleEs: String, exampleRu: String, rank: Int, forms: [String] = []) {
+                exampleEs: String, exampleRu: String, rank: Int, forms: [String] = [],
+                variants: [SpanishVariant: String] = [:]) {
         self.id = id
         self.es = es
         self.pos = pos
@@ -25,10 +29,11 @@ public struct Word: Codable, Sendable, Hashable, Identifiable {
         self.exampleRu = exampleRu
         self.rank = rank
         self.forms = forms
+        self.variants = variants
     }
 
     enum CodingKeys: String, CodingKey {
-        case id, es, pos, article, gender, ru, rank, forms
+        case id, es, pos, article, gender, ru, rank, forms, variants
         case exampleEs = "example_es", exampleRu = "example_ru"
     }
 
@@ -44,6 +49,25 @@ public struct Word: Codable, Sendable, Hashable, Identifiable {
         exampleRu = try c.decodeIfPresent(String.self, forKey: .exampleRu) ?? ""
         rank = try c.decode(Int.self, forKey: .rank)
         forms = try c.decodeIfPresent([String].self, forKey: .forms) ?? []
+        let raw = try c.decodeIfPresent([String: String].self, forKey: .variants) ?? [:]
+        variants = Dictionary(uniqueKeysWithValues: raw.compactMap { k, v in SpanishVariant(code: k).map { ($0, v) } })
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        var c = encoder.container(keyedBy: CodingKeys.self)
+        try c.encode(id, forKey: .id)
+        try c.encode(es, forKey: .es)
+        try c.encode(pos, forKey: .pos)
+        try c.encodeIfPresent(article, forKey: .article)
+        try c.encodeIfPresent(gender, forKey: .gender)
+        try c.encode(ru, forKey: .ru)
+        try c.encode(exampleEs, forKey: .exampleEs)
+        try c.encode(exampleRu, forKey: .exampleRu)
+        try c.encode(rank, forKey: .rank)
+        try c.encode(forms, forKey: .forms)
+        if !variants.isEmpty {
+            try c.encode(Dictionary(uniqueKeysWithValues: variants.map { ($0.code, $1) }), forKey: .variants)
+        }
     }
 
     public var isNoun: Bool { pos == "noun" }
@@ -51,6 +75,43 @@ public struct Word: Codable, Sendable, Hashable, Identifiable {
     public var display: String { isNoun ? "\(article ?? "") \(es)".trimmingCharacters(in: .whitespaces) : es }
 
     public static func itemID(_ id: String) -> String { "word:\(id)" }
+
+    /// The word as the learner of `variant` says it: form, article, gender and
+    /// example; the Spain form when the variant has none.
+    public func resolved(for variant: SpanishVariant) -> Word {
+        let example = VariantMarkup.resolveInline(exampleEs, for: variant).replacingOccurrences(of: "*", with: "")
+        guard variant != .spain, let form = variants[variant] else {
+            return Word(id: id, es: es, pos: pos, article: article, gender: gender, ru: ru, exampleEs: example,
+                        exampleRu: exampleRu, rank: rank, forms: forms, variants: variants)
+        }
+        let (art, lemma) = isNoun ? Self.splitArticle(form) : (nil, form)
+        return Word(id: id, es: lemma, pos: pos, article: art, gender: art.map(Self.gender(of:)) ?? gender, ru: ru,
+                    exampleEs: example, exampleRu: exampleRu, rank: rank, forms: [], variants: variants)
+    }
+
+    /// Every region's display form except the learner's own, Spain first.
+    public func otherForms(for variant: SpanishVariant) -> [VariantForm] {
+        guard !variants.isEmpty else { return [] }
+        let mine = resolved(for: variant).display
+        return SpanishVariant.allCases.compactMap { v in
+            let d = resolved(for: v).display
+            return v == variant || d == mine || (v != .spain && variants[v] == nil) ? nil : VariantForm(variant: v, text: d)
+        }
+    }
+
+    /// Spain and regional forms as words (Spain first), for answer checking and lookup.
+    var allForms: [Word] {
+        [resolved(for: .spain)] + SpanishVariant.allCases.filter { variants[$0] != nil }.map { resolved(for: $0) }
+    }
+
+    static func splitArticle(_ form: String) -> (String?, String) {
+        for a in ["el", "la", "los", "las"] where form.hasPrefix(a + " ") {
+            return (a, String(form.dropFirst(a.count + 1)))
+        }
+        return (nil, form)
+    }
+
+    static func gender(of article: String) -> String { article == "la" || article == "las" ? "f" : "m" }
 }
 
 public struct Deck: Codable, Sendable, Hashable, Identifiable {
@@ -91,16 +152,14 @@ public struct VocabularyCatalog: Codable, Sendable, Hashable {
     }
 
     /// Lookup of a tapped/typed Spanish word: case, punctuation and a leading
-    /// article are ignored; matches `es` or any of `forms`.
+    /// article are ignored; matches `es` or any of `forms`, then regional forms.
     public func lookup(_ raw: String) -> Word? {
         let n = Self.normalize(raw)
         guard !n.isEmpty else { return nil }
-        for d in decks {
-            if let w = d.words.first(where: { Self.normalize($0.es) == n || $0.forms.contains { Self.normalize($0) == n } }) {
-                return w
-            }
-        }
-        return nil
+        // Spain forms first: `cartera` is the wallet, not the Rioplatense word for `bolso`.
+        let words = decks.flatMap(\.words)
+        return words.first { Self.normalize($0.es) == n || $0.forms.contains { Self.normalize($0) == n } }
+            ?? words.first { $0.variants.values.contains { Self.normalize($0) == n } }
     }
 
     static func normalize(_ s: String) -> String {
@@ -142,12 +201,17 @@ public struct VocabularyCheck: Sendable, Equatable {
 
 /// Production answers: nouns need their article; a wrong article is a gender
 /// mistake; `mf` nouns accept el or la; accents follow the conjugation rule.
+/// The learner's regional form is expected; every listed form is accepted with
+/// its own article.
 public enum VocabularyChecker {
-    public static func check(_ word: Word, typed raw: String) -> VocabularyCheck {
+    public static func check(_ word: Word, typed raw: String, variant: SpanishVariant = .spain) -> VocabularyCheck {
         let typed = raw.lowercased().split(whereSeparator: \.isWhitespace).joined(separator: " ")
-        let expected = word.display
+        let mine = word.resolved(for: variant)
+        let expected = mine.display
+        let candidates = [mine] + word.allForms.filter { $0.es != mine.es }
         guard word.isNoun else {
-            let c = ConjugationChecker.check(expected: word.es, typed: typed)
+            let results = candidates.map { ConjugationChecker.check(expected: $0.es, typed: typed) }
+            let c = results.first { $0.verdict == .correct } ?? results.first { $0.verdict == .almost } ?? results[0]
             return VocabularyCheck(verdict: c.verdict == .correct ? .correct : c.verdict == .almost ? .almost : .wrong,
                                    grade: c.grade, note: c.verdict == .almost ? .accents : nil, expected: expected)
         }
@@ -157,18 +221,41 @@ public enum VocabularyChecker {
             article = a
             rest = String(typed.dropFirst(a.count + 1))
         }
-        let exact = rest == word.es.lowercased()
-        let folded = ConjugationChecker.fold(rest) == ConjugationChecker.fold(word.es.lowercased())
-        guard exact || folded else {
+        let exactMatch = candidates.first { rest == $0.es.lowercased() }
+        let foldedMatch = candidates.first { ConjugationChecker.fold(rest) == ConjugationChecker.fold($0.es.lowercased()) }
+        guard let form = exactMatch ?? foldedMatch else {
             return VocabularyCheck(verdict: .wrong, grade: .again, note: nil, expected: expected)
         }
         guard let article else {
             return VocabularyCheck(verdict: .almost, grade: .hard, note: .missingArticle, expected: expected)
         }
-        let articleOK = word.gender == "mf" ? true : article == word.article
+        let articleOK = form.gender == "mf" ? true : article == form.article
         if !articleOK { return VocabularyCheck(verdict: .wrong, grade: .again, note: .genderMistake, expected: expected) }
-        return exact ? VocabularyCheck(verdict: .correct, grade: .good, note: nil, expected: expected)
-                     : VocabularyCheck(verdict: .almost, grade: .hard, note: .accents, expected: expected)
+        return exactMatch != nil ? VocabularyCheck(verdict: .correct, grade: .good, note: nil, expected: expected)
+                                 : VocabularyCheck(verdict: .almost, grade: .hard, note: .accents, expected: expected)
+    }
+}
+
+/// Which decks feed new words. An empty stored selection means the default: the
+/// decks of the learner's included levels up to B2 (A1–B2 without a target);
+/// C1–C2 decks are opt-in. Pure.
+public enum VocabularySelection {
+    public static let defaultMaxLevel: CEFRLevel = .b2
+
+    public static func defaultDeckIDs(_ decks: [Deck], targetLevel: CEFRLevel?) -> Set<String> {
+        let top = min(targetLevel ?? defaultMaxLevel, defaultMaxLevel)
+        return Set(decks.filter { $0.level <= top }.map(\.id))
+    }
+
+    public static func selected(_ decks: [Deck], settings: UserSettings) -> Set<String> {
+        settings.selectedDeckIDs.isEmpty ? defaultDeckIDs(decks, targetLevel: settings.targetLevel) : Set(settings.selectedDeckIDs)
+    }
+
+    /// The stored selection after toggling `deckID`, in deck order; empty when it equals the default.
+    public static func toggled(_ deckID: String, decks: [Deck], settings: UserSettings) -> [String] {
+        var set = selected(decks, settings: settings)
+        if set.contains(deckID) { set.remove(deckID) } else { set.insert(deckID) }
+        return set == defaultDeckIDs(decks, targetLevel: settings.targetLevel) ? [] : decks.map(\.id).filter(set.contains)
     }
 }
 
@@ -181,7 +268,7 @@ public enum VocabularyPlanner {
     public static func plan(_ catalog: VocabularyCatalog, settings: UserSettings, personal: [String],
                             reviews: [ReviewState], introducedToday: [ItemKind: Int], today: Date,
                             calendar: Calendar = .learningDay) -> [String] {
-        let selected = settings.selectedDeckIDs.isEmpty ? Set(catalog.decks.map(\.id)) : Set(settings.selectedDeckIDs)
+        let selected = VocabularySelection.selected(catalog.decks, settings: settings)
         let deckItems = catalog.decks.filter { selected.contains($0.id) }.flatMap { $0.words.map { Word.itemID($0.id) } }
         let pool = Set(deckItems + personal)
         let due = reviews.filter { pool.contains($0.cardID) && DueSelection.isDue($0, on: today, calendar: calendar) }

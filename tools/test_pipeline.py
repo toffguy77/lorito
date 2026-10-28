@@ -753,6 +753,24 @@ class VocabularyPipelineTests(unittest.TestCase):
         errs = self.write(self.decks, {"a1-casa": [word("mesa", 10, article="el", gender="f")]})
         self.assertTrue(any("mesa" in e and "el" in e for e in errs), errs)
 
+    def test_regional_forms(self):
+        good = word("ordenador", 10, article="el", gender="m", forms=["ordenadores"],
+                    example_es="Uso {es: el ordenador | am: la computadora}.",
+                    variants={"am": "la computadora", "rio": "la compu"})
+        verb = word("conducir", 11, pos="verb", article=None, gender=None,
+                    example_es="No sé {es: conducir | am: manejar}.", variants={"am": "manejar"})
+        self.assertEqual(self.write(self.decks, {"a1-casa": [good, verb]}), [])
+        bad_code = dict(good, variants={"mx": "la computadora"})
+        self.assertTrue(any("ordenador" in e and "mx" in e for e in self.write(self.decks, {"a1-casa": [bad_code]})))
+        no_article = dict(good, variants={"am": "computadora"})
+        self.assertTrue(any("ordenador" in e and "article" in e for e in self.write(self.decks, {"a1-casa": [no_article]})))
+        same = dict(good, variants={"am": "el ordenador"})
+        self.assertTrue(any("ordenador" in e and "Spain form" in e for e in self.write(self.decks, {"a1-casa": [same]})))
+        unmarked = dict(good, example_es="Uso el ordenador.")
+        self.assertTrue(any("ordenador" in e and "inline" in e for e in self.write(self.decks, {"a1-casa": [unmarked]})))
+        # The example check reads the Spain branch of inline alternatives.
+        self.assertTrue(vocab.example_uses_word(good))
+
     def test_missing_license(self):
         (self.dir / "LICENSE").unlink()
         errs = self.write(self.decks, {"a1-casa": [word("casa", 10)]})

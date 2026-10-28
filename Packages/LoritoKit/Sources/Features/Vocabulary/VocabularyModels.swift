@@ -75,14 +75,10 @@ public final class VocabularyModel: Identifiable {
         set { update { $0.dailyNewWordCount = min(max(newValue, 0), 20) } }
     }
 
-    public func isSelected(_ deck: Deck) -> Bool { settings.selectedDeckIDs.isEmpty || settings.selectedDeckIDs.contains(deck.id) }
+    public func isSelected(_ deck: Deck) -> Bool { VocabularySelection.selected(decks, settings: settings).contains(deck.id) }
 
     public func toggle(_ deck: Deck) {
-        update { s in
-            var selected = s.selectedDeckIDs.isEmpty ? Set(decks.map(\.id)) : Set(s.selectedDeckIDs)
-            if selected.contains(deck.id) { selected.remove(deck.id) } else { selected.insert(deck.id) }
-            s.selectedDeckIDs = selected.count == decks.count ? [] : decks.map(\.id).filter(selected.contains)
-        }
+        update { s in s.selectedDeckIDs = VocabularySelection.toggled(deck.id, decks: decks, settings: s) }
     }
 
     public func progress(_ deck: Deck) -> (started: Int, total: Int) {
@@ -132,9 +128,12 @@ public final class WordSessionModel: Identifiable {
     public var typed = ""
     public private(set) var check: VocabularyCheck?
     public private(set) var mode: VocabularyMode = .recognition
+    /// The learner's variant: shown form, audio and expected answer.
+    public let variant: SpanishVariant
 
     init(store: UserDataStore, items: [(String, Word)], now: @escaping () -> Date = { Date() }) {
         self.store = store
+        self.variant = ((try? store.loadSettings()) ?? .default).spanishVariant
         self.grading = GradingService(store: store)
         self.items = items.map { (itemID: $0.0, word: $0.1) }
         self.now = now
@@ -142,6 +141,13 @@ public final class WordSessionModel: Identifiable {
     }
 
     public var current: (itemID: String, word: Word)? { index < items.count ? items[index] : nil }
+    /// The current word as the learner's variant says it.
+    public var shown: Word? { current?.word.resolved(for: variant) }
+    /// Other regions' forms, listed once the answer is revealed or checked.
+    public var otherForms: [VariantForm] {
+        guard let c = current, isRevealed || check != nil else { return [] }
+        return c.word.otherForms(for: variant)
+    }
     public var isComplete: Bool { index >= items.count }
 
     public func reveal() { isRevealed = true }
@@ -156,7 +162,7 @@ public final class WordSessionModel: Identifiable {
     /// Production: check the typed answer and grade.
     public func submit() {
         guard let c = current, mode == .production, check == nil, !typed.trimmingCharacters(in: .whitespaces).isEmpty else { return }
-        let r = VocabularyChecker.check(c.word, typed: typed)
+        let r = VocabularyChecker.check(c.word, typed: typed, variant: variant)
         check = r
         _ = try? grading.grade(cardID: c.itemID, grade: r.grade, today: now())
     }

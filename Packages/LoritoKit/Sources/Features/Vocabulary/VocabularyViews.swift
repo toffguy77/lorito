@@ -17,7 +17,9 @@ struct WordSessionView: View {
                     .padding(.top, LoritoSpacing.sm)
                 ScrollView {
                     VStack(alignment: .leading, spacing: LoritoSpacing.md) {
-                        if model.mode == .recognition { recognition(c.word) } else { production(c.word) }
+                        let w = model.shown ?? c.word
+                        if model.mode == .recognition { recognition(w) } else { production(w) }
+                        otherForms
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal, LoritoSpacing.screenGutter)
@@ -80,6 +82,18 @@ struct WordSessionView: View {
             if r.verdict != .correct {
                 SpanishText(r.expected, size: .custom(LoritoTextStyle.spanishInline.size), color: LoritoColor.onInk)
             }
+        }
+    }
+
+    @ViewBuilder
+    private var otherForms: some View {
+        ForEach(model.otherForms, id: \.variant) { f in
+            HStack(alignment: .firstTextBaseline, spacing: LoritoSpacing.xs) {
+                Text(VariantMarkup.noteTitle([f.variant]) + ":").font(LoritoFont.caption).foregroundStyle(LoritoColor.onInkSecondary)
+                SpanishText(f.text, size: .custom(LoritoTextStyle.spanishInline.size), color: LoritoColor.onInk)
+            }
+            .accessibilityElement(children: .combine)
+            .accessibilityIdentifier("words.otherForm.\(f.variant.code)")
         }
     }
 
