@@ -75,12 +75,13 @@ struct BundledExamContentTests {
 
 @Suite("Bundled vocabulary coverage")
 struct VocabularyCoverageTests {
-    @Test("A1 and A2 each carry at least 450 words; every deck at least 20; ids unique")
+    @Test("A1–B2 carry at least 450 words each, C1–C2 at least 350; every deck at least 20; ids unique")
     func coverage() throws {
         let decks = try #require(try ContentLoader.loadCatalog().vocabulary).decks
-        for level in [CEFRLevel.a1, .a2] {
+        let minimum: [CEFRLevel: Int] = [.a1: 450, .a2: 450, .b1: 450, .b2: 450, .c1: 350, .c2: 350]
+        for (level, min) in minimum {
             let count = decks.filter { $0.level == level }.reduce(0) { $0 + $1.words.count }
-            #expect(count >= 450, "\(level): \(count)")
+            #expect(count >= min, "\(level): \(count)")
         }
         for deck in decks { #expect(deck.words.count >= 20, "\(deck.id): \(deck.words.count)") }
         let ids = decks.flatMap { $0.words.map(\.id) }
