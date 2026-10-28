@@ -26,5 +26,5 @@
 ## 5. Verify
 
 - [x] 5.1 `swift test`; `xcodegen generate` + `xcodebuild` build; full UI test suite (SDK must stay off)
-- [ ] 5.2 (manual, owner) Debug run with `-crash-reporting` and a test DSN sends a test event (owner, after setup)
+- [x] 5.2 Debug run with `-crash-reporting` and the project DSN sends a test event — verified 2026-10-28: SIGSEGV issue LORITO-1 (environment debug) and a crashed session arrived; user id only, no IP or device name
 - [x] 5.3 `openspec validate crash-reporting --strict`

@@ -16,8 +16,8 @@
 
 ## 3. Content
 
-- [ ] 3.1 (partial — generated, нужна вычитка: 7 A1 decks, ~210 words; expand towards ~500 and human review) A1 decks (~500 words) ranked from FrequencyWords, with translations, examples, gender; human review
-- [ ] 3.2 (partial — generated, нужна вычитка: 6 A2 decks, ~130 words; expand and review) A2 decks (~500 words); human review
+- [x] 3.1 (generation completed by `vocabulary-a1-a2-completion`: A1 ≈504 words; human review tracked there) A1 decks (~500 words) ranked from FrequencyWords, with translations, examples, gender; human review
+- [x] 3.2 (generation completed by `vocabulary-a1-a2-completion`: A2 ≈507 words; human review tracked there) A2 decks (~500 words); human review
 - [ ] 3.3 (later release) B1–B2 decks (follow-up; may ship in a later release)
 
 ## 4. Domain (TDD)
