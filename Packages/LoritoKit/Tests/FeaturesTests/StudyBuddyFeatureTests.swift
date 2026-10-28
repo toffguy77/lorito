@@ -19,6 +19,7 @@ final class FakeBuddyBackend: BuddyBackend {
     var nudges: [BuddyNudge] = []
     var subscribed = false
     var invites = 0
+    var sendFails = false
 
     func isAvailable() async -> Bool { available }
     func currentUser() async throws -> String { me }
@@ -33,7 +34,10 @@ final class FakeBuddyBackend: BuddyBackend {
         days += mine
     }
     func fetch() async throws -> (days: [BuddyDay], nudges: [BuddyNudge]) { (days, nudges) }
-    func send(_ nudge: BuddyNudge) async throws { nudges.append(nudge) }
+    func send(_ nudge: BuddyNudge) async throws {
+        if sendFails { throw NSError(domain: "CKErrorDomain", code: 3, userInfo: ["partner": "Борис"]) }
+        nudges.append(nudge)
+    }
     func registerNudgeSubscription() async throws { subscribed = true }
     func leave() async throws { currentRole = .none; days.removeAll(); nudges.removeAll() }
 }
@@ -127,6 +131,26 @@ struct StudyBuddyFeatureTests {
         await m.refresh()
         guard case .paired(let studied) = m.state else { Issue.record("not paired"); return }
         #expect(!studied.canNudge)
+    }
+
+    @Test("A failed nudge is reported (area buddy, domain and code) and not recorded as sent")
+    func nudgeFailure() async throws {
+        final class Reports: ErrorReporting, @unchecked Sendable {
+            let lock = NSLock()
+            var items: [ErrorReport] = []
+            func report(_ report: ErrorReport) { lock.withLock { items.append(report) } }
+        }
+        let backend = FakeBuddyBackend()
+        backend.currentRole = .participant
+        backend.days = [partnerDay(0, studied: false)]
+        backend.sendFails = true
+        let recorder = BuddyRecorder()
+        let m = try model(backend, recorder: recorder)
+        await m.refresh()
+        let reports = Reports()
+        await ErrorReports.$override.withValue(reports) { await m.nudge() }
+        #expect(reports.items == [ErrorReport(area: .buddy, domain: "CKErrorDomain", code: 3)])
+        #expect(!recorder.events.contains(.buddyNudgeSent))
     }
 
     @Test("Own nudges never count as received; leaving returns to the invite state")

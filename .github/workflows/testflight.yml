@@ -19,12 +19,16 @@ jobs:
         run: sudo xcode-select -s /Applications/Xcode_26.3.app/Contents/Developer
 
       - name: Install fastlane and XcodeGen
-        run: brew install fastlane xcodegen
+        run: brew install fastlane xcodegen sentry-cli
 
-      - name: Write analytics app ID (TelemetryDeck)
+      - name: Write analytics app ID (TelemetryDeck) and Sentry DSN
         env:
           TELEMETRYDECK_APP_ID: ${{ secrets.TELEMETRYDECK_APP_ID }}
-        run: printf 'TELEMETRYDECK_APP_ID = %s\n' "$TELEMETRYDECK_APP_ID" > Lorito/Config.local.xcconfig
+          SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
+        # The DSN is stored without https:// (`//` starts an xcconfig comment).
+        run: |
+          printf 'TELEMETRYDECK_APP_ID = %s\n' "$TELEMETRYDECK_APP_ID" > Lorito/Config.local.xcconfig
+          printf 'SENTRY_DSN = %s\n' "${SENTRY_DSN#https://}" >> Lorito/Config.local.xcconfig
 
       - name: Generate Xcode project
         run: xcodegen generate
@@ -49,6 +53,9 @@ jobs:
           APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
           CLOUDKIT_MANAGEMENT_TOKEN: ${{ secrets.CLOUDKIT_MANAGEMENT_TOKEN }}
           DISTRIBUTION_CERTIFICATE_PASSWORD: ${{ secrets.DISTRIBUTION_CERTIFICATE_PASSWORD }}
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+          SENTRY_ORG_SLUG: ${{ vars.SENTRY_ORG_SLUG }}
+          SENTRY_PROJECT_SLUG: ${{ vars.SENTRY_PROJECT_SLUG }}
         run: fastlane ci_beta
 
       - name: Clean up secrets

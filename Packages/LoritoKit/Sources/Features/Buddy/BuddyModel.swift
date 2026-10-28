@@ -103,7 +103,10 @@ public final class BuddyModel {
         do {
             try await backend.send(BuddyNudge(from: me, day: BuddyDayKey.key(now())))
             analytics.record(.buddyNudgeSent)
-        } catch { return }
+        } catch {
+            ErrorReports.report(error, area: .buddy)
+            return
+        }
         await refresh()
     }
 

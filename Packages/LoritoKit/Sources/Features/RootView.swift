@@ -122,6 +122,7 @@ public struct RootView: View {
                 scheduler: SystemNotificationScheduler(), store: store, catalog: catalog
             )
         } catch {
+            ErrorReports.report(error, area: .contentLoad)
             loadError = true
         }
     }

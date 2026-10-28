@@ -9,6 +9,7 @@ private final class FakeStore: ProStore, @unchecked Sendable {
     var productsFail = false
     var syncFails = false
     var nextOutcome: PurchaseOutcome = .purchased
+    var purchaseThrows = false
     let lifetime = ProProducts.lifetime
 
     func products() async throws -> [ProProductInfo] {
@@ -17,6 +18,7 @@ private final class FakeStore: ProStore, @unchecked Sendable {
     }
     func currentPurchases() async -> [VerifiedPurchase] { purchases }
     func purchase(_ productID: String) async throws -> PurchaseOutcome {
+        if purchaseThrows { throw NSError(domain: "SKErrorDomain", code: 0, userInfo: ["product": productID]) }
         if nextOutcome == .purchased {
             purchases.append(VerifiedPurchase(productID: productID, expirationDate: productID == ProProducts.yearly
                                               ? Date().addingTimeInterval(365 * 86_400) : nil,
@@ -107,5 +109,30 @@ struct PurchaseServiceTests {
         store.nextOutcome = .cancelled
         _ = await s.purchase(ProProducts.yearly)
         #expect(recorder.events.last == .purchaseFailed(productID: ProProducts.yearly, reason: .cancelled))
+    }
+
+    @Test("Purchase and restore errors are reported (domain and code only); cancel and pending are not")
+    func errorsReported() async {
+        final class Reports: ErrorReporting, @unchecked Sendable {
+            let lock = NSLock()
+            var items: [ErrorReport] = []
+            func report(_ report: ErrorReport) { lock.withLock { items.append(report) } }
+        }
+        let reports = Reports()
+        let store = FakeStore()
+        let s = make(store)
+        await ErrorReports.$override.withValue(reports) {
+            store.nextOutcome = .cancelled
+            _ = await s.purchase(ProProducts.lifetime)
+            store.nextOutcome = .pending
+            _ = await s.purchase(ProProducts.lifetime)
+            #expect(reports.items.isEmpty)
+            store.purchaseThrows = true
+            _ = await s.purchase(ProProducts.lifetime)
+            store.syncFails = true
+            _ = await s.restore()
+        }
+        #expect(reports.items == [ErrorReport(area: .purchase, domain: "SKErrorDomain", code: 0),
+                                  ErrorReport(area: .purchase, domain: NSURLErrorDomain, code: URLError.notConnectedToInternet.rawValue)])
     }
 }

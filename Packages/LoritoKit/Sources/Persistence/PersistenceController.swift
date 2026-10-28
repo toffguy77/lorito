@@ -1,6 +1,7 @@
 import Foundation
 import SwiftData
 import CoreData
+import Domain
 
 /// Configuration for the user-data store.
 public struct PersistenceConfig: Sendable {
@@ -78,21 +79,32 @@ public enum PersistenceController {
         if inMemory {
             return try! makeContainer(config: PersistenceConfig(inMemory: true, cloudKitEnabled: false))
         }
+        #if DEBUG
+        if cloudKitEnabled, CommandLine.arguments.contains("-LoritoInitCloudKitSchema") { initializeCloudKitSchema() }
+        #endif
+        return userContainer(cloudKitEnabled: cloudKitEnabled, make: makeContainer(config:))
+    }
+
+    /// Synced container when enabled; local-first fallback otherwise. A failed
+    /// synced container is reported (`persistenceFallback`) — the user silently
+    /// loses sync, which nothing else would surface.
+    static func userContainer(cloudKitEnabled: Bool,
+                              make: (PersistenceConfig) throws -> ModelContainer) -> ModelContainer {
         if cloudKitEnabled {
-            #if DEBUG
-            if CommandLine.arguments.contains("-LoritoInitCloudKitSchema") { initializeCloudKitSchema() }
-            #endif
-            if let synced = try? makeContainer(config: PersistenceConfig(cloudKitEnabled: true)) {
+            do {
+                let synced = try make(PersistenceConfig(cloudKitEnabled: true))
                 print("[Lorito] CloudKit sync ENABLED (private DB iCloud.com.toffguy.lorito)")
                 return synced
+            } catch {
+                ErrorReports.report(error, area: .persistenceFallback)
+                print("[Lorito] CloudKit requested but container init failed — using local store")
             }
-            print("[Lorito] CloudKit requested but container init failed — using local store")
         } else {
             print("[Lorito] CloudKit not enabled in this build — local store")
         }
         // Local-first fallback. Force-try: a local container failing is
         // unrecoverable and should crash loudly.
-        return try! makeContainer(config: PersistenceConfig(cloudKitEnabled: false))
+        return try! make(PersistenceConfig(cloudKitEnabled: false))
     }
 
     #if DEBUG

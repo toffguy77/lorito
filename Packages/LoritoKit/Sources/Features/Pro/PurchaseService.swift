@@ -82,7 +82,12 @@ public final class PurchaseService {
     public func purchase(_ productID: String) async -> PurchaseOutcome {
         analytics.record(.purchaseStarted(productID: productID))
         let outcome: PurchaseOutcome
-        do { outcome = try await store.purchase(productID) } catch { outcome = .failed }
+        do {
+            outcome = try await store.purchase(productID)
+        } catch {
+            ErrorReports.report(error, area: .purchase)
+            outcome = .failed
+        }
         switch outcome {
         case .purchased:
             analytics.record(.purchaseCompleted(productID: productID))
@@ -100,6 +105,7 @@ public final class PurchaseService {
         do {
             try await store.sync()
         } catch {
+            ErrorReports.report(error, area: .purchase)
             analytics.record(.restore(outcome: .failed))
             return .failed
         }

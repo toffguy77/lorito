@@ -4,4 +4,8 @@
 // CI writes that file from the TELEMETRYDECK_APP_ID secret. Without it the
 // app uses a no-op analytics sink.
 TELEMETRYDECK_APP_ID =
+// Sentry DSN WITHOUT the scheme (`//` starts an xcconfig comment), e.g.
+//   SENTRY_DSN = 0123abcd@o123456.ingest.de.sentry.io/7654321
+// The app adds https://. Empty → crash reporting off.
+SENTRY_DSN =
 #include? "Config.local.xcconfig"

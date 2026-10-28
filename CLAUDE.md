@@ -137,6 +137,13 @@ After editing content, run `tools/compile.py` to refresh
   `conj:`, `word:`, `ccse:`); card counts/planners use `.card` only. New items
   per day are capped by `IntroductionLedger` + `DailyBudget`; only the first
   grade of an item per learning day updates its `ReviewState`.
+- **Crash reporting (Sentry)** lives in the app target only
+  (`Lorito/Sources/CrashReporting.swift`). The package reports non-fatal errors
+  through `ErrorReports.report(_:area:)` in Domain: a closed `ErrorArea` set,
+  domain and code only, never messages. The DSN comes from `SENTRY_DSN` in
+  `Config.local.xcconfig`, written **without** `https://`. Reporting is off in UI
+  tests and in Debug unless launched with `-crash-reporting`. Owner setup:
+  `docs/sentry-setup.md`.
 - **Fonts** ship in `DesignSystem/Resources/Fonts` and are registered at
   launch (`FontRegistry.registerAll()`, also in the widget bundle).
 - **Hardware keys**: Space and 1–4 use SwiftUI `keyboardShortcut`; Return and

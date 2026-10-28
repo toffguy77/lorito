@@ -11,6 +11,8 @@ struct LoritoApp: App {
     @UIApplicationDelegateAdaptor(LoritoAppDelegate.self) private var appDelegate
 
     init() {
+        // First, so launch-time crashes are caught too.
+        CrashReporting.start(uiTesting: Self.uiTesting)
         // Bundled brand fonts live in the DesignSystem package bundle, which
         // `UIAppFonts` can't see — register them before the first view renders.
         FontRegistry.registerAll()
@@ -73,7 +75,12 @@ final class LoritoAppDelegate: NSObject, UIApplicationDelegate {
 final class LoritoSceneDelegate: NSObject, UIWindowSceneDelegate {
     func windowScene(_ windowScene: UIWindowScene, userDidAcceptCloudKitShareWith metadata: CKShare.Metadata) {
         Task { @MainActor in
-            guard (try? await CloudKitBuddyBackend.accept(metadata)) != nil else { return }
+            do {
+                try await CloudKitBuddyBackend.accept(metadata)
+            } catch {
+                ErrorReports.report(error, area: .buddy)
+                return
+            }
             AnalyticsService.shared.record(.buddyInviteAccepted)
             NotificationCenter.default.post(name: BuddyModel.shareAccepted, object: nil)
         }
