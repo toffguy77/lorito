@@ -15,6 +15,8 @@ public struct OnboardingView: View {
     @State private var reminderTime: Date
     /// Set while/after taking the placement test; cleared by a manual level choice.
     @State private var placement: PlacementModel?
+    /// Revisit: a level lowering that resets progress, awaiting confirmation.
+    @State private var pendingLowering: PendingLowering?
     private let mode: OnboardingMode
     private let onComplete: () -> Void
     private let onClose: (() -> Void)?
@@ -139,11 +141,17 @@ public struct OnboardingView: View {
             }
 
             primaryButton(title: "Далее", enabled: model.targetLevel != nil) {
-                step = .themes
+                if let level = model.targetLevel, let lowering = model.loweringNeedingConfirmation(to: level) {
+                    pendingLowering = lowering
+                } else {
+                    step = .themes
+                }
             }
             .padding(.horizontal, LoritoSpacing.screenGutter)
         }
         .padding(.vertical, LoritoSpacing.lg)
+        // The reset itself happens when the themes step saves the scope.
+        .levelLoweringConfirmation($pendingLowering) { _ in step = .themes }
     }
 
     // MARK: - Placement step
@@ -154,7 +162,12 @@ public struct OnboardingView: View {
             PlacementView(model: placement, onAccept: { level in
                 model.selectLevel(level)
                 model.selectAllThemes()
-                step = .themes
+                if let lowering = model.loweringNeedingConfirmation(to: level) {
+                    step = .level                        // asks there before the reset
+                    pendingLowering = lowering
+                } else {
+                    step = .themes
+                }
             }, onCancel: {
                 self.placement = nil
                 step = .level

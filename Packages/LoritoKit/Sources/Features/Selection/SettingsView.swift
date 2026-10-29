@@ -21,6 +21,8 @@ public struct SettingsView: View {
     @State private var audioPrefsTick = 0
     /// «Пройти настройку заново»: the onboarding in revisit mode.
     @State private var setupAgain = false
+    /// A level lowering that resets progress, awaiting confirmation.
+    @State private var pendingLowering: PendingLowering?
 
     public init(model: ScopeSelectionModel, reminders: ReminderService? = nil,
                 audio: AudioSettingsModel? = nil, retention: RetentionSettingsModel? = nil,
@@ -90,8 +92,12 @@ public struct SettingsView: View {
                                 title: level.rawValue,
                                 isSelected: model.includedLevels.contains(level)
                             ) {
-                                model.selectLevel(level)
-                                persist()
+                                if let lowering = model.loweringNeedingConfirmation(to: level) {
+                                    pendingLowering = lowering
+                                } else {
+                                    model.selectLevel(level)
+                                    persist()
+                                }
                             }
                         }
                     }
@@ -128,6 +134,10 @@ public struct SettingsView: View {
         }
         .background(LoritoColor.surface.ignoresSafeArea())
         .navigationTitle("Настройки")
+        .levelLoweringConfirmation($pendingLowering) { level in
+            model.selectLevel(level)
+            persist()
+        }
         .fullScreenOnPhone(isPresented: $setupAgain, onDismiss: reloadAfterSetup) {
             OnboardingView(model: model, reminders: reminders, mode: .revisit,
                            onClose: { setupAgain = false }, onComplete: { setupAgain = false })

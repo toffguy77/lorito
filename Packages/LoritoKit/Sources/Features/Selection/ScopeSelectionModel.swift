@@ -52,6 +52,24 @@ public final class ScopeSelectionModel {
 
     public func isThemeSelected(_ id: String) -> Bool { selectedThemeIDs.contains(id) }
 
+    /// The stored target level (what `persist()` compares a lowering against).
+    public var storedTargetLevel: CEFRLevel? { (try? store.loadSettings())?.targetLevel }
+
+    /// Grammar cards with a review state whose level is above `level` — the progress a
+    /// lowering to `level` resets.
+    public func cardsWithProgress(above level: CEFRLevel) -> [String] {
+        let levels = Dictionary(catalog.cards.map { ($0.id, $0.level) }, uniquingKeysWith: { a, _ in a })
+        return ((try? store.allReviews()) ?? [])
+            .filter { $0.kind == .card && (levels[$0.cardID].map { $0 > level } ?? false) }
+            .map(\.cardID)
+    }
+
+    /// Cards that would lose progress if the working level were persisted now.
+    public var cardsResetOnPersist: [String] {
+        guard let target = targetLevel, let stored = storedTargetLevel, target < stored else { return [] }
+        return cardsWithProgress(above: target)
+    }
+
     // MARK: - Mutations (working state only; nothing persisted until `persist()`)
 
     /// Choose a target level and re-derive the selectable theme set. Themes that
@@ -84,19 +102,23 @@ public final class ScopeSelectionModel {
 
     /// Persist the working scope, guarded by the studyability invariant. Returns
     /// `false` (and persists nothing, triggers no recompute) when the selection
-    /// is not studyable. When `completingOnboarding` is true the persisted
+    /// is not studyable. Lowering the level deletes the review state of the
+    /// cards above it (`cardsResetOnPersist`). When `completingOnboarding` is true the persisted
     /// settings also record onboarding completion.
     @discardableResult
     public func persist(completingOnboarding: Bool = false) -> Bool {
         guard isStudyable else { return false }
         do {
             var settings = (try? store.loadSettings()) ?? .default
+            let reset = cardsResetOnPersist
             settings.targetLevel = targetLevel
             settings.selectedThemeIDs = availableThemes.map(\.id).filter(selectedThemeIDs.contains)
             if completingOnboarding {
                 settings.didCompleteOnboarding = true
             }
             try store.saveSettings(settings)
+            // A lower level resets the progress of the cards above it.
+            for id in reset { try? store.deleteReview(for: id) }
             recomputeToken += 1
             return true
         } catch {
