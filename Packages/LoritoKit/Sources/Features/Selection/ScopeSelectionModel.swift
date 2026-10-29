@@ -29,6 +29,13 @@ public final class ScopeSelectionModel {
         self.selectedThemeIDs = Set(settings.selectedThemeIDs)
     }
 
+    /// Drop unsaved working choices: back to the stored level and themes.
+    public func reload() {
+        let settings = (try? store.loadSettings()) ?? .default
+        targetLevel = settings.targetLevel
+        selectedThemeIDs = Set(settings.selectedThemeIDs)
+    }
+
     // MARK: - Derived scope (via pure Domain helpers)
 
     /// All selectable levels, in CEFR order.

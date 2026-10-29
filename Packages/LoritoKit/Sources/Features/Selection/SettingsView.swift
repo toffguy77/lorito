@@ -146,6 +146,7 @@ public struct SettingsView: View {
 
     /// The setup re-run saved settings directly; the section models re-read them.
     private func reloadAfterSetup() {
+        model.reload()                                   // a close drops unsaved level/theme choices
         audio?.reload()
         retention?.reload()
         goals?.reload()

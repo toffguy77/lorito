@@ -2,6 +2,7 @@ import Foundation
 import Testing
 import Domain
 import Persistence
+import Content
 @testable import Features
 
 /// level-lowering-resets-progress: persisting a lower target level deletes the review
@@ -56,5 +57,23 @@ struct LevelLoweringResetTests {
         model.toggleTheme("a1-1")
         #expect(model.persist())
         #expect(try store.allReviews().count == 5)
+    }
+}
+
+/// setup-close-discards-unsaved-scope: closing the re-run drops unsaved choices.
+@Suite("Scope: reload discards unsaved choices")
+@MainActor
+struct ScopeReloadTests {
+    @Test("reload() restores the stored level and themes")
+    func reload() throws {
+        let store = SwiftDataUserDataStore(container: try PersistenceController.makeContainer(config: .init(inMemory: true)), localMirror: nil)
+        var settings = UserSettings(targetLevel: .a1, didCompleteOnboarding: true)
+        settings.selectedThemeIDs = ["a1-1"]
+        try store.saveSettings(settings)
+        let model = ScopeSelectionModel(store: store, catalog: try ContentLoader.loadCatalog())
+        model.selectLevel(.b1)
+        model.selectAllThemes()
+        model.reload()
+        #expect(model.targetLevel == .a1 && model.selectedThemeIDs == ["a1-1"])
     }
 }

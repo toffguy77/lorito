@@ -43,4 +43,29 @@ final class OnboardingSetupUITests: XCTestCase {
         scrollToHittable(app, pace, maxSwipes: 12)
         XCTAssertTrue(pace.waitForExistence(timeout: 10), "pace from the setup not in Settings")
     }
+
+    /// setup-close-discards-unsaved-scope: picking B1 in a re-run and closing at the
+    /// level step leaves A1 stored and shown in Settings.
+    func testClosingSetupDiscardsUnsavedLevel() throws {
+        let app = XCUIApplication()
+        launchFresh(app)
+        dismissSystemAlerts(app)
+        completeOnboardingIfPresent(app)                             // A1
+        dismissSystemAlerts(app)
+
+        openSettingsTab(app)
+        let again = app.buttons["settings.setupAgain"]
+        scrollToHittable(app, again)
+        XCTAssertTrue(again.waitForExistence(timeout: 10))
+        again.tap()
+        XCTAssertTrue(app.staticTexts["Ваш уровень"].waitForExistence(timeout: 10))
+        app.buttons["B1"].tap()
+        app.buttons["onboarding.close"].tap()
+
+        let b1 = app.buttons["B1"]
+        scrollToHittable(app, b1, maxSwipes: 12)
+        XCTAssertTrue(b1.waitForExistence(timeout: 10))
+        XCTAssertFalse(b1.isSelected, "Settings shows the unsaved B1")
+        XCTAssertTrue(app.buttons["A1"].isSelected)
+    }
 }
