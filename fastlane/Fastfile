@@ -69,6 +69,13 @@ platform :ios do
       output_path: "build",
       filename: "lorito_widgets_appstore.mobileprovision",
     )
+    # So is the Lens share extension (LoritoLensAction).
+    get_provisioning_profile(
+      api_key: key,
+      app_identifier: "com.toffguy.lorito.lens",
+      output_path: "build",
+      filename: "lorito_lens_appstore.mobileprovision",
+    )
     build_app(
       project: "Lorito.xcodeproj",
       scheme: "Lorito",
@@ -84,6 +91,7 @@ platform :ios do
         provisioningProfiles: {
           "com.toffguy.lorito" => profile_name,
           "com.toffguy.lorito.widgets" => "com.toffguy.lorito.widgets AppStore",
+          "com.toffguy.lorito.lens" => "com.toffguy.lorito.lens AppStore",
         },
       },
     )
