@@ -13,4 +13,4 @@
 ## 3. Tests and verify
 
 - [x] 3.1 UI tests: first run walks all steps; Settings re-run opens prefilled and closes; existing onboarding helpers updated
-- [ ] 3.2 `swift test`; UI suite on iPhone and iPad; `openspec validate onboarding-full-setup --strict`
+- [x] 3.2 `swift test`; UI suite on iPhone and iPad; `openspec validate onboarding-full-setup --strict`

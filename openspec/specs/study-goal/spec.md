@@ -70,9 +70,13 @@ While a level goal or exam is active, Today SHALL show learning days left and, f
 - **THEN** Today shows the achieved state on the next visit and not on later visits
 
 ### Requirement: Goal prompt after the first session
-The app SHALL NOT ask for a goal during onboarding. After the first completed study session, Today SHALL offer a dismissible goal prompt through the post-session prompt slot; dismissing it SHALL leave no goal and SHALL NOT show the prompt again.
+The goal SHALL be offered in the onboarding goal step. A user who has not completed the current onboarding and has no goal SHALL, after the first completed study session, be offered a dismissible goal prompt on Today through the post-session prompt slot; dismissing it SHALL leave no goal and SHALL NOT show the prompt again.
 
 #### Scenario: Dismiss the prompt
 - **WHEN** the user dismisses the goal prompt
 - **THEN** no goal is stored and the prompt does not return
+
+#### Scenario: Goal chosen in onboarding
+- **WHEN** the user skipped the goal step in onboarding and finishes the first session
+- **THEN** Today does not offer the goal prompt
 

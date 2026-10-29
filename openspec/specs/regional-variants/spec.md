@@ -15,15 +15,15 @@ The `spanishVariant` setting owned by `spanish-audio` SHALL gain the value «Р�
 - **THEN** it behaves as `spain`
 
 ### Requirement: Variant prompt after the first session
-After the learner's first completed study session the Today screen SHALL show a one-time prompt to choose the variant; dismissing it SHALL keep the current value. The variant SHALL NOT be asked during onboarding and SHALL always be changeable in Settings.
+The variant SHALL be asked in the onboarding variant step and SHALL always be changeable in Settings. A learner who has not completed the current onboarding SHALL, after the first completed study session, see a one-time prompt on Today to choose the variant; dismissing it SHALL keep the current value.
 
 #### Scenario: Prompt once
-- **WHEN** the learner completes their first session and returns to Today
+- **WHEN** a learner who has not completed the current onboarding completes their first session and returns to Today
 - **THEN** the variant prompt is shown, and it is not shown again after a choice or dismissal
 
-#### Scenario: Not in onboarding
+#### Scenario: Asked in onboarding
 - **WHEN** a new learner goes through onboarding
-- **THEN** no variant question is asked
+- **THEN** the variant step is shown with Spain preselected, and Today later shows no variant prompt
 
 ### Requirement: Variant-aware card rendering
 Card bodies SHALL render the block and inline form of the learner's variant in place and SHALL show other variants' blocks as labelled notes («В Испании: …», «В Латинской Америке: …», «В Аргентине и Уругвае: …»). Inline alternatives SHALL be Spanish spans whose «Варианты» context-menu action lists every form, and a missing form SHALL fall back to the Spain form.
