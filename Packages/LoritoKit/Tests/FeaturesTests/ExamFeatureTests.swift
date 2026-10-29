@@ -23,11 +23,11 @@ private final class Silent: AnalyticsRecording { func record(_ event: AnalyticsE
 @Suite("Exam path")
 @MainActor
 struct ExamFeatureTests {
-    func setup(pro: Bool, now: @escaping () -> Date = { Date() }) async throws -> (ExamsModel, SwiftDataUserDataStore) {
+    func setup(pro: Bool, sales: Bool = true, now: @escaping () -> Date = { Date() }) async throws -> (ExamsModel, SwiftDataUserDataStore) {
         let store = SwiftDataUserDataStore(container: try PersistenceController.makeContainer(config: .init(inMemory: true)), localMirror: nil)
         let purchases = PurchaseService(store: ProFake(pro), defaults: UserDefaults(suiteName: UUID().uuidString)!, analytics: Silent())
         await purchases.refresh()
-        return (ExamsModel(store: store, catalog: try ContentLoader.loadCatalog(), purchases: purchases, analytics: Silent(), now: now), store)
+        return (ExamsModel(store: store, catalog: try ContentLoader.loadCatalog(), purchases: purchases, salesEnabled: sales, analytics: Silent(), now: now), store)
     }
 
     @Test("Non-Pro: preview form runs the preview items only; a second form shows the paywall and creates no attempt")
@@ -38,6 +38,18 @@ struct ExamFeatureTests {
         let runner = try #require(m.start("dele-a2", form: 1))
         #expect(runner.items.allSatisfy(\.preview) && runner.section?.id == "reading")
         #expect(try store.allMockAttempts().count == 1)
+    }
+
+    @Test("Sales off: no purchase needed — every form starts in full, nothing is locked")
+    func salesOff() async throws {
+        let (m, store) = try await setup(pro: false, sales: false)
+        #expect(m.isPro && m.canStart("ccse", form: 2))
+        let r = try #require(m.start("ccse", form: 2))
+        #expect(r.items.count == 25 && r.attempt.form == 2)
+        let dele = try #require(m.start("dele-a2", form: 1))
+        #expect(dele.items.count > dele.items.filter(\.preview).count)
+        #expect(try store.allMockAttempts().count == 2)
+        #expect(!Monetization.salesEnabled)
     }
 
     @Test("Pro: full mock; finishing every section completes and scores it")

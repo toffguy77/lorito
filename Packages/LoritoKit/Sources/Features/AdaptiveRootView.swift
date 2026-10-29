@@ -92,7 +92,7 @@ public struct AdaptiveRootView: View {
             UNUserNotificationCenter.current().delegate = delegate
             navigation.restoreCatalogSelection(storedCatalogSelection, in: catalog)
             startFirstSessionIfNeeded()
-            Task { await purchases.start() }
+            if Monetization.salesEnabled { Task { await purchases.start() } }
             refreshPath()
             publishWidgets()
             AnalyticsService.shared.checkStreakOnLaunch(currentStreak())
@@ -200,7 +200,7 @@ public struct AdaptiveRootView: View {
             NavigationStack {
                 SettingsView(model: scopeModel, reminders: reminders, audio: audioSettings,
                              retention: retentionSettings, goals: goalSettings, conjugation: conjugationSettings,
-                             pro: purchases, vocabulary: catalog.vocabulary != nil ? vocabulary : nil,
+                             pro: Monetization.salesEnabled ? purchases : nil, vocabulary: catalog.vocabulary != nil ? vocabulary : nil,
                              hasSpanishVoice: speech != nil)
             }
         }

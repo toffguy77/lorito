@@ -5,6 +5,12 @@ public enum ProFeature: String, Codable, Sendable, CaseIterable {
     case examPath
 }
 
+/// Whether Lorito Pro is sold in this build. While off, everyone gets the exam
+/// path and the app shows no paywall or Pro settings (owner decision 2026-10-29).
+public enum Monetization {
+    public static let salesEnabled = false
+}
+
 public enum ProProducts {
     public static let yearly = "com.toffguy.lorito.pro.yearly"
     public static let lifetime = "com.toffguy.lorito.pro.lifetime"

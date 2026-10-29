@@ -24,15 +24,18 @@ public final class ExamsModel: Identifiable {
     let store: UserDataStore
     let catalog: ContentCatalog
     let purchases: PurchaseService?
+    let salesEnabled: Bool
     let analytics: AnalyticsRecording
     private let now: () -> Date
     public private(set) var attempts: [MockAttempt] = []
 
     public init(store: UserDataStore, catalog: ContentCatalog, purchases: PurchaseService?,
+                salesEnabled: Bool = Monetization.salesEnabled,
                 analytics: AnalyticsRecording? = nil, now: @escaping () -> Date = { Date() }) {
         self.store = store
         self.catalog = catalog
         self.purchases = purchases
+        self.salesEnabled = salesEnabled
         self.analytics = analytics ?? AnalyticsService.shared
         self.now = now
         refresh()
@@ -57,7 +60,8 @@ public final class ExamsModel: Identifiable {
         attempts = list.sorted { $0.startedAt > $1.startedAt }
     }
 
-    public var isPro: Bool { purchases?.isEntitled(.examPath) ?? false }
+    /// Entitled to the full exam path: always while sales are off.
+    public var isPro: Bool { !salesEnabled || (purchases?.isEntitled(.examPath) ?? false) }
 
     public func items(for a: MockAttempt) -> [ExamItem] {
         let all = exams?.items(exam: a.examID, form: a.form) ?? []

@@ -4,11 +4,32 @@ import XCTest
 /// `xcodebuild test` the App Store isn't reachable (the scheme's StoreKit
 /// configuration applies to Xcode Run only), so this exercises the unavailable
 /// state; with products loaded (Xcode Run / sandbox) it also buys lifetime.
+///
+/// sales-off: mirrors `Monetization.salesEnabled`. While sales are off there is no
+/// Pro entry in Settings and the paywall test is skipped.
+let salesEnabled = false
+
 @MainActor
 final class LoritoProUITests: XCTestCase {
     override func setUpWithError() throws { continueAfterFailure = false }
 
+    func testNoProWhileSalesOff() throws {
+        try XCTSkipIf(salesEnabled, "sales are on")
+        let app = XCUIApplication()
+        launchFresh(app)
+        dismissSystemAlerts(app)
+        completeOnboardingIfPresent(app)
+        dismissSystemAlerts(app)
+
+        tabButton(app, "Настройки").tap()
+        XCTAssertTrue(app.navigationBars.firstMatch.waitForExistence(timeout: 10))
+        for _ in 0..<4 { app.swipeUp() }
+        XCTAssertFalse(app.buttons["settings.pro.open"].exists, "Pro entry shown while sales are off")
+        XCTAssertFalse(app.staticTexts["Lorito Pro"].exists)
+    }
+
     func testPaywallFromSettings() throws {
+        try XCTSkipUnless(salesEnabled, "sales are off (Monetization.salesEnabled = false)")
         let app = XCUIApplication()
         launchFresh(app)
         dismissSystemAlerts(app)
