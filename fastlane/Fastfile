@@ -38,7 +38,7 @@ def upload_dsyms_to_sentry
     return
   end
   org = ENV["SENTRY_ORG_SLUG"].to_s.empty? ? "lorito" : ENV["SENTRY_ORG_SLUG"]
-  project = ENV["SENTRY_PROJECT_SLUG"].to_s.empty? ? "lorito-ios" : ENV["SENTRY_PROJECT_SLUG"]
+  project = ENV["SENTRY_PROJECT_SLUG"].to_s.empty? ? "lorito" : ENV["SENTRY_PROJECT_SLUG"]
   sh("sentry-cli", "debug-files", "upload", "--org", org, "--project", project, dsym)
 end
 
