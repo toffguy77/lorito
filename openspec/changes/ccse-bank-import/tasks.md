@@ -5,10 +5,10 @@
 
 ## 2. Content
 
-- [ ] 2.1 Transcribe the 2026 manual to `content/exams/ccse/source/2026.md` (300 questions, answer key from «Soluciones»); import; mark form 1 `preview`
-- [ ] 2.2 Russian explanations for all questions (generated — нужна вычитка)
+- [x] 2.1 Transcribe the 2026 manual to `content/exams/ccse/source/2026.md` (300 questions, answer key from «Soluciones»); import; mark form 1 `preview`
+- [x] 2.2 Russian explanations for all questions (generated — нужна вычитка)
 - [ ] 2.3 (manual, owner) Review the explanations
-- [ ] 2.4 `SOURCE.md`: edition, NIPO, download date and URL
+- [x] 2.4 `SOURCE.md`: edition, NIPO, download date and URL
 
 ## 3. Verify
 
