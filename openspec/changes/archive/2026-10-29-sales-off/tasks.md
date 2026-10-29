@@ -11,4 +11,4 @@
 
 ## 3. Verify
 
-- [ ] 3.1 `swift test`; UI suite on iPhone and iPad; `openspec validate sales-off --strict`
+- [x] 3.1 `swift test`; UI suite on iPhone and iPad; `openspec validate sales-off --strict`
