@@ -2,46 +2,73 @@ import SwiftUI
 import Domain
 import DesignSystem
 
-/// First-run onboarding: level (manual list or the placement test) → themes →
-/// reminders. Enforces the non-empty-scope guard before it can finish. On
-/// completion it stores the placement result and the one-off first-session
-/// boost. UI copy is in Russian.
+/// Onboarding: level (manual list or the placement test) → themes → goal →
+/// Spanish variant → pace → sound → reminders. Enforces the non-empty-scope guard
+/// before it can finish. A first run stores the placement result and the one-off
+/// first-session boost; a revisit (from Settings, or once after an update) starts
+/// prefilled, can be closed at any step and changes no progress. UI copy is in Russian.
 public struct OnboardingView: View {
     @State private var model: ScopeSelectionModel
+    @State private var setup: OnboardingSetupModel
+    @State private var goals: GoalSettingsModel
     @State private var step: Step = .level
     @State private var reminderTime: Date
     /// Set while/after taking the placement test; cleared by a manual level choice.
     @State private var placement: PlacementModel?
+    private let mode: OnboardingMode
     private let onComplete: () -> Void
+    private let onClose: (() -> Void)?
     private let reminders: ReminderService?
+    /// The reminder already configured (revisit): skipping or keeping it changes nothing.
+    private let existingReminder: Date?
     @Environment(\.loritoUITesting) private var uiTesting
 
-    private enum Step {
-        case level, placement, themes, reminders
+    private enum Step: Int, CaseIterable {
+        case level, placement, themes, goal, variant, pace, sound, reminders
 
         var analyticsName: OnboardingStepName {
             switch self {
             case .level, .placement: return .level
             case .themes: return .themes
+            case .goal: return .goal
+            case .variant: return .variant
+            case .pace: return .pace
+            case .sound: return .sound
             case .reminders: return .reminders
             }
         }
+
+        /// Position in the progress bar (the placement test belongs to the level step).
+        var index: Int { self == .level ? 0 : rawValue - 1 }
+        static let count = 7
     }
 
     public init(
         model: ScopeSelectionModel,
         reminders: ReminderService? = nil,
+        mode: OnboardingMode = .firstRun,
+        onClose: (() -> Void)? = nil,
         onComplete: @escaping () -> Void
     ) {
         _model = State(initialValue: model)
+        _setup = State(initialValue: OnboardingSetupModel(store: model.store))
+        _goals = State(initialValue: GoalSettingsModel(store: model.store, catalog: model.catalog))
         self.reminders = reminders
+        self.mode = mode
+        self.onClose = onClose
         self.onComplete = onComplete
-        // Default reminder time: 20:00 local.
+        let settings = (try? model.store.loadSettings()) ?? .default
+        let today = Calendar.current.startOfDay(for: Date())
+        let existing = settings.remindersEnabled
+            ? settings.reminderMinutes.first.flatMap { Calendar.current.date(byAdding: .minute, value: $0, to: today) }
+            : nil
+        existingReminder = existing
+        // Default reminder time: 20:00 local (or the one already set).
         let base = Calendar.current.date(
             bySettingHour: ReminderConfig.defaultTime.hour,
             minute: ReminderConfig.defaultTime.minute, second: 0, of: Date()
         ) ?? Date()
-        _reminderTime = State(initialValue: base)
+        _reminderTime = State(initialValue: existing ?? base)
     }
 
     public var body: some View {
@@ -50,6 +77,10 @@ public struct OnboardingView: View {
             case .level: levelStep
             case .placement: placementStep
             case .themes: themeStep
+            case .goal: goalStep
+            case .variant: variantStep
+            case .pace: paceStep
+            case .sound: soundStep
             case .reminders: reminderStep
             }
         }
@@ -167,10 +198,147 @@ public struct OnboardingView: View {
                     .fixedSize()
 
                 primaryButton(title: "Далее", enabled: model.isStudyable) {
-                    step = .reminders
+                    // Saved now so the goal step offers the chosen levels.
+                    model.persist()
+                    goals.reload()
+                    step = .goal
                 }
             }
             .padding(.horizontal, LoritoSpacing.screenGutter)
+        }
+        .padding(.vertical, LoritoSpacing.lg)
+    }
+
+    // MARK: - Goal step
+
+    private var goalStep: some View {
+        VStack(alignment: .leading, spacing: LoritoSpacing.lg) {
+            header(
+                title: "Цель",
+                subtitle: "Уровень к дате или экзамен DELE A2 / CCSE. Lorito подстроит темп и покажет обратный отсчёт. Можно без цели."
+            )
+            GoalSettingsView(model: goals)
+                .scrollContentBackground(.hidden)
+            setupFooter(back: .themes) { step = .variant }
+        }
+        .padding(.vertical, LoritoSpacing.lg)
+    }
+
+    // MARK: - Variant step
+
+    private var variantStep: some View {
+        VStack(alignment: .leading, spacing: LoritoSpacing.lg) {
+            header(
+                title: "Какой испанский",
+                subtitle: "Влияет на слова, формы и озвучку. Остальные варианты показываются рядом."
+            )
+            ScrollView {
+                VStack(spacing: LoritoSpacing.xs) {
+                    ForEach(SpanishVariant.allCases, id: \.self) { variant in
+                        SelectableChip(title: variant.title, isSelected: setup.variant == variant) {
+                            setup.variant = variant
+                        }
+                        .accessibilityIdentifier("onboarding.variant.\(variant.rawValue)")
+                    }
+                }
+                .padding(.horizontal, LoritoSpacing.screenGutter)
+            }
+            setupFooter(back: .goal) {
+                setup.saveVariant()
+                step = .pace
+            }
+        }
+        .padding(.vertical, LoritoSpacing.lg)
+    }
+
+    // MARK: - Pace step
+
+    private var paceStep: some View {
+        VStack(alignment: .leading, spacing: LoritoSpacing.lg) {
+            header(
+                title: "Темп",
+                subtitle: "Сколько нового в день. Повторения добавляются сами. Всё меняется в Настройках."
+            )
+            ScrollView {
+                VStack(alignment: .leading, spacing: LoritoSpacing.sm) {
+                    card {
+                        Stepper(value: $setup.cardsPerDay, in: OnboardingSetupModel.cardsRange) {
+                            Text("Новых карточек в день: \(setup.cardsPerDay)")
+                                .font(LoritoFont.bodyStrong).foregroundStyle(LoritoColor.textPrimary)
+                        }
+                        .accessibilityIdentifier("onboarding.cards")
+                    }
+                    card {
+                        Toggle(isOn: $setup.wordsEnabled) {
+                            Text("Учить слова").font(LoritoFont.bodyStrong).foregroundStyle(LoritoColor.textPrimary)
+                        }
+                        .tint(LoritoColor.accent)
+                        .accessibilityIdentifier("onboarding.words")
+                        if setup.wordsEnabled {
+                            Stepper(value: $setup.wordsPerDay, in: 1...20) {
+                                Text("Новых слов в день: \(setup.wordsPerDay)")
+                                    .font(LoritoFont.body).foregroundStyle(LoritoColor.textPrimary)
+                            }
+                        }
+                    }
+                    card {
+                        Toggle(isOn: $setup.conjugationsEnabled) {
+                            Text("Тренировать спряжения").font(LoritoFont.bodyStrong).foregroundStyle(LoritoColor.textPrimary)
+                        }
+                        .tint(LoritoColor.accent)
+                        .accessibilityIdentifier("onboarding.conjugations")
+                        if setup.conjugationsEnabled {
+                            Stepper(value: $setup.conjugationsPerDay, in: 1...UserSettings.conjugationRange.upperBound) {
+                                Text("Новых спряжений в день: \(setup.conjugationsPerDay)")
+                                    .font(LoritoFont.body).foregroundStyle(LoritoColor.textPrimary)
+                            }
+                        }
+                    }
+                    Text("Всё новое за день укладывается в общий лимит — \(DailyBudget.defaultTotal).")
+                        .font(LoritoFont.caption)
+                        .foregroundStyle(LoritoColor.textSecondary)
+                }
+                .padding(.horizontal, LoritoSpacing.screenGutter)
+            }
+            setupFooter(back: .variant) {
+                setup.savePace()
+                step = .sound
+            }
+        }
+        .padding(.vertical, LoritoSpacing.lg)
+    }
+
+    // MARK: - Sound step
+
+    private var soundStep: some View {
+        VStack(alignment: .leading, spacing: LoritoSpacing.lg) {
+            header(
+                title: "Звук",
+                subtitle: "Испанские фразы озвучиваются по нажатию — голос устройства, офлайн."
+            )
+            ScrollView {
+                VStack(alignment: .leading, spacing: LoritoSpacing.sm) {
+                    card {
+                        Text("Скорость").font(LoritoFont.bodyStrong).foregroundStyle(LoritoColor.textPrimary)
+                        Picker("Скорость", selection: $setup.rate) {
+                            ForEach(SpeechRate.allCases, id: \.self) { Text($0.title).tag($0) }
+                        }
+                        .pickerStyle(.segmented)
+                        .accessibilityIdentifier("onboarding.rate")
+                    }
+                    card {
+                        Toggle(isOn: $setup.playWhenSilent) {
+                            Text("Звук в беззвучном режиме").font(LoritoFont.bodyStrong).foregroundStyle(LoritoColor.textPrimary)
+                        }
+                        .tint(LoritoColor.accent)
+                    }
+                }
+                .padding(.horizontal, LoritoSpacing.screenGutter)
+            }
+            setupFooter(back: .pace) {
+                setup.saveSound()
+                step = .reminders
+            }
         }
         .padding(.vertical, LoritoSpacing.lg)
     }
@@ -203,30 +371,32 @@ public struct OnboardingView: View {
         .padding(.vertical, LoritoSpacing.lg)
     }
 
-    /// Complete onboarding, optionally enabling a first reminder at the chosen
-    /// time. Reminder-enable runs first (writes `reminderConfig`), then scope +
+    /// Complete onboarding, optionally enabling a reminder at the chosen time.
+    /// Reminder-enable runs first (writes `reminderConfig`), then scope +
     /// completion are persisted; each loads settings fresh so neither clobbers
     /// the other. Onboarding completes regardless of the authorization outcome.
+    /// A revisit keeps an existing reminder when the time is unchanged or skipped.
     private func finish(enableReminderAt time: Date?) {
         Task {
-            if let time, let reminders {
+            if let time, let reminders, !sameMinute(time, existingReminder) {
                 let comps = Calendar.current.dateComponents([.hour, .minute], from: time)
                 _ = await reminders.enable(
                     times: [ReminderTime(hour: comps.hour ?? ReminderConfig.defaultTime.hour,
                                          minute: comps.minute ?? ReminderConfig.defaultTime.minute)]
                 )
             }
-            if model.persist(completingOnboarding: true) {
-                // Placement result (known level, opt-in seeding), then the one-off
-                // first-session boost with the failed-test cards first.
-                let today = Date()
-                let seeded = placement.flatMap { try? $0.apply(to: model.store, today: today) } ?? []
-                let failed = (placement?.failedCardIDs ?? []).filter { !seeded.contains($0) }
-                FirstSessionBoostStore.shared.save(FirstSessionBoost(day: today, priorityCardIDs: failed))
-                AnalyticsService.shared.record(.onboardingCompleted)
+            if OnboardingFinish.complete(mode, scope: model, placement: placement) {
+                if mode == .firstRun { AnalyticsService.shared.record(.onboardingCompleted) }
                 onComplete()
             }
         }
+    }
+
+    private func sameMinute(_ a: Date, _ b: Date?) -> Bool {
+        guard let b else { return false }
+        let ca = Calendar.current.dateComponents([.hour, .minute], from: a)
+        let cb = Calendar.current.dateComponents([.hour, .minute], from: b)
+        return ca.hour == cb.hour && ca.minute == cb.minute
     }
 
     @ViewBuilder
@@ -247,25 +417,55 @@ public struct OnboardingView: View {
         return model.includedLevels.contains(level) ? .included : .off
     }
 
-    private var stepIndex: Int {
-        switch step {
-        case .level, .placement: return 0
-        case .themes: return 1
-        case .reminders: return 2
+    /// Footer of the setup steps: back, skip (keeps the current values), next (saves).
+    private func setupFooter(back: Step, next: @escaping () -> Void) -> some View {
+        VStack(spacing: LoritoSpacing.xs) {
+            HStack(spacing: LoritoSpacing.sm) {
+                Button("Назад") { step = back }
+                    .buttonStyle(PrimaryButtonStyle(.outline))
+                    .fixedSize()
+                primaryButton(title: "Далее", enabled: true, action: next)
+            }
+            Button("Пропустить") {
+                step = Step(rawValue: step.rawValue + 1) ?? .reminders
+            }
+            .font(LoritoFont.bodyStrong)
+            .foregroundStyle(LoritoColor.textSecondary)
+            .frame(minHeight: LoritoLayout.minTouchTarget)
         }
+        .padding(.horizontal, LoritoSpacing.screenGutter)
+    }
+
+    private func card<Content: View>(@ViewBuilder _ content: () -> Content) -> some View {
+        VStack(alignment: .leading, spacing: LoritoSpacing.sm) { content() }
+            .padding(LoritoSpacing.md)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(LoritoColor.surfaceRaised, in: RoundedRectangle(cornerRadius: LoritoRadius.md, style: .continuous))
     }
 
     private func header(title: String, subtitle: String) -> some View {
         VStack(alignment: .leading, spacing: LoritoSpacing.sm) {
-            HStack(spacing: 6) {
-                ForEach(0..<3, id: \.self) { i in
-                    Capsule()
-                        .fill(i <= stepIndex ? LoritoColor.textPrimary : LoritoColor.separator)
-                        .frame(height: 5)
+            HStack(spacing: LoritoSpacing.sm) {
+                HStack(spacing: 6) {
+                    ForEach(0..<Step.count, id: \.self) { i in
+                        Capsule()
+                            .fill(i <= step.index ? LoritoColor.textPrimary : LoritoColor.separator)
+                            .frame(height: 5)
+                    }
+                }
+                .accessibilityElement()
+                .accessibilityLabel("Шаг \(step.index + 1) из \(Step.count)")
+                if let onClose {
+                    Button(action: onClose) {
+                        Image(systemName: "xmark")
+                            .font(LoritoFont.bodyStrong)
+                            .foregroundStyle(LoritoColor.textSecondary)
+                            .frame(minWidth: LoritoLayout.minTouchTarget, minHeight: LoritoLayout.minTouchTarget)
+                    }
+                    .accessibilityLabel("Закрыть")
+                    .accessibilityIdentifier("onboarding.close")
                 }
             }
-            .accessibilityElement()
-            .accessibilityLabel("Шаг \(stepIndex + 1) из 3")
             .padding(.bottom, LoritoSpacing.xs)
             Text(title)
                 .loritoStyle(LoritoTextStyle.title.sized(32))
@@ -275,6 +475,7 @@ public struct OnboardingView: View {
             Text(subtitle)
                 .font(LoritoFont.body)
                 .foregroundStyle(LoritoColor.textSecondary)
+                .fixedSize(horizontal: false, vertical: true)
         }
         .padding(.horizontal, LoritoSpacing.screenGutter)
     }

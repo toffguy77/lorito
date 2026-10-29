@@ -1,8 +1,9 @@
 // Features — SwiftUI screens. Depends inward on Domain, Content, Persistence, DesignSystem.
 //
 // RootView loads the bundled content and the user-data store at startup, then
-// gates first-run onboarding behind a local completion flag: the onboarding
-// flow is shown exactly once; later launches open the main flow directly.
+// gates onboarding behind local flags: the onboarding flow is shown once per
+// onboarding version on this device (a user updating from an earlier version
+// goes through it again, prefilled); later launches open the main flow directly.
 
 import SwiftUI
 import Domain
@@ -12,6 +13,8 @@ import DesignSystem
 
 public struct RootView: View {
     @AppStorage("lorito.didCompleteOnboarding") private var didCompleteOnboarding = false
+    /// Mirrors `OnboardingVersionStore` (same key) so completing onboarding re-renders.
+    @AppStorage(OnboardingVersionStore.key) private var onboardingVersion = 0
 
     @State private var model: ScopeSelectionModel?
     @State private var store: (any UserDataStore)?
@@ -37,13 +40,16 @@ public struct RootView: View {
     public var body: some View {
         Group {
             if let model, let store, let catalog {
-                if didCompleteOnboarding {
+                if didCompleteOnboarding && onboardingVersion >= OnboardingVersionStore.currentVersion {
                     AdaptiveRootView(store: store, catalog: catalog, scopeModel: model,
                                      autoStartFirstSession: justOnboarded, syncEnabled: cloudKitEnabled && !uiTesting)
                 } else {
-                    OnboardingView(model: model, reminders: reminders) {
-                        justOnboarded = true
+                    // Updated from an earlier onboarding version: the same flow, prefilled, no first session.
+                    let mode: OnboardingMode = didCompleteOnboarding ? .revisit : .firstRun
+                    OnboardingView(model: model, reminders: reminders, mode: mode) {
+                        justOnboarded = mode == .firstRun
                         didCompleteOnboarding = true
+                        onboardingVersion = OnboardingVersionStore.currentVersion
                     }
                 }
             } else if loadError {
@@ -77,6 +83,7 @@ public struct RootView: View {
             // iCloud account is available); falls back to a local store otherwise.
             if uiTesting {
                 didCompleteOnboarding = false
+                onboardingVersion = 0
                 FirstSessionBoostStore.shared.clear()
                 TodayPromptSlot().reset()
                 TodayGoalBuilder().reset()
@@ -114,6 +121,8 @@ public struct RootView: View {
             if let settings = try? store.loadSettings(), settings.didCompleteOnboarding {
                 didCompleteOnboarding = true
             }
+            // UI-test seeds (and demo data) start past the current onboarding.
+            if uiTesting, didCompleteOnboarding { onboardingVersion = OnboardingVersionStore.currentVersion }
             self.catalog = catalog
             self.store = store
             self.speech = SystemSpeechService(settings: { (try? store.loadSettings()) ?? .default })

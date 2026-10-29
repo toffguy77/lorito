@@ -34,6 +34,9 @@ public final class ConjugationSettingsModel {
         set { update { $0.ccseDailyNewLimit = min(max(newValue, 0), 20) } }
     }
 
+    /// Re-read after another screen saved settings (a setup re-run).
+    public func reload() { settings = (try? store.loadSettings()) ?? .default }
+
     private func update(_ change: (inout UserSettings) -> Void) {
         var s = (try? store.loadSettings()) ?? .default
         change(&s)

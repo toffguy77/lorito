@@ -64,10 +64,20 @@ func dismissSystemAlerts(_ app: XCUIApplication) {
     }
 }
 
-/// Complete first-run onboarding (level → themes → skip reminders) when present.
-/// Mirrors the current three-step flow so downstream tests reach the main app.
+/// Complete first-run onboarding when present: level and themes, then skip the
+/// goal, variant, pace, sound and reminder steps, so downstream tests reach the main app.
 @MainActor
 func completeOnboardingIfPresent(_ app: XCUIApplication, level: String = "A1") {
+    guard onboardingPastThemes(app, level: level) else { return }
+    skipRestOfOnboarding(app)
+    closeFirstSessionIfOpen(app)
+}
+
+/// Onboarding up to the goal step: pick `level`, keep all themes. False when the
+/// app opened past onboarding.
+@MainActor
+@discardableResult
+func onboardingPastThemes(_ app: XCUIApplication, level: String = "A1") -> Bool {
     // A cold first launch can take well over 8 s: wait for onboarding or the
     // main app, whichever shows first, instead of silently skipping onboarding.
     let deadline = Date().addingTimeInterval(40)
@@ -76,17 +86,24 @@ func completeOnboardingIfPresent(_ app: XCUIApplication, level: String = "A1") {
     }
     guard app.buttons[level].exists else {
         if !tabButton(app, "Сегодня").exists { print("[ui] onboarding not found:\n\(app.debugDescription)") }
-        return
+        return false
     }
     app.buttons[level].tap()
     app.buttons["Далее"].tap()                                   // level → themes
     if app.staticTexts["Что изучать"].waitForExistence(timeout: 10) {
-        app.buttons["Далее"].tap()                               // themes → reminders
+        app.buttons["Далее"].tap()                               // themes → goal
     }
-    if app.buttons["Пропустить"].waitForExistence(timeout: 10) {
-        app.buttons["Пропустить"].tap()                          // skip the reminder step
+    return app.staticTexts["Цель"].waitForExistence(timeout: 10)
+}
+
+/// Skip the remaining setup steps (goal, variant, pace, sound) and the reminder step.
+@MainActor
+func skipRestOfOnboarding(_ app: XCUIApplication) {
+    for _ in 0..<5 {                                             // goal, variant, pace, sound, reminders
+        let skip = app.buttons["Пропустить"]
+        guard skip.waitForExistence(timeout: 5) else { break }
+        skip.tap()
     }
-    closeFirstSessionIfOpen(app)
 }
 
 /// Onboarding opens the first study session directly (placement-test); close it

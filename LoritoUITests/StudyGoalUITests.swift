@@ -1,27 +1,29 @@
 import XCTest
 
-/// study-goal: after the first session Today offers «Есть дедлайн?»; the DELE A2
-/// preset shows a countdown; removing the goal hides the card.
+/// study-goal + onboarding-full-setup: the DELE A2 preset in the onboarding goal
+/// step shows a countdown on Today; no goal prompt after the first session;
+/// removing the goal hides the card.
 @MainActor
 final class StudyGoalUITests: XCTestCase {
     override func setUpWithError() throws { continueAfterFailure = false }
 
-    func testGoalPromptPresetCountdownAndRemove() throws {
+    func testGoalInOnboardingCountdownAndRemove() throws {
         let app = XCUIApplication()
         launchFresh(app)
         dismissSystemAlerts(app)
-        completeOnboardingIfPresent(app)
+        XCTAssertTrue(onboardingPastThemes(app), "goal step not after themes")
+        let preset = app.buttons["goal.preset.deleA2"]
+        XCTAssertTrue(preset.waitForExistence(timeout: 10))
+        preset.tap()
+        app.buttons["Далее"].tap()                                   // goal → variant
+        skipRestOfOnboarding(app)
         dismissSystemAlerts(app)
 
-        // Finish the first session.
-        tabButton(app, "Сегодня").tap()
-        let start = app.buttons["Начать"]
-        XCTAssertTrue(start.waitForExistence(timeout: 15))
-        start.tap()
+        // Finish the first session (it opens right after onboarding).
         let reveal = app.buttons["Показать ответ"]
         let good = app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'Хорошо'")).firstMatch
         var graded = 0
-        while reveal.waitForExistence(timeout: 5) {
+        while reveal.waitForExistence(timeout: 8) {
             reveal.tap()
             XCTAssertTrue(good.waitForExistence(timeout: 10))
             good.tap()
@@ -30,19 +32,11 @@ final class StudyGoalUITests: XCTestCase {
         }
         app.buttons["Готово"].tap()
 
-        // Prompt → goal screen → DELE A2 preset.
-        let setGoal = app.buttons["Поставить цель"]
-        XCTAssertTrue(app.staticTexts["Есть дедлайн?"].waitForExistence(timeout: 10), "goal prompt not shown")
-        setGoal.tap()
-        let preset = app.buttons["goal.preset.deleA2"]
-        XCTAssertTrue(preset.waitForExistence(timeout: 10))
-        preset.tap()
-        app.buttons["Готово"].firstMatch.tap()
-
         let exam = app.descendants(matching: .any)["today.goal.exam"]
         XCTAssertTrue(exam.waitForExistence(timeout: 10), "exam countdown not on Today")
         XCTAssertTrue(app.descendants(matching: .any)["today.goal.level"].exists, "level goal line missing")
-        XCTAssertFalse(app.staticTexts["Есть дедлайн?"].exists, "prompt still shown")
+        XCTAssertFalse(app.staticTexts["Есть дедлайн?"].exists, "goal prompt after onboarding")
+        XCTAssertFalse(app.staticTexts["Где вы учите испанский?"].exists, "variant prompt after onboarding")
 
         // Remove both parts in Settings → «Цель».
         tabButton(app, "Настройки").tap()

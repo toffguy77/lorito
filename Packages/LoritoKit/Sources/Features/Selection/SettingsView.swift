@@ -19,6 +19,8 @@ public struct SettingsView: View {
     @Environment(\.loritoUITesting) private var uiTesting
     /// Re-renders the device-local audio exercise toggles.
     @State private var audioPrefsTick = 0
+    /// «Пройти настройку заново»: the onboarding in revisit mode.
+    @State private var setupAgain = false
 
     public init(model: ScopeSelectionModel, reminders: ReminderService? = nil,
                 audio: AudioSettingsModel? = nil, retention: RetentionSettingsModel? = nil,
@@ -55,6 +57,12 @@ public struct SettingsView: View {
                     }
                     .buttonStyle(.plain)
                 }
+
+                Button { setupAgain = true } label: {
+                    settingsRow("Пройти настройку заново", systemImage: "arrow.counterclockwise")
+                }
+                .buttonStyle(.plain)
+                .accessibilityIdentifier("settings.setupAgain")
 
                 NavigationLink {
                     AboutView()
@@ -120,6 +128,19 @@ public struct SettingsView: View {
         }
         .background(LoritoColor.surface.ignoresSafeArea())
         .navigationTitle("Настройки")
+        .fullScreenOnPhone(isPresented: $setupAgain, onDismiss: reloadAfterSetup) {
+            OnboardingView(model: model, reminders: reminders, mode: .revisit,
+                           onClose: { setupAgain = false }, onComplete: { setupAgain = false })
+        }
+    }
+
+    /// The setup re-run saved settings directly; the section models re-read them.
+    private func reloadAfterSetup() {
+        audio?.reload()
+        retention?.reload()
+        goals?.reload()
+        conjugation?.reload()
+        vocabulary?.refresh()
     }
 
     /// Persist the current working scope (guarded). Returns whether it persisted.
@@ -207,6 +228,12 @@ public struct SettingsView: View {
         @Bindable var retention = retention
         return section("Повторение") {
             VStack(alignment: .leading, spacing: LoritoSpacing.sm) {
+                Stepper(value: $retention.cardsPerDay, in: OnboardingSetupModel.cardsRange) {
+                    Text("Новых карточек в день: \(retention.cardsPerDay)")
+                        .font(LoritoFont.bodyStrong)
+                        .foregroundStyle(LoritoColor.textPrimary)
+                }
+                .accessibilityIdentifier("cardsPerDay")
                 Text("Целевая запоминаемость")
                     .font(LoritoFont.bodyStrong)
                     .foregroundStyle(LoritoColor.textPrimary)

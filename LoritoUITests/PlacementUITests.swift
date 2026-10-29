@@ -33,9 +33,13 @@ final class PlacementUITests: XCTestCase {
         XCTAssertEqual(proposed.label, "B1")
         app.buttons["Учить с B1"].tap()
 
-        // Themes second, reminders last.
+        // Themes second, then goal, variant, pace and sound; reminders last.
         XCTAssertTrue(app.staticTexts["Что изучать"].waitForExistence(timeout: 10), "themes not second")
         app.buttons["Далее"].tap()
+        for title in ["Цель", "Какой испанский", "Темп", "Звук"] {
+            XCTAssertTrue(app.staticTexts[title].waitForExistence(timeout: 10), "step «\(title)» out of order")
+            app.buttons["Пропустить"].tap()
+        }
         XCTAssertTrue(app.staticTexts["Напоминания"].waitForExistence(timeout: 10), "reminders not last")
         app.buttons["Пропустить"].tap()
         dismissSystemAlerts(app)

@@ -33,6 +33,20 @@ extension View {
         sheet(item: item, onDismiss: onDismiss, content: content)
         #endif
     }
+
+    /// Full screen on iOS (a sheet elsewhere), driven by a flag.
+    @ViewBuilder
+    func fullScreenOnPhone<Content: View>(
+        isPresented: Binding<Bool>,
+        onDismiss: (() -> Void)? = nil,
+        @ViewBuilder content: @escaping () -> Content
+    ) -> some View {
+        #if os(iOS)
+        fullScreenCover(isPresented: isPresented, onDismiss: onDismiss, content: content)
+        #else
+        sheet(isPresented: isPresented, onDismiss: onDismiss, content: content)
+        #endif
+    }
 }
 
 extension EnvironmentValues {

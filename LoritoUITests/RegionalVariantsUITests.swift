@@ -1,48 +1,25 @@
 import XCTest
 
-/// regional-variants: after the first session (and the goal prompt) Today asks
-/// «Где вы учите испанский?»; choosing «Риоплатский» shows the `rio` block of a
-/// card in place with «В Испании» as a note, and the drill asks vos.
+/// regional-variants + onboarding-full-setup: choosing «Риоплатский» in the
+/// onboarding variant step shows the `rio` block of a card in place with
+/// «В Испании» as a note, and the drill asks vos.
 @MainActor
 final class RegionalVariantsUITests: XCTestCase {
     override func setUpWithError() throws { continueAfterFailure = false }
 
-    func testVariantPromptChangesCardsAndDrill() throws {
+    func testVariantInOnboardingChangesCards() throws {
         let app = XCUIApplication()
         launchFresh(app)
         dismissSystemAlerts(app)
-        completeOnboardingIfPresent(app)
+        XCTAssertTrue(onboardingPastThemes(app))
+        app.buttons["Пропустить"].tap()                              // goal
+        let rio = app.buttons["onboarding.variant.rioplatense"]
+        XCTAssertTrue(rio.waitForExistence(timeout: 10), "variant step not after goal")
+        rio.tap()
+        app.buttons["Далее"].tap()                                   // variant → pace
+        skipRestOfOnboarding(app)
         dismissSystemAlerts(app)
         closeFirstSessionIfOpen(app)
-
-        // Finish the first session.
-        tabButton(app, "Сегодня").tap()
-        let start = app.buttons["Начать"]
-        XCTAssertTrue(start.waitForExistence(timeout: 15))
-        start.tap()
-        let reveal = app.buttons["Показать ответ"]
-        let good = app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'Хорошо'")).firstMatch
-        var graded = 0
-        while reveal.waitForExistence(timeout: 5) {
-            reveal.tap()
-            XCTAssertTrue(good.waitForExistence(timeout: 10))
-            good.tap()
-            graded += 1
-            if graded > 20 { XCTFail("session did not end"); return }
-        }
-        app.buttons["Готово"].tap()
-
-        // One prompt per visit: the goal prompt first, the variant prompt on the next visit.
-        XCTAssertTrue(app.staticTexts["Есть дедлайн?"].waitForExistence(timeout: 10), "goal prompt not shown")
-        app.buttons["Не сейчас"].tap()
-        XCTAssertFalse(app.staticTexts["Где вы учите испанский?"].exists, "two prompts in one visit")
-        tabButton(app, "Каталог").tap()
-        tabButton(app, "Сегодня").tap()
-        XCTAssertTrue(app.staticTexts["Где вы учите испанский?"].waitForExistence(timeout: 10), "variant prompt not shown")
-        let rio = app.buttons["today.prompt.rioplatense"]
-        scrollToHittable(app, rio)
-        rio.tap()
-        XCTAssertFalse(app.staticTexts["Где вы учите испанский?"].waitForExistence(timeout: 2), "prompt still shown")
 
         // Settings reflect the choice.
         openSettingsTab(app)

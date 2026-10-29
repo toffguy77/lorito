@@ -2,7 +2,7 @@ import Foundation
 
 /// Onboarding steps, in order.
 public enum OnboardingStepName: String, Codable, Sendable, CaseIterable {
-    case level, themes, reminders
+    case level, themes, goal, variant, pace, sound, reminders
 }
 
 /// Exercise types as analytics values (no content).

@@ -2,8 +2,8 @@ import Foundation
 import Observation
 import Domain
 
-/// Settings «Целевая запоминаемость»: the FSRS desired retention, persisted as
-/// a synced user setting. Only intervals computed afterwards change.
+/// Settings «Повторение»: the FSRS desired retention (only intervals computed
+/// afterwards change) and new cards per day, persisted as synced user settings.
 @MainActor
 @Observable
 public final class RetentionSettingsModel {
@@ -32,4 +32,19 @@ public final class RetentionSettingsModel {
             settings = s
         }
     }
+
+    /// «Новых карточек в день» (1–10), within the daily new-introduction budget.
+    public var cardsPerDay: Int {
+        get { settings.dailyNewCardCount }
+        set {
+            let r = OnboardingSetupModel.cardsRange
+            var s = (try? store.loadSettings()) ?? .default
+            s.dailyNewCardCount = min(max(newValue, r.lowerBound), r.upperBound)
+            try? store.saveSettings(s)
+            settings = s
+        }
+    }
+
+    /// Re-read after another screen saved settings (a setup re-run).
+    public func reload() { settings = (try? store.loadSettings()) ?? .default }
 }
