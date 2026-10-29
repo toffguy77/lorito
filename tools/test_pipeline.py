@@ -676,6 +676,42 @@ class ExamPipelineTests(unittest.TestCase):
         self.assertEqual(items["ccse-1"]["edition"], "2026")
         self.assertTrue(items["ccse-1099"]["retired"])
 
+    def import_source(self, counts: dict[int, int], edition: str = "2026") -> Path:
+        src = self.root / "exams" / "ccse" / "source"
+        src.mkdir(parents=True, exist_ok=True)
+        parts = []
+        for task, n in counts.items():
+            parts.append(f"## Tarea {task}\n")
+            parts += [f"{task * 1000 + i}. ¿Pregunta {i}?\na) sí\nb) no\nRespuesta: a\n" for i in range(1, n + 1)]
+        path = src / f"{edition}.md"
+        path.write_text("\n".join(parts), encoding="utf-8")
+        return path
+
+    def items(self) -> dict[str, dict]:
+        return {p.stem: exams.parse_item(p) for p in (self.root / "exams" / "ccse" / "items").glob("*.md")}
+
+    def test_import_ccse_splits_forms_by_tarea(self):
+        exams.import_ccse(self.import_source({1: 20, 2: 6, 3: 4, 4: 6, 5: 14}), edition="2026")
+        items = self.items()
+        for form in (1, 2):
+            per_task = [sum(1 for iid, d in items.items() if int(d["form"]) == form and iid.startswith(f"ccse-{t}"))
+                        for t in range(1, 6)]
+            self.assertEqual(per_task, [10, 3, 2, 3, 7])
+        self.assertEqual(int(items["ccse-1010"]["form"]), 1)
+        self.assertEqual(int(items["ccse-1011"]["form"]), 2)
+        self.assertEqual(int(items["ccse-5008"]["form"]), 2)
+
+    def test_reimport_keeps_explanation_and_preview(self):
+        exams.import_ccse(self.import_source({1: 2}, "2025"), edition="2025")
+        path = self.root / "exams" / "ccse" / "items" / "ccse-1001.md"
+        text = path.read_text(encoding="utf-8").replace("> \n", "> Испания — монархия.\n")
+        path.write_text(text.replace("\n---\n", "\npreview: true\n---\n", 1), encoding="utf-8")
+        exams.import_ccse(self.import_source({1: 2}, "2026"), edition="2026")
+        d = self.items()["ccse-1001"]
+        self.assertEqual((d["explanation"], d["edition"]), ("Испания — монархия.", "2026"))
+        self.assertTrue(exams._bool(d.get("preview")))
+        self.assertFalse(exams._bool(self.items()["ccse-1002"].get("preview")))
+
 
 # --- vocabulary-decks ----------------------------------------------------------
 

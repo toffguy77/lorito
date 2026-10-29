@@ -157,6 +157,8 @@ _Q = re.compile(r"^(\d+)\.\s+(.*)$")
 _OPT = re.compile(r"^([a-c])\)\s+(.*)$")
 _ANS = re.compile(r"^Respuesta:\s*([a-c])\s*$", re.IGNORECASE)
 _TASK = re.compile(r"^##\s*Tarea\s+(\d+)", re.IGNORECASE)
+# Questions per tarea in one CCSE exam (25 in all).
+CCSE_PER_FORM = {1: 10, 2: 3, 3: 2, 4: 3, 5: 7}
 
 
 def import_ccse(source: Path, edition: str) -> list[str]:
@@ -178,14 +180,24 @@ def import_ccse(source: Path, edition: str) -> list[str]:
         elif cur is not None and (m := _ANS.match(line)):
             cur["answer"] = cur["options"]["abc".index(m.group(1).lower())]
     written = []
+    seen_in_task: dict[int, int] = {}
     for q in questions:
         iid = f"ccse-{q['n']}"
-        fm = [("id", iid), ("exam", "ccse"), ("section", "ccse"), ("type", "choice"), ("form", 1),
+        # Mock forms of 25 with the official distribution per tarea, in number order.
+        idx = seen_in_task.get(q["task"], 0)
+        seen_in_task[q["task"]] = idx + 1
+        form = idx // CCSE_PER_FORM.get(q["task"], 25) + 1
+        path = out_dir / f"{iid}.md"
+        old = parse_item(path) if path.exists() else {}
+        fm = [("id", iid), ("exam", "ccse"), ("section", "ccse"), ("type", "choice"), ("form", form),
               ("task", q["task"]), ("options", q["options"]), ("answer", q.get("answer", "")),
               ("source", "cervantes-ccse"), ("edition", edition)]
-        lines = ["---"] + [f"{k}: {json.dumps(v, ensure_ascii=False) if isinstance(v, (list, int)) else lib.quote_scalar(str(v))}"
-                           for k, v in fm] + ["---", q["text"], "", "> **Объяснение**", "> "]
-        (out_dir / f"{iid}.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+        if _bool(old.get("preview")):
+            fm.append(("preview", True))
+        explanation = [f"> {x}" for x in (old.get("explanation") or "").splitlines()] or ["> "]
+        lines = ["---"] + [f"{k}: {json.dumps(v, ensure_ascii=False) if isinstance(v, (list, int, bool)) else lib.quote_scalar(str(v))}"
+                           for k, v in fm] + ["---", q["text"], "", "> **Объяснение**", *explanation]
+        path.write_text("\n".join(lines) + "\n", encoding="utf-8")
         written.append(iid)
     for p in out_dir.glob("*.md"):
         if p.stem not in written:
