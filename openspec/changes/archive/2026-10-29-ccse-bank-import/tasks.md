@@ -12,4 +12,4 @@
 
 ## 3. Verify
 
-- [ ] 3.1 `validate.py`, `compile.py`, `test_pipeline.py`, `swift test`; `openspec validate ccse-bank-import --strict`
+- [x] 3.1 `validate.py`, `compile.py`, `test_pipeline.py`, `swift test`; `openspec validate ccse-bank-import --strict`
