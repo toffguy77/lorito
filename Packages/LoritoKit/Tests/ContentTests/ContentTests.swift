@@ -71,6 +71,18 @@ struct BundledExamContentTests {
         #expect(exams.isPreview(exam: "dele-a2", form: 1) && !exams.isPreview(exam: "dele-a2", form: 2))
         #expect(exams.items(exam: "dele-a2", form: 1).filter { $0.preview }.allSatisfy { $0.section == "reading" })
     }
+
+    @Test("CCSE: 12 mock forms of 25 attributed questions; form 1 is the preview")
+    func ccse() throws {
+        let exams = try #require(try ContentLoader.loadCatalog().exams)
+        #expect(exams.forms(exam: "ccse") == Array(1...12))
+        for form in 1...12 {
+            let items = exams.items(exam: "ccse", form: form)
+            #expect(items.count == 25)
+            #expect(items.allSatisfy { $0.source == "cervantes-ccse" && $0.edition == "2026" })
+            #expect(items.allSatisfy { $0.preview == (form == 1) })
+        }
+    }
 }
 
 @Suite("Bundled vocabulary coverage")
