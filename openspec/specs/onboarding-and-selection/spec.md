@@ -167,7 +167,7 @@ The goal step SHALL offer no goal (the default), a level goal with a date, an ex
 - **THEN** the exam is stored with that date and Today shows its countdown
 
 ### Requirement: Re-run onboarding from Settings
-Settings SHALL offer «Пройти настройку заново», which runs all onboarding steps prefilled with the current settings. It SHALL NOT change study progress, except the reset that lowering the level causes, SHALL NOT start a study session or grant the first-session allowance, and SHALL be closable at any step, keeping the choices saved in earlier steps. Skipping its reminder step SHALL keep the current reminder settings.
+Settings SHALL offer «Пройти настройку заново», which runs all onboarding steps prefilled with the current settings. It SHALL NOT change study progress, except the reset that lowering the level causes, SHALL NOT start a study session or grant the first-session allowance, and SHALL be closable at any step, keeping the choices saved in earlier steps and discarding unsaved ones, so Settings then shows the stored level and themes. Skipping its reminder step SHALL keep the current reminder settings.
 
 #### Scenario: Re-run keeps progress
 - **WHEN** a user with reviews re-runs the setup and changes the target level from A2 to B1
@@ -176,6 +176,10 @@ Settings SHALL offer «Пройти настройку заново», which run
 #### Scenario: Reminder skip in a re-run
 - **WHEN** a user with a 20:00 reminder skips the reminder step of a re-run
 - **THEN** the 20:00 reminder stays enabled
+
+#### Scenario: Closing before the scope is saved
+- **WHEN** a user on A1 picks B1 at the level step of a re-run and closes it there
+- **THEN** the stored level stays A1 and Settings shows A1 selected
 
 ### Requirement: New cards per day setting
 New grammar cards per day SHALL be editable from 1 to 10 in the onboarding pace step and in Settings «Повторение», persisted as `dailyNewCardCount` and still within the daily new-introduction budget.
