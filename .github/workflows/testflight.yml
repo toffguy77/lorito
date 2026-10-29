@@ -6,6 +6,12 @@ name: TestFlight build
 on:
   workflow_dispatch: {}
 
+# fastlane's `xcodebuild -showBuildSettings` probe times out on a cold runner
+# while Swift packages resolve (default: 3 s base, 4 tries).
+env:
+  FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT: "120"
+  FASTLANE_XCODEBUILD_SETTINGS_RETRIES: "6"
+
 jobs:
   beta:
     runs-on: macos-15
