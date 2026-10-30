@@ -1,0 +1,49 @@
+{
+  "_note": "Marketing copy for App Store Connect beyond fastlane/metadata (app-store-presence). Russian for ru, es-ES and es-MX (diaspora cross-localization). Generated — нужна вычитка.",
+  "creativeAssets": {
+    "header": { "headline": "Испанский — по-русски", "subline": "Грамматика A1–C2 через ошибки русскоязычных" },
+    "searchResults": { "headline": "Испанская грамматика по-русски", "subline": "A1–C2 · DELE A2 · CCSE" }
+  },
+  "customProductPages": [
+    {
+      "referenceName": "Экзамены DELE и CCSE",
+      "promotionalText": "Три пробных DELE A2 с таймером и автопроверкой, 300 вопросов CCSE с объяснениями на русском и оценка готовности по разделам.",
+      "keywords": ["DELE", "экзамен"],
+      "screens": ["03Exams", "01Today", "02Mistakes", "08Progress"],
+      "deepLink": null
+    },
+    {
+      "referenceName": "Гражданство Испании",
+      "promotionalText": "Готовитесь к гражданству Испании? 300 вопросов CCSE из банка Instituto Cervantes с объяснениями на русском и подготовка к DELE A2.",
+      "keywords": ["CCSE", "гражданство"],
+      "screens": ["03Exams", "02Mistakes", "01Today", "08Progress"],
+      "deepLink": null
+    },
+    {
+      "referenceName": "Глаголы и субхунтив",
+      "promotionalText": "100 частотных глаголов в 14 временах с проверкой ударений и субхунтив без паники: правила по-русски и частые ошибки русскоязычных.",
+      "keywords": ["глаголы", "спряжение", "субхунтив", "subjuntivo"],
+      "screens": ["04Conjugation", "02Mistakes", "05Exercise", "01Today"],
+      "deepLink": null
+    }
+  ],
+  "inAppEvent": {
+    "referenceName": "lorito-2-0-launch",
+    "badge": "MAJOR_UPDATE",
+    "name": "Новый Lorito 2.0",
+    "shortDescription": "Экзамены, спряжения, слова и новый дизайн",
+    "longDescription": "Пробные DELE A2, 300 вопросов CCSE, 100 глаголов в 14 временах, 2843 слова и ваш вариант испанского.",
+    "purpose": "APPROPRIATE_FOR_ALL_USERS",
+    "priority": "NORMAL",
+    "deepLink": "lorito://today",
+    "schedule": "start on the 2.0 release day, run 14 days, publish (promote) from the start — dates set once the release date is known"
+  },
+  "featuringNomination": {
+    "type": "APP_ENHANCEMENTS",
+    "name": "Lorito 2.0: Spanish grammar explained in Russian",
+    "description": "Lorito teaches Spanish grammar to Russian speakers through the mistakes they actually make — ser and estar, the two past tenses, the subjunctive, articles and gender. Version 2.0 is a complete redesign (Plumaje) and adds a setup that tunes the app to each learner's level, goal and exam, recall-first study with FSRS scheduling, three DELE A2 mock exams and 300 CCSE questions for Spanish citizenship explained in Russian, a conjugation trainer (100 verbs, 14 tenses), 2,843 words in 58 themed decks, a choice of Spain, Latin American or Rioplatense Spanish, offline pronunciation, Live Activities, widgets and a full iPad layout. Everything is free, with no ads and no account; progress syncs through the learner's own iCloud. It is built for the large Russian-speaking community moving to Spain and Latin America.",
+    "descriptionRu": "Lorito учит испанской грамматике русскоязычных через ошибки, которые они действительно делают: ser и estar, два прошедших, субхунтив, артикли и род. Версия 2.0 — полный редизайн (Plumaje): настройка под уровень, цель и экзамен, режим «сначала вспомни» с FSRS, три пробных DELE A2 и 300 вопросов CCSE для гражданства Испании с объяснениями на русском, тренажёр спряжений (100 глаголов, 14 времён), 2843 слова в 58 наборах, выбор между испанским Испании, Латинской Америки и риоплатским, произношение офлайн, Live Activity, виджеты и версия для iPad. Всё бесплатно, без рекламы и регистрации, прогресс синхронизируется через iCloud. Для большой русскоязычной аудитории, переезжающей в Испанию и Латинскую Америку.",
+    "publishDate": "the 2.0 release date (nominate at least 3 weeks ahead)",
+    "supplementalUrls": ["https://toffguy77.github.io/lorito/"]
+  }
+}
