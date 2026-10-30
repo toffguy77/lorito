@@ -43,7 +43,7 @@ The user SHALL be unable to complete onboarding until a target level has been ch
 - **THEN** the action that completes onboarding becomes available
 
 ### Requirement: Optional theme narrowing within included levels
-The user MAY narrow which themes to study from the themes belonging to the included levels. The default selection SHALL be all in-scope themes selected. The selection SHALL persist to `UserSettings.selectedThemes`. Only themes belonging to the included levels SHALL be selectable.
+The user MAY narrow which themes to study from the themes belonging to the included levels. The default selection SHALL be all in-scope themes selected. The selection SHALL persist to `UserSettings.selectedThemes`. Only themes belonging to the included levels SHALL be selectable. A stored empty selection SHALL be shown and treated as all in-scope themes selected, as the daily plan treats it.
 
 #### Scenario: Default selects all in-scope themes
 - **WHEN** the user reaches theme selection without changing anything
@@ -56,6 +56,10 @@ The user MAY narrow which themes to study from the themes belonging to the inclu
 #### Scenario: Only included-level themes are offered
 - **WHEN** the target level is `A2` and theme selection is shown
 - **THEN** only themes belonging to levels `A1` and `A2` are offered for selection
+
+#### Scenario: Stored empty selection
+- **WHEN** the stored settings have target level B1 and no selected themes, and Settings or the setup re-run opens
+- **THEN** every A1, A2 and B1 theme shows as selected and the themes step can continue
 
 ### Requirement: Settings can change scope after onboarding
 After onboarding, a settings screen SHALL let the user change the target level and the theme selection. Changing the target level SHALL re-scope the included content and the set of selectable themes; raising the level SHALL widen scope and lowering it SHALL narrow scope. Lowering the level SHALL reset progress above the new level (see «Lowering the level resets progress above it»). Any persisted change to target level or theme selection SHALL trigger a `daily-plan` recompute (referenced capability).
