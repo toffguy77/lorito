@@ -9,7 +9,6 @@ require "openssl"
 require "base64"
 require "json"
 require "net/http"
-require "digest"
 require "time"
 
 start = Time.iso8601(ARGV[0] || abort("usage: create_app_event.rb <start ISO8601> <days>")).utc
@@ -54,7 +53,6 @@ def upload(file, op_owner)
     res = Net::HTTP.start(uri.host, uri.port, use_ssl: true) { |h| h.request(req) }
     abort("upload part → #{res.code}") unless res.code.start_with?("2")
   end
-  Digest::MD5.hexdigest(bytes)
 end
 
 app = ENV.fetch("LORITO_APP_ID")

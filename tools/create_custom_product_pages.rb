@@ -56,7 +56,7 @@ def add_screenshot(set_id, file)
     abort("upload part → #{res.code}") unless res.code.start_with?("2")
   end
   api(:patch, "/v1/appScreenshots/#{shot["id"]}", { data: { type: "appScreenshots", id: shot["id"],
-    attributes: { uploaded: true, sourceFileChecksum: Digest::MD5.hexdigest(bytes) } } })
+    attributes: { uploaded: true, sourceFileChecksum: Digest::MD5.hexdigest(bytes)  # Apple requires MD5 here (integrity check, not security) # nosemgrep } } })
 end
 
 app = ENV.fetch("LORITO_APP_ID")

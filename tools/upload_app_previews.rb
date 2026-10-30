@@ -69,7 +69,7 @@ locs.each do |loc|
       abort("upload part → #{res.code}") unless res.code.start_with?("2")
     end
     api(:patch, "/v1/appPreviews/#{preview["id"]}", { data: { type: "appPreviews", id: preview["id"],
-      attributes: { uploaded: true, sourceFileChecksum: Digest::MD5.hexdigest(bytes) } } })
+      attributes: { uploaded: true, sourceFileChecksum: Digest::MD5.hexdigest(bytes)  # Apple requires MD5 here (integrity check, not security) # nosemgrep } } })
     puts "#{locale} #{type}: uploaded #{File.basename(file)}"
   end
 end
