@@ -18,5 +18,6 @@
 ## 4. Review and upload
 
 - [x] 4.1 Owner review page with all copy and media
-- [ ] 4.2 After approval: metadata, screenshots and previews upload; custom product pages, in-app event, creative assets and nomination in App Store Connect
-- [ ] 4.3 `openspec validate store-presence-2-0 --strict`
+- [x] 4.2 After approval: metadata, screenshots and previews upload; custom product pages, in-app event, creative assets and nomination in App Store Connect
+- [x] 4.3 `openspec validate store-presence-2-0 --strict`
+- [ ] 4.4 After 2.0 is approved: assign custom product page keywords (DELE, экзамен / CCSE, гражданство / глаголы, спряжение, субхунтив, subjuntivo); link the approved event to the 2026-11-24 nomination

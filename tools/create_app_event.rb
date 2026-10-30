@@ -69,6 +69,7 @@ end
 
 event ||= api(:post, "/v1/appEvents", { data: { type: "appEvents",
   attributes: { referenceName: copy["referenceName"], badge: copy["badge"], deepLink: copy["deepLink"],
+                purchaseRequirement: "NO_COST_ASSOCIATED",
                 primaryLocale: "ru", priority: copy["priority"], purpose: copy["purpose"],
                 territorySchedules: [{ territories: territories, publishStart: start.iso8601,
                                        eventStart: start.iso8601, eventEnd: finish.iso8601 }] },
