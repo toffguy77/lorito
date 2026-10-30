@@ -27,6 +27,7 @@ public final class ScopeSelectionModel {
         let settings = (try? store.loadSettings()) ?? .default
         self.targetLevel = settings.targetLevel
         self.selectedThemeIDs = Set(settings.selectedThemeIDs)
+        selectAllIfStoredEmpty()
     }
 
     /// Drop unsaved working choices: back to the stored level and themes.
@@ -34,6 +35,12 @@ public final class ScopeSelectionModel {
         let settings = (try? store.loadSettings()) ?? .default
         targetLevel = settings.targetLevel
         selectedThemeIDs = Set(settings.selectedThemeIDs)
+        selectAllIfStoredEmpty()
+    }
+
+    /// A stored empty selection means every in-scope theme (as the daily plan reads it).
+    private func selectAllIfStoredEmpty() {
+        if selectedThemeIDs.isEmpty, targetLevel != nil { selectAllThemes() }
     }
 
     // MARK: - Derived scope (via pure Domain helpers)

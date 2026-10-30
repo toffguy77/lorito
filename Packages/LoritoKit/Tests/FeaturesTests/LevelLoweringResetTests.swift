@@ -77,3 +77,21 @@ struct ScopeReloadTests {
         #expect(model.targetLevel == .a1 && model.selectedThemeIDs == ["a1-1"])
     }
 }
+
+/// empty-theme-selection-means-all: a stored empty selection loads as every in-scope theme.
+@Suite("Scope: stored empty theme selection")
+@MainActor
+struct EmptyThemeSelectionTests {
+    @Test("Init and reload select every in-scope theme for an empty stored list")
+    func emptyMeansAll() throws {
+        let store = SwiftDataUserDataStore(container: try PersistenceController.makeContainer(config: .init(inMemory: true)), localMirror: nil)
+        try store.saveSettings(UserSettings(targetLevel: .a2, didCompleteOnboarding: true))
+        let catalog = try ContentLoader.loadCatalog()
+        let model = ScopeSelectionModel(store: store, catalog: catalog)
+        let all = Set(catalog.themes.filter { $0.level <= .a2 }.map(\.id))
+        #expect(model.selectedThemeIDs == all && model.isStudyable)
+        model.toggleTheme(all.sorted()[0])
+        model.reload()
+        #expect(model.selectedThemeIDs == all)
+    }
+}
