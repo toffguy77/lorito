@@ -1,0 +1,36 @@
+/* Plumaje marketing art — shared styles. Colors from design/brand/tokens.json only. */
+@font-face { font-family: "Unbounded"; font-weight: 700; src: url("../../Packages/LoritoKit/Sources/DesignSystem/Resources/Fonts/Unbounded-Bold.ttf"); }
+@font-face { font-family: "Unbounded"; font-weight: 800; src: url("../../Packages/LoritoKit/Sources/DesignSystem/Resources/Fonts/Unbounded-ExtraBold.ttf"); }
+@font-face { font-family: "Onest"; font-weight: 500; src: url("../../Packages/LoritoKit/Sources/DesignSystem/Resources/Fonts/Onest-Medium.ttf"); }
+@font-face { font-family: "Onest"; font-weight: 600; src: url("../../Packages/LoritoKit/Sources/DesignSystem/Resources/Fonts/Onest-SemiBold.ttf"); }
+@font-face { font-family: "Instrument Serif"; font-style: italic; src: url("../../Packages/LoritoKit/Sources/DesignSystem/Resources/Fonts/InstrumentSerif-Italic.ttf"); }
+
+:root {
+  --ink: #0F1A14; --ink-raised: #1C2A22; --ink-track: #33443A;
+  --on-ink: #F3F4EF; --on-ink-2: #A9B5AD;
+  --loro: #0E7C47; --loro-dark: #3BB273; --lima: #CBEF6B; --chile: #E5482A;
+  --soft: #16301F; --heat1: #1E5A3A;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: var(--w); height: var(--h); overflow: hidden; background: var(--ink); }
+body { position: relative; font-family: "Onest", sans-serif; color: var(--on-ink); }
+
+/* Plumage: soft overlapping feather blobs in the parrot palette. */
+.blob { position: absolute; border-radius: 50%; filter: blur(var(--blur, 0px)); }
+.feather { position: absolute; border-radius: 100% 0 100% 0; }
+
+/* Brand glyph from the app icon: Lima stem + Chile eye (¡). */
+.glyph { position: absolute; }
+
+/* Device frame around a raw capture. */
+.phone { position: absolute; background: var(--ink); border-radius: calc(var(--pw) * 0.14);
+  padding: calc(var(--pw) * 0.028); width: var(--pw);
+  box-shadow: 0 0 0 calc(var(--pw) * 0.008) var(--ink-track), 0 calc(var(--pw) * 0.08) calc(var(--pw) * 0.2) rgba(0,0,0,.55); }
+.phone img { display: block; width: 100%; border-radius: calc(var(--pw) * 0.115); }
+
+.title { font-family: "Unbounded"; font-weight: 800; letter-spacing: -0.01em; line-height: 1.08; }
+.lima { color: var(--lima); }
+.sub { font-family: "Onest"; font-weight: 500; color: var(--on-ink-2); }
+.chip { display: inline-block; font-family: "Unbounded"; font-weight: 700; color: var(--lima);
+  border: 0.06em solid var(--ink-track); background: var(--ink-raised); border-radius: 999px; padding: .32em .9em; }
+.es { font-family: "Instrument Serif"; font-style: italic; color: var(--loro-dark); }

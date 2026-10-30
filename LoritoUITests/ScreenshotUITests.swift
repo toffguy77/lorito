@@ -142,10 +142,11 @@ func waitForCount(_ query: XCUIElementQuery, atLeast n: Int, timeout: TimeInterv
     return query.count >= n
 }
 
-/// App Store screenshots (app-store-presence): six scenes per device class from
+/// App Store screenshots (app-store-presence): eight scenes per device class from
 /// a seeded demo store (`-lorito-demo-data`) so every screen is full and
-/// deterministic — Today plan, recall front, revealed card with «Частые ошибки»,
-/// exercise, progress, catalog. Headlines are added by `tools/frame_screenshots.swift`.
+/// deterministic — Today plan, revealed card with «Частые ошибки», exams (DELE, CCSE),
+/// conjugation trainer, exercise, Spanish variant (setup re-run), recall front,
+/// progress. The exams sheet goes last: it covers the tab bar. Headlines are added by `tools/frame_screenshots.swift`.
 @MainActor
 final class ScreenshotUITests: XCTestCase {
     override func setUpWithError() throws {
@@ -160,45 +161,68 @@ final class ScreenshotUITests: XCTestCase {
         launchFresh(app)
     }
 
+    /// Correct present-tense forms for the trainer's first prompt, typed in so the
+    /// screenshot shows an answered card; unknown verbs stay empty.
+    private func fillConjugation(_ app: XCUIApplication) {
+        let forms: [String: [String: String]] = [
+            "ser": ["yo": "soy", "tú": "eres", "él / ella / usted": "es", "nosotros": "somos", "vosotros": "sois", "ellos / ustedes": "son"],
+            "estar": ["yo": "estoy", "tú": "estás", "él / ella / usted": "está", "nosotros": "estamos", "vosotros": "estáis", "ellos / ustedes": "están"],
+            "tener": ["yo": "tengo", "tú": "tienes", "él / ella / usted": "tiene", "nosotros": "tenemos", "vosotros": "tenéis", "ellos / ustedes": "tienen"],
+        ]
+        guard app.staticTexts["PRESENTE"].exists || app.staticTexts["Presente"].exists,
+              let verb = forms.keys.first(where: { app.staticTexts[$0].exists }), let table = forms[verb] else { return }
+        for i in 0..<2 {
+            let field = app.textFields["conj.field.\(i)"]
+            guard field.exists, let form = table[field.label] else { return }
+            field.tap()
+            field.typeText(form)
+        }
+        app.buttons["conj.check"].tap()
+        _ = app.staticTexts["Верно"].waitForExistence(timeout: 5)
+    }
+
     func testCaptureScreens() {
         let app = XCUIApplication()
         dismissSystemAlerts(app)
 
-        // 1 — Today: the day's plan (demo reviews due + new cards, streak).
+        // 01 — Today: the day's plan, goal countdown, trainers, streak.
         let start = app.buttons["Начать"]
         XCTAssertTrue(start.waitForExistence(timeout: 30), "Today plan not shown")
         snapshot("01Today")
 
-        // 2 — Recall-first card front.
+        // 07 — Recall-first card front; 02 — revealed card at «Частые ошибки».
         start.tap()
         let reveal = app.buttons["Показать ответ"]
         XCTAssertTrue(reveal.waitForExistence(timeout: 15))
-        snapshot("02Recall")
-
-        // 3 — Revealed card scrolled to its «Частые ошибки» section.
+        snapshot("07Recall")
         reveal.tap()
         XCTAssertTrue(app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'Хорошо'")).firstMatch.waitForExistence(timeout: 15))
         let mistakes = app.staticTexts.matching(NSPredicate(format: "label CONTAINS 'Частые ошибки'")).firstMatch
         for _ in 0..<8 where !(mistakes.exists && mistakes.isHittable) { app.swipeUp() }
-        snapshot("03Mistakes")
+        snapshot("02Mistakes")
         if app.buttons["Закрыть"].exists { app.buttons["Закрыть"].tap() }
 
-        // 5 — Progress: streak, heatmap, long-term memory.
-        let progress = tabButton(app, "Прогресс")
-        XCTAssertTrue(progress.waitForExistence(timeout: 10))
-        progress.tap()
+        // 04 — Conjugation trainer from Today.
+        let conjugation = app.buttons["today.conjugation"]
+        scrollToHittable(app, conjugation)
+        XCTAssertTrue(conjugation.waitForExistence(timeout: 15), "no conjugation entry on Today")
+        conjugation.tap()
+        XCTAssertTrue(app.buttons["conj.check"].waitForExistence(timeout: 15), "conjugation trainer not shown")
+        fillConjugation(app)
+        snapshot("04Conjugation")
+        let close = app.buttons["Закрыть"]
+        if close.exists { close.tap() }
+        _ = tabButton(app, "Прогресс").waitForExistence(timeout: 10)
+
+        // 08 — Progress: streak, heatmap, long-term memory.
+        tabButton(app, "Прогресс").tap()
         _ = app.otherElements["heatmap.today"].firstMatch.waitForExistence(timeout: 10)
-        snapshot("05Progress")
+        snapshot("08Progress")
 
-        // 6 — Catalog.
-        let catalog = tabButton(app, "Каталог")
-        XCTAssertTrue(catalog.waitForExistence(timeout: 10))
-        catalog.tap()
-        _ = app.staticTexts["A1"].waitForExistence(timeout: 10)
-        snapshot("06Catalog")
-
-        // 4 — Exercise on «Род существительных» (A1-07), an option chosen and checked.
+        // 05 — Exercise on «Род существительных» (A1-07).
+        tabButton(app, "Каталог").tap()
         let theme = app.staticTexts["Существительное и его окружение"]
+        scrollToHittable(app, theme)
         XCTAssertTrue(theme.waitForExistence(timeout: 15), "noun theme row not found")
         theme.tap()
         let card = app.staticTexts["Род существительных"]
@@ -208,7 +232,38 @@ final class ScreenshotUITests: XCTestCase {
         XCTAssertTrue(practice.waitForExistence(timeout: 15), "Практика button not found")
         practice.tap()
         XCTAssertTrue(app.buttons["Проверить"].waitForExistence(timeout: 15), "exercise screen not shown")
-        snapshot("04Exercise")
+        let answer = app.buttons["la"]
+        if answer.exists { answer.tap() }                                // casa → la, chosen (checking plays audio)
+        snapshot("05Exercise")
+        if app.buttons["Закрыть"].exists { app.buttons["Закрыть"].tap() }
+
+        // 06 — Spanish variant: the setup re-run from Settings, variant step.
+        openSettingsTab(app)
+        let again = app.buttons["settings.setupAgain"]
+        scrollToHittable(app, again)
+        XCTAssertTrue(again.waitForExistence(timeout: 10))
+        again.tap()
+        XCTAssertTrue(app.staticTexts["Ваш уровень"].waitForExistence(timeout: 10))
+        app.buttons["Далее"].tap()
+        XCTAssertTrue(app.staticTexts["Что изучать"].waitForExistence(timeout: 10))
+        app.buttons["Далее"].tap()
+        XCTAssertTrue(app.staticTexts["Цель"].waitForExistence(timeout: 10))
+        app.buttons["Пропустить"].tap()
+        XCTAssertTrue(app.staticTexts["Какой испанский"].waitForExistence(timeout: 10))
+        snapshot("06Variant")
+
+        // 03 — Exams: the DELE A2 track.
+        app.buttons["onboarding.close"].tap()
+        tabButton(app, "Каталог").tap()
+        let exams = app.buttons["catalog.exams"]
+        for _ in 0..<4 where !exams.exists {                             // back to the catalog root
+            app.navigationBars.buttons.firstMatch.tap()
+        }
+        scrollToHittable(app, exams)
+        XCTAssertTrue(exams.waitForExistence(timeout: 15), "no exams entry in Catalog")
+        exams.tap()
+        XCTAssertTrue(app.buttons["exams.track.dele-a2"].waitForExistence(timeout: 10))
+        snapshot("03Exams")                                              // both tracks: DELE A2 and CCSE
     }
 }
 

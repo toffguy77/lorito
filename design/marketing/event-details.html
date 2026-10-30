@@ -1,0 +1,19 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="plumaje.css">
+<style>:root{--w:2160px;--h:3840px}</style></head><body><script src="plumaje.js"></script><script>
+// In-App Event details page, 9:16. No text or logos; the bottom ~510 px is blurred
+// under the event text, so it stays plain background.
+blob(-500, -300, 2000, 1800, "#0E7C47", 220, .55);
+blob(900, 1500, 1700, 1600, "#0E7C47", 220, .45);
+mark("¿", -100, 2050, 1300, "#16301F", -12);
+mark("¡", 1550, 150, 1400, "#16301F", 10);
+const cx = 1080, cy = 2050;
+[["#0E7C47",-66],["#3BB273",-44],["#CBEF6B",-22],["#E5482A",0],["#CBEF6B",22],["#3BB273",44],["#0E7C47",66]].forEach(([c, r]) => {
+  const f = feather(cx - 210, cy - 1550, 420, 1450, c, 0, .95);
+  f.style.borderRadius = "50% 50% 50% 50% / 60% 60% 40% 40%";
+  f.style.transformOrigin = "50% 100%"; f.style.transform = `rotate(${r}deg)`;
+});
+blob(cx - 260, cy - 200, 520, 520, "#0F1A14", 0, 1);
+phone("07Recall", 240, 1000, 560, -10);
+phone("08Progress", 1360, 1000, 560, 10);
+phone("01Today", 770, 820, 620, 0);
+</script></body></html>

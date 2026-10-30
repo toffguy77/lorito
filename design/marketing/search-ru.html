@@ -1,0 +1,27 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="plumaje.css">
+<style>:root{--w:3840px;--h:2560px}</style></head><body><script src="plumaje.js"></script><script>
+// 3:2 search results asset (replaces screenshots in search). Safe area: centered
+// 2168×1030 (x 836–3004, y 765–1795); everything outside is background.
+blob(-400, -300, 2000, 1800, "#0E7C47", 220, .5);
+blob(2700, 1300, 1700, 1500, "#0E7C47", 220, .45);
+blob(1700, -500, 1200, 900, "#1E5A3A", 200, .55);
+mark("¿", 150, 1500, 1300, "#16301F", -10);
+mark("¡", 3150, 80, 1400, "#16301F", 12);
+feather(420, 520, 560, 280, "#CBEF6B", -20, .9);
+feather(3150, 1950, 520, 260, "#E5482A", 160, .85);
+feather(2950, 600, 380, 190, "#3BB273", 25, .8);
+feather(600, 2050, 380, 190, "#3BB273", -40, .7);
+// Safe area content: text left, one phone right.
+el(`<div style="position:absolute;left:836px;top:765px;width:2168px;height:1030px;display:flex;align-items:center;gap:120px;padding:0 60px 0 70px">
+  <div style="flex:1">
+    ${iconTile(170)}
+    <div class="title" style="font-size:132px;margin-top:64px">Испанская<br>грамматика<br><span class="lima">по-русски</span></div>
+    <div style="margin-top:64px;display:flex;gap:28px;font-size:52px">
+      <span class="chip">A1–C2</span><span class="chip">DELE A2</span><span class="chip">CCSE</span>
+    </div>
+  </div>
+  <div style="position:relative;width:460px;height:970px;flex:none" id="slot"></div>
+</div>`);
+const s = document.getElementById("slot");
+s.appendChild(phone("01Today", 0, 0, 460, 0)).style.position = "absolute";
+</script></body></html>

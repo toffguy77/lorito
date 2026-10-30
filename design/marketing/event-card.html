@@ -1,0 +1,20 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="plumaje.css">
+<style>:root{--w:3840px;--h:2160px}</style></head><body><script src="plumaje.js"></script><script>
+// In-App Event card, 16:9. No text or logos (Apple guidance); ~75 px cropped each side.
+blob(-300, -400, 1900, 1700, "#0E7C47", 220, .55);
+blob(2400, 900, 1900, 1600, "#0E7C47", 220, .5);
+blob(1300, 1500, 1300, 900, "#1E5A3A", 200, .6);
+mark("¿", 250, 950, 1500, "#16301F", -12);
+mark("¡", 3050, -100, 1600, "#16301F", 10);
+// Plumage fan behind the phones.
+const cx = 1920, cy = 1180;
+[["#0E7C47",-78],["#3BB273",-52],["#CBEF6B",-26],["#E5482A",0],["#CBEF6B",26],["#3BB273",52],["#0E7C47",78]].forEach(([c, r], i) => {
+  const f = feather(cx - 230, cy - 1150, 460, 1250, c, 0, .95);
+  f.style.borderRadius = "50% 50% 50% 50% / 60% 60% 40% 40%";
+  f.style.transformOrigin = "50% 100%"; f.style.transform = `rotate(${r}deg)`;
+});
+blob(cx - 300, cy - 200, 600, 600, "#0F1A14", 0, 1);
+phone("07Recall", 1020, 470, 500, -11);
+phone("08Progress", 2320, 470, 500, 11);
+phone("01Today", 1650, 330, 540, 0);
+</script></body></html>

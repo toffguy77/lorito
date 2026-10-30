@@ -14,6 +14,9 @@ let rawDir = URL(fileURLWithPath: args.count > 0 ? args[0] : "fastlane/screensho
 let outRoot = URL(fileURLWithPath: args.count > 1 ? args[1] : "fastlane/screenshots")
 let locales = args.count > 2 ? Array(args[2...]) : ["ru", "es-ES", "es-MX"]
 let headlinesURL = URL(fileURLWithPath: "fastlane/screenshot_headlines.json")
+// Headlines use the brand title face (Plumaje: Unbounded), registered from the package.
+let titleFontURL = URL(fileURLWithPath: "Packages/LoritoKit/Sources/DesignSystem/Resources/Fonts/Unbounded-Bold.ttf")
+CTFontManagerRegisterFontsForURL(titleFontURL as CFURL, .process, nil)
 
 func fail(_ message: String) -> Never {
     FileHandle.standardError.write((message + "\n").data(using: .utf8)!)
@@ -58,10 +61,12 @@ func frame(_ url: URL, headline: String) -> Data? {
     let style = NSMutableParagraphStyle()
     style.alignment = .center
     style.lineBreakMode = .byWordWrapping
-    let fontSize = min(w, h) * (landscape ? 0.052 : 0.068)
-    let font = NSFont.systemFont(ofSize: fontSize, weight: .bold)
+    let fontSize = min(w, h) * (landscape ? 0.046 : 0.06)
+    let font = NSFont(name: "Unbounded-Bold", size: fontSize) ?? NSFont.systemFont(ofSize: fontSize, weight: .bold)
     let attrs: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: headlineColor, .paragraphStyle: style]
-    let text = NSAttributedString(string: headline, attributes: attrs)
+    // "\n" in a headline breaks the portrait line; landscape keeps one line.
+    let line = landscape ? headline.replacingOccurrences(of: "\n", with: " ") : headline
+    let text = NSAttributedString(string: line, attributes: attrs)
     let textRect = NSRect(x: margin, y: h - band, width: w - 2 * margin, height: band - margin * 0.5)
     let bounds = text.boundingRect(with: textRect.size, options: [.usesLineFragmentOrigin])
     text.draw(with: NSRect(x: textRect.minX, y: textRect.minY + (textRect.height - bounds.height) / 2,

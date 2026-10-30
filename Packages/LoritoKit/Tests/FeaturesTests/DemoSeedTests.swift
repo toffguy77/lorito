@@ -16,6 +16,7 @@ struct DemoSeedTests {
         let b = DemoSeed.make(catalog: catalog, today: today, calendar: utc)
         #expect(a.reviews == b.reviews && a.events.map(\.date) == b.events.map(\.date))
         #expect(a.settings.didCompleteOnboarding && a.settings.targetLevel == .b1)
+        #expect(a.settings.exam?.kind == .deleA2 && a.settings.dailyConjugationCount > 0 && a.settings.dailyNewWordCount > 0)
 
         let stats = StatsCalculator.compute(events: a.events, today: today, calendar: utc)
         #expect(stats.currentStreak == DemoSeed.streakDays)

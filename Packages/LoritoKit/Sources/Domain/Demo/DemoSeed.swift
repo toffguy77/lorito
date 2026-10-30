@@ -2,7 +2,8 @@ import Foundation
 
 /// Deterministic demo user data for App Store screenshots (UI tests launched
 /// with `-lorito-demo-data`): onboarding done, A1 in long-term memory, A2 in
-/// progress, a few reviews due today, a 12-day streak and 12 weeks of history.
+/// progress, a few reviews due today, a 12-day streak, 12 weeks of history, a DELE A2
+/// date in 74 days and the conjugation and words trainers on.
 /// Never used outside UI testing.
 public struct DemoSeed: Sendable {
     public var settings: UserSettings
@@ -17,7 +18,12 @@ public struct DemoSeed: Sendable {
         let start = calendar.startOfDay(for: today)
         func day(_ offset: Int) -> Date { calendar.date(byAdding: .day, value: offset, to: start) ?? start }
 
-        let settings = UserSettings(targetLevel: .b1, dailyNewCardCount: 3, didCompleteOnboarding: true)
+        var settings = UserSettings(targetLevel: .b1, dailyNewCardCount: 3, didCompleteOnboarding: true)
+        // Screenshots show the goal countdown and today's trainers too.
+        settings.exam = ExamGoal(kind: .deleA2, date: day(74))
+        settings.dailyConjugationCount = 3
+        settings.dailyNewWordCount = 5
+        settings.variantPromptAnswered = true
 
         var reviews: [ReviewState] = []
         func add(_ card: Card, interval: Int, dueIn: Int, reps: Int) {

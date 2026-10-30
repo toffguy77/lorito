@@ -26,7 +26,8 @@ FSRS. The stage-1 copy replaces both.
 | Promotional text | see `promotional_text.txt` | 153 |
 
 Counts in the description come from the compiled `content.json`: 159 cards,
-30 themes, 6 levels, 892 exercises. Re-check them whenever content changes.
+30 themes, 6 levels, 937 exercises, 100 verbs in 14 tenses, 2843 words in 58
+decks, 3 DELE A2 mocks, 300 CCSE questions (2.0). Re-check them whenever content changes.
 
 Stage 2 (with the exam path) swaps in the stage-2 keywords from the change's
 design.md, adds the exam paragraph and removes `METADATA_FORBIDDEN_TERMS` from
@@ -70,11 +71,26 @@ Source: App Store Connect → Analytics → Acquisition, filtered by territory.
 
 `ScreenshotUITests` launches with `-lorito-demo-data`, which seeds the
 in-memory store with `DemoSeed`: a 12-day streak, 12 weeks of history, A1 in
-long-term memory and reviews due today. It then captures six scenes per
-device: Today, recall front, «Частые ошибки», exercise, progress, catalog.
+long-term memory, reviews due today, a DELE A2 date and the conjugation and
+words trainers. Since 2.0 it captures eight scenes per device: Today, «Частые
+ошибки», DELE A2 track, conjugation trainer, exercise, Spanish variant (setup
+re-run), recall front, progress.
 
 `fastlane snapshot` writes raw captures to `fastlane/screenshots_raw/`.
 `swift tools/frame_screenshots.swift` adds the headlines from
 `fastlane/screenshot_headlines.json` and writes the results to
 `fastlane/screenshots/{ru,es-ES,es-MX}`. Review the framed images at actual
 size on a phone before upload.
+
+## Marketing surfaces (2.0)
+
+Copy for the creative assets, custom product pages, the in-app event and the
+featuring nomination is in `fastlane/marketing/copy.json`; media in
+`fastlane/marketing/media/`:
+
+- `tools/render_marketing.sh [captures]` renders the header, search results,
+  event and featuring art from `design/marketing/`.
+- `tools/record_app_preview.sh <udid> iphone|ipad` records the app previews.
+
+Custom product page keywords must come from the keyword field and be unique to
+one page; they are assigned in App Store Connect (web).
