@@ -55,8 +55,9 @@ def add_screenshot(set_id, file)
     res = Net::HTTP.start(uri.host, uri.port, use_ssl: true) { |h| h.request(req) }
     abort("upload part → #{res.code}") unless res.code.start_with?("2")
   end
+  # The API takes an MD5 of the file (an upload integrity check, not security).
   api(:patch, "/v1/appScreenshots/#{shot["id"]}", { data: { type: "appScreenshots", id: shot["id"],
-    attributes: { uploaded: true, sourceFileChecksum: Digest::MD5.hexdigest(bytes)  # Apple requires MD5 here (integrity check, not security) # nosemgrep } } })
+    attributes: { uploaded: true, sourceFileChecksum: Digest::MD5.hexdigest(bytes) } } }) # nosemgrep: ruby.lang.security.weak-hashes-md5.weak-hashes-md5
 end
 
 app = ENV.fetch("LORITO_APP_ID")
