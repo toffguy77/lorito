@@ -94,3 +94,12 @@ featuring nomination is in `fastlane/marketing/copy.json`; media in
 
 Custom product page keywords must come from the keyword field and be unique to
 one page; they are assigned in App Store Connect (web).
+
+API scripts (env from `secrets/asc.env`): `tools/upload_app_previews.rb <version>`,
+`tools/create_app_event.rb <start> <days>`, `tools/create_custom_product_pages.rb`,
+`tools/create_nomination.rb <publish-start> [--draft]`.
+
+2.0 release: scheduled for 2026-11-24 10:00 MSK (repository variable
+`LORITO_RELEASE_AT`, read by `ci_release`), matching the featuring nomination
+submitted earlier from `release/2.0-plumaje/`; the in-app event runs
+2026-11-24 → 2026-12-08.
