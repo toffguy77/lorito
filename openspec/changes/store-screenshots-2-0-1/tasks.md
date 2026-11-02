@@ -19,8 +19,8 @@
 
 ## 4. Copy and media
 
-- [ ] 4.1 Failing lint test: a description with «Instituto Cervantes» but without «не связан с Instituto Cervantes» fails; then implement in `tools/lint_metadata.py`; `python3 tools/test_lint_metadata.py` green
-- [ ] 4.2 Descriptions ru/es-ES/es-MX: add the disclaimer, lower-case «риоплатский»; `python3 tools/lint_metadata.py` passes
+- [x] 4.1 Failing lint test: a description with «Instituto Cervantes» but without «не связан с Instituto Cervantes» fails; then implement in `tools/lint_metadata.py`; `python3 tools/test_lint_metadata.py` green
+- [x] 4.2 Descriptions ru/es-ES/es-MX: add the disclaimer, lower-case «риоплатский»; `python3 tools/lint_metadata.py` passes
 - [ ] 4.3 Re-render header and search art from the new captures (`tools/render_marketing.sh`); check sizes 3840×1646 / 3840×2560 and no alpha
 - [ ] 4.4 Check the app previews (ffprobe + visual pass) against the new seed; re-record only if a frame shows an error or a zero
 

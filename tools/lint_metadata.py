@@ -23,6 +23,9 @@ LIMITS = {
     "keywords.txt": (0, 100),
     "release_notes.txt": (0, 4000),
 }
+# A description naming the exam body must say Lorito is not affiliated with it.
+EXAM_BODY = "Instituto Cervantes"
+DISCLAIMER = "не связан с Instituto Cervantes"
 LOCALE = re.compile(r"^[a-z]{2,3}(-[A-Za-z]{2,4})?$")
 
 
@@ -62,6 +65,10 @@ def lint_locale(d: Path, forbidden):
             for w in words(kw):
                 if w in taken:
                     errors.append(f"{rel('keywords.txt')}: keyword word «{w}» repeats the name or subtitle")
+
+    description = fields["description.txt"] or ""
+    if EXAM_BODY in description and DISCLAIMER not in description:
+        errors.append(f"{rel('description.txt')}: names {EXAM_BODY} without «{DISCLAIMER}»")
 
     for term in forbidden:
         for f, text in fields.items():

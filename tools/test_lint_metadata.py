@@ -128,5 +128,16 @@ class LintMetadataTests(unittest.TestCase):
         self.assertEqual(self.check({"ru": {}}, "--forbid-terms", "DELE").returncode, 0)
 
 
+    def test_cervantes_without_disclaimer_fails(self):
+        r = self.check({"ru": {"description.txt": "300 вопросов CCSE из банка Instituto Cervantes."}})
+        self.assertEqual(r.returncode, 1)
+        self.assertIn("ru/description.txt", r.stdout)
+        self.assertIn("не связан с Instituto Cervantes", r.stdout)
+
+    def test_cervantes_with_disclaimer_passes(self):
+        text = "300 вопросов CCSE из банка Instituto Cervantes. Lorito не связан с Instituto Cervantes."
+        r = self.check({"ru": {"description.txt": text}})
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+
 if __name__ == "__main__":
     unittest.main()
