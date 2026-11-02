@@ -117,12 +117,13 @@ def submit_versions(app, version_ids)
 end
 
 if ARGV.include?("--submit-only")
-  ids = api(:get, "/v1/apps/#{app}/appCustomProductPages?limit=50")["data"].map do |cpp|
+  ids = []
+  api(:get, "/v1/apps/#{app}/appCustomProductPages?limit=50")["data"].each do |cpp|
     next unless pages.any? { |p| p["referenceName"] == cpp["attributes"]["name"] }
     versions = api(:get, "/v1/appCustomProductPages/#{cpp["id"]}/appCustomProductPageVersions")["data"]
     latest = versions.max_by { |v| v["attributes"]["version"].to_i }
-    latest["id"] if %w[PREPARE_FOR_SUBMISSION READY_FOR_REVIEW].include?(latest["attributes"]["state"])
-  end.compact   # (no filter_map: macOS system Ruby is 2.6)
+    ids << latest["id"] if %w[PREPARE_FOR_SUBMISSION READY_FOR_REVIEW].include?(latest["attributes"]["state"])
+  end
   abort("no page version waiting for review") if ids.empty?
   submit_versions(app, ids)
   exit
