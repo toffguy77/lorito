@@ -42,7 +42,8 @@ public struct RootView: View {
             if let model, let store, let catalog {
                 if didCompleteOnboarding && onboardingVersion >= OnboardingVersionStore.currentVersion {
                     AdaptiveRootView(store: store, catalog: catalog, scopeModel: model,
-                                     autoStartFirstSession: justOnboarded, syncEnabled: cloudKitEnabled && !uiTesting)
+                                     autoStartFirstSession: justOnboarded, syncEnabled: cloudKitEnabled && !uiTesting,
+                                     showsBuddy: !demoData)
                 } else {
                     // Updated from an earlier onboarding version: the same flow, prefilled, no first session.
                     let mode: OnboardingMode = didCompleteOnboarding ? .revisit : .firstRun

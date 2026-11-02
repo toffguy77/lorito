@@ -51,9 +51,11 @@
    on Progress. The goal countdown already appears on 01Today.
 
 4. **Seed shape (`DemoSeed.make`):**
-   - Three A2 cards get their first events (introductions) on days −1…−5.
-   - Today gets 3 card events and 1 conjugation event before capture, so «сегодня» > 0 while
-     some plan remains.
+   - Three A2 cards get their first events in the previous Monday–Sunday week (the week the
+     recap reports).
+   - Today gets 3 card events before capture, on cards not due today, so «сегодня» > 0 while
+     the plan is unchanged. No conjugation event: it would shift the trainer's first prompt
+     that 04Conjugation types into.
    - The Today hero must still show work left: today's events must not exhaust due items.
    - A1-07 (noun gender, «el problema») is made the earliest due item, so the session opens on
      it.
@@ -65,16 +67,17 @@
    - `ScreenshotUITests` gets a helper that swipes with a small offset and checks that the
      header's `frame.minY` is inside the top third.
 
-6. **05Exercise:** open the practice of a card whose first exercise is dictation or listening.
-   - The choice is pinned by a content check, so a content edit can't silently change the
+6. **05Exercise:** no card opens on dictation, so the capture uses the existing UI-testing
+   filter `-lorito-practice-types dictation` on A1-11 and types the answer.
+   - A content test pins A1-11's dictation text, so a content edit can't silently change the
      scene.
    - The headline keeps «937 упражнений» with the count read from the bundle.
 
 7. **Sparse scenes:**
-   - 03Exams on iPhone: open the DELE A2 track (readiness by section and mocks) instead of the
-     list sheet.
-   - 06Variant: keep the screen, but turn the headline into a benefit statement. The emptiness
-     is the onboarding layout, so the screenshot scope does not change it.
+   - 03Exams: the list sheet stays. The DELE A2 track was considered, but it shows the fee,
+     the examenes.cervantes.es URL and an empty «Готовность» (no demo attempts).
+   - 06Variant: screen and headline kept; a longer benefit line wraps to three lines at the
+     framer's fixed font size.
    - iPad 01Today empty left column: check `BalancedColumnsLayout` on Today at
      2752×2064. If it is a layout bug it gets its own fix change. This change only records
      the finding.

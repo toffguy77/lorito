@@ -39,6 +39,8 @@ public struct AdaptiveRootView: View {
     @State private var lens: LensModel?
     /// Study buddy (CloudKit share; unavailable without iCloud sync).
     @State private var buddy: BuddyModel
+    /// False for store screenshots (demo data): no «Учиться вместе» and its iCloud note.
+    private let showsBuddy: Bool
     @Environment(\.speechService) private var speech
     @SceneStorage("lorito.catalogSelection") private var storedCatalogSelection = ""
     @Environment(\.horizontalSizeClass) private var sizeClass
@@ -48,7 +50,8 @@ public struct AdaptiveRootView: View {
     @State private var autoStartFirstSession: Bool
 
     public init(store: UserDataStore, catalog: ContentCatalog, scopeModel: ScopeSelectionModel,
-                autoStartFirstSession: Bool = false, syncEnabled: Bool = false) {
+                autoStartFirstSession: Bool = false, syncEnabled: Bool = false, showsBuddy: Bool = true) {
+        self.showsBuddy = showsBuddy
         _autoStartFirstSession = State(initialValue: autoStartFirstSession)
         self.store = store
         self.baseCatalog = catalog
@@ -153,7 +156,7 @@ public struct AdaptiveRootView: View {
             Task { await buddy.refresh() }
         }
         // Last, so presented sessions inherit them too.
-        .environment(buddy)
+        .environment(showsBuddy ? buddy : nil)
         .environment(\.spanishVariant, audioSettings.variant)
         .environment(\.spanishVariantDidChange, { audioSettings.reload() })
         .environment(purchases)

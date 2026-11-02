@@ -5,8 +5,14 @@
 # Connect (web) once the keywords' version is approved.
 #
 # Usage: ruby tools/create_custom_product_pages.rb
+#        ruby tools/create_custom_product_pages.rb --new-version [--dry-run] [--submit]
 #   env: APP_STORE_CONNECT_KEY_ID, APP_STORE_CONNECT_ISSUER_ID, ASC_KEY_PATH, LORITO_APP_ID
 # A page whose name already exists is skipped.
+#
+# --new-version (store-screenshots-2-0-1): refresh existing pages without an app release —
+# a new page version per page with the same promotional text and the current screenshots;
+# keywords stay on the page. --dry-run only reads and prints the plan. --submit adds the
+# new versions to a review submission and submits it. Run only after the owner approves.
 require "openssl"
 require "base64"
 require "json"
@@ -61,6 +67,68 @@ def add_screenshot(set_id, file)
 end
 
 app = ENV.fetch("LORITO_APP_ID")
+
+def screenshot_files(page, device)
+  page["screens"].map { |scene| "fastlane/screenshots/ru/#{device}-#{scene}.png" }.tap do |files|
+    missing = files.reject { |f| File.exist?(f) }
+    abort("missing screenshots: #{missing.join(", ")}") unless missing.empty?
+  end
+end
+
+if ARGV.include?("--new-version")
+  dry = ARGV.include?("--dry-run")
+  live = api(:get, "/v1/apps/#{app}/appCustomProductPages?limit=50")["data"]
+  new_versions = []
+  pages.each do |page|
+    cpp = live.find { |p| p["attributes"]["name"] == page["referenceName"] }
+    abort("no custom product page «#{page["referenceName"]}»") unless cpp
+    DEVICES.each_value { |device| screenshot_files(page, device) }
+    if dry
+      puts "#{page["referenceName"]}: new version · #{LOCALES.join("/")} · promo «#{page["promotionalText"][0, 40]}…» · " \
+           "#{page["screens"].join(", ")} ×2 devices"
+      next
+    end
+    version = api(:post, "/v1/appCustomProductPageVersions", { data: { type: "appCustomProductPageVersions",
+      relationships: { appCustomProductPage: { data: { type: "appCustomProductPages", id: cpp["id"] } } } } })["data"]
+    new_versions << version["id"]
+    locs = api(:get, "/v1/appCustomProductPageVersions/#{version["id"]}/appCustomProductPageLocalizations")["data"]
+    LOCALES.each do |locale|
+      loc = locs.find { |l| l["attributes"]["locale"] == locale }
+      loc ||= api(:post, "/v1/appCustomProductPageLocalizations", { data: { type: "appCustomProductPageLocalizations",
+        attributes: { locale: locale, promotionalText: page["promotionalText"] },
+        relationships: { appCustomProductPageVersion: { data: { type: "appCustomProductPageVersions", id: version["id"] } } } } })["data"]
+      sets = api(:get, "/v1/appCustomProductPageLocalizations/#{loc["id"]}/appScreenshotSets")["data"]
+      DEVICES.each do |display, device|
+        set = sets.find { |x| x["attributes"]["screenshotDisplayType"] == display }
+        if set
+          # A new version may start with copies of the old screenshots: replace them.
+          api(:get, "/v1/appScreenshotSets/#{set["id"]}/appScreenshots")["data"].each do |shot|
+            api(:delete, "/v1/appScreenshots/#{shot["id"]}")
+          end
+        else
+          set = api(:post, "/v1/appScreenshotSets", { data: { type: "appScreenshotSets", attributes: { screenshotDisplayType: display },
+            relationships: { appCustomProductPageLocalization: { data: { type: "appCustomProductPageLocalizations", id: loc["id"] } } } } })["data"]
+        end
+        screenshot_files(page, device).each { |f| add_screenshot(set["id"], f) }
+      end
+      puts "#{page["referenceName"]} · #{locale}: new version #{version["id"]}"
+    end
+  end
+  if ARGV.include?("--submit") && !new_versions.empty?
+    sub = api(:post, "/v1/reviewSubmissions", { data: { type: "reviewSubmissions", attributes: { platform: "IOS" },
+      relationships: { app: { data: { type: "apps", id: app } } } } })["data"]
+    new_versions.each do |v|
+      api(:post, "/v1/reviewSubmissionItems", { data: { type: "reviewSubmissionItems",
+        relationships: { reviewSubmission: { data: { type: "reviewSubmissions", id: sub["id"] } },
+                         appCustomProductPageVersion: { data: { type: "appCustomProductPageVersions", id: v } } } } })
+    end
+    api(:patch, "/v1/reviewSubmissions/#{sub["id"]}", { data: { type: "reviewSubmissions", id: sub["id"],
+      attributes: { submitted: true } } })
+    puts "submitted #{new_versions.size} page version(s) for review (#{sub["id"]})"
+  end
+  exit
+end
+
 existing = api(:get, "/v1/apps/#{app}/appCustomProductPages?limit=50")["data"].map { |p| p["attributes"]["name"] }
 
 pages.each do |page|

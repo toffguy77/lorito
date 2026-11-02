@@ -47,10 +47,11 @@ final class AppPreviewUITests: XCTestCase {
         XCTAssertTrue(good.waitForExistence(timeout: 15))
         mark("rule")
         hold(1.5)
-        let mistakes = app.staticTexts.matching(NSPredicate(format: "label CONTAINS 'Частые ошибки'")).firstMatch
+        let mistakes = app.staticTexts.matching(NSPredicate(format: "label CONTAINS[c] 'Частые ошибки'")).firstMatch
         for _ in 0..<8 where !(mistakes.exists && mistakes.isHittable) {
             app.swipeUp(velocity: .slow)
         }
+        bringNearTop(app, mistakes, top: app.frame.height * 0.33)   // the whole block in frame
         mark("mistakes")
         hold(2.5)
         good.tap()
@@ -70,6 +71,7 @@ final class AppPreviewUITests: XCTestCase {
         // Progress.
         tabButton(app, "Прогресс").tap()
         _ = app.otherElements["heatmap.today"].firstMatch.waitForExistence(timeout: 10)
+        XCTAssertFalse(app.descendants(matching: .any)["buddy.card"].exists, "«Учиться вместе» shown in demo mode")
         mark("progress")
         hold(2.5)
 
@@ -81,10 +83,9 @@ final class AppPreviewUITests: XCTestCase {
         exams.tap()
         let dele = app.buttons["exams.track.dele-a2"]
         XCTAssertTrue(dele.waitForExistence(timeout: 10))
+        // The list (with «не связан с Instituto Cervantes»), not the track: no fee or URL on screen.
         mark("exams")
-        hold(1.5)
-        dele.tap()
-        hold(2.5)
+        hold(4)
         mark("end")
     }
 }

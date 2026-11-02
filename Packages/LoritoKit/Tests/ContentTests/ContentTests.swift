@@ -12,6 +12,17 @@ struct ContentTests {
         #expect(!catalog.themes.isEmpty)
     }
 
+    @Test("Store screenshot 05Exercise: A1-11 «Прилагательные: согласование и позиция» has the dictation the UI test types")
+    func screenshotDictationPinned() throws {
+        let catalog = try ContentLoader.loadCatalog()
+        #expect(catalog.cards.first { $0.id == "A1-11" }?.title == "Прилагательные: согласование и позиция")
+        let audio = catalog.exercises(forCard: "A1-11").compactMap { ex -> String? in
+            if case let .dictation(audio, _) = ex.kind { return audio }
+            return nil
+        }
+        #expect(audio == ["La casa es muy bonita."])
+    }
+
     @Test("All related and theme references resolve")
     func referencesResolve() throws {
         let catalog = try ContentLoader.loadCatalog()

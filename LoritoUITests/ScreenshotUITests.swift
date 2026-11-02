@@ -142,6 +142,21 @@ func waitForCount(_ query: XCUIElementQuery, atLeast n: Int, timeout: TimeInterv
     return query.count >= n
 }
 
+/// Drags the scroll view until `element`'s top edge is within ~40 pt of `top`
+/// (store screenshots frame a block from its heading, not mid-text).
+@MainActor
+func bringNearTop(_ app: XCUIApplication, _ element: XCUIElement, top: CGFloat) {
+    for _ in 0..<5 {
+        guard element.exists else { return }
+        let dy = element.frame.minY - top
+        guard abs(dy) > 40 else { return }
+        let from = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: dy > 0 ? 0.8 : 0.3))
+        let step = max(-app.frame.height * 0.45, min(app.frame.height * 0.45, dy))
+        from.press(forDuration: 0.1, thenDragTo: from.withOffset(CGVector(dx: 0, dy: -step)))
+        usleep(400_000)
+    }
+}
+
 /// App Store screenshots (app-store-presence): eight scenes per device class from
 /// a seeded demo store (`-lorito-demo-data`) so every screen is full and
 /// deterministic — Today plan, revealed card with «Частые ошибки», exams (DELE, CCSE),
@@ -157,7 +172,7 @@ final class ScreenshotUITests: XCTestCase {
         }
         let app = XCUIApplication()
         setupSnapshot(app)
-        app.launchArguments += ["-lorito-demo-data"]
+        app.launchArguments += ["-lorito-demo-data", "-lorito-practice-types", "dictation"]
         launchFresh(app)
     }
 
@@ -197,8 +212,10 @@ final class ScreenshotUITests: XCTestCase {
         snapshot("07Recall")
         reveal.tap()
         XCTAssertTrue(app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'Хорошо'")).firstMatch.waitForExistence(timeout: 15))
-        let mistakes = app.staticTexts.matching(NSPredicate(format: "label CONTAINS 'Частые ошибки'")).firstMatch
+        let mistakes = app.staticTexts.matching(NSPredicate(format: "label CONTAINS[c] 'Частые ошибки'")).firstMatch
         for _ in 0..<8 where !(mistakes.exists && mistakes.isHittable) { app.swipeUp() }
+        // The whole «Частые ошибки» block in frame: its heading near the top of the card.
+        bringNearTop(app, mistakes, top: app.frame.height * 0.33)
         snapshot("02Mistakes")
         if app.buttons["Закрыть"].exists { app.buttons["Закрыть"].tap() }
 
@@ -217,23 +234,31 @@ final class ScreenshotUITests: XCTestCase {
         // 08 — Progress: streak, heatmap, long-term memory.
         tabButton(app, "Прогресс").tap()
         _ = app.otherElements["heatmap.today"].firstMatch.waitForExistence(timeout: 10)
+        // No error or unavailable states in store media (app-store-presence).
+        XCTAssertFalse(app.descendants(matching: .any)["buddy.card"].exists, "«Учиться вместе» shown in demo mode")
+        XCTAssertFalse(app.staticTexts.matching(NSPredicate(format: "label BEGINSWITH 'Нужен iCloud'")).firstMatch.exists)
         snapshot("08Progress")
 
-        // 05 — Exercise on «Род существительных» (A1-07).
+        // 05 — Dictation on «Прилагательные: согласование и позиция» (A1-11), answered.
         tabButton(app, "Каталог").tap()
         let theme = app.staticTexts["Существительное и его окружение"]
         scrollToHittable(app, theme)
         XCTAssertTrue(theme.waitForExistence(timeout: 15), "noun theme row not found")
         theme.tap()
-        let card = app.staticTexts["Род существительных"]
-        XCTAssertTrue(card.waitForExistence(timeout: 15), "A1-07 card row not found")
+        let card = app.staticTexts["Прилагательные: согласование и позиция"]
+        scrollToHittable(app, card)
+        XCTAssertTrue(card.waitForExistence(timeout: 15), "A1-11 card row not found")
         card.tap()
         let practice = app.buttons.containing(NSPredicate(format: "label BEGINSWITH 'Практика'")).firstMatch
         XCTAssertTrue(practice.waitForExistence(timeout: 15), "Практика button not found")
         practice.tap()
-        XCTAssertTrue(app.buttons["Проверить"].waitForExistence(timeout: 15), "exercise screen not shown")
-        let answer = app.buttons["la"]
-        if answer.exists { answer.tap() }                                // casa → la, chosen (checking plays audio)
+        XCTAssertTrue(app.buttons["listen.play"].waitForExistence(timeout: 15), "dictation not shown")
+        let field = app.textFields.firstMatch
+        XCTAssertTrue(field.waitForExistence(timeout: 10))
+        field.tap()
+        field.typeText("La casa es muy bonita.")
+        app.buttons["Проверить"].tap()
+        _ = app.staticTexts.matching(NSPredicate(format: "label BEGINSWITH 'Верно'")).firstMatch.waitForExistence(timeout: 10)
         snapshot("05Exercise")
         if app.buttons["Закрыть"].exists { app.buttons["Закрыть"].tap() }
 

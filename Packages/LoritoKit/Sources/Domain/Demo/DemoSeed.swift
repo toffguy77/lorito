@@ -3,7 +3,9 @@ import Foundation
 /// Deterministic demo user data for App Store screenshots (UI tests launched
 /// with `-lorito-demo-data`): onboarding done, A1 in long-term memory, A2 in
 /// progress, a few reviews due today, a 12-day streak, 12 weeks of history, a DELE A2
-/// date in 74 days and the conjugation and words trainers on.
+/// date in 74 days and the conjugation and words trainers on. Store media show no
+/// zeros: three A2 rules introduced last week (weekly recap), a few cards already
+/// reviewed today, and the session opens on A1-07 (noun gender, «el problema»).
 /// Never used outside UI testing.
 public struct DemoSeed: Sendable {
     public var settings: UserSettings
@@ -13,6 +15,10 @@ public struct DemoSeed: Sendable {
     public var mockAttempts: [MockAttempt] = []
 
     public static let streakDays = 12
+    /// Cards already reviewed today, before the screenshots.
+    public static let studiedToday = 3
+    /// The first card of the session: a Russian-speaker trap with «Частые ошибки».
+    public static let firstCardID = "A1-07"
 
     public static func make(catalog: ContentCatalog, today: Date, calendar: Calendar = .learningDay) -> DemoSeed {
         let start = calendar.startOfDay(for: today)
@@ -35,7 +41,8 @@ public struct DemoSeed: Sendable {
         }
         // A1: mostly long-term (≥ 21 days), a couple due today.
         for (i, card) in catalog.cards(in: .a1).enumerated() {
-            if i % 10 == 3 { add(card, interval: 9, dueIn: 0, reps: 4) }
+            if card.id == firstCardID { add(card, interval: 9, dueIn: -1, reps: 4) }   // most overdue → first
+            else if i % 10 == 3 { add(card, interval: 9, dueIn: 0, reps: 4) }
             else { add(card, interval: 24 + (i * 7) % 40, dueIn: 1 + (i * 5) % 20, reps: 5) }
         }
         // A2: the first half in progress, a few due today.
@@ -56,6 +63,22 @@ public struct DemoSeed: Sendable {
                 let grade: Grade = (offset + k) % 7 == 0 ? .hard : .good
                 events.append(StudyEvent(cardID: ids[(offset * 3 + k) % ids.count], date: date, grade: grade.rawValue))
             }
+        }
+
+        // Last week (Monday–Sunday): three A2 rules seen for the first time → the weekly recap.
+        let thisWeek = calendar.mondayWeeks.dateInterval(of: .weekOfYear, for: start)?.start ?? start
+        let lastWeek = calendar.date(byAdding: .day, value: -7, to: thisWeek) ?? thisWeek
+        for (i, card) in catalog.cards(in: .a2).dropFirst(16).prefix(3).enumerated() {
+            let seen = calendar.date(byAdding: .hour, value: 24 * (1 + 2 * i) + 19, to: lastWeek) ?? lastWeek
+            add(card, interval: 7, dueIn: 1 + i, reps: 1)                // not due today
+            events.append(StudyEvent(cardID: card.id, date: seen, grade: Grade.good.rawValue))
+        }
+
+        // Today: a few cards not due today already reviewed (the plan still has work).
+        let earlier = max(start, today.addingTimeInterval(-30 * 60))
+        let notDue = reviews.filter { $0.dueDate > start && $0.cardID.hasPrefix("A1") }.prefix(studiedToday)
+        for r in notDue {
+            events.append(StudyEvent(cardID: r.cardID, date: earlier, grade: Grade.good.rawValue))
         }
         return DemoSeed(settings: settings, reviews: reviews, events: events)
     }

@@ -76,6 +76,14 @@ words trainers. Since 2.0 it captures eight scenes per device: Today, «Част
 ошибки», DELE A2 track, conjugation trainer, exercise, Spanish variant (setup
 re-run), recall front, progress.
 
+Since store-screenshots-2-0-1 the demo store also has three A2 rules introduced
+in the previous week (weekly recap), three cards reviewed today, and A1-07 (noun
+gender, «el problema») as the first session card; demo mode hides «Учиться вместе»
+(its iCloud note must never reach store media). 05Exercise is the A1-11 dictation
+(`-lorito-practice-types dictation`). The iPad Today scene leaves the space under
+the plan hero empty: that is the specified dashboard (hero leading, everything else
+trailing — ipad-support «Today dashboard at regular width»), not a layout bug.
+
 `fastlane snapshot` writes raw captures to `fastlane/screenshots_raw/`.
 `swift tools/frame_screenshots.swift` adds the headlines from
 `fastlane/screenshot_headlines.json` and writes the results to

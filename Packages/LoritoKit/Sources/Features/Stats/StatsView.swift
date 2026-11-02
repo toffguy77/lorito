@@ -30,7 +30,7 @@ public struct StatsView: View {
                     HStack(spacing: LoritoSpacing.sm) {
                         streakTile
                         statTile("лучшая серия", model.stats.bestStreak)
-                        statTile("повторений всего", model.stats.studiedAllTime)
+                        statTile(Self.allTimeLabel, model.stats.studiedAllTime)
                     }
                     .fixedSize(horizontal: false, vertical: true)
                     heatmapCard
@@ -48,7 +48,7 @@ public struct StatsView: View {
                         streakTile
                         VStack(spacing: LoritoSpacing.sm - 2) {
                             statTile("лучшая серия", model.stats.bestStreak)
-                            statTile("повторений всего", model.stats.studiedAllTime)
+                            statTile(Self.allTimeLabel, model.stats.studiedAllTime)
                         }
                     }
                     .fixedSize(horizontal: false, vertical: true)
@@ -88,7 +88,7 @@ public struct StatsView: View {
             HStack(alignment: .firstTextBaseline) {
                 Text("12 недель").font(LoritoFont.bodyStrong)
                 Spacer()
-                Text("\(model.windowTotal) \(RussianPlural.form(model.windowTotal, one: "повторение", few: "повторения", many: "повторений"))")
+                Text(Self.windowTotalText(model.windowTotal))
                     .font(LoritoFont.caption)
                     .foregroundStyle(LoritoColor.textSecondary)
             }
@@ -107,10 +107,19 @@ public struct StatsView: View {
         .background(LoritoColor.surfaceRaised, in: RoundedRectangle(cornerRadius: LoritoRadius.lg, style: .continuous))
     }
 
+    /// The all-time tile counts graded cards only (review-items).
+    nonisolated static let allTimeLabel = "карточек повторено"
+
+    /// The heatmap total counts every graded answer — cards, conjugations, words, CCSE —
+    /// so it is labelled «ответов», not like the card tile (stats-and-streak).
+    nonisolated static func windowTotalText(_ n: Int) -> String {
+        "\(n) \(RussianPlural.form(n, one: "ответ", few: "ответа", many: "ответов"))"
+    }
+
     /// One-line VoiceOver summary of the whole grid.
     private var heatmapSummary: String {
         let active = model.activity.filter { $0.count > 0 }.count
-        return "Активность за 12 недель: \(model.windowTotal) повторений, занятий в \(active) из \(model.activity.count) дней"
+        return "Активность за 12 недель: \(Self.windowTotalText(model.windowTotal)), занятий в \(active) из \(model.activity.count) дней"
     }
 
     private var memoryCard: some View {
