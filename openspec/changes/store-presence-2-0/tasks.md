@@ -20,4 +20,4 @@
 - [x] 4.1 Owner review page with all copy and media
 - [x] 4.2 After approval: metadata, screenshots and previews upload; custom product pages, in-app event, creative assets and nomination in App Store Connect
 - [x] 4.3 `openspec validate store-presence-2-0 --strict`
-- [ ] 4.4 After 2.0 is approved: assign custom product page keywords (DELE, экзамен / CCSE, гражданство / глаголы, спряжение, субхунтив, subjuntivo); link the approved event to the 2026-11-24 nomination
+- [ ] 4.4 After 2.0 is **released** (Apple takes CPP keywords only from the live version's localizations — tried 2026-11-02 while 2.0 was pending: `STATE_ERROR.NO_RELEASED_LOCALIZATION`): assign custom product page keywords (DELE, экзамен / CCSE, гражданство / глаголы, спряжение, субхунтив, subjuntivo); link the approved event to the 2026-11-24 nomination

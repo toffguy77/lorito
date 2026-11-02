@@ -92,8 +92,11 @@ featuring nomination is in `fastlane/marketing/copy.json`; media in
   event and featuring art from `design/marketing/`.
 - `tools/record_app_preview.sh <udid> iphone|ipad` records the app previews.
 
-Custom product page keywords must come from the keyword field and be unique to
-one page; they are assigned in App Store Connect (web).
+Custom product page keywords must come from the keyword field of the **released**
+version and be unique to one page. The API can assign them
+(`POST /v1/appCustomProductPageLocalizations/{id}/relationships/searchKeywords`,
+`appKeywords` ids are the keyword strings); before the version carrying them is
+live it answers `NO_RELEASED_LOCALIZATION` / keyword «does not exist».
 
 API scripts (env from `secrets/asc.env`): `tools/upload_app_previews.rb <version>`,
 `tools/create_app_event.rb <start> <days>`, `tools/create_custom_product_pages.rb`,
