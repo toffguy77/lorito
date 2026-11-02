@@ -26,7 +26,7 @@
 
 ## 5. Review and upload
 
-- [ ] 5.1 Owner review page with the new screenshots, media and copy diff
+- [x] 5.1 Owner review page with the new screenshots, media and copy diff (Mac: ~/build/lorito-s201-review/index.html, before/after)
 - [ ] 5.2 `tools/create_custom_product_pages.rb --new-version`: new CPP versions with the new screens (ru, es-ES, es-MX), promo text kept; after approval run it and submit by 2026-11-17
 - [ ] 5.3 After 2.0 is live: version 2.0.1 with build, screenshots, description, keywords (spare characters per ASC search data); submit
 - [ ] 5.4 `openspec validate store-screenshots-2-0-1 --strict`
