@@ -6,13 +6,16 @@
 #
 # Usage: ruby tools/create_custom_product_pages.rb
 #        ruby tools/create_custom_product_pages.rb --new-version [--dry-run] [--submit]
+#        ruby tools/create_custom_product_pages.rb --submit-only
 #   env: APP_STORE_CONNECT_KEY_ID, APP_STORE_CONNECT_ISSUER_ID, ASC_KEY_PATH, LORITO_APP_ID
 # A page whose name already exists is skipped.
 #
 # --new-version (store-screenshots-2-0-1): refresh existing pages without an app release —
 # a new page version per page with the same promotional text and the current screenshots;
-# keywords stay on the page. --dry-run only reads and prints the plan. --submit adds the
-# new versions to a review submission and submits it. Run only after the owner approves.
+# keywords stay on the page. --dry-run only reads and prints the plan. --submit waits until
+# Apple has processed every screenshot, adds the new versions to the open review submission
+# (or a new one) and submits it. --submit-only does just that for each page's latest
+# version not yet in review (after an interrupted --submit). Run only after the owner approves.
 require "openssl"
 require "base64"
 require "json"
@@ -75,6 +78,56 @@ def screenshot_files(page, device)
   end
 end
 
+# Screenshots must finish Apple's processing before a version can join a review submission.
+def wait_for_assets(version_id, timeout: 900)
+  deadline = Time.now + timeout
+  loop do
+    states = []
+    api(:get, "/v1/appCustomProductPageVersions/#{version_id}/appCustomProductPageLocalizations")["data"].each do |loc|
+      api(:get, "/v1/appCustomProductPageLocalizations/#{loc["id"]}/appScreenshotSets")["data"].each do |set|
+        api(:get, "/v1/appScreenshotSets/#{set["id"]}/appScreenshots?limit=50")["data"].each do |shot|
+          states << shot.dig("attributes", "assetDeliveryState", "state")
+        end
+      end
+    end
+    abort("version #{version_id}: screenshot failed processing") if states.include?("FAILED")
+    return if states.all? { |st| st == "COMPLETE" }
+    abort("version #{version_id}: screenshots still processing after #{timeout} s") if Time.now > deadline
+    puts "#{version_id}: #{states.count { |st| st != "COMPLETE" }} screenshot(s) processing…"
+    sleep 20
+  end
+end
+
+def submit_versions(app, version_ids)
+  version_ids.each { |v| wait_for_assets(v) }
+  sub = api(:get, "/v1/reviewSubmissions?filter[app]=#{app}&filter[state]=READY_FOR_REVIEW&include=items&limit=5")
+  open_sub = sub["data"].first
+  sub_id = open_sub ? open_sub["id"] : api(:post, "/v1/reviewSubmissions", { data: { type: "reviewSubmissions",
+    attributes: { platform: "IOS" }, relationships: { app: { data: { type: "apps", id: app } } } } })["data"]["id"]
+  in_sub = (sub["included"] || []).map { |i| i.dig("relationships", "appCustomProductPageVersion", "data", "id") }.compact
+  version_ids.each do |v|
+    next if in_sub.include?(v)
+    api(:post, "/v1/reviewSubmissionItems", { data: { type: "reviewSubmissionItems",
+      relationships: { reviewSubmission: { data: { type: "reviewSubmissions", id: sub_id } },
+                       appCustomProductPageVersion: { data: { type: "appCustomProductPageVersions", id: v } } } } })
+  end
+  api(:patch, "/v1/reviewSubmissions/#{sub_id}", { data: { type: "reviewSubmissions", id: sub_id,
+    attributes: { submitted: true } } })
+  puts "submitted #{version_ids.size} page version(s) for review (#{sub_id})"
+end
+
+if ARGV.include?("--submit-only")
+  ids = api(:get, "/v1/apps/#{app}/appCustomProductPages?limit=50")["data"].map do |cpp|
+    next unless pages.any? { |p| p["referenceName"] == cpp["attributes"]["name"] }
+    versions = api(:get, "/v1/appCustomProductPages/#{cpp["id"]}/appCustomProductPageVersions")["data"]
+    latest = versions.max_by { |v| v["attributes"]["version"].to_i }
+    latest["id"] if %w[PREPARE_FOR_SUBMISSION READY_FOR_REVIEW].include?(latest["attributes"]["state"])
+  end.compact   # (no filter_map: macOS system Ruby is 2.6)
+  abort("no page version waiting for review") if ids.empty?
+  submit_versions(app, ids)
+  exit
+end
+
 if ARGV.include?("--new-version")
   dry = ARGV.include?("--dry-run")
   live = api(:get, "/v1/apps/#{app}/appCustomProductPages?limit=50")["data"]
@@ -114,18 +167,7 @@ if ARGV.include?("--new-version")
       puts "#{page["referenceName"]} · #{locale}: new version #{version["id"]}"
     end
   end
-  if ARGV.include?("--submit") && !new_versions.empty?
-    sub = api(:post, "/v1/reviewSubmissions", { data: { type: "reviewSubmissions", attributes: { platform: "IOS" },
-      relationships: { app: { data: { type: "apps", id: app } } } } })["data"]
-    new_versions.each do |v|
-      api(:post, "/v1/reviewSubmissionItems", { data: { type: "reviewSubmissionItems",
-        relationships: { reviewSubmission: { data: { type: "reviewSubmissions", id: sub["id"] } },
-                         appCustomProductPageVersion: { data: { type: "appCustomProductPageVersions", id: v } } } } })
-    end
-    api(:patch, "/v1/reviewSubmissions/#{sub["id"]}", { data: { type: "reviewSubmissions", id: sub["id"],
-      attributes: { submitted: true } } })
-    puts "submitted #{new_versions.size} page version(s) for review (#{sub["id"]})"
-  end
+  submit_versions(app, new_versions) if ARGV.include?("--submit") && !new_versions.empty?
   exit
 end
 
