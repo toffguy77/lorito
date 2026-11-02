@@ -100,11 +100,13 @@ end
 
 def submit_versions(app, version_ids)
   version_ids.each { |v| wait_for_assets(v) }
-  sub = api(:get, "/v1/reviewSubmissions?filter[app]=#{app}&filter[state]=READY_FOR_REVIEW&include=items&limit=5")
+  sub = api(:get, "/v1/reviewSubmissions?filter[app]=#{app}&filter[state]=READY_FOR_REVIEW&limit=5")
   open_sub = sub["data"].first
   sub_id = open_sub ? open_sub["id"] : api(:post, "/v1/reviewSubmissions", { data: { type: "reviewSubmissions",
     attributes: { platform: "IOS" }, relationships: { app: { data: { type: "apps", id: app } } } } })["data"]["id"]
-  in_sub = (sub["included"] || []).map { |i| i.dig("relationships", "appCustomProductPageVersion", "data", "id") }.compact
+  # The submission's items name their page version only when read through /items.
+  items = open_sub ? api(:get, "/v1/reviewSubmissions/#{sub_id}/items?include=appCustomProductPageVersion&limit=50")["data"] : []
+  in_sub = items.map { |i| i.dig("relationships", "appCustomProductPageVersion", "data", "id") }.compact
   version_ids.each do |v|
     next if in_sub.include?(v)
     api(:post, "/v1/reviewSubmissionItems", { data: { type: "reviewSubmissionItems",
