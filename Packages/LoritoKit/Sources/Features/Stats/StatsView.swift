@@ -7,6 +7,7 @@ import DesignSystem
 public struct StatsView: View {
     @State private var model: StatsModel
     @Environment(\.horizontalSizeClass) private var sizeClass
+    @Environment(\.dynamicTypeSize) private var typeSize
     @Environment(BuddyModel.self) private var buddy: BuddyModel?
 
     private var isRegular: Bool { sizeClass == .regular }
@@ -43,6 +44,15 @@ public struct StatsView: View {
                         .frame(maxWidth: 280)
                     }
                     .fixedSize(horizontal: false, vertical: true)
+                } else if typeSize.isAccessibilitySize {
+                    // Accessibility sizes: one tile per row — two columns break words mid-way.
+                    streakTile
+                    statTile("лучшая серия", model.stats.bestStreak)
+                    statTile(Self.allTimeLabel, model.stats.studiedAllTime)
+                    statTile("сегодня", model.stats.studiedToday)
+                    statTile("за неделю", model.stats.studiedThisWeek)
+                    heatmapCard
+                    if !model.memory.isEmpty { memoryCard }
                 } else {
                     HStack(spacing: LoritoSpacing.sm - 2) {
                         streakTile

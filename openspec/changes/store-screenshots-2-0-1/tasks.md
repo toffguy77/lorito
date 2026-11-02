@@ -1,7 +1,7 @@
 ## 1. Progress labels
 
 - [x] 1.1 Failing test: the progress screen labels the all-time card count and the heatmap total differently (498 cards + 1 conjugation → «498» with «карточек повторено», «499 ответов»); `swift test` fails before the fix
-- [ ] 1.2 `StatsView`: tile «карточек повторено», heatmap total «N ответов/ответа/ответ» via `RussianPlural`, matching accessibility label; `swift test` green; check the iPhone and iPad layouts with Dynamic Type AX5
+- [x] 1.2 `StatsView`: tile «карточек повторено», heatmap total «N ответов/ответа/ответ» via `RussianPlural`, matching accessibility label; `swift test` green; check the iPhone and iPad layouts with Dynamic Type AX5 — at AX5 the two-column tiles broke words («подря/д», «карточе/к»), so compact + accessibility sizes now stack one tile per row (checked on the simulator)
 
 ## 2. Demo store and buddy card
 
