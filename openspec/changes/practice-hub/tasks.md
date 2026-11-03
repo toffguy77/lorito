@@ -51,5 +51,5 @@
 ## 8. Выпуск (2.0.1)
 
 - [x] 8.1 Версия 2.0.1 (build 17) в `project.yml`
-- [ ] 8.2 Архив и IPA (`fastlane build` на Mac), загрузка в TestFlight (`fastlane upload`); verify: билд 17 в ASC `VALID`
+- [x] 8.2 Архив и IPA (`fastlane build` на Mac), загрузка в TestFlight (`fastlane upload`); verify: билд 17 в ASC `VALID`
 - [ ] 8.3 После выхода 2.0 (2026-11-24): «Что нового» 2.0.1 с практикой, версия 2.0.1 с билдом 17 отправлена на ревью вместе с задачей 5.3 `store-screenshots-2-0-1`
