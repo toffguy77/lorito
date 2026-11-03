@@ -16,6 +16,7 @@ public struct TodayView: View {
     @State private var exams: ExamsModel?
     @State private var ccseDrill: CCSEDrillModel?
     @State private var wordSession: WordSessionModel?
+    @State private var practiceHub: PracticeHubModel?
     @Environment(PurchaseService.self) private var purchases: PurchaseService?
     @Environment(BuddyModel.self) private var buddy: BuddyModel?
     private let catalog: ContentCatalog
@@ -82,6 +83,12 @@ public struct TodayView: View {
                     .toolbar { ToolbarItem(placement: .confirmationAction) { Button("Готово") { self.exams = nil } } }
             }
         }
+        .sheet(item: $practiceHub, onDismiss: { model.refresh() }) { hub in
+            NavigationStack {
+                PracticeHubView(model: hub)
+                    .toolbar { ToolbarItem(placement: .confirmationAction) { Button("Готово") { practiceHub = nil } } }
+            }
+        }
         .sheet(item: $goalModel, onDismiss: { model.refresh() }) { goals in
             NavigationStack {
                 GoalSettingsView(model: goals)
@@ -122,6 +129,7 @@ public struct TodayView: View {
             goalCard
             examEntry
             promptCard
+            practiceEntry
             conjugationEntry
             trapsEntry
             trap
@@ -151,6 +159,7 @@ public struct TodayView: View {
                     goalCard
                     examEntry
                     promptCard
+                    practiceEntry
                     conjugationEntry
                     trapsEntry
                     trap
@@ -349,6 +358,28 @@ public struct TodayView: View {
             .buttonStyle(.plain)
             .accessibilityIdentifier("today.exams")
         }
+    }
+
+    /// «Практика» (practice-hub): free practice over studied cards.
+    private var practiceEntry: some View {
+        Button { practiceHub = PracticeHubModel(store: store, catalog: catalog) } label: {
+            HStack(spacing: LoritoSpacing.sm) {
+                Image(systemName: "pencil.and.list.clipboard").foregroundStyle(LoritoColor.accent).accessibilityHidden(true)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("Практика").font(LoritoFont.bodyStrong).foregroundStyle(LoritoColor.textPrimary)
+                    Text("Упражнения по изученным карточкам")
+                        .font(LoritoFont.caption).foregroundStyle(LoritoColor.textSecondary)
+                }
+                Spacer()
+                Image(systemName: "chevron.right").foregroundStyle(LoritoColor.textSecondary).accessibilityHidden(true)
+            }
+            .padding(LoritoSpacing.md)
+            .frame(minHeight: LoritoLayout.minTouchTarget)
+            .background(LoritoColor.surfaceRaised, in: RoundedRectangle(cornerRadius: LoritoRadius.md, style: .continuous))
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+        .accessibilityIdentifier("today.practice")
     }
 
     /// «Спряжения · N» (conjugation-trainer), when items are planned today.

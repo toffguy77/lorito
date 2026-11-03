@@ -20,6 +20,11 @@ public final class ExerciseSessionModel: Identifiable {
     private let now: () -> Date
 
     public private(set) var index = 0
+    /// Card-reader practice or free practice (practice-hub).
+    public let grading: PracticeGrading
+    /// Exercises answered (resolved) and answered correctly in this session.
+    public private(set) var answeredCount = 0
+    public private(set) var correctCount = 0
     /// Set once an auto-checkable exercise has been submitted.
     public private(set) var lastCheck: ExerciseCheck?
     /// True once a `free-response` exercise has been submitted (reference revealed).
@@ -42,8 +47,10 @@ public final class ExerciseSessionModel: Identifiable {
 
     public init(store: UserDataStore, exercises: [Exercise], analytics: AnalyticsRecording? = nil,
                 recognizer: SpeechRecognizing? = nil, hasSpanishVoice: Bool = true,
-                preferences: AudioExercisePreferences = .shared, now: @escaping () -> Date = { Date() }) {
-        self.practice = ExercisePracticeService(store: store)
+                preferences: AudioExercisePreferences = .shared, grading: PracticeGrading = .reader,
+                now: @escaping () -> Date = { Date() }) {
+        self.practice = ExercisePracticeService(store: store, policy: grading)
+        self.grading = grading
         self.analytics = analytics ?? AnalyticsService.shared
         self.recognizer = recognizer
         self.preferences = preferences
@@ -172,6 +179,7 @@ public final class ExerciseSessionModel: Identifiable {
         }
         lastCheck = try? practice.submit(current, answer: answer, today: now()).check
         if let lastCheck {
+            tally(correct: lastCheck.isCorrect)
             analytics.record(.exerciseAnswered(type: ExerciseTypeName(current.kind), correct: lastCheck.isCorrect))
         }
     }
@@ -191,6 +199,11 @@ public final class ExerciseSessionModel: Identifiable {
             }
         default:
             return
+        }
+        if case .speak = current.kind, speakAttempts >= Self.maxSpeakAttempts {
+            // the miss was already tallied when the reference was revealed
+        } else {
+            tally(correct: grade != .again)
         }
         analytics.record(.exerciseAnswered(type: ExerciseTypeName(current.kind), correct: grade != .again))
         advance()
@@ -212,12 +225,14 @@ public final class ExerciseSessionModel: Identifiable {
         let check = try? ExerciseChecker.check(exercise, answer: .transcripts(heard))
         if check?.isCorrect == true {
             lastCheck = try? practice.submit(exercise, answer: .transcripts(heard), today: now()).check
+            tally(correct: true)
             analytics.record(.exerciseAnswered(type: .speak, correct: true))
             return
         }
         speakAttempts += 1
         if speakAttempts >= Self.maxSpeakAttempts {
             try? practice.recordAttemptOnly(exercise, grade: .again, transcript: transcript, today: now())
+            tally(correct: false)
             analytics.record(.exerciseAnswered(type: .speak, correct: false))
             isRevealed = true
         }
@@ -259,6 +274,17 @@ public final class ExerciseSessionModel: Identifiable {
 
     /// Clear the word-order answer.
     public func resetOrdering() { ordering.removeAll() }
+
+    private func tally(correct: Bool) {
+        answeredCount += 1
+        if correct { correctCount += 1 }
+    }
+
+    /// The completion line: free practice reports the score.
+    public var completionSubtitle: String {
+        guard grading == .free, answeredCount > 0 else { return "Все упражнения пройдены." }
+        return "Верно \(correctCount) из \(answeredCount)."
+    }
 
     /// Advance to the next exercise (or completion) and reset input.
     public func advance() {

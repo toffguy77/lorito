@@ -66,7 +66,9 @@ public enum LensMatchBucket: String, Codable, Sendable {
     }
 }
 
-public enum PaywallEntry: String, Codable, Sendable { case settings, examPath }
+public enum PaywallEntry: String, Codable, Sendable { case settings, examPath, practice }
+/// Free-practice modes as analytics values (practice-hub; no theme or level ids).
+public enum PracticeModeName: String, Codable, Sendable, CaseIterable { case mixed, weak, theme, level }
 public enum PurchaseFailure: String, Codable, Sendable { case cancelled, pending, error, unavailable }
 public enum RestoreOutcome: String, Codable, Sendable { case restored, nothingToRestore, failed }
 
@@ -106,6 +108,8 @@ public enum AnalyticsEvent: Codable, Sendable, Hashable {
     case lensCardRequested(card: CatalogCardID)
     // study-buddy (no names)
     case buddyInviteSent, buddyInviteAccepted, buddyNudgeSent, buddyLeft
+    // practice-hub (mode and size only)
+    case practiceStarted(mode: PracticeModeName, count: Int)
 
     public var name: String {
         switch self {
@@ -138,6 +142,7 @@ public enum AnalyticsEvent: Codable, Sendable, Hashable {
         case .buddyInviteAccepted: return "buddy_invite_accepted"
         case .buddyNudgeSent: return "buddy_nudge_sent"
         case .buddyLeft: return "buddy_left"
+        case .practiceStarted: return "practice_started"
         }
     }
 
@@ -167,6 +172,7 @@ public enum AnalyticsEvent: Codable, Sendable, Hashable {
         case .exerciseAnswered(let type, let correct): return ["type": type.rawValue, "correct": "\(correct)"]
         case .streakExtended(let length): return ["length": "\(length)"]
         case .streakLost(let previous): return ["previous": "\(previous)"]
+        case .practiceStarted(let mode, let count): return ["mode": mode.rawValue, "count": "\(count)"]
         }
     }
 }

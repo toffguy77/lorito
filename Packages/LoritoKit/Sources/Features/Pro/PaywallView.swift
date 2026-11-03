@@ -27,7 +27,7 @@ public struct PaywallView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: LoritoSpacing.lg) {
                     Text("Lorito Pro").loritoStyle(.title).foregroundStyle(LoritoColor.textPrimary)
-                    Text("Всё остальное в Lorito бесплатно и останется бесплатным. Pro добавляет только подготовку к экзаменам:")
+                    Text("Всё остальное в Lorito бесплатно и останется бесплатным. Pro добавляет подготовку к экзаменам и свободную практику:")
                         .font(LoritoFont.body)
                         .foregroundStyle(LoritoColor.textSecondary)
                         .fixedSize(horizontal: false, vertical: true)
@@ -35,6 +35,7 @@ public struct PaywallView: View {
                         feature("graduationcap", "Путь к DELE A2 и CCSE: полный набор заданий по разделам")
                         feature("timer", "Пробные экзамены с таймером и разбором")
                         feature("chart.line.uptrend.xyaxis", "Готовность к экзамену по разделам")
+                        feature("pencil.and.list.clipboard", "Свободная практика: смешанная, слабые места, по теме и уровню")
                     }
                     products
                     if let message {

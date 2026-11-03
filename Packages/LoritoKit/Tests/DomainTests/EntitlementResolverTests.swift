@@ -15,7 +15,7 @@ struct EntitlementResolverTests {
     func lifetime() {
         let p = VerifiedPurchase(productID: ProProducts.lifetime, expirationDate: nil, revocationDate: nil,
                                  ownership: .purchased, inGracePeriod: false)
-        #expect(EntitlementResolver.resolve([p], now: now) == [.examPath])
+        #expect(EntitlementResolver.resolve([p], now: now) == Set(ProFeature.allCases))
         var revoked = p
         revoked.revocationDate = now.addingTimeInterval(-1)
         #expect(EntitlementResolver.resolve([revoked], now: now).isEmpty)
@@ -23,20 +23,27 @@ struct EntitlementResolverTests {
 
     @Test("Yearly: unexpired → Pro; expired in grace → Pro; expired without grace (incl. billing retry) → none")
     func yearlyStates() {
-        #expect(EntitlementResolver.resolve([yearly(expires: 3600)], now: now) == [.examPath])
-        #expect(EntitlementResolver.resolve([yearly(expires: -3600, grace: true)], now: now) == [.examPath])
+        #expect(EntitlementResolver.resolve([yearly(expires: 3600)], now: now) == Set(ProFeature.allCases))
+        #expect(EntitlementResolver.resolve([yearly(expires: -3600, grace: true)], now: now) == Set(ProFeature.allCases))
         #expect(EntitlementResolver.resolve([yearly(expires: -3600)], now: now).isEmpty)
         #expect(EntitlementResolver.resolve([yearly(expires: 3600, revoked: true)], now: now).isEmpty)
     }
 
     @Test("Family-shared counts as purchased; empty → none; unknown products ignored; deterministic")
     func misc() {
-        #expect(EntitlementResolver.resolve([yearly(expires: 3600, ownership: .familyShared)], now: now) == [.examPath])
+        #expect(EntitlementResolver.resolve([yearly(expires: 3600, ownership: .familyShared)], now: now) == Set(ProFeature.allCases))
         #expect(EntitlementResolver.resolve([], now: now).isEmpty)
         let other = VerifiedPurchase(productID: "com.example.other", expirationDate: nil, revocationDate: nil,
                                      ownership: .purchased, inGracePeriod: false)
         #expect(EntitlementResolver.resolve([other], now: now).isEmpty)
         let mix = [yearly(expires: -10), yearly(expires: 3600)]
         #expect(EntitlementResolver.resolve(mix, now: now) == EntitlementResolver.resolve(mix.reversed(), now: now))
+    }
+
+    @Test("Pro grants the exam path and free practice")
+    func practiceIncluded() {
+        let p = VerifiedPurchase(productID: ProProducts.lifetime, expirationDate: nil, revocationDate: nil,
+                                 ownership: .purchased, inGracePeriod: false)
+        #expect(EntitlementResolver.resolve([p], now: now) == [.examPath, .practice])
     }
 }

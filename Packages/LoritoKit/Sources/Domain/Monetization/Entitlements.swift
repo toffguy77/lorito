@@ -3,6 +3,8 @@ import Foundation
 /// The only paid feature: the exam path (DELE / CCSE). Everything else is free.
 public enum ProFeature: String, Codable, Sendable, CaseIterable {
     case examPath
+    /// Free exercise practice outside the card reader (practice-hub).
+    case practice
 }
 
 /// Whether Lorito Pro is sold in this build. While off, everyone gets the exam
@@ -52,6 +54,6 @@ public enum EntitlementResolver {
             default: return false
             }
         }
-        return entitled ? [.examPath] : []
+        return entitled ? Set(ProFeature.allCases) : []
     }
 }

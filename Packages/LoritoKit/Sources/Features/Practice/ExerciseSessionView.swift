@@ -25,7 +25,7 @@ public struct ExerciseSessionView: View {
             if let exercise = model.current {
                 content(exercise)
             } else {
-                SessionCompleteView(subtitle: "Все упражнения пройдены.", onClose: onClose)
+                SessionCompleteView(subtitle: model.completionSubtitle, onClose: onClose)
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)

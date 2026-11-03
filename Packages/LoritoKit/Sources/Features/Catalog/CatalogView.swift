@@ -14,9 +14,11 @@ public struct CatalogView: View {
     @Environment(\.horizontalSizeClass) private var sizeClass
     @Environment(PurchaseService.self) private var purchases: PurchaseService?
     @State private var exams: ExamsModel?
+    @State private var practice: PracticeHubModel
 
     public init(store: UserDataStore, catalog: ContentCatalog, navigation: AppNavigation) {
         _model = State(initialValue: CatalogModel(store: store, catalog: catalog))
+        _practice = State(initialValue: PracticeHubModel(store: store, catalog: catalog))
         self.catalog = catalog
         self.navigation = navigation
     }
@@ -31,7 +33,7 @@ public struct CatalogView: View {
                 compactLayout
             }
         }
-        .onAppear { model.refresh() }
+        .onAppear { model.refresh(); practice.refresh() }
         .sheet(item: $exams) { exams in
             NavigationStack {
                 ExamsView(model: exams)
@@ -63,6 +65,19 @@ public struct CatalogView: View {
         }
     }
 
+    /// «Практика по уровню» for the selected level (practice-hub).
+    private var levelPracticeRow: some View {
+        PracticeEntryButton(model: practice, mode: .level(level), title: "Практика по уровню \(level.rawValue)",
+                            systemImage: "pencil.and.list.clipboard", identifier: "catalog.practice.level")
+            .id(level)
+    }
+
+    /// «Практика по теме» above a theme's cards (practice-hub).
+    private func themePracticeRow(_ theme: Theme) -> some View {
+        PracticeEntryButton(model: practice, mode: .theme(theme.id), title: "Практика по теме",
+                            systemImage: "pencil.and.list.clipboard", identifier: "catalog.practice.theme")
+    }
+
     // MARK: Compact
 
     private var compactLayout: some View {
@@ -72,6 +87,7 @@ public struct CatalogView: View {
                     header
                     levelPills
                     examsRow
+                    levelPracticeRow
                     LensEntryButton(identifier: "catalog.lens")
                     ForEach(model.themes(in: level)) { theme in
                         themeRow(theme)
@@ -113,6 +129,7 @@ public struct CatalogView: View {
                     header
                     levelPills
                     examsRow
+                    levelPracticeRow
                     LensEntryButton(identifier: "catalog.lens")
                 }
                 .listRowSeparator(.hidden)
@@ -138,10 +155,15 @@ public struct CatalogView: View {
             .navigationSplitViewColumnWidth(min: 280, ideal: 320)
         } content: {
             if let theme = navigation.catalogThemeID.flatMap(catalog.theme(id:)) {
-                List(model.cards(in: theme), selection: cardSelection) { card in
-                    cardRow(card)
-                        .tag(card.id)
-                        .loritoHover()
+                List(selection: cardSelection) {
+                    themePracticeRow(theme)
+                        .listRowSeparator(.hidden)
+                        .listRowBackground(Color.clear)
+                    ForEach(model.cards(in: theme)) { card in
+                        cardRow(card)
+                            .tag(card.id)
+                            .loritoHover()
+                    }
                 }
                 .scrollContentBackground(.hidden)
                 .background(LoritoColor.surface)
@@ -285,13 +307,18 @@ public struct CatalogView: View {
     }
 
     private func themeCards(_ theme: Theme) -> some View {
-        List(model.cards(in: theme)) { card in
-            NavigationLink {
-                CardReaderView(model: model, card: card)
-            } label: {
-                cardRow(card)
+        List {
+            themePracticeRow(theme)
+                .listRowSeparator(.hidden)
+                .listRowBackground(Color.clear)
+            ForEach(model.cards(in: theme)) { card in
+                NavigationLink {
+                    CardReaderView(model: model, card: card)
+                } label: {
+                    cardRow(card)
+                }
+                .listRowBackground(LoritoColor.surfaceRaised)
             }
-            .listRowBackground(LoritoColor.surfaceRaised)
         }
         .listStyle(.plain)
         .scrollContentBackground(.hidden)

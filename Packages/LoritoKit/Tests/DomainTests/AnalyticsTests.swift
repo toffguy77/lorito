@@ -13,6 +13,7 @@ struct AnalyticsEventTests {
         .itemGraded(kind: .card, grade: .good, revealed: true),
         .exerciseAnswered(type: .multipleChoice, correct: false),
         .reminderOpened, .streakExtended(length: 13), .streakLost(previous: 6),
+        .practiceStarted(mode: .mixed, count: 20), .practiceStarted(mode: .weak, count: 3),
     ]
 
     @Test("Every event encodes to a name and enum/int/bool parameters", arguments: samples)
@@ -23,6 +24,14 @@ struct AnalyticsEventTests {
             let ok = Self.allowedValue.firstMatch(in: value, range: NSRange(value.startIndex..., in: value)) != nil
             #expect(ok, "\(record.name).\(key)=\(value)")
         }
+    }
+
+    @Test("practice_started carries only the mode and the count")
+    func practiceStarted() {
+        let event = AnalyticsEvent.practiceStarted(mode: .theme, count: 18)
+        #expect(event.name == "practice_started")
+        #expect(event.parameters == ["mode": "theme", "count": "18"])
+        #expect(PracticeModeName.allCases == [.mixed, .weak, .theme, .level])
     }
 
     @Test("Catalog card ids only: grammar cards pass, words, drills and free text don't")

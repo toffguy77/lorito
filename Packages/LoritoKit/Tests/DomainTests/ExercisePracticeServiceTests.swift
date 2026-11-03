@@ -87,3 +87,84 @@ struct ExercisePracticeServiceTests {
         #expect(store.attempts.first?.grade == Grade.easy.rawValue)
     }
 }
+
+@Suite("Free practice grading (practice-hub)")
+struct FreePracticeGradingTests {
+    let today = day(2026, 6, 23)
+    let due = day(2026, 7, 23)
+
+    private func storeWithReview() throws -> FakeStore {
+        let store = FakeStore()
+        try store.upsertReview(ReviewState(cardID: "A1-07", interval: 30, repetitions: 3, dueDate: due,
+                                           lastGrade: "good", status: .review))
+        return store
+    }
+
+    @Test("Correct auto-checked answer: attempt only, no study event, schedule unchanged")
+    func correctIsAttemptOnly() throws {
+        let store = try storeWithReview()
+        let svc = ExercisePracticeService(store: store, policy: .free)
+        let out = try svc.submit(exercise(.multipleChoice(options: ["el", "la"], answer: "la")),
+                                 answer: .option("la"), today: today)
+        #expect(out.check.isCorrect)
+        #expect(store.attempts.count == 1 && store.attempts[0].correct)
+        #expect(store.events.isEmpty)
+        #expect(try store.review(for: "A1-07")?.dueDate == due)
+    }
+
+    @Test("Passing self-grades are attempts only")
+    func passingSelfGrade() throws {
+        for grade in [Grade.hard, .good, .easy] {
+            let store = try storeWithReview()
+            let svc = ExercisePracticeService(store: store, policy: .free)
+            _ = try svc.submitSelfGraded(exercise(.freeResponse(answer: "x", accept: [])), grade: grade, today: today)
+            #expect(store.attempts.count == 1)
+            #expect(store.events.isEmpty)
+            #expect(try store.review(for: "A1-07")?.dueDate == due)
+        }
+    }
+
+    @Test("A mistake applies Опять and records a study event; self-assessed Опять too")
+    func mistakeLapses() throws {
+        let store = try storeWithReview()
+        let svc = ExercisePracticeService(store: store, policy: .free)
+        _ = try svc.submit(exercise(.fillInTheBlank(answer: "casas", accept: [])), answer: .text("casa"), today: today)
+        #expect(store.events.count == 1)
+        #expect(try store.review(for: "A1-07")?.dueDate != due)
+
+        let store2 = try storeWithReview()
+        _ = try ExercisePracticeService(store: store2, policy: .free)
+            .submitSelfGraded(exercise(.freeResponse(answer: "x", accept: [])), grade: .again, today: today)
+        #expect(store2.events.count == 1)
+        #expect(try store2.review(for: "A1-07")?.dueDate != due)
+    }
+
+    @Test("A second mistake on the same day records an event but leaves the state")
+    func secondMistakeSameDay() throws {
+        let store = try storeWithReview()
+        let svc = ExercisePracticeService(store: store, policy: .free)
+        let wrong = exercise(.fillInTheBlank(answer: "casas", accept: []))
+        _ = try svc.submit(wrong, answer: .text("casa"), today: today)
+        let afterFirst = try store.review(for: "A1-07")
+        _ = try svc.submit(wrong, answer: .text("casa"), today: today)
+        #expect(store.events.count == 2)
+        #expect(try store.review(for: "A1-07") == afterFirst)
+    }
+
+    @Test("Recognised speech in free practice never touches the schedule")
+    func speakFree() throws {
+        let store = try storeWithReview()
+        let svc = ExercisePracticeService(store: store, policy: .free)
+        _ = try svc.submit(exercise(.speak(answer: "hola", accept: [])), answer: .transcripts(["hola"]), today: today)
+        #expect(store.events.isEmpty)
+        #expect(try store.review(for: "A1-07")?.dueDate == due)
+    }
+
+    @Test("recordAttemptOnly can record a correct attempt")
+    func attemptOnlyCorrect() throws {
+        let store = FakeStore()
+        try ExercisePracticeService(store: store).recordAttemptOnly(exercise(.freeResponse(answer: "x", accept: [])),
+                                                                    grade: .good, correct: true, today: today)
+        #expect(store.attempts.first?.correct == true)
+    }
+}
